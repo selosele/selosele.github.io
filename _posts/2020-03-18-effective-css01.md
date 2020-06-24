@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "더 효율적인 CSS 작성 연구 1"
 excerpt: "기존의 습관화된 코딩 방식에서 탈피해야 한다."
@@ -25,7 +26,6 @@ tags:
 
 첫 번째 li를 제외한 li에 <code>margin-left</code>값을 줄 것이다.
 
-{:.h2}
 ## 익숙한 방식
 
 ```scss
@@ -49,7 +49,6 @@ li {
 ```
 IE 8을 고려하지 않을 경우 not 선택자를 사용할 수도 있다.
 
-{:.h2}
 ## 더 효율적인 방법
 
 ```scss

@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "레이어팝업 접근성 관련 자료"
 excerpt: ""

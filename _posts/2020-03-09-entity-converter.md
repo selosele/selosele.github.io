@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "HTML entity 변환해주는 사이트 발견.."
 excerpt: "이 기적의 사이트를 이제서야 알게 되다니.."
@@ -19,7 +20,6 @@ tags:
   <a href="https://mothereff.in/html-entities" target="_blank" title="새창열림" class="btn--standard type5">바로가기</a>
 </div>
 
-{:.h2}
 ## 사용법
 <div class="cont-box type1 ico">
   <ol class="bu-list--num type3">
@@ -33,7 +33,6 @@ tags:
 </div>
 첫 번째 체크박스를 선택 안하면 공백도 entity로 변환되어 버리므로 꼭 체크해주기.
 
-{:.h2}
 ## 사용 예시
 
 <figure class="rsp-img type2 zoom align--center">

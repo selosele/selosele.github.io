@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "Typescript를 알게 되다"
 excerpt: "최신 트렌드를 익히려는 노력을 더 해야겠음"
@@ -15,7 +16,6 @@ tags:
 ---
 커뮤니티 눈팅 중 Typescript라는 Javascript의 슈퍼셋 프로그래밍 언어를 알게 되어 설치 후 테스트까지 해보고 기록하고자 포스팅을 하게 되었다.
 
-{:.h2}
 ## 예제
 
 Typescript 파일(예: script.ts)에서 다음과 같은 코드를 작성한다고 가정해보자.
@@ -34,7 +34,6 @@ Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻
 
 따라서 Typescript 선에서 에러를 잡아내고 실수를 최소화하는 게 작업 효율을 높일 수 있다고 할 수 있다. 에러를 수정하고 컴파일한다면 다음과 같은 결과를 볼 수 있다.
 
-{:.h2}
 ## script.ts -> script.js 컴파일
 
 ```javascript

@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "display: inline-table을 이용한 가로정렬"
 excerpt: "이런 속성도 있었다니!"

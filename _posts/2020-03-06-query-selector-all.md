@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "querySelectorAll에 대해 제대로 알고 쓰자"
 excerpt: "jQuery적 사고방식을 지양해야"

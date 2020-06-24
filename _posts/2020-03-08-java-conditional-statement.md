@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "JSP) 조건문"
 excerpt: "크게 어렵지 않다."

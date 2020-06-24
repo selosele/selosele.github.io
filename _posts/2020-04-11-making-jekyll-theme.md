@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "Jekyll 테마 제작 시작하다"
 excerpt: "재밌는 개인 프로젝트~"

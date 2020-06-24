@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "activeElement 속성으로 현재 활성화된 요소 찾기"
 excerpt: ""

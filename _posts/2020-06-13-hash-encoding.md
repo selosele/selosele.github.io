@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "URL hash값을 가져올 시 한글 깨지지 않게 하기"
 excerpt: ""
@@ -31,7 +32,6 @@ console.log(window.location.hash); // ""
 
 따옴표나 #@$@#!$@!$#$ 등 알아볼 수 없는 문자로 출력되기도 한다.
 
-{:.h2}
 ## 해결책
 
 정상적인 문자열로 되돌려주는 decodeURI 함수를 사용해야 한다.

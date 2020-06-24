@@ -2,6 +2,8 @@
 main:
   - title: "Home"
     url: /
+  - title: "About me"
+    url: /about/
   - title: "Posts by year"
     url: /posts-by-year/
   - title: "Tag"

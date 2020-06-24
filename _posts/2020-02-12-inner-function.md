@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "Javascript 외부 함수 밖에서 내부 함수 실행하기"
 excerpt: "간단하지만 아직 충분히 이해되지 않았음"

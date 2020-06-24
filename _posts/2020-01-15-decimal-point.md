@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "CSS 소수점 단위에 대한 생각"
 excerpt: "calc를 적극 사용합시다."

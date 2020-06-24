@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "더 효율적인 CSS 작성 연구 2"
 excerpt: "기존의 습관화된 코딩 방식에서 탈피해야 한다."
@@ -38,7 +39,6 @@ div {
 }
 ```
 
-{:.h2}
 ## 익숙한 방식
 
 ```css
@@ -56,7 +56,6 @@ a:before {
 ```
 너비/높이값을 100%로 잡아주는 익숙한 방식이다. 왜 <code>before</code>를 div가 아닌 a에 넣냐면 <code>z-index</code>를 한 번 더 선언해야 해서 복잡해지기 때문임.
 
-{:.h2}
 ## 더 효율적인 방법
 
 ```css
@@ -83,7 +82,6 @@ a:before {
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-{:.h2}
 ## 마지막으로
 
 다른 상황에서도 유용하게 사용할 수 있는데, anchor의 영역이 잡히지 않아 사용자 입장에서 클릭이 어려운 상황일 때, <code>display: block</code> 선언이나 너비/높이를 아무리 잡아주어도 안되면 이렇게 쓰면 된다. 애초에 영역이 잘 잡히게끔 마크업 및 스타일링을 해야 하겠으나 어쩔 수 없는 경우가 반드시 있는 법이다.

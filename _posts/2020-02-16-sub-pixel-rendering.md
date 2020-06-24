@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가"
 excerpt: "현재로서 완벽한 방법은 존재하지 않는다."
@@ -19,7 +20,6 @@ CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈�
 
 각설하고, 실험을 해봅시다.
 
-{:.h2}
 ## 코드
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="qBdZmJb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="qBdZmJb">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/qBdZmJb">
@@ -48,8 +48,7 @@ CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈�
 
 우선 양쪽 모두 중앙 정렬된 요소의 부모 사이즈는 203px, 203px이고, 자식은 201px, 201px이다. 이 조건에서 <code>transform: translate(-50%, -50%)</code>를 선언하면 201 / 2 = 100.5(소수점)만큼 위치하니 흐릿하게 보일 수 밖에. 그렇다면 0.5px만큼 이동해야 위치가 맞을 것이고 sub-pixel rendering 이슈 또한 발생하지 않을 것임. 첫 번째 코드에 해답(?)이 있다.
 
-{:.h3}
-### <span>순서</span>
+### 순서
 <div class="cont-box type1 mt--normal">
     <ol class="bu-list--num type3">
         <li>

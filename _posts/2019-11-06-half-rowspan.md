@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "반쪽짜리 rowspan......"
 excerpt: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
@@ -46,11 +47,9 @@ rowspan이 애매하게 걸쳐 있는 테이블 디자인.
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-{:.h2}
 ## 오류 기록
 
-{:.h3}
-### <span>2019.11.06</span>
+### 2019.11.06
 아이폰 사파리에서 본문의 테이블과 코드펜의 테이블 rowspan이 깨지는 현상 발견
 
 [^1]: [1] 검색 키워드 : half rowspan, rowspan 1.5

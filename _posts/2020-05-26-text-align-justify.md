@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "text-align: justify 속성을 사용한 신기한 정렬 기법"
 excerpt: "매우 신기~"

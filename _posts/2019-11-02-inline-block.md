@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "CSS 수직 중앙 정렬, position은 안녕"
 excerpt: "position을 이용한 중앙 정렬은 이득보다 손실이 크다."
@@ -16,7 +17,6 @@ position을 이용한 중앙 정렬은 이득보다 손실이 크다. <code>posi
 
 맹목적 position 신도가 아닌 이들이 사용하는 방법으로 <code>vertical-align</code>, <code>line-height</code>, <code>table-cell</code> 등의 방법이 있다. <code>vertical-align</code>은 기준이 될 요소가 있어야 하고 <code>line-height</code>는 텍스트가 한 줄 이상일 경우 사실상 사용 불가능이며, <code>table-cell</code>은 무난하나..
 
-{:.h2}
 ## 그렇다면 무엇이 효율적인 방법인가?
 공부하다가 발견한 방법으로, 중앙 정렬하고자 하는 요소의 부모에게 가상의 높이를 주는 것임.
 

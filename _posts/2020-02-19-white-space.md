@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "Javascript를 이용하여 inline 요소의 공백 제거하기"
 excerpt: ""
@@ -18,12 +19,10 @@ inline formatting context가 가지는 자연스러운 공백을 제거하는 �
 
 태그 줄바꿈 삭제는 협업 프로세스에서 사용하기에 적절한 방법은 아니라고 본다.
 
-{:.h2}
 ## 그렇다면 적절한 방법은 무엇인가?
 결국 Javascript를 이용하는 방법 연구에 착수하였다.
 
-{:.h3}
-### <span>공백값을 구한 후, 값만큼 <code>margin-left</code> 음수값을 대입하는 방법</span>
+### 공백값을 구한 후, 값만큼 <code>margin-left</code> 음수값을 대입하는 방법
 ```html
 <ul class="remvWS">
   <li>111</li>
@@ -68,8 +67,7 @@ whiteSpaceMargin(".remvWS > *");
 
 그러나 &ldquo;공백&rdquo;을 제거해야지 간격 조절은 의미 없다고 갑자기 생각이 들어서.. 내가 만들어놓고도 별로 사용하고싶은 생각이 안 드는 방법이다.
 
-{:.h3}
-### <span>정규표현식 활용하여 공백문자 제거</span>
+### 정규표현식 활용하여 공백문자 제거
 공백문자를 정규표현식으로 찾을 수 있을 거라는 생각이 갑자기 들었고, 열심히 구글링 중... <code>margin-left</code> 음수값을 이용하는 방법보다 합리적이라는 생각이 들었는지라 반드시 완성하겠다고 다짐을 했... 미루지 말자~
 
 20/02/25, 어느 정도 만들었음. <a href="https://stackoverflow.com/questions/27749507/removing-inline-block-whitespace-using-javascript-and-or-jquery" title="새창열림" target="_blank" class="bu-link2">참고 링크 1</a>, <a href="http://jsfiddle.net/davidThomas/wygnD/3/" title="새창열림" target="_blank" class="bu-link2">참고 링크 2</a>

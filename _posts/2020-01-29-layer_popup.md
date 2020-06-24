@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "레이어팝업에 접근성을 불어넣다"
 excerpt: "접근성이 충분히 보장된 레이어팝업"
@@ -20,7 +21,6 @@ tags:
 
 코드는 다음과 같다.
 
-{:.h2}
 ## HTML
 ```html
 <!-- 레이어 열기 버튼 -->
@@ -36,7 +36,6 @@ tags:
 ```
 role이나 aria- 로 시작하는 속성들에 대해선 wai-aria를 찾아보길 권하며, 마크업에 대한 설명은 딱히 적지 않을 것임. 이 글을 보고 있는 이들 대부분은 많이 알고 있을 것이라 생각하므로(나만 이렇게 생각하나)..
 
-{:.h2}
 ## Javascript
 ```javascript
 $(".open_lp").on("click", function() {

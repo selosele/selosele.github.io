@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "first-letter 가상 요소에 대한 놀라운 사실 한 가지"
 excerpt: "함정에 빠지기 쉽다."
@@ -17,7 +18,6 @@ CSS의 <code>::first-letter</code>는 텍스트의 첫 글자에 스타일을 �
 
 는 중요한 점 하나를 간과했을 때의 이야기고..
 
-{:.h2}
 ## 코드를 봅시다.
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="xxGVMKM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxGVMKM">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/xxGVMKM">

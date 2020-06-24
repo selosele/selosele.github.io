@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "난감한 제목태그 디자인.. 구현법을 알아내다"
 excerpt: "의외로 쉬운 방법"
@@ -26,7 +27,6 @@ tags:
 </figure>
 어떻게 CSS를 줘야 할지 감이 잡히지 않는데, <code>background-image</code>를 높은 확률로 <code>position:absolute</code>, <code>calc</code> 등으로 잡아보지만 당연히 줄에 맞게 떨어질리가 없다. 구글링으로 얻은 몇 가지 방법을 소개하겠음.
 
-{:.h2}
 ## box-shadow를 이용한 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="wvBXdgq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="wvBXdgq">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/wvBXdgq">
@@ -39,7 +39,6 @@ tags:
 
 텍스트가 한 줄 이상일 때 잘 된다! 근데 알다시피 <code>box-shadow</code>는 IE 9까지 지원하니.. 본인 프로젝트 크로스브라우징 범위를 체크해서 IE 9 이상이면 써도 될 듯. 나님 기본으로 9까지 보고 8까지도 어느 정도 안전장치를 두고 작업하므로 실무에 적용하기엔 그림의 떡이다.. 다만 최신 트렌드 기법 연습을 위해 IE와 거리를 두기로 한 내 블로그에는 적용했음.
 
-{:.h2}
 ## linear-gradient를 이용한 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="oNgyWZg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="oNgyWZg">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/oNgyWZg">
@@ -50,7 +49,6 @@ tags:
 <hr>
 <code>linear-gradient</code>는 IE 10까지 지원한다. 그럼 IE 8에서도 문제 없는 방법이 있긴 한건가? 최후의 방법이 하나 남았다.
 
-{:.h2}
 ## background-repeat로 png 이미지를 반복시키는 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="jOEWLqj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="jOEWLqj">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/jOEWLqj">

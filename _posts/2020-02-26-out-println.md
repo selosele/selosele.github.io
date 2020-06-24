@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "JSP) 기본 출력문 out.println"
 excerpt: ""

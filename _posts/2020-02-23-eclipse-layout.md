@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "Eclipse 작업 창이 망가졌을 때"
 excerpt: "레이아웃을 초기화해주자"

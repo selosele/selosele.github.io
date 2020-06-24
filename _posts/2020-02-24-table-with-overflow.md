@@ -1,4 +1,5 @@
 ---
+layout: post
 comments: true
 title: "table 요소와 overflow의 공존은 불가능"
 excerpt: "알고보면 정답은 쉬운 곳에 있다."
@@ -14,7 +15,6 @@ tags:
 ---
 제목 그대로 table 요소와 <code>overflow</code> 속성의 공존은 불가능하다. 예시로 <code>display: table/table-cell</code> 등 너비값을 가진 table 요소에 <code>overflow</code> 속성을 선언하면 먹히지 않는 현상. 실무에서 이것 때문에 고생을 했는지라.. 열심히 구글링해서 찾아낸 해답은 의외로 간단했음.
 
-{:.h2}
 ## 우선 코드부터 봅시다.
 
 ```html

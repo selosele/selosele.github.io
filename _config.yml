@@ -105,7 +105,7 @@ author:
   name             : "sel"
   avatar_filter    : true
   avatar           : "/assets/images/avatar.png"
-  desc             : "ㅇㅇㅇ"
+  desc             : "삽질을 즐기는 웹 퍼블리셔"
   email            :
   links:
     - label: "Daejeon"

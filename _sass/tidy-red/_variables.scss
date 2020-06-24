@@ -1,0 +1,78 @@
+/* ==========================================================================
+   variables css
+   ========================================================================== */
+
+/* common layout */
+$layout_width: 1200px !default;
+
+// breakpoints (max-width)
+$normal_width: 1600px !default;
+$standard_width: 1420px !default;
+$large_width: 1200px !default;
+$big_width: 1024px !default;
+$medium_width: 767px !default;
+$small_width: 560px !default;
+$minimal_width: 480px !default;
+$tiny_width: 320px !default;
+
+// breakpoints (min-width)
+$min_normal_width: $normal_width + 1 !default;
+$min_standard_width: $standard_width + 1 !default;
+$min_large_width: $large_width + 1 !default;
+$min_big_width: $big_width + 1 !default;
+$min_medium_width: $medium_width + 1 !default;
+$min_small_width: $small_width + 1 !default;
+$min_minimal_width: $minimal_width + 1 !default;
+$min_tiny_width: $tiny_width + 1 !default;
+
+// calc
+$half_percentage: 50% !default;
+
+/* font */
+$default_font: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif !default;
+$default_font02: Monaco,Consolas,"Lucida Console",monospace !default;
+
+/* color */
+$main_color: #ce5050 !default; // main background color
+$sub_color01: #facfcf !default;
+$sub_color02: #f74545 !default;
+$sub_color03: #cc4444 !default; // main text color
+$sub_color04: #f07178 !default;
+$sub_color05: #ec9597 !default;
+$sub_color06: #c76060 !default;
+$black: #333 !default;
+$black02: #525252 !default;
+$black03: #1e1e1e !default;
+$grey: #898c8f !default;
+$grey02: #f4f5f6 !default;
+$grey03: #ababab !default;
+$grey04: #e8e8e8 !default;
+$grey05: #ccc !default;
+$grey06: #e6e6e6 !default;
+$grey07: #fbfbfb !default;
+$grey08: #eaeaea !default;
+$grey09: #b9b9b9 !default;
+$grey10: #6f6f6f !default;
+$green01: #538204 !default;
+$green02: #7da537 !default;
+$green03: #619409 !default;
+$green04: #c3e88d !default;
+$blue: #89ddff !default;
+$blue02: #82aaff !default;
+$blue03: #263238 !default;
+$blue04: #b2ccd6 !default;
+$blue05: #eff !default;
+$blue06: #eeffff !default;
+$purple: #c792ea !default;
+$purple02: #8455a5 !default;
+$orange: #f78c6c !default;
+$orange02: #ffcb6b !default;
+$orange03: #cc6b18 !default;
+$orange04: #ca9443 !default;
+$yellow: #d7ba7d !default;
+$twitter_color: #55acee !default;
+$facebook_color: #3b5998 !default;
+$linkedin_color: #007bb6 !default;
+
+/* transition */
+$standard_transition: all 0.3s !default;

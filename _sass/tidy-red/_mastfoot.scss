@@ -1,0 +1,69 @@
+/* ==========================================================================
+   mastfoot css
+   ========================================================================== */
+
+.mastfoot {
+  background: $grey08;
+  text-align: center;
+
+  &.toc-layout {
+    padding: 0 25vw;
+  }
+
+  &__inner-wrap {
+    display: inline-block;
+    position: relative;
+    margin: 0 1rem;
+    padding: 2.5rem 0;
+
+    @media(max-width: $small_width) {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  a {
+    @media(min-width: $min_large_width) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .move-to-top {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #fff;
+    border: 1px solid $main_color;
+    border-radius: 50%;
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 2rem;
+      z-index: 1;
+      margin: auto 0;
+    }
+
+    svg {
+      stroke: $black;
+      stroke-width: 8px;
+    }
+  }
+
+  &__copyright {
+    line-height: 1.5;
+    font-size: 0.8rem;
+    color: $black;
+  }
+}

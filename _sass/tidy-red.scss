@@ -1,0 +1,16 @@
+/* core CSS */
+@import "tidy-red/reset",
+        "tidy-red/variables",
+        "tidy-red/mixins",
+        "tidy-red/base",
+        "tidy-red/syntax",
+        "tidy-red/components",
+        "tidy-red/print";
+
+/* layout CSS */
+@import "tidy-red/masthead",
+        "tidy-red/archive",
+        "tidy-red/page",
+        "tidy-red/search",
+        "tidy-red/navigation",
+        "tidy-red/mastfoot";

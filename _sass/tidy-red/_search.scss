@@ -1,0 +1,150 @@
+/* ==========================================================================
+   search css
+   ========================================================================== */
+
+.search-content {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 99;
+  padding: 2.5rem 3%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+
+  &__inner-wrap {
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+    padding: 4rem 2.5rem;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: rgba(0,0,0,0.1) 10px 10px 10px;
+
+    @media(max-width: $large_width) {
+      padding: 3rem 2.5rem 2.5rem 2.5rem;
+    }
+
+    @media(max-width: $small_width) {
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+  }
+
+  form {
+    margin: 1rem 0;
+
+    @media(min-width: $min_large_width) {
+      position: relative;
+      padding-left: 6rem;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: url(/assets/images/sprite.png) no-repeat -95px -5px;
+      }
+    }
+  }
+
+  input[type="search"] {
+    width: 100%;
+    height: 5rem;
+    padding: 0 1rem;
+    border: 0;
+    color: $black02;
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 5rem;
+
+    @media(max-width: $medium_width) {
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 1.5rem;
+    }
+
+    @media(max-width: $small_width) {
+      height: 2rem;
+      line-height: 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  .results {
+    &__found {
+      margin: 2rem 0;
+      color: $black02;
+      font-size: 0.9rem;
+    }
+  }
+
+  .search__close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    
+    .ico {
+      display: block;
+      position: relative;
+      transform: rotate(45deg);
+      width: 1.3rem;
+      height: 1px;
+      margin: auto;
+      background: $sub_color03;
+
+      &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         right: 0;
+         transform: rotate(90deg);
+         width: 100%;
+         height: 100%;
+         background: inherit;
+      }
+    }
+  }
+
+  .list__item {
+
+    @media (min-width: $min_medium_width) {
+      + .list__item {
+        margin-top: 1.8rem;
+      }
+
+      .archive__item {
+        padding: 1rem 1.5rem;
+        border: 1px solid $grey05;
+        border-radius: 10px;
+
+        &:hover {
+          border-color: $main_color;
+        }
+      }
+
+      + .list__item {
+          .archive__item-title a:before {
+            border-top: 0;
+          }
+      }
+    }
+
+    @media (max-width: $medium_width) {
+      .archive__item {
+        padding-bottom: 1.3rem;
+        padding-top: 1.3rem;
+      }
+    }
+  }
+}

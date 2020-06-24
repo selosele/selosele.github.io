@@ -1,0 +1,21 @@
+---
+layout: archive
+pagination:
+  enabled: true
+---
+
+{{ content }}
+
+<h2 class="archive__subtitle {% if page.layout == 'home' %}visually-hidden{% endif %}">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% for post in paginator.posts %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% include paginator.html %}

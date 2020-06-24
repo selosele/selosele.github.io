@@ -1,0 +1,26 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="{% if site.scrollbar_style %}cutom-scrollbar{% endif %}">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include skip-links.html %}
+    {% include masthead.html %}
+
+    {{ content }}
+
+    <footer class="mastfoot" id="mastfoot">
+      <div class="mastfoot__inner-wrap">
+        {% include mastfoot.html %}
+      </div>
+    </footer>
+
+    {% include layer.html %}
+    {% include scripts.html %}
+
+  </body>
+</html>

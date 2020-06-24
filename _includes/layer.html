@@ -1,0 +1,54 @@
+{% if site.search == true %}
+  <div class="search-content" aria-hidden="true">
+    {% include search/search_form.html %}
+  </div>
+{% endif %}
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign important_post_arr = site.posts | where: "important", "true" %}
+
+<div class="side-menu" aria-hidden="true">
+  <nav class="menu__layer" id="primary-nav" aria-labelledby="nav-title">
+    <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
+    <ul role="menu">
+      {%- for link in site.data.navigation.main -%}
+      {%- if link.url contains '://' -%}
+        {%- assign url = link.url -%}
+      {%- else -%}
+        {%- assign url = link.url | relative_url -%}
+      {%- endif -%}
+      <li role="presentation">
+        <a href="{{ url }}" {% if link.description %}title="{{ link.description }}" {% endif %} role="menuitem">{{ link.title }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  
+    <h2>{{ site.data.ui-text[site.locale].menu_categories | default: 'Categories' }}</h2>
+    <ul class="menu__grid-list">
+      {% for i in (1..categories_max) reversed %}
+      {% for category in site.categories %}
+      {% if category[1].size == i %}
+      <li>
+        <a href="/category-list/#{{ category[0] }}">{{ category[0] }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </ul>
+    
+    <button type="button" class="menu__close" aria-haspopup="menu" aria-controls="primary-nav" aria-expanded="true">
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_close_label | default: 'Close' }}</span>
+      <span class="ico" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+<div class="loading-wrapper" aria-hidden="true">
+  <div class="loading__bar"></div>
+</div>

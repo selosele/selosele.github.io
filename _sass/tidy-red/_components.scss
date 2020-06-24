@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Ui components css
+   ========================================================================== */
+
+/* Tab */
+.tablist {
+   display: grid;
+   margin: 1rem 0;
+
+   &__tab {
+      padding: 0.8rem;
+      border-bottom: 0.15rem solid $grey05;
+      background: none;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.3;
+      transition: border-bottom 0.3s;
+
+      &:nth-child(2) {
+         grid-column-start: 2;
+      }
+
+      @media (min-width: $min_minimal_width) {
+         &:nth-child(3) {
+            grid-column-start: 3;
+         }
+      }
+
+      &:hover {
+         font-weight: 700;
+      }
+
+      &.tab--active {
+         border-color: $main_color;
+         font-weight: 700;
+      }
+   }
+}
+
+.tabpanel {
+   display: none;
+
+   &--active {
+      display: block;
+   }
+}
+
+.page__content {
+
+   /* title */
+   h2:not(.toc__title) {
+      @include heading($margin: 1.5rem 0 1rem 0);
+      font-size: 1.55rem;
+   }
+
+   h3 {
+      @include heading();
+      font-size: 1.45rem;
+   }
+
+   h4 {
+      @include heading();
+      font-size: 1.35rem;
+   }
+
+   h5 {
+      @include heading();
+      font-size: 1.25rem;
+   }
+
+   h6 {
+      @include heading();
+      font-size: 1.15rem;
+   }
+
+   img {
+      display: block;
+      margin: 0 auto;
+      box-shadow: rgba(0,0,0,0.4) 3px 3px 20px 0;
+
+      + em {
+         display: block;
+         @include figcaption();
+      }
+   }
+}
+
+.heading-link {
+   margin-right: 0.2rem;
+
+   &:before {
+      content: "\2711";
+      display: inline-block;
+      transform: rotate(90deg);
+      color: $main_color;
+      font-weight: 400;
+      letter-spacing: normal;
+      line-height: 1;
+   }
+}
+
+/* Image */
+.page {
+   &__figure {
+      &.float {
+         &--left {
+            @media (min-width: $min_large_width) {
+               float: left;
+               margin-right: 3rem;
+            }
+         }
+
+         &--right {
+            @media (min-width: $min_large_width) {
+               float: right;
+               margin-left: 3rem;
+            }
+         }
+      }
+   }
+
+   &__figcaption {
+      @include figcaption();
+   }
+}
+
+/* Text */
+.color {
+   &--red {
+      color: $sub_color03 !important;
+   }
+
+   &--green {
+      color: $green01 !important;
+   }
+}
+
+.txt--attention {
+   &:before {
+      content: "\2755";
+      margin-right: 0.4rem;
+      padding: 5px 0.6rem;
+      background: $sub_color03;
+      border-radius: 10px;
+      font-weight: 700;
+   }
+
+   &2 {
+      &:before {
+         content: "\2755";
+         margin-right: 0.4rem;
+         font-size: 1.1rem;
+         font-weight: 700;
+      }
+   }
+}
+
+@media (max-width: $large_width) {
+   .abbr__tooltip {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: max-content;
+      height: auto;
+      padding: 0.5rem;
+      background: #fff;
+      box-shadow: rgba(0,0,0,0.2) 1px 2px 4px 0;
+      font-size: 0.9rem;
+   }
+
+   abbr[title] {
+      &.tooltip--visible {
+         .abbr__tooltip {
+            display: block;
+         }
+      }
+   }
+}
+
+hr {
+   margin: 0.5rem 0;
+   border: 0;
+   border-top: 1px solid $grey06;
+}
+
+/* button */
+.btn {
+   display: inline-block;
+   padding: 0.6rem 1rem;
+   background: $grey04;
+   color: $black03;
+
+   & ~ & {
+      margin-left: 0.7rem;
+   }
+}
+
+.page__content {
+   p {
+      > .btn {
+         &:only-child {
+            display: block;
+            max-width: max-content;
+            margin: 0 auto;
+         }
+      }
+   }
+}
+
+/* etc. */
+.styleguide__pre-wrapper,
+.pre--example {
+   margin: 2rem 0;
+   padding: 1rem;
+   border-top: 1px solid $black02;
+   border-bottom: 1px solid $black02;
+   background: $grey02;
+
+   hr {
+      border-color: $grey;
+   }
+}
+
+.cont-box {
+   margin: 2rem 0;
+   padding: 2rem 1rem;
+
+   &__tit {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.5;
+
+      + {
+         ul, ol {
+            margin-top: 0;
+         }
+      }
+   }
+
+   > {
+      ul, ol {
+         &:only-of-type {
+            margin-top: 0;
+         }
+      }
+   }
+
+   ul, ol {
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   &.type1 {
+      border: 1px solid $grey05;
+   }
+
+   @media (min-width: $min_large_width) {
+      min-height: 7rem;
+
+      &.ico {
+         position: relative;
+         padding-left: 7rem;
+         
+         &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 30px;
+            left: 1.5rem;
+            width: 80px;
+            height: 80px;
+            background: url(/assets/images/sprite.png) no-repeat -5px -5px;
+         }
+      }
+   }
+}

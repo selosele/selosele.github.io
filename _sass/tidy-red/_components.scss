@@ -102,6 +102,8 @@
 /* Image */
 .page {
    &__figure {
+      margin-bottom: 1.5rem;
+      
       &.float {
          &--left {
             @media (min-width: $min_large_width) {

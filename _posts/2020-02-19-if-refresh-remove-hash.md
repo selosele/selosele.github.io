@@ -40,7 +40,7 @@ function refreshRemoveHash() {
 }
 refreshRemoveHash();
 ```
-그래서 &ldquo;페이지가 로드되었을 때[^1]&rdquo; 실행되는 함수를 만들었다. jQuery 코드는 대부분 모든 DOM이 생성되었을 때, 즉 <code>$(document).ready</code> 함수 내부에 작성하는 방식이 사용되므로 <code>if (document.readyState === "complete")</code>[^2] 이런거 안 써도 됨.
+그래서 &ldquo;페이지가 로드되었을 때[^1]&rdquo; 실행되는 함수를 만들었다. jQuery 코드는 대부분 모든 DOM이 생성되었을 때, 즉 ```$(document).ready```{:.language-javascript} 함수 내부에 작성하는 방식이 사용되므로 ```if (document.readyState === "complete")```{:.language-javascript}[^2] 이런거 안 써도 됨.
 
 근데 한글 감지가 안되서 속이 터지는 중... 어디서부터 틀린 걸까........
 

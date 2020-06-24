@@ -21,6 +21,8 @@ tags:
 
 참고로 나 혼자만 쓰려고 만드는 거.....-_-
 
+200624, 완성 후 현재 저장소에 fork 하였음.
+
 <div class="cont-box type1 ico mt--standard">
   <h2 class="cont-box__tit">기본정보</h2>
   <ul class="bu-list--default">

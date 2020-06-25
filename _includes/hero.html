@@ -47,22 +47,5 @@
       {% if page.date %}
         <p class="page__date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></p>
       {% endif %}
-      {% if page.header.cta_url %}
-        <p><a href="{{ cta_path }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
-      {% endif %}
-      {% if page.header.actions %}
-        <p>
-        {% for action in page.header.actions %}
-          {% if action.url contains "://" %}
-            {% assign url = action.url %}
-          {% else %}
-            {% assign url = action.url | relative_url %}
-          {% endif %}
-          <a href="{{ url }}" class="btn btn--light-outline btn--large">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
-        {% endfor %}
-      {% endif %}
     </div>
-  {% if page.header.caption %}
-    <span class="hero__caption">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-  {% endif %}
 </div>

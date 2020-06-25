@@ -90,8 +90,6 @@
 
             .author__name {
                @media (min-width: $min_small_width) {
-                  text-align: left;
-
                   &:before {
                      content: "";
                      display: block;
@@ -139,10 +137,10 @@
          border-bottom-width: 1px;
          font-size: 2.7rem;
          font-weight: 400;
-         text-align: center;
 
          @media (max-width: $small_width) {
             font-size: 2.4rem;
+            text-align: center;
          }
       }
 

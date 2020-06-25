@@ -54,6 +54,14 @@ a, button {
    @include focus();
 }
 
+strong {
+   font-weight: 700;
+}
+
+em {
+   font-style: italic;
+}
+
 small {
    font-size: smaller;
 }

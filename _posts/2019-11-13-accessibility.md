@@ -5,7 +5,7 @@ title: "우리가 무의식적으로 즐겨 쓰는, 접근성에 위배되는 �
 excerpt: "웹 접근성을 준수합시다."
 header:
   overlay_image: /assets/images/thumb/accessibility_thumb01.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 categories:
     - web-accessibility
 tags:
@@ -13,7 +13,6 @@ tags:
     - html
     - css
 toc: true
-toc_sticky: true
 ---
 우리가 무의식적으로 즐겨 쓰는, 접근성에 위배되는 코딩 방식들이 있음. 매우 위험한 방식이니 반드시 짚고 넘어갑시다.
 
@@ -30,10 +29,10 @@ toc_sticky: true
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## font-size: 0
-IR 기법으로서 자주 사용되는 속성인데, 예시로 로고를 background-image로 넣고 숨김 텍스트를 <code>font-size: 0</code>으로 처리. PC 스크린리더에서는 읽히지만 아이폰 전용 스크린리더인 보이스오버에서는 읽히지 않고 넘어간다.
+IR 기법으로서 자주 사용되는 속성인데, 예시로 로고를 background-image로 넣고 숨김 텍스트를 ```font-size: 0```{:.language-css}으로 처리. PC 스크린리더에서는 읽히지만 아이폰 전용 스크린리더인 보이스오버에서는 읽히지 않고 넘어간다.
 
-또한 inline formatting context가 가지는 공백을 제거하기 위해 부모에 <code>font-size: 0</code>을 주고 다시 자식에 원래 font-size를 주는 경우. 일단 보이스오버에서 테스트 결과 읽히는 것으로 판단되지만 안전을 위해 가급적이면 사용하지 말자. 나는 margin 음수값을 사용하는데, <code>font-size: 16px</code> 기준으로 약 4px만큼의 여백이 생기니 <code>margin-left: -4px</code>을 주면 깔끔해짐. 솔직히 구글에 인라인블록 공백이라고 검색만 해도 여러가지 방법이 나오는데. 지금까지 써왔으니까, 편하니까 등등의 이유로 접근성을 위배하지맙시다~
+또한 inline formatting context가 가지는 공백을 제거하기 위해 부모에 ```font-size: 0```{:.language-css}을 주고 다시 자식에 원래 font-size를 주는 경우. 일단 보이스오버에서 테스트 결과 읽히는 것으로 판단되지만 안전을 위해 가급적이면 사용하지 말자. 나는 margin 음수값을 사용하는데, ```font-size: 16px```{:.language-css} 기준으로 약 4px만큼의 여백이 생기니 ```margin-left: -4px```{:.language-css}을 주면 깔끔해짐. 솔직히 구글에 인라인블록 공백이라고 검색만 해도 여러가지 방법이 나오는데. 지금까지 써왔으니까, 편하니까 등등의 이유로 접근성을 위배하지맙시다~
 
-근데 자바스크립트로 공백값을 구해서 margin-left에 값을 대입하는 함수를 만들면 되지 않을까 라는 생각이 2020년 2월 13일 뇌리를 스쳤다..... 솔직히 <code>font-size</code>가 줄어들 때마다 margin 음수값을 변경해줘야 하니 반응형 작업이 고될 것이기에, 반드시 이런 스크립트가 필요한 것이다. 연구해봐야겠음.
+근데 자바스크립트로 공백값을 구해서 margin-left에 값을 대입하는 함수를 만들면 되지 않을까 라는 생각이 2020년 2월 13일 뇌리를 스쳤다..... 솔직히 font-size가 줄어들 때마다 margin 음수값을 변경해줘야 하니 반응형 작업이 고될 것이기에, 반드시 이런 스크립트가 필요한 것이다. 연구해봐야겠음.
 
-2020/02/19, <a href="/2020/02/19/white-space/" class="bu-link2">연구 시작~</a>
+2020/02/19, [연구 시작~](/2020/02/19/white-space/)

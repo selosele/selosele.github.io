@@ -5,7 +5,7 @@ title: "Javascript 외부 함수 밖에서 내부 함수 실행하기"
 excerpt: "간단하지만 아직 충분히 이해되지 않았음"
 header:
   overlay_image: /assets/images/thumb/js_thumb02.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-02-12 00:46
 categories:
     - javascript
@@ -21,12 +21,8 @@ tags:
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-<div class="cont-box type1 mt--normal">
-  <ol class="bu-list--num type2">
-    <li><em class="num">1</em>외부 함수 내에서 내부 함수를 반환.</li>
-    <li><em class="num">2</em>외부 함수 밖에서 변수 생성 후 외부 함수를 저장.</li>
-    <li><em class="num">3</em>저장된 함수 실행.</li>
-  </ol>
-</div>
+1. 외부 함수 내에서 내부 함수를 반환.
+2. 외부 함수 밖에서 변수 생성 후 외부 함수를 저장.
+3. 저장된 함수 실행.
 
 완벽히 이해될 때까지 화이팅~

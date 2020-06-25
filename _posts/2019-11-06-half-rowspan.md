@@ -5,7 +5,7 @@ title: "반쪽짜리 rowspan......"
 excerpt: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
 header:
   overlay_image: /assets/images/thumb/html_thumb01.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 categories:
     - html
 tags:
@@ -15,7 +15,7 @@ tags:
 ---
 rowspan이 애매하게 걸쳐 있는 테이블 디자인.
 
-<table class="mt--relativeA">
+<table>
     <tbody>
         <tr>
             <td rowspan="2">2</td>

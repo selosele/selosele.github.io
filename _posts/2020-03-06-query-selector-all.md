@@ -5,7 +5,7 @@ title: "querySelectorAll에 대해 제대로 알고 쓰자"
 excerpt: "jQuery적 사고방식을 지양해야"
 header:
   overlay_image: /assets/images/thumb/js_thumb02.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-03-06 23:45
 categories:
     - javascript
@@ -53,13 +53,5 @@ myName("sel");
 
 블로그 JS 대부분을 jQuery로 작업해왔고, jQuery적인 사고방식에 물들어 있던 나에게 이 쉬운 논리가 원활히 이해될리는 만무했을 것임. 의존적인 코딩 습관은 매우 위험한 것이다~
 
-<div class="cont-box type1 ico mt--normal">
-    <ul class="bu-list1">
-        <li>
-            <a href="https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll" target="_blank" title="새창열림" class="bu-link2">참고 링크 1</a>
-        </li>
-        <li>
-            <a href="https://developer.mozilla.org/ko/docs/Web/API/NodeList" target="_blank" title="새창열림" class="bu-link2">참고 링크 2</a>
-        </li>
-    </ul>
-</div>
+* [참고 링크 1](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"}
+* [참고 링크 2](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"}

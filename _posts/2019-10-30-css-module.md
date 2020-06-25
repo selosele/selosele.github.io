@@ -6,6 +6,7 @@ excerpt: "모듈화는 CSS 중복을 제거하고 클래스의 재사용성을 �
 header:
   overlay_image: /assets/images/thumb/css_thumb01.png
   overlay_filter: 0.3
+date: 2019-10-30 22:12
 categories:
     - css
 tags:

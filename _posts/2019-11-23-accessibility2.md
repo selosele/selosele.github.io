@@ -6,6 +6,7 @@ excerpt: "그동안 스크린리더에 대해 막연하게만 알고 있었다."
 header:
   overlay_image: /assets/images/thumb/screen-reader_thumb01.png
   overlay_filter: 0.5
+date: 2019-11-23 22:12
 categories:
     - web-accessibility
 tags:

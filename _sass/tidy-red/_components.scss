@@ -106,14 +106,14 @@
       
       &.float {
          &--left {
-            @media (min-width: $min_large_width) {
+            @media (min-width: $min_medium_width) {
                float: left;
                margin-right: 3rem;
             }
          }
 
          &--right {
-            @media (min-width: $min_large_width) {
+            @media (min-width: $min_medium_width) {
                float: right;
                margin-left: 3rem;
             }
@@ -162,14 +162,16 @@
       display: none;
       position: absolute;
       top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      z-index: 1;
       width: min-content;
+      max-width: 50vw;
       height: auto;
       padding: 0.5rem;
       background: #fff;
       box-shadow: rgba(0,0,0,0.2) 1px 2px 4px 0;
       font-size: 0.9rem;
+      text-align: center;
    }
 
    abbr[title] {

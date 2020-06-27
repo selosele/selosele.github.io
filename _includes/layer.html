@@ -11,8 +11,6 @@
   {% endif %}
 {% endfor %}
 
-{% assign important_post_arr = site.posts | where: "important", "true" %}
-
 <div class="side-menu" aria-hidden="true">
   <nav class="menu__layer" id="primary-nav" aria-labelledby="nav-title">
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>

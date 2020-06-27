@@ -5,7 +5,7 @@ title_separator          : "-"
 subtitle                 : "이런저런 이야기"
 name                     : "sel"
 description              : "tidy-red jekyll theme"
-url                      : https://selosele.github.io
+url                      : "https://selosele.github.io"
 baseurl                  : 
 repository               : # GitHub username/repo-name
 favicon                  : false
@@ -100,9 +100,9 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:dmitry762@naver.com
-    # - label: "Website"
-    #   icon: "fas fa-fw fa-link"
-    #   url: "https://your-website.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://selosele.github.io"
     # - label: "Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
     #   url: "https://twitter.com/"

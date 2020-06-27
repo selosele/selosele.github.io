@@ -104,7 +104,7 @@ $(function() {
     moveToTopFixed(".layout--categories .mastfoot .move-to-top", ".content-wrapper");
 
     // 이미지 정렬
-    alignImg(".author__avatar");
+    $(".author__avatar").alignImg();
 
     // inline 요소 여백 제거
     removeWhiteSpace(".archive__item, .pagination, .pagination ul, .page__share, .page__taxonomy, .keyword-wrapper, .page__item-wrapper, .author__links");

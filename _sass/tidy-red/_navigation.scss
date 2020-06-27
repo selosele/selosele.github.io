@@ -115,10 +115,11 @@
 }
 
 .menu__grid-list {
-   display: grid;
-   grid-template-columns: 50% 50%;
+   @include clearfix();
 
    li {
+      float: left;
+      width: 50%;
       margin: 0.8rem 0;
       padding-right: 2rem;
    }

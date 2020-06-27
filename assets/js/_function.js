@@ -12,6 +12,21 @@
             if (!kor.test($(this).text())) $(this).addClass(cls);
         });
     }
+
+    // 이미지 정렬
+    $.fn.alignImg = function() {
+        return this.each(function() {
+            var img = $(this).find("img"),
+                imgW = img.width(),
+                imgH = img.height();
+
+            if (imgW > imgH) {
+                img.removeClass("image--vertical").addClass("image--horizontal");
+            } else {
+                img.removeClass("image--horizontal").addClass("image--vertical");
+            }
+        });
+    }
     
 })($);
 
@@ -34,19 +49,6 @@ function removeWhiteSpace(elem) {
     $(elem).contents().filter(function() {
         if (this.nodeType === 3) return (!/\S/.test(this.nodeValue));
     }).remove();
-}
-
-// 이미지 정렬
-function alignImg(elem) {
-    var img = $(elem).find("img"),
-        imgW = img.width(),
-        imgH = img.height();
-
-    if (imgW > imgH) {
-        img.removeClass("image--vertical").addClass("image--horizontal");
-    } else {
-        img.removeClass("image--horizontal").addClass("image--vertical");
-    }
 }
 
 // 빈 요소 제거

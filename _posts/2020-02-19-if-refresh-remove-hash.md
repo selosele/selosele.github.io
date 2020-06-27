@@ -5,7 +5,7 @@ title: "페이지 새로고침 시 URL의 hash 제거하기"
 excerpt: ""
 header:
   overlay_image: /assets/images/thumb/refresh_thumb01.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-02-19 23:34
 categories:
     - javascript

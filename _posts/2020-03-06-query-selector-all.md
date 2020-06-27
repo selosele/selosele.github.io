@@ -45,8 +45,6 @@ myName("sel");
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-<hr>
-
 내가 해당 코드를 짜면서 했던 생각은, &ldquo;querySelectorAll은 선택한 요소와 일치하는 모든 NodeList를 반환하니까, jQuery에서 <code>$("p")</code>라고 쓰듯이 비슷하게 작성하면 될 것&rdquo;이었음.
 
 이게 멍청한 생각이었음을 깨달은 것은 querySelectorAll이 선택한 요소를 배열로 가져온다는 점을 이해한 순간.....

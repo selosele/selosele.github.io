@@ -29,8 +29,8 @@ reset CSS를 작성할 때 요소의 border를 없애고자 사용하는 ```bord
 1. 모든 input 요소에 ```border: 2px solid #333```{:.language-css} 선언.
 2. ```border: 0```{:.language-css}을 선언한 input에 ```border-style: dashed```{:.language-css}를 선언하면 통하지 않음.
 3. ```border: none```{:.language-css}을 선언한 input에 ```border-style: dashed```{:.language-css}를 선언하면 통함.
-4. ```border-style```{:.language-css}은 ```border: none```{:.language-css}보다 우선순위가 높아서 이런 현상이 발생.
-5. ```border-style```{:.language-css} 다음에 ```border: none```{:.language-css}을 선언하면 캐스케이딩 원칙에 따라 후자가 적용됨.
+4. border-style은 ```border: none```{:.language-css}보다 우선순위가 높아서 이런 현상이 발생.
+5. border-style 다음에 ```border: none```{:.language-css}을 선언하면 캐스케이딩 원칙에 따라 후자가 적용됨.
 
 ---
 

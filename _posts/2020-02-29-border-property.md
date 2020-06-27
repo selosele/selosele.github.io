@@ -24,8 +24,6 @@ reset CSS를 작성할 때 요소의 border를 없애고자 사용하는 ```bord
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
----
-
 1. 모든 input 요소에 ```border: 2px solid #333```{:.language-css} 선언.
 2. ```border: 0```{:.language-css}을 선언한 input에 ```border-style: dashed```{:.language-css}를 선언하면 통하지 않음.
 3. ```border: none```{:.language-css}을 선언한 input에 ```border-style: dashed```{:.language-css}를 선언하면 통함.

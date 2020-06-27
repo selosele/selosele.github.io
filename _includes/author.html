@@ -1,5 +1,3 @@
-{% capture url_path %}{{site.url}}{{page.url}}{% endcapture %}
-
 {% if site.author.avatar %}
 <div class="author__avatar" aria-hidden="true">
   <div class="author__image-wrapper">
@@ -16,7 +14,7 @@
       {% for link in site.author.links %}
         {% if link.label and link.url %}
         <li {% if site.author.links.size == 1 %}role="presentation"{% endif %}>
-          <a href="{{ link.url }}" target="_blank" rel="nofollow" {% if link.url == url_path %}aria-current='page'{% endif %}><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> <span class="visually-hidden">{{ link.label }}</span></a>
+          <a href="{{ link.url }}" target="_blank" rel="nofollow"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> <span class="visually-hidden">{{ link.label }}</span></a>
         </li>
         {% endif %}
       {% endfor %}

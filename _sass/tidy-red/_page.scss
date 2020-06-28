@@ -14,18 +14,6 @@
    }
 }
 
-.layout--categories,
-.layout--tags {
-   .content-wrapper {
-      @media (min-width: $min_large_width) {
-         width: auto;
-         max-width: max-content;
-         margin-left: 32vw;
-         margin-right: 8vw;
-      }
-   }
-}
-
 .post {
    &-item {
       @include post_item();

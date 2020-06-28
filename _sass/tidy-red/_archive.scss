@@ -232,34 +232,32 @@
    }
 }
 
-/* posts by year */
-.year {
+/* post archive */
+.archive {
    &__skip-link {
       @include skip_links();
    }
 
-   &__button-wrapper {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
+   &__btn {
+      display: block;
+      width: 100%;
+      padding: 1.9rem 1rem;
       border-bottom: 1px dashed $grey;
-   }
-
-   &__button {
-      padding: 1rem;
       background: none;
       font-size: 1rem;
       color: $black;
+      text-align: left;
 
       span {
          margin-right: 0.5rem;
          color: $sub_color03;
          font-size: 1.7rem;
-         font-style: italic;
       }
    }
 
-   &__list {
+   &__post-list {
       display: none;
+      margin-top: 2rem;
       opacity: 0;
 
       ul {
@@ -292,5 +290,20 @@
             }
          }
       }
+   }
+}
+
+.posts-by-year {
+   .archive__btn {
+      span {
+         font-style: italic;
+      }
+   }
+}
+
+.tag-list {
+   .archive__btn {
+      font-size: 1.3rem;
+      font-style: italic;
    }
 }

@@ -114,27 +114,27 @@ $(function() {
 
 });
 
-// 연도별 포스트 펼쳐보기
+// post archive 목록 펼쳐보기
 $(function() {
 
-    var yearBtnElement = $(".year__button"),
-        yearListElement = $(".year__list");
+    var archiveBtnElement = $(".archive__btn"),
+        archiveListElement = $(".archive__post-list");
 
-    yearBtnElement.on("click", function() {
-        var yearListMatchElement = $("[aria-labelledby='"+$(this).attr("id")+"']");
+    archiveBtnElement.on("click", function() {
+        var archiveListMatchElement = $("[aria-labelledby='"+$(this).attr("id")+"']");
 
-        if (yearListMatchElement.css("display") !== "block") {
-            yearListElement
+        if (archiveListMatchElement.css("display") !== "block") {
+            archiveListElement
                 .removeAttr("style")
                 .attr("tabindex", "-1");
                 
-            yearListMatchElement
+            archiveListMatchElement
                 .css("display", "block")
                 .attr("tabindex", "0")
                 .stop()
                     .animate({"opacity": "1"}, 300);
         } else {
-            yearListElement
+            archiveListElement
                 .removeAttr("style")
                 .attr("tabindex", "-1");
         }
@@ -206,50 +206,6 @@ $(function() {
 
     initPostToc();
     $(window).resize(initPostToc);
-});
-
-// 태그/카테고리 페이지 목차
-$(function() {
-
-    function initTaxonomyToc() {
-        var tocElement = $(".taxonomy__index"),
-            tocRelativeElement = $(".content-wrapper");
-
-        if (!tocElement.length || !tocRelativeElement.length) return;
-
-        $(window).on("load scroll", function() {
-            var winTop = $(window).scrollTop(),
-                tocMatchSec = $(".taxonomy__section");
-
-            if (!tocMatchSec || $(window).outerWidth() <= 1200) return;
-
-            if (winTop >= tocRelativeElement.offset().top) {
-                tocElement
-                    .stop()
-                    .animate({
-                        "top": winTop + 50 + "px"
-                    }, 400);
-
-                tocMatchSec.each(function() {
-                    var t_id = $(this).attr("id");
-
-                    if (winTop >= $(this).offset().top - 1) {
-                        var t_anchor = tocElement.find("a"),
-                            t_match_anchor = tocElement.find("a[href='#"+t_id+"']");
-
-                        t_anchor.hasClass("toc--active") && t_anchor.removeClass("toc--active");
-                        !t_match_anchor.hasClass("toc--active") && t_match_anchor.addClass("toc--active");
-                    }
-                });
-
-            } else {
-                tocElement.css("top", "");
-            }
-        });
-    }
-    initTaxonomyToc();
-    $(window).resize(initTaxonomyToc);
-
 });
 
 // abbr

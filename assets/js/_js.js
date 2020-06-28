@@ -357,7 +357,7 @@ $(function() {
             }
         });
 
-        $("a[href*='/category-list/']:not(.menu__btn--more)").on("click", function() {
+        $("a[href*='/category-list/#']").on("click", function() {
             if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) {
                 menuClose();
             }

@@ -20,26 +20,24 @@ title: 카테고리
       {% for category in site.categories %}
         {% if category[1].size == i %}
         {% assign categoryPost = site.posts | where: "categories", category[0] %}
-        <article>
-          <button type="button" class="archive__btn" id="{{ category[0] }}"><span aria-hidden="true">#</span>{{ category[0] }}</button>
-          
-          <div class="archive__post-list" aria-labelledby="{{ category[0] }}">
-            <ul>
-              {% for post in categoryPost %}
-              <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>
-                <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
-              </li>
-              {% endfor %}
-            </ul>
+        <button type="button" class="archive__btn" id="{{ category[0] }}"><span aria-hidden="true">#</span>{{ category[0] }}</button>
+        
+        <div class="archive__post-list" aria-labelledby="{{ category[0] }}">
+          <ul>
+            {% for post in categoryPost %}
+            <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>
+              <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
+            </li>
+            {% endfor %}
+          </ul>
 
-            <a href="#skip-links" class="page__move-to-top direction--page-top">
-              <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
-              <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
-              </svg>
-            </a>
-          </div>
-        </article>
+          <a href="#skip-links" class="page__move-to-top direction--page-top">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
+            <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
+            </svg>
+          </a>
+        </div>
         {% endif %}
       {% endfor %}
     {% endfor %}

@@ -273,6 +273,7 @@ masthead:
   teaser: 
     bg: "/assets/images/mhead_bg8.jpg"
     filter: 0.3
+    blur: true
 
 # main navigation
 main_nav:

@@ -19,6 +19,11 @@
    }
 }
 
+// teaser blur
+@mixin teaser_blur_value($blur) {
+   filter: blur($blur);
+}
+
 // skip-links
 @mixin skip_links {
    color: #727272;

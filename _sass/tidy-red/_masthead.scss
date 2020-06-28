@@ -51,6 +51,23 @@
          background-position: center;
          background-size: cover;
       }
+
+      &.teaser--blur {
+         position: relative;
+         z-index: 1;
+
+         &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: inherit;
+         }
+      }
    }
 
    .author {
@@ -197,6 +214,7 @@
    position: absolute;
    top: 0;
    left: 0;
+   z-index: 2;
    width: 100%;
    height: auto;
    padding: 1.7rem 3vw;

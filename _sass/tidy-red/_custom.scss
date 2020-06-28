@@ -2,3 +2,12 @@
    custom css
    ========================================================================== */
 
+.masthead {
+   &__teaser {
+      &.teaser--blur {
+         &:before {
+            @include teaser_blur_value(3px);
+         }
+      }
+   }
+}

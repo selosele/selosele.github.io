@@ -31,19 +31,6 @@
 })($);
 
 /* 일반 함수 */
-// 맨위로 이동 버튼 위치고정
-function moveToTopFixed(elem, relativeElem) {
-    function initMoveToTop() {
-        if ($(window).scrollTop() >= $(relativeElem).offset().top) {
-            !$(elem).hasClass("move-to-top--fixed") && $(elem).addClass("move-to-top--fixed");
-        } else {
-            $(elem).hasClass("move-to-top--fixed") && $(elem).removeClass("move-to-top--fixed");
-        }
-    }
-    initMoveToTop();
-    $(window).scroll(initMoveToTop);
-}
-
 // inline 요소 여백 제거
 function removeWhiteSpace(elem) {
     $(elem).contents().filter(function() {

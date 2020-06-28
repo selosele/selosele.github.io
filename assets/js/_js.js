@@ -99,10 +99,6 @@ $(function() {
         }, 500);
     });
 
-    // 맨위로 이동 버튼 위치 고정
-    moveToTopFixed(".layout--tags .mastfoot .move-to-top", ".content-wrapper");
-    moveToTopFixed(".layout--categories .mastfoot .move-to-top", ".content-wrapper");
-
     // 이미지 정렬
     $(".author__avatar").alignImg();
 
@@ -110,7 +106,7 @@ $(function() {
     removeWhiteSpace(".archive__item, .pagination ul, .page__share, .keyword-wrapper, .author__links");
 
     // 빈 요소 제거
-    emptyElemRemove(".side-menu .menu__layer ul");
+    emptyElemRemove(".menu__layer ul");
 
 });
 
@@ -318,8 +314,12 @@ $(function() {
             });
         $(this).attr("aria-expanded", "true");
         $("body").addClass("overflow--hidden");
+        menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
-        !menuCurrentPage.is("[aria-current]") && menuCurrentPage.attr("aria-current", "page");
+        if (!menuCurrentPage.is("[aria-current]")) {
+            menuCurrentPage.attr("aria-current", "page");
+            menuCurrentPage.parent("li").addClass("menu--current-page");
+        }
 
         setTimeout(function() {
             menuELlayer.stop().animate({"right": "0"}, 400);
@@ -356,6 +356,12 @@ $(function() {
                 menu.css("display") === "block" && menuClose();
             }
         });
+
+        $("a[href*='/category-list/']:not(.menu__btn--more)").on("click", function() {
+            if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) {
+                menuClose();
+            }
+        });
     });
 
     function menuClose() {
@@ -376,7 +382,7 @@ $(function() {
         }, 400);
 
         menu.attr("aria-hidden", "true");
-        menuELopen.focus();
+        !$(location.hash).is(":focus") && menuELopen.focus();
     }
 
 });

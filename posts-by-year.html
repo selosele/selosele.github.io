@@ -10,15 +10,15 @@ title: Posts by year
 
 	<section class="page--default archive posts-by-year" itemprop="text">
 		{% assign yearOfPost = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
-		<nav>
-			<dl>
-				<dt class="visually-hidden">{{ site.data.ui-text[site.locale].post_by_year_skip_title }}</dt>
+		<nav class="skip-links">
+			<strong class="visually-hidden">{{ site.data.ui-text[site.locale].post_by_year_skip_title }}</strong>
+			<ul>
 				{% for year in yearOfPost %}
-				<dd>
+				<li>
 					<a href="#{{ year.name }}" class="archive__skip-link visually-hidden">{{ year.name }}{{ site.data.ui-text[site.locale].post_by_year_skip_link }}</a>
-				</dd>
+				</li>
 				{% endfor %}
-			</dl>
+			</ul>
 		</nav>
 
 		{% for year in yearOfPost %}

@@ -172,7 +172,7 @@
       }
 
       a {
-         &:not(.btn) {
+         &:not(.page__btn) {
             @media (min-width: $min_large_width) {
                &:hover {
                   text-decoration: underline;

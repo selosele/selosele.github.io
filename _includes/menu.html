@@ -8,7 +8,7 @@
 <div class="side-menu" aria-hidden="true">
   <nav class="menu__layer" id="primary-nav" aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement">
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
-    <ul class="menu__grid-list" role="menu">
+    <ul class="menu__list--grid" role="menu">
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
         {%- assign url = link.url -%}
@@ -21,8 +21,10 @@
       {%- endfor -%}
     </ul>
   
+    {% if site.categories.size > 0 %}
     <h2>{{ site.data.ui-text[site.locale].menu_categories | default: 'Categories' }}</h2>
-    <ul class="menu__grid-list">
+    {% endif %}
+    <ul class="menu__list--grid">
       {% for i in (1..categories_max) reversed %}
       {% for category in site.categories limit: 8 %}
       {% if category[1].size == i %}

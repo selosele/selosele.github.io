@@ -16,7 +16,7 @@ tags:
 
 ---
 
-[바로가기](https://mothereff.in/html-entities){:.btn}
+[바로가기](https://mothereff.in/html-entities){:.page__btn}
 
 ## 사용법
 

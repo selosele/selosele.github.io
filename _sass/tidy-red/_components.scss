@@ -190,7 +190,7 @@ hr {
 }
 
 /* button */
-.btn {
+.page__btn {
    display: inline-block;
    padding: 0.6rem 1rem;
    background: $grey04;
@@ -203,7 +203,7 @@ hr {
 
 .page__content {
    p {
-      > .btn {
+      > .page__btn {
          &:only-child {
             display: block;
             max-width: max-content;

@@ -157,14 +157,6 @@ $(function() {
         });
     });
 
-    $(document).keydown(function(e) {
-        var keyType = e.keyCode || e.which;
-
-        if ((e.altKey && keyType === 192) && !$(".toc--fixed").is(":focus")) {
-            $(".toc--fixed").focus();
-        } // alt + ~ 키 : 목차로 초점 이동
-    });
-
     function activatePostToc(toc, main) {
         if (!toc) return;
 
@@ -202,6 +194,42 @@ $(function() {
 
     initPostToc();
     $(window).resize(initPostToc);
+});
+
+// 포스트 목차 키보드 이벤트
+$(function() {
+
+    var tocTabble = $(".content-wrapper").find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tocTabbleFocusedLast;
+
+    tocTabble.keydown(function() {
+        tocTabbleFocusedLast = $(this);
+        return tocTabbleFocusedLast;
+
+    }).keydown(function(e) {
+        var keyType = e.keyCode || e.which;
+
+        if (e.altKey && keyType === 192) { // alt + ~ 키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+            $(".toc--fixed").focus().on("keydown", function(e) {
+                var keyType = e.keyCode || e.which;
+                if (e.altKey && keyType === 192) { // alt + ~ 키 : focusedLast로 초점 이동
+                    tocTabbleFocusedLast.focus();
+                }
+            });
+        }
+    });
+
+    $(document).keydown(function(e) {
+        var keyType = e.keyCode || e.which;
+
+        if (e.altKey && keyType === 192) { // alt + ~ 키 : 포스트에서 목차로 초점 이동
+            if (!$(".toc--fixed").is(":focus")) {
+                if (!tocTabbleFocusedLast || $(e.currentTarget).parents(".content-wrapper").length) {
+                    tocTabbleFocusedLast ? tocTabbleFocusedLast.focus() : $(".toc--fixed").focus();
+                }
+            }
+        }
+    });
 });
 
 // abbr

@@ -203,8 +203,7 @@ $(function() {
         tocTabbleFocusedLast;
 
     tocTabble.keydown(function() {
-        tocTabbleFocusedLast = $(this);
-        return tocTabbleFocusedLast;
+        return tocTabbleFocusedLast = $(this);
 
     }).keydown(function(e) {
         var keyType = e.keyCode || e.which;

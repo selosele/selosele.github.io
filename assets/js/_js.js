@@ -199,10 +199,11 @@ $(function() {
 // 포스트 목차 키보드 이벤트
 $(function() {
 
-    var tocTabble = $(".content-wrapper").find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+    var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper *"),
         tocTabbleFocusedLast;
 
-    tocTabble.keydown(function() {
+    tocTabbleNode.keydown(function() {
         return tocTabbleFocusedLast = $(this);
 
     }).keydown(function(e) {
@@ -221,12 +222,8 @@ $(function() {
     $(document).keydown(function(e) {
         var keyType = e.keyCode || e.which;
 
-        if (e.altKey && keyType === 192) { // alt + ~ 키 : 포스트에서 목차로 초점 이동
-            if (!$(".toc--fixed").is(":focus")) {
-                if (!tocTabbleFocusedLast || $(e.currentTarget).parents(".content-wrapper").length) {
-                    tocTabbleFocusedLast ? tocTabbleFocusedLast.focus() : $(".toc--fixed").focus();
-                }
-            }
+        if (e.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~ 키 : 포스트에서 목차로 초점 이동
+            if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
         }
     });
 });

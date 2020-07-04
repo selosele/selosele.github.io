@@ -1,6 +1,6 @@
 # Site Settings
 locale                   : "ko"
-title                    : "Sel의 퍼블일기"
+title                    : "Sel's dev story"
 title_separator          : "-"
 subtitle                 : "이런저런 이야기"
 name                     : "sel"

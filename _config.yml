@@ -7,7 +7,7 @@ name                     : "sel"
 description              : "tidy-red jekyll theme"
 url                      : "https://selosele.github.io"
 baseurl                  : 
-repository               : # GitHub username/repo-name
+repository               : "selosele/selosele.github.io"
 favicon                  : false
 words_per_minute         : 200
 comments:

@@ -50,27 +50,27 @@
    /* title */
    h2:not(.toc__title) {
       @include heading($margin: 1.5rem 0 1rem 0);
-      font-size: 1.7rem;
+      font-size: 1.85rem;
    }
 
    h3 {
       @include heading();
-      font-size: 1.6rem;
+      font-size: 1.5rem;
    }
 
    h4 {
       @include heading();
-      font-size: 1.5rem;
+      font-size: 1.3rem;
    }
 
    h5 {
       @include heading();
-      font-size: 1.4rem;
+      font-size: 1.15rem;
    }
 
    h6 {
       @include heading();
-      font-size: 1.3rem;
+      font-size: 1rem;
    }
 
    img {
@@ -89,9 +89,9 @@
    margin-right: 0.2rem;
 
    &:before {
-      content: "\2711";
+      content: "\2712";
       display: inline-block;
-      transform: rotate(90deg);
+      transform: rotate(45deg);
       color: $main_color;
       font-weight: 400;
       letter-spacing: normal;

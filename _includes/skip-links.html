@@ -1,14 +1,20 @@
 <nav class="skip-links" id="skip-links">
   <strong class="visually-hidden">{{ site.data.ui-text[site.locale].skip_links }}</strong>
   <ul>
+    {% if site.skip_links.to_nav %}
     <li>
       <a href="#site-nav" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_primary_nav }}</a>
     </li>
+    {% endif %}
+    {% if site.skip_links.to_content %}
     <li>
       <a href="#content" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_content }}</a>
     </li>
+    {% endif %}
+    {% if site.skip_links.to_mastfoot %}
     <li>
       <a href="#mastfoot" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_footer }}</a>
     </li>
+    {% endif %}
   </ul>
 </nav>

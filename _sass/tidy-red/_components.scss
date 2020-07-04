@@ -89,9 +89,8 @@
    margin-right: 0.2rem;
 
    &:before {
-      content: "\2712";
+      content: "\270E";
       display: inline-block;
-      transform: rotate(45deg);
       color: $main_color;
       font-weight: 400;
       letter-spacing: normal;

@@ -209,10 +209,10 @@ $(function() {
     }).keydown(function(e) {
         var keyType = e.keyCode || e.which;
 
-        if (e.altKey && keyType === 192) { // alt + ~ 키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+        if (e.altKey && keyType === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
             $(".toc--fixed").focus().on("keydown", function(e) {
                 var keyType = e.keyCode || e.which;
-                if (e.altKey && keyType === 192) { // alt + ~ 키 : focusedLast로 초점 이동
+                if (e.altKey && keyType === 192) { // alt + ~키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
             });
@@ -222,8 +222,12 @@ $(function() {
     $(document).keydown(function(e) {
         var keyType = e.keyCode || e.which;
 
-        if (e.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~ 키 : 포스트에서 목차로 초점 이동
+        if (e.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
             if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
+        }
+
+        if (e.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 현재 활성화된 목차 링크로 초점 이동
+            $(".toc--active").focus();
         }
     });
 });

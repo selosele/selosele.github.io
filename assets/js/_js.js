@@ -87,7 +87,7 @@ $(function() {
 
             t_anc.classList.add("heading-link");
             t_anc.href = "#" + t_id;
-            t_anc.title = t_id;
+            t_anc.title = t_id.replace(/-/g, " ");
             $(this).prepend(t_anc);
         }
     });

@@ -123,6 +123,27 @@
    &__figcaption {
       @include figcaption();
    }
+
+   &__image-container {
+      display: grid;
+      grid-gap: 1.8rem;
+      justify-content: center;
+
+      img {
+         display: inline-block;
+         margin: 0;
+
+         &:nth-child(2) {
+            grid-column-start: 2;
+         }
+
+         &:nth-child(3) {
+            @media (min-width: $min_medium_width) {
+               grid-column-start: 3;
+            }
+         }
+      }
+   }
 }
 
 /* Text */

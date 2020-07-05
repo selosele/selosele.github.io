@@ -282,24 +282,12 @@
    }
 
    &--pager {
-      display: block;
-      float: left;
-      width: 50%;
-      padding: 1.5rem;
+      display: table-cell;
+      padding: 1.3rem;
       border: 1px solid $grey05;
       font-size: 1rem;
       font-weight: 700;
       color: $grey;
-
-      & + & {
-         @media (min-width: $min_small_width) {
-            border-left: 0;
-         }
-
-         @media (max-width: $small_width) {
-            border-top: 0;
-         }
-      }
 
       &.disabled {
          color: $grey03;
@@ -311,11 +299,6 @@
          &:focus {
             color: $sub_color03;
          }
-      }
-
-      @media (max-width: $small_width) {
-         float: none;
-         width: auto;
       }
    }
 }

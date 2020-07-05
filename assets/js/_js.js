@@ -324,7 +324,7 @@ $(function() {
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        menuCurrentPage = $("a[href='"+window.location.pathname+"']");
+        menuCurrentPage = menu.find("a[href='"+window.location.pathname+"']");
 
     menuELopen.on("click", function() {
         // $("body")

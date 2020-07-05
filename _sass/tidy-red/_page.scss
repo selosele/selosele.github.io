@@ -191,12 +191,13 @@
       padding-top: 1.5rem;
       border-top: 1px solid $grey04;
       
-      @media(min-width: $min_small_width) {
+      @media (min-width: $min_small_width) {
          @include clearfix();
       }
    
       .author {
          &__avatar {
+            display: none;
             float: left;
             width: 6rem;
             height: 6rem;
@@ -204,14 +205,14 @@
             margin-bottom: 0.5rem;
             shape-outside: circle(50%);
       
-            @media(min-width: $min_small_width) {
+            @media (min-width: $min_small_width) {
                + .author__info-wrapper {
                   padding-top: 1.3rem;
                }
             }
    
-            @media(max-width: $small_width) {
-               display: none;
+            @media (min-width: $min_small_width) {
+               display: block;
             }
          }
    

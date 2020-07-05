@@ -15,7 +15,7 @@ title: Posts by year
 			<ul>
 				{% for year in yearOfPost %}
 				<li>
-					<a href="#{{ year.name }}" class="archive__skip-link visually-hidden">{{ year.name }}{{ site.data.ui-text[site.locale].post_by_year_skip_link }}</a>
+					<a href="#{{ year.name }}" class="visually-hidden">{{ year.name }}{{ site.data.ui-text[site.locale].post_by_year_skip_link }}</a>
 				</li>
 				{% endfor %}
 			</ul>

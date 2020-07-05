@@ -234,10 +234,6 @@
 
 /* post archive */
 .archive {
-   &__skip-link {
-      @include skip_links();
-   }
-
    &__btn {
       display: block;
       width: 100%;

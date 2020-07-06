@@ -43,7 +43,7 @@
    &__teaser {
       overflow: hidden;
       min-height: 22rem;
-      background-image: linear-gradient(to bottom, $sub_color05, $sub_color06, $orange04);
+      background-image: linear-gradient(45deg, $black02, $grey10, $grey11);
 
       &.teaser--image {
          background-image: none;

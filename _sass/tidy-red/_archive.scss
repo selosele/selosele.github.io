@@ -170,7 +170,7 @@
 .taxonomy {
    &__index {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 2rem;
       overflow-y: auto;
       max-height: 50vh;
@@ -222,8 +222,8 @@
          }
       }
 
-      @media (max-width: $medium_width) {
-         grid-template-columns: repeat(2, 1fr);
+      @media (min-width: $min_medium_width) {
+         grid-template-columns: repeat(3, 1fr)
       }
    }
 

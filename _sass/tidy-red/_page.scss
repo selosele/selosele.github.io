@@ -210,13 +210,11 @@
             shape-outside: circle(50%);
       
             @media (min-width: $min_small_width) {
+               display: block;
+
                + .author__info-wrapper {
                   padding-top: 1.3rem;
                }
-            }
-   
-            @media (min-width: $min_small_width) {
-               display: block;
             }
          }
    

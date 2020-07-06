@@ -4,16 +4,16 @@
 
 /* base element */
 html {
-   font-size: 20px;
+   font-size: 18px;
    -webkit-text-size-adjust: none;
    -webkit-font-smoothing: antialiased;
 
-   @media(max-width: $large_width) {
+   @media (min-width: $min_medium_width) {
       font-size: 19px;
    }
 
-   @media(max-width: $medium_width) {
-      font-size: 18px;
+   @media (min-width: $min_large_width) {
+      font-size: 20px;
    }
 }
 

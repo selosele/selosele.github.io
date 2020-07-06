@@ -19,99 +19,67 @@
     position: relative;
     overflow-y: auto;
     height: 100%;
-    padding: 4rem 2.5rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     border-radius: 8px;
     background: #fff;
     box-shadow: rgba(0,0,0,0.1) 10px 10px 10px;
 
-    @media(max-width: $large_width) {
+    @media (min-width: $min_small_width) {
       padding: 3rem 2.5rem 2.5rem 2.5rem;
     }
 
-    @media(max-width: $small_width) {
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
+    @media (min-width: $min_large_width) {
+      padding: 4rem 2.5rem;
     }
-  }
 
-  form {
-    margin: 1rem 0;
-
-    @media(min-width: $min_large_width) {
-      position: relative;
-      padding-left: 6rem;
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        background: url(/assets/images/sprite.png) no-repeat -95px -5px;
+    form {
+      margin: 1rem 0;
+  
+      @media (min-width: $min_large_width) {
+        position: relative;
+        padding-left: 6rem;
+  
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+          background: url(/assets/images/sprite.png) no-repeat -95px -5px;
+        }
       }
     }
-  }
 
-  input[type="search"] {
-    width: 100%;
-    height: 5rem;
-    padding: 0 1rem;
-    border: 0;
-    color: $black02;
-    font-size: 2rem;
-    font-weight: 200;
-    line-height: 5rem;
-
-    @media(max-width: $medium_width) {
-      height: 3rem;
-      line-height: 3rem;
-      font-size: 1.5rem;
-    }
-
-    @media(max-width: $small_width) {
+    input[type="search"] {
+      width: 100%;
       height: 2rem;
-      line-height: 2rem;
-      font-size: 1rem;
-    }
-  }
-
-  .results {
-    &__found {
-      margin: 2rem 0;
+      padding: 0 1rem;
+      border: 0;
       color: $black02;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-weight: 200;
+      line-height: 2rem;
+  
+      @media (min-width: $min_small_width) {
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: $min_medium_width) {
+        height: 5rem;
+        line-height: 5rem;
+        font-size: 2rem;
+      }
     }
-  }
-
-  .search__close {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    background: none;
-    
-    .ico {
-      display: block;
-      position: relative;
-      transform: rotate(45deg);
-      width: 1.3rem;
-      height: 1px;
-      margin: auto;
-      background: $sub_color03;
-
-      &:before {
-         content: "";
-         display: block;
-         position: absolute;
-         top: 0;
-         right: 0;
-         transform: rotate(90deg);
-         width: 100%;
-         height: 100%;
-         background: inherit;
+  
+    .results {
+      &__found {
+        margin: 2rem 0;
+        color: $black02;
+        font-size: 0.9rem;
       }
     }
   }
@@ -145,6 +113,38 @@
         padding-bottom: 1.3rem;
         padding-top: 1.3rem;
       }
+    }
+  }
+}
+
+.search__close {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  
+  .ico {
+    display: block;
+    position: relative;
+    transform: rotate(45deg);
+    width: 1.3rem;
+    height: 1px;
+    margin: auto;
+    background: $sub_color03;
+
+    &:before {
+       content: "";
+       display: block;
+       position: absolute;
+       top: 0;
+       right: 0;
+       transform: rotate(90deg);
+       width: 100%;
+       height: 100%;
+       background: inherit;
     }
   }
 }

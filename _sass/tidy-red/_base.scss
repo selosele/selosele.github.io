@@ -263,13 +263,6 @@ sup {
 
    .reversefootnote {
       color: $black02;
-
-      @media (min-width: $min_large_width) {
-         &:hover,
-         &:focus {
-            text-decoration: underline;
-         }
-      }
    }
 }
 

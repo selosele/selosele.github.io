@@ -4,17 +4,16 @@
 
 /* common layout */
 @mixin common_layout($max_width: $layout_width, $width: null, $margin: 0 auto) {
-   @if $width {
-      width: $width;
-   } @else {
-      max-width: $max_width;
+   @if $width == null {
+      width: 90%;
+      margin: $margin;
    }
-   margin: $margin;
 
-   @media(max-width: $standard_width) {
-      @if $width == null {
-         max-width: none;
-         width: 90%;
+   @media (min-width: $min_standard_width) {
+      @if $width {
+         width: $width;
+      } @else {
+         max-width: $max_width;
       }
    }
 }

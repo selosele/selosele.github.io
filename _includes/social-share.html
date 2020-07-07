@@ -1,6 +1,6 @@
-<section class="page__share" id="page-share">
+<section class="page__share" id="page-share" aria-labelledby="page-share-title">
   {% if site.data.ui-text[site.locale].share_on_label %}
-    <h2 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
+    <h2 class="page__share-title" id="page-share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
   {% endif %}
 
   <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn--twitter" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">

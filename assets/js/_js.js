@@ -129,10 +129,19 @@ $(function() {
                 .attr("tabindex", "0")
                 .stop()
                     .animate({"opacity": "1"}, 300);
+
+            $(this)
+                .attr("aria-expanded", "true")
+                .siblings(".archive__btn")
+                    .attr("aria-expanded", "false");
+
         } else {
             archiveListElement
                 .removeAttr("style")
                 .attr("tabindex", "-1");
+
+            archiveBtnElement
+                .attr("aria-expanded", "false");
         }
     });
 
@@ -449,7 +458,7 @@ $(function() {
     openBtn.click(function() {
         sInputValNotChanged = true;
 
-        $(this).attr("aria-expanded", "true");
+        $(this).add(closeBtn).attr("aria-expanded", "true");
         $("body").addClass("overflow--hidden");
         outerEL.attr("aria-hidden", "true");
         layer

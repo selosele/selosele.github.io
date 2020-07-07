@@ -1,5 +1,5 @@
-<nav class="skip-links" id="skip-links">
-  <strong class="visually-hidden">{{ site.data.ui-text[site.locale].skip_links }}</strong>
+<nav class="skip-links" id="skip-links" aria-labelledby="skip-link-title">
+  <strong class="visually-hidden" id="skip-link-title">{{ site.data.ui-text[site.locale].skip_links }}</strong>
   <ul>
     {% if site.skip_links.to_nav %}
     <li>

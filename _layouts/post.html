@@ -11,7 +11,7 @@ comments: true
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: '%B %d, %Y' }}">{% endif %}
 
-    <section class="page__content" id="page-content" itemprop="text">
+    <section class="page__content" id="page-content" aria-label="{{ page.title }}" itemprop="text">
       {% if page.toc %}
         <aside class="toc-wrapper" aria-labelledby="toc-title">
           <nav>
@@ -29,7 +29,7 @@ comments: true
       {% if site.data.ui-text[site.locale].meta_label %}
         <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
       {% endif %}
-      <section class="page__taxonomy">
+      <section class="page__taxonomy" aria-label="{{ site.data.ui-text[site.locale].tags_and_categories }}">
         {% include page__taxonomy.html %}
       </section>
 
@@ -38,7 +38,7 @@ comments: true
       {% endif %}
 
       {% if site.post.author %}
-        <section class="page__author">
+        <section class="page__author" aria-labelledby="author-name">
           {% include author.html %}
         </section>
       {% endif %}

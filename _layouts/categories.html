@@ -10,36 +10,38 @@ title: 카테고리
   {% endif %}
 {% endfor %}
 
-<div class="content-wrapper" id="content" role="main" itemscope>
-  <header>
-    <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
-  </header>
-
-  <section class="page--default archive tag-list" itemprop="text">
-    {% for i in (1..categories_max) reversed %}
-      {% for category in site.categories %}
-        {% if category[1].size == i %}
-        {% assign categoryPost = site.posts | where: "categories", category[0] %}
-        <button type="button" class="archive__btn" id="{{ category[0] }}"><span aria-hidden="true">#</span>{{ category[0] }}</button>
-        
-        <div class="archive__post-list" aria-labelledby="{{ category[0] }}">
-          <ul>
-            {% for post in categoryPost %}
-            <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>
-              <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
-            </li>
-            {% endfor %}
-          </ul>
-
-          <a href="#skip-links" class="page__move-to-top">
-            <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
-            <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
-            </svg>
-          </a>
-        </div>
-        {% endif %}
+<div class="content-wrapper" id="content" role="main">
+  <article aria-labelledby="page-title" itemscope>
+    <header>
+      <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
+    </header>
+  
+    <section class="page--default archive tag-list" aria-label="{{ page.title }}" itemprop="text">
+      {% for i in (1..categories_max) reversed %}
+        {% for category in site.categories %}
+          {% if category[1].size == i %}
+          {% assign categoryPost = site.posts | where: "categories", category[0] %}
+          <button type="button" class="archive__btn" id="{{ category[0] }}" aria-controls="{{ category[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }}</button>
+          
+          <article class="archive__post-list" id="{{ category[0] }}-list" aria-labelledby="{{ category[0] }}" role="listbox">
+            <ul>
+              {% for post in categoryPost %}
+              <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>
+                <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+  
+            <a href="#skip-links" class="page__move-to-top">
+              <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
+              <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
+              </svg>
+            </a>
+          </article>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
-    {% endfor %}
-  </section>
+    </section>
+  </article>
 </div>

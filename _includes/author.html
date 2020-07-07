@@ -5,8 +5,8 @@
   </div>
 </div>
 {% endif %}
-<div class="author__info-wrapper" itemscope>
-  <{% if page.layout != "post" %}strong{% else %}h2{% endif %} class="author__name" itemprop="name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
+<div class="author__info-wrapper" aria-labelledby="author-name" itemscope>
+  <{% if page.layout != "post" %}strong{% else %}h2{% endif %} class="author__name" id="author-name" itemprop="name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
   {% if site.author.desc %}<p class="author__desc" itemprop="description">{{ site.author.desc }}</p>{% endif %}
   {% if page.layout != "post" %}
     {% if site.author.links %}

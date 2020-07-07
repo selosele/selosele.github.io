@@ -4,12 +4,12 @@ title: Style guide
 ---
 
 <div class="content-wrapper" id="content" role="main">
-	<article itemscope>
+	<article aria-labelledby="page-title" itemscope>
 		<header>
 			<h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
 		</header>
 
-		<section class="page__content styleguide" itemprop="text">
+		<section class="page__content styleguide" aria-label="{{ page.title }}" itemprop="text">
 			<div class="tab-wrapper">
 				<div class="tablist" role="tablist">
 					<button role="tab" aria-controls="tabpanel1" class="tablist__tab" id="tab1">제목</button>
@@ -19,6 +19,8 @@ title: Style guide
 				
 				<div class="tabpanel" id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
 					<div class="pre--example">
+						<strong>마크다운 코드</strong>
+						<hr>
 						<pre>
 							## 제목 h2
 							### 제목 h3
@@ -37,10 +39,8 @@ title: Style guide
 	
 				<div class="tabpanel" id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
 					<div class="pre--example">
-						<a href="https://stackoverflow.com/questions/2002120/citing-the-author-of-a-blockquote-using-markdown-syntax/2002157#2002157" target="_blank">마크다운 작성법 참고</a>
-
+						<strong>마크다운 코드</strong> <a href="https://stackoverflow.com/questions/2002120/citing-the-author-of-a-blockquote-using-markdown-syntax/2002157#2002157" target="_blank">(마크다운 작성법 참고)</a>
 						<hr>
-
 						<pre>
 							> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ipsum sapiente perspiciatis, facilis libero rerum, delectus veritatis quia illum explicabo, dolores magnam quos fuga modi ipsa dolore consequatur amet voluptatem!
 							>
@@ -54,6 +54,8 @@ title: Style guide
 					</blockquote>
 
 					<div class="pre--example">
+						<strong>마크다운 코드</strong>
+						<hr>
 						<pre>
 							{:.color--red}
 							텍스트 붉은색
@@ -81,7 +83,7 @@ title: Style guide
 	
 				<div class="tabpanel" id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
 					<div class="pre--example">
-						페이지 이동 시에는 a 요소, 아닐 시 button / 버튼 역할 부여
+						<strong>마크다운 코드</strong> (페이지 이동 시에는 a 요소, 아닐 시 button / 버튼 역할 부여)
 						<hr>
 						<pre>[내용](url){:.page__btn}</pre>
 					</div>

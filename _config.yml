@@ -4,7 +4,7 @@ title                    : "Sel의 퍼블일기"
 title_separator          : "-"
 subtitle                 : "이런저런 이야기"
 name                     : "sel"
-description              : "tidy-red jekyll theme"
+description              : "웹 퍼블리셔 Sel의 블로그"
 url                      : "https://selosele.github.io"
 baseurl                  : 
 repository               : "selosele/selosele.github.io"

@@ -8,7 +8,6 @@ description              : "웹 퍼블리셔 Sel의 블로그"
 url                      : "https://selosele.github.io"
 baseurl                  : 
 repository               : "selosele/selosele.github.io"
-favicon                  : false
 words_per_minute         : 200
 comments:
   provider               : "disqus"

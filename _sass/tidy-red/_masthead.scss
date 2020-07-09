@@ -104,21 +104,6 @@
             @media (max-width: $small_width) {
                padding-top: 1.5rem;
             }
-
-            .author__name {
-               @media (min-width: $min_small_width) {
-                  &:before {
-                     content: "";
-                     display: block;
-                     position: absolute;
-                     bottom: -1px;
-                     left: 100%;
-                     width: 100vw;
-                     height: 1px;
-                     background: $sub_color03;
-                  }
-               }
-            }
          }
       }
 
@@ -159,6 +144,17 @@
          @media (min-width: $min_small_width) {
             font-size: 2.7rem;
             text-align: left;
+
+            &:before {
+               content: "";
+               display: block;
+               position: absolute;
+               bottom: -1px;
+               left: 100%;
+               width: 100vw;
+               height: 1px;
+               background: $sub_color03;
+            }
          }
       }
 

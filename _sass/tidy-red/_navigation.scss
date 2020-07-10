@@ -21,10 +21,6 @@
    z-index: 10000;
    height: 100vh;
    background: rgba(0,0,0,0.3);
-
-   &.is--visible {
-      display: block;
-   }
 }
 
 .menu__layer {
@@ -251,7 +247,7 @@
          height: min-content;
          margin: 0;
 
-         &:not(.is--visible) {
+         &:not(.page--visible) {
             display: none;
          }
 
@@ -271,8 +267,8 @@
             }
          }
 
-         &.is--visible {
-            ~ .is--visible {
+         &.page--visible {
+            ~ .page--visible {
                a {
                   border-left-color: transparent;
                }

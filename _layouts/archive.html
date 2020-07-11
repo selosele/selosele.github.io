@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="content-wrapper" id="content" role="main">
-  <div class="archive">
+  <div class="archive" {% if page.layout == 'home' %}aria-labelledby='recent-post-title'{% endif %}>
     <h1 id="page-title" class="page__title {% if page.layout =='home' %}visually-hidden{% endif %}">{% if page.layout == "home" %}{{ site.data.ui-text[site.locale].main_contents }}{% else %}{{ page.title }}{% endif %}</h1>
     {{ content }}
   </div>

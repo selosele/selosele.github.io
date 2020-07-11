@@ -33,7 +33,7 @@
       margin-bottom: 1rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid $grey05;
-      font-family: "Gothic A1";
+      font-family: $default_font03;
       font-weight: 700;
       font-size: 2rem;
       color: $black;
@@ -43,9 +43,11 @@
    &__lead {
       display: block;
       margin-bottom: 3rem;
+      font-family: $default_font03;
+      font-weight: 400;
       font-size: calc(100% - -0.5vw);
-      font-weight: 200;
       line-height: 1.5;
+      color: $grey07;
 
       &:before {
          content: "\2014";
@@ -77,6 +79,7 @@
       }
 
       strong {
+         font-family: $default_font03;
          font-weight: 700;
          color: $grey;
 
@@ -110,7 +113,7 @@
          margin: 0 0.3rem 0.3rem 0;
          padding: 0.5rem 1rem;
          border-radius: 5px;
-         color: #fff;
+         color: $grey12;
          font-size: 0.9rem;
       }
 
@@ -130,6 +133,7 @@
 
       &-title {
          margin-bottom: 0.6rem;
+         font-family: $default_font03;
          font-weight: 700;
          font-size: 0.9rem;
          color: $black02;
@@ -143,7 +147,7 @@
    }
 
    &__date {
-      font-family: "Gothic A1";
+      font-family: $default_font03;
       font-weight: 300;
       font-size: 1rem;
       letter-spacing: 0.01rem;
@@ -151,10 +155,10 @@
    }
    
    &__content {
-      font-family: "NanumGothic";
+      font-family: $default_font04;
       font-size: 1rem;
       line-height: 1.9;
-      color: $black;
+      color: $black04;
       word-break: keep-all;
       @include clearfix();
 
@@ -234,7 +238,8 @@
             display: block;
             margin-bottom: 0.5rem;
             color: $black02;
-            font-weight: 400;
+            font-family: $default_font03;
+            font-weight: 500;
             font-size: 1.4rem;
             line-height: 1.2;
          }
@@ -269,7 +274,7 @@
 
 .hero__inner-wrap {
    @include common_layout();
-   color: #fff;
+   color: $grey12;
    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
    text-align: center;
 

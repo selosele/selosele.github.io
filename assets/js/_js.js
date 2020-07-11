@@ -328,7 +328,7 @@ $(function() {
         menuOuterEL = $("body").children().not(menu.add("script")),
         menuELlayer = menu.find(".menu__layer"),
         menuELopen = nav.find(".nav__menu-open"),
-        menuELclose = menu.find(".menu__close"),
+        menuELclose = menu.find(".menu__btn--close"),
         menuELtabble = menu.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),

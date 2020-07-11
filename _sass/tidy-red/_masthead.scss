@@ -160,13 +160,15 @@
       }
 
       &__desc {
-         font-size: 1.2rem;
+         font-family: $default_font05;
          font-weight: 300;
+         font-size: 1.3rem;
          line-height: 1.5;
+         letter-spacing: initial;
          text-align: center;
 
          @media (min-width: $min_small_width) {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             text-align: left;
          }
       }

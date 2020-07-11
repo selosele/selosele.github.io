@@ -5,8 +5,9 @@
 .archive {
    &__subtitle {
       margin: 2rem 0 0.5rem;
-      font-size: 1.8rem;
+      font-family: "Gothic A1";
       font-weight: 700;
+      font-size: 1.8rem;
       color: $black02;
       letter-spacing: -1px;
    }
@@ -29,6 +30,7 @@
          a {
             display: block;
             @include ellipsis();
+            font-family: "Gothic A1";
             font-weight: 700;
             font-size: 1.4rem;
             line-height: 1.5;
@@ -58,8 +60,9 @@
          @include ellipsis();
          margin: 0.8rem 0;
          color: $sub_color03;
-         font-size: 1.1rem;
-         font-weight: 400;
+         font-family: "Gothic A1";
+         font-weight: 500;
+         font-size: 1.2rem;
          line-height: 1.3;
    
          &:before {
@@ -71,8 +74,10 @@
    
       &-content {
          margin-bottom: 0.7rem;
-         line-height: 1.8;
-         font-size: 0.9rem;
+         line-height: 1.9;
+         font-family: "NanumGothic";
+         font-weight: 400;
+         font-size: 0.97rem;
          word-break: keep-all;
       }
    }
@@ -230,6 +235,8 @@
       padding: 1.9rem 1rem;
       border-bottom: 1px dashed $grey;
       background: none;
+      font-family: "Gothic A1";
+      font-weight: 500;
       font-size: 1rem;
       color: $black;
       text-align: left;
@@ -237,6 +244,7 @@
       span {
          margin-right: 0.5rem;
          color: $sub_color03;
+         font-weight: 600;
          font-size: 1.7rem;
       }
    }

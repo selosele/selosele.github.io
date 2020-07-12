@@ -12,12 +12,12 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
     if (!anchorElement) return;
 
     for (var i = 0; i < anchorElement.length; i++) {
-        anchorElement[i].addEventListener("click", function(e) {
+        anchorElement[i].addEventListener("click", function(evt) {
             switch (this.getAttribute("href")) {
                 case "#":
                 case "#none":
                 case "":
-                    e.preventDefault();
+                    evt.preventDefault();
                     break;
             }
         });
@@ -33,8 +33,8 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
         var shareELbtn = shareElement.querySelectorAll("a");
 
         for (var i = 0; i < shareELbtn.length; i++) {
-            shareELbtn[i].addEventListener("click", function(e) {
-                e.preventDefault();
+            shareELbtn[i].addEventListener("click", function(evt) {
+                evt.preventDefault();
                 window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
             });
         }
@@ -168,32 +168,25 @@ $(function() {
         });
     });
 
-    function activatePostToc(toc, main) {
-        if (!toc) return;
+    $(document).on("click", ".toc-wrapper li a", function(evt) {
+        $("html, body")
+            .stop()
+            .animate({
+                scrollTop: $("#" + $(evt.currentTarget).attr("href").replace("#", "")).offset().top
+            }, 300);
+    });
 
-        $(window).on("load scroll", function() {
-            var tocAdjacentEL = $(toc).next();
-            
-            if ($(window).outerWidth() <= 1200 || !tocAdjacentEL.length) return;
-            if ($(window).scrollTop() >= tocAdjacentEL.offset().top) {
-                if (!toc.hasClass("toc--fixed")) {
-                    $(toc)
-                        .addClass("toc--fixed")
-                        .attr("tabindex", "0");
-                    $(main).add(".mastfoot").addClass("toc-layout");
-                }
-            } else {
-                $(toc)
-                    .removeClass("toc--fixed")
-                    .removeAttr("tabindex");
-                $(main).add(".mastfoot").removeClass("toc-layout");
-            }
-        });
+    function activatePostToc(toc, main) {
+        if (!toc.length || $(window).outerWidth() <= 1200) return;
+        if (!toc.hasClass("toc--fixed")) {
+            $(toc).addClass("toc--fixed").attr("tabindex", "0");
+            $(main).addClass("toc-layout");
+        }
     }
 
     function deactivatePostToc(toc, main) {
         $(toc).removeClass("toc--fixed");
-        $(main).add(".mastfoot").removeClass("toc-layout");
+        $(main).removeClass("toc-layout");
     }
 
     function initPostToc() {
@@ -211,33 +204,33 @@ $(function() {
 $(function() {
 
     var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper *"),
+        tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
         tocTabbleFocusedLast;
 
     tocTabbleNode.keydown(function() {
         return tocTabbleFocusedLast = $(this);
 
-    }).keydown(function(e) {
-        var keyType = e.keyCode || e.which;
+    }).keydown(function(evt) {
+        var keyType = evt.keyCode || evt.which;
 
-        if (e.altKey && keyType === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
-            $(".toc--fixed").focus().on("keydown", function(e) {
-                var keyType = e.keyCode || e.which;
-                if (e.altKey && keyType === 192) { // alt + ~키 : focusedLast로 초점 이동
+        if (evt.altKey && keyType === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+            $(".toc--fixed").focus().keydown(function(evt) {
+                var keyType = evt.keyCode || evt.which;
+                if (evt.altKey && keyType === 192) { // alt + ~키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
             });
         }
     });
 
-    $(document).keydown(function(e) {
-        var keyType = e.keyCode || e.which;
+    $(document).keydown(function(evt) {
+        var keyType = evt.keyCode || evt.which;
 
-        if (e.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
+        if (evt.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
             if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
         }
 
-        if (e.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 현재 활성화된 목차 링크로 초점 이동
+        if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 현재 활성화된 목차 링크로 초점 이동
             $(".toc--active").focus();
         }
     });
@@ -246,8 +239,8 @@ $(function() {
 // abbr
 $(function() {
 
-    function tooltipCreate(e) {
-        var targetElement = $(e.currentTarget),
+    function tooltipCreate(evt) {
+        var targetElement = $(evt.currentTarget),
             tooltipElement = targetElement.find(".abbr__tooltip");
 
         if (!tooltipElement.length) {
@@ -341,15 +334,15 @@ $(function() {
         // $("body")
         //     .css("top", - $(window).scrollTop() + "px")
         //     .addClass("scroll--off")
-        //     .on("scroll touchmove mousewheel", function(e){
-        //         e.preventDefault();
+        //     .on("scroll touchmove mousewheel", function(evt){
+        //         evt.preventDefault();
         // });
         // nowScrollPos = $("body").css("top").replace("px", "");
         menu
             .attr("aria-hidden", "false")
             .css("display", "block")
-            .on("click", function(e) {
-                e.target === e.currentTarget && menuClose();
+            .on("click", function(evt) {
+                evt.target === evt.currentTarget && menuClose();
             });
         $(this).attr("aria-expanded", "true");
         $("body").addClass("overflow--hidden");
@@ -368,28 +361,28 @@ $(function() {
             menuELFocusedLast = $(this);
         });
 
-        menuELFocusedLast ? menuELFocusedLast.focus() : menuELtabbleFirst.focus().on("keydown", function(e) {
-            var keyType = e.keyCode || e.which;
+        menuELFocusedLast ? menuELFocusedLast.focus() : menuELtabbleFirst.focus().on("keydown", function(evt) {
+            var keyType = evt.keyCode || evt.which;
 
-            if (e.shiftKey && keyType === 9) {
-                e.preventDefault();
+            if (evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
                 menuELtabbleLast.focus();
             }
         });
 
-        menuELtabbleLast.on("keydown", function(e) {
-            var keyType = e.keyCode || e.which;
+        menuELtabbleLast.on("keydown", function(evt) {
+            var keyType = evt.keyCode || evt.which;
             
-            if (!e.shiftKey && keyType === 9) {
-                e.preventDefault();
+            if (!evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
                 menuELtabbleFirst.focus();
             }
         });
 
         menuELclose.on("click", menuClose);
 
-        $(document).keydown(function(e) {
-            var keyType = e.keyCode || e.which;
+        $(document).keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
             
             if (keyType === 27) { // Esc 키 : 메뉴 닫기
                 menu.css("display") === "block" && menuClose();
@@ -466,8 +459,8 @@ $(function() {
         layer
             .css("display", "block")
             .attr("aria-hidden", "false")
-            .click(function(e) {
-                e.target === e.currentTarget && layerClose();
+            .click(function(evt) {
+                evt.target === evt.currentTarget && layerClose();
             });
 
         setTimeout(function() {
@@ -489,26 +482,26 @@ $(function() {
             });
         });
 
-        tabbaleFirst.keydown(function(e) {
-            var keyType = e.keyCode || e.which;
+        tabbaleFirst.keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
 
-            if (e.shiftKey && keyType === 9) {
-                e.preventDefault();
+            if (evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
                 tabbaleLast.focus();
             }
         });
 
-        tabbaleLast.keydown(function(e) {
-            var keyType = e.keyCode || e.which;
+        tabbaleLast.keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
 
-            if (!e.shiftKey && keyType === 9) {
-                e.preventDefault();
+            if (!evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
                 tabbaleFirst.focus();
             }
         });
 
-        $(document).keydown(function(e) {
-            var keyType = e.keyCode || e.which;
+        $(document).keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
 
             if (keyType === 27) { // Esc 키 : form reset/레이어 닫기
                 sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
@@ -526,20 +519,20 @@ $(function() {
     var tabWrapper = $(".tab-wrapper");
     if (!tabWrapper) return;
 
-    function handleClickEvent(e) {
-        e.stopPropagation();
+    function handleClickEvent(evt) {
+        evt.stopPropagation();
 
-        var actTab = e.target,
+        var actTab = evt.target,
             actPanel = $("#" + actTab.getAttribute("aria-controls"));
 
         activateTab(actTab, actPanel);
     }
 
-    function handleKeydownEvent(e) {
-        e.stopPropagation();
+    function handleKeydownEvent(evt) {
+        evt.stopPropagation();
 
-        var keyType = e.keyCode || e.which,
-            thisTab = $(e.target),
+        var keyType = evt.keyCode || evt.which,
+            thisTab = $(evt.target),
             actPanel = $("#" + thisTab.attr("aria-controls")),
             tabbleEL = actPanel.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
 
@@ -562,27 +555,27 @@ $(function() {
 
             case 13:
             case 32:
-                e.preventDefault();
+                evt.preventDefault();
                 activateTab(thisTab, actPanel);
                 break;
 
             case 36:
-                e.preventDefault();
+                evt.preventDefault();
                 thisTab.is(":focus") && thisTab.siblings(":first").focus();
                 break;
 
             case 35:
-                e.preventDefault();
+                evt.preventDefault();
                 thisTab.is(":focus") && thisTab.siblings(":last").focus();
                 break;
         }
 
         var tabbleELfocusedLast;
-        tabbleEL.keydown(function(e) {
+        tabbleEL.keydown(function(evt) {
             tabbleELfocusedLast = $(this);
 
-            if (e.ctrlKey && !thisTab.is(":focus")) thisTab.focus().keydown(function(e) {
-                e.ctrlKey && tabbleELfocusedLast.focus();
+            if (evt.ctrlKey && !thisTab.is(":focus")) thisTab.focus().keydown(function(evt) {
+                evt.ctrlKey && tabbleELfocusedLast.focus();
             });
         });
     }

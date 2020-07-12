@@ -34,7 +34,7 @@ Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻
 
 따라서 Typescript 선에서 에러를 잡아내고 실수를 최소화하는 게 작업 효율을 높일 수 있다고 할 수 있다. 에러를 수정하고 컴파일한다면 다음과 같은 결과를 볼 수 있다.
 
-## script.ts -> script.js 컴파일
+## script.ts &rarr; script.js 컴파일
 
 ```javascript
 function getNum(a, b) {

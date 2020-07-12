@@ -81,13 +81,15 @@ $(function() {
 
     // 포스트 페이지 heading link
     $(".page__content").find(":header:not(.toc__title)").each(function() {
-        var t_id = $(this).attr("id");
+        var t_id = $(this).attr("id"),
+            t_txt = $(this).text();
+
         if (t_id) {
             var t_anc = document.createElement("a");
 
             t_anc.classList.add("heading-link");
             t_anc.href = "#" + t_id;
-            t_anc.title = t_id.replace(/-/g, " ");
+            t_anc.title = t_txt.replace(/-/g, " ");
             $(this).prepend(t_anc);
         }
     });

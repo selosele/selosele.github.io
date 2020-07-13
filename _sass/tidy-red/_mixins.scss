@@ -139,7 +139,6 @@
 /* post item */
 @mixin post_item {
    display: inline-block;
-   height: 1.95rem;
    margin: 0 0.3rem 0.3rem 0;
    padding: 0 0.8rem;
    border-radius: 3px;
@@ -147,7 +146,7 @@
    font-family: "Gothic A1";
    font-weight: 400;
    font-size: 0.85rem;
-   line-height: 1.95rem;
+   line-height: 1.78rem;
    color: $grey12;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
    vertical-align: top;

@@ -45,11 +45,10 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
 (function() {
 
     var pageElement = document.getElementById("page-content");
-
     if (pageElement) {
         var preCodeElement = pageElement.querySelectorAll("pre.highlight");
         
-        for (var i = 0; i<preCodeElement.length; i++) {
+        for (var i = 0; i < preCodeElement.length; i++) {
             preCodeElement[i].setAttribute("tabindex", "0");
         }
     }
@@ -110,6 +109,28 @@ $(function() {
     // 빈 요소 제거
     emptyElemRemove(".menu__layer ul");
 
+});
+
+// 포스트 이미지 크게 보기 링크
+$(function() {
+
+    $("p:has(>img)").css("position", "relative");
+    
+    // function createImageZoomLink() {
+    //     $(".page__content img").each(function() {
+    //         if ($(window).outerWidth() <= 1200) {
+    //             if (!$(this).parent().find("a").length) {
+    //                 $(this).after("<a href='"+$(this).attr("src")+"' target='_blank' class='page__image-zoom'><span class='visually-hidden'>이미지 크게 보기</span></a>");
+    //             }
+    
+    //         } else {
+    //             $(this).parent().find("a").remove();
+    //             return;
+    //         }
+    //     });
+    // }
+    // createImageZoomLink();
+    // $(window).resize(createImageZoomLink);
 });
 
 // post archive 목록 펼쳐보기
@@ -230,7 +251,7 @@ $(function() {
             if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
         }
 
-        if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 현재 활성화된 목차 링크로 초점 이동
+        if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
             $(".toc--active").focus();
         }
     });

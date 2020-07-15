@@ -23,6 +23,8 @@ inline formatting context가 가지는 자연스러운 공백을 제거하는 �
 결국 Javascript를 이용하는 방법 연구에 착수하였다.
 
 ### 공백값을 구한 후, 값만큼 margin-left 음수값을 대입하는 방법
+
+{:.has--label}
 ```html
 <ul class="remvWS">
   <li>111</li>
@@ -31,6 +33,7 @@ inline formatting context가 가지는 자연스러운 공백을 제거하는 �
 </ul>
 ```
 
+{:.has--label}
 ```scss
 .remvWS {
   > li {
@@ -41,6 +44,7 @@ inline formatting context가 가지는 자연스러운 공백을 제거하는 �
 }
 ```
 
+{:.has--label}
 ```javascript
 function whiteSpaceMargin(listObj) {
     listObj = $(listObj).nextAll();
@@ -73,6 +77,7 @@ whiteSpaceMargin(".remvWS > *");
 * [참고 링크 1](https://stackoverflow.com/questions/27749507/removing-inline-block-whitespace-using-javascript-and-or-jquery){:target="_blank"}
 * [참고 링크 2](http://jsfiddle.net/davidThomas/wygnD/3/){:target="_blank"}
 
+{:.has--label}
 ```javascript
 function removeWhiteSpace() {
   var except = $("button, span");

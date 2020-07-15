@@ -16,6 +16,8 @@ tags:
 URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새로고침 시, hash가 남아 있어야/없어져야 하는지 고민에 빠졌음. 개인적으로 결론을 어떻게 내리든, 공부를 위해서 새로고침 시 hash 제거 스크립트를 짜보기로~!
 
 ## 새로고침 키를 눌렀을 때
+
+{:.has--label}
 ```javascript
 $(window).keydown(function(event) {
     var k = event.keyCode || event.which;
@@ -31,6 +33,8 @@ hash text에 한글이 포함되어 있으면 에러를 뱉으므로 반드시 �
 정상 작동하나, 조건문 속에 모든 새로고침 키를 기입해주어야 한다는 점에서 봤을 때 비효율적인 코드라는 생각이 들었다.
 
 ## 페이지가 로드되었을 때
+
+{:.has--label}
 ```javascript
 function refreshRemoveHash() {
     if (window.location.hash) {
@@ -47,6 +51,7 @@ refreshRemoveHash();
 ### <span>코드 완성하다</span>
 20200422, &ldquo;페이지가 로드되었을 때&rdquo;의 코드를 완성하였음. 두 달이나 지나서 완성이라니... -_-
 
+{:.has--label}
 ```javascript
 (function() {
     var korean = window.location.hash.indexOf(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/);

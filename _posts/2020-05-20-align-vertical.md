@@ -16,12 +16,14 @@ tags:
 
 ## 익숙했던 방법
 
+{:.has--label}
 ```html
 <div>
   <p>Paragraph</p>
 </div>
 ```
 
+{:.has--label}
 ```scss
 p {
     position: relative;
@@ -34,6 +36,7 @@ p {
 
 ## 새로 알게된 방법
 
+{:.has--label}
 ```scss
 div {
   position: relative;
@@ -52,6 +55,7 @@ absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으�
 
 그나저나 IE만 아니면 flex를......
 
+{:.has--label}
 ```css
 p {
   backface-visibility: hidden;

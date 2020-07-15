@@ -14,6 +14,7 @@ tags:
 ---
 text를 정렬하는 방법(text-align)이라면 left, right, center 밖에 몰랐었는데, justify라는 속성을 알게 되어 기록함.
 
+{:.has--label}
 ```html
 <p>t e x t</p>
 ```
@@ -21,6 +22,7 @@ text를 정렬하는 방법(text-align)이라면 left, right, center 밖에 몰�
 
 내가 하려는 건 한 글자씩 모두 양쪽으로 정렬하려는 것이고, 글자 사이에 공백이 있어야 적용됨.
 
+{:.has--label}
 ```scss
 p {
   max-width: 500px;

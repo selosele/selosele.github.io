@@ -16,6 +16,7 @@ tags:
 
 ## 처음 시도했었던 방법
 {% raw %}
+{:.has--label}
 ```html
 <ul>
   {% for post in site.posts limit:5 %}
@@ -32,7 +33,8 @@ tags:
 모든 포스트(총 50개) 중 important 변수값이 true인 포스트(총 8개)를 li > a 구조로서 뿌려줄 것이고, 개수는 5개로 제한하기 위해 limit 반복문을 사용하였다. 결론부터 말하면 근본부터 틀려먹은 방법이라고 할 수 있다. 왜냐?
 
 {% raw %}
-```html
+{:.has--label}
+```liquid
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 {% endraw %}
@@ -41,7 +43,8 @@ tags:
 
 ## 올바른 방법
 {% raw %}
-```html
+{:.has--label}
+```liquid
 {% assign important_post_arr = site.posts | where: "important", "true" %}
 ```
 {% endraw %}
@@ -49,6 +52,7 @@ tags:
 임의로 선언한 important_post_arr 변수에 모든 포스트 중 important 변수값이 true인 포스트를 포함하는 배열을 만들어준다. where filter를 써서 값을 가진 객체를 찾을 수 있음. 그렇다. 애초에 배열을 만들어놓고 시작해야지 반복문부터 돌리고서 해당 값을 가진 포스트를 찾으려고 하면 안되는 것.
 
 {% raw %}
+{:.has--label}
 ```html
 <ul>
   {% for post in important_post_arr limit:5 %}

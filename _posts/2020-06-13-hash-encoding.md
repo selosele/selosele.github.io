@@ -16,6 +16,7 @@ tags:
 
 영어/한글 hash값이 포함된 URL로 비교를 해보자.
 
+{:.has--label}
 ```javascript
 "https://selosele.github.io/#test"
 
@@ -24,6 +25,7 @@ console.log(window.location.hash); // #test
 
 영어는 정상적으로 출력되는 반면
 
+{:.has--label}
 ```javascript
 "https://selosele.github.io/#테스트"
 
@@ -36,6 +38,7 @@ console.log(window.location.hash); // ""
 
 정상적인 문자열로 되돌려주는 decodeURI 함수를 사용해야 한다.
 
+{:.has--label}
 ```javascript
 console.log(decodeURI(window.location.hash)); // 테스트
 ```

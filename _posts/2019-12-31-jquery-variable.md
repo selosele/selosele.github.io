@@ -15,11 +15,13 @@ tags:
 ---
 순수 Javascript/jQuery 객체가 구별되지 않은 변수명이란 다음과 같다.
 
+{:.has--label}
 ```javascript
 foo.addClass("on");
 ```
 변수 선언부를 보기 전까지 어느 객체인지 알 수 없음.
 
+{:.has--label}
 ```javascript
 var foo = document.getElementById("foo"); // 순수 Javascript 객체
 var $foo = $("#foo"); // jQuery 객체

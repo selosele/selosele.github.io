@@ -17,6 +17,8 @@ tags:
 웹 접근성 작업은 만만치 않은 작업이다. 실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때, &ldquo;현재 초점이 잡힌 요소에 숫자가 떠서 몇 번째 요소에 초점이 잡혔는지 알 수 있으면 좋겠다&rdquo;라는 생각을 하게 되었고, 코드를 만들어서 테스트해본 결과 대만족. 실무에서도 사용할 계획임.
 
 ## 기존에 만들었던 코드
+
+{:.has--label}
 ```javascript
 $(function() {
 
@@ -29,6 +31,8 @@ $(function() {
 현재 초점이 잡힌 요소를 console에 띄우는 것밖에 없다.
 
 ## 새로 만든 코드
+
+{:.has--label}
 ```javascript
 $(function() {
     
@@ -61,6 +65,7 @@ $(function() {
 
 200510, 코드를 개선해보았음.
 
+{:.has--label}
 ```javascript
 objActiveNum.style.cssText = "position: absolute; z-index: 99999; font-size: 5rem; font-weight: 700; color: #525252";
 ```

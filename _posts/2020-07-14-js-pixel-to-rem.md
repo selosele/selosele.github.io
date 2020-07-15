@@ -17,10 +17,12 @@ tags:
 
 늘 그렇듯 잊지 않기 위해 코드를 기록해둔다.
 
+{:.has--label}
 ```html
 <p id="para">ㅇㅇ</p>
 ```
 
+{:.has--label}
 ```css
 html {
   font-size: 20px;
@@ -34,6 +36,7 @@ html {
 
 p 요소의 높이값을 rem 단위로 변환해볼 것이다.
 
+{:.has--label}
 ```javascript
 function pixelToRemUnit(pixelUnit) {
   return pixelUnit / parseFloat(getComputedStyle(document.documentElement).fontSize) + "rem";

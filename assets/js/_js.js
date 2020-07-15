@@ -22,7 +22,6 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
             }
         });
     }
-
 })();
 
 // page share link
@@ -41,18 +40,25 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
     }
 })();
 
-// code highlight 초점이동
+// code highlight 초점이동 및 aria-label 기입
 (function() {
 
     var pageElement = document.getElementById("page-content");
+    
     if (pageElement) {
         var preCodeElement = pageElement.querySelectorAll("pre.highlight");
         
         for (var i = 0; i < preCodeElement.length; i++) {
+            var preCodeParentElement = preCodeElement[i].parentElement.parentElement,
+                preCodeElement_label = preCodeParentElement.className.replace(/language-|has--label |highlighter-rouge/g, "") + "코드";
+
             preCodeElement[i].setAttribute("tabindex", "0");
+
+            if (preCodeParentElement.classList.contains("has--label")) {
+                preCodeElement[i].setAttribute("aria-label", preCodeElement_label);
+            }
         }
     }
-
 })();
 
 // 로딩
@@ -73,7 +79,6 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
     $(function() {
         loadingElement.remove();
     });
-
 })($);
 
 $(function() {
@@ -167,7 +172,6 @@ $(function() {
                 .attr("aria-expanded", "false");
         }
     });
-
 });
 
 // 포스트 목차
@@ -297,7 +301,6 @@ $(function() {
             abbrElement.off("click");
         }
     });
-
 });
 
 // 스크롤 테이블
@@ -437,7 +440,6 @@ $(function() {
         menu.attr("aria-hidden", "true");
         !$(location.hash).is(":focus") && menuELopen.focus();
     }
-
 });
 
 // 검색 레이어
@@ -531,7 +533,6 @@ $(function() {
         
         closeBtn.click(layerClose);
     });
-
 });
 
 // 탭

@@ -265,7 +265,7 @@ defaults:
 skip_links:
   to_nav: false
   to_content: true
-  to_mastfoot: true
+  to_mastfoot: false
 
 # post
 post:

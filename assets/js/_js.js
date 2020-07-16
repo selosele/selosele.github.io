@@ -40,7 +40,7 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
     }
 })();
 
-// code highlight 초점이동 및 aria-label 기입
+// code highlight 초점이동 및 title 기입
 (function() {
 
     var pageElement = document.getElementById("page-content");
@@ -55,7 +55,7 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
             preCodeElement[i].setAttribute("tabindex", "0");
 
             if (preCodeParentElement.classList.contains("has--label")) {
-                preCodeElement[i].setAttribute("aria-label", preCodeElement_label);
+                preCodeElement[i].setAttribute("title", preCodeElement_label);
             }
         }
     }

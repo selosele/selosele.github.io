@@ -190,16 +190,6 @@
       line-height: 1;
       vertical-align: middle;
 
-      &.page--current {
-         margin: 0 1rem;
-         font-size: 2.2rem;
-         color: $sub_color03;
-      }
-
-      &.page--disabled {
-         pointer-events: none;
-      }
-
       a {
          display: block;
          padding: 0.5rem 1rem;
@@ -274,6 +264,16 @@
       }
    }
 
+   .page--current {
+      margin: 0 1rem;
+      font-size: 2.2rem;
+      color: $sub_color03;
+   }
+
+   .page--disabled {
+      pointer-events: none;
+   }
+
    &--pager {
       display: table-cell;
       padding: 1.3rem;
@@ -313,6 +313,7 @@
       width: 25vw;
       height: auto;
       margin-left: -30vw;
+      box-shadow: rgba(0,0,0,0.15) 5px 5px 10px;
 
       nav {
          height: 100%;

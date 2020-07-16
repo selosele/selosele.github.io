@@ -34,6 +34,12 @@
    .author__image-wrapper {
       border-bottom-left-radius: 60px;
    }
+
+   .masthead__teaser {
+      @media (min-width: $small_width) {
+         border-bottom-right-radius: 6vw;
+      }
+   }
 }
 
 /* masthead layout */
@@ -67,6 +73,11 @@
             z-index: -1;
             background: inherit;
          }
+      }
+
+      @media (min-width: $small_width) {
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
+         clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
       }
    }
 

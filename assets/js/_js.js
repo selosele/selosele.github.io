@@ -119,10 +119,10 @@ $(function() {
 // 포스트 이미지 container(figure, p) 여러개일경우
 $(function() {
 
-    var imageContainer = $(".page__figure, p:has(>img)");
-    if (!imageContainer.next(imageContainer).length || imageContainer.parent(".page__image-container--multiple").length) return;
+    var imageContainer = $(".page__figure, p:has(>img)").nextAll(".page__figure, p:has(>img)");
+    if (imageContainer.parent(".page__image-container--multiple").length) return;
 
-    imageContainer.wrapAll("<div class='page__image-container--multiple'></div>");
+    imageContainer.add(imageContainer.first().prev(".page__figure, p:has(>img)")).wrapAll("<div class='page__image-container--multiple'></div>");
 });
 
 // 포스트 이미지 크게 보기 링크

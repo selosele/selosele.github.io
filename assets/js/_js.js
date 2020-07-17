@@ -119,7 +119,7 @@ $(function() {
 // 포스트 이미지 container(figure, p) 여러개일경우
 $(function() {
 
-    var imageContainer = $(".page__figure:not(.wrap--false), p:not(.wrap--false):has(>img)").nextAll(".page__figure:not(.wrap--false), p:not(.wrap--false):has(>img)");
+    var imageContainer = $(".page__figure:not(.wrap--false) + .page__figure:not(.wrap--false), p:not(.wrap--false):has(>img) + p:not(.wrap--false):has(>img)");
     if (imageContainer.parent(".page__image-container--multiple").length) return;
 
     imageContainer.add(imageContainer.first().prev(".page__figure:not(.wrap--false), p:not(.wrap--false):has(>img)")).wrapAll("<div class='page__image-container--multiple'></div>");

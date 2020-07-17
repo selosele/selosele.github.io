@@ -1,4 +1,4 @@
-<figure class="page__figure {% if include.align %}float--{{ include.align }}{% endif %} {% if include.wrap == 'false' %}wrap--{{ include.wrap }}{% endif %}">
+<figure class="page__figure{% if include.align %} float--{{ include.align }}{% endif %}{% if include.wrap == 'false' %} wrap--{{ include.wrap }}{% endif %}">
   <img src='{{ include.url | relative_url }}' alt='{{ include.alt }}' width="{{ include.width | default: 'auto' }}">
   <figcaption class="page__figcaption">{{ include.description }}</figcaption>
 </figure>

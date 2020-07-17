@@ -20,7 +20,7 @@
     </div>
   </nav>
   {% if page.layout == "home" or page.layout =="archive" or page.layout == "default" or page.layout == "categories" or page.layout == "tags" %}
-  <div class="masthead__teaser {% if site.masthead.teaser.bg %}teaser--image{% endif %} {% if site.masthead.teaser.blur %}teaser--blur{% endif %}" {% if site.masthead.teaser.bg %}style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});" {% endif %}>
+  <div class="masthead__teaser{% if site.masthead.teaser.bg %} teaser--image{% endif %}{% if site.masthead.teaser.blur %} teaser--blur{% endif %}"{% if site.masthead.teaser.bg %} style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});" {% endif %}>
     <div class="author-wrapper">
       {% include author.html %}
     </div>

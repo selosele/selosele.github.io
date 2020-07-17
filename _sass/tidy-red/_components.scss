@@ -145,6 +145,55 @@
          }
       }
    }
+
+   &__image-container--multiple {
+      display: grid;
+      grid-gap: 1.5rem;
+      justify-content: center;
+
+      > * {
+         margin: 0;
+
+         &:nth-child(2) {
+            grid-column-start: 2;
+         }
+
+         &:nth-child(3) {
+            @media (min-width: $min_medium_width) {
+               grid-column-start: 3;
+            }
+         }
+      }
+   }
+
+   &__image-zoom {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: auto;
+      background: rgba(0,0,0,0.5);
+
+      &:before {
+         content: "\271B";
+         display: block;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         width: max-content;
+         height: max-content;
+         margin: auto;
+         font-size: 4rem;
+         color: #fff;
+      }
+
+      &.is--visible {
+         display: block;
+      }
+   }
 }
 
 /* Text */

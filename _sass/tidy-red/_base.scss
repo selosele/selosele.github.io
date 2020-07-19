@@ -54,6 +54,14 @@ a, button {
    @include focus();
 }
 
+input {
+   &[type="text"],
+   &[type="search"] {
+      border-radius: 0;
+      -webkit-appearance: none;
+   }
+}
+
 strong {
    font-weight: 700;
 }

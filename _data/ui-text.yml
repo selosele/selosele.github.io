@@ -92,7 +92,7 @@ ko: &DEFAULT_KO
   menu_label                 : "메뉴"
   # menu_primary_links         : "주요 메뉴"
   # menu_categories            : "카테고리"
-  # menu_close_label           : "닫기"
+  menu_close_label           : "메뉴 닫기"
   # main_nav_etc               : "기타"
   main_nav_category_more     : "카테고리 더보기"
   search_label               : "검색"

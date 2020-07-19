@@ -157,7 +157,7 @@
 }
 
 @mixin post_item_category {
-   background: $sub_color03;
+   background: $green03;
 
    svg {
       margin-right: 0.35rem;
@@ -165,5 +165,5 @@
 }
 
 @mixin post_item_tag {
-   background: $green03;
+   background: $sub_color03;
 }

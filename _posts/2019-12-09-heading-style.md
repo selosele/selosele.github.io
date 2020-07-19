@@ -16,9 +16,9 @@ tags:
 ---
 가끔 이런 제목태그 디자인을 봤을 것임.
 
-{% include image.html url='/assets/images/post/heading-style_img01.png' description='딱 봤을 땐 뭐가 문제인지 모르겠으나.. 텍스트가 한 줄 이상이 된다면?' alt='' wrap='false' %}
+{% include image.html url='/assets/images/post/heading-style_img01.png' description='딱 봤을 땐 뭐가 문제인지 모르겠으나.. 텍스트가 한 줄 이상이 된다면?' alt='' %}
 
-{% include image.html url='/assets/images/post/heading-style_img02.png' description='이런 보기 싫은 광경이 펼쳐진다.' alt='' wrap='false' %}
+{% include image.html url='/assets/images/post/heading-style_img02.png' description='이런 보기 싫은 광경이 펼쳐진다.' alt='' %}
 
 어떻게 CSS를 줘야 할지 감이 잡히지 않는데, background-image를 높은 확률로 ```position: absolute```{:.language-css}, calc 등으로 잡아보지만 당연히 줄에 맞게 떨어질리가 없다. 구글링으로 얻은 몇 가지 방법을 소개하겠음.
 

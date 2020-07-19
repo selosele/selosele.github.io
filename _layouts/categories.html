@@ -16,7 +16,7 @@ title: 카테고리
       <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
     </header>
   
-    <section class="page--default archive tag-list" aria-label="{{ page.title }}" itemprop="text">
+    <section class="page--default archive tag-list" itemprop="text">
       {% for i in (1..categories_max) reversed %}
         {% for category in site.categories %}
           {% if category[1].size == i %}

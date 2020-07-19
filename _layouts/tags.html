@@ -16,7 +16,7 @@ title: 태그
       <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
     </header>
   
-    <section class="page--default archive tag-list" aria-label="{{ page.title }}" itemprop="text">
+    <section class="page--default archive tag-list" itemprop="text">
       {% for i in (1..tags_max) reversed %}
         {% for tag in site.tags %}
           {% if tag[1].size == i %}

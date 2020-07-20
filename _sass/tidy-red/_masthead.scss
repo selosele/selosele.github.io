@@ -223,20 +223,22 @@
 }
 
 .site-nav {
-   display: flex;
+   display: block;
    position: absolute;
    top: 0;
    left: 0;
+   right: 0;
    z-index: 2;
-   width: 100%;
+   width: auto;
    height: auto;
-   padding: 1.7rem 3vw;
-   justify-content: space-between;
-   align-items: center;
+   margin: 1.7rem 3vw;
 }
 
 .nav__btn-wrapper {
    display: flex;
+   position: absolute;
+   top: 0;
+   right: 0;
    justify-content: space-between;
    align-items: center;
 
@@ -255,13 +257,14 @@
 
 .site {
    &-title {
-      display: block;
+      display: inline-block;
       position: relative;
       z-index: 1;
-      margin-right: 2rem;
+      margin-right: 6rem;
       font-family: $default_font03;
       font-weight: 500;
       font-size: 1.3rem;
+      line-height: 1.25;
       color: $grey12;
       text-shadow: rgba(0,0,0,0.7) 1px 1px 3px;
 
@@ -284,16 +287,11 @@
    }
 
    &-subtitle {
-      margin-left: 0.3rem;
+      display: block;
+      margin-top: 0.35rem;
       font-size: 0.95rem;
       font-weight: 400;
       line-height: 1.3;
-
-      @media (max-width: $small_width) {
-         display: block;
-         margin-left: 0;
-         margin-top: 0.5rem;
-      }
    }
 }
 

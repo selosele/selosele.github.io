@@ -261,6 +261,9 @@ defaults:
       comments: false
       share: true
 
+# theme type
+theme_type: type2 # type1(default), type2
+
 # skip links
 skip_links:
   to_nav: false

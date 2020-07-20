@@ -18,9 +18,39 @@
    }
 }
 
+// teaser
+@mixin teaser() {
+   &.teaser--image {
+      background-image: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+   }
+
+   &.teaser--blur {
+      z-index: 1;
+
+      &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         z-index: -1;
+         background: inherit;
+      }
+   }
+}
+
 // teaser blur
 @mixin teaser_blur_value($blur) {
-   filter: blur($blur);
+   &.teaser--blur {
+      &:before {
+         filter: blur($blur);
+      }
+   }
 }
 
 // skip-links

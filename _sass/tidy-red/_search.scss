@@ -55,7 +55,7 @@
     input[type="search"] {
       width: 100%;
       height: 2rem;
-      padding: 0 1rem 0 0;
+      padding: 0 1rem;
       border: 0;
       color: $black02;
       font-family: $default_font05;
@@ -73,10 +73,6 @@
         height: 5rem;
         line-height: 5rem;
         font-size: 2.2rem;
-      }
-
-      @media (min-width: $min_large_width) {
-        padding-left: 1rem;
       }
     }
   

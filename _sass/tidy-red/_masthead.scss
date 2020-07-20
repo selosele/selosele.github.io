@@ -44,36 +44,16 @@
 
 /* masthead layout */
 .masthead {
+   overflow: hidden;
    position: relative;
+   @include teaser();
 
    &__teaser {
       overflow: hidden;
+      position: relative;
       min-height: 30rem;
-      background-image: linear-gradient(45deg, $black02, $grey10, $grey11);
-
-      &.teaser--image {
-         background-image: none;
-         background-repeat: no-repeat;
-         background-position: center;
-         background-size: cover;
-      }
-
-      &.teaser--blur {
-         position: relative;
-         z-index: 1;
-
-         &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            background: inherit;
-         }
-      }
+      background-image: linear-gradient(45deg, $grey10, $grey11);
+      @include teaser();
 
       @media (min-width: $small_width) {
          -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
@@ -223,22 +203,11 @@
 }
 
 .site-nav {
-   display: block;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   z-index: 2;
-   width: auto;
-   height: auto;
    margin: 1.7rem 3vw;
 }
 
 .nav__btn-wrapper {
    display: flex;
-   position: absolute;
-   top: 0;
-   right: 0;
    justify-content: space-between;
    align-items: center;
 
@@ -260,26 +229,12 @@
       display: inline-block;
       position: relative;
       z-index: 1;
-      margin-right: 6rem;
       font-family: $default_font03;
       font-weight: 500;
       font-size: 1.3rem;
       line-height: 1.25;
       color: $grey12;
       text-shadow: rgba(0,0,0,0.7) 1px 1px 3px;
-
-      &:before {
-         content: "";
-         display: block;
-         position: absolute;
-         top: -0.6rem;
-         left: 0.3rem;
-         z-index: -1;
-         width: 6px;
-         height: 6px;
-         border-radius: 50%;
-         background: $main_color;
-      }
 
       @media (min-width: $min_small_width) {
          font-size: 1.4rem;
@@ -351,5 +306,111 @@
      &:after {
         bottom: -7px;
      }
+   }
+}
+
+.theme {
+   &--type1 {
+      .layout--post {
+         .masthead {
+            overflow: visible;
+         }
+      }
+
+      .site-title {
+         margin-right: 6rem;
+
+         &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -0.6rem;
+            left: 0.3rem;
+            z-index: -1;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $main_color;
+         }
+      }
+
+      .site-nav {
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         z-index: 2;
+         width: auto;
+         height: auto;
+
+         .nav__btn-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+         }
+      }
+   }
+
+   &--type2 {
+      .layout--post {
+         .masthead {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            background-image: none;
+         }
+      }
+
+      .masthead {
+         background-image: linear-gradient(45deg, $grey10, $grey11);
+      }
+
+      .site-nav {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .site-title {
+         margin-right: 1rem;
+
+         &__author-image {
+            display: none;
+         }
+
+         @media (min-width: $min_medium_width) {
+            &.has--avatar {
+               padding-left: 3.85rem;
+            }
+
+            &__author-image {
+               display: block;
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               left: 0;
+               width: 3rem;
+               height: 3rem;
+               margin: auto 0;
+               padding: 0.2rem;
+               border-radius: 50%;
+               border: 1px solid $main_color;
+               box-shadow: rgba(0,0,0,0.3) 1px 1px 10px 0;
+
+               > span {
+                  display: flex;
+                  overflow: hidden;
+                  height: 100%;
+                  border-radius: inherit;
+                  justify-content: center;
+                  align-items: center;
+               }
+            }
+         }
+      }
    }
 }

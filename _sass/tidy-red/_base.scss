@@ -167,25 +167,6 @@ abbr {
    }
 }
 
-/* scrollbar style */
-.scrollbar--cutom {
-   *::-webkit-scrollbar {
-      width: 15px;
-      height: 14px;
-      -webkit-appearance: none;
-    
-      &-thumb {
-        border: 1px solid #333;
-        border-radius: 8px;
-        background: $grey12;
-      }
-    
-      &-track {
-        background: linear-gradient(to bottom, rgba(216, 216, 216, 0.3), rgba(185, 185, 185, 0.3));
-      }
-    }
-}
-
 /* blockquote */
 blockquote {
    position: relative;

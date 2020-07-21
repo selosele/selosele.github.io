@@ -2,7 +2,7 @@
 
 <header class="masthead{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.bg %} teaser--image{% endif %}{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.blur %} teaser--blur{% endif %}"{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.bg %} style="background-image: {% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});" {% endif %}>
   <nav class="site-nav" id="site-nav">
-    <a class="site-title{% if site.author.avatar %} has--avatar{% endif %}" href="{{ '/' | relative_url }}">
+    <a class="site-title{% if site.author.avatar %} has--image{% endif %}" href="{{ '/' | relative_url }}">
       {% if site.theme_type == "type2" and site.author.avatar %}
       <span class="site-title__author-image" aria-hidden="true">
         <span>

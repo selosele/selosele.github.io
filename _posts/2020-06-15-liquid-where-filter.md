@@ -5,7 +5,7 @@ title: "liquid) where filter를 사용하여 해당 값을 가진 객체만 포�
 excerpt: ""
 header:
   overlay_image: /assets/images/thumb/default_thumb03.png
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-06-15 21:40
 categories:
     - liquid

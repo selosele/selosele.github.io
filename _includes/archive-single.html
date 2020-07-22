@@ -16,7 +16,7 @@
     {% if post.excerpt != "" %}<strong class="archive__item-excerpt" itemprop="alternativeHeadline">{{ post.excerpt }}</strong>{% endif %}
     {% if page.layout == "home" or page.layout == "archive" or page.layout == "categories" or page.layout == "tags" %}
     <div class="archive__item-thumb" aria-hidden="true">
-      <img src="{% if post.header.overlay_image %}{{ post.header.overlay_image }}{% else %}/assets/images/thumb/default_thumb03.png{% endif %}" alt="">
+      <img src="{% if post.header.overlay_image %}{{ post.header.overlay_image }}{% else %}/assets/images/thumb/default_thumb03.jpg{% endif %}" alt="">
     </div>
     {% endif %}
     <p class="archive__item-content" itemprop="description">{{ post.content | markdownify | strip_html | truncate: 200 }}</p>

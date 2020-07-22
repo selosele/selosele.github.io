@@ -75,9 +75,7 @@
       &-content {
          margin-bottom: 0.7rem;
          line-height: 1.85;
-         font-family: $default_font05;
-         font-weight: 400;
-         font-size: 0.97rem;
+         font-size: 0.95rem;
          color: $black03;
          word-break: keep-all;
       }
@@ -147,7 +145,6 @@
    .archive {
       &__item-title {
          a {
-            font-family: $default_font05;
             font-weight: 500;
             font-size: 1.2rem;
          }
@@ -155,8 +152,6 @@
 
       &__item-excerpt {
          margin-bottom: 0;
-         font-family: $default_font05;
-         font-weight: 400;
          font-size: 1rem;
       }
    }
@@ -248,7 +243,6 @@
       span {
          margin-right: 0.5rem;
          color: $sub_color03;
-         font-weight: 600;
          font-size: 1.7rem;
       }
    }

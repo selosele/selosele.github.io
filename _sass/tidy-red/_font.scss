@@ -5,6 +5,7 @@
 /* Gothic A1 */
 @font-face {
    font-family: "Gothic A1";
+   font-display: fallback;
    src: local("Gothic A1"),
         url('/assets/font/gothica1-light-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-light-webfont.woff') format('woff');
@@ -14,6 +15,7 @@
 
 @font-face {
    font-family: "Gothic A1";
+   font-display: fallback;
    src: local("Gothic A1"),
         url('/assets/font/gothica1-regular-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-regular-webfont.woff') format('woff');
@@ -23,6 +25,7 @@
 
 @font-face {
    font-family: "Gothic A1";
+   font-display: fallback;
    src: local("Gothic A1"),
         url('/assets/font/gothica1-medium-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-medium-webfont.woff') format('woff');
@@ -32,6 +35,7 @@
 
 @font-face {
    font-family: "Gothic A1";
+   font-display: fallback;
    src: local("Gothic A1"),
         url('/assets/font/gothica1-semibold-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-semibold-webfont.woff') format('woff');
@@ -51,6 +55,7 @@
 /* Noto Sans KR */
 @font-face {
    font-family: "Noto Sans KR";
+   font-display: fallback;
    src: local("Noto Sans KR"),
         url('/assets/font/notosanskr-light.woff2') format('woff2'),
         url('/assets/font/notosanskr-light.woff') format('woff');
@@ -60,6 +65,7 @@
 
 @font-face {
    font-family: "Noto Sans KR";
+   font-display: fallback;
    src: local("Noto Sans KR"),
         url('/assets/font/notosanskr-regular.woff2') format('woff2'),
         url('/assets/font/notosanskr-regular.woff') format('woff');
@@ -69,6 +75,7 @@
 
 @font-face {
    font-family: "Noto Sans KR";
+   font-display: fallback;
    src: local("Noto Sans KR"),
         url('/assets/font/notosanskr-medium.woff2') format('woff2'),
         url('/assets/font/notosanskr-medium.woff') format('woff');
@@ -78,6 +85,7 @@
 
 @font-face {
    font-family: "Noto Sans KR";
+   font-display: fallback;
    src: local("Noto Sans KR"),
         url('/assets/font/notosanskr-bold.woff2') format('woff2'),
         url('/assets/font/notosanskr-bold.woff') format('woff');

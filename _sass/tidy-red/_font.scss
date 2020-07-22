@@ -45,6 +45,7 @@
 
 @font-face {
    font-family: "Gothic A1";
+   font-display: fallback;
    src: local("Gothic A1 bold"),
         url('/assets/font/gothica1-bold-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-bold-webfont.woff') format('woff');

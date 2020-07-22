@@ -186,14 +186,14 @@
       display: inline-block;
       position: relative;
       margin: 0 0.5rem;
+      font-family: $default_font03;
+      font-weight: 500;
       line-height: 1;
       vertical-align: middle;
 
       a {
          display: block;
          padding: 0.5rem 1rem;
-         font-family: $default_font03;
-         font-weight: 500;
          color: $black03;
 
          @media (min-width: $min_large_width) {

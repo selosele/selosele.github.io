@@ -4,7 +4,7 @@ comments: true
 title: "Jekyll 테마 퍼블리싱 및 적용 완료"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/blog_thumb01.png
+  overlay_image: /assets/images/thumb/blog_thumb01.jpg
   overlay_filter: 0.5
 date: 2020-06-24 22:58
 categories:

@@ -4,7 +4,7 @@ comments: true
 title: "반쪽짜리 rowspan......"
 excerpt: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
 header:
-  overlay_image: /assets/images/thumb/html_thumb01.png
+  overlay_image: /assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.5
 date: 2019-11-06 22:12
 categories:

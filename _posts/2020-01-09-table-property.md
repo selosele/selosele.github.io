@@ -4,7 +4,7 @@ comments: true
 title: "display: table을 파헤쳐보자"
 excerpt: "table 요소만의 스타일을 사용할 수 있다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2020-01-09 21:21
 categories:

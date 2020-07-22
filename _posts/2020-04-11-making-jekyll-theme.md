@@ -4,7 +4,7 @@ comments: true
 title: "Jekyll 테마 제작 시작하다"
 excerpt: "재밌는 개인 프로젝트~"
 header:
-  overlay_image: /assets/images/thumb/blog_thumb03.png
+  overlay_image: /assets/images/thumb/blog_thumb03.jpg
   overlay_filter: 0.5
 date: 2020-04-11 19:42
 categories:

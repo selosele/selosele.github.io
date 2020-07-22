@@ -4,7 +4,7 @@ comments: true
 title: "querySelectorAll에 대해 제대로 알고 쓰자"
 excerpt: "jQuery적 사고방식을 지양해야"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-03-06 23:45
 categories:

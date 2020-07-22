@@ -4,7 +4,7 @@ comments: true
 title: "Javascript를 이용하여 inline 요소의 공백 제거하기"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-02-19 00:06
 categories:

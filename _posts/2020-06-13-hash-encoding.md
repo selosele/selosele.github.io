@@ -4,7 +4,7 @@ comments: true
 title: "URL hash값을 가져올 시 한글 깨지지 않게 하기"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/js_thumb01.png
+  overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.5
 date: 2020-06-13 00:58
 categories:

@@ -4,7 +4,7 @@ comments: true
 title: "초점이동 테스트를 위한 Javascript 연구"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-05-09 18:28
 categories:

@@ -4,7 +4,7 @@ comments: true
 title: "순수 Javascript 객체와 jQuery 객체를 구별하기 위한 변수 명명법"
 excerpt: "구별해서 써주는 것도 좋다고 봄"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2019-12-31 20:13
 categories:

@@ -4,7 +4,7 @@ comments: true
 title: "Javascript를 활용하여 pixel &rarr; rem 단위로 변환해보자"
 excerpt: "넘나도 쉬운 방법인 것"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-07-14 22:06
 categories:

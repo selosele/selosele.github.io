@@ -4,7 +4,7 @@ comments: true
 title: "HTML entity 변환해주는 사이트 발견.."
 excerpt: "이 기적의 사이트를 이제서야 알게 되다니.."
 header:
-  overlay_image: /assets/images/thumb/html_thumb01.png
+  overlay_image: /assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.3
 date: 2020-03-09 22:37
 categories:
@@ -27,4 +27,4 @@ tags:
 
 ## 사용 예시
 
-{% include image.html url='/assets/images/post/entity-converter_img01.png' description='참 쉽죠?' alt='사용 예시' %}
+{% include image.html url='/assets/images/post/entity-converter_img01.jpg' description='참 쉽죠?' alt='사용 예시' %}

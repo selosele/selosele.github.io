@@ -4,7 +4,7 @@ comments: true
 title: "더 효율적인 CSS 작성 연구 2"
 excerpt: "기존의 습관화된 코딩 방식에서 탈피해야 한다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2020-03-25 22:18
 categories:

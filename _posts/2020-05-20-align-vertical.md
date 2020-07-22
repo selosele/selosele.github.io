@@ -4,7 +4,7 @@ comments: true
 title: "position: absolute 모든 방향을 이용한 중앙정렬 기법"
 excerpt: "신기한 방법인듯"
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2020-05-20 22:51
 categories:

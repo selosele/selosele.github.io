@@ -4,7 +4,7 @@ comments: true
 title: "display: inline-table을 이용한 가로정렬"
 excerpt: "이런 속성도 있었다니!"
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2019-12-30 22:00
 categories:

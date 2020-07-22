@@ -4,7 +4,7 @@ comments: true
 title: "난감한 제목태그 디자인.. 구현법을 알아내다"
 excerpt: "의외로 쉬운 방법"
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2019-12-09 21:17
 categories:
@@ -16,9 +16,9 @@ tags:
 ---
 가끔 이런 제목태그 디자인을 봤을 것임.
 
-{% include image.html url='/assets/images/post/heading-style_img01.png' description='딱 봤을 땐 뭐가 문제인지 모르겠으나.. 텍스트가 한 줄 이상이 된다면?' alt='' %}
+{% include image.html url='/assets/images/post/heading-style_img01.jpg' description='딱 봤을 땐 뭐가 문제인지 모르겠으나.. 텍스트가 한 줄 이상이 된다면?' alt='' %}
 
-{% include image.html url='/assets/images/post/heading-style_img02.png' description='이런 보기 싫은 광경이 펼쳐진다.' alt='' %}
+{% include image.html url='/assets/images/post/heading-style_img02.jpg' description='이런 보기 싫은 광경이 펼쳐진다.' alt='' %}
 
 어떻게 CSS를 줘야 할지 감이 잡히지 않는데, background-image를 높은 확률로 ```position: absolute```{:.language-css}, calc 등으로 잡아보지만 당연히 줄에 맞게 떨어질리가 없다. 구글링으로 얻은 몇 가지 방법을 소개하겠음.
 
@@ -44,7 +44,7 @@ box-shadow를 inset 선언시 그림자가 요소 내부에 생기는 것을 이
 
 linear-gradient는 IE 10까지 지원한다. 그럼 IE 8에서도 문제 없는 방법이 있긴 한건가? 최후의 방법이 하나 남았다.
 
-## background-repeat로 png 이미지를 반복시키는 방법
+## background-repeat로 jpg 이미지를 반복시키는 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="jOEWLqj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="jOEWLqj">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/jOEWLqj">
   jOEWLqj</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
@@ -52,6 +52,6 @@ linear-gradient는 IE 10까지 지원한다. 그럼 IE 8에서도 문제 없는 
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-예를 들어 heading의 font-size가 24px라고 가정했을 때, 너비 1px, 높이 8px 정도의 png 이미지를 하나 만들어서 background-image로 삽입 &rarr; 적당한 background-position 잡아주기 &rarr; x축으로 반복시키기.
+예를 들어 heading의 font-size가 24px라고 가정했을 때, 너비 1px, 높이 8px 정도의 jpg 이미지를 하나 만들어서 background-image로 삽입 &rarr; 적당한 background-position 잡아주기 &rarr; x축으로 반복시키기.
 
 크로스브라우징 이슈 없는 깔끔한 방법이라고 할 수 있겠다. 참 쉽죠?

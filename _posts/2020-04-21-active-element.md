@@ -4,7 +4,7 @@ comments: true
 title: "activeElement 속성으로 현재 활성화된 요소 찾기"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-04-21 20:22
 categories:

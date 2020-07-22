@@ -4,7 +4,7 @@ comments: true
 title: "Javascript 외부 함수 밖에서 내부 함수 실행하기"
 excerpt: "간단하지만 아직 충분히 이해되지 않았음"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-02-12 00:46
 categories:

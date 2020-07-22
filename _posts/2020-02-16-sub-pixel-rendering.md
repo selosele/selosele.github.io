@@ -4,7 +4,7 @@ comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가"
 excerpt: "현재로서 완벽한 방법은 존재하지 않는다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.png
+  overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3
 date: 2020-02-16 22:58
 categories:

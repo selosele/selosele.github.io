@@ -4,7 +4,7 @@ comments: true
 title: "jQuery 동적으로 이벤트 바인딩하기"
 excerpt: "삽질을 방지해주는 기법"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.png
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
 date: 2020-02-06 23:45
 categories:

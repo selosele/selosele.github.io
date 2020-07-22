@@ -4,7 +4,7 @@ comments: true
 title: "first-letter 가상 요소에 대한 놀라운 사실 한 가지"
 excerpt: "함정에 빠지기 쉽다."
 header:
-  overlay_image: /assets/images/thumb/letter_thumb01.png
+  overlay_image: /assets/images/thumb/letter_thumb01.jpg
   overlay_filter: 0.5
 date: 2020-02-17 22:07
 categories:
@@ -30,7 +30,7 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 
 위의 Codepen을 Firefox에서 확인해보면 알겠지만, 다음과 같이 ```::first-letter```{:.language-css}가 제대로 적용되지 않은 것을 볼 수 있다.
 
-{% include image.html url='/assets/images/post/first-letter_img01.png' description='Firefox에서의 모습.' alt='' %}
+{% include image.html url='/assets/images/post/first-letter_img01.jpg' description='Firefox에서의 모습.' alt='' %}
 
 개발자도구로 대다수는 ```::first-letter```{:.language-css} 부분만 살펴보겠지만 원인은 ```::before```{:.language-css} 가상 요소에 있다.
 

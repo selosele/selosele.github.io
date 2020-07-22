@@ -4,7 +4,7 @@ comments: true
 title: "우리가 무의식적으로 즐겨 쓰는, 접근성에 위배되는 코딩 방식들"
 excerpt: "웹 접근성을 준수합시다."
 header:
-  overlay_image: /assets/images/thumb/accessibility_thumb01.png
+  overlay_image: /assets/images/thumb/accessibility_thumb01.jpg
   overlay_filter: 0.5
 date: 2019-11-13 22:12
 categories:

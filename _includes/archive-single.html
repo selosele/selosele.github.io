@@ -5,9 +5,9 @@
 {% endif %}
 
 <div class="{{ include.type | default: 'list' }}__item">
-  <article class="archive__item" aria-labelledby="title-{{ post.url | replace: '/', '' }}" aria-describedby="desc-{{ post.url | replace: '/', '' }}" itemtype="https://schema.org/CreativeWork" itemscope>
+  <article class="archive__item" aria-labelledby="title-{{ post.url | relative_url | replace: '/', '' | replace: '-', '' }}" aria-describedby="desc-{{ post.url | relative_url | replace: '/', '' | replace: '-', '' }}" itemtype="https://schema.org/CreativeWork" itemscope>
     <h3 class="archive__item-title" itemprop="headline">
-      <a href="{{ post.url | relative_url }}" id="title-{{ post.url | replace: '/', '' }}" rel="permalink">{{ title }}</a>
+      <a href="{{ post.url | relative_url }}" id="title-{{ post.url | relative_url | replace: '/', '' | replace: '-', '' }}" rel="permalink">{{ title }}</a>
     </h3>
     {% if post.excerpt != "" %}<strong class="archive__item-excerpt" itemprop="alternativeHeadline">{{ post.excerpt }}</strong>{% endif %}
     {% if page.layout == "home" or page.layout == "archive" or page.layout == "categories" or page.layout == "tags" %}
@@ -15,7 +15,7 @@
       <img src="{% if post.header.overlay_image %}{{ post.header.overlay_image }}{% else %}/assets/images/thumb/default_thumb03.jpg{% endif %}" alt="">
     </div>
     {% endif %}
-    <p class="archive__item-content" id="desc-{{ post.url | replace: '/', '' }}" itemprop="description">{{ post.content | markdownify | strip_html | truncate: 200 }}</p>
+    <p class="archive__item-content" id="desc-{{ post.url | relative_url | replace: '/', '' | replace: '-', '' }}" itemprop="description">{{ post.content | markdownify | strip_html | truncate: 200 }}</p>
     {% if post.date %}
     <span class="post-item post--date"><i class="far fa-clock" aria-hidden="true"></i><span class="visually-hidden">{{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</span> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y년 %m월 %d일" }}</time></span>
     {% endif %}

@@ -217,24 +217,18 @@ $(function() {
             }, 300);
     });
 
-    function activatePostToc(toc, main) {
-        if (!toc.length || $(window).outerWidth() <= 1200) return;
-        if (!toc.hasClass("toc--fixed")) {
-            $(toc).addClass("toc--fixed").attr("tabindex", "0");
-            $(main).addClass("toc-layout");
-        }
+    function activatePostToc(main) {
+        if (!main.length || $(window).outerWidth() <= 1200) return;
+        if ($(".toc-wrapper").hasClass("toc--fixed")) $(main).addClass("toc-layout");
     }
 
-    function deactivatePostToc(toc, main) {
-        $(toc).removeClass("toc--fixed");
+    function deactivatePostToc(main) {
         $(main).removeClass("toc-layout");
     }
 
     function initPostToc() {
-        var tocEL = $(".toc-wrapper"),
-            mainEL = $(".content-wrapper");
-        
-        $(window).outerWidth() > 1200 ? activatePostToc(tocEL, mainEL) : deactivatePostToc(tocEL, mainEL);
+        var mainEL = $(".content-wrapper");
+        $(window).outerWidth() > 1200 ? activatePostToc(mainEL) : deactivatePostToc(mainEL);
     }
 
     initPostToc();

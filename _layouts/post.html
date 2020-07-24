@@ -13,7 +13,7 @@ comments: true
 
     <section class="page__content" id="page-content" itemprop="text">
       {% if page.toc %}
-        <aside class="toc-wrapper" aria-labelledby="toc-title">
+        <aside class="toc-wrapper toc--fixed" aria-labelledby="toc-title" tabindex="0">
           <nav>
             <header>
               <h2 class="toc__title" id="toc-title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h2>

@@ -24,7 +24,7 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
     }
 })();
 
-// anchor 현재 페이지에 aria-current="page" 속성 추가
+// anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 // page share link

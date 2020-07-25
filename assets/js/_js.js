@@ -219,7 +219,7 @@ $(function() {
 
     function activatePostToc(main) {
         if (!main.length || $(window).outerWidth() <= 1200) return;
-        $(main).addClass("toc-layout");
+        if ($(".toc-wrapper").length) $(main).addClass("toc-layout");
     }
 
     function deactivatePostToc(main) {

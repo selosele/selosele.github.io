@@ -302,50 +302,6 @@
    background: $grey12;
    transition: $standard_transition;
 
-   @media (min-width: $min_large_width) {
-      &.toc--fixed {
-         float: left;
-         position: sticky;
-         top: 2rem;
-         left: 2.2vw;
-         z-index: 1;
-         width: 25vw;
-         height: auto;
-         margin-left: -30vw;
-         box-shadow: rgba(0,0,0,0.15) 5px 5px 10px;
-   
-         nav {
-            height: 100%;
-         }
-   
-         .toc {
-            &__menu {
-               max-height: 74vh;
-               padding: 0 1rem;
-            }
-   
-            &--active {
-               position: relative;
-               z-index: 1;
-               background: linear-gradient(45deg, $main_color, $sub_color04);
-               color: $grey12;
-      
-               &:before {
-                  content: "";
-                  display: block;
-                  position: absolute;
-                  top: 0;
-                  bottom: 0;
-                  left: -100%;
-                  z-index: -1;
-                  width: 100%;
-                  background: $main_color;
-               }
-            }
-         }
-      }
-   }
-
    ul {
       padding-left: 0;
    }
@@ -359,15 +315,45 @@
       max-height: 40vh;
       padding: 0 1.5rem;
    }
-}
 
-.page__item-wrapper {
-   + .toc-wrapper {
-      margin-top: 1.5rem;
+   @media (min-width: $min_large_width) {
+      float: left;
+      position: sticky;
+      top: 2rem;
+      left: 2.2vw;
+      z-index: 1;
+      width: 25vw;
+      height: auto;
+      margin-left: -30vw;
+      box-shadow: rgba(0,0,0,0.15) 5px 5px 10px;
 
-      @media (min-width: $min_large_width) {
-         &.toc--fixed {
-            margin-top: 0;
+      nav {
+         height: 100%;
+      }
+
+      .toc {
+         &__menu {
+            max-height: 59vh;
+            padding: 0 1rem;
+         }
+
+         &--active {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, $main_color, $sub_color04);
+            color: $grey12;
+   
+            &:before {
+               content: "";
+               display: block;
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               left: -100%;
+               z-index: -1;
+               width: 100%;
+               background: $main_color;
+            }
          }
       }
    }

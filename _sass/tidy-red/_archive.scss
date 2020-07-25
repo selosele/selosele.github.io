@@ -83,11 +83,10 @@
             &.has--first-letter {
                &:first-letter {
                   float: left;
-                  margin-left: 0.4rem;
-                  margin-right: 0.4rem;
+                  margin: 0.4rem 0.4rem 0 0.4rem;
                   font-weight: 500;
-                  font-size: 2.8rem;
-                  line-height: 1.25em;
+                  font-size: 2.95em;
+                  line-height: 1;
                   color: #c44;
                }
             }

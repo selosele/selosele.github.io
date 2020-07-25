@@ -5,7 +5,7 @@
 // IE check
 window.document.documentMode && document.documentElement.classList.add("only-ie");
 
-// anchor 기본이벤트 무효화
+// anchor 기본이벤트 무효화/
 (function() {
     
     var anchorElement = document.querySelectorAll("a");
@@ -21,6 +21,19 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
                     break;
             }
         });
+    }
+})();
+
+// anchor 현재 페이지에 aria-current="page" 속성 추가
+(function() {
+    
+    var anchorNotSiteTitleElement = document.querySelectorAll("a:not(.site-title)");
+    if (!anchorNotSiteTitleElement) return;
+
+    for (var i = 0; i < anchorNotSiteTitleElement.length; i++) {
+        if (anchorNotSiteTitleElement[i].getAttribute("href") === location.href) {
+            anchorNotSiteTitleElement[i].setAttribute("aria-current", "page");
+        }
     }
 })();
 
@@ -49,13 +62,11 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
         var preCodeElement = pageElement.querySelectorAll("pre.highlight");
         
         for (var i = 0; i < preCodeElement.length; i++) {
-            var preCodeParentElement = preCodeElement[i].parentElement.parentElement,
-                preCodeElement_label = preCodeParentElement.className.replace(/language-|has--label |highlighter-rouge/g, "") + "코드";
-
+            var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
             preCodeElement[i].setAttribute("tabindex", "0");
 
             if (preCodeParentElement.classList.contains("has--label")) {
-                preCodeElement[i].setAttribute("title", preCodeElement_label);
+                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has--label |highlighter-rouge/g, "") + "코드");
             }
         }
     }

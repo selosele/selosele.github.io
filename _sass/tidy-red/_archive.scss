@@ -74,10 +74,24 @@
    
       &-content {
          margin-bottom: 0.7rem;
-         line-height: 1.85;
+         line-height: 1.85em;
          font-size: 0.95rem;
          color: $black03;
          word-break: keep-all;
+
+         @media (min-width: $min_medium_width) {
+            &.has--first-letter {
+               &:first-letter {
+                  float: left;
+                  margin-left: 0.4rem;
+                  margin-right: 0.4rem;
+                  font-weight: 500;
+                  font-size: 2.8rem;
+                  line-height: 1.25em;
+                  color: #c44;
+               }
+            }
+         }
       }
    }
 

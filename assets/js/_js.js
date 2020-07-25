@@ -25,17 +25,7 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
 })();
 
 // anchor 현재 페이지에 aria-current="page" 속성 추가
-(function() {
-    
-    var anchorNotSiteTitleElement = document.querySelectorAll("a:not(.site-title)");
-    if (!anchorNotSiteTitleElement) return;
-
-    for (var i = 0; i < anchorNotSiteTitleElement.length; i++) {
-        if (anchorNotSiteTitleElement[i].getAttribute("href") === location.href) {
-            anchorNotSiteTitleElement[i].setAttribute("aria-current", "page");
-        }
-    }
-})();
+anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 // page share link
 (function() {
@@ -517,6 +507,7 @@ $(function() {
                             if (sInput.val().length) {
                                 sInputVal = false;
                                 sInputValNotChanged = false;
+                                anchorSetAriaCurrent(document.getElementById("search-layer").querySelectorAll(".archive__item-title a"));
                             } else {
                                 sInputVal = true;
                                 sInputValNotChanged = true;

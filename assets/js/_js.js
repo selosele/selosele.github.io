@@ -457,7 +457,7 @@ $(function() {
 $(function() {
 
     var openBtn = $(".nav__search-open"),
-        closeBtn = $(".search__close"),
+        closeBtn = $(".search__btn--close"),
         layer = $(".search-content"),
         outerEL = $("body").children().not(layer.add("script, .side-menu")),
         tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),

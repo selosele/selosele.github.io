@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2019-11-06 22:12
 categories:
-    - html
+    - 퍼블노트
 tags:
     - rowspan
     - table

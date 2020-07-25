@@ -8,9 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-01-19 16:19
 categories:
-    - javascript
-    - web-accessibility
-    - ui
+    - 퍼블노트
 tags:
     - javascript
     - jquery

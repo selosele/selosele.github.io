@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2019-12-31 20:13
 categories:
-    - javascript
+    - 퍼블노트
 tags:
     - javascript
     - jquery

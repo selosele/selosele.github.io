@@ -8,8 +8,7 @@ header:
   overlay_filter: 0.4
 date: 2020-06-06 21:09
 categories:
-    - javascript
-    - typescript
+    - 퍼블노트
 tags:
     - javascript
     - typescript

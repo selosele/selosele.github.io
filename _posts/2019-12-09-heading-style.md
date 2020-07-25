@@ -8,8 +8,7 @@ header:
   overlay_filter: 0.3
 date: 2019-12-09 21:17
 categories:
-    - css
-    - design
+    - 퍼블노트
 tags:
     - css
     - design

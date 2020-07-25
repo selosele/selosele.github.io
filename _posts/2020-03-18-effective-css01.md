@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.3
 date: 2020-03-18 22:08
 categories:
-    - css
+    - 퍼블노트
 tags:
     - css
 ---

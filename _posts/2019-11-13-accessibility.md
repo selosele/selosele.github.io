@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2019-11-13 22:12
 categories:
-    - web-accessibility
+    - 퍼블노트
 tags:
     - web-accessibility
     - html

@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-07-09 21:38
 categories:
-    - life
+    - 퍼블노트
 tags:
     - jekyll
 ---

@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.3
 date: 2019-11-02 22:12
 categories:
-    - css
+    - 퍼블노트
 tags:
     - align-vertically
     - inline-block

@@ -274,7 +274,7 @@ skip_links:
 post:
   author: true
   category_list: true
-  tag_list: false
+  tag_list: true
 
 # teaser
 masthead:

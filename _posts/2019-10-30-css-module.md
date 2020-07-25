@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.3
 date: 2019-10-30 22:12
 categories:
-    - css
+    - 퍼블노트
 tags:
     - cascading-rules
     - css

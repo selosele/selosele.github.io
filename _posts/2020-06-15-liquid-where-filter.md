@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-06-15 21:40
 categories:
-    - liquid
+    - 퍼블노트
 tags:
     - liquid
 ---

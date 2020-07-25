@@ -8,8 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-05-09 18:28
 categories:
-    - javascript
-    - web-accessibility
+    - 퍼블노트
 tags:
     - javascript
     - web-accessibility

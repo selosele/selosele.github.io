@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-02-12 00:46
 categories:
-    - javascript
+    - 퍼블노트
 tags:
     - javascript
 ---

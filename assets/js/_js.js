@@ -159,7 +159,7 @@ $(function() {
 $(function() {
 
     var archiveBtnElement = $(".archive__btn"),
-        archiveListElement = $(".archive__post-list");
+        archiveListElement = $(".archive__list");
 
     archiveBtnElement.on("click", function() {
         var archiveListMatchElement = $("[aria-labelledby='"+$(this).attr("id")+"']");

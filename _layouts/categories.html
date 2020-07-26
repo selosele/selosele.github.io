@@ -21,9 +21,11 @@ title: 카테고리
         {% for category in site.categories %}
           {% if category[1].size == i %}
           {% assign categoryPost = site.posts | where: "categories", category[0] %}
-          <button type="button" class="archive__btn" id="{{ category[0] }}" aria-controls="{{ category[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count">({{ category[1].size }})</small></button>
+          <h2>
+            <button type="button" class="archive__btn" id="{{ category[0] }}" aria-controls="{{ category[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count" aria-hidden="true">({{ category[1].size }})</small></button>
+          </h2>
           
-          <div class="archive__list" id="{{ category[0] }}-list" aria-labelledby="{{ category[0] }}">
+          <div class="archive__list" id="{{ category[0] }}-list" role="region" aria-labelledby="{{ category[0] }}">
             <ul>
               {% for post in categoryPost %}
               <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>

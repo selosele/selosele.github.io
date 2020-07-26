@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.3
 date: 2020-03-09 22:37
 categories:
-    - 퍼블노트
+    - 자료
 tags:
     - html
 ---

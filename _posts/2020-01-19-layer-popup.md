@@ -8,7 +8,7 @@ header:
   overlay_filter: 0.5
 date: 2020-01-19 16:19
 categories:
-    - 퍼블노트
+    - 자료
 tags:
     - javascript
     - jquery

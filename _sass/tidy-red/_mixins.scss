@@ -160,6 +160,7 @@
 /* post item */
 @mixin post_item {
    display: inline-block;
+   height: 1.78rem;
    margin: 0 0.3rem 0.3rem 0;
    padding: 0 0.8rem;
    border-radius: 3px;
@@ -170,6 +171,13 @@
    line-height: 1.78rem;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
    vertical-align: top;
+
+   &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+   }
 }
 
 @mixin post_item_date {

@@ -23,7 +23,7 @@ title: 태그
           {% assign tagPost = site.posts | where: "tags", tag[0] %}
           <button type="button" class="archive__btn" id="{{ tag[0] }}" aria-controls="{{ tag[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__post-list-count">({{ tag[1].size }})</small></button>
   
-          <div class="archive__post-list" id="{{ tag[0] }}-list" aria-labelledby="{{ tag[0] }}" role="listbox">
+          <div class="archive__post-list" id="{{ tag[0] }}-list" aria-labelledby="{{ tag[0] }}">
             <ul>
               {% for post in tagPost %}
               <li {% if tagPost.size == 1 %}role='presentation'{% endif %}>

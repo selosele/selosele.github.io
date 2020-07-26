@@ -23,7 +23,7 @@ title: 카테고리
           {% assign categoryPost = site.posts | where: "categories", category[0] %}
           <button type="button" class="archive__btn" id="{{ category[0] }}" aria-controls="{{ category[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__post-list-count">({{ category[1].size }})</small></button>
           
-          <div class="archive__post-list" id="{{ category[0] }}-list" aria-labelledby="{{ category[0] }}" role="listbox">
+          <div class="archive__post-list" id="{{ category[0] }}-list" aria-labelledby="{{ category[0] }}">
             <ul>
               {% for post in categoryPost %}
               <li {% if categoryPost.size == 1 %}role='presentation'{% endif %}>

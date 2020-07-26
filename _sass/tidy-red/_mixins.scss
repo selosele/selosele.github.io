@@ -160,6 +160,7 @@
 /* post item */
 @mixin post_item {
    display: inline-flex;
+   height: 1.75rem;
    margin: 0 0.3rem 0.3rem 0;
    padding: 0 0.8rem;
    border-radius: 3px;
@@ -167,7 +168,7 @@
    font-family: "Gothic A1";
    font-size: 0.85rem;
    color: $grey12;
-   line-height: 1.78rem;
+   line-height: 1;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
    vertical-align: top;
    align-items: center;

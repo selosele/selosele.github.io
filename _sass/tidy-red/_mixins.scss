@@ -3,17 +3,15 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common_layout($max_width: $layout_width, $width: null, $margin: 0 auto) {
-   @if $width == null {
-      width: 90%;
-      margin: $margin;
-   }
+@mixin common_layout($max_width: null, $width: $layout_width, $margin: 0 auto) {
+   width: 90%;
+   margin: $margin;
 
    @media (min-width: $min_standard_width) {
-      @if $width {
-         width: $width;
-      } @else {
+      @if $max_width {
          max-width: $max_width;
+      } @else {
+         width: $width;
       }
    }
 }
@@ -81,9 +79,13 @@
 
 // clearfix
 @mixin clearfix {
+   &:before,
    &:after {
       content: "";
       display: table;
+   }
+
+   &:after {
       clear: both;
    }
 }
@@ -135,17 +137,6 @@
    height: 1px !important;
    margin: -1px !important;
    border: 0 !important;
-}
-
-/* images */
-@mixin img_align_center {
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   margin: auto;
-   backface-visibility: hidden;
 }
 
 @mixin figcaption {

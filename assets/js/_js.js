@@ -100,7 +100,7 @@ $(function() {
     });
 
     // 페이지 맨 위로 이동 버튼
-    $("[class*='move-to-top']").on("click", function() {
+    $("[class*='btn--top']").on("click", function() {
         $("html, body").stop().animate({
             scrollTop: 0
         }, 500);

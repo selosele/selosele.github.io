@@ -82,15 +82,13 @@
 
    @media (min-width: $min_minimal_width) {
       &__list--grid {
-         @media (min-width: $min_tiny_width) {
-            @include clearfix();
+         @include clearfix();
       
-            li {
-               float: left;
-               width: 50%;
-               margin: 0.8rem 0;
-               padding-right: 2rem;
-            }
+         li {
+            float: left;
+            width: 50%;
+            margin: 0.8rem 0;
+            padding-right: 2rem;
          }
       }
    }

@@ -161,14 +161,14 @@
 @mixin post_item {
    display: inline-flex;
    margin: 0 0.3rem 0.3rem 0;
-   padding: 0.45rem 0.8rem;
+   padding: 0.4rem 0.8rem;
    border-radius: 3px;
    box-shadow: rgba(0,0,0,0.2) 3px 3px 10px;
    font-family: "Gothic A1";
    font-size: 0.85rem;
    color: $grey12;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
-   vertical-align: middle;
+   vertical-align: top;
    white-space: nowrap;
    align-items: center;
 }

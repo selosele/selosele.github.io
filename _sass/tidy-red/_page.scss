@@ -3,8 +3,7 @@
    ========================================================================== */
 
 .content-wrapper {
-   @include common_layout();
-   padding: 3rem 0 4rem;
+   @include common_layout($margin: 3rem auto 4rem);
 
    &.toc-layout {
       width: auto;

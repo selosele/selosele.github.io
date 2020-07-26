@@ -285,6 +285,7 @@ masthead:
 
 # main navigation
 main_nav:
+  menu_list_count: true
   etc: false
 
 # etc

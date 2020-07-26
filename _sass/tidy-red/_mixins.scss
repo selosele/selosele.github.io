@@ -159,19 +159,21 @@
 
 /* post item */
 @mixin post_item {
-   display: inline-flex;
+   display: inline-block;
+   overflow: hidden;
+   max-width: 70%;
    height: 1.65rem;
    margin: 0 0.3rem 0.3rem 0;
    padding: 0 0.65rem;
    border-radius: 3px;
    box-shadow: rgba(0,0,0,0.2) 3px 3px 10px;
-   font-family: "Gothic A1";
+   line-height: 1.65rem;
    font-size: 0.85rem;
    color: $grey12;
+   text-overflow: ellipsis;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
    vertical-align: top;
    white-space: nowrap;
-   align-items: center;
 }
 
 @mixin post_item_date {

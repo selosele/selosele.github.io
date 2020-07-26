@@ -30,6 +30,7 @@
       {% if category[1].size == i %}
       <li>
         <a href="/category-list/#{{ category[0] }}">{{ category[0] }}</a>
+        {% if site.main_nav.menu_list_count %}<small class="menu__list-count">({{ category[1].size }})</small>{% endif %}
       </li>
       {% endif %}
       {% endfor %}

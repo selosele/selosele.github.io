@@ -6,8 +6,6 @@ pagination:
 
 {{ content }}
 
-<h2 class="archive__subtitle {% if page.layout == 'home' %}visually-hidden{% endif %}" {% if page.layout == 'home' %}id='recent-post-title'{% endif %}>{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
-
 {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}

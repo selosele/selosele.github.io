@@ -27,6 +27,18 @@ window.document.documentMode && document.documentElement.classList.add("only-ie"
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
+// 검색 input enter키로 submit 방지
+(function() {
+
+    var searchLayerElement = document.getElementById("search-layer");
+    if (searchLayerElement){
+        searchLayerElement.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
+            var keyType = evt.keyCode || evt.which;
+            if (keyType === 13) evt.preventDefault();
+        });
+    }
+})();
+
 // page share link
 (function() {
 
@@ -47,7 +59,6 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 (function() {
 
     var pageElement = document.getElementById("page-content");
-    
     if (pageElement) {
         var preCodeElement = pageElement.querySelectorAll("pre.highlight");
         

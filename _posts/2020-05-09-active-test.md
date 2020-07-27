@@ -13,7 +13,7 @@ tags:
     - javascript
     - web-accessibility
 ---
-웹 접근성 작업은 만만치 않은 작업이다. 실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때, &ldquo;현재 초점이 잡힌 요소에 숫자가 떠서 몇 번째 요소에 초점이 잡혔는지 알 수 있으면 좋겠다&rdquo;라는 생각을 하게 되었고, 코드를 만들어서 테스트해본 결과 대만족. 실무에서도 사용할 계획임.
+웹 접근성 작업은 만만치 않은 작업이다. 실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때, &ldquo;현재 초점이 잡힌 요소에 숫자가 떠서 몇 번째 요소에 초점이 잡혔는지 알 수 있으면 좋겠다&rdquo;라는 생각을 했는데, 코드를 만들어서 테스트해본 결과 대만족. 실무에서도 사용할 계획임.
 
 ## 기존에 만들었던 코드
 
@@ -24,7 +24,6 @@ $(function() {
     $("*").on("focus", function() {
        console.log(document.activeElement);
     });
-
 });
 ```
 현재 초점이 잡힌 요소를 console에 띄우는 것밖에 없다.
@@ -50,7 +49,6 @@ $(function() {
         if ($(this).find(objActiveNum).length === 0) $(this).append(objActiveNum);
         console.log(objActivated, objActiveCount);
     });
-
 });
 ```
 초점이동 가능한 요소를 일일이 변수에 저장하지 않고, 그냥 모든 요소에 이벤트를 바인딩할 수도 있었지만 <code>button &gt; svg &gt; path</code> 구조의 마크업에서 svg와 path 요소도 초점이 잡히는 신기한 현상 때문에 저렇게 작성하였음.

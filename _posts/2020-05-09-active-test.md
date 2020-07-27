@@ -46,8 +46,7 @@ $(function() {
         objActiveNum.className = "active-n";
         objActiveNum.innerHTML = objActiveCount;
 
-        if ($(this).find(objActiveNum).length === 0) $(this).append(objActiveNum);
-        console.log(objActivated, objActiveCount);
+        !$(this).find(objActiveNum).length && $(this).append(objActiveNum);
     });
 });
 ```

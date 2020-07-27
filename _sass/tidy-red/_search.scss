@@ -87,10 +87,10 @@
   }
 
   .list__item {
-    padding-top: 1.3rem;
     padding-bottom: 1.3rem;
 
     + .list__item {
+      padding-top: 1.3rem;
       border-top: 1px dashed $grey09;
 
       @media (min-width: $min_medium_width) {
@@ -100,7 +100,11 @@
     }
 
     @media (min-width: $min_medium_width) {
-      padding: 0;
+      padding-bottom: 0;
+
+      + .list__item  {
+        padding-top: 0;
+      }
     }
   }
 

@@ -79,14 +79,12 @@ whiteSpaceMargin(".remvWS > *");
 
 {:.has--label}
 ```javascript
-function removeWhiteSpace() {
-  var except = $("button, span");
-  $("*").not(except).contents().filter(function() {
+function removeWhiteSpace(elem) {
+  $(elem).contents().filter(function() {
     return (this.nodeType === 3 && !/\S/.test(this.nodeValue));
   }).remove();
   return this;
 }
-removeWhiteSpace();
 ```
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="JjdRpEe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JjdRpEe">
@@ -96,4 +94,8 @@ removeWhiteSpace();
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-노드의 타입이 텍스트인 노드와 공백이 포함된 노드를 반환한다. 모든 요소에 적용되지 않게 하고자 제외하고 싶은 요소를 필터링해주어야 하는데 막히고 있당
+노드의 타입이 텍스트인 노드와 공백이 포함된 노드를 반환한다. 결과적으로 태그 줄바꿈 삭제 기법을 사용한 것과 다를 게 없지만, 분명히 다른 점이 있다.
+
+로컬 HTML에서 태그 들여쓰기 준수해서 작업 후 함수 호출해주면 태그 줄바꿈 삭제된채로 렌더링되니까, 유지보수 작업 시에는 HTML 긁어다가 prettify 해주는 사이트나 에디터별 정렬 기능 또는 확장 프로그램을 돌리면 그만인 것..
+
+개인적으로 아주 만족스러워서 블로그 JS에 적용하였음.

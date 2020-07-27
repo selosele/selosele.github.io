@@ -328,31 +328,28 @@ $(function() {
 // 스크롤 테이블
 $(function() {
 
-    var tbl_wraped = false;
+    var tbl_wraped = false,
+        tbl_hasTabindex = false;
 
     function tblScrollChk() {
         var tbl = $(".page__content table");
         if (!tbl) return;
 
         tbl.each(function() {
-            !tbl_wraped && tbl.wrap("<div class='tbl-wrapper'></div>");
+            !tbl_wraped && tbl.wrap("<div class='table--scroll'></div>");
             tbl_wraped = true;
 
-            var tblOuterELwrapper = $(this).closest(".tbl-wrapper");
+            var tblOuterELwrapper = $(this).closest(".table--scroll");
 
             if (tblOuterELwrapper.prop("scrollWidth") > tblOuterELwrapper.prop("clientWidth")) {
-                if (!tblOuterELwrapper.hasClass("table--scroll")) {
-                    tblOuterELwrapper
-                        .addClass("table--scroll")
-                        .attr({"tabindex": "0"})
-                        .focus();
+                if (!tbl_hasTabindex) {
+                    tblOuterELwrapper.attr({"tabindex": "0"})
+                    tbl_hasTabindex = true;
                 }
             } else {
-                if (tblOuterELwrapper.hasClass("table--scroll")) {
-                    tblOuterELwrapper
-                        .removeClass("table--scroll")
-                        .removeAttr("tabindex")
-                        .blur();
+                if (tbl_hasTabindex) {
+                    tblOuterELwrapper.removeAttr("tabindex");
+                    tbl_hasTabindex = false;
                 }
             }
         });

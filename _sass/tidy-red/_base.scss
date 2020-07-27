@@ -108,10 +108,8 @@ pre {
    word-break: break-all;
 }
 
-.tbl-wrapper {
-   &.table--scroll {
-      overflow-x: auto;
-   }
+.table--scroll {
+   overflow-x: auto;
 }
 
 table {

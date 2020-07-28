@@ -166,12 +166,12 @@
    margin: 0 0.3rem 0.3rem 0;
    padding: 0 0.65rem;
    border-radius: 3px;
-   box-shadow: rgba(0,0,0,0.2) 3px 3px 10px;
+   box-shadow: rgba(0,0,0,0.2) 0.15rem 0.15rem 0.5rem;
    line-height: 1.65rem;
    font-size: 0.85rem;
    color: $grey12;
    text-overflow: ellipsis;
-   text-shadow: rgba(0,0,0,0.6) 1px 1px 3px;
+   text-shadow: rgba(0,0,0,0.6) 1px 1px 0.15rem;
    vertical-align: top;
    white-space: nowrap;
 }

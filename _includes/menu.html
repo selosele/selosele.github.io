@@ -37,11 +37,11 @@
       {% endfor %}
     </ul>
 
-    {% if site.categories.size > 8 %}
     <a href="/category-list/" class="menu__btn--more">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_nav_category_more }}</span>
     </a>
-    {% endif %}
+
+    {% if site.theme_type == "type2" %}{% include author_link.html %}{% endif %}
     
     <button type="button" class="menu__btn--close" aria-controls="primary-nav">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_close_label }}</span>

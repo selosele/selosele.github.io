@@ -49,17 +49,21 @@
             letter-spacing: normal;
             line-height: 1;
          }
+
+         ~ h2 {
+            margin-top: 2.5rem;
+         }
       }
 
       ul {
-         margin-top: 0;
-         margin-bottom: 2.5rem;
+         margin: 0;
          padding-left: 2rem;
          list-style: circle;
       }
 
       li {
-         margin: 1.3rem 0;
+         margin-top: 1.3rem;
+         margin-bottom: 1.3rem;
          color: $black02;
          font-size: 1.1rem;
          line-height: 1.3;
@@ -71,6 +75,38 @@
                &:hover {
                   text-decoration: underline $main_color;
                }
+            }
+         }
+      }
+
+      .author__links {
+         display: flex;
+         padding-top: 1rem;
+         padding-left: 0;
+         border-top: 1px solid $black;
+         list-style: none;
+         flex-wrap: wrap;
+         justify-content: center;
+
+         li {
+            display: inline-flex;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            margin-left: 3.5%;
+            margin-right: 3.5%;
+            justify-content: center;
+            vertical-align: top;
+            
+            a {
+               display: block;
+               width: 2.5rem;
+               height: 2.5rem;
+               border: 1px solid $main_color;
+               border-radius: 0.5rem;
+               font-size: 1.2rem;
+               line-height: 2.5rem;
+               text-align: center;
+               color: $black02;
             }
          }
       }
@@ -102,7 +138,7 @@
       overflow: hidden;
       width: 2rem;
       height: 2rem;
-      margin: 0 auto;
+      margin: 0 auto 1.5rem;
       text-align: center;
    
       &:before {

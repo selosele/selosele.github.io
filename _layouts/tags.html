@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: sub
 title: 태그
 ---
 
@@ -10,40 +10,30 @@ title: 태그
   {% endif %}
 {% endfor %}
 
-<main class="content-wrapper" id="content">
-  <article itemscope>
-    <header>
-      <h1 id="page-title" class="page__title" itemprop="headline">{{ page.title }}</h1>
-    </header>
-  
-    <section class="page--default archive tag-list" itemprop="text">
-      {% for i in (1..tags_max) reversed %}
-        {% for tag in site.tags %}
-          {% if tag[1].size == i %}
-          {% assign tagPost = site.posts | where: "tags", tag[0] %}
-          <h2>
-            <button type="button" class="archive__btn" id="{{ tag[0] }}" aria-controls="{{ tag[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
-          </h2>
-  
-          <div class="archive__list" id="{{ tag[0] }}-list" role="region" aria-labelledby="{{ tag[0] }}">
-            <ul>
-              {% for post in tagPost %}
-              <li {% if tagPost.size == 1 %}role='presentation'{% endif %}>
-                <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
-              </li>
-              {% endfor %}
-            </ul>
-  
-            <a href="#skip-links" class="page__btn--top">
-              <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
-              <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
-              </svg>
-            </a>
-          </div>
-          {% endif %}
-        {% endfor %}
+{% for i in (1..tags_max) reversed %}
+{% for tag in site.tags %}
+  {% if tag[1].size == i %}
+  {% assign tagPost = site.posts | where: "tags", tag[0] %}
+  <h2>
+    <button type="button" class="archive__btn" id="{{ tag[0] }}" aria-controls="{{ tag[0] }}-list" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
+  </h2>
+
+  <div class="archive__list" id="{{ tag[0] }}-list" role="region" aria-labelledby="{{ tag[0] }}">
+    <ul>
+      {% for post in tagPost %}
+      <li {% if tagPost.size == 1 %}role='presentation'{% endif %}>
+        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
+      </li>
       {% endfor %}
-    </section>
-  </article>
-</main>
+    </ul>
+
+    <a href="#skip-links" class="page__btn--top">
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
+      <svg class="svg--ico" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 400 350 L 400 100 L 300 200 L 400 100 L 500 200" transform="translate(-140,30)"></path>
+      </svg>
+    </a>
+  </div>
+  {% endif %}
+{% endfor %}
+{% endfor %}

@@ -2,7 +2,7 @@
 ---
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="{% if site.theme_type == 'type1' %} theme--type1{% endif %}{% if site.theme_type == 'type2' %} theme--type2{% endif %}{% if site.scrollbar_style %} scrollbar--cutom{% endif %}">
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="{% if site.theme_type == 'type1' %}theme--{{ site.theme_type }}{% endif %}{% if site.theme_type == 'type2' %}theme--{{ site.theme_type }}{% endif %}{% if site.scrollbar_style %} scrollbar--cutom{% endif %}">
   <head>
     {% include head.html %}
   </head>

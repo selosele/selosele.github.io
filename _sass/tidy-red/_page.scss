@@ -272,7 +272,7 @@
    }
 
    &__inner-wrap {
-      @include common_layout();
+      @include common_layout($width: 90%);
       color: $grey12;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
       text-align: center;

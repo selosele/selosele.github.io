@@ -3,15 +3,17 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common_layout($max_width: null, $width: $layout_width, $margin: 0 auto) {
-   width: 90%;
+@mixin common_layout($max_width: null, $width: $layout_width_px, $margin: 0 auto) {
+   width: $layout_width_per;
    margin: $margin;
 
    @media (min-width: $min_standard_width) {
       @if $max_width {
          max-width: $max_width;
       } @else {
-         width: $width;
+         @if $width != $layout_width_per {
+            width: $width;
+         }
       }
    }
 }

@@ -3,7 +3,8 @@
    ========================================================================== */
 
 /* common layout */
-$layout_width: 1200px !default;
+$layout_width_px: 1200px !default;
+$layout_width_per: 90% !default;
 
 // breakpoints (max-width)
 $normal_width: 1600px !default;

@@ -41,7 +41,7 @@
 
    &__lead {
       display: block;
-      margin-bottom: 3rem;
+      margin-bottom: 1.3rem;
       font-family: $default_font03;
       font-weight: 400;
       font-size: calc(100% - -0.5vw);
@@ -147,7 +147,6 @@
    &__date {
       font-family: $default_font03;
       font-weight: 300;
-      text-align: right;
    }
    
    &__content {
@@ -275,7 +274,6 @@
       @include common_layout($width: 90%);
       color: $grey12;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-      text-align: center;
    
       .page__title {
          padding-bottom: 0;

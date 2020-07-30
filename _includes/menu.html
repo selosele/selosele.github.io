@@ -21,9 +21,8 @@
       {%- endfor -%}
     </ul>
   
-    {% if site.categories.size > 0 %}
     <h2>{{ site.data.ui-text[site.locale].menu_categories | default: 'Categories' }}</h2>
-    {% endif %}
+    {% if site.categories.size > 0 %}
     <ul>
       {% for i in (1..categories_max) reversed %}
       {% for category in site.categories limit: 8 %}
@@ -35,11 +34,14 @@
       {% endif %}
       {% endfor %}
       {% endfor %}
-    </ul>
+    </ul>    
 
     <a href="/category-list/" class="menu__btn--more">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_nav_category_more }}</span>
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].no_category }}</span>
     </a>
+    {% else %}
+    <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
+    {% endif %}
 
     {% if site.theme_type == "type2" %}{% include author_link.html %}{% endif %}
     

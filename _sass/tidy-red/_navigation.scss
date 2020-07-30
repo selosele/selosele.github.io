@@ -51,7 +51,7 @@
          }
 
          ~ h2 {
-            margin-top: 2.5rem;
+            margin-top: 2rem;
          }
       }
 
@@ -81,6 +81,7 @@
 
       .author__links {
          display: flex;
+         margin-top: 1.5rem;
          padding-top: 1rem;
          padding-left: 0;
          border-top: 1px solid $black;
@@ -138,7 +139,7 @@
       overflow: hidden;
       width: 2rem;
       height: 2rem;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto;
       text-align: center;
    
       &:before {
@@ -187,6 +188,11 @@
       &:focus {
          outline: 2px solid $main_color;
       }
+   }
+
+   &__alert {
+      padding-top: 0.5rem;
+      line-height: 1.3;
    }
 }
 

@@ -21,15 +21,6 @@ function removeWhiteSpace(elem) {
     }).remove();
 }
 
-// 빈 요소 제거
-function emptyElemRemove(elem) {
-    removeWhiteSpace(elem);
-    
-    $(elem).each(function() {
-        if ($(this).is(":empty")) $(this).remove();
-    });
-}
-
 /* jQuery custom 함수 */
 (function($) {
 
@@ -55,5 +46,4 @@ function emptyElemRemove(elem) {
             }
         });
     }
-    
 })($);

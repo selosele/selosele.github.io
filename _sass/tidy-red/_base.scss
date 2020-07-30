@@ -281,6 +281,18 @@ sup {
       height: 100%;
       background: $main_color;
       box-shadow: rgba(255, 255, 255, 0.3) 1px 1px 1px;
+      animation: loading 0.3s;
+      animation-iteration-count: infinite;
+
+      @keyframes loading {
+         from {
+            width: 0;
+         }
+
+         to {
+            width: 100%;
+         }
+      }
    }
 }
 

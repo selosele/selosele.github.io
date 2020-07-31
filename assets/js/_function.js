@@ -2,7 +2,6 @@
    재사용 가능한 함수 모음
    ========================================================================== */
 
-/* 일반 함수 */
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 function anchorSetAriaCurrent(anchorNode) {
     if (!anchorNode) return;
@@ -21,29 +20,20 @@ function removeWhiteSpace(elem) {
     }).remove();
 }
 
-/* jQuery custom 함수 */
-(function($) {
+// 이미지 정렬
+function alignImg(elem) {
+    if (!elem) return;
 
-    // 한글 체크
-    $.fn.checkKor = function(cls) {
-        return this.each(function() {
-            var kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-            if (!kor.test($(this).text())) $(this).addClass(cls);
-        });
+    for (var i = 0; i < elem.length; i++) {
+        var img_w = elem[i].clientWidth,
+            img_h = elem[i].clientHeight;
+
+        if (img_w > img_h) {
+            elem[i].classList.remove("image--vertical");
+            elem[i].classList.add("image--horizontal");
+        } else {
+            elem[i].classList.remove("image--horizontal");
+            elem[i].classList.add("image--vertical");
+        }
     }
-
-    // 이미지 정렬
-    $.fn.alignImg = function() {
-        return this.each(function() {
-            var img = $(this).find("img"),
-                imgW = img.width(),
-                imgH = img.height();
-
-            if (imgW > imgH) {
-                img.removeClass("image--vertical").addClass("image--horizontal");
-            } else {
-                img.removeClass("image--horizontal").addClass("image--vertical");
-            }
-        });
-    }
-})($);
+}

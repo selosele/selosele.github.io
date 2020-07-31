@@ -6,7 +6,7 @@
 window.document.documentMode && document.documentElement.classList.add("only-ie");
 
 // 로딩
-document.getElementById("mast-loading").remove();
+document.getElementsByClassName("loading-wrapper")[0].remove();
 
 // anchor 기본이벤트 무효화/
 (function() {
@@ -29,6 +29,9 @@ document.getElementById("mast-loading").remove();
 
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
+
+// 이미지 정렬
+alignImg(document.querySelectorAll(".author__avatar img"));
 
 // 검색 input enter키로 submit 방지
 (function() {
@@ -99,9 +102,6 @@ $(function() {
             scrollTop: 0
         }, 500);
     });
-
-    // 이미지 정렬
-    $(".author__avatar").alignImg();
 
     // inline 요소 여백 제거
     removeWhiteSpace(".archive__item, .pagination ul, .page__image-container, .page__share, .keyword-wrapper, .author__links");

@@ -119,11 +119,11 @@
 
    @media (min-width: $min_minimal_width) {
       &__list--grid {
-         @include clearfix();
-      
+         display: flex;
+         flex-wrap: wrap;
+
          li {
-            float: left;
-            width: 50%;
+            flex-basis: 50%;
             margin: 0.8rem 0;
             padding-right: 2rem;
          }

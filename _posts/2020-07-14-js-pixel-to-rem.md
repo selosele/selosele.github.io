@@ -19,7 +19,7 @@ tags:
 
 {:.has--label}
 ```html
-<p id="para">ㅇㅇ</p>
+<p id="foo">ㅇㅇ</p>
 ```
 
 {:.has--label}
@@ -28,9 +28,10 @@ html {
   font-size: 20px;
 }
 
-#para {
+#foo {
   height: 100px;
   background: grey;
+  box-sizing: border-box;
 }
 ```
 
@@ -42,7 +43,9 @@ function pixelToRemUnit(pixelUnit) {
   return pixelUnit / parseFloat(getComputedStyle(document.documentElement).fontSize) + "rem";
 }
 
-$("#para").css("height", pixelToRemUnit($("#para").height()));
+var elem = document.getElementById("foo");
+
+elem.style.height = pixelToRemUnit(elem.offsetHeight);
 ```
 
 매개변수로 받는 요소의 사이즈 나누기, html 요소의 font-size(+ 문자열을 실수로 변환 필수)으로 계산한 값에 rem 문자열을 더하여 최종적으로 rem 단위를 반환해준다. 참고로 위의 코드처럼 모든 페이지에서 호출할 수 있게 공통 함수로 만들어주는 게 좋음.

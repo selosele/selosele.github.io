@@ -37,7 +37,8 @@ var store = [
           {%- endif -%}
         "categories": {{ doc.categories | jsonify }},
         "tags": {{ doc.tags | jsonify }},
-        "url": {{ doc.url | absolute_url | jsonify }}
+        "url": {{ doc.url | absolute_url | jsonify }},
+        "aria": {{ doc.url | absolut_url | jsonify | replace: "/", "" | replace: "-", "" }}
       }{%- unless forloop.last and l -%},{%- endunless -%}
     {%- endfor -%}
   {%- endfor -%}]

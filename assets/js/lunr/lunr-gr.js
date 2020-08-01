@@ -476,7 +476,7 @@ var idx = lunr(function () {
 });
 
 $(document).ready(function() {
-  $('input#search').on('keyup', function () {
+  $('#search-input').on('keyup', function () {
     var resultdiv = $('#results');
     var query = $(this).val().toLowerCase();
     var result =

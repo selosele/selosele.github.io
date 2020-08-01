@@ -24,7 +24,7 @@
     border-radius: 8px;
     background: $grey12;
     box-shadow: rgba(0,0,0,0.1) 10px 10px 10px;
-    cursor: auto;
+    cursor: default;
 
     @media (min-width: $min_small_width) {
       padding: 3rem 2.5rem 2.5rem 2.5rem;
@@ -59,6 +59,7 @@
       height: 2rem;
       padding: 0 1rem;
       border: 0;
+      border-bottom: 1px solid $main_color;
       color: $black02;
       font-weight: 300;
       font-size: 1.2rem;
@@ -136,7 +137,7 @@
     transform: rotate(45deg);
     width: 1.3rem;
     height: 2px;
-    margin: auto;
+    margin: 0 auto;
     background: $sub_color03;
 
     &:before {

@@ -30,6 +30,22 @@ document.querySelector("form").addEventListener("keydown", function(evt) {
 });
 ```
 
+keyCode, which를 사용하지 않을 경우 다음과 같이 작성해주자.
+
+{:.has--label}
+```javascript
+if (evt.key === "Enter") evt.preventDefault();
+```
+
+inline Javascript로 작성할 수도 있다. 구조와 표현의 분리라는 측면에서 봤을 때 좋은 방법은 아니지만 그냥 이런 방법도 있다는 것임.
+
+{:.has--label}
+```html
+<form onkeydown="return event.key != 'Enter';">
+  <input type="text" placeholder="검색어를 입력하세요">
+</form>
+```
+
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="rNxEvBy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="rNxEvBy">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/rNxEvBy">
   rNxEvBy</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)

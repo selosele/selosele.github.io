@@ -16,8 +16,7 @@ if (window.document.documentMode) document.documentElement.classList.add("only-i
 
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-    var keyType = evt.keyCode || evt.which;
-    if (keyType === 13) evt.preventDefault();
+    if (evt.key === "Enter") evt.preventDefault();
 });
 
 // anchor 기본이벤트 무효화/

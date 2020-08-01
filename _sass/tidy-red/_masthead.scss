@@ -201,10 +201,6 @@
    }
 }
 
-.site-nav {
-   margin: 1.7rem 3vw;
-}
-
 .nav__btn-wrapper {
    display: flex;
    justify-content: space-between;
@@ -246,6 +242,10 @@
       font-size: 0.95rem;
       font-weight: 400;
       line-height: 1.3;
+   }
+
+   &-nav {
+      margin: 1.7rem 3vw;
    }
 }
 
@@ -316,37 +316,39 @@
          }
       }
 
-      .site-title {
-         margin-right: 6rem;
+      .site {
+         &-title {
+            margin-right: 6rem;
+   
+            &:before {
+               content: "";
+               display: block;
+               position: absolute;
+               top: -0.6rem;
+               left: 0.3rem;
+               z-index: -1;
+               width: 6px;
+               height: 6px;
+               border-radius: 50%;
+               background: $main_color;
+            }
+         }
 
-         &:before {
-            content: "";
+         &-nav {
             display: block;
             position: absolute;
-            top: -0.6rem;
-            left: 0.3rem;
-            z-index: -1;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: $main_color;
-         }
-      }
-
-      .site-nav {
-         display: block;
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         z-index: 2;
-         width: auto;
-         height: auto;
-
-         .nav__btn-wrapper {
-            position: absolute;
             top: 0;
+            left: 0;
             right: 0;
+            z-index: 2;
+            width: auto;
+            height: auto;
+   
+            .nav__btn-wrapper {
+               position: absolute;
+               top: 0;
+               right: 0;
+            }
          }
       }
    }
@@ -368,47 +370,61 @@
          background-image: linear-gradient(45deg, $grey10, $grey11);
       }
 
-      .site-nav {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-      }
-
-      .site-title {
-         margin-right: 1rem;
-
-         &__author-image {
-            display: none;
-         }
-
-         @media (min-width: $min_medium_width) {
-            &.has--image {
-               padding-left: 4.3rem;
-            }
-
+      .site {
+         &-title {
+            margin-right: 1rem;
+   
             &__author-image {
-               display: block;
-               position: absolute;
-               top: 0;
-               bottom: 0;
-               left: 0;
-               width: 3.5rem;
-               height: 3.5rem;
-               margin: auto 0;
-               padding: 0.2rem;
-               border-radius: 50%;
-               border: 2px solid $main_color;
-               box-shadow: rgba(0,0,0,0.3) 1px 1px 10px 0;
+               display: none;
+            }
+   
+            @media (min-width: $min_medium_width) {
+               &.has--image {
+                  padding-left: 4.3rem;
+               }
 
-               > span {
-                  display: flex;
-                  overflow: hidden;
-                  height: 100%;
-                  border-radius: inherit;
-                  justify-content: center;
-                  align-items: center;
+               &.has--only-title {
+                  margin: 0.3rem 0;
+                  padding-left: 3.85rem;
+   
+                  &:before {
+                     content: "";
+                     display: inline-block;
+                     height: 100%;
+                     vertical-align: 1.08em;
+                  }
+               }
+   
+               &__author-image {
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  margin: auto 0;
+                  padding: 0.2rem;
+                  border-radius: 50%;
+                  border: 2px solid $main_color;
+                  box-shadow: rgba(0,0,0,0.3) 1px 1px 10px 0;
+   
+                  > span {
+                     display: flex;
+                     overflow: hidden;
+                     height: 100%;
+                     border-radius: inherit;
+                     justify-content: center;
+                     align-items: center;
+                  }
                }
             }
+         }
+
+         &-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
          }
       }
    }

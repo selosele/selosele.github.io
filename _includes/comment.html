@@ -1,7 +1,6 @@
-{% assign comm_type = site.comments.provider %}
-{% case comm_type %}
+{% case site.comments.provider %}
   {% when "disqus" %}
-    {% include disqus.html %}
+    {% include comments-providers/disqus.html %}
   {% when "livere" %}
-    {% include livere.html %}
+    {% include comments-providers/livere.html %}
 {% endcase %}

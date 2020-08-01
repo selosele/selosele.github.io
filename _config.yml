@@ -10,9 +10,9 @@ baseurl                  :
 repository               : "selosele/selosele.github.io"
 words_per_minute         : 200
 comments:
-  provider               : "disqus"
+  provider               : "livere" # disqus, livere
   disqus:
-    shortname            : selosele
+    shortname            : # selosele
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:

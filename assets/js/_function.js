@@ -13,20 +13,13 @@ function anchorSetAriaCurrent(anchorNode) {
     }
 }
 
-// inline 요소 여백 제거
-function removeWhiteSpace(elem) {
-    $(elem).contents().filter(function() {
-        if (this.nodeType === 3) return (!/\S/.test(this.nodeValue));
-    }).remove();
-}
-
 // 이미지 정렬
 function alignImg(elem) {
     if (!elem) return;
 
     for (var i = 0; i < elem.length; i++) {
-        var img_w = elem[i].clientWidth,
-            img_h = elem[i].clientHeight;
+        var img_w = elem[i].getBoundingClientRect().width,
+            img_h = elem[i].getBoundingClientRect().height;
 
         if (img_w > img_h) {
             elem[i].classList.remove("image--vertical");
@@ -36,4 +29,13 @@ function alignImg(elem) {
             elem[i].classList.add("image--vertical");
         }
     }
+}
+
+// inline 요소 여백 제거
+function removeWhiteSpace(elem) {
+    if (!elem) return;
+
+    $(elem).contents().filter(function() {
+        if (this.nodeType === 3) return (!/\S/.test(this.nodeValue));
+    }).remove();
 }

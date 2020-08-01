@@ -44,13 +44,9 @@ layout: default
     </footer>
 
     {% include post_pagination.html %}
-  
-    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
-      <!-- include comments.html -->
-    {% endif %}
   </article>
   
   {% if page.comments == true %}
-    {% include disqus.html %}
+    {% include comment.html %}
   {% endif %}
 </main>

@@ -17,7 +17,7 @@ tags:
 
 {:.has--label}
 ```html
-<form action="post">
+<form>
   <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```

@@ -169,10 +169,6 @@
    }
 }
 
-.post--tag {
-   @include post_item_tag();
-}
-
 .taxonomy {
    &__index {
       display: grid;

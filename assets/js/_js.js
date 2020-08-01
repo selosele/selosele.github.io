@@ -2,11 +2,26 @@
    _function.js에서 작성한 함수 호출/재사용 불가능한 함수 모음
    ========================================================================== */
 
+// anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
+anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
+
+// 이미지 정렬
+alignImg(document.querySelectorAll(".author__avatar img"));
+
+// inline 요소 여백 제거
+removeWhiteSpace(".archive__item, .pagination ul, .page__image-container, .page__share, .keyword-wrapper, .author__links");
+
 // IE check
-window.document.documentMode && document.documentElement.classList.add("only-ie");
+if (window.document.documentMode) document.documentElement.classList.add("only-ie");
 
 // 로딩
-document.getElementsByClassName("loading-wrapper")[0].remove();
+document.querySelector(".loading-wrapper").remove();
+
+// 검색 input enter키로 submit 방지
+document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
+    var keyType = evt.keyCode || evt.which;
+    if (keyType === 13) evt.preventDefault();
+});
 
 // anchor 기본이벤트 무효화/
 (function() {
@@ -23,24 +38,6 @@ document.getElementsByClassName("loading-wrapper")[0].remove();
                     evt.preventDefault();
                     break;
             }
-        });
-    }
-})();
-
-// anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
-anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
-
-// 이미지 정렬
-alignImg(document.querySelectorAll(".author__avatar img"));
-
-// 검색 input enter키로 submit 방지
-(function() {
-
-    var searchLayerElement = document.getElementById("search-layer");
-    if (searchLayerElement){
-        searchLayerElement.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-            var keyType = evt.keyCode || evt.which;
-            if (keyType === 13) evt.preventDefault();
         });
     }
 })();
@@ -102,10 +99,6 @@ $(function() {
             scrollTop: 0
         }, 500);
     });
-
-    // inline 요소 여백 제거
-    removeWhiteSpace(".archive__item, .pagination ul, .page__image-container, .page__share, .keyword-wrapper, .author__links");
-
 });
 
 // post archive 목록 펼쳐보기

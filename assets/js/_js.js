@@ -14,9 +14,6 @@ removeWhiteSpace(".archive__item, .pagination ul, .page__image-container, .page_
 // IE check
 if (window.document.documentMode) document.documentElement.classList.add("only-ie");
 
-// 로딩
-document.querySelector(".loading-wrapper").remove();
-
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
     var keyType = evt.keyCode || evt.which;

@@ -266,37 +266,6 @@ sup {
    }
 }
 
-/* loading */
-.loading {
-   &-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10001;
-      height: 2px;
-   }
-
-   &__bar {
-      width: 0;
-      height: 100%;
-      background: $main_color;
-      box-shadow: rgba(255, 255, 255, 0.3) 1px 1px 1px;
-      animation: loading 0.3s;
-      animation-iteration-count: infinite;
-
-      @keyframes loading {
-         from {
-            width: 0;
-         }
-
-         to {
-            width: 100%;
-         }
-      }
-   }
-}
-
 /* indent class */
 .align {
    &--left {

@@ -78,6 +78,7 @@
       color: $black02;
       font-weight: 300;
       pointer-events: none;
+      white-space: nowrap;
       @include search_item();
     }
 

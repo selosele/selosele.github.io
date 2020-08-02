@@ -6,6 +6,7 @@ excerpt: ""
 header:
   overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
+  image_position:
 date: 2020-07-30 20:51
 categories:
     - 퍼블노트

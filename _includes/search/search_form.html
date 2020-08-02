@@ -4,16 +4,16 @@
 	{%- when "lunr" -%}
 	<div class="search-content__form-wrapper">
 		<form>
-			<label for="search-input">{{ site.data.ui-text[site.locale].search_label_text }}</label>
-			<input type="search" id="search-input" title="{{ site.data.ui-text[site.locale].search_placeholder_text }}">
+			<label id="search-title" for="search-input">{{ site.data.ui-text[site.locale].search_label_text }}</label>
+			<input type="search" id="search-input">
 		</form>
 	</div>
 	<div id="results" class="results"></div>
 	{%- when "google" -%}
 	<div class="search-content__form-wrapper">
 		<form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-			<label for="cse-search-input-box-id">{{ site.data.ui-text[site.locale].search_label_text }}</label>
-			<input type="search" id="cse-search-input-box-id" title="{{ site.data.ui-text[site.locale].search_placeholder_text }}">
+			<label id="search-title" for="cse-search-input-box-id">{{ site.data.ui-text[site.locale].search_label_text }}</label>
+			<input type="search" id="cse-search-input-box-id">
 		</form>
 	</div>
 	<div id="results" class="results">

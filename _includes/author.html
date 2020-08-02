@@ -5,7 +5,7 @@
   </div>
 </div>
 {% endif %}
-<div class="author__info-wrapper" aria-labelledby="author-name" itemscope>
+<div class="author__info-wrapper" aria-labelledby="author-name" itemscope itemtype="https://schema.org/Thing">
   <{% if page.layout != "post" %}strong{% else %}h2{% endif %} class="author__name" id="author-name" itemprop="name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
   {% if site.author.desc %}<p class="author__desc" itemprop="description">{{ site.author.desc }}</p>{% endif %}
   {% if site.theme_type == "type1" and page.layout != "post" %}

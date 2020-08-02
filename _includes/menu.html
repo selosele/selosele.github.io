@@ -37,13 +37,21 @@
     </ul>    
 
     <a href="/category-list/" class="menu__btn--more">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].no_category }}</span>
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_nav_category_more }}</span>
     </a>
     {% else %}
     <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
     {% endif %}
 
-    {% if site.theme_type == "type2" %}{% include author_link.html %}{% endif %}
+    {% if site.theme_type == "type2" %}
+      <div class="menu__author-wrapper" aria-labelledby="menu-author-title" itemscope itemtype="https://schema.org/Thing">
+        <strong class="menu__author-name" id="menu-author-title">{{ site.author.name }}</strong>
+        {% if site.author.desc %}
+        <p class="menu__author-desc" itemprop="description">{{ site.author.desc }}</p>
+        {% endif %}
+        {% include author_link.html class='menu__author-links' %}
+      </div>
+    {% endif %}
     
     <button type="button" class="menu__btn--close" aria-controls="primary-nav">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_close_label }}</span>

@@ -1,4 +1,4 @@
-<ul class="author__links">
+<ul class="{{ include.class | default: 'author__links' }}">
   {% for link in site.author.links %}
     {% if link.label and link.url %}
     <li {% if site.author.links.size == 1 %}role="presentation"{% endif %}>

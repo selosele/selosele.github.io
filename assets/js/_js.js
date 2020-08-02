@@ -370,6 +370,7 @@ $(function() {
         tabbaleFirst = tabbale.first(),
         tabbaleLast = tabbale.last(),
         sForm = layer.find("form"),
+        sLabel = sForm.find("label"),
         sInput = layer.find("input[type='search']"), sInputVal, sInputValNotChanged;
 
     function layerClose() {
@@ -413,10 +414,12 @@ $(function() {
                             if (sInput.val().length) {
                                 sInputVal = false;
                                 sInputValNotChanged = false;
+                                !sLabel.hasClass("visually-hidden") && sLabel.addClass("visually-hidden");
                                 anchorSetAriaCurrent(document.getElementById("search-layer").querySelectorAll(".archive__item-title a"));
                             } else {
                                 sInputVal = true;
                                 sInputValNotChanged = true;
+                                sLabel.removeClass("visually-hidden");
                             }
                     });
                 }

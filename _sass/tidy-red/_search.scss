@@ -33,50 +33,6 @@
     @media (min-width: $min_large_width) {
       padding: 4rem 2.5rem;
     }
-
-    form {
-      margin: 1rem 0;
-  
-      @media (min-width: $min_large_width) {
-        position: relative;
-        padding-left: 6rem;
-  
-        &:before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100px;
-          height: 100px;
-          background: url(/assets/images/sprite.png) no-repeat -95px -5px;
-        }
-      }
-    }
-
-    input[type="search"] {
-      width: 100%;
-      height: 2rem;
-      padding: 0 1rem;
-      border: 0;
-      border-bottom: 1px solid $main_color;
-      color: $black02;
-      font-weight: 300;
-      font-size: 1.2rem;
-      line-height: 2rem;
-  
-      @media (min-width: $min_small_width) {
-        height: 3rem;
-        line-height: 3rem;
-        font-size: 1.7rem;
-      }
-
-      @media (min-width: $min_medium_width) {
-        height: 5rem;
-        line-height: 5rem;
-        font-size: 2.2rem;
-      }
-    }
   
     .results {
       &__found {
@@ -84,6 +40,54 @@
         color: $black02;
         font-size: 0.9rem;
       }
+    }
+  }
+
+  &__form-wrapper {
+    position: relative;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $main_color;
+
+    @media (min-width: $min_large_width) {
+      padding-left: 6rem;
+      padding-bottom: 1rem;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: url(/assets/images/sprite.png) no-repeat -95px -5px;
+      }
+    }
+
+    form {
+      position: relative;
+    }
+
+    label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: $black02;
+      font-weight: 300;
+      pointer-events: none;
+      @include search_item();
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding-right: 1rem;
+      border: 0;
+      color: $black02;
+      font-weight: 300;
+      @include search_item();
     }
   }
 

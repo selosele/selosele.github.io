@@ -291,7 +291,7 @@ $(function() {
         menuOuterEL.attr("aria-hidden", "true");
         if (!menuCurrentPage.is("[aria-current]")) {
             menuCurrentPage.attr("aria-current", "page");
-            menuCurrentPage.parent("li").addClass("menu--current-page");
+            menuCurrentPage.parent("li").addClass("menu__menuitem--current-page");
         }
 
         setTimeout(function() {

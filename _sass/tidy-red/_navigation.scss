@@ -180,25 +180,15 @@
             justify-content: center;
    
             li {
-               display: inline-flex;
-               margin-top: 0.5rem;
-               margin-bottom: 0.5rem;
-               margin-left: 3%;
-               margin-right: 3%;
-               justify-content: center;
-               vertical-align: top;
+               margin: 0.3rem 3%;
                
                a {
                   display: block;
                   width: 2.5rem;
                   height: 2.5rem;
-                  border: 1px solid $main_color;
-                  border-radius: 50%;
-                  background: linear-gradient(45deg, $main_color 50%, $sub_color06);
                   font-size: 1.2rem;
                   line-height: 2.5rem;
-                  text-align: center;
-                  color: $grey12;
+                  color: $sub_color03;
                }
             }
          }
@@ -216,25 +206,26 @@
    margin-top: 4rem;
    text-align: center;
 
-   @media (min-width: $min_minimal_width) {
+   @media (min-width: $min_medium_width) {
       margin-top: 2.5rem;
       margin-bottom: 1rem;
    }
 
    ul {
+      display: flex;
       margin: 0;
       padding: 0;
       list-style: none;
+      justify-content: center;
+      align-items: center;
    }
 
    li {
-      display: inline-block;
       position: relative;
       margin: 0 0.5rem;
       font-family: $default_font03;
       font-weight: 500;
       line-height: 1;
-      vertical-align: middle;
 
       a {
          display: block;
@@ -248,7 +239,7 @@
             }
          }
 
-         @media (max-width: $minimal_width) {
+         @media (max-width: $min_medium_width) {
             position: relative;
             overflow: hidden;
             border: 1px solid $main_color;
@@ -272,7 +263,7 @@
          }
       }
 
-      @media (max-width: $minimal_width) {
+      @media (max-width: $min_medium_width) {
          width: min-content;
          height: min-content;
          margin: 0;

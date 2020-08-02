@@ -9,7 +9,7 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 alignImg(document.querySelectorAll(".author__avatar img"));
 
 // inline 요소 여백 제거
-removeWhiteSpace(".archive__item, .pagination ul, .page__image-container, .page__share, .keyword-wrapper, .author__links");
+removeWhiteSpace(".archive__item, .page__image-container, .page__share, .keyword-wrapper");
 
 // IE check
 if (window.document.documentMode) document.documentElement.classList.add("only-ie");

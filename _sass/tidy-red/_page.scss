@@ -223,6 +223,10 @@
                }
             }
          }
+
+         &__info-wrapper {
+            color: $black02;
+         }
    
          &__image-wrapper {
             display: flex;
@@ -236,16 +240,14 @@
          &__name {
             display: block;
             margin-bottom: 0.5rem;
-            color: $black02;
             font-family: $default_font03;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 1.4rem;
             line-height: 1.2;
          }
    
          &__desc {
             font-size: 1rem;
-            font-weight: 300;
             line-height: 1.4;
          }
       }

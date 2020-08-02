@@ -47,6 +47,13 @@ layout: default
   </article>
   
   {% if page.comments == true %}
-    {% include comment.html %}
+    {% if site.comments.provider and page.comments %}
+    {% case site.comments.provider %}
+      {% when "disqus" %}
+        {% include comments-providers/disqus.html %}
+      {% when "livere" %}
+        {% include comments-providers/livere.html %}
+    {% endcase %}
+    {% endif %}
   {% endif %}
 </main>

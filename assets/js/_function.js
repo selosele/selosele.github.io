@@ -11,7 +11,7 @@ var anchorSetAriaCurrent = function(anchorNode) {
             anchorNode[i].setAttribute("aria-current", "page");
         }
     }
-}
+};
 
 // 이미지 정렬
 var alignImg = function(elem) {
@@ -29,7 +29,7 @@ var alignImg = function(elem) {
             elem[i].classList.add("image--vertical");
         }
     }
-}
+};
 
 // inline 요소 여백 제거
 var removeWhiteSpace = function(elem) {
@@ -38,4 +38,4 @@ var removeWhiteSpace = function(elem) {
     $(elem).contents().filter(function() {
         if (this.nodeType === 3) return (!/\S/.test(this.nodeValue));
     }).remove();
-}
+};

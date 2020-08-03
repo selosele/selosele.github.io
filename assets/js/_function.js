@@ -3,7 +3,7 @@
    ========================================================================== */
 
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
-function anchorSetAriaCurrent(anchorNode) {
+var anchorSetAriaCurrent = function(anchorNode) {
     if (!anchorNode) return;
 
     for (var i = 0; i < anchorNode.length; i++) {
@@ -14,7 +14,7 @@ function anchorSetAriaCurrent(anchorNode) {
 }
 
 // 이미지 정렬
-function alignImg(elem) {
+var alignImg = function(elem) {
     if (!elem) return;
 
     for (var i = 0; i < elem.length; i++) {
@@ -32,7 +32,7 @@ function alignImg(elem) {
 }
 
 // inline 요소 여백 제거
-function removeWhiteSpace(elem) {
+var removeWhiteSpace = function(elem) {
     if (!elem) return;
 
     $(elem).contents().filter(function() {

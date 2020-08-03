@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - jquery
 ---
 URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새로고침 시, hash가 남아 있어야/없어져야 하는지 고민에 빠졌음. 개인적으로 결론을 어떻게 내리든, 공부를 위해서 새로고침 시 hash 제거 스크립트를 짜보기로~!
 
@@ -19,7 +18,7 @@ URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새�
 
 {:.has--label}
 ```javascript
-$(window).keydown(function(event) {
+$(document).keydown(function(event) {
     var k = event.keyCode || event.which;
     if (((k === 116) || (event.ctrlKey && k === 82) || (event.ctrlKey && event.shiftKey && k === 82)) && window.location.hash) {
         // F5키/Ctrl키 + R키/Ctrl키 + Shift키 + R키
@@ -44,9 +43,7 @@ function refreshRemoveHash() {
 }
 refreshRemoveHash();
 ```
-그래서 &ldquo;페이지가 로드되었을 때[^1]&rdquo; 실행되는 함수를 만들었다. jQuery 코드는 대부분 모든 DOM이 생성되었을 때, 즉 ```$(document).ready```{:.language-javascript} 함수 내부에 작성하는 방식이 사용되므로 ```if (document.readyState === "complete")```{:.language-javascript}[^2] 이런거 안 써도 됨.
-
-근데 한글 감지가 안되서 속이 터지는 중... 어디서부터 틀린 걸까........
+그래서 &ldquo;페이지가 로드되었을 때[^1]&rdquo; 실행되는 함수를 만들었다. 근데 한글 감지가 안되서 속이 터지는 중... 어디서부터 틀린 걸까........
 
 ### <span>코드 완성하다</span>
 20200422, &ldquo;페이지가 로드되었을 때&rdquo;의 코드를 완성하였음. 두 달이나 지나서 완성이라니... -_-
@@ -61,4 +58,3 @@ refreshRemoveHash();
 익명함수의 형태로 짜보았고, 한글감지가 되었음. 함수선언문 형태로 만든 두 달 전의 것은 실패작이었음이 드러나게 되었다.
 
 [^1]: [1] 엄연히 말하면 모든 DOM이 생성되었을 때. 어느 정도 쉬운 말로 풀어쓰기 위한 목적이다.
-[^2]: [2] 문서가 로드되었을 때.

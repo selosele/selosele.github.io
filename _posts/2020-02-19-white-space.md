@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - jquery
 ---
 inline formatting context가 가지는 자연스러운 공백을 제거하는 방법이라고 하면 대부분 ```margin-left: -4px```{:.language-css}, 부모 요소에 ```font-size: 0```{:.language-css}이나 태그 줄바꿈 삭제 등의 방법이 주로 사용되고 있고, 이 방법들로 인해 발생하는 리스크는 고려되지 않은 채 받아들여지고 있는 현실이다.
 
@@ -20,7 +19,7 @@ inline formatting context가 가지는 자연스러운 공백을 제거하는 �
 태그 줄바꿈 삭제는 협업 프로세스에서 사용하기에 적절한 방법은 아니라고 본다.
 
 ## 그렇다면 적절한 방법은 무엇인가?
-결국 Javascript를 이용하는 방법 연구에 착수하였다.
+결국 Javascript를 이용하는 방법을 검색해보았다.
 
 ### 공백값을 구한 후, 값만큼 margin-left 음수값을 대입하는 방법
 
@@ -83,7 +82,6 @@ function removeWhiteSpace(elem) {
   $(elem).contents().filter(function() {
     return (this.nodeType === 3 && !/\S/.test(this.nodeValue));
   }).remove();
-  return this;
 }
 ```
 

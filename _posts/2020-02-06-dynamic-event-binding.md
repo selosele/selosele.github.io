@@ -10,7 +10,6 @@ date: 2020-02-06 23:45
 categories:
     - 퍼블노트
 tags:
-    - jquery
     - javascript
 ---
 만약 버튼을 클릭하면 버튼이 생성되고, 생성된 버튼을 클릭 시 alert창이 뜨는 jQuery를 짠다면?

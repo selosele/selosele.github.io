@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - jquery
     - web-accessibility
     - ui
 ---

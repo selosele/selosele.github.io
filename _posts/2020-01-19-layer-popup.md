@@ -11,7 +11,6 @@ categories:
     - 자료
 tags:
     - javascript
-    - jquery
     - web-accessibility
     - ui
 ---

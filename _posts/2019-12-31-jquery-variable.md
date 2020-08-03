@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - jquery
 ---
 순수 Javascript/jQuery 객체가 구별되지 않은 변수명이란 다음과 같다.
 

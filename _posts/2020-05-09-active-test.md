@@ -19,11 +19,8 @@ tags:
 
 {:.has--label}
 ```javascript
-$(function() {
-
-    $("*").on("focus", function() {
-       console.log(document.activeElement);
-    });
+$("*").on("focus", function() {
+  console.log(document.activeElement);
 });
 ```
 현재 초점이 잡힌 요소를 console에 띄우는 것밖에 없다.
@@ -32,25 +29,21 @@ $(function() {
 
 {:.has--label}
 ```javascript
-$(function() {
-    
-    var objActiveCount = 0
-      , objTabbable = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
+var objActiveCount = 0
+  , objTabbable = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
 
-    objTabbable.on("focus", function() {
-        objActiveCount += 1;
+objTabbable.on("focus", function() {
+  objActiveCount += 1;
 
-        var objActivated = document.activeElement
-          , objActiveNum = document.createElement("span");
-        
-        objActiveNum.className = "active-n";
-        objActiveNum.innerHTML = objActiveCount;
+  var objActivated = document.activeElement
+    , objActiveNum = document.createElement("span");
 
-        !$(this).find(objActiveNum).length && $(this).append(objActiveNum);
-    });
+  objActiveNum.className = "active-n";
+  objActiveNum.innerHTML = objActiveCount;
+
+  !$(this).find(objActiveNum).length && $(this).append(objActiveNum);
 });
 ```
-초점이동 가능한 요소를 일일이 변수에 저장하지 않고, 그냥 모든 요소에 이벤트를 바인딩할 수도 있었지만 <code>button &gt; svg &gt; path</code> 구조의 마크업에서 svg와 path 요소도 초점이 잡히는 신기한 현상 때문에 저렇게 작성하였음.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="xxwjKvx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxwjKvx">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/xxwjKvx">

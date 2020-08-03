@@ -5,7 +5,7 @@ title: "position: absolute 모든 방향을 이용한 중앙정렬 기법"
 excerpt: "신기한 방법인듯"
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-05-20 22:51
 categories:
     - 퍼블노트
@@ -53,13 +53,4 @@ div {
 ```
 absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으로 계산되도록 해준다. 위의 transform 기법과 별 차이는 없어보이지만 언젠가 유용할 듯 싶어 기록함.
 
-그나저나 IE만 아니면 flex를......
-
-{:.has--label}
-```css
-p {
-  backface-visibility: hidden;
-}
-```
-
-만약 중앙정렬된 요소가 흐려보이는 현상이 발생하면 ```backface-visibility: hidden```{:.language-css} 선언으로 선명하게 보이도록 해준다. IE는 10까지 지원되고 Safari는 접두사를 붙여줘야 함.
+그나저나 IE만 아니면 flex를...

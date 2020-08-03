@@ -33,7 +33,7 @@ role이나 aria- 로 시작하는 속성들에 대해선 wai-aria를 찾아보�
 
 ## Javascript
 ```javascript
-$(".open_lp").on("click", function() {
+$(".open_lp").click(function() {
     var op = $(this);
     var lp = $("#" + $(this).attr("aria-controls"));
     var lpObj = lp.children(".inner");
@@ -60,7 +60,7 @@ $(".open_lp").on("click", function() {
     $(this).blur();
     all.addClass("on");        
     lpOuterObjHidden.attr("aria-hidden", "true"); // 레이어 바깥 영역을 스크린리더가 읽지 않게
-    lpObjTabbable.length > 0 ? lpObjTabbableFirst.focus().on("keydown", function(event) { 
+    lpObjTabbable.length > 0 ? lpObjTabbableFirst.focus().keydown(function(event) { 
         // 레이어 열리자마자 초점 받을 수 있는 첫번째 요소로 초점 이동
         var k = event.keyCode || event.which;
         if (event.shiftKey && k === 9) {
@@ -68,13 +68,13 @@ $(".open_lp").on("click", function() {
             event.preventDefault();
             lpObjTabbableLast.focus();
         }
-    }) : lpObj.attr("tabindex", "0").focus().on("keydown", function(event){
+    }) : lpObj.attr("tabindex", "0").focus().keydown(function(event){
         var k = event.keyCode || event.which;
         tabDisable = true;
         if (k === 9) event.preventDefault();
         // Tab키 / Shift + Tab키 : 초점 받을 수 있는 요소가 없을 경우 레이어 밖으로 초점 이동 안되게
     });
-    lpObjTabbableLast.on("keydown", function(event) {
+    lpObjTabbableLast.keydown(function(event) {
         var k = event.keyCode || event.which;
         if (!event.shiftKey && k === 9) {
             // Tab키 : 초점 받을 수 있는 마지막 요소에서 첫번째 요소으로 초점 이동
@@ -82,13 +82,13 @@ $(".open_lp").on("click", function() {
             lpObjTabbableFirst.focus();
         }
     });
-    lp.on("click", function(event){
+    lp.click(function(event){
         if (event.target !== event.currentTarget) return; {
             // 반투명 배경 클릭 시 레이어 닫기
             lpClose();
         }
     });
-    $(window).on("keydown", function(event) {
+    $(document).keydown(function(event) {
         var k = event.keyCode || event.which;
         switch (k) {
         case 27:

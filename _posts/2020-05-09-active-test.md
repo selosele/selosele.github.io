@@ -19,7 +19,7 @@ tags:
 
 {:.has--label}
 ```javascript
-$("*").on("focus", function() {
+$("*").focus(function() {
   console.log(document.activeElement);
 });
 ```
@@ -32,7 +32,7 @@ $("*").on("focus", function() {
 var objActiveCount = 0
   , objTabbable = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
 
-objTabbable.on("focus", function() {
+objTabbable.focus(function() {
   objActiveCount += 1;
 
   var objActivated = document.activeElement

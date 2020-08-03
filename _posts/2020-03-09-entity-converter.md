@@ -5,7 +5,7 @@ title: "HTML entity 변환해주는 사이트 발견.."
 excerpt: "이 기적의 사이트를 이제서야 알게 되다니.."
 header:
   overlay_image: /assets/images/thumb/html_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-03-09 22:37
 categories:
     - 자료

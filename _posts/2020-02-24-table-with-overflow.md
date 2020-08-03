@@ -5,7 +5,7 @@ title: "table 요소와 overflow의 공존은 불가능"
 excerpt: "알고보면 정답은 쉬운 곳에 있다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-02-24 21:30
 categories:
     - 퍼블노트
@@ -54,6 +54,7 @@ ul {
 ```table-layout: fixed```{:.language-css} 선언으로 table 요소의 너비값을 고정시켜줘야 overflow 속성이 유효해지게 된다. 즉, overflow는 너비값을 가질 수 있는 block formatting context가 넘칠 때의 처리를 결정하는 속성이기 때문. MDN에 자세히 설명되어 있다.
 
 > The overflow shorthand CSS property sets what to do when an element&apos;s content is too big to fit in its block formatting context.
+> 
 > overflow CSS 단축 속성은 요소의 콘텐츠가 너무 커서 요소의 블록 서식 맥락에 맞출 수 없을 때의 처리법을 지정합니다.
 > 
 > <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target="_blank" title="새창열림" class="bu-link2">원문</a> 및 <a href="https://developer.mozilla.org/ko/docs/Web/CSS/overflow" target="_blank" title="새창열림" class="bu-link2">번역</a></cite>

@@ -2,6 +2,9 @@
    _function.js에서 작성한 함수 호출/재사용 불가능한 함수 모음
    ========================================================================== */
 
+// IE check
+if (window.document.documentMode) document.documentElement.classList.add("only-ie");
+
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
@@ -11,15 +14,12 @@ alignImg(document.querySelectorAll(".author__avatar img"));
 // inline 요소 여백 제거
 removeWhiteSpace(".archive__item, .page__image-container, .page__share, .keyword-wrapper");
 
-// IE check
-if (window.document.documentMode) document.documentElement.classList.add("only-ie");
-
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
     if (evt.key === "Enter") evt.preventDefault();
 });
 
-// anchor 기본이벤트 무효화/
+// anchor 기본이벤트 무효화
 (function() {
     
     var anchorElement = document.querySelectorAll("a");
@@ -90,7 +90,7 @@ $(function() {
     });
 
     // 페이지 맨 위로 이동 버튼
-    $("[class*='btn--top']").on("click", function() {
+    $("[class*='btn--top']").click(function() {
         $("html, body").stop().animate({
             scrollTop: 0
         }, 500);
@@ -103,7 +103,7 @@ $(function() {
     var archiveBtnElement = $(".archive__btn"),
         archiveListElement = $(".archive__list");
 
-    archiveBtnElement.on("click", function() {
+    archiveBtnElement.click(function() {
         var archiveListMatchElement = $("[aria-labelledby='"+$(this).attr("id")+"']");
 
         if (archiveListMatchElement.css("display") !== "block") {
@@ -152,11 +152,11 @@ $(function() {
         });
     });
 
-    $(document).on("click", ".toc-wrapper li a", function(evt) {
+    $(".toc-wrapper li a").click(function() {
         $("html, body")
             .stop()
             .animate({
-                scrollTop: $("#" + $(evt.currentTarget).attr("href").replace("#", "")).offset().top
+                scrollTop: $("#" + $(this).attr("href").replace("#", "")).offset().top
             }, 300);
     });
 
@@ -271,7 +271,7 @@ $(function() {
         menuELFocusedLast, nowScrollPos,
         menuCurrentPage = menu.find("a[href='"+window.location.pathname+"']");
 
-    menuELopen.on("click", function() {
+    menuELopen.click(function() {
         // $("body")
         //     .css("top", - $(window).scrollTop() + "px")
         //     .addClass("scroll--off")
@@ -298,7 +298,7 @@ $(function() {
             menuELlayer.stop().animate({"right": "0"}, 400);
         });
         
-        menuELtabble.on("focusin", function() {
+        menuELtabble.focusin(function() {
             menuELFocusedLast = $(this);
         });
 
@@ -311,7 +311,7 @@ $(function() {
             }
         });
 
-        menuELtabbleLast.on("keydown", function(evt) {
+        menuELtabbleLast.keydown(function(evt) {
             var keyType = evt.keyCode || evt.which;
             
             if (!evt.shiftKey && keyType === 9) {
@@ -320,7 +320,7 @@ $(function() {
             }
         });
 
-        menuELclose.on("click", menuClose);
+        menuELclose.click(menuClose);
 
         $(document).keydown(function(evt) {
             var keyType = evt.keyCode || evt.which;
@@ -330,7 +330,7 @@ $(function() {
             }
         });
 
-        $("a[href*='/category-list/#']").on("click", function() {
+        $("a[href*='/category-list/#']").click(function() {
             if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) {
                 menuClose();
             }

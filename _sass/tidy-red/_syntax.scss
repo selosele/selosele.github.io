@@ -41,22 +41,19 @@ code {
 }
 
 .highlight table {
-  margin-bottom: 0;
-  font-size: 1rem;
-  border: 0;
-
   td {
-    padding: 0;
+    padding: 0.25rem;
     width: calc(100% - 1rem);
     border: 0;
+    text-align: left;
 
     /* line numbers*/
     &.gutter,
     &.rouge-gutter {
       padding-right: 1rem;
       width: 1rem;
-      color: $blue03;
-      border-right: 1px solid $blue03;
+      color: $grey03;
+      border-right: 1px solid $grey03;
       text-align: right;
     }
 

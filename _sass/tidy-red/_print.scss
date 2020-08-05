@@ -44,6 +44,15 @@
       display: none;
     }
   }
+
+  // syntax
+  .highlight table {
+    td {
+      &.rouge-gutter {
+        text-shadow: none;
+      }
+    }
+  }
   
   // iframe
   iframe {

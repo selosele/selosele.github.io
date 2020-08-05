@@ -78,8 +78,11 @@ code {
     background-color: $blue06;
   }
 
+  > pre {
+	  overflow: auto;
+  }
+
   pre {
-    overflow: auto;
     width: 100%;
     white-space: pre;
   }

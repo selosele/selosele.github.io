@@ -32,10 +32,12 @@ var alignImg = function(elem) {
 };
 
 // inline 요소 여백 제거
-var removeWhiteSpace = function(elem) {
-    if (!elem) return;
+var removeWhiteSpace = function(parentElem) {
+    if (!parentElem) return;
 
-    $(elem).contents().filter(function() {
-        if (this.nodeType === 3) return (!/\S/.test(this.nodeValue));
-    }).remove();
+    for (var i = 0; i < parentElem.length; i++) {
+        Array.prototype.slice.call(parentElem[i].childNodes).forEach(function(childElem) {
+            if (childElem.nodeType === 3) parentElem[i].removeChild(childElem);
+        });
+    }
 };

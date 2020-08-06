@@ -12,7 +12,6 @@
    width: 100vw;
    height: 100vh;
    background: rgba(0,0,0,0.3);
-   cursor: pointer;
 }
 
 .menu {
@@ -27,7 +26,6 @@
       padding: 4rem 1.5rem;
       background-color: $grey12;
       box-shadow: rgba(0,0,0,0.3) 8px 8px 20px 10px;
-      cursor: default;
 
       @media (min-width: $min_big_width) {
          width: 33.5rem;

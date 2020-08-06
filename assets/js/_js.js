@@ -12,7 +12,7 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 alignImg(document.querySelectorAll(".author__avatar img"));
 
 // inline 요소 여백 제거
-removeWhiteSpace(".archive__item, .page__image-container, .page__share, .keyword-wrapper");
+removeWhiteSpace(document.querySelectorAll(".archive__item, .page__image-container, .page__share, .keyword-wrapper"));
 
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {

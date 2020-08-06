@@ -14,7 +14,6 @@
   padding: 2.5rem 3vw;
   background: rgba(0,0,0,0.5);
   opacity: 0;
-  cursor: pointer;
 
   &__inner-wrap {
     position: relative;
@@ -24,7 +23,6 @@
     border-radius: 8px;
     background: $grey12;
     box-shadow: rgba(0,0,0,0.1) 10px 10px 10px;
-    cursor: default;
 
     @media (min-width: $min_small_width) {
       padding: 3rem 2.5rem 2.5rem 2.5rem;

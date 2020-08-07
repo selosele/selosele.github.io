@@ -266,12 +266,13 @@ hr {
 /* button */
 .page__btn {
    display: inline-block;
-   padding: 0.6rem 1rem;
+   padding: 0.4rem 1rem;
    background: $grey04;
    color: $black03;
+   text-align: center;
 
    & ~ & {
-      margin-left: 0.7rem;
+      margin-left: 0.3rem;
    }
 }
 
@@ -279,9 +280,9 @@ hr {
    p {
       > .page__btn {
          &:only-child {
-            display: block;
-            max-width: max-content;
-            margin: 0 auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
          }
       }
    }

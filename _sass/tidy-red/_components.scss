@@ -279,7 +279,7 @@ hr {
 .page__content {
    p {
       > .page__btn {
-         &:only-child {
+         &:only-of-type {
             position: relative;
             left: 50%;
             transform: translateX(-50%);

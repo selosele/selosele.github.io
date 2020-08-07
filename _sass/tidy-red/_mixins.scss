@@ -89,11 +89,12 @@
 }
 
 // focus
-@mixin focus {
-   &:focus {
+@mixin activate_element($offset: -2px) {
+   &:focus,
+   &:active {
       outline: thin dotted #666d72;
       outline: 5px auto #666d72;
-      outline-offset: -2px;
+      outline-offset: $offset;
    }
 }
 
@@ -199,11 +200,15 @@
    text-shadow: rgba(0,0,0,0.6) 1px 1px 0.15rem;
    vertical-align: top;
    white-space: nowrap;
+
+   &:focus,
+   &:active {
+      @include activate_element($offset: 2px);
+   }
 }
 
 @mixin post_item_date {
    background: $black02;
-   text-indent: 0.2rem;
 }
 
 @mixin post_item_category {

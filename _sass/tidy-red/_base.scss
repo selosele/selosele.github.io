@@ -62,7 +62,7 @@ button {
 }
 
 a, button {
-   @include focus();
+   @include activate_element();
 }
 
 input {
@@ -264,6 +264,11 @@ sup {
    .reversefootnote {
       color: $black02;
    }
+}
+
+/* iframe */
+iframe {
+   margin-bottom: 1.5rem;
 }
 
 /* indent class */

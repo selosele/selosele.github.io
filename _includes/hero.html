@@ -44,8 +44,5 @@
       {% if page.excerpt != "" %}
         <strong class="page__lead" itemprop="alternativeHeadline">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
       {% endif %}
-      {% if page.date %}
-        <p class="page__date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></p>
-      {% endif %}
     </div>
 </div>

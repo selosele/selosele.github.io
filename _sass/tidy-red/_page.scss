@@ -2,6 +2,10 @@
    page css
    ========================================================================== */
 
+.hero-wrapper + .content-wrapper {
+   margin: 2rem auto 3rem;
+}
+
 .content-wrapper {
    @include common_layout($margin: 3rem auto 4rem);
 
@@ -43,7 +47,7 @@
 
    &__lead {
       display: block;
-      margin-bottom: 1.3rem;
+      margin-top: 1rem;
       font-family: $default_font03;
       font-weight: 400;
       font-size: calc(100% - -0.5vw);
@@ -57,7 +61,6 @@
    }
 
    &__meta {
-      margin-top: 2rem;
       margin-bottom: 1rem;
       padding-bottom: 1.2rem;
       border-bottom: 1px solid $grey04;
@@ -74,41 +77,8 @@
       }
    }
 
-   &__taxonomy {
-      &-wrapper {
-         margin-top: 0.5rem;
-      }
-
-      strong {
-         font-family: $default_font03;
-         color: $grey;
-
-         &:after {
-            content: "\2014";
-            margin: 0 0.3rem;
-            font-weight: 200;
-         }
-      }
-
-      &-item {
-         display: inline-block;
-         overflow: hidden;
-         max-width: 60%;
-         height: 1.7rem;
-         margin: 0.15rem 0.3rem 0.15rem 0;
-         padding: 0 1rem;
-         background: $grey06;
-         border-radius: 5px;
-         color: $black;
-         line-height: 1.7rem;
-         white-space: nowrap;
-         text-overflow: ellipsis;
-         vertical-align: middle;
-      }
-   }
-
    &__share {
-      margin-top: 1.2rem;
+      // margin-top: 1rem;
       padding-top: 1.5rem;
       border-top: 1px solid $grey04;
 
@@ -151,9 +121,14 @@
       }
    }
 
-   &__date {
-      font-family: $default_font03;
-      font-weight: 300;
+   &__item-wrapper {
+      margin-bottom: 2rem;
+      text-align: right;
+
+      .post-item {
+         margin-right: 0;
+         margin-left: 0.3rem;
+      }
    }
    
    &__content {
@@ -285,6 +260,8 @@
       text-shadow: 1px 1px 0.2rem rgba(0,0,0,0.5);
    
       .page__title {
+
+         margin-bottom: 0;
          padding-bottom: 0;
          border-bottom: 0;
          font-size: calc(1.5rem + 1.2vw);

@@ -16,6 +16,10 @@
          }
       }
    }
+
+   @media (min-width: $min_general_width) {
+      width: 62.5vw;
+   }
 }
 
 // teaser

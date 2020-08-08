@@ -7,6 +7,7 @@ $layout_width_px: 1200px !default;
 $layout_width_per: 90% !default;
 
 // breakpoints (max-width)
+$general_width: 1920px !default;
 $normal_width: 1600px !default;
 $standard_width: 1420px !default;
 $large_width: 1200px !default;
@@ -17,6 +18,7 @@ $minimal_width: 480px !default;
 $tiny_width: 320px !default;
 
 // breakpoints (min-width)
+$min_general_width: $general_width + 1 !default;
 $min_normal_width: $normal_width + 1 !default;
 $min_standard_width: $standard_width + 1 !default;
 $min_large_width: $large_width + 1 !default;

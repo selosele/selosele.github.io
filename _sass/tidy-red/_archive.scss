@@ -77,7 +77,6 @@
          line-height: 1.85em;
          font-size: 0.95rem;
          color: $black03;
-         word-break: keep-all;
 
          @media (min-width: $min_medium_width) {
             &.has--first-letter {

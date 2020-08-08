@@ -9,7 +9,7 @@
 .content-wrapper {
    @include common_layout($margin: 3rem auto 4rem);
 
-   &.toc-layout {
+   &.content--has-toc {
       width: auto;
       max-width: max-content;
       margin-left: 30vw;
@@ -134,7 +134,6 @@
    &__content {
       line-height: 1.9;
       color: $black;
-      word-break: keep-all;
       @include clearfix();
 
       @media (min-width: $min_small_width) {

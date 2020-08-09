@@ -133,8 +133,7 @@
       grid-gap: 1.8rem;
       justify-content: center;
 
-      img {
-         display: inline-block;
+      > .page__figure {
          margin: 0;
 
          &:nth-child(2) {
@@ -147,14 +146,9 @@
             }
          }
       }
-   }
 
-   &__image-container--multiple {
-      display: grid;
-      grid-gap: 1.5rem;
-      justify-content: center;
-
-      > .page__figure {
+      img {
+         display: inline-block;
          margin: 0;
 
          &:nth-child(2) {

@@ -214,6 +214,10 @@
             border-radius: 50%;
             justify-content: center;
             align-items: center;
+
+            img {
+               height: 100%;
+            }
          }
    
          &__name {

@@ -18,14 +18,9 @@ var alignImg = function(elem) {
     if (!elem) return;
 
     for (var i = 0; i < elem.length; i++) {
-        var img_w = elem[i].getBoundingClientRect().width,
-            img_h = elem[i].getBoundingClientRect().height;
-
-        if (img_w > img_h) {
-            elem[i].classList.remove("image--vertical");
+        if (elem[i].getBoundingClientRect().width > elem[i].getBoundingClientRect().height) {
             elem[i].classList.add("image--horizontal");
         } else {
-            elem[i].classList.remove("image--horizontal");
             elem[i].classList.add("image--vertical");
         }
     }

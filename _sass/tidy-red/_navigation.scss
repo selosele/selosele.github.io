@@ -352,6 +352,7 @@
 
    @media (min-width: $min_large_width) {
       float: left;
+      position: relative;
       position: sticky;
       top: 2rem;
       left: 2.2vw;

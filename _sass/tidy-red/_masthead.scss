@@ -2,30 +2,7 @@
    masthead css
    ========================================================================== */
 
-/* IE check */
-.guide--ie {
-   display: none;
-   position: relative;
-   z-index: 2;
-   padding: 2rem 1rem;
-   background: $sub_color01;
-   text-align: center;
-
-   p {
-      @include common_layout();
-      line-height: 1.6;
-   }
-
-   strong {
-      font-weight: 700;
-   }
-
-   a {
-      font-weight: 700;
-      text-decoration: underline;
-   }
-}
-
+/* IE layout */
 .only-ie {
    .guide--ie {
       display: block;
@@ -415,6 +392,10 @@
                      border-radius: inherit;
                      justify-content: center;
                      align-items: center;
+                  }
+
+                  img {
+                     height: 100%;
                   }
                }
             }

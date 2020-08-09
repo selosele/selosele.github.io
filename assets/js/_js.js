@@ -2,14 +2,14 @@
    _function.js에서 작성한 함수 호출/재사용 불가능한 함수 모음
    ========================================================================== */
 
-// IE check
-if (window.document.documentMode) document.documentElement.classList.add("only-ie");
+// IE 10 이하 체크
+if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("only-ie");
 
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 // 이미지 정렬
-alignImg(document.querySelectorAll(".author__avatar img"));
+alignImg(document.querySelectorAll(".author__avatar img, .theme--type2 .site-title__author-image img"));
 
 // inline 요소 여백 제거
 removeWhiteSpace(document.querySelectorAll(".archive__item, .page__item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
@@ -18,25 +18,6 @@ removeWhiteSpace(document.querySelectorAll(".archive__item, .page__item-wrapper,
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
     if (evt.key === "Enter") evt.preventDefault();
 });
-
-// anchor 기본이벤트 무효화
-(function() {
-    
-    var anchorElement = document.querySelectorAll("a");
-    if (!anchorElement) return;
-
-    for (var i = 0; i < anchorElement.length; i++) {
-        anchorElement[i].addEventListener("click", function(evt) {
-            switch (this.getAttribute("href")) {
-                case "#":
-                case "#none":
-                case "":
-                    evt.preventDefault();
-                    break;
-            }
-        });
-    }
-})();
 
 // page share link
 (function() {
@@ -71,6 +52,70 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         }
     }
 })();
+
+// IE 10 이하 경고 레이어팝업
+$(function() {
+
+    var IEalertElem = $(".ie-alert");
+    if (IEalertElem) {
+        var rootElem = $("html"),
+            alertOuterElem = $("body").children().not(IEalertElem.add("script")),
+            alertTabbaleElem = IEalertElem.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+            alertTabbaleElemFirst = alertTabbaleElem.first(),
+            alertTabbaleElemLast = alertTabbaleElem.last();
+
+        if (rootElem.hasClass("only-ie") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
+            IEalertElem.css("display", "block").attr("aria-hidden", "false");
+            alertOuterElem.attr("aria-hidden", "true");
+            alertTabbaleElemFirst.length && alertTabbaleElemFirst.focus();
+        }
+
+        alertTabbaleElemFirst.keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
+            if (evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
+                alertTabbaleElemLast.focus();
+            }
+        });
+
+        alertTabbaleElemLast.keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
+            if (!evt.shiftKey && keyType === 9) {
+                evt.preventDefault();
+                alertTabbaleElemFirst.focus();
+            }
+        });
+
+        var IEalertChkbox = $("#alert-checkbox"),
+            closeIEalert = function() {
+            if (!IEalertElem.css("display") === "block") return;
+
+            if (!sessionStorage.getItem("ie-alert-chkbox-checked")) {
+                if (IEalertChkbox.is(":checked")) {
+                    sessionStorage.setItem("ie-alert-chkbox-checked", true);
+                    IEalertElem.css("display", "none").attr("aria-hidden", "true");
+                    alertOuterElem.removeAttr("aria-hidden");
+                    rootElem.off("keydown.alert_keydown");
+                } else {
+                    alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않을 수 있습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
+                    IEalertElem.css("display", "none").attr("aria-hidden", "true");
+                    alertOuterElem.removeAttr("aria-hidden");
+                    rootElem.off("keydown.alert_keydown");
+                }
+            } else {
+                IEalertElem.css("display", "none").attr("aria-hidden", "true");
+                alertOuterElem.removeAttr("aria-hidden");
+                rootElem.off("keydown.alert_keydown");
+            }
+        };
+
+        rootElem.on("keydown.alert_keydown", function(evt) {
+            if ((evt.keyCode || evt.which) === 27) closeIEalert();
+        });
+
+        $(".ie-alert__btn--close").click(closeIEalert);
+    }
+});
 
 $(function() {
 
@@ -189,29 +234,28 @@ $(function() {
         return tocTabbleFocusedLast = $(this);
 
     }).keydown(function(evt) {
-        var keyType = evt.keyCode || evt.which;
-
-        if (evt.altKey && keyType === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+        if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
             $(".toc--fixed").focus().keydown(function(evt) {
-                var keyType = evt.keyCode || evt.which;
-                if (evt.altKey && keyType === 192) { // alt + ~키 : focusedLast로 초점 이동
+                if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
             });
         }
     });
 
-    $(document).keydown(function(evt) {
-        var keyType = evt.keyCode || evt.which;
-
-        if (evt.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
-            if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
-        }
-
-        if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
-            $(".toc--active").focus();
-        }
-    });
+    if ($(".toc--fixed").length) {
+        $(document).keydown(function(evt) {
+            var keyType = evt.keyCode || evt.which;
+    
+            if (evt.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
+                if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
+            }
+    
+            if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
+                $(".toc--active").focus();
+            }
+        });
+    }
 });
 
 // abbr
@@ -303,18 +347,14 @@ $(function() {
         });
 
         menuELFocusedLast ? menuELFocusedLast.focus() : menuELtabbleFirst.focus().on("keydown", function(evt) {
-            var keyType = evt.keyCode || evt.which;
-
-            if (evt.shiftKey && keyType === 9) {
+            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 menuELtabbleLast.focus();
             }
         });
 
         menuELtabbleLast.keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-            
-            if (!evt.shiftKey && keyType === 9) {
+            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 menuELtabbleFirst.focus();
             }
@@ -322,13 +362,13 @@ $(function() {
 
         menuELclose.click(menuClose);
 
-        $(document).keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-            
-            if (keyType === 27) { // Esc 키 : 메뉴 닫기
-                menu.css("display") === "block" && menuClose();
-            }
-        });
+        if (menu.css("display") === "block") {
+            $(document).keydown(function(evt) {
+                if ((evt.keyCode || evt.which) === 27) { // Esc 키 : 메뉴 닫기
+                    menuClose();
+                }
+            });
+        }
 
         $("a[href*='/category-list/#']").click(function() {
             if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) {
@@ -427,30 +467,26 @@ $(function() {
         });
 
         tabbaleFirst.keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-
-            if (evt.shiftKey && keyType === 9) {
+            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 tabbaleLast.focus();
             }
         });
 
         tabbaleLast.keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-
-            if (!evt.shiftKey && keyType === 9) {
+            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 tabbaleFirst.focus();
             }
         });
 
-        $(document).keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-
-            if (keyType === 27) { // Esc 키 : form reset/레이어 닫기
-                sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
-            }
-        });
+        if (layer.css("display") === "block") {
+            $(document).keydown(function(evt) {
+                if ((evt.keyCode || evt.which) === 27) { // Esc 키 : form reset/레이어 닫기
+                    sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
+                }
+            });
+        }
         
         closeBtn.click(layerClose);
     });
@@ -474,12 +510,11 @@ $(function() {
     function handleKeydownEvent(evt) {
         evt.stopPropagation();
 
-        var keyType = evt.keyCode || evt.which,
-            thisTab = $(evt.target),
+        var thisTab = $(evt.target),
             actPanel = $("#" + thisTab.attr("aria-controls")),
             tabbleEL = actPanel.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
 
-        switch(keyType) {
+        switch(evt.keyCode || evt.which) {
             case 37:
                 if (thisTab.is(":first-child")) {
                     thisTab.siblings(":last").focus();

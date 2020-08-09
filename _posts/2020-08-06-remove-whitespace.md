@@ -4,7 +4,7 @@ comments: true
 title: "순수 Javascript로 inline formatting context의 text node 제거하기"
 excerpt: "포스트 작성 중"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.jpg
+  overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.5
   image_position:
 date: 2020-08-06 23:56

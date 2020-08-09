@@ -67,20 +67,18 @@ $(function() {
         if (rootElem.hasClass("only-ie") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
             IEalertElem.css("display", "block").attr("aria-hidden", "false");
             alertOuterElem.attr("aria-hidden", "true");
-            alertTabbaleElemFirst.length && alertTabbaleElemFirst.focus();
+            alertTabbaleElem.length && alertTabbaleElemFirst.focus();
         }
 
         alertTabbaleElemFirst.keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-            if (evt.shiftKey && keyType === 9) {
+            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 alertTabbaleElemLast.focus();
             }
         });
 
         alertTabbaleElemLast.keydown(function(evt) {
-            var keyType = evt.keyCode || evt.which;
-            if (!evt.shiftKey && keyType === 9) {
+            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 alertTabbaleElemFirst.focus();
             }
@@ -97,16 +95,16 @@ $(function() {
                     }
                     IEalertElem.css("display", "none").attr("aria-hidden", "true");
                     alertOuterElem.removeAttr("aria-hidden");
-                    rootElem.off("keydown.alert_keydown");
+                    $(document).off("keydown.alert_keydown");
                 }
             }
         };
 
-        rootElem.on("keydown.alert_keydown", function(evt) {
+        $(document).on("keydown.alert_keydown", function(evt) {
             if ((evt.keyCode || evt.which) === 27) closeIEalert();
         });
 
-        $(".ie-alert__btn--close").click(closeIEalert);
+        $(".ie-alert__close").click(closeIEalert);
     }
 });
 
@@ -298,10 +296,10 @@ $(function() {
     // 메인 메뉴
     var nav = $(".site-nav"),
         menu = $(".side-menu"),
-        menuOuterEL = $("body").children().not(menu.add("script")),
+        menuOuterEL = $("body").children().not(menu.add(".ie-alert, .search-content, script")),
         menuELlayer = menu.find(".menu__layer"),
         menuELopen = nav.find(".nav__menu-open"),
-        menuELclose = menu.find(".menu__btn--close"),
+        menuELclose = menu.find(".menu__close"),
         menuELtabble = menu.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
@@ -393,9 +391,9 @@ $(function() {
 $(function() {
 
     var openBtn = $(".nav__search-open"),
-        closeBtn = $(".search__btn--close"),
+        closeBtn = $(".search__close"),
         layer = $(".search-content"),
-        outerEL = $("body").children().not(layer.add("script, .side-menu")),
+        outerEL = $("body").children().not(layer.add("script, .ie-alert, .side-menu")),
         tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tabbaleFirst = tabbale.first(),
         tabbaleLast = tabbale.last(),

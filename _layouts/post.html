@@ -4,7 +4,7 @@ layout: default
 
 {% include hero.html %}
 
-<main class="content-wrapper" id="content">
+<div class="content-wrapper" id="content" role="main">
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -66,4 +66,4 @@ layout: default
     {% endcase %}
     {% endif %}
   {% endif %}
-</main>
+</div>

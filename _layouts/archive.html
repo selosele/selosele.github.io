@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<main class="content-wrapper" id="content">
+<div class="content-wrapper" id="content" role="main">
   <section class="archive">
     <header>
       <h1 id="page-title" class="page__title{% if page.layout == 'home' %} visually-hidden{% endif %}">{% if page.layout == "home" %}{{ site.data.ui-text[site.locale].recent_posts }}{% else %}{{ page.title }}{% endif %}</h1>
     </header>
     {{ content }}
   </section>
-</main>
+</div>

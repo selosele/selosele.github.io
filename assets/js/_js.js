@@ -59,7 +59,7 @@ $(function() {
     var IEalertElem = $(".ie-alert");
     if (IEalertElem) {
         var rootElem = $("html"),
-            alertOuterElem = $("body").children().not(IEalertElem.add("script")),
+            alertOuterElem = $("body").children().not(IEalertElem.add(".search-content, .side-menu, script")),
             alertTabbaleElem = IEalertElem.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
             alertTabbaleElemFirst = alertTabbaleElem.first(),
             alertTabbaleElemLast = alertTabbaleElem.last();
@@ -88,24 +88,17 @@ $(function() {
 
         var IEalertChkbox = $("#alert-checkbox"),
             closeIEalert = function() {
-            if (!IEalertElem.css("display") === "block") return;
-
-            if (!sessionStorage.getItem("ie-alert-chkbox-checked")) {
-                if (IEalertChkbox.is(":checked")) {
-                    sessionStorage.setItem("ie-alert-chkbox-checked", true);
-                    IEalertElem.css("display", "none").attr("aria-hidden", "true");
-                    alertOuterElem.removeAttr("aria-hidden");
-                    rootElem.off("keydown.alert_keydown");
-                } else {
-                    alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않을 수 있습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
+            if (IEalertElem.css("display") === "block") {
+                if (!sessionStorage.getItem("ie-alert-chkbox-checked")) {
+                    if (IEalertChkbox.is(":checked")) {
+                        sessionStorage.setItem("ie-alert-chkbox-checked", true);
+                    } else {
+                        alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
+                    }
                     IEalertElem.css("display", "none").attr("aria-hidden", "true");
                     alertOuterElem.removeAttr("aria-hidden");
                     rootElem.off("keydown.alert_keydown");
                 }
-            } else {
-                IEalertElem.css("display", "none").attr("aria-hidden", "true");
-                alertOuterElem.removeAttr("aria-hidden");
-                rootElem.off("keydown.alert_keydown");
             }
         };
 
@@ -313,7 +306,29 @@ $(function() {
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        menuCurrentPage = menu.find("a[href='"+window.location.pathname+"']");
+        menuCurrentPage = menu.find("a[href='"+window.location.pathname+"']"),
+
+        menuClose = function() {
+            // $("body")
+            //     .removeClass("scroll--off")
+            //     .css("top", "")
+            //     .off("scroll touchmove mousewheel");
+            // if (!$("body").hasClass("scroll--off")) {
+            //     $(window).scrollTop(nowScrollPos);
+            // }
+            $(document).off("keydown.menu_keydown");
+            menuELclose.add(menuELopen).attr("aria-expanded", "false");
+            $("body").removeClass("overflow--hidden");
+            menuOuterEL.removeAttr("aria-hidden");
+            menuELlayer.stop().animate({"right": "-100%"}, 400);
+
+            setTimeout(function() {
+                menu.add(menuELlayer).removeAttr("style");
+            }, 400);
+
+            menu.attr("aria-hidden", "true");
+            !$(location.hash).is(":focus") && menuELopen.focus();
+        }
 
     menuELopen.click(function() {
         // $("body")
@@ -363,40 +378,15 @@ $(function() {
         menuELclose.click(menuClose);
 
         if (menu.css("display") === "block") {
-            $(document).keydown(function(evt) {
-                if ((evt.keyCode || evt.which) === 27) { // Esc 키 : 메뉴 닫기
-                    menuClose();
-                }
+            $(document).on("keydown.menu_keydown", function(evt) {
+                if ((evt.keyCode || evt.which) === 27) menuClose();
             });
         }
 
         $("a[href*='/category-list/#']").click(function() {
-            if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) {
-                menuClose();
-            }
+            if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) menuClose();
         });
     });
-
-    function menuClose() {
-        // $("body")
-        //     .removeClass("scroll--off")
-        //     .css("top", "")
-        //     .off("scroll touchmove mousewheel");
-        // if (!$("body").hasClass("scroll--off")) {
-        //     $(window).scrollTop(nowScrollPos);
-        // }
-        menuELclose.add(menuELopen).attr("aria-expanded", "false");
-        $("body").removeClass("overflow--hidden");
-        menuOuterEL.removeAttr("aria-hidden");
-        menuELlayer.stop().animate({"right": "-100%"}, 400);
-
-        setTimeout(function() {
-            menu.add(menuELlayer).removeAttr("style");
-        }, 400);
-
-        menu.attr("aria-hidden", "true");
-        !$(location.hash).is(":focus") && menuELopen.focus();
-    }
 });
 
 // 검색 레이어
@@ -411,25 +401,25 @@ $(function() {
         tabbaleLast = tabbale.last(),
         sForm = layer.find("form"),
         sLabel = sForm.find("label"),
-        sInput = layer.find("input[type='search']"), sInputVal, sInputValNotChanged;
+        sInput = layer.find("input[type='search']"), sInputVal, sInputValNotChanged,
+        
+        layerClose = function() {
+            $(document).off("keydown.search_keydown");
+            $("body").removeClass("overflow--hidden");
+            closeBtn.attr("aria-expanded", "false");
+            layer.stop().animate({"opacity": "0"}, {
+                duration: 200,
+                complete: function() {
+                    layer.removeAttr("style");
+                }
+            });
 
-    function layerClose() {
-        $("body").removeClass("overflow--hidden");
-        closeBtn.attr("aria-expanded", "false");
-        layer.stop().animate({"opacity": "0"}, {
-            duration: 200,
-            complete: function() {
-                layer.removeAttr("style");
-            }
-        });
-
-        setTimeout(function() {
-            outerEL.attr("aria-hidden") !== true && outerEL.removeAttr("aria-hidden");
-            layer.attr("aria-hidden", "true");
-        }, 200);
-
-        openBtn.attr("aria-expanded", "false").focus();
-    }
+            setTimeout(function() {
+                outerEL.attr("aria-hidden") !== true && outerEL.removeAttr("aria-hidden");
+                layer.attr("aria-hidden", "true");
+            }, 200);
+            openBtn.attr("aria-expanded", "false").focus();
+        }
 
     openBtn.click(function() {
         sInputValNotChanged = true;
@@ -481,13 +471,12 @@ $(function() {
         });
 
         if (layer.css("display") === "block") {
-            $(document).keydown(function(evt) {
-                if ((evt.keyCode || evt.which) === 27) { // Esc 키 : form reset/레이어 닫기
+            $(document).on("keydown.search_keydown", function(evt) {
+                if ((evt.keyCode || evt.which) === 27) {
                     sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
                 }
             });
         }
-        
         closeBtn.click(layerClose);
     });
 });

@@ -73,6 +73,14 @@ input {
       border-radius: 0;
       -webkit-appearance: none;
    }
+   &[type="checkbox"],
+   &[type="radio"] {
+      cursor: pointer;
+   }
+}
+
+label {
+   cursor: pointer;
 }
 
 strong {

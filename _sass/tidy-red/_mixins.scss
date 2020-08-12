@@ -205,8 +205,7 @@
    vertical-align: top;
    white-space: nowrap;
 
-   &:focus,
-   &:active {
+   &:not(.post-item--date) {
       @include activate_element($offset: 2px);
    }
 }

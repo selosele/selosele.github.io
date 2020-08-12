@@ -26,8 +26,7 @@ tags:
 {:.has--label}
 ```javascript
 document.querySelector("form").addEventListener("keydown", function(evt) {
-  var keyType = evt.keyCode || evt.which;
-  if (keyType === 13) evt.preventDefault();
+  if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
 });
 ```
 

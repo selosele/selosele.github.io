@@ -232,7 +232,8 @@
 
          @media (min-width: $min_large_width) {
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                color: $sub_color03;
             }
          }
@@ -240,6 +241,8 @@
          @media (max-width: $min_medium_width) {
             position: relative;
             overflow: hidden;
+            width: 2.5rem;
+            height: 2.5rem;
             border: 1px solid $main_color;
             color: transparent;
 
@@ -262,8 +265,6 @@
       }
 
       @media (max-width: $min_medium_width) {
-         width: min-content;
-         height: min-content;
          margin: 0;
 
          &:not(.page--visible) {
@@ -322,7 +323,8 @@
 
       @media (min-width: $min_large_width) {
          &:hover,
-         &:focus {
+         &:focus,
+         &:active {
             color: $sub_color03;
          }
       }

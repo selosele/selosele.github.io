@@ -3,17 +3,17 @@
     <h2 class="page__share-title" id="page-share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
   {% endif %}
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn--twitter" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter">
+  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn--twitter" title="Twitter {{ site.data.ui-text[site.locale].share_on_label }}">
     <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
     <span>Twitter</span>
   </a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" class="btn--facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" class="btn--facebook" title="Facebook {{ site.data.ui-text[site.locale].share_on_label }}">
     <i class="fab fa-fw fa-facebook" aria-hidden="true"></i>
     <span>Facebook</span>
   </a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="btn--linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="btn--linkedin" title="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}">
     <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
     <span>LinkedIn</span>
   </a>

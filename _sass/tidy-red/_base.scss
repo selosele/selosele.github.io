@@ -249,7 +249,8 @@ sup {
 
    @media (min-width: $min_large_width) {
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
          text-decoration: underline;
       }
    }

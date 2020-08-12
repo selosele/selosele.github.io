@@ -24,7 +24,8 @@ figure.highlight {
 
 pre {
   &.highlight {
-    &:focus {
+	&:focus,
+	&:active {
       outline: 2px solid #666d72;
       outline-offset: 2px;
     }
@@ -43,7 +44,6 @@ code {
 .highlight table {
   td {
     padding: 0.25rem;
-    width: calc(100% - 1rem);
     border: 0;
     text-align: left;
 

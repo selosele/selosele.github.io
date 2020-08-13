@@ -182,20 +182,36 @@
    &:not(.post-item--date) {
       @include activate_element($offset: 2px);
    }
+
+   &:before {
+      font-family: "xeicon";
+      font-size: 1em;
+      vertical-align: top;
+   }
 }
 
 @mixin post_item_date {
    background: $black02;
+
+   &:before {
+      content: "\ea2c";
+   }
 }
 
 @mixin post_item_category {
    background: $green03;
 
-   svg {
-      margin-right: 0.35rem;
+   &:before {
+      content: "\eb1e";
+      margin-right: 0.15em;
    }
 }
 
 @mixin post_item_tag {
    background: $sub_color03;
+
+   &:before {
+      content: "\ea36";
+      margin-right: 0.2em;
+   }
 }

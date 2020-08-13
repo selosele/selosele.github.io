@@ -85,23 +85,41 @@
          display: inline-block;
          overflow: hidden;
          margin: 0 0.3rem 0.3rem 0;
-         padding: 0.5rem 1rem;
+         padding: 0.5rem 0.8rem;
          border-radius: 5px;
          color: $grey12;
          font-size: 0.9rem;
+
+         &:before {
+            font-family: "xeicon";
+            font-size: 1.1em;
+            vertical-align: top;
+         }
       }
 
       .btn {
          &--twitter {
             background: $twitter_color;
+
+            &:before {
+               content: "\ec1f";
+            }
          }
       
          &--facebook {
             background: $facebook_color;
+
+            &:before {
+               content: "\ebd5";
+            }
          }
       
          &--linkedin {
             background: $linkedin_color;
+
+            &:before {
+               content: "\ebf4";
+            }
          }
       }
 
@@ -114,6 +132,10 @@
       }
 
       span {
+         @media (min-width: $min_medium_width) {
+            margin-left: 0.1em;
+         }
+
          @media (max-width: $medium_width) {
             @include hide_text();
          }
@@ -238,12 +260,27 @@
    &__btn--top {
       display: block;
       overflow: hidden;
+      position: relative;
       width: 2.5rem;
       height: 2.5rem;
       margin: 1rem auto;
       background: none;
-      stroke: $sub_color03;
-      stroke-width: 8px;
+
+      &:before {
+         content: "\e915";
+         display: block;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         width: 1.75rem;
+         height: 1.8rem;
+         margin: auto;
+         font-family: "xeicon";
+         font-size: 1.8rem;
+         color: $sub_color03;
+      }
    }
 }
 

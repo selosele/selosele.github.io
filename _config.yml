@@ -94,10 +94,10 @@ author:
   email            :
   links:
     - label: "Daejeon"
-      icon: "fas fa-fw fa-map-marker-alt"
+      icon: "xi-map-marker"
       url: https://www.google.com/maps/place/daejeon
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "xi-mail"
       url: mailto:dmitry762@naver.com
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
@@ -109,7 +109,7 @@ author:
     #   icon: "fab fa-fw fa-facebook-square"
     #   url: "https://facebook.com/"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      icon: "xi-github"
       url: "https://github.com/selosele"
     # - label: "Instagram"
     #   icon: "fab fa-fw fa-instagram"

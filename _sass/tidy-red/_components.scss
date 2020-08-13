@@ -92,9 +92,11 @@
    margin-right: 0.2rem;
 
    &:before {
-      content: "\270E";
+      content: "\e9c3";
       display: inline-block;
+      margin-right: 0.05em;
       color: $main_color;
+      font-family: "xeicon";
       font-weight: 400;
       letter-spacing: normal;
       line-height: 1;
@@ -207,20 +209,19 @@
 
 .txt--attention {
    &:before {
-      content: "\2755";
-      margin-right: 0.4rem;
-      padding: 5px 0.6rem;
-      background: $sub_color03;
-      border-radius: 10px;
-      font-weight: 700;
+      content: "\e9ab";
+      margin-right: 0.18em;
+      font-family: "xeicon";
+      font-size: 1.1em;
+      color: $sub_color03;
    }
 
    &2 {
       &:before {
-         content: "\2755";
-         margin-right: 0.4rem;
-         font-size: 1.1rem;
-         font-weight: 700;
+         content: "\e9ab";
+         margin-right: 0.18em;
+         font-family: "xeicon";
+         font-size: 1.1em;
       }
    }
 }

@@ -2,8 +2,11 @@
    _function.js에서 작성한 함수 호출/재사용 불가능한 함수 모음
    ========================================================================== */
 
+// IE 11 ~ 9 체크
+if (window.navigator.userAgent.toLowerCase().indexOf('trident') > -1) document.documentElement.classList.add("only-ie");
+
 // IE 10 이하 체크
-if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("only-ie");
+if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
 
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
@@ -64,7 +67,7 @@ $(function() {
             alertTabbaleElemFirst = alertTabbaleElem.first(),
             alertTabbaleElemLast = alertTabbaleElem.last();
 
-        if (rootElem.hasClass("only-ie") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
+        if (rootElem.hasClass("lte-ie10") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
             IEalertElem.css("display", "block").attr("aria-hidden", "false");
             alertOuterElem.attr("aria-hidden", "true");
             alertTabbaleElem.length && alertTabbaleElemFirst.focus();

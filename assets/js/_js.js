@@ -68,6 +68,7 @@ $(function() {
             alertTabbaleElemLast = alertTabbaleElem.last();
 
         if (rootElem.hasClass("lte-ie10") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
+            $("body").addClass("overflow--hidden");
             IEalertElem.css("display", "block").attr("aria-hidden", "false");
             alertOuterElem.attr("aria-hidden", "true");
             alertTabbaleElem.length && alertTabbaleElemFirst.focus();
@@ -96,7 +97,9 @@ $(function() {
                     } else {
                         alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
                     }
+                    $("body").removeClass("overflow--hidden");
                     IEalertElem.css("display", "none").attr("aria-hidden", "true");
+                    alertTabbaleElem.blur();
                     alertOuterElem.removeAttr("aria-hidden");
                     $(document).off("keydown.alert_keydown");
                 }

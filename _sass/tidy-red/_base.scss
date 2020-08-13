@@ -166,7 +166,28 @@ abbr {
 
 /* skip links */
 .skip-links a {
-   @include skip_links();
+   color: #727272;
+   transition: all 0.2s;
+
+   &:focus,
+   &:active {
+      display: block;
+      clip: auto !important;
+      z-index: 100000;
+      width: auto !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 1.5rem;
+      background: $grey12;
+      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+   }
+
+   &:hover {
+      color: $black;
+   }
 }
 
 /* images */

@@ -54,7 +54,7 @@ var removeWhitespace = function(parentElem) {
 removeWhitespace(document.querySelectorAll(".has--whitespace"));
 ```
 
-childNodes는 NodeList를 반환하고, NodeList는 유사배열이므로 배열로 바꾸어주려고 ```Array.from()```{:.language-javascript} 메서드를 사용했으나 ES6를 지원하지 않는 IE에서 작동하지 않아 ```Array.prototype.slice.call```{:.language-javascript} 메서드로 해결했음(이 스크립트는 여기 내 블로그에 적용할 것인데, 아직 ES6 &rarr; ES5 문법으로 변환하지 않는 환경이라서 ES5로 작업 중임).
+childNodes는 NodeList를 반환하고, NodeList는 유사배열이므로 배열로 바꾸어주려고 ```Array.from()```{:.language-javascript} 메서드를 사용했으나 ES6를 지원하지 않는 IE에서 작동하지 않아 ```Array.prototype.slice.call```{:.language-javascript} 메서드로 해결했음(내 블로그에 적용할 스크립트인데, 아직 ES6 &rarr; ES5 문법으로 변환하지 않는 환경이라서 ES5로 작업 중임).
 
 자식 요소의 nodeType이 text일 경우 해당 요소를 제거해준다. 간단해보이지만 아직도 좀 헷갈림.. 다 이해될 때까지 살펴보자..
 

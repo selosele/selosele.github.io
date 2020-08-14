@@ -14,7 +14,7 @@ tags:
     - table
     - inline-table
 ---
-CSS로 가로정렬하는 방법하면 떠오르는 것들 : float, inline-block 등등.. 그와중에 inline-table이라는 신기한 녀석을 발견하여 기록하고자 함. block formatting context인 table을 말 그대로 inline fomatting context의 성질을 갖게 만듦. 예제 코드를 봅시다.
+CSS로 가로정렬하는 방법하면 떠오르는 것들 : float, inline-block 등등.. 그와중에 inline-table이라는 신기한 녀석을 발견하여 기록하고자 함. block 요소인 table을 말 그대로 inline 요소의 성질을 갖게 만듦. 예제 코드를 봅시다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="vYEeEBJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="vYEeEBJ">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/vYEeEBJ">

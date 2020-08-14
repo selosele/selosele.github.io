@@ -12,7 +12,7 @@ categories:
 tags:
     - javascript
 ---
-inline formatting context가 가지는 자연스러운 공백을 제거하는 방법이라고 하면 대부분 inline 요소에 margin-left 음수값을 주거나, 부모 요소에 ```font-size: 0```{:.language-css}, 태그 줄바꿈 삭제 등의 방법이 주로 사용되고 있고, 이 방법들로 인해 발생하는 리스크는 고려되지 않은 채 받아들여지고 있는 현실이다.
+inline 요소가 가지는 자연스러운 공백을 제거하는 방법이라고 하면 대부분 inline 요소에 margin-left 음수값을 주거나, 부모 요소에 ```font-size: 0```{:.language-css}, 태그 줄바꿈 삭제 등의 방법이 주로 사용되고 있고, 이 방법들로 인해 발생하는 리스크는 고려되지 않은 채 받아들여지고 있는 현실이다.
 
 inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size가 바뀔 때마다 공백의 크기도 달라지므로 적절한 방법이 아니며, 부모 요소에 ```font-size: 0```{:.language-css} 선언은 아무 부작용 없이 적용되어야 하는 부모 요소가 반드시 필요해지면서 마크업/CSS가 복잡해지며, 특히 상대적인 폰트 단위인 em 사용이 불가능해진다. 일단 margin-left 방식보다는 낫지만 예측 불가능한 변수가 도사리고 있다는 점에서 개인적으로 사용하지 않는 방법이다.
 

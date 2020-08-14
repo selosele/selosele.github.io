@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "순수 Javascript로 inline formatting context의 text node 제거하기"
+title: "순수 Javascript로 inline 요소의 text node 제거하기"
 excerpt: ""
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg

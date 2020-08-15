@@ -58,6 +58,10 @@
          content: "\2014";
          margin-right: 0.3rem;
       }
+
+      @media (min-width: $min_general_width) {
+         font-size: 1.45rem;
+      }
    }
 
    &__meta {
@@ -304,6 +308,10 @@
          border-bottom: 0;
          font-size: calc(1.5rem + 1.2vw);
          color: inherit;
+
+         @media (min-width: $min_general_width) {
+            font-size: 2.5rem;
+         }
       }
    }
 }

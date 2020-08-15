@@ -4,7 +4,7 @@ comments: true
 title: "liquid) where filter를 사용하여 해당 값을 가진 객체만 포함하는 배열 만들기"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/default_thumb03.jpg
+  overlay_image: /assets/images/thumb/default_thumb01.jpg
   overlay_filter: 0.5
 date: 2020-06-15 21:40
 categories:

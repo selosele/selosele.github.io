@@ -66,13 +66,17 @@
          color: $sub_color03;
          font-family: $default_font03;
          font-weight: 500;
-         font-size: 1.2rem;
+         font-size: calc(0.95rem + 0.5vw);
          line-height: 1.3;
    
          &:before {
             content: "\2014";
             margin-right: 0.3rem;
             font-weight: 200;
+         }
+
+         @media (min-width: $min_small_width) {
+            font-size: 1.2rem;
          }
       }
    

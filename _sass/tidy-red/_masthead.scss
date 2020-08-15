@@ -28,7 +28,6 @@
    &__teaser {
       overflow: hidden;
       position: relative;
-      min-height: 30rem;
       background-image: linear-gradient(45deg, $grey10, $grey11);
       @include teaser();
 
@@ -41,10 +40,10 @@
    .author {
       &-wrapper {
          position: relative;
-         @include common_layout($margin: 9rem auto);
+         @include common_layout($margin: 9rem auto 2rem);
 
-         @media (max-width: $small_width) {
-            margin-bottom: 2rem;
+         @media (min-width: $min_small_width) {
+            margin-bottom: 9rem;
          }
       }
 
@@ -52,7 +51,7 @@
          width: 9rem;
          height: 12rem;
          margin: 0 auto;
-         filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.2));
+         filter: drop-shadow(0.3rem 0.3rem 0.4rem rgba(0,0,0,0.2));
 
          @media (min-width: $min_small_width) {
             position: absolute;
@@ -63,14 +62,12 @@
          }
 
          + .author__info-wrapper {
+            padding-top: 1.5rem;
+
             @media (min-width: $min_small_width) {
                margin-top: 1.5rem;
                margin-left: 14rem;
                padding-top: 2.7rem;
-            }
-
-            @media (max-width: $small_width) {
-               padding-top: 1.5rem;
             }
          }
       }
@@ -86,7 +83,6 @@
       }
 
       &__info-wrapper  {
-         padding-top: 1rem;
          color: $grey12;
          text-shadow: rgba(0,0,0,0.5) 2px 2px 3px;
 

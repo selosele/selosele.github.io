@@ -38,7 +38,7 @@
          color: $black;
          font-family: $default_font03;
          font-weight: 700;
-         font-size: 1.5rem;
+         font-size: calc(1.3rem + 0.5vw);
          line-height: 1.4;
 
          &:first-letter {
@@ -47,6 +47,10 @@
 
          ~ h2 {
             margin-top: 1em;
+         }
+
+         @media (min-width: $min_small_width) {
+            font-size: 1.5rem;
          }
       }
 
@@ -57,11 +61,15 @@
       }
 
       li {
-         margin-top: 1.3rem;
-         margin-bottom: 1.3rem;
+         margin-top: 1em;
+         margin-bottom: 1em;
          color: $black02;
-         font-size: 1.1rem;
+         font-size: 1rem;
          line-height: 1.3;
+
+         @media (min-width: $min_small_width) {
+            font-size: 1.1rem;
+         }
 
          a {
             color: inherit;
@@ -86,8 +94,8 @@
 
          li {
             width: 50%;
-            margin: 0.8rem 0;
-            padding-right: 2rem;
+            margin: 0.8em 0;
+            padding-right: 2em;
          }
       }
    }
@@ -145,8 +153,8 @@
       }
 
       &-wrapper {
-         margin-top: 1.3rem;
-         padding-top: 1.3rem;
+         margin-top: 1rem;
+         padding-top: 1rem;
          border-top: 1px solid $black;
          line-height: 1.5;
          color: $black;

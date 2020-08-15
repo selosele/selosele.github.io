@@ -22,7 +22,7 @@
       </button>
     </div>
   </nav>
-  {% if site.theme_type == "type1" and page.layout == "home" or page.layout =="archive" or page.layout == "default" or page.layout == "categories" or page.layout == "tags" or page.layout == "sub" %}
+  {% if site.theme_type == "type1" and unless page.layout == "post" %}
   <div class="masthead__teaser{% if site.masthead.teaser.bg %} teaser--image{% endif %}{% if site.masthead.teaser.blur %} teaser--blur{% endif %}"{% if site.masthead.teaser.bg %} style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}>
     <div class="author-wrapper">
       {% include author.html %}

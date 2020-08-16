@@ -5,7 +5,9 @@ title: "스크린리더에 입문하다"
 excerpt: "그동안 스크린리더에 대해 막연하게만 알고 있었다."
 header:
   overlay_image: /assets/images/thumb/screen-reader_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
+  image_link: https://pixabay.com/ko/photos/%ED%82%A8-%EB%93%A4%EC%9D%98-%EA%B3%A0%EC%B6%94-%ED%9D%B0%EC%83%89-%EB%8F%85%EC%84%9C-1017515/
+  image_author: xxolaxx
 date: 2019-11-23 22:12
 categories:
     - 퍼블노트

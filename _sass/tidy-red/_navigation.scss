@@ -395,9 +395,13 @@
       font-size: 1.3rem;
       color: $black;
       
-      svg {
-         margin-right: 0.2rem;
+      &:before {
+         content: "\ea35";
+         margin-right: 0.1em;
+         font-family: "xeicon";
+         font-weight: 200;
          color: $sub_color03;
+         vertical-align: middle;
       }
    }
 

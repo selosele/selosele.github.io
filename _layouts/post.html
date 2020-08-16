@@ -28,7 +28,7 @@ layout: default
         <aside class="toc-wrapper toc--fixed" aria-labelledby="toc-title" tabindex="0">
           <nav>
             <header>
-              <h2 class="toc__title" id="toc-title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h2>
+              <h2 class="toc__title" id="toc-title">{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h2>
             </header>
             {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
           </nav>

@@ -38,8 +38,8 @@ layout: default
     </section>
 
     <footer class="page__meta">
-      {% if site.data.ui-text[site.locale].meta_label %}
-        <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+      {% if page.header.image_link %}
+      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" rel="nofollow">{{ page.header.image_author }}</a></p>
       {% endif %}
 
       {% if page.share %}

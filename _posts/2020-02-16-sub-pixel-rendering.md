@@ -4,8 +4,10 @@ comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가"
 excerpt: "현재로서 완벽한 방법은 존재하지 않는다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.jpg
+  overlay_image: /assets/images/thumb/ie_thumb01.jpg
   overlay_filter: 0.3
+  image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773273/
+  image_author: geralt
 date: 2020-02-16 22:58
 categories:
     - 퍼블노트

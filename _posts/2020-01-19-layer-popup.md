@@ -4,8 +4,10 @@ comments: true
 title: "레이어팝업 접근성 관련 자료"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/default_thumb02.jpg
-  overlay_filter: 0.5
+  overlay_image: /assets/images/thumb/default_thumb01.jpg
+  overlay_filter: 0.4
+  image_link: https://pixabay.com/ko/photos/%EC%84%A0%EC%85%8B-%EC%96%91%EA%B7%80%EB%B9%84-%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8-%EA%BD%83-174276/
+  image_author: danigeza
 date: 2020-01-19 16:19
 categories:
     - 자료

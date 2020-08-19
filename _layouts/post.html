@@ -17,11 +17,11 @@ layout: default
         {% endif %}
         {% if site.post.category_list and page.categories.size > 0 %}
         <h2 class="visually-hidden">{{ site.data.ui-text[site.locale].category_title }}</h2>
-          {% for category in page.categories %}<a href="/category-list/#{{category | replace: ' ', '-'}}" class="post-item post-item--category">{{ category }}</a>{% endfor %}
+          {% for category in page.categories %}<a href="/category-list/#btn-{{category | replace: ' ', '-'}}" class="post-item post-item--category">{{ category }}</a>{% endfor %}
         {% endif %}
         {% if site.post.tag_list and page.tags.size > 0 %}
         <h2 class="visually-hidden">{{ site.data.ui-text[site.locale].tag_title }}</h2>
-          {% for tag in page.tags %}<a href="/tag-list/#{{tag | replace: ' ', '-'}}" class="post-item post-item--tag" itemprop="keywords">{{ tag }}</a>{% endfor %}
+          {% for tag in page.tags %}<a href="/tag-list/#btn-{{tag | replace: ' ', '-'}}" class="post-item post-item--tag" itemprop="keywords">{{ tag }}</a>{% endfor %}
         {% endif %}
       </div>
       {% if page.toc %}

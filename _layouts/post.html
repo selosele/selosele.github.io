@@ -13,15 +13,15 @@ layout: default
     <section class="page__content" id="page-content" itemprop="text">
       <div class="page__item-wrapper">
         {% if page.date %}
-        <span class="post-item post-item--date"><span class="visually-hidden">{{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></span>
+        <span class="post-item post-item--date"><span class="visually-hidden">{{ site.data.ui-text[site.locale].date_label }}</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></span>
         {% endif %}
         {% if site.post.category_list and page.categories.size > 0 %}
         <h2 class="visually-hidden">{{ site.data.ui-text[site.locale].category_title }}</h2>
-          {% for category in page.categories %}<a href="/category-list/#btn-{{category }}" class="post-item post-item--category">{{ category }}</a>{% endfor %}
+          {% for category in page.categories %}<a href="/category-list/#btn-{{category | replace: ' ', '-' | url_encode }}" class="post-item post-item--category">{{ category }}</a>{% endfor %}
         {% endif %}
         {% if site.post.tag_list and page.tags.size > 0 %}
         <h2 class="visually-hidden">{{ site.data.ui-text[site.locale].tag_title }}</h2>
-          {% for tag in page.tags %}<a href="/tag-list/#btn-{{ tag }}" class="post-item post-item--tag" itemprop="keywords">{{ tag }}</a>{% endfor %}
+          {% for tag in page.tags %}<a href="/tag-list/#btn-{{ tag | replace: ' ', '-' | url_encode }}" class="post-item post-item--tag" itemprop="keywords">{{ tag }}</a>{% endfor %}
         {% endif %}
       </div>
       {% if page.toc %}

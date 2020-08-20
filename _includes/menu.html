@@ -16,7 +16,7 @@
         {%- assign url = link.url | relative_url -%}
       {%- endif -%}
       <li role="menuitem">
-        <a href="{{ url }}" {% if link.description %}title="{{ link.description }}" {% endif %} itemprop="url">{{ link.title }}</a>
+        <a href="{{ url }}" itemprop="url">{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>
@@ -28,7 +28,7 @@
       {% for category in site.categories limit: 8 %}
       {% if category[1].size == i %}
       <li>
-        <a href="/category-list/#btn-{{ category[0] }}">{{ category[0] }}</a>
+        <a href="/category-list/#btn-{{ category[0] | replace: ' ', '-' | url_encode }}">{{ category[0] }}</a>
         {% if site.main_nav.menu_list_count %}<small class="menu__list-count">({{ category[1].size }})</small>{% endif %}
       </li>
       {% endif %}

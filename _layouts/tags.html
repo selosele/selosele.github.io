@@ -15,10 +15,10 @@ title: 태그
   {% if tag[1].size == i %}
   {% assign tagPost = site.posts | where: "tags", tag[0] %}
   <h2>
-    <button type="button" class="archive__btn" id="btn-{{ tag[0] | replace: ' ', '-' | url_encode }}" aria-controls="list-{{ tag[0] | replace: ' ', '-' | url_encode }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
+    <button type="button" class="archive__btn" id="btn-{{ tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" aria-controls="list-{{ tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
   </h2>
 
-  <div class="archive__list" id="list-{{ tag[0] }}" role="region" aria-labelledby="btn-{{ tag[0] | replace: ' ', '-' | url_encode }}">
+  <div class="archive__list" id="list-{{ tag[0] }}" role="region" aria-labelledby="btn-{{ tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}">
     <ul>
       {% for post in tagPost %}
       <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>

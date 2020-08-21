@@ -14,11 +14,12 @@ title: 카테고리
 {% for category in site.categories %}
   {% if category[1].size == i %}
   {% assign categoryPost = site.posts | where: "categories", category[0] %}
+  {% assign categoryName = category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase %}
   <h2>
-    <button type="button" class="archive__btn" id="btn-{{ category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" aria-controls="list-{{ category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count" aria-hidden="true">({{ category[1].size }})</small></button>
+    <button type="button" class="archive__btn" id="btn-{{ categoryName }}" aria-controls="list-{{ categoryName }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count" aria-hidden="true">({{ category[1].size }})</small></button>
   </h2>
   
-  <div class="archive__list" id="list-{{ category[0] }}" role="region" aria-labelledby="btn-{{ category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}">
+  <div class="archive__list" id="list-{{ categoryName }}" role="region" aria-labelledby="btn-{{ categoryName }}">
     <ul>
       {% for post in categoryPost %}
       <li{% if categoryPost.size == 1 %} role='presentation'{% endif %}>

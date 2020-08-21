@@ -5,7 +5,7 @@ title: "border: none과 border: 0의 차이"
 excerpt: "분명한 차이가 있다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2020-02-29 12:50
 categories:
     - 퍼블노트

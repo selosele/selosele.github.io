@@ -95,21 +95,18 @@
   .list__item {
     padding-bottom: 1.3rem;
 
+    @media (min-width: $min_medium_width) {
+      padding-bottom: 0;
+    }
+
     + .list__item {
       padding-top: 1.3rem;
       border-top: 1px dashed $grey09;
 
       @media (min-width: $min_medium_width) {
         margin-top: 1.8rem;
-        border-top: 0;
-      }
-    }
-
-    @media (min-width: $min_medium_width) {
-      padding-bottom: 0;
-
-      + .list__item  {
         padding-top: 0;
+        border-top: 0;
       }
     }
   }

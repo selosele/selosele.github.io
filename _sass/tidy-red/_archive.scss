@@ -105,7 +105,7 @@
       display: flex;
       position: relative;
       overflow: hidden;
-      height: 10rem;
+      height: 34vw;
       margin: 1rem 0;
       border: 1px solid $black;
       border-radius: 0.25rem;
@@ -113,6 +113,10 @@
       box-shadow: rgba(0,0,0,0.2) 0.25rem 0.25rem 0.5rem;
       justify-content: center;
       align-items: center;
+
+      @media (min-width: $min_small_width) {
+         height: 10rem;
+      }
    
       @media (min-width: $min_medium_width) {
          position: absolute;

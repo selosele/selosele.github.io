@@ -34,7 +34,7 @@
       h2 {
          margin-bottom: 0.5em;
          padding-bottom: 0.5em;
-         border-bottom: 1px solid $black;
+         border-bottom: 1px dashed $black;
          color: $black;
          font-family: $default_font03;
          font-weight: 700;
@@ -126,17 +126,17 @@
    &__close {
       display: block;
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 1.5rem;
+      right: 1.5rem;
       width: 2rem;
       height: 2rem;
-      background: none;
+      background: $main_color;
 
       &:before {
          content: "\e9af";
          font-family: "xeicon";
-         font-size: 1.5rem;
-         color: $main_color;
+         font-size: 1.2rem;
+         color: $grey12;
       }
    }
 

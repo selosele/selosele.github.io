@@ -27,7 +27,7 @@ body {
    word-break: keep-all;
    word-wrap: break-word;
 
-   &.scroll--off {
+   &.scroll--disabled {
       overflow: hidden;
       position: fixed;
       top: 0;

@@ -292,10 +292,8 @@ masthead:
     position: # ex) 50% or 50% 21%
 
 # main navigation
-main_nav:
-  menu_list_count: true
-  etc: false
+# main_nav:
+#   etc: false
 
 # etc
-scrollbar_style: true
 first_letter: true

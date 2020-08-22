@@ -308,14 +308,13 @@ $(function() {
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        menuCurrentPage = menu.find("a[href='"+window.location.pathname+"']"),
-
+        menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
-            //     .removeClass("scroll--off")
+            //     .removeClass("scroll--disabled")
             //     .css("top", "")
             //     .off("scroll touchmove mousewheel");
-            // if (!$("body").hasClass("scroll--off")) {
+            // if (!$("body").hasClass("scroll--disabled")) {
             //     $(window).scrollTop(nowScrollPos);
             // }
             $(document).off("keydown.menu_keydown");
@@ -335,7 +334,7 @@ $(function() {
     menuELopen.click(function() {
         // $("body")
         //     .css("top", - $(window).scrollTop() + "px")
-        //     .addClass("scroll--off")
+        //     .addClass("scroll--disabled")
         //     .on("scroll touchmove mousewheel", function(evt){
         //         evt.preventDefault();
         // });

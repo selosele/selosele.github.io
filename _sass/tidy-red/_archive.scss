@@ -14,22 +14,22 @@
 
    &__item {
       position: relative;
-   
+      
       @media (min-width: $min_medium_width) {
-         padding-right: 14.5rem;
+         @include clearfix;
    
          &-content {
-            margin-top: 0.5rem;
+            margin-top: 0.526em;
          }
       }
    
       &-title {
-         margin-bottom: 0.8rem;
          line-height: 1.1;
    
          a {
             display: block;
             @include ellipsis();
+            margin-bottom: 0.3em;
             font-family: $default_font03;
             font-weight: 700;
             font-size: calc(1rem + 0.5vw);
@@ -62,7 +62,7 @@
       &-excerpt {
          display: block;
          @include ellipsis();
-         margin: 0.8em 0;
+         margin: 0.6em 0;
          color: $sub_color03;
          font-family: $default_font03;
          font-weight: 500;
@@ -81,7 +81,7 @@
       }
    
       &-content {
-         margin-bottom: 0.7rem;
+         margin-bottom: 0.737em;
          line-height: 1.85em;
          font-size: 0.95rem;
          color: $black03;
@@ -106,7 +106,7 @@
       position: relative;
       overflow: hidden;
       height: 34vw;
-      margin: 1rem 0;
+      margin: 0.9rem 0;
       border: 1px solid $black;
       border-radius: 0.25rem;
       background: $grey02;
@@ -119,13 +119,10 @@
       }
    
       @media (min-width: $min_medium_width) {
-         position: absolute;
-         top: 0;
-         bottom: 0;
-         right: 0;
+         float: right;
          width: 12rem;
          height: 6rem;
-         margin: auto 0;
+         margin: 0.8rem 0 0.5rem 1.3rem;
       }
    
       img {
@@ -156,10 +153,10 @@
 }
 
 .list__item {
-   padding-bottom: 2.3rem;
+   padding-bottom: 2.1rem;
 
    & + & {
-      padding-top: 2.3rem;
+      padding-top: 2.1rem;
       border-top: 1px dashed #b9b9b9;
    }
 }
@@ -177,6 +174,7 @@
       }
 
       &__item-excerpt {
+         margin-top: 0.4em;
          margin-bottom: 0;
          font-size: calc(0.85rem + 0.5vw);
 

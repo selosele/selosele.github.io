@@ -76,6 +76,7 @@
 
             @media (min-width: $min_large_width) {
                &:hover {
+                  text-decoration: underline;
                   text-decoration: underline $main_color;
                }
             }

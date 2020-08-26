@@ -39,7 +39,16 @@ code {
     line-height: 2.2;
     vertical-align: middle;
   }
+
+  &.language-plaintext {
+	*::selection {
+		background: $grey12;
+		color: $black04;
+	}
+  }
 }
+
+
 
 .highlight table {
   td {

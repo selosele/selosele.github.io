@@ -102,6 +102,7 @@
 
       &__info-item {
          @include post_info_item;
+         margin-right: 0.3rem;
       
          &--date {
             @include post_info_item_date;

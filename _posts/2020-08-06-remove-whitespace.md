@@ -4,11 +4,11 @@ comments: true
 title: "순수 Javascript로 inline 요소의 text node 제거하기"
 excerpt: ""
 header:
-  overlay_image: /assets/images/thumb/js_thumb01.jpg
+  overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
-  image_position:
-  image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
-  image_author: Alltechbuzz
+  image_position-y: 37%
+  image_link: https://www.freepik.com/free-vector/javascript-frameworks-concept-illustration_6183526.htm#page=1&query=javascript&position=0
+  image_author: stories
 date: 2020-08-06 23:56
 categories:
     - 퍼블노트

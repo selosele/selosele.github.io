@@ -103,6 +103,10 @@
       &__info-item {
          @include post_info_item;
          margin-right: 0.3rem;
+
+         &:not(.archive__item__info-item--date) {
+            @include activate_element($offset: 2px);
+         }
       
          &--date {
             @include post_info_item_date;

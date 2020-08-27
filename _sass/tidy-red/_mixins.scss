@@ -179,11 +179,6 @@
    vertical-align: top;
    white-space: nowrap;
 
-   &:not(.archive__item__info-item--date),
-   &:not(.page__info-item--date) {
-      @include activate_element($offset: 2px);
-   }
-
    &:before {
       font-family: "xeicon";
       font-size: 1em;

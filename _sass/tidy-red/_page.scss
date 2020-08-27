@@ -145,6 +145,10 @@
       @include post_info_item;
       margin-left: 0.3rem;
 
+      &:not(.page__info-item--date) {
+         @include activate_element($offset: 2px);
+      }
+
       &--date {
          @include post_info_item_date;
       }

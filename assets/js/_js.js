@@ -46,7 +46,7 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 alignImg(document.querySelectorAll(".author__avatar img, .theme--type2 .site-title__author-image img"));
 
 // inline 요소 여백 제거
-removeWhiteSpace(document.querySelectorAll(".archive__item, .page__item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
+removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {

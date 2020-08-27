@@ -99,6 +99,22 @@
             }
          }
       }
+
+      &__info-item {
+         @include post_info_item;
+      
+         &--date {
+            @include post_info_item_date;
+         }
+      
+         &--category {
+            @include post_info_item_category;
+         }
+      
+         &--tag {
+            @include post_info_item_tag;
+         }
+      }
    }
 
    &__item-thumb {

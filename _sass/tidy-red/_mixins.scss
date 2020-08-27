@@ -161,8 +161,8 @@
    }
 }
 
-/* post item */
-@mixin post_item {
+/* post info item */
+@mixin post_info_item {
    display: inline-block;
    overflow: hidden;
    max-width: 70%;
@@ -179,7 +179,8 @@
    vertical-align: top;
    white-space: nowrap;
 
-   &:not(.post-item--date) {
+   &:not(.archive__item__info-item--date),
+   &:not(.page__info-item--date) {
       @include activate_element($offset: 2px);
    }
 
@@ -190,7 +191,7 @@
    }
 }
 
-@mixin post_item_date {
+@mixin post_info_item_date {
    background: $black02;
 
    &:before {
@@ -198,7 +199,7 @@
    }
 }
 
-@mixin post_item_category {
+@mixin post_info_item_category {
    background: $green03;
 
    &:before {
@@ -207,7 +208,7 @@
    }
 }
 
-@mixin post_item_tag {
+@mixin post_info_item_tag {
    background: $sub_color03;
 
    &:before {

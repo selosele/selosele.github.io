@@ -17,22 +17,6 @@
    }
 }
 
-.post-item {
-   @include post_item();
-
-   &--date {
-      @include post_item_date();
-   }
-
-   &--category {
-      @include post_item_category();
-   }
-
-   &--tag {
-      @include post_item_tag();
-   }
-}
-
 .page {
    &__title {
       margin-bottom: 1rem;
@@ -152,13 +136,26 @@
       }
    }
 
-   &__item-wrapper {
+   &__info-item-wrapper {
       margin-bottom: 2rem;
       text-align: right;
+   }
 
-      .post-item {
-         margin-right: 0;
-         margin-left: 0.3rem;
+   &__info-item {
+      @include post_info_item;
+      margin-right: 0;
+      margin-left: 0.3rem;
+
+      &--date {
+         @include post_info_item_date;
+      }
+   
+      &--category {
+         @include post_info_item_category;
+      }
+   
+      &--tag {
+         @include post_info_item_tag;
       }
    }
    
@@ -203,7 +200,7 @@
    }
 
    &__item {
-      @include post_item();
+      @include post_info_item;
    }
    
    &__author {

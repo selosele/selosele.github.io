@@ -22,7 +22,7 @@ tags:
 ```javascript
 "https://selosele.github.io/#test"
 
-console.log(window.location.hash); // #test 
+console.log(location.hash); // #test 
 ```
 
 영어는 정상적으로 출력되는 반면
@@ -31,7 +31,7 @@ console.log(window.location.hash); // #test
 ```javascript
 "https://selosele.github.io/#테스트"
 
-console.log(window.location.hash); // ""
+console.log(location.hash); // ""
 ```
 
 따옴표나 #@$@#!$@!$#$ 등 알아볼 수 없는 문자로 출력되기도 한다.
@@ -42,5 +42,5 @@ console.log(window.location.hash); // ""
 
 {:.has--label}
 ```javascript
-console.log(decodeURI(window.location.hash)); // 테스트
+console.log(decodeURI(location.hash)); // 테스트
 ```

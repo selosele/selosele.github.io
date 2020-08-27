@@ -41,7 +41,7 @@ p 요소의 높이값을 rem 단위로 변환해볼 것이다.
 
 {:.has--label}
 ```javascript
-var pixelToRemUnit = function(pixelUnit) {
+const pixelToRemUnit = (pixelUnit) => {
   return pixelUnit / parseFloat(getComputedStyle(document.documentElement).fontSize) + "rem";
 }, elem = document.getElementById("foo");
 

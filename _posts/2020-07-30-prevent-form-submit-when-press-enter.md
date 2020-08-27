@@ -27,7 +27,7 @@ tags:
 
 {:.has--label}
 ```javascript
-document.querySelector("form").addEventListener("keydown", function(evt) {
+document.querySelector("form").addEventListener("keydown", (evt) => {
   if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
 });
 ```

@@ -223,11 +223,11 @@ $(function() {
         });
     });
 
-    $(".toc-wrapper li a").click(function() {
+    $(".toc-wrapper li a").click(function(evt) {
         $("html, body")
             .stop()
             .animate({
-                scrollTop: $("#" + $(this).attr("href").replace("#", "")).offset().top
+                scrollTop: $("#" + $(evt.currentTarget).attr("href").replace("#", "")).offset().top
             }, 300);
     });
 
@@ -261,7 +261,7 @@ $(function() {
 
     }).keydown(function(evt) {
         if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
-            $(".toc--fixed").focus().keydown(function(evt) {
+            $(".toc--fixed nav").focus().keydown(function(evt) {
                 if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
@@ -270,11 +270,11 @@ $(function() {
     });
 
     if ($(".toc--fixed").length) {
-        $(document).keydown(function(evt) {
+        $(document).on("keydown.toc_keydown", function(evt) {
             var keyType = evt.keyCode || evt.which;
     
             if (evt.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
-                if (!$(".toc--fixed").is(":focus")) $(".toc--fixed").focus();
+                if (!$(".toc--fixed").is(":focus")) $(".toc--fixed nav").focus();
             }
     
             if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
@@ -416,7 +416,7 @@ $(function() {
         }
 
         $("a[href*='/category-list/#']").click(function() {
-            if ($("body").hasClass("layout--categories") || $("body").hasClass("layout--tags")) menuClose();
+            if ($(".layout--categories").length || $(".layout--tags").length) menuClose();
         });
     });
 });

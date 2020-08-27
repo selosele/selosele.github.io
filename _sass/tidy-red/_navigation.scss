@@ -332,6 +332,10 @@
    background: $grey12;
    transition: $standard_transition;
 
+   nav {
+      @include clearfix;
+   }
+
    ul {
       padding-left: 0;
    }

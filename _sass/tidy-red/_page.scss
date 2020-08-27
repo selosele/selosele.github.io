@@ -165,7 +165,7 @@
    &__content {
       line-height: 1.9;
       color: $black;
-      @include clearfix();
+      @include clearfix;
 
       @media (min-width: $min_small_width) {
          font-size: 1.05rem;
@@ -212,7 +212,7 @@
       border-top: 1px solid $grey04;
       
       @media (min-width: $min_small_width) {
-         @include clearfix();
+         @include clearfix;
       }
    
       .author {

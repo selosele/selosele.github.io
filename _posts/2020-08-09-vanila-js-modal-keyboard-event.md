@@ -39,22 +39,24 @@ tags:
 
 {:.has--label}
 ```javascript
-var layer = document.getElementById("layer"),
-    layerTabbable = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-    layerTabbableFirst = layerTabbable[0],
-    layerTabbableLast = layerTabbable[layerTabbable.length - 1],
-    handleFirstKeydownEvent = function(evt) {
-      if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
-        evt.preventDefault();
-        layerTabbableLast.focus();
-      }
-    },
-    handleLastKeydownEvent = function(evt) {
-      if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
-        evt.preventDefault();
-        layerTabbableFirst.focus();
-      }
-    };
+const layer = document.getElementById("layer");
+const layerTabbable = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
+const layerTabbableFirst = layerTabbable[0];
+const layerTabbableLast = layerTabbable[layerTabbable.length - 1];
+
+const handleFirstKeydownEvent = (evt) => {
+  if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+    evt.preventDefault();
+    layerTabbableLast.focus();
+  }
+};
+
+const handleLastKeydownEvent = (evt) => {
+  if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+    evt.preventDefault();
+    layerTabbableFirst.focus();
+  }
+};
 
 layerTabbableFirst.addEventListener("keydown", handleFirstKeydownEvent);
 layerTabbableLast.addEventListener("keydown", handleLastKeydownEvent);

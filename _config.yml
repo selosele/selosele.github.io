@@ -206,6 +206,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-coffeescript
   - jekyll-babel
   - jekyll-archives
 
@@ -217,6 +218,8 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-coffeescript
+  - jekyll-babel
 babel_js_extensions: 'es6, babel, jsx'
 
 

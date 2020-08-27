@@ -9,7 +9,7 @@ header:
   image_position-y: 37%
   image_link: https://www.freepik.com/free-vector/javascript-frameworks-concept-illustration_6183526.htm#page=1&query=javascript&position=0
   image_author: stories
-date: 2020-08-09 22:07
+date: 2020-08-26 22:07
 categories:
     - 퍼블노트
 tags:

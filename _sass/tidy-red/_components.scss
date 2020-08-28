@@ -52,34 +52,55 @@
 
    /* title */
    h2:not(.toc__title) {
-      @include heading($margin: 1.5rem 0 1rem 0);
-      font-size: 1.85rem;
+      @include heading();
+      margin: 0.821em 0 0.547em 0;
+      font-size: 1.5rem;
+
+      @media (min-width: $min_small_width) {
+         font-size: 1.85rem;
+      }
+
+      @media (min-width: $min_general_width) {
+         font-size: 1.85rem;
+      }
    }
 
    h3 {
       @include heading();
-      font-size: 1.5rem;
+      margin: 0.657em 0;
+      font-size: 1.4rem;
+
+      @media (min-width: $min_small_width) {
+         font-size: 1.5rem;
+      }
+
+      @media (min-width: $min_general_width) {
+         font-size: 1.5rem;
+      }
    }
 
    h4 {
       @include heading();
+      margin: 0.756em 0;
       font-size: 1.3rem;
    }
 
    h5 {
       @include heading();
+      margin: 0.853em 0;
       font-size: 1.15rem;
    }
 
    h6 {
       @include heading();
+      margin: 0.978em 0;
       font-size: 1rem;
    }
 
    img {
       display: block;
       margin: 0 auto;
-      box-shadow: rgba(0,0,0,0.4) 3px 3px 20px 0;
+      box-shadow: rgba(0,0,0,0.4) 0.15rem 0.15rem 1rem 0;
 
       + em {
          display: block;
@@ -297,62 +318,5 @@ hr {
 
    hr {
       border-color: $grey;
-   }
-}
-
-.cont-box {
-   margin: 2rem 0;
-   padding: 2rem 1rem;
-
-   &__tit {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      line-height: 1.5;
-
-      + {
-         ul, ol {
-            margin-top: 0;
-         }
-      }
-   }
-
-   > {
-      ul, ol {
-         &:only-of-type {
-            margin-top: 0;
-         }
-      }
-   }
-
-   ul, ol {
-      &:last-child {
-         margin-bottom: 0;
-      }
-   }
-
-   &.type1 {
-      border: 1px solid $grey05;
-   }
-
-   @media (min-width: $min_large_width) {
-      min-height: 7rem;
-
-      &.ico {
-         position: relative;
-         padding-left: 7rem;
-         
-         &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 30px;
-            left: 1.5rem;
-            width: 80px;
-            height: 80px;
-            background: url(/assets/images/sprite.png) no-repeat -5px -5px;
-         }
-      }
    }
 }

@@ -333,17 +333,19 @@
    }
 }
 
-.posts-by-year {
-   .archive__btn {
-      span {
-         font-style: italic;
+.page {
+   &--posts-by-year {
+      .archive__btn {
+         span {
+            font-style: italic;
+         }
       }
    }
-}
 
-.tag-list {
-   .archive__btn {
-      font-size: 1.3rem;
-      font-style: italic;
+   &--tag-list {
+      .archive__btn {
+         font-size: 1.3rem;
+         font-style: italic;
+      }
    }
 }

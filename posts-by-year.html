@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Posts by year
-class: page--default posts-by-year
+class: page--posts-by-year
 ---
 
 {% assign yearOfPost = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}

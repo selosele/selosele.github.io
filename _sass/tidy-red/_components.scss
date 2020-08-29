@@ -49,52 +49,54 @@
 }
 
 .page__content {
-
-   /* title */
    h2:not(.toc__title) {
       @include heading();
-      margin: 0.821em 0 0.547em 0;
-      font-size: 1.5rem;
+      margin: 0.789em 0 0.526em 0;
+      font-size: calc(1.7rem + 0.5vw);
 
       @media (min-width: $min_small_width) {
-         font-size: 1.85rem;
-      }
-
-      @media (min-width: $min_general_width) {
-         font-size: 1.85rem;
+         font-size: 1.9rem;
       }
    }
 
    h3 {
       @include heading();
-      margin: 0.657em 0;
-      font-size: 1.4rem;
+      margin: 0.55em 0;
+      font-size: calc(1.51rem + 0.5vw);
 
       @media (min-width: $min_small_width) {
-         font-size: 1.5rem;
-      }
-
-      @media (min-width: $min_general_width) {
-         font-size: 1.5rem;
+         font-size: 1.7rem;
       }
    }
 
    h4 {
       @include heading();
-      margin: 0.756em 0;
-      font-size: 1.3rem;
+      margin: 0.5em 0;
+      font-size: calc(1.32rem + 0.5vw);
+
+      @media (min-width: $min_small_width) {
+         font-size: 1.5rem;
+      }
    }
 
    h5 {
       @include heading();
-      margin: 0.853em 0;
-      font-size: 1.15rem;
+      margin: 0.45em 0;
+      font-size: calc(1.16rem + 0.5vw);
+
+      @media (min-width: $min_small_width) {
+         font-size: 1.35rem;
+      }
    }
 
    h6 {
       @include heading();
-      margin: 0.978em 0;
-      font-size: 1rem;
+      margin: 0.4em 0;
+      font-size: calc(1.01rem + 0.5vw);
+
+      @media (min-width: $min_small_width) {
+         font-size: 1.2rem;
+      }
    }
 
    img {

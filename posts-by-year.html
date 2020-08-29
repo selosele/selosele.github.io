@@ -2,6 +2,7 @@
 layout: page
 title: Posts by year
 class: page--posts-by-year
+id: page-content
 ---
 
 {% assign yearOfPost = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}

@@ -6,7 +6,7 @@ layout: default
 	<article itemscope>
 		<h1 class="page__title" id="page-title" itemprop="headline">{{ page.title }}</h1>
 
-		<section class="archive{% if page.class %} {{ page.class }}{% endif %}" itemprop="text">
+		<section {% if page.id %}id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}" itemprop="text">
       		{{ content }}
 		</section>
 	</article>

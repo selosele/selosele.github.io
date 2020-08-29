@@ -53,6 +53,32 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     if (evt.key === "Enter") evt.preventDefault();
 });
 
+// 포스트 페이지 heading link
+(function() {
+
+    var pageElement = document.getElementById("page-content");
+    if (pageElement) {
+        var h = pageElement.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+
+        for (var i = 0; i < h.length; i++) {
+            var h_id = h[i].id,
+                h_txt = h[i].textContent,
+                h_anc = document.createElement("a");
+
+            if (h_id) {
+                h_anc.href = "#" + h_id;
+            } else {
+                h[i].id = h_txt.replace(/ /g, "-");
+                h_anc.href = "#" + h_txt.replace(/ /g, "-");
+            }
+
+            h_anc.title = h_txt.replace(/-/g, " ");
+            h_anc.classList.add("heading-link");
+            h[i].prepend(h_anc);
+        }
+    }
+})();
+
 // page share link
 (function() {
 
@@ -143,27 +169,9 @@ $(function() {
     }
 });
 
+// 페이지 맨 위로 이동 버튼
 $(function() {
 
-    // 포스트 페이지 heading link
-    $(".page__content").find(":header:not(.toc__title)").each(function() {
-        var t_id = $(this).attr("id"),
-            t_txt = $(this).text(),
-            t_anc = document.createElement("a");
-
-        t_anc.classList.add("heading-link");
-        
-        if (t_id) {
-            t_anc.href = "#" + t_id;
-        } else {
-            t_anc.href = "#" + t_txt.replace(/ /g, "-");
-        }
-
-        t_anc.title = t_txt.replace(/-/g, " ");
-        $(this).prepend(t_anc);
-    });
-
-    // 페이지 맨 위로 이동 버튼
     $("[class*='btn--top']").click(function() {
         $("html, body").stop().animate({
             scrollTop: 0

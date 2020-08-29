@@ -11,7 +11,7 @@
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    padding: 2.2rem 0;
+    padding: 2rem 0;
 
     @media (min-width: $min_small_width) {
       display: inline-block;
@@ -58,11 +58,6 @@
       font-size: 1.5rem;
       color: $black;
       text-align: center;
-    }
-
-    svg {
-      stroke: $black;
-      stroke-width: 8px;
     }
   }
 

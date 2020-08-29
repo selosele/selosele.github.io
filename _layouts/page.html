@@ -2,10 +2,12 @@
 layout: default
 ---
 
-<div class="content-wrapper" id="content" role="main">
-	<article itemscope>
+<div class="content-wrapper" id="content" role="main" itemscope itemtype="https://schema.org/CreativeWork">
+	<header>
 		<h1 class="page__title" id="page-title" itemprop="headline">{{ page.title }}</h1>
+	</header>
 
+	<article>
 		<section {% if page.id %}id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}" itemprop="text">
       		{{ content }}
 		</section>

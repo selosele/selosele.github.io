@@ -41,6 +41,7 @@
       font-size: calc(1rem + 0.5vw);
       line-height: 1.5;
       color: $grey07;
+      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
 
       &:before {
          content: "\2014";
@@ -253,14 +254,20 @@
    
          &__name {
             display: block;
-            margin-bottom: 0.3rem;
             font-family: $default_font03;
             font-weight: 700;
             font-size: 1.4rem;
             line-height: 1.2;
+
+            @media (min-width: $min_small_width) {
+               &:only-child {
+                  margin-top: 1.2rem;
+               }
+            }
          }
    
          &__desc {
+            margin-top: 0.3rem;
             font-size: 1rem;
             line-height: 1.4;
          }
@@ -306,13 +313,13 @@
    &__inner-wrap {
       @include common_layout($width: 90vw);
       color: $grey12;
-      text-shadow: 1px 1px 0.2rem rgba(0,0,0,0.5);
    
       .page__title {
          margin-bottom: 0;
          padding-bottom: 0;
          border-bottom: 0;
          color: inherit;
+         text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
 
          @media (min-width: $min_small_width) {
             font-size: calc(2.15rem + 0.5vw);

@@ -38,24 +38,20 @@
          }
       }
 
-      &.has-info-ico {
-         .heading-link {
+      .heading-link {
+         &[href="#개인정보"] {
             &:before {
                content: url('https://api.iconify.design/noto-v1:notebook.svg?height=2.2em');
             }
          }
-      }
 
-      &.has-post-ico {
-         .heading-link {
+         &[href="#주요-관심사에-대한-포스트"] {
             &:before {
                content: url('https://api.iconify.design/emojione-v1:lower-left-pencil.svg?height=2.2em');
             }
          }
-      }
 
-      &.has-computer-ico {
-         .heading-link {
+         &[href="#직접-만든-블로그"] {
             margin-right: 0.3em;
 
             &:before {

@@ -76,6 +76,7 @@ $(".open-lp").click(function() {
         if ((event.keyCode || event.which) === 9) event.preventDefault();
         // Tab키 / Shift + Tab키 : 초점 받을 수 있는 요소가 없을 경우 레이어 밖으로 초점 이동 안되게
     });
+
     lpObjTabbableLast.keydown(function(event) {
         if (!event.shiftKey && (event.keyCode || event.which) === 9) {
             // Tab키 : 초점 받을 수 있는 마지막 요소에서 첫번째 요소으로 초점 이동
@@ -83,12 +84,14 @@ $(".open-lp").click(function() {
             lpObjTabbableFirst.focus();
         }
     });
+
     lp.click(function(event){
         if (event.target === event.currentTarget) {
             // 반투명 배경 클릭 시 레이어 닫기
             lpClose();
         }
     });
+    
     $(document).on("keydown.lp_keydown", function(event) {
         // Esc키 : 레이어 닫기
         if ((event.keyCode || event.which) === 27) && lp.hasClass("on") {

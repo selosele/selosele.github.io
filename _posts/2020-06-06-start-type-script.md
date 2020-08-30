@@ -19,7 +19,7 @@ tags:
 
 Typescript 파일(예: script.ts)에서 다음과 같은 코드를 작성한다고 가정해보자.
 
-{:.has--label}
+{:.has-label}
 ```typescript
 function getNum(a: number, b: number) {
     return a * b;
@@ -36,7 +36,7 @@ Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻
 
 ## script.ts &rarr; script.js 컴파일
 
-{:.has--label}
+{:.has-label}
 ```javascript
 function getNum(a, b) {
     return a * b;

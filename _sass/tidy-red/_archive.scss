@@ -87,7 +87,7 @@
          color: $black03;
 
          @media (min-width: $min_medium_width) {
-            &.has--first-letter {
+            &.has-first-letter {
                &:first-letter {
                   float: left;
                   margin: 0.12em 0.12em 0 0.12em;

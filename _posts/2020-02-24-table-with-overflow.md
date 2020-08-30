@@ -17,7 +17,7 @@ tags:
 
 ## 우선 코드부터 봅시다.
 
-{:.has--label}
+{:.has-label}
 ```html
 <ul>
   <li>
@@ -26,7 +26,7 @@ tags:
 </ul>
 ```
 
-{:.has--label}
+{:.has-label}
 ```scss
 ul {
   display: table;

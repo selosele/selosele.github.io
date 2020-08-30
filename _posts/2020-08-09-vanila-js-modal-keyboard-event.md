@@ -24,7 +24,7 @@ tags:
 
 결과적으로 개인적인 만족감뿐만 아니라 약간의 vanila JS 사고력(?) 증가까지 이루었다고 생각한다. 그렇다고 자만하지는 말자...
 
-{:.has--label}
+{:.has-label}
 ```html
 <div class="layer" id="layer">
   <div class="layer__inner-wrap">
@@ -37,7 +37,7 @@ tags:
 <a href="#">outer element</a>
 ```
 
-{:.has--label}
+{:.has-label}
 ```javascript
 const layer = document.getElementById("layer");
 const layerTabbable = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");

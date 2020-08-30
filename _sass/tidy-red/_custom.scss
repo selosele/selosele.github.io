@@ -27,3 +27,47 @@
       @include teaser_blur_value(3px);
    }
 }
+
+// about 페이지
+.about {
+   &__heading {
+      .heading-link {
+         &:before {
+            vertical-align: -0.125em;
+            font-family: inherit;
+         }
+      }
+
+      &.has-info-ico {
+         .heading-link {
+            &:before {
+               content: url('https://api.iconify.design/noto-v1:notebook.svg?height=2.2em');
+            }
+         }
+      }
+
+      &.has-post-ico {
+         .heading-link {
+            &:before {
+               content: url('https://api.iconify.design/emojione-v1:lower-left-pencil.svg?height=2.2em');
+            }
+         }
+      }
+
+      &.has-computer-ico {
+         .heading-link {
+            margin-right: 0.3em;
+
+            &:before {
+               content: url('https://api.iconify.design/emojione-v1:laptop-computer.svg?height=2.2em');
+            }
+         }
+      }
+   }
+
+   &__info-table {
+      .fake-table__header {
+         width: 25%;
+      }
+   }
+}

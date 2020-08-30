@@ -16,7 +16,7 @@ tags:
 
 각설하고, 코드를 짜봅시다.
 
-{:.has--label}
+{:.has-label}
 ```html
 <ul>
   <li>list</li>
@@ -29,7 +29,7 @@ tags:
 
 ## 익숙한 방식
 
-{:.has--label}
+{:.has-label}
 ```scss
 li {
   margin-left: 40px;
@@ -42,7 +42,7 @@ li {
 
 또는
 
-{:.has--label}
+{:.has-label}
 ```scss
 li {
   &:not(:first-child) {
@@ -54,7 +54,7 @@ IE 8을 고려하지 않을 경우 not 선택자를 사용할 수도 있다.
 
 ## 더 효율적인 방법
 
-{:.has--label}
+{:.has-label}
 ```scss
 li + li {
   margin-left: 40px;

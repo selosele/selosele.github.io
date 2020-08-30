@@ -18,7 +18,7 @@ tags:
 
 [몇 달전에도 작업한 바 있으나](/2020/02/19/white-space/) jQuery를 쓴 코드였고, 이번에는 순수 Javascript로 작업을 해보았다.
 
-{:.has--label}
+{:.has-label}
 ```html
 <ul class="has--whitespace">
   <li>111</li>
@@ -34,7 +34,7 @@ tags:
 </div>
 ```
 
-{:.has--label}
+{:.has-label}
 ```css
 li {
   display: inline-block;
@@ -42,7 +42,7 @@ li {
 }
 ```
 
-{:.has--label}
+{:.has-label}
 ```javascript
 var removeWhitespace = function(parentElem) {
   if (!parentElem) return;

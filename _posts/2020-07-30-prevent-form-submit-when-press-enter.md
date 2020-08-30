@@ -18,14 +18,14 @@ tags:
 
 예를 들어 input요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 블로그 검색 input쪽 살펴보다가 놀라 자빠질뻔... Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
 
-{:.has--label}
+{:.has-label}
 ```html
 <form>
   <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```
 
-{:.has--label}
+{:.has-label}
 ```javascript
 document.querySelector("form").addEventListener("keydown", (evt) => {
   if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
@@ -34,14 +34,14 @@ document.querySelector("form").addEventListener("keydown", (evt) => {
 
 keyCode, which를 사용하지 않을 경우 다음과 같이 작성해주자.
 
-{:.has--label}
+{:.has-label}
 ```javascript
 if (evt.key === "Enter") evt.preventDefault();
 ```
 
 inline Javascript로 작성할 수도 있다. 구조와 표현의 분리라는 측면에서 봤을 때 좋은 방법은 아니지만 그냥 이런 방법도 있다는 것임.
 
-{:.has--label}
+{:.has-label}
 ```html
 <form onkeydown="return event.key != 'Enter';">
   <input type="text" placeholder="검색어를 입력하세요">

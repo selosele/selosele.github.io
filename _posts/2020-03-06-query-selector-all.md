@@ -16,7 +16,7 @@ tags:
 ---
 오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용. 매개변수를 이용, 태그에 텍스트를 삽입하는 스크립트를 jQuery와 순수 Javascript로 짜보았는데..
 
-{:.has--label}
+{:.has-label}
 ```javascript
 // jQuery
 function myName(x) {
@@ -28,7 +28,7 @@ myName("sel");
 
 순수 Javascript 코드를 아래와 같이 작성해봄.
 
-{:.has--label}
+{:.has-label}
 ```javascript
 // Vanilla JS
 function myName(x) {

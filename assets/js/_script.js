@@ -53,7 +53,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     if (evt.key === "Enter") evt.preventDefault();
 });
 
-// 포스트 페이지 heading link
+// heading link
 (function() {
 
     var pageElement = document.getElementById("page-content");
@@ -106,8 +106,8 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
             preCodeElement[i].setAttribute("tabindex", "0");
 
-            if (preCodeParentElement.classList.contains("has--label")) {
-                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has--label |highlighter-rouge/g, "") + "코드");
+            if (preCodeParentElement.classList.contains("has-label")) {
+                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
         }
     }
@@ -125,7 +125,7 @@ $(function() {
             alertTabbaleElemLast = alertTabbaleElem.last();
 
         if (rootElem.hasClass("lte-ie10") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
-            $("body").addClass("overflow--hidden");
+            $("body").addClass("overflow-hidden");
             IEalertElem.css("display", "block").attr("aria-hidden", "false");
             alertOuterElem.attr("aria-hidden", "true");
             alertTabbaleElem.length && alertTabbaleElemFirst.focus();
@@ -153,7 +153,7 @@ $(function() {
                 } else {
                     alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
                 }
-                $("body").removeClass("overflow--hidden");
+                $("body").removeClass("overflow-hidden");
                 IEalertElem.css("display", "none").attr("aria-hidden", "true");
                 alertTabbaleElem.blur();
                 alertOuterElem.removeAttr("aria-hidden");
@@ -353,15 +353,15 @@ $(function() {
         menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
-            //     .removeClass("scroll--disabled")
+            //     .removeClass("scroll-disabled")
             //     .css("top", "")
             //     .off("scroll touchmove mousewheel");
-            // if (!$("body").hasClass("scroll--disabled")) {
+            // if (!$("body").hasClass("scroll-disabled")) {
             //     $(window).scrollTop(nowScrollPos);
             // }
             $(document).off("keydown.menu_keydown");
             menuELclose.add(menuELopen).attr("aria-expanded", "false");
-            $("body").removeClass("overflow--hidden");
+            $("body").removeClass("overflow-hidden");
             menuOuterEL.removeAttr("aria-hidden");
             menuELlayer.stop().animate({"right": "-100%"}, 400);
 
@@ -376,7 +376,7 @@ $(function() {
     menuELopen.click(function() {
         // $("body")
         //     .css("top", - $(window).scrollTop() + "px")
-        //     .addClass("scroll--disabled")
+        //     .addClass("scroll-disabled")
         //     .on("scroll touchmove mousewheel", function(evt){
         //         evt.preventDefault();
         // });
@@ -388,7 +388,7 @@ $(function() {
                 evt.target === evt.currentTarget && menuClose();
             });
         $(this).attr("aria-expanded", "true");
-        $("body").addClass("overflow--hidden");
+        $("body").addClass("overflow-hidden");
         menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
         if (!menuCurrentPage.is("[aria-current]")) {
@@ -448,7 +448,7 @@ $(function() {
         
         layerClose = function() {
             $(document).off("keydown.search_keydown");
-            $("body").removeClass("overflow--hidden");
+            $("body").removeClass("overflow-hidden");
             closeBtn.attr("aria-expanded", "false");
             layer.stop().animate({"opacity": "0"}, {
                 duration: 200,
@@ -468,7 +468,7 @@ $(function() {
         sInputValNotChanged = true;
 
         $(this).add(closeBtn).attr("aria-expanded", "true");
-        $("body").addClass("overflow--hidden");
+        $("body").addClass("overflow-hidden");
         outerEL.attr("aria-hidden", "true");
         layer
             .css("display", "block")

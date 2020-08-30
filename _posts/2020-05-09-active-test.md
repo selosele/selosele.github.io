@@ -19,7 +19,7 @@ tags:
 
 ## 기존에 만들었던 코드
 
-{:.has--label}
+{:.has-label}
 ```javascript
 $("*").focus(function() {
   console.log(document.activeElement);
@@ -29,7 +29,7 @@ $("*").focus(function() {
 
 ## 새로 만든 코드
 
-{:.has--label}
+{:.has-label}
 ```javascript
 var objActiveCount = 0
   , objTabbable = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
@@ -56,7 +56,7 @@ objTabbable.focus(function() {
 
 200510, 코드를 개선해보았음.
 
-{:.has--label}
+{:.has-label}
 ```javascript
 objActiveNum.style.cssText = "position: absolute; z-index: 99999; font-size: 5rem; font-weight: 700; color: #525252";
 ```

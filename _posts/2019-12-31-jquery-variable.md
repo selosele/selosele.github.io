@@ -17,13 +17,13 @@ tags:
 ---
 Javascript/jQuery 요소가 구별되지 않은 변수명이란 다음과 같다.
 
-{:.has--label}
+{:.has-label}
 ```javascript
 console.log(foo);
 ```
 변수 선언부를 보기 전까지 어느 요소인지 알 수 없음.
 
-{:.has--label}
+{:.has-label}
 ```javascript
 var foo = document.getElementById("foo");
 var $foo = $("#foo");

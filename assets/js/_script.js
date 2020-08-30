@@ -74,7 +74,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
             h_anc.title = h_txt.replace(/-/g, " ");
             h_anc.classList.add("heading-link");
-            h[i].prepend(h_anc);
+            h[i].insertBefore(h_anc, h[i].firstChild);
         }
     }
 })();

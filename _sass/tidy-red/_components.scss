@@ -165,14 +165,14 @@
       margin: 1.5rem 0;
       
       &.float {
-         &--left {
+         &-left {
             @media (min-width: $min_medium_width) {
                float: left;
                margin-right: 3rem;
             }
          }
 
-         &--right {
+         &-right {
             @media (min-width: $min_medium_width) {
                float: right;
                margin-left: 3rem;

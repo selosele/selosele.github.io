@@ -44,6 +44,7 @@ objTabbable.focus(function() {
   objActiveNum.innerHTML = objActiveCount;
 
   !$(this).find(objActiveNum).length && $(this).append(objActiveNum);
+  console.log(objActivated, objActiveCount);
 });
 ```
 

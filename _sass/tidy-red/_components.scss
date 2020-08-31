@@ -252,12 +252,30 @@
 }
 
 /* Text */
+.align {
+   &-left {
+      text-align: left !important;
+   }
+
+   &-center {
+      text-align: center !important;
+   }
+
+   &-right {
+      text-align: right !important;
+   }
+
+   &-justify {
+      text-align: justify !important;
+   }
+}
+
 .color {
-   &--red {
+   &-red {
       color: $sub_color03 !important;
    }
 
-   &--green {
+   &-green {
       color: $green01 !important;
    }
 }
@@ -343,7 +361,7 @@ hr {
 }
 
 /* etc. */
-.pre--example {
+.codebox {
    margin: 2rem 0;
    padding: 1rem;
    border-top: 1px solid $black02;

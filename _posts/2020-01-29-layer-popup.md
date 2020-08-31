@@ -1,8 +1,8 @@
 ---
 layout: post
 comments: true
-title: "레이어팝업에 접근성을 불어넣다"
-excerpt: "접근성이 충분히 보장된 레이어팝업"
+title: "레이어팝업에 웹 접근성을 불어넣다"
+excerpt: "웹 접근성이 충분히 보장된 레이어팝업"
 header:
   overlay_image:
   overlay_filter: 0.4

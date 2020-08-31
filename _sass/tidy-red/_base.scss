@@ -296,25 +296,6 @@ iframe {
    margin-bottom: 1.5rem;
 }
 
-/* indent class */
-.align {
-   &--left {
-      text-align: left !important;
-   }
-
-   &--center {
-      text-align: center !important;
-   }
-
-   &--right {
-      text-align: right !important;
-   }
-
-   &--justify {
-      text-align: justify !important;
-   }
-}
-
 // IE check
 .ie-alert {
    display: none;

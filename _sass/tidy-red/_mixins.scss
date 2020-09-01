@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common_layout($max_width: null, $width: $layout_width_px, $margin: 0 auto) {
+@mixin common_layout($max_width: null, $width: $layout_width_px, $min_general_width_value: false, $margin: 0 auto) {
    width: $layout_width_per;
    margin: $margin;
 
@@ -17,8 +17,10 @@
       }
    }
 
-   @media (min-width: $min_general_width) {
-      width: 62.5vw;
+   @if $min_general_width_value == false {
+      @media (min-width: $min_general_width) {
+         width: 62.5vw;
+      }
    }
 }
 

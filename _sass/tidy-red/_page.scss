@@ -311,7 +311,7 @@
    }
 
    &__inner-wrap {
-      @include common_layout($width: 90vw);
+      @include common_layout($width: 90vw, $min_general_width_value: null);
       color: $grey12;
    
       .page__title {

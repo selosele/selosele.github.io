@@ -320,7 +320,7 @@ $(function() {
         }
     }
 
-    var abbrElement = $("abbr[title]");
+    var abbrElement = $("abbr");
 
     if ($(window).outerWidth() <= 1200) {
         abbrElement.on("click", tooltipCreate);
@@ -330,7 +330,7 @@ $(function() {
         if ($(window).outerWidth() <= 1200) {
             abbrElement.on("click", tooltipCreate);
         } else {
-            $("abbr[title]").removeAttr("tabindex");
+            $("abbr").removeAttr("tabindex");
             $(".abbr__tooltip").remove();
             abbrElement.off("click");
         }

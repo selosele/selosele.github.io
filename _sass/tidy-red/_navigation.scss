@@ -11,6 +11,7 @@
    z-index: 10000;
    width: 100vw;
    height: 100vh;
+   height: 100vmax;
    background: rgba(0,0,0,0.3);
 }
 
@@ -138,6 +139,7 @@
          font-family: "xeicon";
          font-size: 1.2rem;
          color: $grey12;
+         vertical-align: -0.25em;
       }
    }
 

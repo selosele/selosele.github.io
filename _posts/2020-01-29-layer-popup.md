@@ -15,6 +15,7 @@ tags:
     - javascript
     - web-accessibility
     - ui
+primary_post: true
 ---
 블로그에 사용할 레이어팝업을 만들면서, 웹 접근성이 충분히 보장되도록 작업을 했고, 코드는 다음과 같다.
 

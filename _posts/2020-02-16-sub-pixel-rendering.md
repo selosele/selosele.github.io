@@ -13,6 +13,7 @@ categories:
     - 퍼블노트
 tags:
     - css
+primary_post: true
 ---
 CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈를 소수점 단위까지 렌더링하게 되어 결과적으로 요소가 흐려보이는 현상으로, webkit 계열 브라우저에서 발생한다. 예시로 요소를 중앙 정렬하는 방법 중 많이 사용되는 방법 중 하나로, ```position: absolute; top: 50%; left: 50%```{:.language-css} 및 ```transform: translate(-50%, -50%)```{:.language-css}를 선언했는데 요소의 너비/높이 중 하나라도 홀수이면 요소가 흐려져보이는 것.
 

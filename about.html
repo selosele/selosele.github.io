@@ -5,43 +5,29 @@ class: page__content
 id: page-content
 ---
 
+{% assign primary_post = site.posts | where: "primary_post", "true" %}
+
 <p>의식의 흐름대로 글쓰기를 즐기며, 읽기 쉬운 글을 못 쓰지만 읽기 쉬운 코드 작성을 위해 노력하는 웹 퍼블리셔입니다.</p>
 
 <p>Semantic markup, 올바른 웹 접근성 구조 설계, CSS/JS 구조와 표현의 분리 등에 관심이 많아 꾸준히 학습을 하고 있고 많이 알지는 못하지만 실무에 적용하여 보다 더 나은 웹을 만들고자 노력합니다.</p>
 
 <h2 class="about__heading">개인정보</h2>
 <ul class="fake-table about__info-table">
+    {% for cont in site.data.about.info_table %}
     <li class="fake-table__row">
-        <em class="fake-table__header">E-mail</em>
-        <div class="fake-table__content">
-            <a href="mailto:gwiazda762@gmail.com" target="_blank">gwiazda762@gmail.com</a>
-        </div>
+        <em class="fake-table__header">{{ cont.header }}</em>
+        <div class="fake-table__content">{{ cont.content }}</div>
     </li>
-    <li class="fake-table__row">
-        <em class="fake-table__header">Github</em>
-        <div class="fake-table__content">
-            <a href="https://github.com/selosele" target="_blank">selosele</a>
-        </div>
-    </li>
+    {% endfor %}
 </ul>
 
 <h2 class="about__heading">주요 관심사에 대한 포스트</h2>
 <ul>
-    <li>
-        <a href="https://selosele.github.io/2020/08/09/vanila-js-modal-keyboard-event/">순수 Javascript로 레이어팝업 초점이동을 구성해보자</a>
+    {% for post in primary_post %}
+    <li{% if primary_post.size == 1 %} role="presentation"{% endif %}>
+        <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
-    <li>
-        <a href="https://selosele.github.io/2020/03/04/abbr/">웹 접근성이 충분히 보장된 abbr 요소, 만들어보자</a>
-    </li>
-    <li>
-        <a href="https://selosele.github.io/2020/02/16/sub-pixel-rendering/">sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가</a>
-    </li>
-    <li>
-        <a href="https://selosele.github.io/2020/01/29/layer-popup/">레이어팝업에 웹 접근성을 불어넣다</a>
-    </li>
-    <li>
-        <a href="https://selosele.github.io/2019/11/03/tab01/">웹 접근성이 충분히 보장된 탭 UI, 만들어보자</a>
-    </li>
+    {% endfor %}
 </ul>
 
 <h2 class="about__heading">직접 만든 블로그</h2>

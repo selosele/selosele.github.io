@@ -305,6 +305,7 @@
 .hero {
    &-wrapper {
       padding: 7.5rem 0 2.5rem;
+      background-image: linear-gradient(45deg, $grey10, $grey11);
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: cover;

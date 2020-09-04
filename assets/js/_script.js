@@ -8,6 +8,7 @@ var anchorSetAriaCurrent = function(anchorNode) {
         }
     }
 };
+anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 // 이미지 정렬
 var alignImg = function(elem) {
@@ -21,6 +22,7 @@ var alignImg = function(elem) {
         }
     }
 };
+alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
 
 // inline 요소 여백 제거
 var removeWhiteSpace = function(parentElem) {
@@ -32,21 +34,13 @@ var removeWhiteSpace = function(parentElem) {
         });
     }
 };
+removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 // IE 11 ~ 9 체크
-if (window.navigator.userAgent.toLowerCase().indexOf('trident') > -1) document.documentElement.classList.add("only-ie");
+if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
 
 // IE 10 이하 체크
 if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
-
-// anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
-anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
-
-// 이미지 정렬
-alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
-
-// inline 요소 여백 제거
-removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
@@ -167,16 +161,6 @@ $(function() {
 
         $(".ie-alert__close").click(closeIEalert);
     }
-});
-
-// 페이지 맨 위로 이동 버튼
-$(function() {
-
-    $("[class*='btn--top']").click(function() {
-        $("html, body").stop().animate({
-            scrollTop: 0
-        }, 500);
-    });
 });
 
 // post archive 목록 펼쳐보기

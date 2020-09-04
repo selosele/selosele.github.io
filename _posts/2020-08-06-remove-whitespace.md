@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "순수 Javascript로 inline 요소의 text node 제거하기"
+title: "Vanilla JS로 inline 요소의 text node 제거하기"
 excerpt: ""
 header:
   overlay_image: /assets/images/thumb/js_thumb02.jpg
@@ -16,7 +16,7 @@ tags:
     - javascript
 ---
 
-[몇 달전에도 작업한 바 있으나](/2020/02/19/white-space/) jQuery를 쓴 코드였고, 이번에는 순수 Javascript로 작업을 해보았다.
+[몇 달전에도 작업한 바 있으나](/2020/02/19/white-space/) jQuery를 쓴 코드였고, 이번에는 Vanilla JS로 작업을 해보았다.
 
 {:.has-label}
 ```html

@@ -14,7 +14,7 @@ categories:
 tags:
     - javascript
 ---
-오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용. 매개변수를 이용, 태그에 텍스트를 삽입하는 스크립트를 jQuery와 순수 Javascript로 짜보았는데..
+오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용. 매개변수를 이용, 태그에 텍스트를 삽입하는 스크립트를 jQuery와 Vanilla JS로 짜보았는데..
 
 {:.has-label}
 ```javascript
@@ -26,7 +26,7 @@ myName("sel");
 ```
 문제없이 작동하는 jQuery 코드.
 
-순수 Javascript 코드를 아래와 같이 작성해봄.
+Vanilla JS 코드를 아래와 같이 작성해봄.
 
 {:.has-label}
 ```javascript
@@ -39,7 +39,7 @@ myName("sel");
 ```
 안됨...
 
-이게 왜 안되는지 며칠을 고민해봤는데도 답이 안나왔었음. 결국 이해하고서 작동하는 쪽으로 고쳐본 코드는 다음과 같고, jQuery/순수 Javascript 코드 구별을 위해 함수명/태그를 다르게 작성함.
+이게 왜 안되는지 며칠을 고민해봤는데도 답이 안나왔었음. 결국 이해하고서 작동하는 쪽으로 고쳐본 코드는 다음과 같고, jQuery/Vanilla JS 코드 구별을 위해 함수명/태그를 다르게 작성함.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="RwPLjXE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RwPLjXE">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/RwPLjXE">

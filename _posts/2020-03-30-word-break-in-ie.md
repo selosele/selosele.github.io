@@ -14,7 +14,7 @@ categories:
 tags:
     - css
 ---
-오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제.. 검색을 해보니 ```word-break: break-all```{:.language-css}, ```word-wrap: break-word```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다. 결국 선임에게 물어본 결과 그냥 딴거(break-word/break-all) 쓰는 걸로..
+오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제.. 검색을 해보니 ```word-break: break-all```{:.language-css}, ```overflow-wrap: break-word```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다. 결국 선임에게 물어본 결과 그냥 딴거(break-word/break-all) 쓰는 걸로..
 
 대체 원인이 무엇일까? 버그라고 보기엔 IE 모든 버전을 지원하는 속성이므로 내가 애초부터 CSS를 잘못 작성했을 수도 있고.. 해답은 어디에 있단말인가.......
 
@@ -34,4 +34,4 @@ tags:
 ## 결론
 우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
 
-word-wrap, overflow-wrap 속성이나 white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
+overflow-wrap 속성이나 white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.

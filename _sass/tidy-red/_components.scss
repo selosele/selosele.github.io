@@ -37,12 +37,14 @@
 
 /* Tab */
 .tablist {
-   display: -ms-grid;
+   display: flex;
    display: grid;
    margin: 1rem 0;
+   flex-wrap: wrap;
 
    &__tab {
-      padding: 0.8rem;
+      flex-basis: calc(100% / 3);
+      padding: 0.8rem 0;
       border-bottom: 0.15rem solid $grey05;
       background: none;
       text-align: center;
@@ -52,13 +54,11 @@
 
       &:nth-child(2) {
          grid-column: 2;
-         -ms-grid-column: 2;
       }
 
       @media (min-width: $min_minimal_width) {
          &:nth-child(3) {
             grid-column: 3;
-            -ms-grid-column: 3;
          }
       }
 

@@ -83,7 +83,7 @@ if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList
 
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-    if (evt.key === "Enter") evt.preventDefault();
+    if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
 });
 
 // heading link

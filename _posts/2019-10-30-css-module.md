@@ -5,7 +5,7 @@ title: "CSS 모듈화의 중요성"
 excerpt: "모듈화는 CSS 중복을 제거하고 클래스의 재사용성을 높이는 데 중점을 둔다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2019-10-30 22:12
 categories:
     - 퍼블노트

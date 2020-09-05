@@ -5,7 +5,7 @@ title: "CSS 수직 중앙 정렬, position은 안녕"
 excerpt: "position을 이용한 중앙 정렬은 이득보다 손실이 크다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 date: 2019-11-02 22:12
 categories:
     - 퍼블노트

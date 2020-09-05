@@ -186,13 +186,6 @@ sass:
 
 # Outputting
 permalink: /:year/:month/:day/:title/
-# pagination:
-#     enabled: true
-#     per_page: 8
-#     limit: 0
-#     sort_field: "date"
-#     sort_reverse: true
-#     title: ':title'
 paginate: 6 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -293,10 +286,6 @@ masthead:
     filter: 0.4
     blur: true
     position: # ex) 50% or 50% 21%
-
-# main navigation
-# main_nav:
-#   etc: false
 
 # etc
 first_letter: true

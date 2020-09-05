@@ -36,6 +36,27 @@ var removeWhiteSpace = function(parentElem) {
 };
 removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
+// abbr tooltip 생성
+var appendTooltip = function(evt) {
+    _t = evt.currentTarget,
+    _t_span = document.createElement("span"),
+    _t_tooltip = _t.querySelector(".abbr__tooltip");
+
+    if (!_t_tooltip) {
+        _t.classList.add("tooltip--visible");
+        _t_span.setAttribute("tabindex", "0");
+        _t_span.setAttribute("role", "tooltip");
+        _t_span.id = _t.getAttribute("aria-describedby");
+        _t_span.title = _t.title;
+        _t_span.textContent = _t.title;
+        _t_span.classList.add("abbr__tooltip");
+        _t.appendChild(_t_span);
+    } else {
+        _t.classList.remove("tooltip--visible");
+        _t.removeChild(_t_tooltip);
+    }
+};
+
 // IE 11 ~ 9 체크
 if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
 
@@ -70,6 +91,17 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             h_anc.classList.add("heading-link");
             h[i].insertBefore(h_anc, h[i].firstChild);
         }
+    }
+})();
+
+// abbr event 등록
+(function() {
+    
+    var abbr = document.querySelectorAll("abbr");
+    if (!abbr) return;
+
+    for (var i = 0; i < abbr.length; i++) {
+        abbr[i].addEventListener("click", appendTooltip);
     }
 })();
 
@@ -277,48 +309,6 @@ $(function() {
             }
         });
     }
-});
-
-// abbr
-$(function() {
-
-    function tooltipCreate(evt) {
-        var targetElement = $(evt.currentTarget),
-            tooltipElement = targetElement.find(".abbr__tooltip");
-
-        if (!tooltipElement.length) {
-            targetElement
-                .addClass("tooltip--visible")
-                .attr("tabindex", "0")
-                .append("<span class='abbr__tooltip'>" + targetElement.attr('title') + "</span>")
-                .find("span")
-                    .attr({
-                        "tabindex": "0",
-                        "role": "tooltip",
-                        "id": targetElement.attr("aria-describedby")
-                });
-
-        } else {
-            targetElement.removeClass("tooltip--visible");
-            tooltipElement.remove();
-        }
-    }
-
-    var abbrElement = $("abbr");
-
-    if ($(window).outerWidth() <= 1200) {
-        abbrElement.on("click", tooltipCreate);
-    }
-
-    $(window).resize(function() {
-        if ($(window).outerWidth() <= 1200) {
-            abbrElement.on("click", tooltipCreate);
-        } else {
-            $("abbr").removeAttr("tabindex");
-            $(".abbr__tooltip").remove();
-            abbrElement.off("click");
-        }
-    });
 });
 
 $(function() {

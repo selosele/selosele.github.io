@@ -8,7 +8,6 @@ var anchorSetAriaCurrent = function(anchorNode) {
         }
     }
 };
-anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 // 이미지 정렬
 var alignImg = function(elem) {
@@ -22,7 +21,6 @@ var alignImg = function(elem) {
         }
     }
 };
-alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
 
 // inline 요소 여백 제거
 var removeWhiteSpace = function(parentElem) {
@@ -34,7 +32,6 @@ var removeWhiteSpace = function(parentElem) {
         });
     }
 };
-removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 // abbr tooltip 생성
 var appendTooltip = function(evt) {
@@ -56,6 +53,12 @@ var appendTooltip = function(evt) {
         _t.removeChild(_t_tooltip);
     }
 };
+
+anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
+
+alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
+
+removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 // IE 11 ~ 9 체크
 if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");

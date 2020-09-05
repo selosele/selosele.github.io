@@ -44,7 +44,7 @@ var appendTooltip = function(evt) {
 
     if (!_t_tooltip) {
         _t.classList.add("tooltip--visible");
-        _t_span.setAttribute("tabindex", "0");
+        _t_span.tabIndex = 0;
         _t_span.setAttribute("role", "tooltip");
         _t_span.id = _t.getAttribute("aria-describedby");
         _t_span.title = _t.title;
@@ -130,10 +130,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         
         for (var i = 0; i < preCodeElement.length; i++) {
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
-            preCodeElement[i].setAttribute("tabindex", "0");
+            preCodeElement[i].tabIndex = 0;
 
             if (preCodeParentElement.classList.contains("has-label")) {
-                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
+                preCodeElement[i].title = preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드";
             }
         }
     }

@@ -33,7 +33,14 @@ var removeWhiteSpace = function(parentElem) {
     }
 };
 
-// abbr tooltip 생성
+// abbr tooltip 생성 및 삭제
+var removeTooltip = function(evt) {
+    var __t = evt.currentTarget;
+
+    __t.classList.remove("tooltip--visible");
+    __t.removeChild(__t.querySelector(".abbr__tooltip"));
+};
+
 var appendTooltip = function(evt) {
     _t = evt.currentTarget,
     _t_span = document.createElement("span"),
@@ -49,10 +56,18 @@ var appendTooltip = function(evt) {
         _t_span.classList.add("abbr__tooltip");
         _t.appendChild(_t_span);
     } else {
-        _t.classList.remove("tooltip--visible");
-        _t.removeChild(_t_tooltip);
+        removeTooltip(evt);
     }
 };
+
+var handleTooltipKeydownEvent = function(evt) {
+    var keyType = evt.keyCode || evt.which;
+
+    if (keyType === 13) appendTooltip(evt);
+    if ((!evt.shiftKey && keyType === 9) && evt.target === evt.currentTarget.querySelector(".abbr__tooltip")) {
+        removeTooltip(evt);
+    }
+}
 
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
@@ -105,6 +120,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
     for (var i = 0; i < abbr.length; i++) {
         abbr[i].addEventListener("click", appendTooltip);
+        abbr[i].addEventListener("keydown", handleTooltipKeydownEvent);
     }
 })();
 

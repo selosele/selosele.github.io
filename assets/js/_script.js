@@ -39,12 +39,14 @@ var appendTooltip = function() {
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {
-        var abbrSpan = document.createElement("span");
+        var abbrSpan = document.createElement("span"),
+            abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/  |%/g, "1").toLowerCase();
 
         abbr[i].tabIndex = 0;
+        abbr[i].setAttribute("aria-describedby", abbr_title);
         abbrSpan.hidden = true;
         abbrSpan.setAttribute("role", "tooltip");
-        abbrSpan.id = abbr[i].getAttribute("aria-describedby");
+        abbrSpan.id = abbr_title;
         abbrSpan.title = abbr[i].title;
         abbrSpan.textContent = abbr[i].title;
         abbrSpan.classList.add("abbr__tooltip");
@@ -634,7 +636,11 @@ $(function() {
             })
             .prop({
                 "hidden": false
-            });
+            })
+            .siblings(".tabpanel")
+                .prop({
+                    "hidden": true
+                });
 
     tabWrapper.on("click", ".tablist__tab", handleClickEvent);
     tabWrapper.on("keydown", ".tablist__tab", handleKeydownEvent);

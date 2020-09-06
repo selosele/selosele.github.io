@@ -47,7 +47,6 @@ var appendTooltip = function() {
         abbrSpan.hidden = true;
         abbrSpan.setAttribute("role", "tooltip");
         abbrSpan.id = abbr_title;
-        abbrSpan.title = abbr[i].title;
         abbrSpan.textContent = abbr[i].title;
         abbrSpan.classList.add("abbr__tooltip");
         abbr[i].appendChild(abbrSpan);

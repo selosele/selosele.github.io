@@ -135,7 +135,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 // abbr event 등록
 (function() {
     
-    var abbr = document.querySelectorAll("abbr");
+    var abbr = document.querySelectorAll("abbr[title]");
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {

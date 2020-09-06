@@ -139,10 +139,13 @@ th {
 }
 
 abbr {
-   position: relative;
-   border-bottom: 1px dotted $black;
    text-decoration: none;
-   cursor: help;
+
+   &[title] {
+      position: relative;
+      border-bottom: 1px dotted $black;
+      cursor: help;
+   }
 }
 
 /* hide element */

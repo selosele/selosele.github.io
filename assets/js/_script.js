@@ -42,7 +42,7 @@ var removeTooltip = function(evt) {
 };
 
 var appendTooltip = function(evt) {
-    if (evt.target !== event.currentTarget) return;
+    if (evt.target !== evt.currentTarget) return;
 
     _t = evt.currentTarget,
     _t_span = document.createElement("span"),

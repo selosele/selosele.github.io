@@ -285,7 +285,7 @@
 }
 
 abbr {
-   &.tooltip--visible {
+   &.tooltip--active {
       .abbr__tooltip {
          display: block;
       }

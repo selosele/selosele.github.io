@@ -19,8 +19,8 @@ class: page--posts-by-year
 		{% endfor %}
 	</ul>
 
-	<a href="#skip-links" class="page__btn-top">
-		<span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_top }}</span>
+	<a href="#btn-{{ year.name }}" class="page__btn-top">
+		<span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
 	</a>
 </div>
 {% endfor %}

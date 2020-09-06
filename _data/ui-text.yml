@@ -64,6 +64,7 @@ en: &DEFAULT_EN
   search_placeholder_text    : "Enter your search term..."
   results_found              : "Result(s) found"
   move_to_top                : "Back to top"
+  move_to_archive_button     : "Back to the button"
   target_blank               : "new page"
 en-US:
   <<: *DEFAULT_EN
@@ -140,6 +141,7 @@ ko: &DEFAULT_KO
   search_placeholder_text    : "검색어를 입력하세요."
   results_found              : "개 결과 발견"
   move_to_top                : "맨 위로 이동"
+  move_to_archive_button     : "버튼으로 이동"
   target_blank               : "새창열림"
   post_by_year_skip_title    : "각 연도별에 작성된 글 보기 버튼으로 이동 링크" # 한국어 전용
   post_by_year_skip_link     : "년으로 이동" # 한국어 전용

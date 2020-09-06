@@ -37,7 +37,7 @@ var removeWhiteSpace = function(parentElem) {
 var removeTooltip = function(evt) {
     var __t = evt.currentTarget;
 
-    __t.classList.remove("tooltip--visible");
+    __t.classList.remove("tooltip--active");
     __t.removeChild(__t.querySelector(".abbr__tooltip"));
 };
 
@@ -47,7 +47,7 @@ var appendTooltip = function(evt) {
     _t_tooltip = _t.querySelector(".abbr__tooltip");
 
     if (!_t_tooltip) {
-        _t.classList.add("tooltip--visible");
+        _t.classList.add("tooltip--active");
         _t_span.tabIndex = 0;
         _t_span.setAttribute("role", "tooltip");
         _t_span.id = _t.getAttribute("aria-describedby");
@@ -67,7 +67,23 @@ var handleTooltipKeydownEvent = function(evt) {
     if ((!evt.shiftKey && keyType === 9) && evt.target === evt.currentTarget.querySelector(".abbr__tooltip")) {
         removeTooltip(evt);
     }
-}
+};
+
+// post archive 아코디언
+var handleArchiveClickEvent = function(evt) {
+    var _t = evt.currentTarget,
+        archiveListMatchElement = document.querySelector("[aria-labelledby='"+_t.id+"']");
+
+    if (archiveListMatchElement.classList.contains("archive__list--active")) {
+        archiveListMatchElement.classList.remove("archive__list--active");
+        archiveListMatchElement.tabIndex = -1;
+        _t.setAttribute("aria-expanded", "false");
+    } else {
+        archiveListMatchElement.classList.add("archive__list--active");
+        archiveListMatchElement.tabIndex = 0;
+        _t.setAttribute("aria-expanded", "true");
+    }
+};
 
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
@@ -158,6 +174,17 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     }
 })();
 
+// post archive 아코디언 event 등록
+(function() {
+
+    var archiveBtnElement = document.querySelectorAll(".archive__btn");
+    if (!archiveBtnElement) return;
+
+    for (var i = 0; i < archiveBtnElement.length; i++) {
+        archiveBtnElement[i].addEventListener("click", handleArchiveClickEvent);
+    }
+})();
+
 // IE 10 이하 경고 레이어팝업
 $(function() {
 
@@ -212,42 +239,6 @@ $(function() {
 
         $(".ie-alert__close").click(closeIEalert);
     }
-});
-
-// post archive 목록 펼쳐보기
-$(function() {
-
-    var archiveBtnElement = $(".archive__btn"),
-        archiveListElement = $(".archive__list");
-
-    archiveBtnElement.click(function() {
-        var archiveListMatchElement = $("[aria-labelledby='"+$(this).attr("id")+"']");
-
-        if (archiveListMatchElement.css("display") !== "block") {
-            archiveListElement
-                .removeAttr("style")
-                .attr("tabindex", "-1");
-                
-            archiveListMatchElement
-                .css("display", "block")
-                .attr("tabindex", "0")
-                .stop()
-                    .animate({"opacity": "1"}, 300);
-
-            $(this)
-                .attr("aria-expanded", "true")
-                .siblings(".archive__btn")
-                    .attr("aria-expanded", "false");
-
-        } else {
-            archiveListElement
-                .removeAttr("style")
-                .attr("tabindex", "-1");
-
-            archiveBtnElement
-                .attr("aria-expanded", "false");
-        }
-    });
 });
 
 // 포스트 목차

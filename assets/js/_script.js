@@ -39,31 +39,32 @@ var appendTooltip = function() {
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {
-        var abbr_span = document.createElement("span");
+        var abbrSpan = document.createElement("span");
 
-        abbr_span.hidden = false;
-        abbr_span.tabIndex = 0;
-        abbr_span.setAttribute("role", "tooltip");
-        abbr_span.id = abbr[i].getAttribute("aria-describedby");
-        abbr_span.title = abbr[i].title;
-        abbr_span.textContent = abbr[i].title;
-        abbr_span.classList.add("abbr__tooltip");
-        abbr[i].appendChild(abbr_span);
+        abbr[i].tabIndex = 0;
+        abbrSpan.hidden = true;
+        abbrSpan.setAttribute("role", "tooltip");
+        abbrSpan.id = abbr[i].getAttribute("aria-describedby");
+        abbrSpan.title = abbr[i].title;
+        abbrSpan.textContent = abbr[i].title;
+        abbrSpan.classList.add("abbr__tooltip");
+        abbr[i].appendChild(abbrSpan);
     }
 };
 
 var handleTooltipClickEvent = function(evt) {
     if (evt.target !== evt.currentTarget) return;
 
-    var abbr = evt.currentTarget,
-        abbr_tooltip = abbr.querySelector(".abbr__tooltip");
+    var abbrTooltip = evt.currentTarget.querySelector(".abbr__tooltip");
 
-    if (!abbr.classList.contains("tooltip--active")) {
-        abbr_tooltip.hidden = false;
-        abbr.classList.add("tooltip--active");
+    if (!abbrTooltip.classList.contains("abbr__tooltip--active")) {
+        abbrTooltip.hidden = false;
+        abbrTooltip.tabIndex = 0;
+        abbrTooltip.classList.add("abbr__tooltip--active");
     } else {
-        abbr_tooltip.hidden = true;
-        abbr.classList.remove("tooltip--active");
+        abbrTooltip.hidden = true;
+        abbrTooltip.tabIndex = -1;
+        abbrTooltip.classList.remove("abbr__tooltip--active");
     }
 };
 

@@ -342,7 +342,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        scrollBar_w = window.innerWidth - document.documentElement.offsetWidth,
+        scrollBar_w = (window.innerWidth - document.documentElement.offsetWidth) + "px",
         menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
@@ -354,7 +354,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             // }
             $(document).off("keydown.menu_keydown");
             menuELclose.add(menuELopen).attr("aria-expanded", "false");
-            $("body").removeClass("overflow-hidden").css("padding-right", "");
+            $("body").css("padding-right", "").removeClass("overflow-hidden");
             menuOuterEL.removeAttr("aria-hidden");
             menuELlayer.stop().animate({"right": "-100%"}, 400);
 
@@ -381,7 +381,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
                 evt.target === evt.currentTarget && menuClose();
             });
         $(this).attr("aria-expanded", "true");
-        $("body").addClass("overflow-hidden").css("padding-right", scrollBar_w + "px");
+        $("body").css("padding-right", scrollBar_w).addClass("overflow-hidden");
         menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
         if (!menuCurrentPage.is("[aria-current]")) {

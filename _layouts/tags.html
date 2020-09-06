@@ -19,7 +19,7 @@ title: 태그
     <button type="button" class="archive__btn" id="btn-{{ tagName }}" aria-controls="list-{{ tagName }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
   </h2>
 
-  <div class="archive__list" id="list-{{ tagName }}" role="region" aria-labelledby="btn-{{ tagName }}">
+  <section class="archive__list" id="list-{{ tagName }}" role="region" aria-labelledby="btn-{{ tagName }}">
     <ul>
       {% for post in tagPost %}
       <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>
@@ -31,7 +31,7 @@ title: 태그
     <a href="#btn-{{ tagName }}" class="page__btn-top">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
     </a>
-  </div>
+  </section>
   {% endif %}
 {% endfor %}
 {% endfor %}

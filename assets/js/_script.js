@@ -33,42 +33,44 @@ var removeWhiteSpace = function(parentElem) {
     }
 };
 
-// abbr tooltip 생성 및 삭제
-var removeTooltip = function(evt) {
-    var __t = evt.currentTarget;
+// abbr tooltip 생성 및 handler
+var appendTooltip = function() {
+    var abbr = document.querySelectorAll("abbr");
+    if (!abbr) return;
 
-    __t.classList.remove("tooltip--active");
-    __t.removeChild(__t.querySelector(".abbr__tooltip"));
+    for (var i = 0; i < abbr.length; i++) {
+        var abbr_span = document.createElement("span");
+
+        abbr_span.hidden = false;
+        abbr_span.tabIndex = 0;
+        abbr_span.setAttribute("role", "tooltip");
+        abbr_span.id = abbr[i].getAttribute("aria-describedby");
+        abbr_span.title = abbr[i].title;
+        abbr_span.textContent = abbr[i].title;
+        abbr_span.classList.add("abbr__tooltip");
+        abbr[i].appendChild(abbr_span);
+    }
 };
 
-var appendTooltip = function(evt) {
+var handleTooltipClickEvent = function(evt) {
     if (evt.target !== evt.currentTarget) return;
 
-    _t = evt.currentTarget,
-    _t_span = document.createElement("span"),
-    _t_tooltip = _t.querySelector(".abbr__tooltip");
+    var abbr = evt.currentTarget,
+        abbr_tooltip = abbr.querySelector(".abbr__tooltip");
 
-    if (!_t_tooltip) {
-        _t.classList.add("tooltip--active");
-        _t_span.tabIndex = 0;
-        _t_span.setAttribute("role", "tooltip");
-        _t_span.id = _t.getAttribute("aria-describedby");
-        _t_span.title = _t.title;
-        _t_span.textContent = _t.title;
-        _t_span.classList.add("abbr__tooltip");
-        _t.appendChild(_t_span);
+    if (!abbr.classList.contains("tooltip--active")) {
+        abbr_tooltip.hidden = false;
+        abbr.classList.add("tooltip--active");
     } else {
-        removeTooltip(evt);
+        abbr_tooltip.hidden = true;
+        abbr.classList.remove("tooltip--active");
     }
 };
 
 var handleTooltipKeydownEvent = function(evt) {
     var keyType = evt.keyCode || evt.which;
 
-    if (keyType === 13) appendTooltip(evt);
-    // if ((!evt.shiftKey && keyType === 9) && evt.target === evt.currentTarget.querySelector(".abbr__tooltip")) {
-    //     removeTooltip(evt);
-    // }
+    if (keyType === 13) handleTooltipClickEvent(evt);
 };
 
 // post archive 아코디언
@@ -94,6 +96,8 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
 
 removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
+
+appendTooltip();
 
 // IE 11 ~ 9 체크
 if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
@@ -139,7 +143,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {
-        abbr[i].addEventListener("click", appendTooltip);
+        abbr[i].addEventListener("click", handleTooltipClickEvent);
         abbr[i].addEventListener("keydown", handleTooltipKeydownEvent);
     }
 })();
@@ -207,14 +211,14 @@ $(function() {
             alertTabbaleElem.length && alertTabbaleElemFirst.focus();
         }
 
-        alertTabbaleElemFirst.keydown(function(evt) {
+        alertTabbaleElemFirst.on("keydown", function(evt) {
             if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 alertTabbaleElemLast.focus();
             }
         });
 
-        alertTabbaleElemLast.keydown(function(evt) {
+        alertTabbaleElemLast.on("keydown", function(evt) {
             if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 alertTabbaleElemFirst.focus();
@@ -264,7 +268,7 @@ $(function() {
         });
     });
 
-    $(".toc-wrapper li a").click(function(evt) {
+    $(".toc-wrapper li a").on("click", function(evt) {
         $("html, body")
             .stop()
             .animate({
@@ -297,12 +301,12 @@ $(function() {
         tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
         tocTabbleFocusedLast;
 
-    tocTabbleNode.keydown(function() {
+    tocTabbleNode.on("keydown", function() {
         return tocTabbleFocusedLast = $(this);
 
-    }).keydown(function(evt) {
+    }).on("keydown", function(evt) {
         if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
-            $(".toc--fixed nav").focus().keydown(function(evt) {
+            $(".toc--fixed nav").focus().on("keydown", function(evt) {
                 if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
@@ -362,7 +366,7 @@ $(function() {
             !$(location.hash).is(":focus") && menuELopen.focus();
         }
 
-    menuELopen.click(function() {
+    menuELopen.on("click", function() {
         // $("body")
         //     .css("top", - $(window).scrollTop() + "px")
         //     .addClass("scroll-disabled")
@@ -389,7 +393,7 @@ $(function() {
             menuELlayer.stop().animate({"right": "0"}, 400);
         });
         
-        menuELtabble.focusin(function() {
+        menuELtabble.on("focusin", function() {
             menuELFocusedLast = $(this);
         });
 
@@ -400,14 +404,14 @@ $(function() {
             }
         });
 
-        menuELtabbleLast.keydown(function(evt) {
+        menuELtabbleLast.on("keydown", function(evt) {
             if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 menuELtabbleFirst.focus();
             }
         });
 
-        menuELclose.click(menuClose);
+        menuELclose.on("click", menuClose);
 
         if (menu.css("display") === "block") {
             $(document).on("keydown.menu_keydown", function(evt) {
@@ -415,7 +419,7 @@ $(function() {
             });
         }
 
-        $("a[href*='/category-list/#']").click(function() {
+        $("a[href*='/category-list/#']").on("click", function() {
             if ($(".layout--categories").length || $(".layout--tags").length) menuClose();
         });
     });
@@ -453,7 +457,7 @@ $(function() {
             openBtn.attr("aria-expanded", "false").focus();
         }
 
-    openBtn.click(function() {
+    openBtn.on("click", function() {
         sInputValNotChanged = true;
 
         $(this).add(closeBtn).attr("aria-expanded", "true");
@@ -488,14 +492,14 @@ $(function() {
             });
         });
 
-        tabbaleFirst.keydown(function(evt) {
+        tabbaleFirst.on("keydown", function(evt) {
             if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 tabbaleLast.focus();
             }
         });
 
-        tabbaleLast.keydown(function(evt) {
+        tabbaleLast.on("keydown", function(evt) {
             if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
                 evt.preventDefault();
                 tabbaleFirst.focus();
@@ -509,7 +513,7 @@ $(function() {
                 }
             });
         }
-        closeBtn.click(layerClose);
+        closeBtn.on("click", layerClose);
     });
 });
 
@@ -570,10 +574,10 @@ $(function() {
         }
 
         var tabbleELfocusedLast;
-        tabbleEL.keydown(function(evt) {
+        tabbleEL.on("keydown", function(evt) {
             tabbleELfocusedLast = $(this);
 
-            if (evt.ctrlKey && !thisTab.is(":focus")) thisTab.focus().keydown(function(evt) {
+            if (evt.ctrlKey && !thisTab.is(":focus")) thisTab.focus().on("keydown", function(evt) {
                 evt.ctrlKey && tabbleELfocusedLast.focus();
             });
         });
@@ -602,7 +606,7 @@ $(function() {
                 "tabindex": "0"
             })
             .prop({
-                "hidden": "false"
+                "hidden": false
             })
             .siblings(".tabpanel")
                 .removeClass("tabpanel--active")

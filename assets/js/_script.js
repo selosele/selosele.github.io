@@ -40,11 +40,11 @@ var appendTooltip = function() {
 
     for (var i = 0; i < abbr.length; i++) {
         var abbrSpan = document.createElement("span"),
-            abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/  |%/g, "1").toLowerCase();
+            abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/ |%/g, "1");
 
-        abbr[i].tabIndex = 0;
+        abbr[i].setAttribute("tabindex", "0");
         abbr[i].setAttribute("aria-describedby", abbr_title);
-        abbrSpan.hidden = true;
+        abbrSpan.setAttribute("hidden", true);
         abbrSpan.setAttribute("role", "tooltip");
         abbrSpan.id = abbr_title;
         abbrSpan.textContent = abbr[i].title;
@@ -53,26 +53,24 @@ var appendTooltip = function() {
     }
 };
 
-var handleTooltipClickEvent = function(evt) {
+var handlerTooltipClick = function(evt) {
     if (evt.target !== evt.currentTarget) return;
 
     var abbrTooltip = evt.currentTarget.querySelector(".abbr__tooltip");
 
     if (!abbrTooltip.classList.contains("abbr__tooltip--active")) {
-        abbrTooltip.hidden = false;
-        abbrTooltip.tabIndex = 0;
+        abbrTooltip.setAttribute("hidden", false);
+        abbrTooltip.setAttribute("tabindex", "0");
         abbrTooltip.classList.add("abbr__tooltip--active");
     } else {
-        abbrTooltip.hidden = true;
-        abbrTooltip.tabIndex = -1;
+        abbrTooltip.setAttribute("hidden", true);
+        abbrTooltip.setAttribute("tabindex", "-1");
         abbrTooltip.classList.remove("abbr__tooltip--active");
     }
 };
 
-var handleTooltipKeydownEvent = function(evt) {
-    var keyType = evt.keyCode || evt.which;
-
-    if (keyType === 13) handleTooltipClickEvent(evt);
+var handlerTooltipKeydown = function(evt) {
+    if ((evt.keyCode || evt.which) === 13) handlerTooltipClick(evt);
 };
 
 // post archive 아코디언
@@ -82,13 +80,13 @@ var handleArchiveClickEvent = function(evt) {
 
     if (archiveListMatchElement.classList.contains("archive__list--active")) {
         archiveListMatchElement.classList.remove("archive__list--active");
-        archiveListMatchElement.hidden = false;
-        archiveListMatchElement.tabIndex = -1;
+        archiveListMatchElement.setAttribute("hidden", false);
+        archiveListMatchElement.setAttribute("tabindex", "-1");
         _t.setAttribute("aria-expanded", "false");
     } else {
         archiveListMatchElement.classList.add("archive__list--active");
-        archiveListMatchElement.hidden = true;
-        archiveListMatchElement.tabIndex = 0;
+        archiveListMatchElement.setAttribute("hidden", true);
+        archiveListMatchElement.setAttribute("tabindex", "0");
         _t.setAttribute("aria-expanded", "true");
     }
 };
@@ -145,8 +143,8 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {
-        abbr[i].addEventListener("click", handleTooltipClickEvent);
-        abbr[i].addEventListener("keydown", handleTooltipKeydownEvent);
+        abbr[i].addEventListener("click", handlerTooltipClick);
+        abbr[i].addEventListener("keydown", handlerTooltipKeydown);
     }
 })();
 
@@ -175,10 +173,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         
         for (var i = 0; i < preCodeElement.length; i++) {
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
-            preCodeElement[i].tabIndex = 0;
+            preCodeElement[i].setAttribute("tabindex", "0");
 
             if (preCodeParentElement.classList.contains("has-label")) {
-                preCodeElement[i].title = preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드";
+                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
         }
     }
@@ -196,7 +194,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 })();
 
 // IE 10 이하 경고 레이어팝업
-$(function() {
+(function($) {
 
     var IEalertElem = $(".ie-alert");
     if (IEalertElem) {
@@ -249,10 +247,10 @@ $(function() {
 
         $(".ie-alert__close").click(closeIEalert);
     }
-});
+})(jQuery);
 
 // 포스트 목차
-$(function() {
+(function($) {
 
     $(window).scroll(function() {
         var tocELheadings = $(".page__content").find(":header:not(.toc__title)");
@@ -294,10 +292,10 @@ $(function() {
 
     initPostToc();
     $(window).resize(initPostToc);
-});
+})(jQuery);
 
 // 포스트 목차 키보드 이벤트
-$(function() {
+(function($) {
 
     var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
@@ -329,9 +327,9 @@ $(function() {
             }
         });
     }
-});
+})(jQuery);
 
-$(function() {
+(function($) {
 
     // 메인 메뉴
     var nav = $(".site-nav"),
@@ -344,7 +342,7 @@ $(function() {
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        scrollBar_w = window.innerWidth - document.body.offsetWidth,
+        scrollBar_w = window.innerWidth - document.documentElement.offsetWidth,
         menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
@@ -383,7 +381,7 @@ $(function() {
                 evt.target === evt.currentTarget && menuClose();
             });
         $(this).attr("aria-expanded", "true");
-        $("body").addClass("overflow-hidden").css("padding-right", scrollBar_w);
+        $("body").addClass("overflow-hidden").css("padding-right", scrollBar_w + "px");
         menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
         if (!menuCurrentPage.is("[aria-current]")) {
@@ -425,10 +423,10 @@ $(function() {
             if ($(".layout--categories").length || $(".layout--tags").length) menuClose();
         });
     });
-});
+})(jQuery);
 
 // 검색 레이어
-$(function() {
+(function($) {
 
     var openBtn = $(".nav__search-open"),
         closeBtn = $(".search__close"),
@@ -517,10 +515,10 @@ $(function() {
         }
         closeBtn.on("click", layerClose);
     });
-});
+})(jQuery);
 
 // 탭
-$(function() {
+(function($) {
 
     var tabWrapper = $(".tab-wrapper");
     if (!tabWrapper) return;
@@ -643,4 +641,4 @@ $(function() {
 
     tabWrapper.on("click", ".tablist__tab", handleClickEvent);
     tabWrapper.on("keydown", ".tablist__tab", handleKeydownEvent);
-});
+})(jQuery);

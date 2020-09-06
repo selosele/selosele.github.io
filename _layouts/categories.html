@@ -19,7 +19,7 @@ title: 카테고리
     <button type="button" class="archive__btn" id="btn-{{ categoryName }}" aria-controls="list-{{ categoryName }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count" aria-hidden="true">({{ category[1].size }})</small></button>
   </h2>
   
-  <section class="archive__list" id="list-{{ categoryName }}" role="region" aria-labelledby="btn-{{ categoryName }}">
+  <div class="archive__list" id="list-{{ categoryName }}" aria-labelledby="btn-{{ categoryName }}">
     <ul>
       {% for post in categoryPost %}
       <li{% if categoryPost.size == 1 %} role='presentation'{% endif %}>
@@ -31,7 +31,7 @@ title: 카테고리
     <a href="#btn-{{ categoryName }}" class="page__btn-top">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
     </a>
-  </section>
+  </div>
   {% endif %}
 {% endfor %}
 {% endfor %}

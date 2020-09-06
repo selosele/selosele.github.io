@@ -21,7 +21,7 @@ tags:
 
 {:.has-label}
 ```javascript
-$("*").focus(function() {
+$("*").on("focus", function() {
   console.log(document.activeElement);
 });
 ```

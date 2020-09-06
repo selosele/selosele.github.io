@@ -18,7 +18,7 @@ URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새�
 
 {:.has-label}
 ```javascript
-$(document).keydown(function(event) {
+$(document).on("keydown", function(event) {
     var k = event.keyCode || event.which;
     if (((k === 116) || (event.ctrlKey && k === 82) || (event.ctrlKey && event.shiftKey && k === 82)) && window.location.hash) {
         // F5키/Ctrl키 + R키/Ctrl키 + Shift키 + R키

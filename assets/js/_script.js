@@ -42,6 +42,8 @@ var removeTooltip = function(evt) {
 };
 
 var appendTooltip = function(evt) {
+    if (evt.target !== event.currentTarget) return;
+
     _t = evt.currentTarget,
     _t_span = document.createElement("span"),
     _t_tooltip = _t.querySelector(".abbr__tooltip");
@@ -64,9 +66,9 @@ var handleTooltipKeydownEvent = function(evt) {
     var keyType = evt.keyCode || evt.which;
 
     if (keyType === 13) appendTooltip(evt);
-    if ((!evt.shiftKey && keyType === 9) && evt.target === evt.currentTarget.querySelector(".abbr__tooltip")) {
-        removeTooltip(evt);
-    }
+    // if ((!evt.shiftKey && keyType === 9) && evt.target === evt.currentTarget.querySelector(".abbr__tooltip")) {
+    //     removeTooltip(evt);
+    // }
 };
 
 // post archive 아코디언
@@ -76,10 +78,12 @@ var handleArchiveClickEvent = function(evt) {
 
     if (archiveListMatchElement.classList.contains("archive__list--active")) {
         archiveListMatchElement.classList.remove("archive__list--active");
+        archiveListMatchElement.hidden = false;
         archiveListMatchElement.tabIndex = -1;
         _t.setAttribute("aria-expanded", "false");
     } else {
         archiveListMatchElement.classList.add("archive__list--active");
+        archiveListMatchElement.hidden = true;
         archiveListMatchElement.tabIndex = 0;
         _t.setAttribute("aria-expanded", "true");
     }

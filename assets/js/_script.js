@@ -1,3 +1,12 @@
+// 화면 전체 스크롤바 너비 구하기
+var getScrollbarWidth = function() {
+    var scrollBar_w = window.innerWidth - document.documentElement.offsetWidth;
+    
+    while (scrollBar_w) {
+        return scrollBar_w + "px";
+    }
+};
+
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
 var anchorSetAriaCurrent = function(anchorNode) {
     if (!anchorNode) return;
@@ -74,7 +83,7 @@ var handlerTooltipKeydown = function(evt) {
 };
 
 // post archive 아코디언
-var handleArchiveClickEvent = function(evt) {
+var handlerArchiveClick = function(evt) {
     var _t = evt.currentTarget,
         archiveListMatchElement = document.querySelector("[aria-labelledby='"+_t.id+"']");
 
@@ -112,7 +121,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // heading link
 (function() {
-
     var pageElement = document.getElementById("page-content");
     if (pageElement) {
         var h = pageElement.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
@@ -138,7 +146,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // abbr event 등록
 (function() {
-    
     var abbr = document.querySelectorAll("abbr[title]");
     if (!abbr) return;
 
@@ -150,7 +157,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // page share link
 (function() {
-
     var shareElement = document.getElementById("page-share");
     if (shareElement) {
         var shareELbtn = shareElement.querySelectorAll("a");
@@ -166,7 +172,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // code highlight 초점이동 및 title 기입
 (function() {
-
     var pageElement = document.getElementById("page-content");
     if (pageElement) {
         var preCodeElement = pageElement.querySelectorAll("pre.highlight");
@@ -184,18 +189,16 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // post archive 아코디언 event 등록
 (function() {
-
     var archiveBtnElement = document.querySelectorAll(".archive__btn");
     if (!archiveBtnElement) return;
 
     for (var i = 0; i < archiveBtnElement.length; i++) {
-        archiveBtnElement[i].addEventListener("click", handleArchiveClickEvent);
+        archiveBtnElement[i].addEventListener("click", handlerArchiveClick);
     }
 })();
 
 // IE 10 이하 경고 레이어팝업
-(function($) {
-
+$(function() {
     var IEalertElem = $(".ie-alert");
     if (IEalertElem) {
         var rootElem = $("html"),
@@ -247,11 +250,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
         $(".ie-alert__close").click(closeIEalert);
     }
-})(jQuery);
+});
 
 // 포스트 목차
-(function($) {
-
+$(function() {
     $(window).scroll(function() {
         var tocELheadings = $(".page__content").find(":header:not(.toc__title)");
         if (!tocELheadings) return;
@@ -292,11 +294,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
     initPostToc();
     $(window).resize(initPostToc);
-})(jQuery);
+});
 
 // 포스트 목차 키보드 이벤트
-(function($) {
-
+$(function() {
     var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
         tocTabbleFocusedLast;
@@ -327,11 +328,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             }
         });
     }
-})(jQuery);
+});
 
-(function($) {
-
-    // 메인 메뉴
+// 메인 메뉴
+$(function() {
     var nav = $(".site-nav"),
         menu = $(".side-menu"),
         menuOuterEL = $("body").children().not(menu.add(".ie-alert, .search-content, script")),
@@ -342,7 +342,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        scrollBar_w = (window.innerWidth - document.documentElement.offsetWidth) + "px",
         menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
@@ -381,7 +380,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
                 evt.target === evt.currentTarget && menuClose();
             });
         $(this).attr("aria-expanded", "true");
-        $("body").css("padding-right", scrollBar_w).addClass("overflow-hidden");
+        $("body").css("padding-right", getScrollbarWidth()).addClass("overflow-hidden");
         menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
         if (!menuCurrentPage.is("[aria-current]")) {
@@ -423,11 +422,10 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             if ($(".layout--categories").length || $(".layout--tags").length) menuClose();
         });
     });
-})(jQuery);
+});
 
 // 검색 레이어
-(function($) {
-
+$(function() {
     var openBtn = $(".nav__search-open"),
         closeBtn = $(".search__close"),
         layer = $(".search-content"),
@@ -515,15 +513,14 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         }
         closeBtn.on("click", layerClose);
     });
-})(jQuery);
+});
 
 // 탭
-(function($) {
-
+$(function() {
     var tabWrapper = $(".tab-wrapper");
     if (!tabWrapper) return;
 
-    function handleClickEvent(evt) {
+    function handlerClick(evt) {
         evt.stopPropagation();
 
         var actTab = evt.target,
@@ -532,7 +529,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         activateTab(actTab, actPanel);
     }
 
-    function handleKeydownEvent(evt) {
+    function handlerKeydown(evt) {
         evt.stopPropagation();
 
         var thisTab = $(evt.target),
@@ -639,6 +636,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
                     "hidden": true
                 });
 
-    tabWrapper.on("click", ".tablist__tab", handleClickEvent);
-    tabWrapper.on("keydown", ".tablist__tab", handleKeydownEvent);
-})(jQuery);
+    tabWrapper.on("click", ".tablist__tab", handlerClick);
+    tabWrapper.on("keydown", ".tablist__tab", handlerKeydown);
+});

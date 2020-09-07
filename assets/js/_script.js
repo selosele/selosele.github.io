@@ -439,7 +439,7 @@ $(function() {
         
         layerClose = function() {
             $(document).off("keydown.search_keydown");
-            $("body").removeClass("overflow-hidden");
+            $("body").css("padding-right", "").removeClass("overflow-hidden");
             closeBtn.attr("aria-expanded", "false");
             layer.stop().animate({"opacity": "0"}, {
                 duration: 200,
@@ -459,7 +459,7 @@ $(function() {
         sInputValNotChanged = true;
 
         $(this).add(closeBtn).attr("aria-expanded", "true");
-        $("body").addClass("overflow-hidden");
+        $("body").css("padding-right", getScrollbarWidth()).addClass("overflow-hidden");
         outerEL.attr("aria-hidden", "true");
         layer
             .css("display", "block")

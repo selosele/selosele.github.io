@@ -11,7 +11,7 @@
   z-index: 99;
   width: 100vw;
   height: 100vh;
-  padding: 2.5rem 3vw;
+  padding: 2.5rem 2.969vw;
   background: rgba(0,0,0,0.5);
   opacity: 0;
 
@@ -25,11 +25,11 @@
     box-shadow: rgba(0,0,0,0.1) 0.5rem 0.5rem 0.5rem;
 
     @media (min-width: $min_small_width) {
-      padding: 3rem 2.5rem 2.5rem 2.5rem;
+      padding-top: 3rem;
     }
 
     @media (min-width: $min_large_width) {
-      padding: 4rem 2.5rem;
+      padding: 4rem 2.604vw;
     }
   
     .results {

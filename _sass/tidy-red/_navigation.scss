@@ -219,6 +219,63 @@
       font-weight: 500;
       line-height: 1;
 
+      @media (max-width: $medium_width) {
+         &.page--total {
+            a {
+               position: relative;
+
+               &:before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  transform: skewX(-30deg);
+                  width: 1px;
+                  height: 1.1rem;
+                  margin: auto 0;
+                  background: $black03;
+               }
+            }
+         }
+   
+         &.page--arrow {
+            &:first-of-type {
+               margin-right: 0.5rem;
+            }
+
+            &:last-of-type {
+               margin-left: 0.5rem;
+            }
+
+            a {
+               overflow: hidden;
+               position: relative;
+               width: 2rem;
+               height: 2rem;
+               border: 1px solid $main_color;
+               color: transparent;
+
+               &:before,
+               &:after {
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  width: 20px;
+                  height: 17px;
+                  margin: auto;
+                  font-size: 1rem;
+                  line-height: 17px;
+                  color: $black;
+               }
+            }
+         }
+      }
+
       a {
          display: block;
          padding: 0.5rem 1rem;
@@ -229,30 +286,6 @@
             &:focus,
             &:active {
                color: $sub_color03;
-            }
-         }
-
-         @media (max-width: $min_medium_width) {
-            position: relative;
-            overflow: hidden;
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 1px solid $main_color;
-            color: transparent;
-
-            &:before,
-            &:after {
-               display: block;
-               position: absolute;
-               top: 0;
-               left: 0;
-               right: 0;
-               bottom: 0;
-               width: 20px;
-               height: 17px;
-               margin: auto;
-               font-size: 1rem;
-               color: $black;
             }
          }
       }
@@ -278,14 +311,6 @@
                &:before {
                   content: "\e93e";
                   font-family: "xeicon";
-               }
-            }
-         }
-
-         &.page--visible {
-            ~ .page--visible {
-               a {
-                  border-left: 0;
                }
             }
          }

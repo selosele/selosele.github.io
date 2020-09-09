@@ -164,7 +164,7 @@
 
 /* post info item */
 @mixin post_info_item {
-   display: inline-block;
+   display: block;
    overflow: hidden;
    max-width: 70%;
    height: 1.65rem;

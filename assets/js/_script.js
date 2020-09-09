@@ -31,17 +31,6 @@ var alignImg = function(elem) {
     }
 };
 
-// inline 요소 여백 제거
-var removeWhiteSpace = function(parentElem) {
-    if (!parentElem) return;
-
-    for (var i = 0; i < parentElem.length; i++) {
-        Array.prototype.slice.call(parentElem[i].childNodes).forEach(function(childElem) {
-            if (childElem.nodeType === 3) parentElem[i].removeChild(childElem);
-        });
-    }
-};
-
 // abbr tooltip 생성 및 handler
 var appendTooltip = function() {
     var abbr = document.querySelectorAll("abbr");
@@ -103,8 +92,6 @@ var handlerArchiveClick = function(evt) {
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
-
-removeWhiteSpace(document.querySelectorAll(".archive__item, .page__info-item-wrapper, .page__image-container, .page__share, .keyword-wrapper"));
 
 appendTooltip();
 

@@ -72,9 +72,11 @@
    }
 
    &__share {
+      display: flex;
       margin-top: 1rem;
       padding-top: 1.5rem;
       border-top: 1px solid $grey04;
+      flex-wrap: wrap;
 
       a {
          display: inline-block;
@@ -119,6 +121,7 @@
       }
 
       &-title {
+         width: 100%;
          margin-bottom: 0.6rem;
          font-family: $default_font03;
          font-weight: 700;
@@ -138,8 +141,10 @@
    }
 
    &__info-item-wrapper {
+      display: flex;
       margin-bottom: 2rem;
-      text-align: right;
+      justify-content: flex-end;
+      flex-wrap: wrap;
    }
 
    &__info-item {

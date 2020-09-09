@@ -119,6 +119,11 @@
          &--tag {
             @include post_info_item_tag;
          }
+
+         &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+         }
       }
    }
 

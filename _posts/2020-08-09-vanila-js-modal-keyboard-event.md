@@ -45,22 +45,22 @@ const layerTabbable = layer.querySelectorAll("button, input:not([type='hidden'])
 const layerTabbableFirst = layerTabbable[0];
 const layerTabbableLast = layerTabbable[layerTabbable.length - 1];
 
-const handleFirstKeydownEvent = (evt) => {
+const handlerFirstKeydown = (evt) => {
   if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
     evt.preventDefault();
     layerTabbableLast.focus();
   }
 };
 
-const handleLastKeydownEvent = (evt) => {
+const handlerLastKeydown = (evt) => {
   if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
     evt.preventDefault();
     layerTabbableFirst.focus();
   }
 };
 
-layerTabbableFirst.addEventListener("keydown", handleFirstKeydownEvent);
-layerTabbableLast.addEventListener("keydown", handleLastKeydownEvent);
+layerTabbableFirst.addEventListener("keydown", handlerFirstKeydown);
+layerTabbableLast.addEventListener("keydown", handlerLastKeydown);
 ```
 
 codepen에 올린 결과물로 테스트를 해보자.

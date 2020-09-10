@@ -261,7 +261,7 @@ $(function() {
         $("html, body")
             .stop()
             .animate({
-                scrollTop: $("#" + $(evt.currentTarget).attr("href").replace("#", "")).offset().top
+                scrollTop: $("#" + evt.currentTarget.getAttribute("href").replace("#", "")).offset().top
             }, 300);
     });
 

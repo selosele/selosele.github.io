@@ -397,7 +397,7 @@
          &--active {
             position: relative;
             z-index: 1;
-            background-color: linear-gradient(45deg, $main_color, $sub_color04);
+            background-image: linear-gradient(45deg, $main_color, $sub_color04);
             color: $grey12;
    
             &:before {

@@ -9,7 +9,7 @@ figure.highlight {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-  background: $black05;
+  background-color: $black05;
   font-family: $default_font02;
   font-size: 0.9em;
   line-height: 1.8;
@@ -42,13 +42,11 @@ code {
 
   &.language-plaintext {
 	*::selection {
-		background: $grey12;
+		background-color: $grey12;
 		color: $black04;
 	}
   }
 }
-
-
 
 .highlight table {
   td {

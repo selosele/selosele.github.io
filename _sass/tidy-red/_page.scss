@@ -96,7 +96,7 @@
 
       .btn {
          &--twitter {
-            background: $twitter_color;
+            background-color: $twitter_color;
 
             &:before {
                content: "\ec1f";
@@ -104,7 +104,7 @@
          }
       
          &--facebook {
-            background: $facebook_color;
+            background-color: $facebook_color;
 
             &:before {
                content: "\ebd5";
@@ -112,7 +112,7 @@
          }
       
          &--linkedin {
-            background: $linkedin_color;
+            background-color: $linkedin_color;
 
             &:before {
                content: "\ebf4";
@@ -286,7 +286,6 @@
       width: 2.5rem;
       height: 2.5rem;
       margin: 1rem auto;
-      background: none;
 
       &:before {
          content: "\e915";

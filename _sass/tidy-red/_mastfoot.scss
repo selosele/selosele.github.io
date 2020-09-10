@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .mastfoot {
-  background: $grey08;
+  background-color: $grey08;
   text-align: center;
 
   &__inner-wrap {
@@ -39,7 +39,7 @@
     right: 0;
     width: 2.5rem;
     height: 2.5rem;
-    background: $grey12;
+    background-color: $grey12;
     border: 1px solid $main_color;
     border-radius: 50%;
 

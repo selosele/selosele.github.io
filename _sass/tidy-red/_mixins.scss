@@ -188,7 +188,7 @@
 }
 
 @mixin post_info_item_date {
-   background: $black02;
+   background-color: $black02;
 
    &:before {
       content: "\ea2c";
@@ -196,7 +196,7 @@
 }
 
 @mixin post_info_item_category {
-   background: $green03;
+   background-color: $green03;
 
    &:before {
       content: "\eb1e";
@@ -205,7 +205,7 @@
 }
 
 @mixin post_info_item_tag {
-   background: $sub_color03;
+   background-color: $sub_color03;
 
    &:before {
       content: "\ea36";

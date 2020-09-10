@@ -12,7 +12,7 @@
   width: 100vw;
   height: 100vh;
   padding: 2.5rem 2.969vw;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   opacity: 0;
 
   &__inner-wrap {
@@ -21,7 +21,7 @@
     height: 100%;
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     border: 2px solid $black05;
-    background: $grey12;
+    background-color: $grey12;
     box-shadow: rgba(0,0,0,0.1) 0.5rem 0.5rem 0.5rem;
 
     @media (min-width: $min_small_width) {
@@ -131,7 +131,7 @@
   right: 1rem;
   width: 2rem;
   height: 2rem;
-  background: none;
+  background-color: transparent;
 
   &:before {
     content: "\e9af";

@@ -11,7 +11,7 @@
    z-index: 10000;
    width: 100vw;
    height: 100vh;
-   background: rgba(0,0,0,0.3);
+   background-color: rgba(0,0,0,0.3);
 }
 
 .menu {
@@ -131,7 +131,7 @@
       right: 1.5rem;
       width: 2rem;
       height: 2rem;
-      background: $main_color;
+      background-color: $main_color;
 
       &:before {
          content: "\e9af";
@@ -235,7 +235,7 @@
                   width: 1px;
                   height: 1.1rem;
                   margin: auto 0;
-                  background: $black03;
+                  background-color: $black03;
                }
             }
          }
@@ -355,7 +355,7 @@
 .toc-wrapper {
    border: 1px solid $grey;
    border-radius: 8px;
-   background: $grey12;
+   background-color: $grey12;
    transition: $standard_transition;
 
    nav {
@@ -397,7 +397,7 @@
          &--active {
             position: relative;
             z-index: 1;
-            background: linear-gradient(45deg, $main_color, $sub_color04);
+            background-color: linear-gradient(45deg, $main_color, $sub_color04);
             color: $grey12;
    
             &:before {
@@ -409,7 +409,7 @@
                left: -100%;
                z-index: -1;
                width: 100%;
-               background: $main_color;
+               background-color: $main_color;
             }
          }
       }
@@ -421,7 +421,7 @@
       padding: 0.8rem 1rem;
       border-radius: 8px 8px 0 0;
       border-bottom: 1px dashed $grey;
-      background: $grey02;
+      background-color: $grey02;
       font-weight: 700;
       font-size: 1.3rem;
       color: $black;

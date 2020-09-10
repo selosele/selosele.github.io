@@ -8,5 +8,3 @@ main:
     url: /posts-by-year/
   - title: "Tag"
     url: /tag-list/
-  - title: "Style guide"
-    url: /styleguide/

@@ -13,6 +13,7 @@ tags:
     - rowspan
     - table
     - html
+first_letter: false
 ---
 rowspan이 애매하게 걸쳐 있는 테이블 디자인.
 

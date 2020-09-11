@@ -290,7 +290,7 @@
          }
       }
 
-      @media (max-width: $min_medium_width) {
+      @media (max-width: $medium_width) {
          margin: 0;
 
          &:not(.page--visible) {

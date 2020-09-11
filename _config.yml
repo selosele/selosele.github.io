@@ -286,6 +286,3 @@ masthead:
     filter: 0.4
     blur: true
     position: # ex) 50% or 50% 21%
-
-# etc
-first_letter: true

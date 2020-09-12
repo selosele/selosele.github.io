@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "레이어팝업 웹 접근성 관련 자료"
-excerpt: ""
+summary:
 header:
   overlay_image:
   overlay_filter: 0.4

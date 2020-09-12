@@ -3,7 +3,7 @@ published: false
 layout: post
 comments: true
 title: "nav 요소 내에 button 요소를 포함할 수 있는가?"
-excerpt: ""
+summary:
 header:
   overlay_image: /assets/images/thumb/nav_thumb01.jpg
   overlay_filter: 0.5
@@ -16,7 +16,7 @@ tags:
     - html
 ---
 
-제곧내.. 일단 ```<nav>```{:.language-html} 요소는 현재 문서 내에서 또는 다른 문서에 대한 탐색 링크를 제공하는 section을 나타내는 요소이다[^1]. 어느 날 갑자기 궁금해진 게, nav 요소 내에 button 요소를 포함할 수 있는가? 안된다면 button 요소로 제공해야 될 기능(예를 들어 주메뉴 열기 등)을 a 요소로 제공해야 하는가?
+제곧내.. 일단 spec에 의하면 ```<nav>```{:.language-html} 요소는 현재 문서 내에서 또는 다른 문서에 대한 탐색 링크를 제공하는 section을 나타내는 요소라고 설명되어 있다[^1]. 어느 날 갑자기 궁금해진 게, nav 요소 내에 button 요소를 포함할 수 있는가? 안된다면 button 요소로 제공해야 될 기능(예를 들어 주메뉴 열기 등)을 a 요소로 제공해야 하는가?
 
 {:.has-label}
 ```html
@@ -35,10 +35,10 @@ tags:
 
 ## 나는 모른다. 하지만 semantic할 수도..?
 
-nav 요소의 스펙이 궁금하면 각주 1번에 있는 링크에 가서 읽어보면 되고, 우선 의미론을 제외, 단순히 &ldquo;nav 요소 내에 button 요소를 포함할 수 있는가&rdquo;에 대한 정답은 yes이다. nav 요소는 모든 Flow content를 포함할 수 있고, button 요소는 Flow content로 분류되기 때문이다.
+의미론을 제외, 단순히 &ldquo;nav 요소 내에 button 요소를 포함할 수 있는가&rdquo;에 대한 정답은 yes이다. nav 요소는 모든 Flow content를 포함할 수 있고, button 요소는 Flow content로 분류되기 때문이다. 그런데 의미론과 content model을 동일선상에 두고 생각하면 안된다. 둘은 서로 다르니까. 그저 예시를 위해 content model 이야기를 언급했을 뿐이니 중요하게 생각하지는 마셈..
 
 이제 중요한 것. 의미론적인 면에서 생각을 해보자. 페이지 이동이 아닌 기능을 제공하는 button 요소를 포함할 수 있는가? 
 
-[^1]: [1] [w3.org](https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-nav-element){:target="_blank"} 및 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav){:target="_blank"}
+[^1]: [1] [w3.org](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
 
 [^2]: [2] 사이트 타이틀은 흔히 ```<h1>```{:.language-html}으로 마크업되는 로고 같은 것. 나는 로고보단 사이트 타이틀이라고 불러야 의미에 맞고, h1으로 감싸져야 한다고 생각하지 않아서 저렇게 구성했을 뿐이니 신경쓰지 마셈..

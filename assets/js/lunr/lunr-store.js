@@ -11,7 +11,7 @@ var store = [
     {%- for doc in docs -%}
       {
         "title": {{ doc.title | jsonify }},
-        "excerpt":
+        "summary":
           {%- if site.search_full_content == true -%}
             {{ doc.content | newline_to_br |
               replace:"<br />", " " |

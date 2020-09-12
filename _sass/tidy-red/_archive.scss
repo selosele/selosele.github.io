@@ -59,7 +59,7 @@
          }
       }
    
-      &-excerpt {
+      &-summary {
          display: block;
          @include ellipsis();
          margin: 0.6em 0;
@@ -199,7 +199,7 @@
          }
       }
 
-      &__item-excerpt {
+      &__item-summary {
          margin-top: 0.4em;
          margin-bottom: 0;
          font-size: calc(0.85rem + 0.5vw);

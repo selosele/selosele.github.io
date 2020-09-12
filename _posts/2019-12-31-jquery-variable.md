@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Javascript 요소와 jQuery 요소를 구별하기 위한 변수 명명법"
-excerpt: ""
+summary:
 header:
   overlay_image: /assets/images/thumb/jquery_thumb01.jpg
   overlay_filter: 0.5

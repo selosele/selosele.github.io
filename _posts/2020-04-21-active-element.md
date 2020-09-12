@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "activeElement 속성으로 현재 활성화된 요소 찾기"
-excerpt: ""
+summary:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.5

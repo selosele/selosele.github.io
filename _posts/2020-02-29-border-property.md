@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "border: none과 border: 0의 차이"
-excerpt: "분명한 차이가 있다."
+summary: "분명한 차이가 있다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.5

@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "왜 IE에서 word-break: keep-all 미적용 문제가 발생하는가..."
-excerpt: "해답은 어디에"
+summary: "해답은 어디에"
 header:
   overlay_image: /assets/images/thumb/ie_thumb01.jpg
   overlay_filter: 0.5

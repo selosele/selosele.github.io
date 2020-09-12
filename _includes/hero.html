@@ -41,8 +41,8 @@
         {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
       {% endif %}
     </h1>
-    {% if page.excerpt != "" %}
-      <strong class="page__lead" itemprop="alternativeHeadline">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
+    {% if page.summary %}
+      <strong class="page__lead" itemprop="alternativeHeadline">{{ page.summary | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
     {% endif %}
   </div>
 </header>

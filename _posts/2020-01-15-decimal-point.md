@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "CSS 소수점 단위에 대한 생각"
-excerpt: "calc를 적극 사용합시다."
+summary: "calc를 적극 사용합시다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.3

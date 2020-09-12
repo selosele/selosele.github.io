@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "liquid) where filter를 사용하여 해당 값을 가진 객체만 포함하는 배열 만들기"
-excerpt: ""
+summary:
 header:
   overlay_image:
   overlay_filter: 0.4

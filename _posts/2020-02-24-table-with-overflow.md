@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "table 요소와 overflow의 공존은 불가능"
-excerpt: "알고보면 정답은 쉬운 곳에 있다."
+summary:
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.5

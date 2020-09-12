@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "first-letter 가상 요소에 대한 놀라운 사실 한 가지"
-excerpt: "함정에 빠지기 쉽다."
+summary: "함정에 빠지기 쉽다."
 header:
   overlay_image: /assets/images/thumb/letter_thumb01.jpg
   overlay_filter: 0.5

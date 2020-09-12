@@ -4,7 +4,7 @@ layout: null
 
 var idx = lunr(function () {
   this.field('title')
-  this.field('excerpt')
+  this.field('summary')
   this.field('categories')
   this.field('tags')
   this.ref('id')
@@ -14,7 +14,7 @@ var idx = lunr(function () {
   for (var item in store) {
     this.add({
       title: store[item].title,
-      excerpt: store[item].excerpt,
+      summary: store[item].summary,
       categories: store[item].categories,
       tags: store[item].tags,
       id: item
@@ -49,7 +49,7 @@ $(document).ready(function() {
               '<h2 class="archive__item-title" itemprop="headline">'+
                 '<a href="'+store[ref].url+'" id="title-'+store[ref].aria+'" rel="permalink">'+store[ref].title+'</a>'+
               '</h2>'+
-              '<p class="archive__item-excerpt" id="desc-'+store[ref].aria+'" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+              '<p class="archive__item-summary" id="desc-'+store[ref].aria+'" itemprop="description">'+store[ref].summary.split(" ").splice(0,20).join(" ")+'...</p>'+
             '</article>'+
           '</div>';
       }
@@ -60,7 +60,7 @@ $(document).ready(function() {
               '<h2 class="archive__item-title" itemprop="headline">'+
                 '<a href="'+store[ref].url+'" id="title-'+store[ref].aria+'" rel="permalink">'+store[ref].title+'</a>'+
               '</h2>'+
-              '<p class="archive__item-excerpt" id="desc-'+store[ref].aria+'" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+              '<p class="archive__item-summary" id="desc-'+store[ref].aria+'" itemprop="description">'+store[ref].summary.split(" ").splice(0,20).join(" ")+'...</p>'+
             '</article>'+
           '</div>';
       }

@@ -12,7 +12,7 @@
     <h2 class="archive__item-title" itemprop="headline">
       <a href="{{ postUrl }}" id="title-{{ postUrl_r }}" rel="permalink">{{ title }}</a>
     </h2>
-    {% if post.excerpt != "" %}<strong class="archive__item-excerpt" itemprop="alternativeHeadline">{{ post.excerpt }}</strong>{% endif %}
+    {% if post.summary %}<strong class="archive__item-summary" itemprop="alternativeHeadline">{{ post.summary }}</strong>{% endif %}
     {% if page.layout == "home" or page.layout == "archive" or page.layout == "categories" or page.layout == "tags" %}
     {% if post.header.overlay_image %}
     <div class="archive__item-thumb" aria-hidden="true">

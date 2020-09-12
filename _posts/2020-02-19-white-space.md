@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Javascript를 이용하여 inline 요소의 공백 제거하기"
-excerpt: ""
+summary:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.5

@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "URL hash값을 가져올 시 한글 깨지지 않게 하기"
-excerpt: ""
+summary:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.5

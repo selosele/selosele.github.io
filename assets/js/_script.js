@@ -95,16 +95,20 @@ alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-titl
 
 appendTooltip();
 
-// IE 11 ~ 9 체크
-if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
-
-// IE 10 이하 체크
-if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
-
 // 검색 input enter키로 submit 방지
 document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
     if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
 });
+
+// IE 11 ~ 9 체크
+(function() {
+    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
+})();
+
+// IE 10 이하 체크
+(function() {
+    if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
+})();
 
 // heading link
 (function() {
@@ -157,7 +161,7 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
     }
 })();
 
-// code highlight 초점이동 및 title 기입
+// code highlight title 기입
 (function() {
     var pageElement = document.getElementById("page-content");
     if (pageElement) {
@@ -165,7 +169,6 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
         
         for (var i = 0; i < preCodeElement.length; i++) {
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
-            preCodeElement[i].setAttribute("tabindex", "0");
 
             if (preCodeParentElement.classList.contains("has-label")) {
                 preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");

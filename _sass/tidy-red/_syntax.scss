@@ -22,16 +22,6 @@ figure.highlight {
   }
 }
 
-pre {
-  &.highlight {
-	&:focus,
-	&:active {
-      outline: 2px solid #666d72;
-      outline-offset: 2px;
-    }
-  }
-}
-
 code {
   &.highlighter-rouge {
     margin: 0 0.316em;

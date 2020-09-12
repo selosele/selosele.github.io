@@ -39,6 +39,6 @@ tags:
 
 이제 중요한 것. 의미론적인 면에서 생각을 해보자. 페이지 이동이 아닌 기능을 제공하는 button 요소를 포함할 수 있는가? 
 
-[^1]: [1] [w3.org](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
+[^1]: [1] [html.spec.whatwg.org](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
 
 [^2]: [2] 사이트 타이틀은 흔히 ```<h1>```{:.language-html}으로 마크업되는 로고 같은 것. 나는 로고보단 사이트 타이틀이라고 불러야 의미에 맞고, h1으로 감싸져야 한다고 생각하지 않아서 저렇게 구성했을 뿐이니 신경쓰지 마셈..

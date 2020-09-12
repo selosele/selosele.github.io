@@ -21,7 +21,6 @@
       padding: 0.5rem 1rem;
       border: 1px solid $grey05;
       background-color: $grey02;
-      font-style: normal;
       font-weight: 700;
       text-align: center;
       vertical-align: middle;
@@ -32,6 +31,11 @@
       padding: 0.5rem 1rem;
       border: 1px solid $grey05;
       vertical-align: middle;
+
+      p {
+         margin-top: 0;
+         margin-bottom: 0;
+      }
    }
 }
 

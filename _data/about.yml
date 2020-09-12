@@ -1,6 +1,6 @@
 # about 페이지
 info_table:
   - header: "E-mail"
-    content: <a href="mailto:gwiazda762@gmail.com" target="_blank">gwiazda762@gmail.com</a>
+    content: <p><a href="mailto:gwiazda762@gmail.com" target="_blank">gwiazda762@gmail.com</a></p>
   - header: "Github"
-    content: <a href="https://github.com/selosele" target="_blank">selosele</a>
+    content: <p><a href="https://github.com/selosele" target="_blank">selosele</a></p>

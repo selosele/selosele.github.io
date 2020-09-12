@@ -15,7 +15,7 @@ id: page-content
 <ul class="fake-table about__info-table">
     {% for cont in site.data.about.info_table %}
     <li class="fake-table__row">
-        <em class="fake-table__header">{{ cont.header }}</em>
+        <p class="fake-table__header">{{ cont.header }}</p>
         <div class="fake-table__content">{{ cont.content }}</div>
     </li>
     {% endfor %}

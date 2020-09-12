@@ -5,7 +5,6 @@
         "tidy-red/mixins",
         "tidy-red/base",
         "tidy-red/syntax",
-        "tidy-red/components",
         "tidy-red/print";
 
 /* layout CSS */
@@ -15,6 +14,9 @@
         "tidy-red/search",
         "tidy-red/navigation",
         "tidy-red/mastfoot";
+
+/* ui CSS */
+@import "tidy-red/components";
 
 /* custom CSS */
 @import "tidy-red/custom";

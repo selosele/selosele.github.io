@@ -40,10 +40,10 @@ objTabbable.focus(function() {
   var objActivated = document.activeElement
     , objActiveNum = document.createElement("span");
 
-  objActiveNum.className = "active-n";
+  objActiveNum.classList.add("active-n");
   objActiveNum.innerHTML = objActiveCount;
 
-  !$(this).find(objActiveNum).length && $(this).append(objActiveNum);
+  $(this).find(objActiveNum).length || $(this).append(objActiveNum);
   console.log(objActivated, objActiveCount);
 });
 ```

@@ -1,4 +1,44 @@
-<div class="masthead{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.bg %} teaser--image{% endif %}{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.blur %} teaser--blur{% endif %}"{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.bg %} style="background-image: {% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}>
+{% if page.header.image contains "://" %}
+  {% capture img_path %}{{ page.header.image }}{% endcapture %}
+{% else %}
+  {% capture img_path %}{{ page.header.image | relative_url }}{% endcapture %}
+{% endif %}
+
+{% if page.header.cta_url contains "://" %}
+  {% capture cta_path %}{{ page.header.cta_url }}{% endcapture %}
+{% else %}
+  {% capture cta_path %}{{ page.header.cta_url | relative_url }}{% endcapture %}
+{% endif %}
+
+{% if page.header.overlay_image contains "://" %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
+{% elsif page.header.overlay_image %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
+{% else %}
+  {% capture overlay_img_path %}{{ '/assets/images/mhead_bg.jpg' }}{% endcapture %}
+{% endif %}
+
+{% if page.header.overlay_filter contains "rgba" %}
+  {% capture overlay_filter %}{{ page.header.overlay_filter }}{% endcapture %}
+{% elsif page.header.overlay_filter %}
+  {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
+{% endif %}
+
+{% if page.header.image_description %}
+  {% assign image_description = page.header.image_description %}
+{% else %}
+  {% assign image_description = page.title %}
+{% endif %}
+
+{% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
+
+<div class="masthead
+{% if site.masthead.teaser.bg and page.layout != 'post' %} masthead--image{% endif %}
+{% if site.masthead.teaser.blur and page.layout != 'post' %} masthead--blur{% endif %}"
+{% if site.masthead.teaser.bg and page.layout != 'post' %} style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}
+{% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.bg %} style="background-image: {% if site.theme_type == 'type2' and page.layout != 'post' and site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}
+{% if page.layout == 'post' %} style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% if page.header.image_position %} background-position: {{ page.header.image_position }};{% endif %}{% if page.header.image_position-x %}background-position-x: {{ page.header.image_position-x }}{% endif %}{% if page.header.image_position-y %}background-position-y: {{ page.header.image_position-y }}{% endif %}"{% endif %}>
+  
   <nav class="site-nav" id="site-nav" aria-labelledby="site-title">
     <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.theme_type == 'type2' and site.author.avatar %} has-image{% endif %}{% unless site.subtitle %} has-only-title{% endunless %}"{% if page.url == '/' %} aria-current="page"{% endif %}>
       {% if site.theme_type == "type2" and site.author.avatar %}
@@ -22,12 +62,13 @@
       </button>
     </div>
   </nav>
+  {% if page.layout == "post" %}
+    {% include post-header.html %}
+  {% endif %}
   {% if site.theme_type == "type1" %}
   {% unless page.layout == "post" %}
-  <div class="masthead__teaser{% if site.masthead.teaser.bg %} teaser--image{% endif %}{% if site.masthead.teaser.blur %} teaser--blur{% endif %}"{% if site.masthead.teaser.bg %} style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}>
-    <div class="author-wrapper">
-      {% include author.html %}
-    </div>
+  <div class="author-wrapper">
+    {% include author.html %}
   </div>
   {% endunless %}
   {% endif %}

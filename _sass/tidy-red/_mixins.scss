@@ -26,14 +26,14 @@
 
 // teaser
 @mixin teaser() {
-   &.teaser--image {
+   &.masthead--image {
       background-image: none;
       background-repeat: no-repeat;
-      background-position: 50%;
+      background-position: 50% 50%;
       background-size: cover;
    }
 
-   &.teaser--blur {
+   &.masthead--blur {
       z-index: 1;
 
       &:before {
@@ -52,7 +52,7 @@
 
 // teaser blur
 @mixin teaser_blur_value($blur) {
-   &.teaser--blur {
+   &.masthead--blur {
       &:before {
          filter: blur($blur);
       }

@@ -2,10 +2,6 @@
    page css
    ========================================================================== */
 
-.hero-wrapper + .content-wrapper {
-   margin: 2rem auto 3rem;
-}
-
 .content-wrapper {
    @include common_layout($margin: 3rem auto 4rem);
 
@@ -15,6 +11,10 @@
       margin-left: 29.948vw;
       margin-right: 4.948vw;
    }
+}
+
+.layout--post .content-wrapper {
+   margin: 2rem auto 3rem;
 }
 
 .page {
@@ -305,34 +305,25 @@
    }
 }
 
-// hero layout
-.hero {
-   &-wrapper {
-      padding: 7.5rem 0 2.5rem;
-      background-image: linear-gradient(45deg, $grey10, $grey11);
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-   }
+// post header
+.post-header {
+   @include common_layout($width: 90vw, $min_general_width_value: null);
+   padding: 0.9rem 0 2.5rem;
+   color: $grey12;
 
-   &__inner-wrap {
-      @include common_layout($width: 90vw, $min_general_width_value: null);
-      color: $grey12;
-   
-      .page__title {
-         margin-bottom: 0;
-         padding-bottom: 0;
-         border-bottom: 0;
-         color: inherit;
-         text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
+   .page__title {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+      color: inherit;
+      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
 
-         @media (min-width: $min_small_width) {
-            font-size: calc(2.15rem + 0.5vw);
-         }
+      @media (min-width: $min_small_width) {
+         font-size: calc(2.15rem + 0.5vw);
+      }
 
-         @media (min-width: $min_general_width) {
-            font-size: 2.5rem;
-         }
+      @media (min-width: $min_general_width) {
+         font-size: 2.5rem;
       }
    }
 }

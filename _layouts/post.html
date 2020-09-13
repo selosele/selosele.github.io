@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include hero.html %}
-
 <div class="content-wrapper" id="content" role="main">
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -57,14 +55,12 @@ layout: default
     {% include post_pagination.html %}
   </article>
   
-  {% if page.comments == true %}
-    {% if site.comments.provider and page.comments %}
+  {% if site.comments.provider and page.comments == true %}
     {% case site.comments.provider %}
-      {% when "disqus" %}
+        {% when "disqus" %}
         {% include comments-providers/disqus.html %}
-      {% when "livere" %}
+        {% when "livere" %}
         {% include comments-providers/livere.html %}
     {% endcase %}
-    {% endif %}
   {% endif %}
 </div>

@@ -2,6 +2,10 @@
    page css
    ========================================================================== */
 
+.layout--post .content-wrapper {
+   margin: 2rem auto 3rem;
+}
+
 .content-wrapper {
    @include common_layout($margin: 3rem auto 4rem);
 
@@ -11,10 +15,6 @@
       margin-left: 29.948vw;
       margin-right: 4.948vw;
    }
-}
-
-.layout--post .content-wrapper {
-   margin: 2rem auto 3rem;
 }
 
 .page {

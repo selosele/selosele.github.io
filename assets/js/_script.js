@@ -332,7 +332,6 @@ $(function() {
         menuELtabbleFirst = menuELtabble.first(),
         menuELtabbleLast = menuELtabble.last(),
         menuELFocusedLast, nowScrollPos,
-        menuCurrentPage = menu.find("a[href='"+location.pathname+"']"),
         menuClose = function() {
             // $("body")
             //     .removeClass("scroll-disabled")
@@ -373,10 +372,6 @@ $(function() {
         $("body").css("padding-right", getScrollbarWidth()).addClass("overflow-hidden");
         menuELclose.attr("aria-expanded", "true");
         menuOuterEL.attr("aria-hidden", "true");
-        if (!menuCurrentPage.is("[aria-current]")) {
-            menuCurrentPage.attr("aria-current", "page");
-            menuCurrentPage.parent("li").addClass("menu__menuitem--current-page");
-        }
 
         setTimeout(function() {
             menuELlayer.stop().animate({"right": "0"}, 400);
@@ -468,7 +463,7 @@ $(function() {
                             if (sInput.val().length) {
                                 sInputVal = false;
                                 sInputValNotChanged = false;
-                                !sLabel.hasClass("visually-hidden") && sLabel.addClass("visually-hidden");
+                                if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");
                                 anchorSetAriaCurrent(document.getElementById("search-layer").querySelectorAll(".archive__item-title a"));
                             } else {
                                 sInputVal = true;

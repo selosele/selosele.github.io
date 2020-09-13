@@ -15,8 +15,8 @@
       {%- else -%}
         {%- assign url = link.url | relative_url -%}
       {%- endif -%}
-      <li role="menuitem">
-        <a href="{{ url }}" itemprop="url">{{ link.title }}</a>
+      <li role="menuitem"{% if page.url == url %} class="menuitem--current-page"{% endif %}>
+        <a href="{{ url }}" itemprop="url"{% if page.url == url %} aria-current="page"{% endif %}>{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>

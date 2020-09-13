@@ -16,7 +16,7 @@ tags:
     - html
 ---
 
-제곧내.. 일단 spec에 의하면 ```<nav>```{:.language-html} 요소는 현재 문서 내에서 또는 다른 문서에 대한 탐색 링크를 제공하는 section을 나타내는 요소라고 설명되어 있다[^1]. 어느 날 갑자기 궁금해진 게, nav 요소 내에 button 요소를 포함할 수 있는가? 안된다면 button 요소로 제공해야 될 기능(예를 들어 주메뉴 열기 등)을 a 요소로 제공해야 하는가?
+제곧내.. 일단 명세에 의하면 ```<nav>```{:.language-html} 요소는 현재 문서 내에서 또는 다른 문서에 대한 탐색 링크를 제공하는 section을 나타내는 요소라고 설명되어 있다[^1]. 어느 날 갑자기 궁금해진 게, nav 요소 내에 button 요소를 포함할 수 있는가? 안된다면 button 요소로 제공해야 될 기능(예를 들어 주메뉴 열기 등)을 a 요소로 제공해야 하는가?
 
 {:.has-label}
 ```html
@@ -39,6 +39,6 @@ tags:
 
 이제 중요한 것. 의미론적인 면에서 생각을 해보자. 페이지 이동이 아닌 기능을 제공하는 button 요소를 포함할 수 있는가? 
 
-[^1]: [1] [html.spec.whatwg.org](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
+[^1]: [1] [공식 명세](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
 
 [^2]: [2] 사이트 타이틀은 흔히 ```<h1>```{:.language-html}으로 마크업되는 로고 같은 것. 나는 로고보단 사이트 타이틀이라고 불러야 의미에 맞고, h1으로 감싸져야 한다고 생각하지 않아서 저렇게 구성했을 뿐이니 신경쓰지 마셈..

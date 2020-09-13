@@ -33,7 +33,7 @@ var alignImg = function(elem) {
 
 // abbr tooltip 생성 및 handler
 var appendTooltip = function() {
-    var abbr = document.querySelectorAll("abbr");
+    var abbr = document.querySelectorAll("abbr[title]");
     if (!abbr) return;
 
     for (var i = 0; i < abbr.length; i++) {

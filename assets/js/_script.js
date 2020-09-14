@@ -255,7 +255,7 @@ $(function() {
                     tocELanchor = $(".toc-wrapper li a");
 
                 tocELanchor.hasClass("toc--active") && tocELanchor.removeClass("toc--active");
-                !t_anchor.hasClass("toc--active") && t_anchor.addClass("toc--active");
+                t_anchor.hasClass("toc--active") || t_anchor.addClass("toc--active");
             }
         });
     });
@@ -351,7 +351,7 @@ $(function() {
             }, 400);
 
             menu.attr("aria-hidden", "true");
-            !$(location.hash).is(":focus") && menuELopen.focus();
+            if (!$(location.hash).is(":focus")) menuELopen.focus();
         }
 
     menuELopen.on("click", function() {

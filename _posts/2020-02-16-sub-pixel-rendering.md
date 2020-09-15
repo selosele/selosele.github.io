@@ -1,8 +1,8 @@
 ---
 layout: post
 comments: true
-title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가"
-summary: "현재로서 완벽한 방법은 존재하지 않는다."
+title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 1"
+summary: "transform 속성을 선언했을 때"
 header:
   overlay_image: /assets/images/thumb/ie_thumb01.jpg
   overlay_filter: 0.5
@@ -15,7 +15,7 @@ tags:
     - css
 primary_post: true
 ---
-CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈를 소수점 단위까지 렌더링하게 되어 결과적으로 요소가 흐려보이는 현상으로, webkit 계열 브라우저에서 발생한다. 예시로 요소를 중앙 정렬하는 방법 중 많이 사용되는 방법 중 하나로, ```position: absolute; top: 50%; left: 50%```{:.language-css} 및 ```transform: translate(-50%, -50%)```{:.language-css}를 선언했는데 요소의 너비/높이 중 하나라도 홀수이면 요소가 흐려져보이는 것.
+CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈를 소수점 단위까지 렌더링하게 되어 요소가 흐려보이는 현상으로, webkit 계열 브라우저에서 발생한다. 예시로 요소를 중앙 정렬하는 방법 중 많이 사용되는 방법 중 하나로, ```position: absolute; top: 50%; left: 50%```{:.language-css} 및 ```transform: translate(-50%, -50%)```{:.language-css}를 선언했는데 요소의 너비/높이 중 하나라도 홀수이면 요소가 흐려져보이는 것.
 
 대응책으로 디자인 시안과 어긋나더라도 짝수로 맞추거나 중앙 정렬이 가능한 다른 방법을 쓰는 쪽이 선호되는 추세이다. 개인적으로 IE 8까지도 어느 정도의 안전장치를 두고 작업해야 하므로 transform을 이용한 중앙 정렬은 하지 않는 편이다.
 
@@ -49,4 +49,4 @@ CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 사이즈�
 
 참 쉽죠?
 
-IE 9까지 커버된다. 근데 부모 요소의 사이즈가 짝수일 경우 통하지 않는 듯. 즉 부모, 자식 모두 홀수 사이즈일 경우 유효. 현재로선 첫 번째 코드가 최선인 듯하다.
+IE 9까지 커버된다. 근데 부모 요소의 사이즈가 짝수일 경우 통하지 않으며 부모, 자식 모두 홀수 사이즈일 경우 유효한듯.. 현재로선 첫 번째 코드가 최선인 듯하다.

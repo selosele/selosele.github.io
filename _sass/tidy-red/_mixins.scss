@@ -3,9 +3,15 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common_layout($max_width: null, $width: $layout_width_px, $min_general_width_value: false, $margin: 0 auto) {
+@mixin common_layout($max_width: null, $width: $layout_width_px, $min_general_width_value: false, $margin: null, $margin_l: auto, $margin_r: auto) {
    width: $layout_width_per;
-   margin: $margin;
+
+   @if $margin != null {
+      margin: $margin;
+   } @else {
+      margin-left: $margin_l;
+      margin-right: $margin_r;
+   }
 
    @media (min-width: $min_standard_width) {
       @if $max_width {
@@ -169,7 +175,8 @@
    max-width: 70%;
    height: 1.65rem;
    margin-bottom: 0.3rem;
-   padding: 0 0.65rem;
+   padding-left: 0.65rem;
+   padding-right: 0.65rem;
    border-radius: 0.15rem;
    box-shadow: rgba(0,0,0,0.2) 0.15rem 0.15rem 0.5rem;
    line-height: 1.65rem;

@@ -19,13 +19,14 @@ html {
 
 body {
    background-color: $grey07;
+   image-rendering: -webkit-optimize-contrast;
    font-family: $default_font04;
    font-style: normal;
    font-weight: 400;
    letter-spacing: -0.01em;
    line-height: 1;
    word-break: keep-all;
-   overflow-wrap: break-word;
+   word-wrap: break-word;
 
    &.scroll-disabled {
       overflow: hidden;
@@ -56,11 +57,11 @@ a {
 }
 
 button {
-   display: inline-block;
    margin: 0;
    padding: 0;
    border: 0;
    font-family: inherit;
+   font-size: inherit;
    cursor: pointer;
 }
 

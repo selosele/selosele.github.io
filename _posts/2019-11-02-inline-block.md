@@ -19,7 +19,7 @@ position을 이용한 중앙 정렬은 이득보다 손실이 크다. position �
 맹목적 position 신도가 아닌 이들이 사용하는 방법으로 vertical-align, line-height, table-cell 등의 방법이 있다. vertical-align은 기준이 될 요소가 있어야 하고 line-height는 텍스트가 한 줄 이상일 경우 사실상 사용 불가능이며, table-cell은 무난하나..
 
 ## 그렇다면 무엇이 효율적인 방법인가?
-공부하다가 발견한 방법으로, 중앙 정렬하고자 하는 요소의 부모에게 가상의 높이를 주는 것임.
+공부하다가 발견한 방법으로, 중앙 정렬하려고 하는 요소의 부모에게 가상의 높이를 주는 것임.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="LYYeOPx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Used pseudo-class for vertical-align.">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/LYYeOPx">

@@ -136,6 +136,7 @@
 
   &:before {
     content: "\e9af";
+    display: block;
     font-family: "xeicon";
     font-size: 1.5rem;
     color: $main_color;

@@ -34,7 +34,7 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 
 개발자도구로 대다수는 ```::first-letter```{:.language-css} 부분만 살펴보겠지만 원인은 ```::before```{:.language-css} 가상 요소에 있다.
 
-결론부터 말하면 의도한대로 적용되지 않은 것일뿐이지 정상적으로 적용 안 된게 아니다. 열심히 구글링을 하다가 해답을 발견했는데, 역시 공식 명세에 해답이 있었다. 다음은 공식 명세 원문과 번역 일부를 발췌한 것으로, 이해를 돕고자 약간의 수정을 하였다.
+결론부터 말하면 의도한대로 적용되지 않은 것일뿐이지 정상적으로 적용 안 된게 아니다. 구글링 중 해답을 발견했는데, 역시 공식 명세에 해답이 있었다. 다음은 공식 명세 원문과 번역 일부를 발췌한 것으로, 이해를 돕고자 약간의 수정을 하였다.
 
 > The ::before and ::after pseudo-elements can be used to describe generated content before or after an element&rsquo;s content. They are explained in CSS 2.1. When the ::first-letter and ::first-line pseudo-elements are applied to an element having content generated using ::before or ::after, they apply to the first letter or line of the element including the generated content.
 > 
@@ -44,7 +44,7 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 
 참 쉽죠? 그래서 ```::before```{:.language-css}를 ```::after```{:.language-css}로 수정하니 해결됨.
 
-MDN에도 관련 내용이 올라와 있어 번역 첨부해본다. 블로그 컨셉은 반말이지만 상기한 인용문과 운을 맞추고자 존댓말로 번역함...
+MDN에도 관련 내용이 올라와 있어 번역 첨부해본다. 블로그 컨셉은 반말이지만 상기한 인용문과 운을 맞추려고 존댓말로 번역함...
 
 > A combination of the ::before pseudo-element and the content property may inject some text at the beginning of the element. In that case, ::first-letter will match the first letter of this generated content.
 > 

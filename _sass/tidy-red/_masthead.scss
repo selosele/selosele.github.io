@@ -195,6 +195,8 @@
 }
 
 .nav__item {
+   margin-left: 4.821vw;
+
    &:before {
       display: block;
       font-family: "xeicon";
@@ -202,12 +204,8 @@
       text-shadow: $black04 1px 2px 2px;
    }
 
-   & + & {
-      margin-left: 4.821vw;
-
-      @media (min-width: $small_width) {
-         margin-left: 1.5rem;
-      }
+   @media (min-width: $small_width) {
+      margin-left: 1.5rem;
    }
 }
 
@@ -222,7 +220,6 @@
       line-height: 1.25;
       color: $grey12;
       text-shadow: rgba(0,0,0,0.7) 1px 1px 0.107em;
-      word-break: break-all;
 
       @media (min-width: $min_small_width) {
          font-size: 1.4rem;
@@ -293,8 +290,6 @@
    &-type2 {
       .site {
          &-title {
-            margin-right: 0.714em;
-   
             &__author-image {
                display: none;
             }

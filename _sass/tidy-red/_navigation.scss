@@ -137,10 +137,10 @@
 
       &:before {
          content: "\e9af";
+         display: block;
          font-family: "xeicon";
          font-size: 1.2rem;
          color: $grey12;
-         vertical-align: -0.13em;
       }
    }
 

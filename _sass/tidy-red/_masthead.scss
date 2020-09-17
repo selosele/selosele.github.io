@@ -203,7 +203,11 @@
    }
 
    & + & {
-      margin-left: 1.5rem;
+      margin-left: 4.821vw;
+
+      @media (min-width: $small_width) {
+         margin-left: 1.5rem;
+      }
    }
 }
 
@@ -214,10 +218,11 @@
       z-index: 1;
       font-family: $default_font03;
       font-weight: 500;
-      font-size: 1.3rem;
+      font-size: calc(1.23rem + 0.5vw);
       line-height: 1.25;
       color: $grey12;
       text-shadow: rgba(0,0,0,0.7) 1px 1px 0.107em;
+      word-break: break-all;
 
       @media (min-width: $min_small_width) {
          font-size: 1.4rem;
@@ -235,7 +240,7 @@
    &-nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin: 1.7rem 2.995vw;
    }
 }

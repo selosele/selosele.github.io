@@ -33,8 +33,7 @@ var alignImg = function(elem) {
 
 // scroll indicator
 var activateScrollIndicator = function() {
-    var pageRoot = document.getElementById("page-content");
-    if (pageRoot) {
+    if (document.getElementById("page-content")) {
         var window_height = document.body.scrollHeight - window.innerHeight,
             scroll_val = ((window.scrollY) / window_height) * 100;
 

@@ -5,3 +5,7 @@
 {% endif %}
 
 {% include menu.html %}
+
+{% if page.layout == "post" %}
+  {% include scroll_indicator.html %}
+{% endif %}

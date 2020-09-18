@@ -31,6 +31,17 @@ var alignImg = function(elem) {
     }
 };
 
+// scroll indicator
+var activateScrollIndicator = function() {
+    var pageRoot = document.getElementById("page-content");
+    if (pageRoot) {
+        var window_height = document.body.scrollHeight - window.innerHeight,
+            scroll_val = ((window.scrollY) / window_height) * 100;
+
+        document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
+    }
+};
+
 // abbr tooltip 생성 및 handler
 var appendTooltip = function() {
     var abbr = document.querySelectorAll("abbr[title]");
@@ -96,9 +107,11 @@ alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-titl
 appendTooltip();
 
 // 검색 input enter키로 submit 방지
-document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-    if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
-});
+(function() {
+    document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
+        if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
+    });
+})();
 
 // IE 11 ~ 9 체크
 (function() {
@@ -112,9 +125,9 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // heading link
 (function() {
-    var pageElement = document.getElementById("page-content");
-    if (pageElement) {
-        var h = pageElement.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+    var pageRoot = document.getElementById("page-content");
+    if (pageRoot) {
+        var h = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
         for (var i = 0; i < h.length; i++) {
             var h_id = h[i].id,
@@ -133,6 +146,11 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
             h[i].insertBefore(h_anc, h[i].firstChild);
         }
     }
+})();
+
+// scroll indicator event 등록
+(function() {
+    window.addEventListener("scroll", activateScrollIndicator);
 })();
 
 // abbr event 등록
@@ -163,9 +181,9 @@ document.querySelector(".search-content__inner-wrap form").addEventListener("key
 
 // code highlight title 기입
 (function() {
-    var pageElement = document.getElementById("page-content");
-    if (pageElement) {
-        var preCodeElement = pageElement.querySelectorAll("pre.highlight");
+    var pageRoot = document.getElementById("page-content");
+    if (pageRoot) {
+        var preCodeElement = pageRoot.querySelectorAll("pre.highlight");
         
         for (var i = 0; i < preCodeElement.length; i++) {
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
@@ -192,7 +210,7 @@ $(function() {
     var IEalertElem = $(".ie-alert");
     if (IEalertElem) {
         var rootElem = $("html"),
-            alertOuterElem = $("body").children().not(IEalertElem.add(".search-content, .side-menu, script")),
+            alertOuterElem = $("body").children().not(IEalertElem.add(".search-content, .side-menu, script, .scroll-indicator")),
             alertTabbaleElem = IEalertElem.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
             alertTabbaleElemFirst = alertTabbaleElem.first(),
             alertTabbaleElemLast = alertTabbaleElem.last();
@@ -324,7 +342,7 @@ $(function() {
 $(function() {
     var nav = $(".site-nav"),
         menu = $(".side-menu"),
-        menuOuterEL = $("body").children().not(menu.add(".ie-alert, .search-content, script")),
+        menuOuterEL = $("body").children().not(menu.add(".ie-alert, .search-content, script, .scroll-indicator")),
         menuELlayer = menu.find(".menu__layer"),
         menuELopen = nav.find(".nav__menu-open"),
         menuELclose = menu.find(".menu__close"),
@@ -414,7 +432,7 @@ $(function() {
     var openBtn = $(".nav__search-open"),
         closeBtn = $(".search__close"),
         layer = $(".search-content"),
-        outerEL = $("body").children().not(layer.add("script, .ie-alert, .side-menu")),
+        outerEL = $("body").children().not(layer.add("script, .ie-alert, .side-menu, .scroll-indicator")),
         tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tabbaleFirst = tabbale.first(),
         tabbaleLast = tabbale.last(),

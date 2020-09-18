@@ -327,3 +327,17 @@
       }
    }
 }
+
+// scroll-indicator
+.scroll-indicator {
+   display: block;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 9999;
+   width: 0;
+   height: 3px;
+   background-color: $green03;
+   pointer-events: none;
+   transition: width 0.2s;
+}

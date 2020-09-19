@@ -78,7 +78,7 @@ var handlerTooltipClick = function(evt) {
 };
 
 var handlerTooltipKeydown = function(evt) {
-    if ((evt.keyCode || evt.which) === 13) handlerTooltipClick(evt);
+    if (evt.key === "Enter") handlerTooltipClick(evt);
 };
 
 // post archive 아코디언
@@ -108,7 +108,7 @@ appendTooltip();
 // 검색 input enter키로 submit 방지
 (function() {
     document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-        if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
+        if (evt.key === "Enter") evt.preventDefault();
     });
 })();
 
@@ -222,14 +222,14 @@ $(function() {
         }
 
         alertTabbaleElemFirst.on("keydown", function(evt) {
-            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 alertTabbaleElemLast.focus();
             }
         });
 
         alertTabbaleElemLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (!evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 alertTabbaleElemFirst.focus();
             }
@@ -252,7 +252,7 @@ $(function() {
         };
 
         $(document).on("keydown.alert_keydown", function(evt) {
-            if ((evt.keyCode || evt.which) === 27) closeIEalert();
+            if (evt.key === "Escape") closeIEalert();
         });
 
         $(".ie-alert__close").click(closeIEalert);
@@ -313,9 +313,9 @@ $(function() {
         return tocTabbleFocusedLast = $(this);
 
     }).on("keydown", function(evt) {
-        if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+        if (evt.altKey && evt.key === "`") { // alt + `키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
             $(".toc--fixed nav").focus().on("keydown", function(evt) {
-                if (evt.altKey && (evt.keyCode || evt.which) === 192) { // alt + ~키 : focusedLast로 초점 이동
+                if (evt.altKey && evt.key === "`") { // alt + `키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
             });
@@ -324,13 +324,11 @@ $(function() {
 
     if ($(".toc--fixed").length) {
         $(document).on("keydown.toc_keydown", function(evt) {
-            var keyType = evt.keyCode || evt.which;
-    
-            if (evt.altKey && keyType === 192 && !tocTabbleNode.is(":focus")) { // alt + ~키 : 포스트에서 목차로 초점 이동
+            if (evt.altKey && evt.key === "`" && !tocTabbleNode.is(":focus")) { // alt + `키 : 포스트에서 목차로 초점 이동
                 if (!$(".toc--fixed").is(":focus")) $(".toc--fixed nav").focus();
             }
     
-            if (evt.altKey && keyType === 49 && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
+            if (evt.altKey && evt.key === "1" && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
                 $(".toc--active").focus();
             }
         });
@@ -399,14 +397,14 @@ $(function() {
         });
 
         menuELFocusedLast ? menuELFocusedLast.focus() : menuELtabbleFirst.focus().on("keydown", function(evt) {
-            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 menuELtabbleLast.focus();
             }
         });
 
         menuELtabbleLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (!evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 menuELtabbleFirst.focus();
             }
@@ -416,7 +414,7 @@ $(function() {
 
         if (menu.css("display") === "block") {
             $(document).on("keydown.menu_keydown", function(evt) {
-                if ((evt.keyCode || evt.which) === 27) menuClose();
+                if (evt.key === "Escape") menuClose();
             });
         }
 
@@ -493,14 +491,14 @@ $(function() {
         });
 
         tabbaleFirst.on("keydown", function(evt) {
-            if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 tabbaleLast.focus();
             }
         });
 
         tabbaleLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+            if (!evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
                 tabbaleFirst.focus();
             }
@@ -508,7 +506,7 @@ $(function() {
 
         if (layer.css("display") === "block") {
             $(document).on("keydown.search_keydown", function(evt) {
-                if ((evt.keyCode || evt.which) === 27) {
+                if (evt.key === "Escape") {
                     sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
                 }
             });

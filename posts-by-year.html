@@ -7,10 +7,10 @@ class: page--posts-by-year
 {% assign yearOfPost = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for year in yearOfPost %}
 <h2>
-	<button type="button" class="archive__btn" id="btn-{{ year.name }}" aria-controls="list-{{ year.name }}" aria-expanded="false"><span>{{ year.name }}</span>{{ site.data.ui-text[site.locale].post_by_year_button }} <small class="archive__list-count" aria-hidden="true">({{ year.items.size }})</small></button>
+	<button type="button" aria-controls="list-{{ year.name }}" aria-expanded="false" id="btn-{{ year.name }}" class="archive__btn"><span>{{ year.name }}</span>{{ site.data.ui-text[site.locale].post_by_year_button }} <small aria-hidden="true" class="archive__list-count">({{ year.items.size }})</small></button>
 </h2>
 
-<div class="archive__list" id="list-{{ year.name }}" aria-labelledby="btn-{{ year.name }}">
+<div aria-labelledby="btn-{{ year.name }}" id="list-{{ year.name }}" class="archive__list">
 	<ul>
 		{% for post in year.items %}
 		<li{% if year.items.size == 1 %} role='presentation'{% endif %}>

@@ -1,17 +1,17 @@
-<section class="page__share" id="page-share" aria-labelledby="page-share-title">
+<section aria-labelledby="page-share-title" id="page-share" class="page__share">
   {% if site.data.ui-text[site.locale].share_on_label %}
-    <h2 class="page__share-title" id="page-share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
+    <h2 id="page-share-title" class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
   {% endif %}
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" class="btn--twitter" title="Twitter {{ site.data.ui-text[site.locale].share_on_label }}">
+  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" title="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="btn--twitter">
     <span>Twitter</span>
   </a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" class="btn--facebook" title="Facebook {{ site.data.ui-text[site.locale].share_on_label }}">
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" title="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="btn--facebook">
     <span>Facebook</span>
   </a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" class="btn--linkedin" title="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" title="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="btn--linkedin">
     <span>LinkedIn</span>
   </a>
 </section>

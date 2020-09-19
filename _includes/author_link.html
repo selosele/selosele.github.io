@@ -2,7 +2,7 @@
   {% for link in site.author.links %}
     {% if link.label and link.url %}
     <li {% if site.author.links.size == 1 %}role="presentation"{% endif %}>
-      <a href="{{ link.url }}" target="_blank" rel="nofollow"><i class="{{ link.icon | default: 'xi-link' }}" aria-hidden="true"></i> <span class="visually-hidden">{{ link.label }}</span></a>
+      <a href="{{ link.url }}" target="_blank" rel="nofollow"><i aria-hidden="true" class="{{ link.icon | default: 'xi-link' }}"></i> <span class="visually-hidden">{{ link.label }}</span></a>
     </li>
     {% endif %}
   {% endfor %}

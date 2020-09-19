@@ -3,9 +3,9 @@
   <div class="author__image-wrapper"{% if site.author.avatar %} style="background-image: url({{ site.author.avatar }});"{% endif %}></div>
 </div>
 {% endif %}
-<div class="author__info-wrapper" aria-labelledby="author-name" itemscope itemtype="https://schema.org/Thing">
-  <{% if page.layout != "post" %}strong{% else %}h2{% endif %} class="author__name" id="author-name" itemprop="name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
-  {% if site.author.desc %}<p class="author__desc" itemprop="description">{{ site.author.desc }}</p>{% endif %}
+<div aria-labelledby="author-name" itemscope itemtype="https://schema.org/Thing" class="author__info-wrapper">
+  <{% if page.layout != "post" %}strong{% else %}h2{% endif %} itemprop="name" id="author-name" class="author__name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
+  {% if site.author.desc %}<p itemprop="description" class="author__desc">{{ site.author.desc }}</p>{% endif %}
   {% if site.theme_type == "type1" and page.layout != "post" %}
     {% if site.author.links %}
       {% include author_link.html %}

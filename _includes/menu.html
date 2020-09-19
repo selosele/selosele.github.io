@@ -6,9 +6,9 @@
 {% endfor %}
 
 <div aria-hidden="true" class="side-menu">
-  <nav class="menu__layer" id="primary-nav" aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement">
+  <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
-    <ul class="menu__list--grid" role="menu">
+    <ul role="menu" class="menu__list--grid">
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
         {%- assign url = link.url -%}
@@ -16,7 +16,7 @@
         {%- assign url = link.url | relative_url -%}
       {%- endif -%}
       <li role="menuitem"{% if page.url == url %} class="menuitem--current-page"{% endif %}>
-        <a href="{{ url }}" itemprop="url"{% if page.url == url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        <a href="{{ url }}"{% if page.url == url %} aria-current="page"{% endif %} itemprop="url">{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>
@@ -44,16 +44,16 @@
     {% endif %}
 
     {% if site.theme_type == "type2" %}
-      <div class="menu__author-wrapper" aria-labelledby="menu-author-title" itemscope itemtype="https://schema.org/Thing">
-        <strong class="menu__author-name" id="menu-author-title">{{ site.author.name }}</strong>
+      <div aria-labelledby="menu-author-title" itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
+        <strong id="menu-author-title" class="menu__author-name">{{ site.author.name }}</strong>
         {% if site.author.desc %}
-        <p class="menu__author-desc" itemprop="description">{{ site.author.desc }}</p>
+        <p itemprop="description" class="menu__author-desc">{{ site.author.desc }}</p>
         {% endif %}
         {% include author_link.html class='menu__author-links' %}
       </div>
     {% endif %}
     
-    <button type="button" class="menu__close" aria-controls="primary-nav">
+    <button type="button" aria-controls="primary-nav" class="menu__close">
       <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_close_label }}</span>
     </button>
   </nav>

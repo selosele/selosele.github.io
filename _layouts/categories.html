@@ -16,10 +16,10 @@ title: 카테고리
   {% assign categoryPost = site.posts | where: "categories", category[0] %}
   {% assign categoryName = category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase %}
   <h2>
-    <button type="button" class="archive__btn" id="btn-{{ categoryName }}" aria-controls="list-{{ categoryName }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ category[0] }} <small class="archive__list-count" aria-hidden="true">({{ category[1].size }})</small></button>
+    <button type="button" aria-controls="list-{{ categoryName }}" aria-expanded="false" id="btn-{{ categoryName }}" class="archive__btn"><span aria-hidden="true">#</span>{{ category[0] }} <small aria-hidden="true" class="archive__list-count">({{ category[1].size }})</small></button>
   </h2>
   
-  <div class="archive__list" id="list-{{ categoryName }}" aria-labelledby="btn-{{ categoryName }}">
+  <div aria-labelledby="btn-{{ categoryName }}" id="list-{{ categoryName }}" class="archive__list">
     <ul>
       {% for post in categoryPost %}
       <li{% if categoryPost.size == 1 %} role='presentation'{% endif %}>

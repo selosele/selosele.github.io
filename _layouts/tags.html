@@ -16,10 +16,10 @@ title: 태그
   {% assign tagPost = site.posts | where: "tags", tag[0] %}
   {% assign tagName = tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase %}
   <h2>
-    <button type="button" class="archive__btn" id="btn-{{ tagName }}" aria-controls="list-{{ tagName }}" aria-expanded="false"><span aria-hidden="true">#</span>{{ tag[0] }} <small class="archive__list-count" aria-hidden="true">({{ tag[1].size }})</small></button>
+    <button type="button" aria-controls="list-{{ tagName }}" aria-expanded="false" id="btn-{{ tagName }}" class="archive__btn"><span aria-hidden="true">#</span>{{ tag[0] }} <small aria-hidden="true" class="archive__list-count">({{ tag[1].size }})</small></button>
   </h2>
 
-  <div class="archive__list" id="list-{{ tagName }}" aria-labelledby="btn-{{ tagName }}">
+  <div aria-labelledby="btn-{{ tagName }}" id="list-{{ tagName }}" class="archive__list">
     <ul>
       {% for post in tagPost %}
       <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>

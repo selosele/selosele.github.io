@@ -14,12 +14,12 @@
   {% assign category_hashes = page_categories | split: ',' %}
 
   <p class="page__taxonomy-wrapper">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories" }} </strong>
+    <strong><i aria-hidden="true" class="fas fa-fw fa-folder-open"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories" }} </strong>
     <span class="keyword-wrapper">
     {% for hash in category_hashes %}
       {% assign keyValue = hash | split: '|' %}
       {% capture category_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
-      <a href="/category-list/#{{category_word | replace: ' ', '-'}}" class="page__taxonomy-item" rel="tag" itemprop="keywords">{{ category_word }}</a>
+      <a href="/category-list/#{{category_word | replace: ' ', '-'}}" rel="tag" itemprop="keywords" class="page__taxonomy-item">{{ category_word }}</a>
     {% endfor %}
     </span>
   </p>

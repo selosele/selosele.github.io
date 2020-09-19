@@ -1,11 +1,11 @@
 <div aria-hidden="true" class="search-content">
-	<div class="search-content__inner-wrap" id="search-layer" role="dialog" aria-modal="true" aria-labelledby="search-title">
+	<div role="dialog" aria-modal="true" aria-labelledby="search-title" id="search-layer" class="search-content__inner-wrap">
 		{%- assign search_provider = site.search_provider | default: "lunr" -%}
 		{%- case search_provider -%}
 		{%- when "lunr" -%}
 		<div class="search-content__form-wrapper">
 			<form>
-				<label id="search-title" for="search-input">{{ site.data.ui-text[site.locale].search_label_text }}</label>
+				<label for="search-input" id="search-title">{{ site.data.ui-text[site.locale].search_label_text }}</label>
 				<input type="search" id="search-input">
 			</form>
 		</div>
@@ -13,7 +13,7 @@
 		{%- when "google" -%}
 		<div class="search-content__form-wrapper">
 			<form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-				<label id="search-title" for="cse-search-input-box-id">{{ site.data.ui-text[site.locale].search_label_text }}</label>
+				<label for="cse-search-input-box-id" id="search-title">{{ site.data.ui-text[site.locale].search_label_text }}</label>
 				<input type="search" id="cse-search-input-box-id">
 			</form>
 		</div>
@@ -24,7 +24,7 @@
 		<div class="search-searchbar"></div>
 		<div class="search-hits"></div>
 		{%- endcase -%}
-		<button type="button" class="search__close" aria-controls="search-layer" aria-expanded="true">
+		<button type="button" aria-controls="search-layer" aria-expanded="true" class="search__close">
 			<span class="visually-hidden">{{ site.data.ui-text[site.locale].search_close_label }}</span>
 		</button>
 	</div>

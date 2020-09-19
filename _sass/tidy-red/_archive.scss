@@ -128,18 +128,16 @@
    }
 
    &__item-thumb {
-      display: flex;
       position: relative;
-      overflow: hidden;
       height: 33.929vw;
       margin-top: 0.9rem;
       margin-bottom: 0.9rem;
       border: 1px solid $black;
       border-radius: 0.25rem;
-      background-color: $grey02;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
       box-shadow: rgba(0,0,0,0.2) 0.25rem 0.25rem 0.5rem;
-      justify-content: center;
-      align-items: center;
 
       @media (min-width: $min_small_width) {
          height: 10rem;

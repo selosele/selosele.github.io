@@ -46,14 +46,14 @@ const layerTabbableFirst = layerTabbable[0];
 const layerTabbableLast = layerTabbable[layerTabbable.length - 1];
 
 const handlerFirstKeydown = (evt) => {
-  if (evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+  if (evt.shiftKey && evt.key === "Tab") {
     evt.preventDefault();
     layerTabbableLast.focus();
   }
 };
 
 const handlerLastKeydown = (evt) => {
-  if (!evt.shiftKey && (evt.keyCode || evt.which) === 9) {
+  if (!evt.shiftKey && evt.key === "Tab") {
     evt.preventDefault();
     layerTabbableFirst.focus();
   }

@@ -33,7 +33,7 @@ var alignImg = function(elem) {
 
 // scroll indicator
 var activateScrollIndicator = function() {
-    if (document.getElementById("page-content")) {
+    if (document.querySelector(".layout--post")) {
         var window_height = document.body.scrollHeight - window.innerHeight,
             scroll_val = ((window.pageYOffset) / window_height) * 100;
 
@@ -124,9 +124,9 @@ appendTooltip();
 
 // heading link
 (function() {
-    var pageRoot = document.getElementById("page-content");
-    if (pageRoot) {
-        var h = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+    var postRoot = document.getElementById("page-content");
+    if (postRoot) {
+        var h = postRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
         for (var i = 0; i < h.length; i++) {
             var h_id = h[i].id,
@@ -180,9 +180,9 @@ appendTooltip();
 
 // code highlight title 기입
 (function() {
-    var pageRoot = document.getElementById("page-content");
-    if (pageRoot) {
-        var preCodeElement = pageRoot.querySelectorAll("pre.highlight");
+    var postRoot = document.getElementById("page-content");
+    if (postRoot) {
+        var preCodeElement = postRoot.querySelectorAll("pre.highlight");
         
         for (var i = 0; i < preCodeElement.length; i++) {
             var preCodeParentElement = preCodeElement[i].parentElement.parentElement;

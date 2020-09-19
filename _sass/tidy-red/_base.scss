@@ -186,19 +186,6 @@ abbr {
    }
 }
 
-/* images */
-.image {
-   &--horizontal {
-      width: auto !important;
-      height: 100% !important;
-   }
-
-   &--vertical {
-      width: 100% !important;
-      height: auto !important;
-   }
-}
-
 /* blockquote */
 blockquote {
    position: relative;

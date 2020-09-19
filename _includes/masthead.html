@@ -43,9 +43,7 @@
     <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.theme_type == 'type2' and site.author.avatar %} has-image{% endif %}{% unless site.subtitle %} has-only-title{% endunless %}"{% if page.url == '/' %} aria-current="page"{% endif %}>
       {% if site.theme_type == "type2" and site.author.avatar %}
       <span class="site-title__author-image" aria-hidden="true">
-        <span>
-          <img src="{{ site.author.avatar }}" alt="" class="{%if site.author.avatar_filter%}image--grayscale{%endif%}">
-        </span>
+        <span{% if site.author.avatar %} style="background-image: url({{ site.author.avatar }});"{% endif %}></span>
       </span>
       {% endif %}
       {{ site.title }}

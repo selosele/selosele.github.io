@@ -245,16 +245,11 @@
          }
    
          &__image-wrapper {
-            display: flex;
-            overflow: hidden;
             height: 100%;
             border-radius: 50%;
-            justify-content: center;
-            align-items: center;
-
-            img {
-               height: 100%;
-            }
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
          }
    
          &__name {

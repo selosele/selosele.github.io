@@ -18,19 +18,6 @@ var anchorSetAriaCurrent = function(anchorNode) {
     }
 };
 
-// 이미지 정렬
-var alignImg = function(elem) {
-    if (!elem) return;
-
-    for (var i = 0; i < elem.length; i++) {
-        if (elem[i].getBoundingClientRect().width > elem[i].getBoundingClientRect().height) {
-            elem[i].classList.add("image--horizontal");
-        } else {
-            elem[i].classList.add("image--vertical");
-        }
-    }
-};
-
 // scroll indicator
 var activateScrollIndicator = function() {
     if (document.querySelector(".layout--post")) {
@@ -100,8 +87,6 @@ var handlerArchiveClick = function(evt) {
 };
 
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
-
-alignImg(document.querySelectorAll(".author__avatar img, .theme-type2 .site-title__author-image img"));
 
 appendTooltip();
 

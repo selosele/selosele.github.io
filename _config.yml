@@ -88,7 +88,6 @@ analytics:
 # Site Author
 author:
   name             : "sel"
-  avatar_filter    : true
   avatar           : "/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   email            :

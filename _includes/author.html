@@ -1,8 +1,6 @@
 {% if site.author.avatar %}
 <div class="author__avatar" aria-hidden="true">
-  <div class="author__image-wrapper">
-    <img src="{{ site.author.avatar }}" alt="" class="{%if site.author.avatar_filter%}image--grayscale{%endif%}">
-  </div>
+  <div class="author__image-wrapper"{% if site.author.avatar %} style="background-image: url({{ site.author.avatar }});"{% endif %}></div>
 </div>
 {% endif %}
 <div class="author__info-wrapper" aria-labelledby="author-name" itemscope itemtype="https://schema.org/Thing">
@@ -10,7 +8,7 @@
   {% if site.author.desc %}<p class="author__desc" itemprop="description">{{ site.author.desc }}</p>{% endif %}
   {% if site.theme_type == "type1" and page.layout != "post" %}
     {% if site.author.links %}
-    {% include author_link.html %}
+      {% include author_link.html %}
     {% endif %}
   {% endif %}
 </div>

@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 comments: true
 title: "페이지 새로고침 시 URL의 hash 제거하기"

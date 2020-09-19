@@ -32,12 +32,14 @@ document.querySelector("form").addEventListener("keydown", (evt) => {
 });
 ```
 
-keyCode, which를 사용하지 않을 경우 다음과 같이 작성해주자.
+keyCode, which는 점차 없어질 속성이라고 하니 다음과 같은 방식으로 작성해주자.
 
 {:.has-label}
 ```javascript
-if (evt.key === "Enter") evt.preventDefault();
+if (evt.code === "Enter") evt.preventDefault();
 ```
+
+code 속성은 IE에서 지원되지 않으므로 key 속성으로 대체할 수 있음.
 
 inline Javascript로 작성할 수도 있다. 구조와 표현의 분리라는 측면에서 봤을 때 좋은 방법은 아니지만 그냥 이런 방법도 있다는 것임.
 

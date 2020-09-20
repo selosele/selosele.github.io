@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "input요소에 enter키 눌렀을 때 원치않는 submit 막기"
+title: "input 요소에 enter키 눌렀을 때 원치않는 submit 막기"
 summary:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
@@ -16,7 +16,7 @@ tags:
     - javascript
 ---
 
-예를 들어 input요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 블로그 검색 input쪽 살펴보다가 놀라 자빠질뻔... Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
+예를 들어 input 요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 블로그 검색 input쪽 살펴보다가 놀라 자빠질뻔... Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
 
 {:.has-label}
 ```html

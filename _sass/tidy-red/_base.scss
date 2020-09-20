@@ -70,6 +70,9 @@ a, button {
 }
 
 input {
+   font-family: inherit;
+   font-size: inherit;
+
    &[type="text"],
    &[type="search"] {
       border-radius: 0;

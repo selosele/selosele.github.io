@@ -36,7 +36,6 @@
          padding-bottom: 0.5em;
          border-bottom: 1px dashed $black;
          color: $black;
-         font-family: $default_font03;
          font-weight: 700;
          font-size: calc(1.3rem + 0.5vw);
          line-height: 1.4;
@@ -63,12 +62,12 @@
       li {
          margin-top: 1em;
          margin-bottom: 1em;
+         font-size: 1.1rem;
          color: $black02;
-         font-size: 1rem;
          line-height: 1.3;
 
          @media (min-width: $min_small_width) {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
          }
 
          a {
@@ -118,7 +117,7 @@
       &:before {
          content: "\e94a";
          display: block;
-         font-family: "xeicon";
+         font-family: $icon_font;
          font-size: 1.8rem;
          letter-spacing: normal;
          line-height: 1;
@@ -138,7 +137,7 @@
       &:before {
          content: "\e9af";
          display: block;
-         font-family: "xeicon";
+         font-family: $icon_font;
          font-size: 1.2rem;
          color: $grey12;
       }
@@ -212,14 +211,16 @@
       list-style: none;
       justify-content: center;
       align-items: center;
+
+      @media (min-width: $min_medium_width) {
+         font-size: 1.2rem;
+      }
    }
 
    li {
       position: relative;
       margin-left: 0.5rem;
       margin-right: 0.5rem;
-      font-family: $default_font03;
-      font-weight: 500;
       line-height: 1;
 
       @media (max-width: $medium_width) {
@@ -305,7 +306,7 @@
             a {
                &:before {
                   content: "\e93b";
-                  font-family: "xeicon";
+                  font-family: $icon_font;
                }
             }
          }
@@ -314,7 +315,7 @@
             a {
                &:before {
                   content: "\e93e";
-                  font-family: "xeicon";
+                  font-family: $icon_font;
                }
             }
          }
@@ -323,7 +324,7 @@
 
    .page--current {
       margin: 0 1rem;
-      font-size: 2.2rem;
+      font-size: 1.833em;
       color: $sub_color03;
    }
 
@@ -335,9 +336,6 @@
       display: table-cell;
       padding: 1.3rem;
       border: 1px solid $grey05;
-      font-family: $default_font03;
-      font-weight: 700;
-      font-size: 1rem;
       color: $grey;
 
       &.pager--disabled {
@@ -433,7 +431,7 @@
       &:before {
          content: "\ea35";
          margin-right: 0.1em;
-         font-family: "xeicon";
+         font-family: $icon_font;
          font-weight: 200;
          color: $sub_color03;
          vertical-align: middle;

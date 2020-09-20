@@ -82,6 +82,7 @@
       }
 
       &__info-wrapper  {
+         font-family: $default_font03;
          color: $grey12;
          text-shadow: rgba(0,0,0,0.5) 2px 2px 3px;
 
@@ -99,7 +100,6 @@
          border-image: linear-gradient(to right, $sub_color02, $sub_color03);
          border-image-slice: 1;
          border-bottom-width: 1px;
-         font-family: $default_font03;
          font-weight: 500;
          font-size: 2.4rem;
          text-align: center;
@@ -200,7 +200,7 @@
    &__item {
       &:before {
          display: block;
-         font-family: "xeicon";
+         font-family: $icon_font;
          color: #fff;
          text-shadow: $black04 1px 2px 2px;
       }

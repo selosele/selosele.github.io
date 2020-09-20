@@ -109,7 +109,7 @@
       content: "\e9c3";
       display: inline-block;
       color: $main_color;
-      font-family: "xeicon";
+      font-family: $icon_font;
       font-weight: 400;
       letter-spacing: normal;
       line-height: 1;
@@ -212,7 +212,7 @@
    &:before {
       content: "\e9ab";
       margin-right: 0.18em;
-      font-family: "xeicon";
+      font-family: $icon_font;
       font-size: 1.1em;
       line-height: 1;
       color: $sub_color03;
@@ -223,7 +223,7 @@
       &:before {
          content: "\e9ab";
          margin-right: 0.18em;
-         font-family: "xeicon";
+         font-family: $icon_font;
          font-size: 1.1em;
          line-height: 1;
          vertical-align: -0.1em;

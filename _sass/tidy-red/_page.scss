@@ -22,7 +22,6 @@
       margin-bottom: 0.459em;
       padding-bottom: 0.459em;
       border-bottom: 1px solid $grey05;
-      font-family: $default_font03;
       font-weight: 700;
       font-size: calc(1.75rem + 0.5vw);
       color: $black;
@@ -88,7 +87,7 @@
          font-size: 0.9rem;
 
          &:before {
-            font-family: "xeicon";
+            font-family: $icon_font;
             font-size: 1.1em;
             vertical-align: top;
          }
@@ -122,10 +121,9 @@
 
       &-title {
          width: 100%;
-         margin-bottom: 0.6rem;
-         font-family: $default_font03;
+         margin-bottom: 0.65rem;
          font-weight: 700;
-         font-size: 0.9rem;
+         font-size: 1rem;
          color: $black02;
       }
 
@@ -254,7 +252,6 @@
    
          &__name {
             display: block;
-            font-family: $default_font03;
             font-weight: 700;
             font-size: 1.4rem;
             line-height: 1.2;
@@ -293,7 +290,7 @@
          width: 1.75rem;
          height: 1.8rem;
          margin: auto;
-         font-family: "xeicon";
+         font-family: $icon_font;
          font-size: 1.8rem;
          color: $sub_color03;
       }
@@ -310,6 +307,7 @@
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0;
+      font-family: $default_font03;
       color: inherit;
       text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
 

@@ -4,6 +4,7 @@
 
 .mastfoot {
   background-color: $grey08;
+  font-size: 0.8rem;
   text-align: center;
 
   &__inner-wrap {
@@ -60,7 +61,7 @@
         height: 1.6rem;
         margin-top: auto;
         margin-bottom: auto;
-        font-family: "xeicon";
+        font-family: $icon_font;
         font-size: 1.5rem;
         color: $black;
       }
@@ -71,20 +72,18 @@
     margin-bottom: 0.4rem;
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed $grey05;
-    font-size: 0.9rem;
 
     a {
       &:before {
         content: "\e9e5";
         margin-right: 0.132em;
-        font-family: "xeicon";
+        font-family: $icon_font;
       }
     }
   }
 
   &__copyright {
     line-height: 1.5;
-    font-size: 15px;
     color: $black;
   }
 }

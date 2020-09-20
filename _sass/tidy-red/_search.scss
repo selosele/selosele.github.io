@@ -60,7 +60,7 @@
         height: 1em;
         margin-top: auto;
         margin-bottom: auto;
-        font-family: "xeicon";
+        font-family: $icon_font;
         font-size: 3.2em;
         color: $sub_color03;
       }
@@ -137,7 +137,7 @@
   &:before {
     content: "\e9af";
     display: block;
-    font-family: "xeicon";
+    font-family: $icon_font;
     font-size: 1.5rem;
     color: $main_color;
  }

@@ -2,6 +2,17 @@
    font css
    ========================================================================== */
 
+/* 리디 바탕 */
+@font-face {
+   font-family: "RIDI batang";
+   font-display: fallback;
+   src: local("RIDI batang"),
+        url('/assets/font/ridibatang-webfont.woff2') format('woff2'),
+        url('/assets/font/ridibatang-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: 400;
+}
+
 /* Gothic A1 */
 @font-face {
    font-family: "Gothic A1";
@@ -49,47 +60,6 @@
    src: local("Gothic A1 bold"),
         url('/assets/font/gothica1-bold-webfont.woff2') format('woff2'),
         url('/assets/font/gothica1-bold-webfont.woff') format('woff');
-   font-style: normal;
-   font-weight: 700;
-}
-
-/* Noto Sans KR */
-@font-face {
-   font-family: "Noto Sans KR";
-   font-display: fallback;
-   src: local("Noto Sans KR light"),
-        url('/assets/font/notosanskr-light.woff2') format('woff2'),
-        url('/assets/font/notosanskr-light.woff') format('woff');
-   font-style: normal;
-   font-weight: 300;
-}
-
-@font-face {
-   font-family: "Noto Sans KR";
-   font-display: fallback;
-   src: local("Noto Sans KR regular"),
-        url('/assets/font/notosanskr-regular.woff2') format('woff2'),
-        url('/assets/font/notosanskr-regular.woff') format('woff');
-   font-style: normal;
-   font-weight: 400;
-}
-
-@font-face {
-   font-family: "Noto Sans KR";
-   font-display: fallback;
-   src: local("Noto Sans KR medium"),
-        url('/assets/font/notosanskr-medium.woff2') format('woff2'),
-        url('/assets/font/notosanskr-medium.woff') format('woff');
-   font-style: normal;
-   font-weight: 500;
-}
-
-@font-face {
-   font-family: "Noto Sans KR";
-   font-display: fallback;
-   src: local("Noto Sans KR bold"),
-        url('/assets/font/notosanskr-bold.woff2') format('woff2'),
-        url('/assets/font/notosanskr-bold.woff') format('woff');
    font-style: normal;
    font-weight: 700;
 }

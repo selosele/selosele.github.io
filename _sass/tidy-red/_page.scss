@@ -87,13 +87,15 @@
          margin: 0 0.3rem 0.3rem 0;
          padding: 0.5rem 0.8rem;
          border-radius: 5px;
-         color: $grey12;
+         font-family: $default_font03;
+         font-weight: 500;
          font-size: 0.9rem;
+         color: $grey12;
 
          &:before {
             font-family: $icon_font;
             font-size: 1.1em;
-            vertical-align: top;
+            vertical-align: middle;
          }
       }
 
@@ -134,6 +136,7 @@
       span {
          @media (min-width: $min_medium_width) {
             margin-left: 0.1em;
+            vertical-align: middle;
          }
 
          @media (max-width: $medium_width) {

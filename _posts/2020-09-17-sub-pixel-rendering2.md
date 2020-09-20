@@ -30,7 +30,7 @@ primary_post: true
 
 * auto
 * pixelated
-* -webkit-optimize-contrast
+* crisp-edges
 
 ### image-rendering : auto
 
@@ -52,7 +52,7 @@ auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값�
 
 해당 속성값을 선언하면 이미지를 픽셀화된 상태(pixelated)로 렌더링한다. 말 그대로 픽셀화된 상태이므로 이미지가 점처럼 보인다. 흐리게 보이는 거 방지하겠다고 썼다간 오히려 더 깨져보일 수 있으므로 이 방법은 좀 아닌 것 같음..
 
-### image-rendering : -webkit-optimize-contrast
+### image-rendering : crisp-edges
 
 <div class="page__image-container" style="image-rendering: auto; image-rendering: -webkit-optimize-contrast;">
 {% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
@@ -60,7 +60,7 @@ auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값�
 {% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
 </div>
 
-원래 이름은 crisp-edges인데, webkit 계열 브라우저에서 작동하려면 -webkit-optimize-contrast 라고 선언해주어야 한단다. 어차피 이미지가 흐려보이는 현상은 크롬 브라우저에서만 발생하니까 상관없다.
+webkit 계열 브라우저에서 작동하려면 -webkit-optimize-contrast 라고 선언해주어야 한단다. 어차피 이미지가 흐려보이는 현상은 크롬 브라우저에서만 발생하니까 상관없다.
 
 아무튼 해당 속성값은 이미지를 흐릿하지 않게 렌더링해준다. 명세나 기술 문서 등에 길고 어렵게(?) 설명되어 있어서 요약하자면 그렇다는 얘기다. auto를 제외한 두 가지 속성값을 테스트해본 결과 이 속성값이 제일 적절한 것으로 판단, 실무에 적용하였음.
 

@@ -95,7 +95,10 @@
          &:before {
             font-family: $icon_font;
             font-size: 1.1em;
-            vertical-align: middle;
+            
+            @media (min-width: $min_medium_width) {
+               vertical-align: middle;
+            }
          }
       }
 

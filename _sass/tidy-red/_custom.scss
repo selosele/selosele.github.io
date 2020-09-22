@@ -40,6 +40,14 @@
                content: url('https://api.iconify.design/emojione-v1:laptop-computer.svg?height=2.2em');
             }
          }
+
+         &[href="#구독"] {
+            margin-right: 0.2em;
+
+            &:before {
+               content: url('https://api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');
+            }
+         }
       }
    }
 

@@ -5,7 +5,7 @@
   {% endif %}
 {% endfor %}
 
-<div aria-hidden="true" class="side-menu">
+<div aria-hidden="true" id="side-menu" class="side-menu">
   <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
     <ul role="menu" class="menu__list--grid">

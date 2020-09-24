@@ -20,12 +20,12 @@ var anchorSetAriaCurrent = function(anchorNode) {
 
 // scroll indicator
 var activateScrollIndicator = function() {
-    if (document.querySelector(".layout--post")) {
-        var window_height = document.body.scrollHeight - window.innerHeight,
-            scroll_val = ((window.pageYOffset) / window_height) * 100;
+    if (!document.querySelector(".layout--post")) return;
 
-        document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
-    }
+    var window_height = document.body.scrollHeight - window.innerHeight,
+        scroll_val = ((window.pageYOffset) / window_height) * 100;
+
+    document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
 };
 
 // abbr tooltip 생성 및 handler
@@ -89,6 +89,102 @@ var handlerArchiveClick = function(evt) {
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
 appendTooltip();
+
+// 메인 메뉴
+(function() {
+    var nav = document.getElementById("side-menu"),
+        menu = document.getElementById("primary-nav"),
+        menuOuterEL = document.querySelectorAll("#skip-links, .masthead, #content, #mastfoot"),
+        menuELopen = document.querySelector(".nav__menu-open"),
+        menuELclose = menu.querySelector(".menu__close"),
+        menuELtabble = menu.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        menuELtabbleFirst = menuELtabble[0],
+        menuELtabbleLast = menuELtabble[menuELtabble.length - 1], menuELFocusedLast,
+        menuELcategoryAnc = menu.querySelector("a[href*='/category-list/#']");
+
+    function handlerMenuCloseClick() {
+        document.removeEventListener("keydown", handlerMenuCloseKeydown);
+        menuELclose.blur();
+        menuELclose.setAttribute("aria-expanded", "false");
+        menuELopen.setAttribute("aria-expanded", "false");
+        menuELopen.focus();
+        document.body.style.paddingRight = "";
+        document.body.classList.remove("overflow-hidden");
+
+        for (var i = 0; i < menuOuterEL.length; i++) {
+            menuOuterEL[i].removeAttribute("aria-hidden");
+        }
+
+        menu.classList.remove("menu__layer--animate");
+
+        setTimeout(function() {
+            nav.classList.remove("side-menu--active");
+        }, 400);
+
+        nav.setAttribute("aria-hidden", "true");
+    }
+
+    function handlerMenuCloseKeydown(a) {
+        if (nav.classList.contains("side-menu--active") && a.key === "Escape") handlerMenuCloseClick();
+    }
+
+    function handlerMenuOpenClick(evt) {
+        nav.setAttribute("aria-hidden", "false");
+        nav.classList.add("side-menu--active");
+        nav.addEventListener("click", function(evt) {
+            evt.target === evt.currentTarget && handlerMenuCloseClick();
+        });
+
+        document.addEventListener("keydown", handlerMenuCloseKeydown);
+
+        for (var i = 0; i < menuELcategoryAnc.length; i++) {
+            menuELcategoryAnc[i].addEventListener("click", function() {
+                if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) menuClose();
+            });
+        }
+
+        evt.currentTarget.setAttribute("aria-expanded", "true");
+        document.body.style.paddingRight = getScrollbarWidth();
+        document.body.classList.add("overflow-hidden");
+        menuELclose.setAttribute("aria-expanded", "true");  
+        
+        for (var i = 0; i < menuOuterEL.length; i++) {
+            menuOuterEL[i].setAttribute("aria-hidden", "true");
+        }
+
+        setTimeout(function() {
+            menu.classList.add("menu__layer--animate");
+        });
+
+        for (var i = 0; i < menuELtabble.length; i++) {
+            menuELtabble[i].addEventListener("focusin", function(evt) {
+                menuELFocusedLast = evt.currentTarget;
+            });
+        }
+
+        if (menuELFocusedLast) {
+            menuELFocusedLast.focus();
+        } else {
+            menuELtabbleFirst.focus()
+            menuELtabbleFirst.addEventListener("keydown", function(evt) {
+                if (evt.shiftKey && evt.key === "Tab") {
+                    evt.preventDefault();
+                    menuELtabbleLast.focus();
+                }
+            });
+        }
+
+        menuELtabbleLast.addEventListener("keydown", function(evt) {
+            if (!evt.shiftKey && evt.key === "Tab") {
+                evt.preventDefault();
+                menuELtabbleFirst.focus();
+            }
+        });
+    }
+
+    menuELopen.addEventListener("click", handlerMenuOpenClick);
+    menuELclose.addEventListener("click", handlerMenuCloseClick);
+})();
 
 // 검색 input enter키로 submit 방지
 (function() {
@@ -318,95 +414,6 @@ $(function() {
             }
         });
     }
-});
-
-// 메인 메뉴
-$(function() {
-    var nav = $(".site-nav"),
-        menu = $(".side-menu"),
-        menuOuterEL = $("body").children().not(menu.add(".ie-alert, .search-content, script, .scroll-indicator")),
-        menuELlayer = menu.find(".menu__layer"),
-        menuELopen = nav.find(".nav__menu-open"),
-        menuELclose = menu.find(".menu__close"),
-        menuELtabble = menu.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        menuELtabbleFirst = menuELtabble.first(),
-        menuELtabbleLast = menuELtabble.last(),
-        menuELFocusedLast, nowScrollPos,
-        menuClose = function() {
-            // $("body")
-            //     .removeClass("scroll-disabled")
-            //     .css("top", "")
-            //     .off("scroll touchmove mousewheel");
-            // if (!$("body").hasClass("scroll-disabled")) {
-            //     $(window).scrollTop(nowScrollPos);
-            // }
-            $(document).off("keydown.menu_keydown");
-            menuELclose.add(menuELopen).attr("aria-expanded", "false");
-            $("body").css("padding-right", "").removeClass("overflow-hidden");
-            menuOuterEL.removeAttr("aria-hidden");
-            menuELlayer.stop().animate({"right": "-100%"}, 400);
-
-            setTimeout(function() {
-                menu.add(menuELlayer).removeAttr("style");
-            }, 400);
-
-            menu.attr("aria-hidden", "true");
-            if (!$(location.hash).is(":focus")) menuELopen.focus();
-        }
-
-    menuELopen.on("click", function() {
-        // $("body")
-        //     .css("top", - $(window).scrollTop() + "px")
-        //     .addClass("scroll-disabled")
-        //     .on("scroll touchmove mousewheel", function(evt){
-        //         evt.preventDefault();
-        // });
-        // nowScrollPos = $("body").css("top").replace("px", "");
-        menu
-            .attr("aria-hidden", "false")
-            .css("display", "block")
-            .on("click", function(evt) {
-                evt.target === evt.currentTarget && menuClose();
-            });
-        $(this).attr("aria-expanded", "true");
-        $("body").css("padding-right", getScrollbarWidth()).addClass("overflow-hidden");
-        menuELclose.attr("aria-expanded", "true");
-        menuOuterEL.attr("aria-hidden", "true");
-
-        setTimeout(function() {
-            menuELlayer.stop().animate({"right": "0"}, 400);
-        });
-        
-        menuELtabble.on("focusin", function() {
-            menuELFocusedLast = $(this);
-        });
-
-        menuELFocusedLast ? menuELFocusedLast.focus() : menuELtabbleFirst.focus().on("keydown", function(evt) {
-            if (evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                menuELtabbleLast.focus();
-            }
-        });
-
-        menuELtabbleLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                menuELtabbleFirst.focus();
-            }
-        });
-
-        menuELclose.on("click", menuClose);
-
-        if (menu.css("display") === "block") {
-            $(document).on("keydown.menu_keydown", function(evt) {
-                if (evt.key === "Escape") menuClose();
-            });
-        }
-
-        $("a[href*='/category-list/#']").on("click", function() {
-            if ($(".layout--categories").length || $(".layout--tags").length) menuClose();
-        });
-    });
 });
 
 // 검색 레이어

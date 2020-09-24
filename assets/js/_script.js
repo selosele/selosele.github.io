@@ -124,8 +124,8 @@ appendTooltip();
         nav.setAttribute("aria-hidden", "true");
     }
 
-    function handlerMenuCloseKeydown(a) {
-        if (nav.classList.contains("side-menu--active") && a.key === "Escape") handlerMenuCloseClick();
+    function handlerMenuCloseKeydown(evt) {
+        if (nav.classList.contains("side-menu--active") && evt.key === "Escape") handlerMenuCloseClick();
     }
 
     function handlerMenuOpenClick(evt) {

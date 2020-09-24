@@ -100,7 +100,7 @@ appendTooltip();
         menuELtabble = menu.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         menuELtabbleFirst = menuELtabble[0],
         menuELtabbleLast = menuELtabble[menuELtabble.length - 1], menuELFocusedLast,
-        menuELcategoryAnc = menu.querySelector("a[href*='/category-list/#']");
+        menuELcategoryAnc = menu.querySelectorAll("a[href*='/category-list/#']");
 
     function handlerMenuCloseClick() {
         document.removeEventListener("keydown", handlerMenuCloseKeydown);

@@ -125,14 +125,18 @@ appendTooltip();
     }
 
     function handlerMenuCloseKeydown(evt) {
-        if (menuWrapper.classList.contains("side-menu--active") && evt.key === "Escape") handlerMenuCloseClick();
+        var keyType = evt.key;
+
+        if (menuWrapper.classList.contains("side-menu--active") && (keyType === "Escape" || keyType === "Esc")) {
+            handlerMenuCloseClick();
+        }
     }
 
     function handlerMenuOpenClick(evt) {
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
         menuWrapper.addEventListener("click", function(evt) {
-            evt.target === evt.currentTarget && handlerMenuCloseClick();
+            if (evt.target === evt.currentTarget) handlerMenuCloseClick();
         });
 
         document.addEventListener("keydown", handlerMenuCloseKeydown);
@@ -333,7 +337,9 @@ $(function() {
         };
 
         $(document).on("keydown.alert_keydown", function(evt) {
-            if (evt.key === "Escape") closeIEalert();
+            var keyType = evt.key;
+
+            if (keyType === "Escape" || keyType === "Esc") closeIEalert();
         });
 
         $(".ie-alert__close").click(closeIEalert);
@@ -394,9 +400,9 @@ $(function() {
         return tocTabbleFocusedLast = $(this);
 
     }).on("keydown", function(evt) {
-        if (evt.altKey && evt.key === "`") { // alt + `키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
+        if (evt.altKey && evt.key === "1") { // alt + 1키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
             $(".toc--fixed nav").focus().on("keydown", function(evt) {
-                if (evt.altKey && evt.key === "`") { // alt + `키 : focusedLast로 초점 이동
+                if (evt.altKey && evt.key === "1") { // alt + 1키 : focusedLast로 초점 이동
                     tocTabbleFocusedLast.focus();
                 }
             });
@@ -405,11 +411,11 @@ $(function() {
 
     if ($(".toc--fixed").length) {
         $(document).on("keydown.toc_keydown", function(evt) {
-            if (evt.altKey && evt.key === "`" && !tocTabbleNode.is(":focus")) { // alt + `키 : 포스트에서 목차로 초점 이동
+            if (evt.altKey && evt.key === "1" && !tocTabbleNode.is(":focus")) { // alt + 1키 : 포스트에서 목차로 초점 이동
                 if (!$(".toc--fixed").is(":focus")) $(".toc--fixed nav").focus();
             }
     
-            if (evt.altKey && evt.key === "1" && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 1키 : 활성화된 목차 링크로 초점 이동
+            if (evt.altKey && evt.key === "2" && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 2키 : 활성화된 목차 링크로 초점 이동
                 $(".toc--active").focus();
             }
         });
@@ -498,7 +504,9 @@ $(function() {
 
         if (layer.css("display") === "block") {
             $(document).on("keydown.search_keydown", function(evt) {
-                if (evt.key === "Escape") {
+                var keyType = evt.key;
+
+                if (keyType === "Escape" || keyType === "Esc") {
                     sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
                 }
             });

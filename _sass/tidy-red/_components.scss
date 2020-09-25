@@ -151,9 +151,11 @@
    }
 
    &__image-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      @media (min-width: $min_minimal_width) {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
 
       > .page__figure,
       > img {

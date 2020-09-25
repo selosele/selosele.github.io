@@ -18,77 +18,24 @@ var anchorSetAriaCurrent = function(anchorNode) {
     }
 };
 
-// scroll indicator
-var activateScrollIndicator = function() {
-    if (!document.querySelector(".layout--post")) return;
-
-    var window_height = document.body.scrollHeight - window.innerHeight,
-        scroll_val = ((window.pageYOffset) / window_height) * 100;
-
-    document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
-};
-
-// abbr tooltip 생성 및 handler
-var appendTooltip = function() {
-    var abbr = document.querySelectorAll("abbr[title]");
-    if (!abbr) return;
-
-    for (var i = 0; i < abbr.length; i++) {
-        var abbrSpan = document.createElement("span"),
-            abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/ |%/g, "1");
-
-        abbr[i].setAttribute("tabindex", "0");
-        abbr[i].setAttribute("aria-describedby", abbr_title);
-        abbrSpan.hidden = true;
-        abbrSpan.setAttribute("role", "tooltip");
-        abbrSpan.id = abbr_title;
-        abbrSpan.textContent = abbr[i].title;
-        abbrSpan.classList.add("abbr__tooltip");
-        abbr[i].appendChild(abbrSpan);
-    }
-};
-
-var handlerTooltipClick = function(evt) {
-    if (evt.target !== evt.currentTarget) return;
-
-    var abbrTooltip = evt.currentTarget.querySelector(".abbr__tooltip");
-
-    if (!abbrTooltip.classList.contains("abbr__tooltip--active")) {
-        abbrTooltip.hidden = false;
-        abbrTooltip.setAttribute("tabindex", "0");
-        abbrTooltip.classList.add("abbr__tooltip--active");
-    } else {
-        abbrTooltip.hidden = true;
-        abbrTooltip.setAttribute("tabindex", "-1");
-        abbrTooltip.classList.remove("abbr__tooltip--active");
-    }
-};
-
-var handlerTooltipKeydown = function(evt) {
-    if (evt.key === "Enter") handlerTooltipClick(evt);
-};
-
-// post archive 아코디언
-var handlerArchiveClick = function(evt) {
-    var _t = evt.currentTarget,
-        archiveListMatchElement = document.querySelector("[aria-labelledby='"+_t.id+"']");
-
-    if (archiveListMatchElement.classList.contains("archive__list--active")) {
-        archiveListMatchElement.classList.remove("archive__list--active");
-        archiveListMatchElement.setAttribute("hidden", false);
-        archiveListMatchElement.setAttribute("tabindex", "-1");
-        _t.setAttribute("aria-expanded", "false");
-    } else {
-        archiveListMatchElement.classList.add("archive__list--active");
-        archiveListMatchElement.setAttribute("hidden", true);
-        archiveListMatchElement.setAttribute("tabindex", "0");
-        _t.setAttribute("aria-expanded", "true");
-    }
-};
-
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
 
-appendTooltip();
+// IE 11 ~ 9 체크
+(function() {
+    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
+})();
+
+// IE 10 이하 체크
+(function() {
+    if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
+})();
+
+// 검색 input enter키로 submit 방지
+(function() {
+    document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
+        if (evt.key === "Enter") evt.preventDefault();
+    });
+})();
 
 // 메인 메뉴
 (function() {
@@ -102,8 +49,8 @@ appendTooltip();
         menuELtabbleLast = menuELtabble[menuELtabble.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href*='/category-list/#']");
 
-    function handlerMenuCloseClick() {
-        document.removeEventListener("keydown", handlerMenuCloseKeydown);
+    function handlerCloseClick() {
+        document.removeEventListener("keydown", handlerCloseKeydown);
         menuELclose.blur();
         menuELclose.setAttribute("aria-expanded", "false");
         menuELopen.setAttribute("aria-expanded", "false");
@@ -124,26 +71,26 @@ appendTooltip();
         menuWrapper.setAttribute("aria-hidden", "true");
     }
 
-    function handlerMenuCloseKeydown(evt) {
+    function handlerCloseKeydown(evt) {
         var keyType = evt.key;
 
         if (menuWrapper.classList.contains("side-menu--active") && (keyType === "Escape" || keyType === "Esc")) {
-            handlerMenuCloseClick();
+            handlerCloseClick();
         }
     }
 
-    function handlerMenuOpenClick(evt) {
+    function handlerOpenClick(evt) {
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
         menuWrapper.addEventListener("click", function(evt) {
-            if (evt.target === evt.currentTarget) handlerMenuCloseClick();
+            if (evt.target === evt.currentTarget) handlerCloseClick();
         });
 
-        document.addEventListener("keydown", handlerMenuCloseKeydown);
+        document.addEventListener("keydown", handlerCloseKeydown);
 
         for (var i = 0; i < menuELcategoryAnc.length; i++) {
             menuELcategoryAnc[i].addEventListener("click", function() {
-                if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) handlerMenuCloseClick();
+                if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) handlerCloseClick();
             });
         }
 
@@ -186,25 +133,22 @@ appendTooltip();
         });
     }
 
-    menuELopen.addEventListener("click", handlerMenuOpenClick);
-    menuELclose.addEventListener("click", handlerMenuCloseClick);
+    menuELopen.addEventListener("click", handlerOpenClick);
+    menuELclose.addEventListener("click", handlerCloseClick);
 })();
 
-// 검색 input enter키로 submit 방지
+// scroll indicator
 (function() {
-    document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-        if (evt.key === "Enter") evt.preventDefault();
-    });
-})();
+    function activateScrollIndicator() {
+        if (!document.querySelector(".layout--post")) return;
 
-// IE 11 ~ 9 체크
-(function() {
-    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
-})();
+        var window_height = document.body.scrollHeight - window.innerHeight,
+            scroll_val = ((window.pageYOffset) / window_height) * 100;
 
-// IE 10 이하 체크
-(function() {
-    if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
+        document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
+    }
+
+    window.addEventListener("scroll", activateScrollIndicator);
 })();
 
 // heading link
@@ -232,33 +176,52 @@ appendTooltip();
     }
 })();
 
-// scroll indicator event 등록
+// abbr tooltip 생성 및 handler
 (function() {
-    window.addEventListener("scroll", activateScrollIndicator);
-})();
+    var appendTooltip = function() {
+        var abbr = document.querySelectorAll("abbr[title]");
+        if (!abbr) return;
 
-// abbr event 등록
-(function() {
+        for (var i = 0; i < abbr.length; i++) {
+            var abbrSpan = document.createElement("span"),
+                abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/ |%/g, "1");
+
+            abbr[i].setAttribute("tabindex", "0");
+            abbr[i].setAttribute("aria-describedby", abbr_title);
+            abbrSpan.hidden = true;
+            abbrSpan.setAttribute("role", "tooltip");
+            abbrSpan.id = abbr_title;
+            abbrSpan.textContent = abbr[i].title;
+            abbrSpan.classList.add("abbr__tooltip");
+            abbr[i].appendChild(abbrSpan);
+        }
+    },
+    handlerClick = function(evt) {
+        if (evt.target !== evt.currentTarget) return;
+
+        var abbrTooltip = evt.currentTarget.querySelector(".abbr__tooltip");
+
+        if (!abbrTooltip.classList.contains("abbr__tooltip--active")) {
+            abbrTooltip.hidden = false;
+            abbrTooltip.setAttribute("tabindex", "0");
+            abbrTooltip.classList.add("abbr__tooltip--active");
+        } else {
+            abbrTooltip.hidden = true;
+            abbrTooltip.setAttribute("tabindex", "-1");
+            abbrTooltip.classList.remove("abbr__tooltip--active");
+        }
+    },
+    handlerKeydown = function(evt) {
+        if (evt.key === "Enter") handlerClick(evt);
+    };
+
+    appendTooltip();
+
     var abbr = document.querySelectorAll("abbr[title]");
-    if (!abbr) return;
-
-    for (var i = 0; i < abbr.length; i++) {
-        abbr[i].addEventListener("click", handlerTooltipClick);
-        abbr[i].addEventListener("keydown", handlerTooltipKeydown);
-    }
-})();
-
-// page share link
-(function() {
-    var shareElement = document.getElementById("page-share");
-    if (shareElement) {
-        var shareELbtn = shareElement.querySelectorAll("a");
-
-        for (var i = 0; i < shareELbtn.length; i++) {
-            shareELbtn[i].addEventListener("click", function(evt) {
-                evt.preventDefault();
-                window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
-            });
+    if (abbr) {
+        for (var i = 0; i < abbr.length; i++) {
+            abbr[i].addEventListener("click", handlerClick);
+            abbr[i].addEventListener("keydown", handlerKeydown);
         }
     }
 })();
@@ -279,13 +242,44 @@ appendTooltip();
     }
 })();
 
-// post archive 아코디언 event 등록
+// page share link
 (function() {
-    var archiveBtnElement = document.querySelectorAll(".archive__btn");
-    if (!archiveBtnElement) return;
+    var shareElement = document.getElementById("page-share");
+    if (shareElement) {
+        var shareELbtn = shareElement.querySelectorAll("a");
 
-    for (var i = 0; i < archiveBtnElement.length; i++) {
-        archiveBtnElement[i].addEventListener("click", handlerArchiveClick);
+        for (var i = 0; i < shareELbtn.length; i++) {
+            shareELbtn[i].addEventListener("click", function(evt) {
+                evt.preventDefault();
+                window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
+            });
+        }
+    }
+})();
+
+// post archive 아코디언
+(function() {
+    var handlerClick = function(evt) {
+        var _t = evt.currentTarget,
+            archiveListMatchElement = document.querySelector("[aria-labelledby='"+_t.id+"']");
+
+        if (archiveListMatchElement.classList.contains("archive__list--active")) {
+            archiveListMatchElement.classList.remove("archive__list--active");
+            archiveListMatchElement.setAttribute("hidden", false);
+            archiveListMatchElement.setAttribute("tabindex", "-1");
+            _t.setAttribute("aria-expanded", "false");
+        } else {
+            archiveListMatchElement.classList.add("archive__list--active");
+            archiveListMatchElement.setAttribute("hidden", true);
+            archiveListMatchElement.setAttribute("tabindex", "0");
+            _t.setAttribute("aria-expanded", "true");
+        }
+    },
+    archiveBtnElement = document.querySelectorAll(".archive__btn");
+    if (archiveBtnElement) {
+        for (var i = 0; i < archiveBtnElement.length; i++) {
+            archiveBtnElement[i].addEventListener("click", handlerClick);
+        }
     }
 })();
 

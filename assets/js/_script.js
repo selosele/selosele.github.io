@@ -455,7 +455,7 @@ $(function() {
                         .on("propertychange change keyup paste input focus", function() {
                             var sInputText = this.value;
 
-                            if (sInputText.length) {
+                            if (sInputText) {
                                 sInputVal = false;
                                 sInputValNotChanged = false;
                                 if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");

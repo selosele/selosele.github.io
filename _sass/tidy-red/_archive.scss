@@ -135,6 +135,7 @@
       background-position: 50% 50%;
       background-size: cover;
       box-shadow: rgba(0,0,0,0.2) 0.25rem 0.25rem 0.5rem;
+      box-sizing: border-box;
 
       @media (min-width: $min_small_width) {
          height: 10rem;

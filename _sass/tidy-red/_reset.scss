@@ -2,15 +2,6 @@
    STYLE RESETS
    ========================================================================== */
 
-* {
-	box-sizing: border-box;
-	
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
-}
-
 img {
   max-width: 100%;
   border: 0;

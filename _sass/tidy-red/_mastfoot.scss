@@ -9,10 +9,11 @@
 
   &__inner-wrap {
     position: relative;
-    width: 90vw;
+    width: $layout_width_per;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5rem 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 
     @media (min-width: $min_small_width) {
       display: inline-block;
@@ -43,6 +44,7 @@
     background-color: $grey12;
     border: 1px solid $main_color;
     border-radius: 50%;
+    box-sizing: border-box;
 
     a {
       display: block;

@@ -321,6 +321,7 @@
                   border-radius: 50%;
                   border: 2px solid $main_color;
                   box-shadow: rgba(0,0,0,0.3) 1px 1px 10px 0;
+                  box-sizing: border-box;
    
                   > span {
                      display: block;

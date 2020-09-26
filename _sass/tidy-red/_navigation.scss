@@ -30,6 +30,7 @@
       padding: 4rem 1.5rem;
       background-color: $grey07;
       box-shadow: rgba(0,0,0,0.3) 0.4rem 0.4rem 1rem 0.5rem;
+      box-sizing: border-box;
       transition: right 0.4s ease-in-out;
 
       &--animate {
@@ -106,6 +107,7 @@
             margin-top: 0.8em;
             margin-bottom: 0.8em;
             padding-right: 2em;
+            box-sizing: border-box;
          }
       }
    }
@@ -220,6 +222,7 @@
       list-style: none;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
 
       @media (min-width: $min_medium_width) {
          font-size: 1.2rem;
@@ -227,114 +230,70 @@
    }
 
    li {
-      position: relative;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      margin-left: 0.225em;
+      margin-right: 0.225em;
       line-height: 1;
 
-      @media (max-width: $medium_width) {
-         &.page--total {
-            a {
-               position: relative;
-
-               &:before {
-                  content: "";
-                  display: block;
-                  position: absolute;
-                  top: 0;
-                  bottom: 0;
-                  left: 0;
-                  transform: skewX(-30deg);
-                  width: 1px;
-                  height: 1.1rem;
-                  margin: auto 0;
-                  background-color: $black03;
-               }
-            }
-         }
-   
-         &.page--arrow {
-            &:first-of-type {
-               margin-right: 0.5rem;
-            }
-
-            &:last-of-type {
-               margin-left: 0.5rem;
-            }
-
-            a {
-               overflow: hidden;
-               position: relative;
-               width: 2rem;
-               height: 2rem;
-               border: 1px solid $main_color;
-               color: transparent;
-
-               &:before,
-               &:after {
-                  display: block;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  width: 20px;
-                  height: 17px;
-                  margin: auto;
-                  font-size: 1rem;
-                  line-height: 17px;
-                  color: $black;
-               }
-            }
-         }
+      @media (min-width: $min_small_width) {
+         margin-left: 0.417em;
+         margin-right: 0.417em;
       }
 
       a {
          display: block;
-         padding: 0.5rem 1rem;
+         position: relative;
+         padding: 0.417em 0.3em;
          color: $black03;
 
-         @media (min-width: $min_large_width) {
-            &:hover,
-            &:focus,
-            &:active {
-               color: $sub_color03;
-            }
-         }
-      }
-
-      @media (max-width: $medium_width) {
-         margin-left: 0;
-         margin-right: 0;
-
-         &:not(.page--visible) {
-            display: none;
-         }
-
-         &:first-child {
-            a {
-               &:before {
-                  content: "\e93b";
-                  font-family: $icon_font;
-               }
-            }
-         }
-
-         &:last-child {
-            a {
-               &:before {
-                  content: "\e93e";
-                  font-family: $icon_font;
-               }
-            }
+         @media (min-width: $min_small_width) {
+            padding-left: 0.833em;
+            padding-right: 0.833em;
          }
       }
    }
 
    .page--current {
-      margin: 0 1rem;
+      margin-left: 0.245em;
+      margin-right: 0.245em;
       font-size: 1.833em;
       color: $sub_color03;
+
+      @media (min-width: $min_small_width) {
+         margin-left: 0.455em;
+         margin-right: 0.455em;
+      }
+   }
+
+   .page--arrow {
+      a {
+         &:before {
+            content: "";
+            display: block;
+            font-family: $icon_font;
+            font-size: 1em;
+            color: $black;
+
+            @media (min-width: $min_small_width) {
+               font-size: 1.083em;
+            }
+         }
+      }
+   }
+
+   .page--prev {
+      a {
+         &:before {
+            content: "\e93b";
+         }
+      }
+   }
+
+   .page--next {
+      a {
+         &:before {
+            content: "\e93e";
+         }
+      }
    }
 
    .page--disabled {
@@ -368,6 +327,7 @@
    border: 1px solid $grey;
    border-radius: 0.4rem;
    background-color: $grey12;
+   box-sizing: border-box;
    transition: $standard_transition;
 
    nav {

@@ -309,7 +309,7 @@
 
 // post header
 .post-header {
-   @include common_layout($width: 90vw, $min_general_width_value: null);
+   @include common_layout($width: $layout_width_per, $min_general_width_value: null);
    padding: 0.9rem 0 2.5rem;
    color: $grey12;
 

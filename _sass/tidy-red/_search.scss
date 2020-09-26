@@ -14,6 +14,7 @@
   padding: 2.5rem 2.969vw;
   background-color: rgba(0,0,0,0.5);
   opacity: 0;
+  box-sizing: border-box;
 
   &__inner-wrap {
     position: relative;
@@ -23,6 +24,7 @@
     border: 2px solid $black05;
     background-color: $grey12;
     box-shadow: rgba(0,0,0,0.1) 0.5rem 0.5rem 0.5rem;
+    box-sizing: border-box;
 
     @media (min-width: $min_small_width) {
       padding-top: 3rem;

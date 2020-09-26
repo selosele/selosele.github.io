@@ -186,6 +186,7 @@
    text-overflow: ellipsis;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 0.15rem;
    white-space: nowrap;
+   box-sizing: border-box;
 
    &:before {
       font-family: $icon_font;

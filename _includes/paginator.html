@@ -6,9 +6,17 @@
     {% comment %} Link for previous page {% endcomment %}
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
-        <li class="page--visible page--arrow"><a href="{{ first_page_path }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a></li>
+        <li class="page--visible page--arrow page--prev">
+          <a href="{{ first_page_path }}">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span>
+          </a>
+        </li>
       {% else %}
-        <li class="page--visible page--arrow"><a href="{{ site.paginate_path | replace: ':num', paginator.previous_page | replace: '//', '/' | relative_url }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a></li>
+        <li class="page--visible page--arrow page--prev">
+          <a href="{{ site.paginate_path | replace: ':num', paginator.previous_page | replace: '//', '/' | relative_url }}">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span>
+          </a>
+        </li>
       {% endif %}
     {% endif %}
 
@@ -59,7 +67,11 @@
 
     {% comment %} Link next page {% endcomment %}
     {% if paginator.next_page %}
-      <li class="page--visible page--arrow"><a href="{{ site.paginate_path | replace: ':num', paginator.next_page | replace: '//', '/' | relative_url }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a></li>
+      <li class="page--visible page--arrow page--next">
+        <a href="{{ site.paginate_path | replace: ':num', paginator.next_page | replace: '//', '/' | relative_url }}">
+          <span class="visually-hidden">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</span>
+        </a>
+      </li>
     {% endif %}
   </ul>
 </nav>

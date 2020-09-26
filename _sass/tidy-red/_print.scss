@@ -90,7 +90,7 @@
       // toc
       .content-wrapper {
         &.toc-layout {
-          max-width: 1200px;
+          max-width: $layout_width_px;
           margin-left: auto;
           margin-right: auto;
         }

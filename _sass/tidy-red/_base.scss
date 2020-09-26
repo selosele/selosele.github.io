@@ -102,8 +102,8 @@ small {
 }
 
 li {
-   margin-top: 0.3rem;
-   margin-bottom: 0.3rem;
+   margin-top: 0.286em;
+   margin-bottom: 0.286em;
    line-height: 1.6;
 }
 
@@ -125,13 +125,13 @@ pre {
 }
 
 caption {
-   padding: 0.5rem;
+   padding: 0.476em;
    line-height: 1.5;
    color: $sub_color03;
 }
 
 td, th {
-   padding: 0.5rem 1rem;
+   padding: 0.476em 1em;
    border: 1px solid $grey05;
    color: inherit;
    line-height: 1.5;
@@ -195,7 +195,7 @@ abbr {
 blockquote {
    position: relative;
    z-index: 1;
-   padding: 1rem 1.5rem;
+   padding: 0.952em 1.429em;
    font-style: italic;
 
    &:before {
@@ -207,7 +207,7 @@ blockquote {
       z-index: -1;
       width: auto;
       height: auto;
-      font-size: 12rem;
+      font-size: 11.429em;
       font-style: normal;
       line-height: 1;
       color: rgba(0, 0, 0, 0.1);
@@ -215,18 +215,20 @@ blockquote {
    
    p {
       &:first-of-type {
-         margin: 1rem 0;
+         margin-top: 0.952em;
+         margin-bottom: 0.952em;
       }
 
       &:last-of-type {
-         margin: 0;
+         margin-top: 0;
+         margin-bottom: 0;
       }
    }
 
    cite {
       &:before {
          content: "\2014";
-         margin-right: 0.3rem;
+         margin-right: 0.286em;
          font-weight: 200;
       }
    }

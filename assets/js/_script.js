@@ -1,21 +1,12 @@
-// 화면 전체 스크롤바 너비 구하기
-var getScrollbarWidth = function() {
-    var scrollBar_w = window.innerWidth - document.documentElement.offsetWidth;
-    
-    while (scrollBar_w) {
-        return scrollBar_w + "px";
-    }
-};
-
 // anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
-var anchorSetAriaCurrent = function(anchorNode) {
-    if (!anchorNode) return;
+var anchorSetAriaCurrent = function(anchor) {
+    if (!anchor) return;
 
-    for (var i = 0; i < anchorNode.length; i++) {
-        if (anchorNode[i].getAttribute("href") === location.href) {
-            anchorNode[i].setAttribute("aria-current", "page");
+    Array.prototype.slice.call(anchor).forEach(function(a) {
+        if (a.getAttribute("href") === location.href) {
+            a.setAttribute("aria-current", "page");
         }
-    }
+    });
 };
 
 anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
@@ -57,7 +48,6 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
         menuELopen.focus();
         menuWrapper.setAttribute("aria-hidden", "true");
         menuLayer.classList.remove("menu__layer--animate");
-        document.body.style.paddingRight = "";
         document.body.classList.remove("overflow-hidden");
 
         for (var i = 0; i < menuOuterEL.length; i++) {
@@ -82,7 +72,6 @@ anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
         menuELclose.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
-        document.body.style.paddingRight = getScrollbarWidth();
         document.body.classList.add("overflow-hidden");
 
         setTimeout(function() {
@@ -428,7 +417,7 @@ $(function() {
         
         layerClose = function() {
             $(document).off("keydown.search_keydown");
-            $("body").css("padding-right", "").removeClass("overflow-hidden");
+            $("body").removeClass("overflow-hidden");
             closeBtn.attr("aria-expanded", "false");
             layer.stop().animate({"opacity": "0"}, {
                 duration: 200,
@@ -448,7 +437,7 @@ $(function() {
         sInputValNotChanged = true;
 
         $(this).add(closeBtn).attr("aria-expanded", "true");
-        $("body").css("padding-right", getScrollbarWidth()).addClass("overflow-hidden");
+        $("body").addClass("overflow-hidden");
         outerEL.attr("aria-hidden", "true");
         layer
             .css("display", "block")
@@ -464,11 +453,18 @@ $(function() {
                     sInput
                         .focus()
                         .on("propertychange change keyup paste input focus", function() {
-                            if (sInput.val().length) {
+                            var sInputText = this.value;
+
+                            if (sInputText.length) {
                                 sInputVal = false;
                                 sInputValNotChanged = false;
                                 if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");
-                                anchorSetAriaCurrent(document.getElementById("search-layer").querySelectorAll(".archive__item-title a"));
+
+                                $("#results li a:contains('"+sInputText+"')").html(function(_, html) {
+                                    if (!$(this).find(".results__item__match").length) {
+                                        return html.replace(sInputText, '<span class="results__item__match">'+sInputText+'</span>');
+                                    }
+                                });
                             } else {
                                 sInputVal = true;
                                 sInputValNotChanged = true;

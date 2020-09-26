@@ -1,0 +1,26 @@
+<div aria-hidden="true" class="search-content">
+	<div role="dialog" aria-modal="true" aria-labelledby="search-title" id="search-layer" class="search-content__inner-wrap">
+		<div class="search-content__form-wrapper">
+			<form>
+				<label for="search-input" id="search-title">{{ site.data.ui-text[site.locale].search_label_text }}</label>
+				<input type="search" id="search-input">
+			</form>
+		</div>
+		<ul id="results" class="results"></ul>
+		<button type="button" aria-controls="search-layer" aria-expanded="true" class="search__close">
+			<span class="visually-hidden">{{ site.data.ui-text[site.locale].search_close_label }}</span>
+		</button>
+	</div>
+</div>
+
+<script src="/assets/js/plugins/simple-jekyll-search.min.js"></script>
+<script>
+    var searchPlugin = SimpleJekyllSearch({
+		json: '/search.json',
+		searchInput: document.getElementById('search-input'),
+		resultsContainer: document.getElementById('results'),
+		searchResultTemplate: '<li class="results__item"><a href="{url}">{title}</a></li>',
+		noResultsText: '검색 결과를 찾을 수 없습니다.',
+		limit: 20
+	});
+</script>

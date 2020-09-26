@@ -30,7 +30,7 @@
       padding: 4rem 1.5rem;
       background-color: $grey07;
       box-shadow: rgba(0,0,0,0.3) 0.4rem 0.4rem 1rem 0.5rem;
-      transition: right 0.4s;
+      transition: right 0.4s ease-in-out;
 
       &--animate {
          right: 0;
@@ -43,7 +43,7 @@
       h2 {
          margin-bottom: 0.5em;
          padding-bottom: 0.5em;
-         border-bottom: 1px dashed $black;
+         border-bottom: 1px dotted $black;
          color: $black;
          font-weight: 700;
          font-size: calc(1.3rem + 0.5vw);
@@ -167,7 +167,7 @@
       &-wrapper {
          margin-top: 1rem;
          padding-top: 1rem;
-         border-top: 1px solid $black;
+         border-top: 1px dotted $black;
          line-height: 1.5;
          color: $black;
          text-align: center;

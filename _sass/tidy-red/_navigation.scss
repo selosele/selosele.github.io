@@ -234,16 +234,26 @@
       margin-right: 0.225em;
       line-height: 1;
 
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min_minimal_width) {
          margin-left: 0.417em;
          margin-right: 0.417em;
+      }
+
+      @media (min-width: $min_small_width) {
+         margin-left: 0.556em;
+         margin-right: 0.556em;
       }
 
       a {
          display: block;
          position: relative;
-         padding: 0.417em 0.3em;
+         padding: 0.417em 0.2em;
          color: $black03;
+
+         @media (min-width: $min_minimal_width) {
+            padding-left: 0.556em;
+            padding-right: 0.556em;
+         }
 
          @media (min-width: $min_small_width) {
             padding-left: 0.833em;
@@ -267,7 +277,6 @@
    .page--arrow {
       a {
          &:before {
-            content: "";
             display: block;
             font-family: $icon_font;
             font-size: 1em;

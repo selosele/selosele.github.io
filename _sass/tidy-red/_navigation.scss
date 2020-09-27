@@ -133,6 +133,7 @@
          letter-spacing: normal;
          line-height: 1;
          color: $black;
+         -webkit-font-smoothing: antialiased;
       }
    }
 
@@ -151,6 +152,7 @@
          font-family: $icon_font;
          font-size: 1.2rem;
          color: $grey12;
+         -webkit-font-smoothing: antialiased;
       }
    }
 
@@ -281,6 +283,7 @@
             font-family: $icon_font;
             font-size: 1em;
             color: $black;
+            -webkit-font-smoothing: antialiased;
 
             @media (min-width: $min_small_width) {
                font-size: 1.083em;
@@ -416,6 +419,7 @@
          font-weight: 200;
          color: $sub_color03;
          vertical-align: middle;
+         -webkit-font-smoothing: antialiased;
       }
    }
 

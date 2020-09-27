@@ -66,6 +66,7 @@
         font-family: $icon_font;
         font-size: 1.5rem;
         color: $black;
+        -webkit-font-smoothing: antialiased;
       }
     }
   }
@@ -80,6 +81,7 @@
         content: "\e9e5";
         margin-right: 0.132em;
         font-family: $icon_font;
+        -webkit-font-smoothing: antialiased;
       }
     }
   }

@@ -95,6 +95,7 @@
          &:before {
             font-family: $icon_font;
             font-size: 1.1em;
+            -webkit-font-smoothing: antialiased;
             
             @media (min-width: $min_medium_width) {
                vertical-align: middle;
@@ -304,6 +305,7 @@
          font-family: $icon_font;
          font-size: 1.8rem;
          color: $sub_color03;
+         -webkit-font-smoothing: antialiased;
       }
    }
 }

@@ -99,6 +99,7 @@
         font-family: $icon_font;
         font-size: 3.2em;
         color: $sub_color03;
+        -webkit-font-smoothing: antialiased;
       }
     }
 
@@ -144,5 +145,6 @@
     font-family: $icon_font;
     font-size: 1.5rem;
     color: $main_color;
+    -webkit-font-smoothing: antialiased;
  }
 }

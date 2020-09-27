@@ -29,6 +29,9 @@
    position: relative;
    @include teaser();
    background-image: linear-gradient(45deg, $grey10, $grey11);
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   background-size: cover;
 
    &__teaser {
       overflow: hidden;
@@ -170,14 +173,6 @@
             justify-content: flex-start;
          }
       }
-   }
-}
-
-.layout--post {
-   .masthead {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
    }
 }
 

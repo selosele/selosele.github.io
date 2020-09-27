@@ -15,7 +15,9 @@
 {% elsif page.header.overlay_image %}
   {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 {% else %}
-  {% capture overlay_img_path %}{{ '/assets/images/mhead_bg.jpg' }}{% endcapture %}
+  {% if site.masthead.teaser.bg %}
+    {% capture overlay_img_path %}{{ '/assets/images/mhead_bg.jpg' }}{% endcapture %}
+  {% endif %}
 {% endif %}
 
 {% if page.header.overlay_filter contains "rgba" %}

@@ -3,7 +3,7 @@
 		<div class="search-content__form-wrapper">
 			<form>
 				<label for="search-input" id="search-title">{{ site.data.ui-text[site.locale].search_label_text }}</label>
-				<input type="search" id="search-input">
+				<input type="text" role="combobox" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="results" id="search-input" class="search__input">
 			</form>
 		</div>
 		<ul id="results" class="results"></ul>

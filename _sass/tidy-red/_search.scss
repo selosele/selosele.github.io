@@ -119,15 +119,15 @@
       white-space: nowrap;
       @include search_item();
     }
-
-    input[type="search"] {
-      width: 100%;
-      padding-right: 1rem;
-      border: 0;
-      color: $black02;
-      @include search_item();
-    }
   }
+}
+
+.search__input {
+  width: 100%;
+  padding-right: 1rem;
+  border: 0;
+  color: $black02;
+  @include search_item();
 }
 
 .search__close {

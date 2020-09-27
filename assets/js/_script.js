@@ -1,16 +1,3 @@
-// anchor href와 현재 url 일치할경우 aria-current="page" 속성 추가
-var anchorSetAriaCurrent = function(anchor) {
-    if (!anchor) return;
-
-    Array.prototype.slice.call(anchor).forEach(function(a) {
-        if (a.getAttribute("href") === location.href) {
-            a.setAttribute("aria-current", "page");
-        }
-    });
-};
-
-anchorSetAriaCurrent(document.querySelectorAll("a:not(.site-title)"));
-
 // IE 11 ~ 9 체크
 (function() {
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
@@ -391,11 +378,11 @@ $(function() {
 
     if ($(".toc--fixed").length) {
         $(document).on("keydown.toc_keydown", function(evt) {
-            if (evt.altKey && evt.key === "1" && !tocTabbleNode.is(":focus")) { // alt + 1키 : 포스트에서 목차로 초점 이동
+            if ((evt.altKey && evt.key === "1") && !tocTabbleNode.is(":focus")) { // alt + 1키 : 포스트에서 목차로 초점 이동
                 if (!$(".toc--fixed").is(":focus")) $(".toc--fixed nav").focus();
             }
     
-            if (evt.altKey && evt.key === "2" && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 2키 : 활성화된 목차 링크로 초점 이동
+            if ((evt.altKey && evt.key === "2") && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 2키 : 활성화된 목차 링크로 초점 이동
                 $(".toc--active").focus();
             }
         });
@@ -413,7 +400,7 @@ $(function() {
         tabbaleLast = tabbale.last(),
         sForm = layer.find("form"),
         sLabel = sForm.find("label"),
-        sInput = layer.find("input[type='search']"), sInputVal, sInputValNotChanged,
+        sInput = $("#search-input"), sInputVal, sInputValNotChanged,
         
         layerClose = function() {
             $(document).off("keydown.search_keydown");
@@ -461,7 +448,7 @@ $(function() {
                                 if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");
 
                                 $("#results li a:contains('"+sInputText+"')").html(function(_, html) {
-                                    if (!$(this).find(".results__item__match").length) {
+                                    if (!$(this).children(".results__item__match").length) {
                                         return html.replace(sInputText, '<span class="results__item__match">'+sInputText+'</span>');
                                     }
                                 });
@@ -470,6 +457,23 @@ $(function() {
                                 sInputValNotChanged = true;
                                 sLabel.removeClass("visually-hidden");
                             }
+
+                            if ($("#results li").length) {
+                                sInput.attr("aria-expanded", "true");
+                            } else {
+                                sInput.attr("aria-expanded", "false");
+                            }
+                    })
+                    .on("keydown", function(evt) {
+                        switch (evt.key) {
+                            case "ArrowDown":
+                            case "Down":
+                                if ($("#results li").length) {
+                                    evt.preventDefault();
+                                    $("#results li:first a").focus();
+                                }
+                                break;
+                        }
                     });
                 }
             });
@@ -489,12 +493,50 @@ $(function() {
             }
         });
 
+        $(document).on("keydown.searchResult_keydown", "#results li a", function(evt) {
+            // if (evt.defaultPrevented) return;
+
+            var _t = $(evt.currentTarget),
+                _t_list = _t.parent("li"),
+                list = $("#results li");
+
+            switch (evt.key) {
+                case "ArrowUp":
+                case "Up":
+                    !_t_list.prev().length ? list.last().children("a").focus() : _t_list.prev().children("a").focus();
+                    evt.stopPropagation();
+                    break;
+                
+                case "ArrowDown":
+                case "Down":
+                    !_t_list.next().length ? list.first().children("a").focus() : _t_list.next().children("a").focus();
+                    evt.stopPropagation();
+                    break;
+            }
+        });
+
         if (layer.css("display") === "block") {
             $(document).on("keydown.search_keydown", function(evt) {
                 var keyType = evt.key;
 
                 if (keyType === "Escape" || keyType === "Esc") {
-                    sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
+                    $("#results li a").is(":focus") && sInput.focus();
+                    // sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
+                    
+                    if (!sInputValNotChanged || sInput.is(":focus")) {
+                        if (sInputVal) {
+                            layerClose();
+                        } else {
+                            if (!sInput.is(":focus")) {
+                                layerClose();
+                            } else {
+                                sForm[0].reset();
+                                $("#results").empty();
+                            }
+                        }
+                    } else {
+                        layerClose();
+                    }
                 }
             });
         }

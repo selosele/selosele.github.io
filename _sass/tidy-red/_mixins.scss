@@ -173,28 +173,22 @@
    display: block;
    overflow: hidden;
    max-width: 70%;
-   height: 1.65rem;
    margin-bottom: 0.3rem;
-   padding-left: 0.65rem;
-   padding-right: 0.65rem;
+   padding: 0.35rem 0.65rem;
    border-radius: 0.15rem;
    box-shadow: rgba(0,0,0,0.2) 0.15rem 0.15rem 0.5rem;
-   line-height: 1.65rem;
    font-family: $default_font03;
    font-size: 0.85rem;
    color: $grey12;
-   text-overflow: ellipsis;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 0.15rem;
+   text-overflow: ellipsis;
    white-space: nowrap;
    box-sizing: border-box;
 
    &:before {
-      display: inline-block;
-      height: 100%;
       font-family: $icon_font;
       font-size: 1em;
-      line-height: inherit;
-      vertical-align: top;
+      vertical-align: -0.05em;
    }
 }
 

@@ -16,7 +16,7 @@
   {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 {% else %}
   {% if site.masthead.teaser.bg %}
-    {% capture overlay_img_path %}{{ '/assets/images/mhead_bg.jpg' }}{% endcapture %}
+    {% capture overlay_img_path %}{{ site.masthead.teaser.bg }}{% endcapture %}
   {% endif %}
 {% endif %}
 

@@ -9,16 +9,16 @@ figure.highlight {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-  background-color: $black05;
+  background-color: $code_black;
   font-family: $default_font02;
   font-size: 0.9em;
   line-height: 1.8;
-  color: $grey12;
+  color: $grey08;
 
   > pre,
   pre.highlight {
     margin: 0;
-    padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
   }
 }
 
@@ -73,7 +73,7 @@ code {
 
 .highlight {
   .hll {
-    background-color: $blue06;
+    background-color: $code_grey02;
   }
 
   > pre {
@@ -85,205 +85,208 @@ code {
     white-space: pre;
   }
 
+  .c {
+	color: $code_grey;
+  }
+
+  .err {
+	color: $code_red;
+  }
+
+  .k {
+	color: $code_purple;
+  }
+
+  .l {
+	color: $code_orange;
+  }
+
+  .n, .h {
+	color: $grey08;
+  }
+
+  .o {
+	color: $code_green;
+  }
+
+  .p {
+	color: $grey08;
+  }
+
+  .cm, .cp, .c1, .cs {
+	color: $code_grey;
+  }
+
+  .gd {
+	color: $code_red;
+  }
+
+  .ge {
+	font-style: italic;
+  }
+
   .gh {
-    color: $code_grey06;
+	color: $grey08;
+	font-weight: 700;
   }
-  .sr {
-    color: $code_yellow02;
+
+  .gi {
+	color: $code_green02;
   }
-  .go {
-    color: $code_grey05;
-  }
+
   .gp {
-    color: $code_grey04;
+	color: $code_grey;
+	font-weight: 700;
   }
-  .gs {}
+
+  .gs {
+	font-weight: 700;
+  }
+
   .gu {
-    color: $code_grey03;
+	color: $code_green;
+	font-weight: 700;
   }
+
+  .kc, .kd {
+	color: $code_purple;
+  }
+
+  .kn {
+	color: $code_green;
+  }
+
+  .kp, .kr {
+	color: $code_purple;
+  }
+
+  .kt {
+	color: $code_yellow;
+  }
+
+  .ld {
+	color: $code_green02;
+  }
+
+  .m {
+	color: $code_orange;
+  }
+
+  .s {
+	color: $code_green02;
+  }
+
+  .na {
+	color: $code_blue;
+  }
+
   .nb {
-    color: $code_yellow02;
+	color: $grey08;
   }
-  .cm {
-    color: $code_grey02;;
+
+  .nc {
+	color: $code_yellow;
   }
-  .cp {
-		color: $code_grey02;
-	}
-	.c1 {
-		color: $code_grey02;
-	}
-	.cs {
-		color: $code_grey02;
-	}
-	.c {
-		color: $code_grey02;
-	}
-	.cd {
-		color: $code_grey02;
-	}
-	.err {
-		color: $code_pink;
-	}
-	.gr {
-		color: $code_pink;
-	}
-	.gt {
-		color: $code_pink;
-	}
-	.gd {
-		color: $code_grey;
-	}
-	.gi {
-		color: $code_grey;
-	}
-	.ge {
-		color: $code_grey;
-	}
-	.kc {
-		color: $code_blue;
-	}
-	.kd {
-		color: $code_blue;
-	}
-	.kr {
-		color: $code_blue;
-	}
-	.no {
-		color: $code_blue;
-	}
-	.kt {
-		color: $code_blue;
-	}
-	.mf {
-		color: $code_purple;
-	}
-	.mh {
-		color: $code_purple;
-	}
-	.il {
-		color: $code_purple;
-	}
-	.mi {
-		color: $code_purple;
-	}
-	.mo {
-		color: $code_purple;
-	}
-	.m {
-		color: $code_purple;
-	}
-	.mb {
-		color: $code_purple;
-	}
-	.mx {
-		color: $code_purple;
-	}
-	.sc {
-		color: $code_purple;
-	}
-	.se {
-		color: $code_purple;
-	}
-	.ss {
-		color: $code_purple;
-	}
-	.sd {
-		color: $code_yellow;
-	}
-	.s2 {
-		color: $code_yellow;
-	}
-	.sb {
-		color: $code_yellow;
-	}
-	.sh {
-		color: $code_yellow;
-	}
-	.si {
-		color: $code_yellow;
-	}
-	.sx {
-		color: $code_yellow;
-	}
-	.s1 {
-		color: $code_yellow;
-	}
-	.s {
-		color: $code_yellow;
-	}
-	.na {
-		color: $code_green;
-	}
-	.nc {
-		color: $code_green;
-	}
-	.nd {
-		color: $code_green;
-	}
-	.ne {
-		color: $code_green;
-	}
-	.nf {
-		color: $code_green;
-	}
-	.vc {
-		color: $grey12;
-	}
-	.nn {
-		color: $grey12;
-	}
-	.nl {
-		color: $grey12;
-	}
-	.ni {
-		color: $grey12;
-	}
-	.bp {
-		color: $grey12;
-	}
-	.vg {
-		color: $grey12;
-	}
-	.vi {
-		color: $grey12;
-	}
-	.nv {
-		color: $grey12;
-	}
-	.w {
-		color: $grey12;
-	}
-	.n {
-		color: $grey12;
-	}
-	.py {
-		color: $grey12;
-	}
-	.nx {
-		color: $grey12;
-	}
-	.ow {
-		color: $code_red;
-	}
-	.nt {
-		color: $code_red;
-	}
-	.k {
-		color: $code_red;
-	}
-	.kv {
-		color: $code_red;
-	}
-	.kn {
-		color: $code_red;
-	}
-	.kp {
-		color: $code_red;
-	}
-	.o {
-		color: $code_red;
-	}
+
+  .no {
+	color: $code_red;
+  }
+
+  .nd {
+	color: $code_green;
+  }
+
+  .ni {
+	color: $grey08;
+  }
+
+  .ne {
+	color: $code_red;
+  }
+
+  .nf {
+	color: $code_blue;
+  }
+
+  .nl {
+	color: $grey08;
+  }
+
+  .nn {
+	color: $code_yellow;
+  }
+
+  .nx {
+	color: $code_blue;
+  }
+
+  .py {
+	color: $grey08;
+  }
+
+  .nt {
+	color: $code_green;
+  }
+
+  .nv {
+	color: $code_red;
+  }
+
+  .ow {
+	color: $code_green;
+  }
+
+  .w {
+	color: $grey08;
+  }
+
+  .mf, .mh, .mi, .mo {
+	color: $code_orange;
+  }
+
+  .sb {
+	color: $code_green02;
+  }
+
+  .sc {
+	color: $grey08;
+  }
+
+  .sd {
+	color: $code_grey;
+  }
+
+  .s2 {
+	color: $code_green02;
+  }
+
+  .se {
+	color: $code_orange;
+  }
+
+  .sh {
+	color: $code_green02;
+  }
+
+  .si {
+	color: $code_orange;
+  }
+
+  .sx, .sr, .s1, .ss {
+	color: $code_green02;
+  }
+
+  .bp {
+	color: $grey08;
+  }
+
+  .vc, .vg, .vi {
+	color: $code_red;
+  }
+
+  .il {
+	color: $code_orange;
+  }
 }
 
 .gist {

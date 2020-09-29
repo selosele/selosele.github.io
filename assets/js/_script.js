@@ -13,16 +13,10 @@
     }
 })();
 
-// 검색 input enter키로 submit 방지
-(function() {
-    document.querySelector(".search-content__inner-wrap form").addEventListener("keydown", function(evt) {
-        if (evt.key === "Enter") evt.preventDefault();
-    });
-})();
-
 // 메인 메뉴
 (function() {
-    var menuWrapper = document.getElementById("side-menu"),
+    var rootElement = document.documentElement,
+        menuWrapper = document.getElementById("side-menu"),
         menuLayer = document.getElementById("primary-nav"),
         menuOuterEL = document.querySelectorAll("#skip-links, .masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
@@ -109,7 +103,7 @@
     });
 
     for (var i = 0; i < menuELcategoryAnc.length; i++) {
-        if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) {
+        if (rootElement.classList.contains("layout--categories") || rootElement.classList.contains("layout--tags")) {
             menuELcategoryAnc[i].addEventListener("click", handlerCloseClick);
         }
     }
@@ -118,7 +112,7 @@
 // scroll indicator
 (function() {
     function activateScrollIndicator() {
-        if (!document.querySelector(".layout--post")) return;
+        if (!document.documentElement.classList.contains("layout--post")) return;
 
         var window_height = document.body.scrollHeight - window.innerHeight,
             scroll_val = ((window.pageYOffset) / window_height) * 100;
@@ -346,8 +340,7 @@ $(function() {
         tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tabbaleFirst = tabbale.first(),
         tabbaleLast = tabbale.last(),
-        sForm = layer.find("form"),
-        sLabel = sForm.find("label"),
+        sLabel = $("#search-title"),
         sInput = $("#search-input"), sInputVal, sInputValNotChanged,
         
         layerClose = function() {
@@ -469,7 +462,6 @@ $(function() {
 
                 if (keyType === "Escape" || keyType === "Esc") {
                     $("#results li a").is(":focus") && sInput.focus();
-                    // sInputValNotChanged || !sInput.is(":focus") || sInputVal ? layerClose() : sForm[0].reset();
                     
                     if (!sInputValNotChanged || sInput.is(":focus")) {
                         if (sInputVal) {
@@ -478,7 +470,7 @@ $(function() {
                             if (!sInput.is(":focus")) {
                                 layerClose();
                             } else {
-                                sForm[0].reset();
+                                sInput.val("");
                                 $("#results").empty();
                             }
                         }

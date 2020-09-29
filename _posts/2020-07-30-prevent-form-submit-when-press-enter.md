@@ -20,14 +20,14 @@ tags:
 
 {:.has-label}
 ```html
-<form>
+<form id="my-form">
   <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```
 
 {:.has-label}
 ```javascript
-document.querySelector("form").addEventListener("keydown", (evt) => {
+document.getElementById("my-form").addEventListener("keydown", (evt) => {
   if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
 });
 ```

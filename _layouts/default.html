@@ -2,12 +2,12 @@
 ---
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="{% if site.theme_type == 'type1' %}theme-{{ site.theme_type }}{% endif %}{% if site.theme_type == 'type2' %}theme-{{ site.theme_type }}{% endif %}">
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="{% if site.theme_type == 'type1' %}theme-{{ site.theme_type }}{% endif %}{% if site.theme_type == 'type2' %}theme-{{ site.theme_type }}{% endif %} layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
   <head>
     {% include head.html %}
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+  <body>
     {% include skip-links.html %}
     {% include masthead.html %}
 

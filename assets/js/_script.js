@@ -1,11 +1,15 @@
 // IE 11 ~ 9 체크
 (function() {
-    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) document.documentElement.classList.add("only-ie");
+    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
+        document.documentElement.className += " only-ie";
+    }
 })();
 
 // IE 10 이하 체크
 (function() {
-    if (navigator.userAgent.indexOf("MSIE") >= 0) document.documentElement.classList.add("lte-ie10");
+    if (navigator.userAgent.indexOf("MSIE") >= 0) {
+        document.documentElement.className += " lte-ie10";
+    }
 })();
 
 // 검색 input enter키로 submit 방지
@@ -255,63 +259,6 @@
         }
     }
 })();
-
-// IE 10 이하 경고 레이어팝업
-$(function() {
-    var IEalertElem = $(".ie-alert");
-    if (IEalertElem) {
-        var rootElem = $("html"),
-            alertOuterElem = $("body").children().not(IEalertElem.add(".search-content, .side-menu, script, .scroll-indicator")),
-            alertTabbaleElem = IEalertElem.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-            alertTabbaleElemFirst = alertTabbaleElem.first(),
-            alertTabbaleElemLast = alertTabbaleElem.last();
-
-        if (rootElem.hasClass("lte-ie10") && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
-            $("body").addClass("overflow-hidden");
-            IEalertElem.css("display", "block").attr("aria-hidden", "false");
-            alertOuterElem.attr("aria-hidden", "true");
-            alertTabbaleElem.length && alertTabbaleElemFirst.focus();
-        }
-
-        alertTabbaleElemFirst.on("keydown", function(evt) {
-            if (evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                alertTabbaleElemLast.focus();
-            }
-        });
-
-        alertTabbaleElemLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                alertTabbaleElemFirst.focus();
-            }
-        });
-
-        var IEalertChkbox = $("#alert-checkbox"),
-            closeIEalert = function() {
-            if (IEalertElem.css("display") === "block" && !sessionStorage.getItem("ie-alert-chkbox-checked")) {
-                if (IEalertChkbox.is(":checked")) {
-                    sessionStorage.setItem("ie-alert-chkbox-checked", true);
-                } else {
-                    alert("현재 사용 중인 브라우저에서는 블로그 이용이 원활하지 않습니다. \n더 나은 사용자 경험을 위하여 최신 브라우저로 접속하십시오.");
-                }
-                $("body").removeClass("overflow-hidden");
-                IEalertElem.css("display", "none").attr("aria-hidden", "true");
-                alertTabbaleElem.blur();
-                alertOuterElem.removeAttr("aria-hidden");
-                $(document).off("keydown.alert_keydown");
-            }
-        };
-
-        $(document).on("keydown.alert_keydown", function(evt) {
-            var keyType = evt.key;
-
-            if (keyType === "Escape" || keyType === "Esc") closeIEalert();
-        });
-
-        $(".ie-alert__close").click(closeIEalert);
-    }
-});
 
 // 포스트 목차
 $(function() {

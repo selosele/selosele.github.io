@@ -3,8 +3,20 @@
    ========================================================================== */
 
 /* IE layout */
-.only-ie {
-   .guide--ie {
+.ie-alert {
+   display: none;
+   padding-top: 1.3rem;
+   padding-bottom: 1.3rem;
+   background-color: $sub_color01;
+   line-height: 1.4;
+
+   &__inner-wrap {
+      @include common_layout($width: auto, $margin_l: 2.995vw, $margin_r: 2.995vw);
+   }
+}
+
+.lte-ie10 {
+   .ie-alert {
       display: block;
    }
 
@@ -13,7 +25,7 @@
    }
 
    &.theme-type1 {
-      .layout--home {
+      &.layout--home {
          .masthead {
             @media (min-width: $small_width) {
                border-bottom-right-radius: 6vw;
@@ -279,7 +291,7 @@
          }
       }
 
-      .layout--home {
+      &.layout--home {
          .masthead {
             @media (min-width: $min_small_width) {
                -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);

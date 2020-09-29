@@ -9,6 +9,7 @@
 (function() {
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
         document.documentElement.className += " lte-ie10";
+        document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 })();
 
@@ -122,7 +123,7 @@
         var window_height = document.body.scrollHeight - window.innerHeight,
             scroll_val = ((window.pageYOffset) / window_height) * 100;
 
-        document.querySelector(".scroll-indicator").style.width = scroll_val + "%";
+        document.getElementById("scroll-indicator").style.width = scroll_val + "%";
     }
 
     window.addEventListener("scroll", activateScrollIndicator);
@@ -341,7 +342,7 @@ $(function() {
     var openBtn = $(".nav__search-open"),
         closeBtn = $(".search__close"),
         layer = $(".search-content"),
-        outerEL = $("body").children().not(layer.add("script, .ie-alert, .side-menu, .scroll-indicator")),
+        outerEL = $("body").children().not(layer.add("script, #ie-alert, #side-menu, #scroll-indicator")),
         tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
         tabbaleFirst = tabbale.first(),
         tabbaleLast = tabbale.last(),

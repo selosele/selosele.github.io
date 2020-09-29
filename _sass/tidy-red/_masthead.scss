@@ -15,11 +15,7 @@
    }
 }
 
-.lte-ie10 {
-   .ie-alert {
-      display: block;
-   }
-
+.only-ie {
    .author__image-wrapper {
       border-bottom-left-radius: 3rem;
    }
@@ -32,6 +28,12 @@
             }
          }
       }
+   }
+}
+
+.lte-ie10 {
+   .ie-alert {
+      display: block;
    }
 }
 

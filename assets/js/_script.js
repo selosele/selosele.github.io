@@ -154,33 +154,34 @@
         var abbr = document.querySelectorAll("abbr[title]");
         if (!abbr) return;
 
-        for (var i = 0; i < abbr.length; i++) {
+        Array.prototype.slice.call(abbr).forEach(function(abbrEL) {
             var abbrSpan = document.createElement("span"),
-                abbr_title = "tooltip-" + encodeURI(abbr[i].title).replace(/ |%/g, "1");
+                abbr_title = "tooltip-" + encodeURI(abbrEL.title).replace(/ |%/g, "1");
 
-            abbr[i].setAttribute("tabindex", "0");
-            abbr[i].setAttribute("aria-describedby", abbr_title);
+            abbrEL.setAttribute("tabindex", "0");
+            abbrEL.setAttribute("aria-describedby", abbr_title);
+
             abbrSpan.hidden = true;
             abbrSpan.setAttribute("role", "tooltip");
             abbrSpan.id = abbr_title;
-            abbrSpan.textContent = abbr[i].title;
+            abbrSpan.textContent = abbrEL.title;
             abbrSpan.classList.add("abbr__tooltip");
-            abbr[i].appendChild(abbrSpan);
-        }
+            abbrEL.appendChild(abbrSpan);
+        });
     },
     handlerClick = function(evt) {
         if (evt.target !== evt.currentTarget) return;
 
-        var abbrTooltip = evt.currentTarget.querySelector(".abbr__tooltip");
+        var tooltipEL = evt.currentTarget.querySelector(".abbr__tooltip");
 
-        if (!abbrTooltip.classList.contains("abbr__tooltip--active")) {
-            abbrTooltip.hidden = false;
-            abbrTooltip.setAttribute("tabindex", "0");
-            abbrTooltip.classList.add("abbr__tooltip--active");
+        if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
+            tooltipEL.hidden = false;
+            tooltipEL.setAttribute("tabindex", "0");
+            tooltipEL.classList.add("abbr__tooltip--active");
         } else {
-            abbrTooltip.hidden = true;
-            abbrTooltip.setAttribute("tabindex", "-1");
-            abbrTooltip.classList.remove("abbr__tooltip--active");
+            tooltipEL.hidden = true;
+            tooltipEL.setAttribute("tabindex", "-1");
+            tooltipEL.classList.remove("abbr__tooltip--active");
         }
     },
     handlerKeydown = function(evt) {
@@ -202,13 +203,13 @@
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeElement = postRoot.querySelectorAll("pre.highlight");
+        var preCodeEL = postRoot.querySelectorAll("pre.highlight");
         
-        for (var i = 0; i < preCodeElement.length; i++) {
-            var preCodeParentElement = preCodeElement[i].parentElement.parentElement;
+        for (var i = 0; i < preCodeEL.length; i++) {
+            var preCodeParentEL = preCodeEL[i].parentElement.parentElement;
 
-            if (preCodeParentElement.classList.contains("has-label")) {
-                preCodeElement[i].setAttribute("title", preCodeParentElement.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
+            if (preCodeParentEL.classList.contains("has-label")) {
+                preCodeEL[i].setAttribute("title", preCodeParentEL.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
         }
     }
@@ -223,7 +224,7 @@
         for (var i = 0; i < shareELbtn.length; i++) {
             shareELbtn[i].addEventListener("click", function(evt) {
                 evt.preventDefault();
-                window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
+                window.open(evt.currentTarget.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
             });
         }
     }
@@ -233,24 +234,24 @@
 (function() {
     var handlerClick = function(evt) {
         var _t = evt.currentTarget,
-            archiveListMatchElement = document.querySelector("[aria-labelledby='"+_t.id+"']");
+            _t_matchEL = document.querySelector("[aria-labelledby='"+_t.id+"']");
 
-        if (archiveListMatchElement.classList.contains("archive__list--active")) {
-            archiveListMatchElement.classList.remove("archive__list--active");
-            archiveListMatchElement.setAttribute("hidden", false);
-            archiveListMatchElement.setAttribute("tabindex", "-1");
+        if (_t_matchEL.classList.contains("archive__list--active")) {
+            _t_matchEL.classList.remove("archive__list--active");
+            _t_matchEL.setAttribute("hidden", false);
+            _t_matchEL.setAttribute("tabindex", "-1");
             _t.setAttribute("aria-expanded", "false");
         } else {
-            archiveListMatchElement.classList.add("archive__list--active");
-            archiveListMatchElement.setAttribute("hidden", true);
-            archiveListMatchElement.setAttribute("tabindex", "0");
+            _t_matchEL.classList.add("archive__list--active");
+            _t_matchEL.setAttribute("hidden", true);
+            _t_matchEL.setAttribute("tabindex", "0");
             _t.setAttribute("aria-expanded", "true");
         }
     },
-    archiveBtnElement = document.querySelectorAll(".archive__btn");
-    if (archiveBtnElement) {
-        for (var i = 0; i < archiveBtnElement.length; i++) {
-            archiveBtnElement[i].addEventListener("click", handlerClick);
+    btnEL = document.querySelectorAll(".archive__btn");
+    if (btnEL) {
+        for (var i = 0; i < btnEL.length; i++) {
+            btnEL[i].addEventListener("click", handlerClick);
         }
     }
 })();

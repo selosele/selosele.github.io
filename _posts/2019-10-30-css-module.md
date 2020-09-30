@@ -50,4 +50,4 @@ tags:
 ```
 가장 흔히 볼 수 있고 우리도 모르는 사이에 사용하고 있는 코드.
 
-이런 모듈화에 <abbr title="hypertext markup language">html</abbr> 익숙해지면 CSS 전처리기 <abbr title="syntactically awesome style sheets">SCSS</abbr>를 이용해 더 간편하게 작업할 수 있음.
+이런 모듈화에 익숙해지면 CSS 전처리기 <abbr title="syntactically awesome style sheets">SCSS</abbr>를 이용해 더 간편하게 작업할 수 있음.

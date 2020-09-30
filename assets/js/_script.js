@@ -297,36 +297,55 @@
 })();
 
 // 포스트 목차 키보드 이벤트
-$(function() {
-    var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tocTabbleNode = $("#content").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
-        tocTabbleFocusedLast;
+(function() {
+    var postRoot = document.getElementById("page-content");
+    if (postRoot) {
+        var toc = document.getElementById("toc"),
+            tocTabbleNode = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+            tocTabbleFocusedLast;
 
-    tocTabbleNode.on("keydown", function() {
-        return tocTabbleFocusedLast = $(this);
+        Array.prototype.slice.call(tocTabbleNode).forEach(function(t) {
+            t.addEventListener("keydown", function(evt) {
+                if (evt.currentTarget === document.querySelector("nav[aria-labelledby='toc-title']")) return;
 
-    }).on("keydown", function(evt) {
-        if (evt.altKey && evt.key === "1") { // alt + 1키 : 포스트 요소 중 마지막으로 초점 잡혔던 요소(이하 focusedLast)에서 목차로 초점 이동
-            $(".toc--fixed nav").focus().on("keydown", function(evt) {
-                if (evt.altKey && evt.key === "1") { // alt + 1키 : focusedLast로 초점 이동
-                    tocTabbleFocusedLast.focus();
-                }
+                evt.stopPropagation();
+                tocTabbleFocusedLast = evt.currentTarget;
+                tocTabbleFocusedLast.addEventListener("keydown", handlerKeydown);
             });
-        }
-    });
-
-    if ($(".toc--fixed").length) {
-        $(document).on("keydown.toc_keydown", function(evt) {
-            if ((evt.altKey && evt.key === "1") && !tocTabbleNode.is(":focus")) { // alt + 1키 : 포스트에서 목차로 초점 이동
-                if (!$(".toc--fixed").is(":focus")) $(".toc--fixed nav").focus();
-            }
-    
-            if ((evt.altKey && evt.key === "2") && $(".toc-wrapper").hasClass("toc--fixed")) { // alt + 2키 : 활성화된 목차 링크로 초점 이동
-                $(".toc--active").focus();
-            }
         });
+
+        function handlerKeydown(evt) {
+            if (evt.altKey && evt.key === "1") {
+                var fixedToc = document.querySelector(".toc--fixed > nav"),
+                    tocAnchor = fixedToc.querySelectorAll("li a");
+
+                fixedToc.focus();
+                fixedToc.addEventListener("keydown", function(evt) {
+                    if ((evt.altKey && evt.key === "1") && tocTabbleFocusedLast) {
+                        evt.stopPropagation();
+                        tocTabbleFocusedLast.focus();
+                    }
+                });
+
+                fixedToc.addEventListener("keydown", handlerKeydownToActiveLink);
+                
+                for (var i = 0; i < tocAnchor.length; i++) {
+                    tocAnchor[i].addEventListener("keydown", handlerKeydownToActiveLink);
+                }
+            }
+        }
+
+        function handlerKeydownToActiveLink(evt) {
+            if (evt.altKey && evt.key === "2" && (toc.classList.contains("toc--fixed"))) {
+                document.querySelector(".toc--active").focus();
+            }
+        }
+
+        if (toc.classList.contains("toc--fixed")) {
+            window.addEventListener("keydown", handlerKeydown);
+        }
     }
-});
+})();
 
 // 검색 레이어
 $(function() {

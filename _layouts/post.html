@@ -24,7 +24,7 @@ layout: default
 
     <section itemprop="text" id="page-content" class="page__content">
       {% if page.toc %}
-        <aside class="toc-wrapper toc--fixed">
+        <aside id="toc" class="toc-wrapper toc--fixed">
           <nav aria-labelledby="toc-title" tabindex="0">
             <header>
               <h2 id="toc-title" class="toc__title">{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h2>

@@ -257,53 +257,49 @@
 })();
 
 // 포스트 목차
-$(function() {
-    $(window).scroll(function() {
-        var tocELheadings = $(".page__content").find(":header:not(.toc__title)");
-        if (!tocELheadings) return;
+(function() {
+    var handlerScroll = function() {
+        var pageRoot = document.getElementById("page-content");
+        if (pageRoot) {
+            var tocELheadings = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
-        tocELheadings.each(function() {
-            if ($(window).scrollTop() >= $(this).offset().top - 1) {
-                var t_id = $(this).attr("id"),
-                    t_anchor = $(".toc-wrapper li a[href='#"+t_id+"']"),
-                    tocELanchor = $(".toc-wrapper li a");
+            Array.prototype.slice.call(tocELheadings).forEach(function(h) {
+                if (window.pageYOffset >= (h.offsetTop - 1)) {
+                    var toc = document.getElementById("toc"),
+                        t_id = h.id,
+                        t_anchor = toc.querySelector("li a[href='#"+t_id+"']"),
+                        tocELanchor = toc.querySelectorAll("li a");
+    
+                    for (var i = 0; i < tocELanchor.length; i++) {
+                        if (tocELanchor[i].classList.contains("toc--active")) tocELanchor[i].classList.remove("toc--active");
+                        if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
+                    }
+                }
+            });
+        }
+    },
+    activateToc = function(main) {
+        if (!main || window.innerWidth <= 1200) return;
+        if (document.getElementById("toc")) main.classList.add("content--has-toc");
+    },
+    deactivateToc = function(main) {
+        if (!main) return;
+        main.classList.remove("content--has-toc");
+    },
+    initToc = function() {
+        var mainEL = document.getElementById("content");
+        window.innerWidth > 1200 ? activateToc(mainEL) : deactivateToc(mainEL);
+    };
 
-                tocELanchor.hasClass("toc--active") && tocELanchor.removeClass("toc--active");
-                t_anchor.hasClass("toc--active") || t_anchor.addClass("toc--active");
-            }
-        });
-    });
-
-    $(".toc-wrapper li a").on("click", function(evt) {
-        $("html, body")
-            .stop()
-            .animate({
-                scrollTop: $("#" + evt.currentTarget.getAttribute("href").replace("#", "")).offset().top
-            }, 300);
-    });
-
-    function activatePostToc(main) {
-        if (!main.length || $(window).outerWidth() <= 1200) return;
-        if ($(".toc-wrapper").length) $(main).addClass("content--has-toc");
-    }
-
-    function deactivatePostToc(main) {
-        $(main).removeClass("content--has-toc");
-    }
-
-    function initPostToc() {
-        var mainEL = $(".content-wrapper");
-        $(window).outerWidth() > 1200 ? activatePostToc(mainEL) : deactivatePostToc(mainEL);
-    }
-
-    initPostToc();
-    $(window).resize(initPostToc);
-});
+    initToc();
+    window.addEventListener("resize", initToc);
+    window.addEventListener("scroll", handlerScroll);
+})();
 
 // 포스트 목차 키보드 이벤트
 $(function() {
     var tocTabble = $("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tocTabbleNode = $(".content-wrapper").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
+        tocTabbleNode = $("#content").find(tocTabble).not(".toc-wrapper, .toc-wrapper *"),
         tocTabbleFocusedLast;
 
     tocTabbleNode.on("keydown", function() {

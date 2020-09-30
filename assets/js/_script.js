@@ -259,14 +259,15 @@
 // 포스트 목차
 (function() {
     var handlerScroll = function() {
-        var pageRoot = document.getElementById("page-content");
-        if (pageRoot) {
+        var pageRoot = document.getElementById("page-content"),
+            toc = document.getElementById("toc");
+
+        if (pageRoot && toc) {
             var tocELheadings = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
             Array.prototype.slice.call(tocELheadings).forEach(function(h) {
                 if (window.pageYOffset >= (h.offsetTop - 1)) {
-                    var toc = document.getElementById("toc"),
-                        t_id = h.id,
+                    var t_id = h.id,
                         t_anchor = toc.querySelector("li a[href='#"+t_id+"']"),
                         tocELanchor = toc.querySelectorAll("li a");
     
@@ -298,10 +299,11 @@
 
 // 포스트 목차 키보드 이벤트
 (function() {
-    var postRoot = document.getElementById("page-content");
-    if (postRoot) {
-        var toc = document.getElementById("toc"),
-            tocTabbleNode = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+    var postRoot = document.getElementById("page-content"),
+        toc = document.getElementById("toc");
+
+    if (postRoot && toc) {
+        var tocTabbleNode = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
             tocTabbleFocusedLast;
 
         Array.prototype.slice.call(tocTabbleNode).forEach(function(t) {

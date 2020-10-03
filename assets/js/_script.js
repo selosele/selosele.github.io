@@ -335,7 +335,7 @@
         }
 
         if (toc.classList.contains("toc--fixed")) {
-            window.addEventListener("keydown", handlerKeydown);
+            document.addEventListener("keydown", handlerKeydown);
         }
     }
 })();

@@ -33,48 +33,6 @@
     @media (min-width: $min_large_width) {
       padding: 4rem 2.604vw;
     }
-  
-    .results {
-      margin-top: 1.5rem;
-      padding-left: 0;
-      font-size: 0.85rem;
-      list-style: none;
-
-      @media (min-width: $minimal_width) {
-        font-size: 0.9rem;
-      }
-
-      @media (min-width: $min_small_width) {
-        font-size: inherit;
-      }
-
-      &__item {
-        margin-top: 0;
-        margin-bottom: 0;
-        border-bottom: 1px dotted $grey09;
-
-        &__match {
-          font-weight: 700;
-          color: $sub_color03;
-        }
-
-        a {
-          display: block;
-          margin-top: 0.5em;
-          margin-bottom: 0.5em;
-          padding-top: 0.5em;
-          padding-bottom: 0.5em;
-          color: $black;
-
-          @media (min-width: $min_large_width) {
-            &:hover {
-              color: $sub_color03;
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
   }
 
   &__input-wrapper {
@@ -123,30 +81,74 @@
   }
 }
 
-.search__input {
-  width: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: 0;
-  color: $black02;
-  @include search_item();
-}
+.search {
+  &__input {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+    color: $black02;
+    @include search_item();
+  }
 
-.search__close {
-  display: block;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 2rem;
-  height: 2rem;
-  background-color: transparent;
+  &__results {
+    margin-top: 1.5rem;
+    padding-left: 0;
+    font-size: 0.85rem;
+    list-style: none;
+  
+    @media (min-width: $minimal_width) {
+      font-size: 0.9rem;
+    }
+  
+    @media (min-width: $min_small_width) {
+      font-size: inherit;
+    }
+  
+    &__item {
+      margin-top: 0;
+      margin-bottom: 0;
+      border-bottom: 1px dotted $grey09;
+  
+      a {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        color: $black;
+  
+        @media (min-width: $min_large_width) {
+          &:hover {
+            color: $sub_color03;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
 
-  &:before {
-    content: "\e9af";
+    &__match {
+      font-weight: 700;
+      color: $sub_color03;
+    }
+  }
+
+  &__close {
     display: block;
-    font-family: $icon_font;
-    font-size: 1.5rem;
-    color: $main_color;
-    -webkit-font-smoothing: antialiased;
- }
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+  
+    &:before {
+      content: "\e9af";
+      display: block;
+      font-family: $icon_font;
+      font-size: 1.5rem;
+      color: $main_color;
+      -webkit-font-smoothing: antialiased;
+   }
+  }
 }

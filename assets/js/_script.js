@@ -397,9 +397,9 @@ $(function() {
                                 sInputValNotChanged = false;
                                 if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");
 
-                                $("#results li a:contains('"+sInputText+"')").html(function(_, html) {
-                                    if (!$(this).children(".results__item__match").length) {
-                                        return html.replace(sInputText, '<span class="results__item__match">'+sInputText+'</span>');
+                                $("#search-results li a:contains('"+sInputText+"')").html(function(_, html) {
+                                    if (!$(this).children(".search__results__match").length) {
+                                        return html.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
                                     }
                                 });
                             } else {
@@ -408,7 +408,7 @@ $(function() {
                                 sLabel.removeClass("visually-hidden");
                             }
 
-                            if ($("#results li").length) {
+                            if ($("#search-results li").length) {
                                 sInput.attr("aria-expanded", "true");
                             } else {
                                 sInput.attr("aria-expanded", "false");
@@ -418,9 +418,9 @@ $(function() {
                         switch (evt.key) {
                             case "ArrowDown":
                             case "Down":
-                                if ($("#results li").length) {
+                                if ($("#search-results li").length) {
                                     evt.preventDefault();
-                                    $("#results li:first a").focus();
+                                    $("#search-results li:first a").focus();
                                 }
                                 break;
                         }
@@ -443,12 +443,12 @@ $(function() {
             }
         });
 
-        $(document).on("keydown.searchResult_keydown", "#results li a", function(evt) {
+        $(document).on("keydown.searchResult_keydown", "#search-results li a", function(evt) {
             // if (evt.defaultPrevented) return;
 
             var _t = $(evt.currentTarget),
                 _t_list = _t.parent("li"),
-                list = $("#results li");
+                list = $("#search-results li");
 
             switch (evt.key) {
                 case "ArrowUp":
@@ -470,7 +470,7 @@ $(function() {
                 var keyType = evt.key;
 
                 if (keyType === "Escape" || keyType === "Esc") {
-                    $("#results li a").is(":focus") && sInput.focus();
+                    $("#search-results li a").is(":focus") && sInput.focus();
                     
                     if (!sInputValNotChanged || sInput.is(":focus")) {
                         if (sInputVal) {
@@ -480,7 +480,7 @@ $(function() {
                                 layerClose();
                             } else {
                                 sInput.val("");
-                                $("#results").empty();
+                                $("#search-results").empty();
                             }
                         }
                     } else {

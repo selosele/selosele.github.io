@@ -17,8 +17,8 @@
     var searchPlugin = SimpleJekyllSearch({
     json: '/search.json',
     searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results'),
-    searchResultTemplate: '<li class="results__item"><a href="{url}">{title}</a></li>',
+    resultsContainer: document.getElementById('search-results'),
+    searchResultTemplate: '<li class="search__results__item"><a href="{url}">{title}</a></li>',
     noResultsText: '검색 결과를 찾을 수 없습니다.',
     limit: 20
   });

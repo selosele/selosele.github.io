@@ -318,8 +318,7 @@
 
         function handlerKeydown(evt) {
             if (evt.altKey && evt.key === "1") {
-                var fixedToc = document.querySelector(".toc--fixed > nav"),
-                    tocAnchor = fixedToc.querySelectorAll("li a");
+                var fixedToc = document.querySelector(".toc--fixed > nav");
 
                 fixedToc.focus();
                 fixedToc.addEventListener("keydown", function(evt) {
@@ -328,16 +327,8 @@
                         tocTabbleFocusedLast.focus();
                     }
                 });
-
-                fixedToc.addEventListener("keydown", handlerKeydownToActiveLink);
-                
-                for (var i = 0; i < tocAnchor.length; i++) {
-                    tocAnchor[i].addEventListener("keydown", handlerKeydownToActiveLink);
-                }
             }
-        }
 
-        function handlerKeydownToActiveLink(evt) {
             if (evt.altKey && evt.key === "2" && (toc.classList.contains("toc--fixed"))) {
                 document.querySelector(".toc--active").focus();
             }

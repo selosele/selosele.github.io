@@ -60,24 +60,6 @@
         -webkit-font-smoothing: antialiased;
       }
     }
-
-    label {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      color: $black02;
-      font-weight: 300;
-      pointer-events: none;
-      white-space: nowrap;
-      @include search_item();
-
-      @media (min-width: $min_large_width) {
-        left: 3.8rem;
-        width: calc(100% - 3.8rem);
-      }
-    }
   }
 }
 
@@ -89,6 +71,24 @@
     border: 0;
     color: $black02;
     @include search_item();
+  }
+
+  &__title {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $black02;
+    font-weight: 300;
+    pointer-events: none;
+    white-space: nowrap;
+    @include search_item();
+
+    @media (min-width: $min_large_width) {
+      left: 3.8rem;
+      width: calc(100% - 3.8rem);
+    }
   }
 
   &__results {

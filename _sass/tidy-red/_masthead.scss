@@ -54,16 +54,16 @@
       @include teaser();
    }
 
-   .author {
-      &-wrapper {
-         position: relative;
-         @include common_layout($margin: 4.1rem auto 2rem);
+   > .author-wrapper {
+      position: relative;
+      @include common_layout($margin: 4.1rem auto 2rem);
 
-         @media (min-width: $min_small_width) {
-            margin-bottom: 9rem;
-         }
+      @media (min-width: $min_small_width) {
+         margin-bottom: 9rem;
       }
+   }
 
+   .author {
       &__avatar {
          width: 9rem;
          height: 12rem;

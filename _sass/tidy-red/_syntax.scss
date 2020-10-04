@@ -15,10 +15,15 @@ figure.highlight {
   line-height: 1.8;
   color: $grey08;
 
+  ::selection {
+    background-color: $grey12;
+    color: $black04;
+  }
+
   > pre,
   pre.highlight {
     margin: 0;
-	padding: 0.5rem 1rem;
+	  padding: 0.5rem 1rem;
   }
 }
 
@@ -29,13 +34,6 @@ code {
     padding: 0.368em 0.579em;
     line-height: 2.2;
     vertical-align: middle;
-  }
-
-  &.language-plaintext {
-	*::selection {
-		background-color: $grey12;
-		color: $black04;
-	}
   }
 }
 

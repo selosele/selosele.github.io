@@ -81,7 +81,15 @@
       border-top: 1px solid $grey04;
       flex-wrap: wrap;
 
-      a {
+      &-title {
+         width: 100%;
+         margin-bottom: 0.65rem;
+         font-weight: 700;
+         font-size: 1rem;
+         color: $black02;
+      }
+
+      > a {
          display: block;
          overflow: hidden;
          margin: 0 0.3rem 0.3rem 0;
@@ -101,9 +109,20 @@
                vertical-align: middle;
             }
          }
+
+         > span {
+            @media (min-width: $min_medium_width) {
+               margin-left: 0.1em;
+               vertical-align: middle;
+            }
+   
+            @media (max-width: $medium_width) {
+               @include hide_text();
+            }
+         }
       }
 
-      .btn {
+      > .btn {
          &--twitter {
             background-color: $twitter_color;
 
@@ -126,25 +145,6 @@
             &:before {
                content: "\ebf4";
             }
-         }
-      }
-
-      &-title {
-         width: 100%;
-         margin-bottom: 0.65rem;
-         font-weight: 700;
-         font-size: 1rem;
-         color: $black02;
-      }
-
-      span {
-         @media (min-width: $min_medium_width) {
-            margin-left: 0.1em;
-            vertical-align: middle;
-         }
-
-         @media (max-width: $medium_width) {
-            @include hide_text();
          }
       }
    }
@@ -316,7 +316,7 @@
    padding: 0.9rem 0 2.5rem;
    color: $grey12;
 
-   .page__title {
+   > .page__title {
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0;

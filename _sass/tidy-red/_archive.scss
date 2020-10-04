@@ -26,7 +26,7 @@
       &-title {
          line-height: 1.1;
    
-         a {
+         > a {
             display: block;
             @include ellipsis();
             margin-bottom: 0.3em;
@@ -197,14 +197,14 @@
    &__btn {
       display: block;
       width: 100%;
-      padding: 1.9rem 1rem;
+      padding: 1.6rem 1rem;
       border-bottom: 1px dashed $grey;
-      background: none;
+      background-color: transparent;
       color: $black;
       text-align: left;
 
-      span {
-         margin-right: 0.5rem;
+      &__point {
+         margin-right: 0.4rem;
          color: $sub_color03;
          font-size: 1.5em;
       }
@@ -235,21 +235,21 @@
                }
             }
          }
+      }
 
-         span {
-            font-size: 0.85rem;
-            font-style: italic;
-            color: $sub_color03;
+      &__date {
+         font-size: 0.85rem;
+         font-style: italic;
+         color: $sub_color03;
 
-            &:before {
-               content: "\2014";
-               margin: 0 0.4rem 0 0.2rem;
-               font-weight: 200;
-            }
+         &:before {
+            content: "\2014";
+            margin: 0 0.4rem 0 0.2rem;
+            font-weight: 200;
          }
       }
 
-      &-count {
+      &__count {
          color: $sub_color03;
       }
    }
@@ -257,10 +257,8 @@
 
 .page {
    &--posts-by-year {
-      .archive__btn {
-         span {
-            font-style: italic;
-         }
+      .archive__point {
+         font-style: italic;
       }
    }
 

@@ -16,14 +16,14 @@ title: 태그
   {% assign tagPost = site.posts | where: "tags", tag[0] %}
   {% assign tagName = tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase %}
   <h2>
-    <button type="button" aria-controls="list-{{ tagName }}" aria-expanded="false" id="btn-{{ tagName }}" class="archive__btn"><span aria-hidden="true">#</span>{{ tag[0] }} <small aria-hidden="true" class="archive__list-count">({{ tag[1].size }})</small></button>
+    <button type="button" aria-controls="list-{{ tagName }}" aria-expanded="false" id="btn-{{ tagName }}" class="archive__btn"><span aria-hidden="true" class="archive__btn__point">#</span>{{ tag[0] }} <small aria-hidden="true" class="archive__list__count">({{ tag[1].size }})</small></button>
   </h2>
 
   <div aria-labelledby="btn-{{ tagName }}" id="list-{{ tagName }}" class="archive__list">
     <ul>
       {% for post in tagPost %}
       <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>
-        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span>{{ post.date | date: "%B %d" }}</span>
+        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B %d" }}</span>
       </li>
       {% endfor %}
     </ul>

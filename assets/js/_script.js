@@ -2,6 +2,7 @@
 (function() {
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
         document.documentElement.className += " only-ie";
+        document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 })();
 
@@ -9,7 +10,7 @@
 (function() {
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
         document.documentElement.className += " lte-ie10";
-        document.getElementById("ie-alert").removeAttribute("aria-hidden");
+        document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
     }
 })();
 

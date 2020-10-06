@@ -19,7 +19,7 @@
     var rootElement = document.documentElement,
         menuWrapper = document.getElementById("side-menu"),
         menuLayer = document.getElementById("primary-nav"),
-        menuOuterEL = document.querySelectorAll("#skip-links, .masthead, #content, #mastfoot"),
+        menuOuterEL = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
         menuELtabble = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
@@ -342,154 +342,198 @@
 })();
 
 // 검색 레이어
-$(function() {
-    var openBtn = $(".nav__search-open"),
-        closeBtn = $(".search__close"),
-        layer = $(".search-content"),
-        outerEL = $("body").children().not(layer.add("script, #ie-alert, #side-menu, #scroll-indicator")),
-        tabbale = layer.find("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tabbaleFirst = tabbale.first(),
-        tabbaleLast = tabbale.last(),
-        sLabel = $("#search-title"),
-        sInput = $("#search-input"), sInputVal, sInputValNotChanged,
-        
-        layerClose = function() {
-            $(document).off("keydown.search_keydown");
-            $("body").removeClass("overflow-hidden");
-            closeBtn.attr("aria-expanded", "false");
-            layer.stop().animate({"opacity": "0"}, {
-                duration: 200,
-                complete: function() {
-                    layer.removeAttr("style");
+(function() {
+    var openBtn = document.querySelector(".nav__search-open"),
+        closeBtn = document.querySelector(".search__close"),
+        layer = document.getElementById("search-content"),
+        outerEL = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
+        tabbale = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbaleFirst = tabbale[0],
+        tabbaleLast = tabbale[tabbale.length - 1],
+        sResult = document.getElementById("search-results"),
+        sLabel = document.getElementById("search-title"),
+        sInput = document.getElementById("search-input"), sInputVal, sInputValNotChanged;
+
+        function handlerInputKeydown() {
+            var sInputText = sInput.value;
+
+            if (sInputText) {
+                sInputVal = false;
+                sInputValNotChanged = false;
+                if (!sLabel.classList.contains("visually-hidden")) sLabel.classList.add("visually-hidden");
+
+                var sResultAnc = sResult.querySelectorAll("a");
+
+                for (var i = 0; i < sResultAnc.length; i++) {
+                    if ((sResultAnc[i] !== sInputText) && !sResultAnc[i].querySelector(".search__results__match")) {
+                        sResultAnc[i].innerHTML = sResultAnc[i].innerHTML.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
+                    }
                 }
+            } else {
+                sInputVal = true;
+                sInputValNotChanged = true;
+                sLabel.classList.remove("visually-hidden");
+            }
+
+            if (sResult.querySelectorAll("li").length) {
+                sInput.setAttribute("aria-expanded", "true");
+            } else {
+                sInput.setAttribute("aria-expanded", "false");
+            }
+        }
+
+        function handlerInputKeydown2(evt) {
+            var _li = sResult.querySelectorAll("li");
+
+            switch (evt.key) {
+                case "ArrowDown":
+                case "Down":
+                    if (_li.length) {
+                        evt.preventDefault();
+                        _li[0].querySelector("a").focus();
+                    }
+                    break;
+            }
+        }
+
+        function handlerResultKeydown(evt) {
+            if (evt.target.tagName === "A") {
+                var _t = evt.target,
+                    _t_list = _t.parentElement,
+                    list = sResult.querySelectorAll("li"),
+                    listFirst = list[0],
+                    listLast = list[list.length - 1],
+                    listPrev = _t_list.previousElementSibling,
+                    listNext = _t_list.nextElementSibling;
+
+                switch (evt.key) {
+                    case "ArrowUp":
+                    case "Up":
+                        if (!listPrev) {
+                            listLast.querySelector("a").focus();
+                        } else {
+                            listPrev.querySelector("a").focus();
+                        }
+
+                        evt.stopPropagation();
+                        break;
+                    
+                    case "ArrowDown":
+                    case "Down":
+                        if (!listNext) {
+                            listFirst.querySelector("a").focus();
+                        } else {
+                            listNext.querySelector("a").focus();
+                        }
+
+                        evt.stopPropagation();
+                        break;
+                }
+            }
+        }
+
+        function handlerCloseClick() {
+            document.removeEventListener("keydown", handlerCloseKeydown);
+            document.removeEventListener("keydown", handlerResultKeydown);
+            document.body.classList.remove("overflow-hidden");
+            closeBtn.setAttribute("aria-expanded", "false");
+            layer.classList.remove("search-content--animate");
+
+            setTimeout(function() {
+                layer.classList.remove("search-content--active");
+
+                for (var i = 0; i < outerEL.length; i++) {
+                    outerEL[i].getAttribute("aria-hidden") !== true && outerEL[i].removeAttribute("aria-hidden");
+                }
+
+                layer.setAttribute("aria-hidden", "true");
+            }, 200);
+
+            openBtn.setAttribute("aria-expanded", "false");
+            openBtn.focus();
+        }
+
+        function handlerCloseKeydown(evt) {
+            var keyType = evt.key;
+
+            if (keyType === "Escape" || keyType === "Esc") {
+                var sResultAnc = sResult.querySelectorAll("a");
+
+                for (var i = 0; i < sResultAnc.length; i++) {
+                    sResultAnc[i] === document.activeElement && sInput.focus();
+                }
+                
+                if (!sInputValNotChanged || sInput === document.activeElement) {
+                    if (sInputVal) {
+                        handlerCloseClick();
+                    } else {
+                        if (!sInput === document.activeElement) {
+                            handlerCloseClick();
+                        } else {
+                            sInput.value = "";
+
+                            while (sResult.firstChild) {
+                                sResult.removeChild(sResult.firstChild);
+                            }
+
+                            !sInput.value && handlerCloseClick();
+                        }
+                    }
+                } else {
+                    handlerCloseClick();
+                }
+            }
+        }
+
+        function handlerClick(evt) {
+            var _t = evt.currentTarget;
+
+            sInputValNotChanged = true;
+
+            _t.setAttribute("aria-expanded", "true");
+            closeBtn.setAttribute("aria-expanded", "true");
+            document.body.classList.add("overflow-hidden");
+
+            for (var i = 0; i < outerEL.length; i++) {
+                outerEL[i].setAttribute("aria-hidden", "true");
+            }
+
+            layer.classList.add("search-content--active");
+            layer.setAttribute("aria-hidden", "false");
+            layer.addEventListener("click", function(evt) {
+                evt.target === evt.currentTarget && handlerCloseClick();
             });
 
             setTimeout(function() {
-                outerEL.attr("aria-hidden") !== true && outerEL.removeAttr("aria-hidden");
-                layer.attr("aria-hidden", "true");
-            }, 200);
-            openBtn.attr("aria-expanded", "false").focus();
-        }
-
-    openBtn.on("click", function() {
-        sInputValNotChanged = true;
-
-        $(this).add(closeBtn).attr("aria-expanded", "true");
-        $("body").addClass("overflow-hidden");
-        outerEL.attr("aria-hidden", "true");
-        layer
-            .css("display", "block")
-            .attr("aria-hidden", "false")
-            .click(function(evt) {
-                evt.target === evt.currentTarget && layerClose();
+                layer.classList.add("search-content--animate");
+                sInput.focus();
+                sInput.addEventListener("propertychange", handlerInputKeydown);
+                sInput.addEventListener("change", handlerInputKeydown);
+                sInput.addEventListener("keyup", handlerInputKeydown);
+                sInput.addEventListener("paste", handlerInputKeydown);
+                sInput.addEventListener("input", handlerInputKeydown);
+                sInput.addEventListener("focus", handlerInputKeydown);
+                sInput.addEventListener("keydown", handlerInputKeydown2);
             });
 
-        setTimeout(function() {
-            layer.stop().animate({"opacity": "1"}, {
-                duration: 200,
-                complete: function() {
-                    sInput
-                        .focus()
-                        .on("propertychange change keyup paste input focus", function() {
-                            var sInputText = this.value;
-
-                            if (sInputText) {
-                                sInputVal = false;
-                                sInputValNotChanged = false;
-                                if (!sLabel.hasClass("visually-hidden")) sLabel.addClass("visually-hidden");
-
-                                $("#search-results > li > a:contains('"+sInputText+"')").html(function(_, html) {
-                                    if (!$(this).children(".search__results__match").length) {
-                                        return html.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
-                                    }
-                                });
-                            } else {
-                                sInputVal = true;
-                                sInputValNotChanged = true;
-                                sLabel.removeClass("visually-hidden");
-                            }
-
-                            if ($("#search-results > li").length) {
-                                sInput.attr("aria-expanded", "true");
-                            } else {
-                                sInput.attr("aria-expanded", "false");
-                            }
-                    })
-                    .on("keydown", function(evt) {
-                        switch (evt.key) {
-                            case "ArrowDown":
-                            case "Down":
-                                if ($("#search-results > li").length) {
-                                    evt.preventDefault();
-                                    $("#search-results > li:first > a").focus();
-                                }
-                                break;
-                        }
-                    });
+            tabbaleFirst.addEventListener("keydown", function(evt) {
+                if (evt.shiftKey && evt.key === "Tab") {
+                    evt.preventDefault();
+                    tabbaleLast.focus();
                 }
             });
-        });
-
-        tabbaleFirst.on("keydown", function(evt) {
-            if (evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                tabbaleLast.focus();
-            }
-        });
-
-        tabbaleLast.on("keydown", function(evt) {
-            if (!evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
-                tabbaleFirst.focus();
-            }
-        });
-
-        $(document).on("keydown.searchResult_keydown", "#search-results > li > a", function(evt) {
-            // if (evt.defaultPrevented) return;
-
-            var _t = $(evt.currentTarget),
-                _t_list = _t.parent("li"),
-                list = $("#search-results > li");
-
-            switch (evt.key) {
-                case "ArrowUp":
-                case "Up":
-                    !_t_list.prev().length ? list.last().children("a").focus() : _t_list.prev().children("a").focus();
-                    evt.stopPropagation();
-                    break;
-                
-                case "ArrowDown":
-                case "Down":
-                    !_t_list.next().length ? list.first().children("a").focus() : _t_list.next().children("a").focus();
-                    evt.stopPropagation();
-                    break;
-            }
-        });
-
-        if (layer.css("display") === "block") {
-            $(document).on("keydown.search_keydown", function(evt) {
-                var keyType = evt.key;
-
-                if (keyType === "Escape" || keyType === "Esc") {
-                    $("#search-results > li > a").is(":focus") && sInput.focus();
-                    
-                    if (!sInputValNotChanged || sInput.is(":focus")) {
-                        if (sInputVal) {
-                            layerClose();
-                        } else {
-                            if (!sInput.is(":focus")) {
-                                layerClose();
-                            } else {
-                                sInput.val("");
-                                $("#search-results").empty();
-                            }
-                        }
-                    } else {
-                        layerClose();
-                    }
+    
+            tabbaleLast.addEventListener("keydown", function(evt) {
+                if (!evt.shiftKey && evt.key === "Tab") {
+                    evt.preventDefault();
+                    tabbaleFirst.focus();
                 }
             });
+
+            document.addEventListener("keydown", handlerCloseKeydown);
+            document.addEventListener("keydown", handlerResultKeydown);
         }
-        closeBtn.on("click", layerClose);
-    });
-});
+
+        openBtn.addEventListener("click", handlerClick);
+        closeBtn.addEventListener("click", handlerCloseClick);
+})();

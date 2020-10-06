@@ -14,7 +14,7 @@ categories:
 tags:
     - css
 ---
-오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제.. 검색을 해보니 ```word-break: break-all```{:.language-css}, ```overflow-wrap: break-word```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다. 결국 선임에게 물어본 결과 그냥 딴거(break-word/break-all) 쓰는 걸로..
+오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제.. 검색을 해보니 ```word-break: break-all```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다. 결국 선임에게 물어본 결과 그냥 break-all 쓰는 걸로..
 
 대체 원인이 무엇일까? 버그라고 보기엔 IE 모든 버전을 지원하는 속성이므로 내가 애초부터 CSS를 잘못 작성했을 수도 있고.. 해답은 어디에 있단말인가.......
 
@@ -34,4 +34,32 @@ tags:
 ## 결론
 우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
 
-overflow-wrap 속성이나 white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
+white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
+
+## 해결책 알아내다 [2020.10.06]
+
+최근 실무에서도 같은 문제로 골이 아프던 중 방법을 알아냈다.
+
+{:.has-label}
+```css
+span {
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+```
+
+```word-wrap: break-word```{:.language-css} 속성으로 단어 단위 강제 줄바꿈을 해주는 것이다. 주의할 점은 아래와 같음.
+
+---
+
+1. ```word-break```{:.language-css} 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄바꿈을 할지 결정하는 속성이고, ```word-wrap```{:.language-css} 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄바꿈을 해주는 속성이라는 점에서 차이가 있다.
+2. 이 속성만 사용하는 게 아니라 ```word-break: keep-all```{:.language-css} 속성과 같이 써주는 것임. ```word-break: keep-all```{:.language-css}을 먼저 써주자.
+
+{:.has-label}
+```css
+body {
+    word-wrap: break-word;
+}
+```
+
+모든 요소에 일일이 선언하려면 복잡해지니 body 같은 요소에 한 번만 선언해줘서 상속을 받도록 하는 게 좋을 듯.

@@ -79,7 +79,7 @@
     padding-bottom: 0;
     border: 0;
     color: $black02;
-    @include search_item();
+    @include search_item;
   }
 
   &__title {
@@ -92,7 +92,7 @@
     font-weight: 300;
     pointer-events: none;
     white-space: nowrap;
-    @include search_item();
+    @include search_item;
 
     @media (min-width: $min_large_width) {
       left: 3.8rem;
@@ -106,7 +106,7 @@
     font-size: 0.85rem;
     list-style: none;
   
-    @media (min-width: $minimal_width) {
+    @media (min-width: $min_minimal_width) {
       font-size: 0.9rem;
     }
   

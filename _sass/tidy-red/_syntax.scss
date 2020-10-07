@@ -38,6 +38,8 @@ code {
 }
 
 .highlight table {
+  table-layout: auto;
+
   td {
     padding: 0.25rem;
     border: 0;
@@ -84,206 +86,206 @@ code {
   }
 
   .c {
-	color: $code_grey;
+	  color: $code_grey;
   }
 
   .err {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .k {
-	color: $code_purple;
+	  color: $code_purple;
   }
 
   .l {
-	color: $code_orange;
+	  color: $code_orange;
   }
 
   .n, .h {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .o {
-	color: $code_green;
+	  color: $code_green;
   }
 
   .p {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .cm, .cp, .c1, .cs {
-	color: $code_grey;
+	  color: $code_grey;
   }
 
   .gd {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .ge {
-	font-style: italic;
+	  font-style: italic;
   }
 
   .gh {
-	color: $grey08;
-	font-weight: 700;
+    color: $grey08;
+    font-weight: 700;
   }
 
   .gi {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .gp {
-	color: $code_grey;
-	font-weight: 700;
+    color: $code_grey;
+    font-weight: 700;
   }
 
   .gs {
-	font-weight: 700;
+	  font-weight: 700;
   }
 
   .gu {
-	color: $code_green;
-	font-weight: 700;
+    color: $code_green;
+    font-weight: 700;
   }
 
   .kc, .kd {
-	color: $code_purple;
+	  color: $code_purple;
   }
 
   .kn {
-	color: $code_green;
+	  color: $code_green;
   }
 
   .kp, .kr {
-	color: $code_purple;
+	  color: $code_purple;
   }
 
   .kt {
-	color: $code_yellow;
+	  color: $code_yellow;
   }
 
   .ld {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .m {
-	color: $code_orange;
+	  color: $code_orange;
   }
 
   .s {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .na {
-	color: $code_blue;
+	  color: $code_blue;
   }
 
   .nb {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .nc {
-	color: $code_yellow;
+	  color: $code_yellow;
   }
 
   .no {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .nd {
-	color: $code_green;
+	  color: $code_green;
   }
 
   .ni {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .ne {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .nf {
-	color: $code_blue;
+	  color: $code_blue;
   }
 
   .nl {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .nn {
-	color: $code_yellow;
+	  color: $code_yellow;
   }
 
   .nx {
-	color: $code_blue;
+	  color: $code_blue;
   }
 
   .py {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .nt {
-	color: $code_green;
+	  color: $code_green;
   }
 
   .nv {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .ow {
-	color: $code_green;
+	  color: $code_green;
   }
 
   .w {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .mf, .mh, .mi, .mo {
-	color: $code_orange;
+	  color: $code_orange;
   }
 
   .sb {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .sc {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .sd {
-	color: $code_grey;
+	  color: $code_grey;
   }
 
   .s2 {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .se {
-	color: $code_orange;
+	  color: $code_orange;
   }
 
   .sh {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .si {
-	color: $code_orange;
+	  color: $code_orange;
   }
 
   .sx, .sr, .s1, .ss {
-	color: $code_green02;
+	  color: $code_green02;
   }
 
   .bp {
-	color: $grey08;
+	  color: $grey08;
   }
 
   .vc, .vg, .vi {
-	color: $code_red;
+	  color: $code_red;
   }
 
   .il {
-	color: $code_orange;
+	  color: $code_orange;
   }
 }
 

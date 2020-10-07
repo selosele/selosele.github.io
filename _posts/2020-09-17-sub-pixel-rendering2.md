@@ -73,6 +73,18 @@ body {
 
 모든 이미지에 일일이 선언하려면 좀 번거로울 것이다. 상속을 받는 속성이므로 상위 요소에 한 번만 선언해주면 더 간편해질 것임.
 
+{:.has-label}
+```css
+body :before,
+body :after {
+  image-rendering: -webkit-optimize-contrast;
+}
+```
+
+그리고 가상요소로 넣은 background-image도 영향을 받을 수 있도록 하기 위해 위와 같이 작성해주는 것도 필수~
+
+참고로 ```body:before```{:.language-css} 가 아니라 ```body :before```{:.language-css} 임...... body의 자손에 가상요소를 쓰겠다는 의미이니 잘못 읽지 말자...
+
 ## 참고 링크
 
 * [the-image-rendering](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"} - drafts.csswg.org

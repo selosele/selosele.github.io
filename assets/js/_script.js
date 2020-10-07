@@ -467,7 +467,7 @@
                     if (sInputVal) {
                         handlerCloseClick();
                     } else {
-                        if (!sInput === document.activeElement) {
+                        if (sInput !== document.activeElement) {
                             handlerCloseClick();
                         } else {
                             sInput.value = "";
@@ -475,8 +475,7 @@
                             while (sResult.firstChild) {
                                 sResult.removeChild(sResult.firstChild);
                             }
-
-                            !sInput.value && handlerCloseClick();
+                            // !sInput.value && handlerCloseClick();
                         }
                     }
                 } else {

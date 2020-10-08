@@ -91,6 +91,11 @@ label {
    cursor: pointer;
 }
 
+mark {
+   background-color: $yellow02;
+   color: inherit;
+}
+
 strong {
    font-weight: 700;
 }

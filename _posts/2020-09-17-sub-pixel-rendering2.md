@@ -84,7 +84,8 @@ body :after {
 
 그리고 가상요소로 넣은 background-image도 영향을 받을 수 있도록 하기 위해 위와 같이 작성해주는 것도 필수~
 
-참고로 ```body:before```{:.language-css} 가 아니라 ```body :before```{:.language-css} 임...... body의 자손에 가상요소를 쓰겠다는 의미이니 잘못 읽지 말자...
+참고로 ```body:before```{:.language-css} 가 아니라 ```body :before```{:.language-css} 임......  
+body 요소의 자손요소들에게 가상요소를 적용하겠다는 의미이니 잘못 읽지 말자...
 
 ## 참고 링크
 

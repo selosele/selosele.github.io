@@ -16,7 +16,8 @@ tags:
 primary_post: true
 ---
 
-[이전 글](/2020/02/16/sub-pixel-rendering/)에서는 ```transform```{:.language-css} 속성을 사용했을 때 이슈에 대응하는 방법을 떠들어보았고, 이번에는 CSS로 img 요소/background-image의 크기를 줄였을 때 대응하는 최선의 방법은 무엇인가..에 대해 이야기해보려고 한다.
+[이전 글](/2020/02/16/sub-pixel-rendering/)에서는 ```transform```{:.language-css} 속성을 사용했을 때 이슈에 대응하는 방법을 떠들어보았고,  
+이번에는 CSS로 img 요소/background-image의 크기를 줄였을 때 대응하는 최선의 방법은 무엇인가..에 대해 이야기해보려고 한다.
 
 실무에서 반응형 분기점마다 이미지 크기를 CSS로 줄여야 하는 상황이 있었는데, 크기가 홀수 단위로 떨어지다보니 이미지가 심하게 흐려보여서, 결국 이미지를 분기점마다 대응할 수 있게 포토샵에서 다른 크기로 여러 장을 편집하기 직전까지 갔으나..
 
@@ -24,7 +25,7 @@ primary_post: true
 
 ## image-rendering 속성이란?
 
-[명세](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"}에 의하면 해당 속성은 브라우저의 이미지 크기 변경 방식에 대한 힌트를 제공하는 속성이라고 설명되어 있다. img 요소와 background-image에 적용된다.
+[명세](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"}에 의하면 해당 속성은 브라우저의 이미지 크기 변경 방식에 대한 힌트를 제공하는 속성이라고 설명되어 있으며 img 요소와 background-image에 적용된다.
 
 명세와 [MDN](https://developer.mozilla.org/ko/docs/Web/CSS/image-rendering){:target="_blank"}을 보면 여러가지 속성값이 언급되어 있으나, 대부분 Deprecated 되었거나 크롬 브라우저에서 사용할 수 없는 것으로 보인다. 실질적으로 사용할 수 있는 것을 다음과 같이 추려보았음.
 

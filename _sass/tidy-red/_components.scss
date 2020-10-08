@@ -103,7 +103,7 @@
       margin-right: auto;
       box-shadow: rgba(0,0,0,0.4) 0.15rem 0.15rem 1rem 0;
 
-      + em {
+      ~ em {
          display: block;
          @include figcaption();
       }

@@ -76,7 +76,7 @@
             height: 14rem;
          }
 
-         + .author__info-wrapper {
+         ~ .author__info-wrapper {
             padding-top: 1.5rem;
 
             @media (min-width: $min_small_width) {

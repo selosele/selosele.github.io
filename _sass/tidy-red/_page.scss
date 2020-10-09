@@ -58,7 +58,6 @@
       padding-bottom: 1.2rem;
       border-bottom: 1px solid $grey04;
       color: $black02;
-      font-size: 0.9rem;
 
       ~ .pagination {
          display: table;
@@ -68,10 +67,6 @@
          border-collapse: collapse;
          table-layout: fixed;
       }
-   }
-
-   &__hero-source {
-      font-size: 1rem;
    }
 
    &__share {
@@ -285,17 +280,17 @@
       }
    
       hr {
+         display: flex;
          margin-top: 0;
          margin-bottom: 0;
          border-top: 0;
-         text-align: center;
+         justify-content: center;
    
          &:before {
             content: "\2026";
-            display: inline-block;
+            display: block;
             font-size: 3rem;
             line-height: 1;
-            vertical-align: top;
          }
       }
    }

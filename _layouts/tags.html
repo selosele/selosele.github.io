@@ -23,7 +23,7 @@ title: 태그
     <ul>
       {% for post in tagPost %}
       <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>
-        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B %d" }}</span>
+        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
       </li>
       {% endfor %}
     </ul>

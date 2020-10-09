@@ -202,6 +202,8 @@
 .page__btn {
    display: inline-block;
    padding: 0.4rem 1rem;
+   border-top-right-radius: 0.4rem;
+   border-bottom-left-radius: 0.4rem;
    background-color: $grey04;
    color: $black03;
    text-align: center;

@@ -48,7 +48,7 @@ if (el.length) console.log(true) // true
 
 ### 참고 링크
 
-* [Array.length](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - MDN
+* [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
 * [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
 
 ---
@@ -58,7 +58,7 @@ if (el.length) console.log(true) // true
 두 달째 파견 근무를 나와 있는데, 할 얘기가 많다-_-  
 파견 간다고 하니깐 새로운 환경에 대한 막연한 기대감부터 가졌었고, 매우 설렌 상태로 파견지에 도착했다. 다음 날 대가를 톡톡히 치루었는데, 갑작스런 심한 급체로 병가를 내버렸음...
 
-새로운 환경을 마주하면 적응하느라 긴장부터 하는 습관이 있다는 것을 깨달았다. 불필요한 긴장감이나 예민함은 건강문제로 이어질 수 있으니 조심하자... 현 회사 입사하자마자 다음날 급체 + 야근으로 인해 받았던 스트레스를 생각하면...후... 그러고보니 며칠 있으면 입사 1년이 되는데 데자뷰인가 싶기도...
+새로운 환경을 마주하면 적응하느라 긴장부터 하는 습관이 있다는 것을 깨달았다. 불필요한 긴장감이나 예민함은 건강문제로 이어질 수 있으니 조심하자... 현 회사 입사하자마자 다음날 급체 + 야근으로 받았던 스트레스를 생각하면...후... 그러고보니 며칠 있으면 입사 1년이 되는데 데자뷰인가 싶기도...
 
 ---
 

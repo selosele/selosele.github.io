@@ -45,7 +45,7 @@ box-shadow를 inset 선언시 그림자가 요소 내부에 생기는 것을 이
 
 linear-gradient는 IE 10까지 지원한다. 그럼 IE 8에서도 문제 없는 방법이 있긴 한건가? 최후의 방법이 하나 남았다.
 
-## background-repeat로 jpg 이미지를 반복시키는 방법
+## background-repeat로 이미지를 반복시키는 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="jOEWLqj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="jOEWLqj">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/jOEWLqj">
   jOEWLqj</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
@@ -53,6 +53,6 @@ linear-gradient는 IE 10까지 지원한다. 그럼 IE 8에서도 문제 없는 
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-예를 들어 요소의 font-size가 24px라고 가정했을 때, 너비 1px, 높이 8px 정도의 jpg 이미지를 하나 만들어서 background-image로 삽입 &rarr; 적당한 background-position 잡아주기 &rarr; x축으로 반복시키기.
+예를 들어 요소의 font-size가 24px라고 가정했을 때, 너비 1px, 높이 8px 정도의 이미지를 하나 만들어서 background-image로 삽입 &rarr; 적당한 background-position 잡아주기 &rarr; x축으로 반복시키기.
 
 크로스브라우징 이슈 없는 깔끔한 방법이라고 할 수 있겠다.

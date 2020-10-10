@@ -30,8 +30,9 @@
    }
 }
 
-// teaser
-@mixin teaser() {
+@mixin teaser {
+   background-color: $green05;
+
    &--blur {
       z-index: 1;
 
@@ -134,7 +135,7 @@
    -webkit-box-orient: vertical;
 }
 
-@mixin hide_text() {
+@mixin hide_text {
    overflow: hidden !important;
    position: absolute !important;
    clip: rect(1px, 1px, 1px, 1px) !important;

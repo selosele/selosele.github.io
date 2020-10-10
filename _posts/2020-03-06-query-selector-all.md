@@ -14,7 +14,8 @@ categories:
 tags:
     - javascript
 ---
-오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용. 매개변수를 이용, 태그에 텍스트를 삽입하는 스크립트를 jQuery와 Vanilla JS로 짜보았는데..
+오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용.  
+매개변수를 이용해서 태그에 텍스트를 삽입하는 스크립트를 jQuery와 Vanilla JS로 짜보았는데..
 
 {:.has-label}
 ```javascript
@@ -52,7 +53,7 @@ myName("sel");
 
 이게 멍청한 생각이었음을 깨달은 것은 querySelectorAll이 선택한 요소를 배열로 가져온다는 점을 이해한 순간...
 
-블로그 JS 대부분을 jQuery로 작업해왔고, jQuery적인 사고방식에 물들어 있던 나에게 이 쉬운 논리가 원활히 이해될리는 만무했을 것임. 의존적인 코딩 습관은 매우 위험한 것이다~
+블로그 JS 대부분을 jQuery로 작업해왔고, jQuery적인 사고방식에 물들어 있던 나에게 이 쉬운 논리가 원활히 이해될리는 만무했을 것임. 의존적인 코딩 습관은 매우 위험한 것이다.
 
 * [참고 링크 1](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"}
 * [참고 링크 2](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"}

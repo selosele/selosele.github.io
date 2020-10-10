@@ -14,9 +14,11 @@ categories:
 tags:
     - css
 ---
-오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제.. 검색을 해보니 ```word-break: break-all```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다. 결국 선임에게 물어본 결과 그냥 break-all 쓰는 걸로..
+오늘 실무에서 엄청난 멘붕을 겪었는데, ```word-break: keep-all```{:.language-css} 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제..  
+검색을 해보니 ```word-break: break-all```{:.language-css} IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다(는 핑계고 그냥 검색능력 부족 탓인듯). 결국 선임에게 물어본 결과 그냥 break-all 쓰는 걸로..
 
-대체 원인이 무엇일까? 버그라고 보기엔 IE 모든 버전을 지원하는 속성이므로 내가 애초부터 CSS를 잘못 작성했을 수도 있고.. 해답은 어디에 있단말인가.......
+대체 원인이 무엇일까? 버그라고 보기엔 IE 모든 버전을 지원하는 속성이므로 내가 애초부터 CSS를 잘못 작성했을 수도 있고..  
+해답은 어디에 있단말인가......
 
 ## 코드
 
@@ -27,9 +29,9 @@ tags:
 ### 조건
 
 * 3단 중첩 구조의 마크업. 위 코드는 div &gt; p &gt; span
-* div는 ```display: table```{:.language-css} 속성 적용, p는 ```display: table-cell```{:.language-css}, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 ```word-break: keep-all```{:.language-css} 선언으로 텍스트가 단어 단위로 떨어지게끔 하였음.
+* div는 ```display: table```{:.language-css} 속성 적용, p는 ```display: table-cell```{:.language-css}, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 ```word-break: keep-all```{:.language-css} 선언으로 단어 단위 줄바꿈이 일어나게 하였음.
 
-왜 p에 ```overflow: hidden```{:.language-css} 선언을 안 했냐면 table 요소는 overflow 속성을 적용받지 않기 때문임. 그리고 span에 inline-block 선언을 해주었으나 선임께서 너비를 정의해주거나 block 선언을 해야 한다고 알려주심..
+그리고 span에 inline-block 선언을 해주었으나 선임께서 너비를 정의해주거나 block 선언을 해야 한다고 알려주심..
 
 ## 결론
 우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
@@ -60,6 +62,8 @@ span {
 body {
     word-wrap: break-word;
 }
+
+/* word-break: keep-all 속성은 전역에 선언하지 않고 해당하는 요소에 선언하는 게 나은 것 같다. */
 ```
 
 모든 요소에 일일이 선언하려면 복잡해지니 body 같은 요소에 한 번만 선언해줘서 상속을 받도록 하는 게 좋을 듯.

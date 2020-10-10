@@ -5,7 +5,7 @@ title: "text-align: justify 속성을 사용한 신기한 정렬 기법"
 summary: "매우 신기~"
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.3
+  overlay_filter: 0.4
 date: 2020-05-26 22:35
 categories:
     - 퍼블노트

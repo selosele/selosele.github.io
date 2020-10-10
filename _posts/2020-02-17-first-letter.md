@@ -12,7 +12,8 @@ categories:
 tags:
     - css
 ---
-CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타일을 줄 수 있는 가상 요소이다. 의외로 잘 알려지지 않은 속성으로, 첫 글자 스타일링은 대부분 span 등으로 감싸서 처리하는 방식이 사용되고 있어 별도의 추가 마크업이 필요없다는 점에서 추후 유지보수 시 편리하다고 볼 수 있다(폰트 크기, 색상 등 font 속성만 스타일링을 하고자 할 때로 국한된다. 이름에서 볼 수 있듯 font 계열 속성만 사용 가능).
+CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타일을 줄 수 있는 가상 요소이다.  
+의외로 잘 알려지지 않은 속성으로, 첫 글자 스타일링은 대부분 span 등으로 감싸서 처리하는 방식이 사용되고 있어 별도의 추가 마크업이 필요없다는 점에서 추후 유지보수 시 편리하다고 볼 수 있다(폰트 크기, 색상 등 font 속성만 스타일링을 하고자 할 때로 국한된다. 이름에서 볼 수 있듯 font 계열 속성만 사용 가능).
 
 모든 브라우저에서 호환되며 특히 IE 8까지도 지원된다는 점에서 크로스브라우징 이슈가 없다고 볼 수 있다.
 
@@ -42,7 +43,7 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 > 
 > <cite><a href="https://www.w3.org/TR/selectors-3/#gen-content" target="_blank">공식 명세 원문</a> 및 <a href="https://techhtml.github.io/selectors/#gen-content" target="_blank">번역</a></cite>
 
-참 쉽죠? 그래서 ```::before```{:.language-css}를 ```::after```{:.language-css}로 수정하니 해결됨.
+그래서 ```::before```{:.language-css}를 ```::after```{:.language-css}로 수정하니 해결됨.
 
 MDN에도 관련 내용이 올라와 있어 번역 첨부해본다. 블로그 컨셉은 반말이지만 상기한 인용문과 운을 맞추려고 존댓말로 번역함...
 

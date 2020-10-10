@@ -274,6 +274,6 @@ post:
 masthead:
   teaser: 
     bg: "/assets/images/mhead_bg.jpg"
-    filter: 0.4
+    filter: 0.3
     blur: true
     position: # ex) 50% or 50% 21%

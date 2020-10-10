@@ -6,6 +6,7 @@ summary: "최신 트렌드를 익히려는 노력을 더 해야겠음"
 header:
   overlay_image: /assets/images/thumb/ts_thumb01.jpg
   overlay_filter: 0.4
+  image_position-y: 30%
 date: 2020-06-06 21:09
 categories:
     - 퍼블노트
@@ -30,9 +31,10 @@ console.log(num);
 ```
 Typescript는 숫자(number)와 문자열(string) 타입을 선언하는 것이 가능하다. 따라서 저렇게 작성하면 에러를 뱉어줌.
 
-Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻게든 동작은 할 것이다. 테스트 결과 15가 출력되는 기적을 볼 수 있음....
+Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻게든 작동은 할 것이다. 테스트 결과 15가 출력되는 기적을 볼 수 있음...
 
-따라서 Typescript 선에서 에러를 잡아내고 실수를 최소화하는 게 작업 효율을 높일 수 있다고 할 수 있다. 에러 수정 후 컴파일하면 다음과 같은 결과를 볼 수 있음.
+따라서 Typescript 선에서 에러를 잡아내고 실수를 최소화하는 게 작업 효율을 높일 수 있다고 할 수 있다.  
+에러 수정 후 ```tsc script.ts```{:.language-typescript} 명령어로 컴파일하면 다음과 같은 결과를 볼 수 있음.
 
 ## script.ts &rarr; script.js 컴파일
 
@@ -46,4 +48,5 @@ var num = getNum(3, 5);
 console.log(num);
 ```
 
-참 쉽죠? 앞으로 틈틈히 익혀봐야겠음.
+참 쉽죠? 앞으로 틈틈히 익혀봐야겠다.  
+우선 수동 컴파일에 익숙해지면 vscode를 이용한 자동 컴파일 환경 구축을 해볼 것이다. 뭐든지 CLI 환경에 익숙해야 자동 컴파일 환경에서 막히는 게 있어 수동으로 진행할 때 문제가 없을 것이다. 과거 GIT은 CLI로 관리했었는데, 지금은 vscode에서 연동하여 사용 중이고 클릭 몇 번이면 commit/push가 되니 매우 편리함.

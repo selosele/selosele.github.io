@@ -1,15 +1,14 @@
 ---
-published: false
 layout: post
 comments: true
 title: "nav 요소 내에 button 요소를 포함할 수 있는가?"
 summary:
 header:
-  overlay_image: /assets/images/thumb/nav_thumb01.jpg
-  overlay_filter: 0.5
-  image_link: https://pixabay.com/ko/photos/%EC%86%90-%EB%82%98%EC%B9%A8%EB%B0%98-%EC%98%A4%EB%A6%AC-%EC%97%94%ED%85%8C%EC%9D%B4%EC%85%98-3585349/
+  overlay_image: /assets/images/thumb/html_thumb01.jpg
+  overlay_filter: 0.4
+  image_link: https://pixabay.com/ko/illustrations/html5-html-%ED%8C%8C%EC%9D%BC-%ED%98%95%EC%8B%9D-386614/
   image_author: geralt
-date: 2020-09-02 21:11
+date: 2020-10-10 12:42
 categories:
     - 퍼블노트
 tags:
@@ -33,11 +32,18 @@ tags:
 
 우선 검색 열기 button을 누르면 페이지 이동이 아닌 검색 기능을 제공하는 레이어팝업이 등장하므로(애시당초 검색 페이지로 이동이면 당연히 a 요소로 마크업했어야 함), semantic 측면에서 보면 nav 요소 내에 있을 이유가 없다. 그리고 메뉴 열기 button을 누르면 사이트의 탐색 링크 목록을 제공하는 nav 요소를 포함한 레이어가 등장한다. 그렇다면 button 클릭 &rarr; nav 요소 등장..이라는 구조를 봤을 때, 다른 의미에서 semantic하다고 볼 수 있을까?
 
-## 나는 모른다. 하지만 semantic할 수도..?
+## 결론
 
-의미론을 제외, 단순히 &ldquo;nav 요소 내에 button 요소를 포함할 수 있는가&rdquo;에 대한 정답은 yes이다. nav 요소는 모든 Flow content를 포함할 수 있고, button 요소는 Flow content로 분류되기 때문이다. 그런데 의미론과 content model을 동일선상에 두고 생각하면 안된다. 둘은 서로 다르니까. 그저 예시를 위해 content model 이야기를 언급했을 뿐이니 중요하게 생각하지는 마셈..
+한 달간 찾아보고 얻은 해답을 적어본다.
 
-이제 중요한 것. 의미론적인 면에서 생각을 해보자. 페이지 이동이 아닌 기능을 제공하는 button 요소를 포함할 수 있는가? 
+> 의미론은 말 그대로 해당 요소가 전달하는 의미이고 이는 요소의 목적을 이야기하며,  
+> nav 안에 어떤 요소가 있든 탐색 링크를 가진 섹션이라는 목적을 벗어나지 않으면 된다. 일단 nav 요소는 sectioning root 이기 때문에 heading을 가져야 하는데, 당신의 생각을 기준으로 하면 nav 요소는 a 요소들의 그룹이어야 하니 heading이 포함되면 안되는 것.
+> 때문에 nav 안에 heading이 있어도 그 목적이 헤쳐지지 않음이고, nav 안에 button이 있다고 하더라도 그것이 네비게이션의 목적을 해치지 않는다면 있어도 무방하다.
+> 
+> <cite>커뮤니티에서 얻은 답변 요약</cite>
+
+즉, 사용자는 nav 요소의 button 요소를 눌러서 사이트의 탐색 링크를 제공하는 네비게이션 랜드마크에 접근할 수 있게 되므로,  
+본연의 목적대로 작동하는 것이다. 평소 semantic markup에 대해 나만의 생각대로 결론을 내린 적이 많은 것 같은데 이번 기회에 바로잡을 수 있게 되었다.
 
 [^1]: [1] [공식 명세](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
 

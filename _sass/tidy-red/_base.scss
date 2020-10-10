@@ -248,6 +248,7 @@ blockquote {
          content: "\2014";
          margin-right: 0.286em;
          font-weight: 200;
+         -webkit-font-smoothing: antialiased;
       }
    }
 }

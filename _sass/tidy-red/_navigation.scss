@@ -37,7 +37,7 @@
          right: 0;
       }
 
-      @media (min-width: $min_big_width) {
+      @media (min-width: $min-big-width) {
          width: 30rem;
       }
 
@@ -58,7 +58,7 @@
             margin-top: 1em;
          }
 
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.5rem;
          }
       }
@@ -76,17 +76,17 @@
          color: $black02;
          line-height: 1.3;
 
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.2rem;
          }
 
          a {
             color: inherit;
 
-            @media (min-width: $min_large_width) {
+            @media (min-width: $min-large-width) {
                &:hover {
                   text-decoration: underline;
-                  text-decoration: underline $main_color;
+                  text-decoration: underline $main-color;
                }
             }
          }
@@ -97,7 +97,7 @@
       list-style: disc;
    }
 
-   @media (min-width: $min_minimal_width) {
+   @media (min-width: $min-minimal-width) {
       &__list--grid {
          display: flex;
          flex-wrap: wrap;
@@ -113,7 +113,7 @@
    }
 
    &__list-count {
-      color: $sub_color03;
+      color: $sub-color03;
    }
 
    &__more {
@@ -128,7 +128,7 @@
       &:before {
          content: "\e94a";
          display: block;
-         font-family: $icon_font;
+         font-family: $icon-font;
          font-size: 1.8rem;
          letter-spacing: normal;
          line-height: 1;
@@ -144,12 +144,12 @@
       right: 1.5rem;
       width: 2rem;
       height: 2rem;
-      background-color: $main_color;
+      background-color: $main-color;
 
       &:before {
          content: "\e9af";
          display: block;
-         font-family: $icon_font;
+         font-family: $icon-font;
          font-size: 1.2rem;
          color: $grey12;
          -webkit-font-smoothing: antialiased;
@@ -194,7 +194,7 @@
                   height: 2.5rem;
                   font-size: 1.2rem;
                   line-height: 2.5rem;
-                  color: $sub_color03;
+                  color: $sub-color03;
                }
             }
          }
@@ -212,7 +212,7 @@
    margin-top: 4rem;
    text-align: center;
 
-   @media (min-width: $min_medium_width) {
+   @media (min-width: $min-medium-width) {
       margin-top: 2.5rem;
       margin-bottom: 1rem;
    }
@@ -226,7 +226,7 @@
       align-items: center;
       flex-wrap: wrap;
 
-      @media (min-width: $min_medium_width) {
+      @media (min-width: $min-medium-width) {
          font-size: 1.2rem;
       }
    }
@@ -236,12 +236,12 @@
       margin-right: 0.225em;
       line-height: 1;
 
-      @media (min-width: $min_minimal_width) {
+      @media (min-width: $min-minimal-width) {
          margin-left: 0.417em;
          margin-right: 0.417em;
       }
 
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min-small-width) {
          margin-left: 0.556em;
          margin-right: 0.556em;
       }
@@ -252,12 +252,12 @@
          padding: 0.417em 0.2em;
          color: $black03;
 
-         @media (min-width: $min_minimal_width) {
+         @media (min-width: $min-minimal-width) {
             padding-left: 0.556em;
             padding-right: 0.556em;
          }
 
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             padding-left: 0.833em;
             padding-right: 0.833em;
          }
@@ -268,9 +268,9 @@
       margin-left: 0.245em;
       margin-right: 0.245em;
       font-size: 1.833em;
-      color: $sub_color03;
+      color: $sub-color03;
 
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min-small-width) {
          margin-left: 0.455em;
          margin-right: 0.455em;
       }
@@ -280,12 +280,12 @@
       a {
          &:before {
             display: block;
-            font-family: $icon_font;
+            font-family: $icon-font;
             font-size: 1em;
             color: $black;
             -webkit-font-smoothing: antialiased;
 
-            @media (min-width: $min_small_width) {
+            @media (min-width: $min-small-width) {
                font-size: 1.083em;
             }
          }
@@ -325,11 +325,11 @@
          pointer-events: none;
       }
 
-      @media (min-width: $min_large_width) {
+      @media (min-width: $min-large-width) {
          &:hover,
          &:focus,
          &:active {
-            color: $sub_color03;
+            color: $sub-color03;
          }
       }
    }
@@ -341,7 +341,7 @@
    border-radius: 0.4rem;
    background-color: $grey12;
    box-sizing: border-box;
-   transition: $standard_transition;
+   transition: $standard-transition;
 
    nav {
       @include clearfix;
@@ -362,7 +362,7 @@
       padding-right: 1.5rem;
    }
 
-   @media (min-width: $min_large_width) {
+   @media (min-width: $min-large-width) {
       float: left;
       position: relative;
       position: sticky;
@@ -384,7 +384,7 @@
          &--active {
             position: relative;
             z-index: 1;
-            background-image: linear-gradient(45deg, $main_color, $sub_color04);
+            background-image: linear-gradient(45deg, $main-color, $sub-color04);
             color: $grey12;
    
             &:before {
@@ -396,7 +396,7 @@
                left: -100%;
                z-index: -1;
                width: 100%;
-               background-color: $main_color;
+               background-color: $main-color;
             }
          }
       }
@@ -416,9 +416,9 @@
       &:before {
          content: "\ea35";
          margin-right: 0.1em;
-         font-family: $icon_font;
+         font-family: $icon-font;
          font-weight: 200;
-         color: $sub_color03;
+         color: $sub-color03;
          vertical-align: middle;
          -webkit-font-smoothing: antialiased;
       }

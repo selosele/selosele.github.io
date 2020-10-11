@@ -3,28 +3,28 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common_layout($max_width: null, $width: $layout_width_px, $min_general_width_value: false, $margin: null, $margin_l: auto, $margin_r: auto) {
-   width: $layout_width_per;
+@mixin common-layout($max-width: null, $width: $layout-width-px, $min-general-width-value: false, $margin: null, $margin-l: auto, $margin-r: auto) {
+   width: $layout-width-per;
 
    @if $margin != null {
       margin: $margin;
    } @else {
-      margin-left: $margin_l;
-      margin-right: $margin_r;
+      margin-left: $margin-l;
+      margin-right: $margin-r;
    }
 
-   @media (min-width: $min_standard_width) {
-      @if $max_width {
-         max-width: $max_width;
+   @media (min-width: $min-standard-width) {
+      @if $max-width {
+         max-width: $max-width;
       } @else {
-         @if $width != $layout_width_per {
+         @if $width != $layout-width-per {
             width: $width;
          }
       }
    }
 
-   @if $min_general_width_value == false {
-      @media (min-width: $min_general_width) {
+   @if $min-general-width-value == false {
+      @media (min-width: $min-general-width) {
          width: 62.5vw;
       }
    }
@@ -51,7 +51,7 @@
 }
 
 // teaser blur
-@mixin teaser_blur_value($blur) {
+@mixin teaser-blur-value($blur) {
    &--blur {
       &:before {
          filter: blur($blur);
@@ -69,7 +69,7 @@
 }
 
 // focus
-@mixin activate_element($offset: -2px) {
+@mixin activate-element($offset: -2px) {
    &:focus,
    &:active {
       outline: thin dotted #666d72;
@@ -87,7 +87,7 @@
 }
 
 // search
-@mixin search_item {
+@mixin search-item {
    height: 2rem;
    padding-left: 0.5rem;
    padding-right: 0.5rem;
@@ -95,19 +95,19 @@
    font-size: 1.2rem;
    box-sizing: border-box;
 
-   @media (min-width: $min_small_width) {
+   @media (min-width: $min-small-width) {
       height: 3rem;
       line-height: 3rem;
       font-size: 1.7rem;
    }
 
-   @media (min-width: $min_medium_width) {
+   @media (min-width: $min-medium-width) {
       height: 4rem;
       line-height: 4rem;
       font-size: 2rem;
    }
 
-   @media (min-width: $min_large_width) {
+   @media (min-width: $min-large-width) {
       height: 5rem;
       line-height: 5rem;
       font-size: 2.2rem;
@@ -127,7 +127,7 @@
    white-space: nowrap;
 }
 
-@mixin multiple_ellipsis($line-clamp) {
+@mixin multiple-ellipsis($line-clamp) {
    display: -webkit-box;
    overflow: hidden;
    text-overflow: ellipsis;
@@ -135,7 +135,7 @@
    -webkit-box-orient: vertical;
 }
 
-@mixin hide_text {
+@mixin hide-text {
    overflow: hidden !important;
    position: absolute !important;
    clip: rect(1px, 1px, 1px, 1px) !important;
@@ -164,7 +164,7 @@
 }
 
 /* post info item */
-@mixin post_info_item {
+@mixin post-info-item {
    display: block;
    overflow: hidden;
    max-width: 70%;
@@ -172,7 +172,7 @@
    padding: 0.35rem 0.65rem;
    border-radius: 0.15rem;
    box-shadow: rgba(0,0,0,0.2) 0.15rem 0.15rem 0.5rem;
-   font-family: $default_font03;
+   font-family: $default-font03;
    font-size: 0.85rem;
    color: $grey12;
    text-shadow: rgba(0,0,0,0.6) 1px 1px 0.15rem;
@@ -181,14 +181,14 @@
    box-sizing: border-box;
 
    &:before {
-      font-family: $icon_font;
+      font-family: $icon-font;
       font-size: 1em;
       line-height: 1;
       -webkit-font-smoothing: antialiased;
    }
 }
 
-@mixin post_info_item_date {
+@mixin post-info-item-date {
    background-color: $black02;
 
    &:before {
@@ -196,7 +196,7 @@
    }
 }
 
-@mixin post_info_item_category {
+@mixin post-info-item-category {
    background-color: $green03;
 
    &:before {
@@ -205,8 +205,8 @@
    }
 }
 
-@mixin post_info_item_tag {
-   background-color: $sub_color03;
+@mixin post-info-item-tag {
+   background-color: $sub-color03;
 
    &:before {
       content: "\ea36";

@@ -35,11 +35,11 @@
     box-shadow: rgba(0,0,0,0.1) 0.5rem 0.5rem 0.5rem;
     box-sizing: border-box;
 
-    @media (min-width: $min_small_width) {
+    @media (min-width: $min-small-width) {
       padding-top: 3rem;
     }
 
-    @media (min-width: $min_large_width) {
+    @media (min-width: $min-large-width) {
       padding: 4rem 2.604vw;
     }
   }
@@ -47,9 +47,9 @@
   &__input-wrapper {
     position: relative;
     margin-top: 1rem;
-    border-bottom: 1px solid $main_color;
+    border-bottom: 1px solid $main-color;
 
-    @media (min-width: $min_large_width) {
+    @media (min-width: $min-large-width) {
       padding-left: 3.8rem;
 
       &:before {
@@ -63,9 +63,9 @@
         height: 1em;
         margin-top: auto;
         margin-bottom: auto;
-        font-family: $icon_font;
+        font-family: $icon-font;
         font-size: 3.2em;
-        color: $sub_color03;
+        color: $sub-color03;
         -webkit-font-smoothing: antialiased;
       }
     }
@@ -79,7 +79,7 @@
     padding-bottom: 0;
     border: 0;
     color: $black02;
-    @include search_item;
+    @include search-item;
   }
 
   &__title {
@@ -92,9 +92,9 @@
     font-weight: 300;
     pointer-events: none;
     white-space: nowrap;
-    @include search_item;
+    @include search-item;
 
-    @media (min-width: $min_large_width) {
+    @media (min-width: $min-large-width) {
       left: 3.8rem;
       width: calc(100% - 3.8rem);
     }
@@ -106,11 +106,11 @@
     font-size: 0.85rem;
     list-style: none;
   
-    @media (min-width: $min_minimal_width) {
+    @media (min-width: $min-minimal-width) {
       font-size: 0.9rem;
     }
   
-    @media (min-width: $min_small_width) {
+    @media (min-width: $min-small-width) {
       font-size: inherit;
     }
   
@@ -127,9 +127,9 @@
         padding-bottom: 0.5em;
         color: $black;
   
-        @media (min-width: $min_large_width) {
+        @media (min-width: $min-large-width) {
           &:hover {
-            color: $sub_color03;
+            color: $sub-color03;
             text-decoration: underline;
           }
         }
@@ -138,7 +138,7 @@
 
     &__match {
       font-weight: 700;
-      color: $sub_color03;
+      color: $sub-color03;
     }
   }
 
@@ -154,9 +154,9 @@
     &:before {
       content: "\e9af";
       display: block;
-      font-family: $icon_font;
+      font-family: $icon-font;
       font-size: 1.5rem;
-      color: $main_color;
+      color: $main-color;
       -webkit-font-smoothing: antialiased;
    }
   }

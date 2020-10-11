@@ -8,11 +8,11 @@ html {
    -webkit-text-size-adjust: none;
    -webkit-font-smoothing: antialiased;
 
-   @media (min-width: $min_medium_width) {
+   @media (min-width: $min-medium-width) {
       font-size: 19px;
    }
 
-   @media (min-width: $min_large_width) {
+   @media (min-width: $min-large-width) {
       font-size: 20px;
    }
 }
@@ -20,7 +20,7 @@ html {
 body {
    background-color: $grey07;
    image-rendering: -webkit-optimize-contrast;
-   font-family: $default_font04;
+   font-family: $default-font04;
    font-style: normal;
    font-weight: 400;
    letter-spacing: -0.01em;
@@ -54,7 +54,7 @@ img {
 }
 
 a {
-   color: $sub_color03;
+   color: $sub-color03;
    text-decoration: none;
 }
 
@@ -68,7 +68,7 @@ button {
 }
 
 a, button {
-   @include activate_element;
+   @include activate-element;
 }
 
 input {
@@ -135,7 +135,7 @@ pre {
 caption {
    padding: 0.476em;
    line-height: 1.5;
-   color: $sub_color03;
+   color: $sub-color03;
 }
 
 td, th {
@@ -273,7 +273,7 @@ sup {
       content: "]";
    }
 
-   @media (min-width: $min_large_width) {
+   @media (min-width: $min-large-width) {
       &:hover,
       &:focus,
       &:active {

@@ -9,8 +9,8 @@ figure.highlight {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-  background-color: $code_black;
-  font-family: $default_font02;
+  background-color: $code-black;
+  font-family: $default-font02;
   font-size: 0.9em;
   line-height: 1.8;
   color: $grey08;
@@ -73,7 +73,7 @@ code {
 
 .highlight {
   .hll {
-    background-color: $code_grey02;
+    background-color: $code-grey02;
   }
 
   > pre {
@@ -86,19 +86,19 @@ code {
   }
 
   .c {
-	  color: $code_grey;
+	  color: $code-grey;
   }
 
   .err {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .k {
-	  color: $code_purple;
+	  color: $code-purple;
   }
 
   .l {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 
   .n, .h {
@@ -106,7 +106,7 @@ code {
   }
 
   .o {
-	  color: $code_green;
+	  color: $code-green;
   }
 
   .p {
@@ -114,11 +114,11 @@ code {
   }
 
   .cm, .cp, .c1, .cs {
-	  color: $code_grey;
+	  color: $code-grey;
   }
 
   .gd {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .ge {
@@ -131,11 +131,11 @@ code {
   }
 
   .gi {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .gp {
-    color: $code_grey;
+    color: $code-grey;
     font-weight: 700;
   }
 
@@ -144,40 +144,40 @@ code {
   }
 
   .gu {
-    color: $code_green;
+    color: $code-green;
     font-weight: 700;
   }
 
   .kc, .kd {
-	  color: $code_purple;
+	  color: $code-purple;
   }
 
   .kn {
-	  color: $code_green;
+	  color: $code-green;
   }
 
   .kp, .kr {
-	  color: $code_purple;
+	  color: $code-purple;
   }
 
   .kt {
-	  color: $code_yellow;
+	  color: $code-yellow;
   }
 
   .ld {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .m {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 
   .s {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .na {
-	  color: $code_blue;
+	  color: $code-blue;
   }
 
   .nb {
@@ -185,15 +185,15 @@ code {
   }
 
   .nc {
-	  color: $code_yellow;
+	  color: $code-yellow;
   }
 
   .no {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .nd {
-	  color: $code_green;
+	  color: $code-green;
   }
 
   .ni {
@@ -201,11 +201,11 @@ code {
   }
 
   .ne {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .nf {
-	  color: $code_blue;
+	  color: $code-blue;
   }
 
   .nl {
@@ -213,11 +213,11 @@ code {
   }
 
   .nn {
-	  color: $code_yellow;
+	  color: $code-yellow;
   }
 
   .nx {
-	  color: $code_blue;
+	  color: $code-blue;
   }
 
   .py {
@@ -225,15 +225,15 @@ code {
   }
 
   .nt {
-	  color: $code_green;
+	  color: $code-green;
   }
 
   .nv {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .ow {
-	  color: $code_green;
+	  color: $code-green;
   }
 
   .w {
@@ -241,11 +241,11 @@ code {
   }
 
   .mf, .mh, .mi, .mo {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 
   .sb {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .sc {
@@ -253,27 +253,27 @@ code {
   }
 
   .sd {
-	  color: $code_grey;
+	  color: $code-grey;
   }
 
   .s2 {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .se {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 
   .sh {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .si {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 
   .sx, .sr, .s1, .ss {
-	  color: $code_green02;
+	  color: $code-green02;
   }
 
   .bp {
@@ -281,11 +281,11 @@ code {
   }
 
   .vc, .vg, .vi {
-	  color: $code_red;
+	  color: $code-red;
   }
 
   .il {
-	  color: $code_orange;
+	  color: $code-orange;
   }
 }
 

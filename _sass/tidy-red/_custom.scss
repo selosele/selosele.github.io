@@ -4,10 +4,10 @@
 
 // masthead layout
 .masthead {
-   @include teaser_blur_value(3px);
+   @include teaser-blur-value(3px);
 
    &__teaser {
-      @include teaser_blur_value(3px);
+      @include teaser-blur-value(3px);
    }
 }
 
@@ -55,7 +55,7 @@
       .fake-table__header {
          width: 40%;
 
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             width: 25%;
          }
       }

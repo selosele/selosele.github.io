@@ -3,49 +3,49 @@
    ========================================================================== */
 
 /* common layout */
-$layout_width_px: 1200px !default;
-$layout_width_per: 90vw !default;
+$layout-width-px: 1200px !default;
+$layout-width-per: 90vw !default;
 
 // breakpoints (max-width)
-$general_width: 1920px !default;
-$normal_width: 1600px !default;
-$standard_width: 1420px !default;
-$large_width: 1200px !default;
-$big_width: 1024px !default;
-$medium_width: 767px !default;
-$small_width: 560px !default;
-$minimal_width: 480px !default;
-$tiny_width: 320px !default;
+$general-width: 1920px !default;
+$normal-width: 1600px !default;
+$standard-width: 1420px !default;
+$large-width: 1200px !default;
+$big-width: 1024px !default;
+$medium-width: 767px !default;
+$small-width: 560px !default;
+$minimal-width: 480px !default;
+$tiny-width: 320px !default;
 
 // breakpoints (min-width)
-$min_general_width: $general_width + 1 !default;
-$min_normal_width: $normal_width + 1 !default;
-$min_standard_width: $standard_width + 1 !default;
-$min_large_width: $large_width + 1 !default;
-$min_big_width: $big_width + 1 !default;
-$min_medium_width: $medium_width + 1 !default;
-$min_small_width: $small_width + 1 !default;
-$min_minimal_width: $minimal_width + 1 !default;
-$min_tiny_width: $tiny_width + 1 !default;
+$min-general-width: $general-width + 1 !default;
+$min-normal-width: $normal-width + 1 !default;
+$min-standard-width: $standard-width + 1 !default;
+$min-large-width: $large-width + 1 !default;
+$min-big-width: $big-width + 1 !default;
+$min-medium-width: $medium-width + 1 !default;
+$min-small-width: $small-width + 1 !default;
+$min-minimal-width: $minimal-width + 1 !default;
+$min-tiny-width: $tiny-width + 1 !default;
 
 // calc
-$half_percentage: 50% !default;
+$half-percentage: 50% !default;
 
 /* font */
-$default_font: -apple-system,BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$default_font02: Monaco,Consolas, "Lucida Console", monospace !default;
-$default_font03: "Gothic A1" !default;
-$default_font04: "RIDI batang" !default;
-$icon_font: "xeicon" !default;
+$default-font: -apple-system,BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$default-font02: Monaco,Consolas, "Lucida Console", monospace !default;
+$default-font03: "Gothic A1" !default;
+$default-font04: "RIDI batang" !default;
+$icon-font: "xeicon" !default;
 
 /* color */
-$main_color: #ce5050 !default; // main background color
-$sub_color01: #facfcf !default;
-$sub_color02: #f74545 !default;
-$sub_color03: #cc4444 !default; // main text color
-$sub_color04: #f07178 !default;
-$sub_color05: #ec9597 !default;
-$sub_color06: #c76060 !default;
+$main-color: #ce5050 !default; // main background color
+$sub-color01: #facfcf !default;
+$sub-color02: #f74545 !default;
+$sub-color03: #cc4444 !default; // main text color
+$sub-color04: #f07178 !default;
+$sub-color05: #ec9597 !default;
+$sub-color06: #c76060 !default;
 $black: #333 !default;
 $black02: #525252 !default;
 $black03: #1e1e1e !default;
@@ -83,20 +83,20 @@ $orange04: #ca9443 !default;
 $yellow: #d7ba7d !default;
 $yellow02: #ff0 !default;
 $yellow03: #c7a938 !default;
-$twitter_color: #55acee !default;
-$facebook_color: #3b5998 !default;
-$linkedin_color: #007bb6 !default;
+$twitter-color: #55acee !default;
+$facebook-color: #3b5998 !default;
+$linkedin-color: #007bb6 !default;
 
-$code_black: #151515 !default;
-$code_grey: #969896 !default;
-$code_grey02: #424242 !default;
-$code_red: #d54e53 !default;
-$code_orange: #e78c45 !default;
-$code_yellow: #e7c547 !default;
-$code_green: #70c0b1 !default;
-$code_green02: #b9ca4a !default;
-$code_blue: #7aa6da !default;
-$code_purple: #c397d8 !default;
+$code-black: #151515 !default;
+$code-grey: #969896 !default;
+$code-grey02: #424242 !default;
+$code-red: #d54e53 !default;
+$code-orange: #e78c45 !default;
+$code-yellow: #e7c547 !default;
+$code-green: #70c0b1 !default;
+$code-green02: #b9ca4a !default;
+$code-blue: #7aa6da !default;
+$code-purple: #c397d8 !default;
 
 /* transition */
-$standard_transition: all 0.3s !default;
+$standard-transition: all 0.3s !default;

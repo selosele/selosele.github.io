@@ -7,7 +7,7 @@
 }
 
 .content-wrapper {
-   @include common_layout($margin: 3rem auto 4rem);
+   @include common-layout($margin: 3rem auto 4rem);
 
    &.content--has-toc {
       width: auto;
@@ -27,7 +27,7 @@
       color: $black;
       line-height: 1.4;
 
-      @media (min-width: $min_general_width) {
+      @media (min-width: $min-general-width) {
          font-size: 2rem;
       }
    }
@@ -35,7 +35,7 @@
    &__lead {
       display: block;
       margin-top: 0.676em;
-      font-family: $default_font03;
+      font-family: $default-font03;
       font-weight: 400;
       font-size: calc(1rem + 0.5vw);
       line-height: 1.5;
@@ -47,7 +47,7 @@
          margin-right: 0.3rem;
       }
 
-      @media (min-width: $min_general_width) {
+      @media (min-width: $min-general-width) {
          font-size: 1.45rem;
       }
    }
@@ -90,36 +90,36 @@
          margin: 0 0.3rem 0.3rem 0;
          padding: 0.5rem 0.8rem;
          border-radius: 5px;
-         font-family: $default_font03;
+         font-family: $default-font03;
          font-weight: 500;
          font-size: 0.9rem;
          color: $grey12;
 
          &:before {
-            font-family: $icon_font;
+            font-family: $icon-font;
             font-size: 1.1em;
             -webkit-font-smoothing: antialiased;
             
-            @media (min-width: $min_medium_width) {
+            @media (min-width: $min-medium-width) {
                vertical-align: middle;
             }
          }
 
          > span {
-            @media (min-width: $min_medium_width) {
+            @media (min-width: $min-medium-width) {
                margin-left: 0.1em;
                vertical-align: middle;
             }
    
-            @media (max-width: $medium_width) {
-               @include hide_text();
+            @media (max-width: $medium-width) {
+               @include hide-text;
             }
          }
       }
 
       > .btn {
          &--twitter {
-            background-color: $twitter_color;
+            background-color: $twitter-color;
 
             &:before {
                content: "\ec1f";
@@ -127,7 +127,7 @@
          }
       
          &--facebook {
-            background-color: $facebook_color;
+            background-color: $facebook-color;
 
             &:before {
                content: "\ebd5";
@@ -135,7 +135,7 @@
          }
       
          &--linkedin {
-            background-color: $linkedin_color;
+            background-color: $linkedin-color;
 
             &:before {
                content: "\ebf4";
@@ -152,23 +152,23 @@
    }
 
    &__info-item {
-      @include post_info_item;
+      @include post-info-item;
       margin-left: 0.3rem;
 
       &:not(.page__info-item--date) {
-         @include activate_element($offset: 2px);
+         @include activate-element($offset: 2px);
       }
 
       &--date {
-         @include post_info_item_date;
+         @include post-info-item-date;
       }
    
       &--category {
-         @include post_info_item_category;
+         @include post-info-item-category;
       }
    
       &--tag {
-         @include post_info_item_tag;
+         @include post-info-item-tag;
       }
    }
    
@@ -177,61 +177,61 @@
       color: $black;
       @include clearfix;
 
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min-small-width) {
          font-size: 1.05rem;
       }
 
       h2:not(.toc__title) {
-         @include heading();
+         @include heading;
          margin-top: 0.789em;
          margin-bottom: 0.526em;
          font-size: calc(1.7rem + 0.5vw);
    
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.9rem;
          }
       }
    
       h3 {
-         @include heading();
+         @include heading;
          margin-top: 0.55em;
          margin-bottom: 0.55em;
          font-size: calc(1.51rem + 0.5vw);
    
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.7rem;
          }
       }
    
       h4 {
-         @include heading();
+         @include heading;
          margin-top: 0.5em;
          margin-bottom: 0.5em;
          font-size: calc(1.32rem + 0.5vw);
    
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.5rem;
          }
       }
    
       h5 {
-         @include heading();
+         @include heading;
          margin-top: 0.45em;
          margin-bottom: 0.45em;
          font-size: calc(1.16rem + 0.5vw);
    
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.35rem;
          }
       }
    
       h6 {
-         @include heading();
+         @include heading;
          margin-top: 0.4em;
          margin-bottom: 0.4em;
          font-size: calc(1.01rem + 0.5vw);
    
-         @media (min-width: $min_small_width) {
+         @media (min-width: $min-small-width) {
             font-size: 1.2rem;
          }
       }
@@ -242,14 +242,14 @@
 
          &.float {
             &-left {
-               @media (min-width: $min_medium_width) {
+               @media (min-width: $min-medium-width) {
                   float: left;
                   margin-right: 3rem;
                }
             }
 
             &-right {
-               @media (min-width: $min_medium_width) {
+               @media (min-width: $min-medium-width) {
                   float: right;
                   margin-left: 3rem;
                }
@@ -259,7 +259,7 @@
 
       a {
          &:not(.page__btn) {
-            @media (min-width: $min_large_width) {
+            @media (min-width: $min-large-width) {
                &:hover {
                   text-decoration: underline;
                }
@@ -275,7 +275,7 @@
    
          ~ em {
             display: block;
-            @include figcaption();
+            @include figcaption;
          }
       }
    
@@ -297,7 +297,7 @@
    }
 
    &__item {
-      @include post_info_item;
+      @include post-info-item;
    }
    
    &__author {
@@ -305,7 +305,7 @@
       padding-top: 1.5rem;
       border-top: 1px solid $grey04;
       
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min-small-width) {
          @include clearfix;
       }
    
@@ -313,7 +313,7 @@
          &__avatar {
             display: none;
       
-            @media (min-width: $min_small_width) {
+            @media (min-width: $min-small-width) {
                display: block;
                float: left;
                width: 6rem;
@@ -346,7 +346,7 @@
             font-size: 1.4rem;
             line-height: 1.2;
 
-            @media (min-width: $min_small_width) {
+            @media (min-width: $min-small-width) {
                &:only-child {
                   margin-top: 1.2rem;
                }
@@ -380,9 +380,9 @@
          width: 1.75rem;
          height: 1.8rem;
          margin: auto;
-         font-family: $icon_font;
+         font-family: $icon-font;
          font-size: 1.8rem;
-         color: $sub_color03;
+         color: $sub-color03;
          -webkit-font-smoothing: antialiased;
       }
    }
@@ -390,7 +390,7 @@
 
 // post header
 .post-header {
-   @include common_layout($width: $layout_width_per, $min_general_width_value: null);
+   @include common-layout($width: $layout-width-per, $min-general-width-value: null);
    padding-top: 2rem;
    padding-bottom: 3rem;
    color: $grey12;
@@ -399,15 +399,15 @@
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0;
-      font-family: $default_font03;
+      font-family: $default-font03;
       color: inherit;
       text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
 
-      @media (min-width: $min_small_width) {
+      @media (min-width: $min-small-width) {
          font-size: calc(2.15rem + 0.5vw);
       }
 
-      @media (min-width: $min_general_width) {
+      @media (min-width: $min-general-width) {
          font-size: 2.5rem;
       }
    }

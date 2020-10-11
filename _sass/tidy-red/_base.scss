@@ -68,7 +68,7 @@ button {
 }
 
 a, button {
-   @include activate_element();
+   @include activate_element;
 }
 
 input {

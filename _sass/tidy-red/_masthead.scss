@@ -195,7 +195,7 @@
       justify-content: space-between;
       align-items: center;
    
-      button {
+      > button {
          background-color: transparent;
       }
    }
@@ -323,7 +323,8 @@
                   left: 0;
                   width: 3.5rem;
                   height: 3.5rem;
-                  margin: auto 0;
+                  margin-top: auto;
+                  margin-bottom: auto;
                   padding: 0.2rem;
                   border-radius: 50%;
                   border: 2px solid $main_color;

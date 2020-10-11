@@ -1,14 +1,16 @@
 // IE 체크
 (function() {
+    var rootElement = document.documentElement;
+
     // 11 ~ 9
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
-        document.documentElement.className += " only-ie";
+        rootElement.className += " only-ie";
         document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 
-    // IE 10 이하
+    // 10 이하
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
-        document.documentElement.className += " lte-ie10";
+        rootElement.className += " lte-ie10";
         document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
     }
 })();
@@ -170,22 +172,19 @@
         });
     },
     handlerClick = function(evt) {
-        if (evt.target !== evt.currentTarget) return;
+        if ((evt.target === evt.currentTarget) || evt.key === "Enter") {
+            var tooltipEL = evt.currentTarget.querySelector(".abbr__tooltip");
 
-        var tooltipEL = evt.currentTarget.querySelector(".abbr__tooltip");
-
-        if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
-            tooltipEL.hidden = false;
-            tooltipEL.setAttribute("tabindex", "0");
-            tooltipEL.classList.add("abbr__tooltip--active");
-        } else {
-            tooltipEL.hidden = true;
-            tooltipEL.setAttribute("tabindex", "-1");
-            tooltipEL.classList.remove("abbr__tooltip--active");
+            if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
+                tooltipEL.hidden = false;
+                tooltipEL.setAttribute("tabindex", "0");
+                tooltipEL.classList.add("abbr__tooltip--active");
+            } else {
+                tooltipEL.hidden = true;
+                tooltipEL.setAttribute("tabindex", "-1");
+                tooltipEL.classList.remove("abbr__tooltip--active");
+            }
         }
-    },
-    handlerKeydown = function(evt) {
-        if (evt.key === "Enter") handlerClick(evt);
     };
 
     appendTooltip();
@@ -194,7 +193,7 @@
     if (abbr) {
         for (var i = 0; i < abbr.length; i++) {
             abbr[i].addEventListener("click", handlerClick);
-            abbr[i].addEventListener("keydown", handlerKeydown);
+            abbr[i].addEventListener("keydown", handlerClick);
         }
     }
 })();

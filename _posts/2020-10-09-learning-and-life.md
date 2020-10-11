@@ -46,10 +46,32 @@ if (el.length) console.log(true) // true
 
 물론 두 조건 모두 반환 결과는 동일하고, 코드의 가독성에 차이가 있을 뿐이라서 어느 방식이 무조건 옳다고 할 수 없다.
 
-### 참고 링크
+* 참고 링크
+  * [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
+  * [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
 
-* [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
-* [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
+## 자기호출 익명함수(Self-invoking anonymous function)
+
+블로그 테마 JS 작업 중 알게된 코드이다.  
+애초에 나는 ```(function(){})();```{:.language-javascript}라고 익명함수를 작성했는데 다음과 같이 컴파일된 것임(minify 및 uglify 처리를 해서 그럼).
+
+{:.has-label}
+```javascript
+!function(a, b) {
+  return a + b;
+}(1, 2); // false
+```
+
+function 앞에 ```!```{:.language-javascript}가 붙은 게 신기했다. 보통 익명함수라고 하면 아래와 같은 방식으로 알고 있었는데,
+
+{:.has-label}
+```javascript
+(function(a, b) {
+  return a + b;
+})(1, 2); // 3
+```
+
+검색을 해보니 차이점은 ```!```{:.language-javascript}가 붙으면 반환값의 반대값을 반환한다는 것임. 아직 이해가 부족한 탓인지 예제를 틀리게 썼을 수 있으므로 이해될 때까지 이리 만져보고 저리 만져보자~
 
 ---
 

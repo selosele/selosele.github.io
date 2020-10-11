@@ -266,7 +266,7 @@ skip_links:
 
 # post
 post:
-  author: true
+  author: false
   category_list: true
   tag_list: true
 

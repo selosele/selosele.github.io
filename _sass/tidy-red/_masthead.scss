@@ -158,7 +158,9 @@
          li {
             width: 2rem;
             height: 2rem;
-            margin: 1rem 1rem 0 1rem;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
             border-radius: 50%;
             background-color: $grey12;
             box-shadow: rgba(0,0,0,0.2) 0.25rem 0.15rem 0.5rem;
@@ -289,7 +291,8 @@
          }
       }
 
-      &.layout--home {
+      &.layout--home,
+      &.layout--page {
          .masthead {
             @media (min-width: $min-small-width) {
                -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);

@@ -20,12 +20,12 @@
     var rootElement = document.documentElement,
         menuWrapper = document.getElementById("side-menu"),
         menuLayer = document.getElementById("primary-nav"),
-        menuOuterEL = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
+        menuOuterList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
-        menuELtabble = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        menuELtabbleFirst = menuELtabble[0],
-        menuELtabbleLast = menuELtabble[menuELtabble.length - 1], menuELFocusedLast,
+        menuTabbleList = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        menuTabbleListFirst = menuTabbleList[0],
+        menuTabbleListLast = menuTabbleList[menuTabbleList.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href*='/category-list/#']");
 
     function handlerCloseClick() {
@@ -38,8 +38,8 @@
         menuLayer.classList.remove("menu__layer--animate");
         document.body.classList.remove("overflow-hidden");
 
-        for (var i = 0; i < menuOuterEL.length; i++) {
-            menuOuterEL[i].removeAttribute("aria-hidden");
+        for (var i = 0; i < menuOuterList.length; i++) {
+            menuOuterList[i].removeAttribute("aria-hidden");
         }
 
         setTimeout(function() {
@@ -66,12 +66,12 @@
             menuLayer.classList.add("menu__layer--animate");
         });
         
-        for (var i = 0; i < menuOuterEL.length; i++) {
-            menuOuterEL[i].setAttribute("aria-hidden", "true");
+        for (var i = 0; i < menuOuterList.length; i++) {
+            menuOuterList[i].setAttribute("aria-hidden", "true");
         }
 
-        for (var i = 0; i < menuELtabble.length; i++) {
-            menuELtabble[i].addEventListener("focusin", function(evt) {
+        for (var i = 0; i < menuTabbleList.length; i++) {
+            menuTabbleList[i].addEventListener("focusin", function(evt) {
                 menuELFocusedLast = evt.currentTarget;
             });
         }
@@ -79,19 +79,19 @@
         if (menuELFocusedLast) {
             menuELFocusedLast.focus();
         } else {
-            menuELtabbleFirst.focus();
-            menuELtabbleFirst.addEventListener("keydown", function(evt) {
+            menuTabbleListFirst.focus();
+            menuTabbleListFirst.addEventListener("keydown", function(evt) {
                 if (evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    menuELtabbleLast.focus();
+                    menuTabbleListLast.focus();
                 }
             });
         }
 
-        menuELtabbleLast.addEventListener("keydown", function(evt) {
+        menuTabbleListLast.addEventListener("keydown", function(evt) {
             if (!evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
-                menuELtabbleFirst.focus();
+                menuTabbleListFirst.focus();
             }
         });
 
@@ -152,26 +152,30 @@
 
 // abbr tooltip 생성 및 handler
 (function() {
-    var appendTooltip = function() {
-        var abbr = document.querySelectorAll("abbr[title]");
-        if (!abbr) return;
+    var abbrList = document.querySelectorAll("abbr[title]");
+    if (abbrList) {
+        for (var i = 0; i < abbrList.length; i++) {
+            abbrList[i].addEventListener("click", handlerClick);
+            abbrList[i].addEventListener("keydown", handlerKeydown);
+        }
+    }
 
-        Array.prototype.slice.call(abbr).forEach(function(abbrEL) {
-            var abbrSpan = document.createElement("span"),
-                abbr_title = "tooltip-" + encodeURI(abbrEL.title).replace(/ |%/g, "1");
+    Array.prototype.slice.call(abbrList).forEach(function(t) {
+        var t_span = document.createElement("span"),
+            t_title = "tooltip-" + encodeURI(t.title).replace(/ |%/g, "1");
 
-            abbrEL.setAttribute("tabindex", "0");
-            abbrEL.setAttribute("aria-describedby", abbr_title);
+        t.setAttribute("tabindex", "0");
+        t.setAttribute("aria-describedby", t_title);
 
-            abbrSpan.hidden = true;
-            abbrSpan.setAttribute("role", "tooltip");
-            abbrSpan.id = abbr_title;
-            abbrSpan.textContent = abbrEL.title;
-            abbrSpan.classList.add("abbr__tooltip");
-            abbrEL.appendChild(abbrSpan);
-        });
-    },
-    handlerClick = function(evt) {
+        t_span.hidden = true;
+        t_span.setAttribute("role", "tooltip");
+        t_span.id = t_title;
+        t_span.textContent = t.title;
+        t_span.classList.add("abbr__tooltip");
+        t.appendChild(t_span);
+    });
+    
+    function handlerClick(evt) {
         if ((evt.target === evt.currentTarget) || evt.key === "Enter") {
             var tooltipEL = evt.currentTarget.querySelector(".abbr__tooltip");
 
@@ -185,16 +189,10 @@
                 tooltipEL.classList.remove("abbr__tooltip--active");
             }
         }
-    };
+    }
 
-    appendTooltip();
-
-    var abbr = document.querySelectorAll("abbr[title]");
-    if (abbr) {
-        for (var i = 0; i < abbr.length; i++) {
-            abbr[i].addEventListener("click", handlerClick);
-            abbr[i].addEventListener("keydown", handlerClick);
-        }
+    function handlerKeydown(evt) {
+        if (evt.key === "Enter") handlerClick(evt);
     }
 })();
 
@@ -202,13 +200,13 @@
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeEL = postRoot.querySelectorAll("pre.highlight");
+        var preCodeList = postRoot.querySelectorAll("pre.highlight");
         
-        for (var i = 0; i < preCodeEL.length; i++) {
-            var preCodeParentEL = preCodeEL[i].parentElement.parentElement;
+        for (var i = 0; i < preCodeList.length; i++) {
+            var preCodeParentEL = preCodeList[i].parentElement.parentElement;
 
             if (preCodeParentEL.classList.contains("has-label")) {
-                preCodeEL[i].setAttribute("title", preCodeParentEL.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
+                preCodeList[i].setAttribute("title", preCodeParentEL.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
         }
     }
@@ -218,10 +216,10 @@
 (function() {
     var shareElement = document.getElementById("page-share");
     if (shareElement) {
-        var shareELbtn = shareElement.querySelectorAll("a");
+        var shareAncList = shareElement.querySelectorAll("a");
 
-        for (var i = 0; i < shareELbtn.length; i++) {
-            shareELbtn[i].addEventListener("click", function(evt) {
+        for (var i = 0; i < shareAncList.length; i++) {
+            shareAncList[i].addEventListener("click", function(evt) {
                 evt.preventDefault();
                 window.open(evt.currentTarget.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
             });
@@ -232,25 +230,25 @@
 // post archive 아코디언
 (function() {
     var handlerClick = function(evt) {
-        var _t = evt.currentTarget,
-            _t_matchEL = document.querySelector("[aria-labelledby='"+_t.id+"']");
+        var t = evt.currentTarget,
+            t_matchEL = document.querySelector("[aria-labelledby='"+t.id+"']");
 
-        if (_t_matchEL.classList.contains("archive__list--active")) {
-            _t_matchEL.classList.remove("archive__list--active");
-            _t_matchEL.setAttribute("hidden", false);
-            _t_matchEL.setAttribute("tabindex", "-1");
-            _t.setAttribute("aria-expanded", "false");
+        if (t_matchEL.classList.contains("archive__list--active")) {
+            t_matchEL.classList.remove("archive__list--active");
+            t_matchEL.setAttribute("hidden", false);
+            t_matchEL.setAttribute("tabindex", "-1");
+            t.setAttribute("aria-expanded", "false");
         } else {
-            _t_matchEL.classList.add("archive__list--active");
-            _t_matchEL.setAttribute("hidden", true);
-            _t_matchEL.setAttribute("tabindex", "0");
-            _t.setAttribute("aria-expanded", "true");
+            t_matchEL.classList.add("archive__list--active");
+            t_matchEL.setAttribute("hidden", true);
+            t_matchEL.setAttribute("tabindex", "0");
+            t.setAttribute("aria-expanded", "true");
         }
     },
-    btnEL = document.querySelectorAll(".archive__btn");
-    if (btnEL) {
-        for (var i = 0; i < btnEL.length; i++) {
-            btnEL[i].addEventListener("click", handlerClick);
+    btnList = document.querySelectorAll(".archive__btn");
+    if (btnList) {
+        for (var i = 0; i < btnList.length; i++) {
+            btnList[i].addEventListener("click", handlerClick);
         }
     }
 })();
@@ -262,16 +260,16 @@
             toc = document.getElementById("toc");
 
         if (pageRoot && toc) {
-            var tocELheadings = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+            var tocHeadingList = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
-            Array.prototype.slice.call(tocELheadings).forEach(function(h) {
+            Array.prototype.slice.call(tocHeadingList).forEach(function(h) {
                 if (window.pageYOffset >= (h.offsetTop - 1)) {
                     var t_id = h.id,
                         t_anchor = toc.querySelector("li a[href='#"+t_id+"']"),
-                        tocELanchor = toc.querySelectorAll("li a");
+                        tocAncList = toc.querySelectorAll("li a");
     
-                    for (var i = 0; i < tocELanchor.length; i++) {
-                        if (tocELanchor[i].classList.contains("toc--active")) tocELanchor[i].classList.remove("toc--active");
+                    for (var i = 0; i < tocAncList.length; i++) {
+                        if (tocAncList[i].classList.contains("toc--active")) tocAncList[i].classList.remove("toc--active");
                         if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
                     }
                 }
@@ -302,10 +300,10 @@
         toc = document.getElementById("toc");
 
     if (postRoot && toc) {
-        var tocTabbleNode = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        var tocTabbleList = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
             tocTabbleFocusedLast;
 
-        Array.prototype.slice.call(tocTabbleNode).forEach(function(t) {
+        Array.prototype.slice.call(tocTabbleList).forEach(function(t) {
             t.addEventListener("keydown", function(evt) {
                 if (evt.currentTarget === document.querySelector("nav[aria-labelledby='toc-title']")) return;
 
@@ -344,10 +342,10 @@
     var openBtn = document.querySelector(".nav__search-open"),
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
-        outerEL = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
-        tabbale = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tabbaleFirst = tabbale[0],
-        tabbaleLast = tabbale[tabbale.length - 1],
+        outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
+        tabbaleList = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbaleListFirst = tabbaleList[0],
+        tabbaleListLast = tabbaleList[tabbaleList.length - 1],
         sResult = document.getElementById("search-results"),
         sLabel = document.getElementById("search-title"),
         sInput = document.getElementById("search-input"), sInputVal, sInputValNotChanged;
@@ -381,14 +379,14 @@
         }
 
         function handlerInputKeydown2(evt) {
-            var _li = sResult.querySelectorAll("li");
+            var liEL = sResult.querySelectorAll("li");
 
             switch (evt.key) {
                 case "ArrowDown":
                 case "Down":
-                    if (_li.length) {
+                    if (liEL.length) {
                         evt.preventDefault();
-                        _li[0].querySelector("a").focus();
+                        liEL[0].querySelector("a").focus();
                     }
                     break;
             }
@@ -396,13 +394,13 @@
 
         function handlerResultKeydown(evt) {
             if (evt.target.tagName === "A") {
-                var _t = evt.target,
-                    _t_list = _t.parentElement,
+                var t = evt.target,
+                    t_list = t.parentElement,
                     list = sResult.querySelectorAll("li"),
                     listFirst = list[0],
                     listLast = list[list.length - 1],
-                    listPrev = _t_list.previousElementSibling,
-                    listNext = _t_list.nextElementSibling;
+                    listPrev = t_list.previousElementSibling,
+                    listNext = t_list.nextElementSibling;
 
                 switch (evt.key) {
                     case "ArrowUp":
@@ -440,8 +438,8 @@
             setTimeout(function() {
                 layer.classList.remove("search-content--active");
 
-                for (var i = 0; i < outerEL.length; i++) {
-                    outerEL[i].getAttribute("aria-hidden") !== true && outerEL[i].removeAttribute("aria-hidden");
+                for (var i = 0; i < outerList.length; i++) {
+                    outerList[i].getAttribute("aria-hidden") !== true && outerList[i].removeAttribute("aria-hidden");
                 }
 
                 layer.setAttribute("aria-hidden", "true");
@@ -483,16 +481,16 @@
         }
 
         function handlerClick(evt) {
-            var _t = evt.currentTarget;
+            var t = evt.currentTarget;
 
             sInputValNotChanged = true;
 
-            _t.setAttribute("aria-expanded", "true");
+            t.setAttribute("aria-expanded", "true");
             closeBtn.setAttribute("aria-expanded", "true");
             document.body.classList.add("overflow-hidden");
 
-            for (var i = 0; i < outerEL.length; i++) {
-                outerEL[i].setAttribute("aria-hidden", "true");
+            for (var i = 0; i < outerList.length; i++) {
+                outerList[i].setAttribute("aria-hidden", "true");
             }
 
             layer.classList.add("search-content--active");
@@ -513,17 +511,17 @@
                 sInput.addEventListener("keydown", handlerInputKeydown2);
             });
 
-            tabbaleFirst.addEventListener("keydown", function(evt) {
+            tabbaleListFirst.addEventListener("keydown", function(evt) {
                 if (evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    tabbaleLast.focus();
+                    tabbaleListLast.focus();
                 }
             });
     
-            tabbaleLast.addEventListener("keydown", function(evt) {
+            tabbaleListLast.addEventListener("keydown", function(evt) {
                 if (!evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    tabbaleFirst.focus();
+                    tabbaleListFirst.focus();
                 }
             });
 

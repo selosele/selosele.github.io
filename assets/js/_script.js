@@ -246,7 +246,7 @@
         }
     },
     btnList = document.querySelectorAll(".archive__btn");
-    if (btnList) {
+    if (btnList.length) {
         for (var i = 0; i < btnList.length; i++) {
             btnList[i].addEventListener("click", handlerClick);
         }

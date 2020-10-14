@@ -11,6 +11,7 @@ header:
 date: 2020-04-11 19:42
 categories:
     - 퍼블노트
+    - 개인 프로젝트
 tags:
     - jekyll
 ---

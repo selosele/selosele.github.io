@@ -83,28 +83,16 @@ author:
   avatar           : "/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   email            :
-  links:
+  links: # 기본 새창열림 비활성화하려면 target_blank: false 옵션 추가
     - label: "Daejeon"
       icon: "xi-map-marker"
       url: https://www.google.com/maps/place/daejeon
     - label: "Email"
       icon: "xi-mail"
       url: mailto:gwiazda762@gmail.com
-    # - label: "Website"
-    #   icon: "fas fa-fw fa-link"
-    #   url: "https://selosele.github.io"
-    # - label: "Twitter"
-    #   icon: "fab fa-fw fa-twitter-square"
-    #   url: "https://twitter.com/"
-    # - label: "Facebook"
-    #   icon: "fab fa-fw fa-facebook-square"
-    #   url: "https://facebook.com/"
     - label: "GitHub"
       icon: "xi-github"
       url: "https://github.com/selosele"
-    # - label: "Instagram"
-    #   icon: "fab fa-fw fa-instagram"
-    #   url: "https://instagram.com/"
 
 # Reading Files
 include:

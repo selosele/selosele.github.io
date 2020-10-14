@@ -7,6 +7,7 @@ summary:
 header:
   overlay_image: /assets/images/thumb/jquery_thumb01.jpg
   overlay_filter: 0.4
+  image_position-y: 29%
   image_link: https://pixabay.com/ko/photos/%EB%AA%A8%ED%98%95-%ED%83%80%EC%9D%B4%ED%94%84-%EB%9D%BC%EC%9D%B4%ED%84%B0-%EB%8B%A8%EC%96%B4-5281991/
   image_author: viarami
 date: 2020-10-15 00:38
@@ -20,3 +21,10 @@ primary_post: true
 ---
 
 작성중
+
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="PozZZay" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PozZZay">
+  <span>See the Pen <a href="https://codepen.io/selucky/pen/PozZZay">
+  PozZZay</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

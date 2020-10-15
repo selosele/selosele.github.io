@@ -54,7 +54,7 @@ toggle만 할 거면 문제가 없으나, ```slideToggle```{:.language-javascrip
 나름 구상해본 요구사항(?)은 다음과 같다.
 
 1. 모든 이벤트를 바인딩할 수 있어야 한다. ```click```{:.language-javascript}, ```mouseover```{:.language-javascript} 등
-2. ```toggle```{:.language-javascript}, ```fadeToggle```{:.language-javascript} 등 모든 애니메이션 관련 메소드를 사용할 수 있어야 한다.
+2. ```toggle```{:.language-javascript}, ```fadeToggle```{:.language-javascript} 등 모든 메소드를 사용할 수 있어야 한다.
 3. 원하는 클래스를 toggle할 수 있어야 한다.
 4. 원하는 element에 클래스를 toggle할 수 있어야 한다.
 5. 이벤트 발생 시마다 원하는 로직을 넣을 수 있어야 한다.
@@ -110,8 +110,7 @@ $(".foo").hashToggle({
 });
 ```
 
-의도대로 작동하는 것을 볼 수 있다.  
-아래는 현재 codepen에서 작업 중인 코드이니 심심하면 뜯어보셈..
+작동하는지 보려면 아래 codepen에 올려놓은 코드를 보면 된다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="PozZZay" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PozZZay">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/PozZZay">

@@ -143,9 +143,9 @@ $(".foo").hashToggle({
 
 최종적으로 구현해야 하는 순서는  
 
-1. 이벤트 발생
+1. 이벤트 발생 (예: mouseover)
 2. 특정 옵션(예: <mark>afterFirstEvent</mark>)에 작성한 함수 호출
-3. 다시 이벤트 발생
+3. 다시 이벤트 발생 (예: mouseout)
 4. 특정 옵션(예: <mark>afterLastEvent</mark>)에 작성한 함수 호출
 
 이렇게 되어야 할 것이다.  

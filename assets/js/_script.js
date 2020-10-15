@@ -36,7 +36,7 @@
         menuELopen.focus();
         menuWrapper.setAttribute("aria-hidden", "true");
         menuLayer.classList.remove("menu__layer--animate");
-        document.body.classList.remove("overflow-hidden");
+        rootElement.classList.remove("layer-opened");
 
         for (var i = 0; i < menuOuterList.length; i++) {
             menuOuterList[i].removeAttribute("aria-hidden");
@@ -60,7 +60,7 @@
         menuELclose.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
-        document.body.classList.add("overflow-hidden");
+        rootElement.classList.add("layer-opened");
 
         setTimeout(function() {
             menuLayer.classList.add("menu__layer--animate");
@@ -339,7 +339,8 @@
 
 // 검색 레이어
 (function() {
-    var openBtn = document.querySelector(".nav__search-open"),
+    var rootElement = document.documentElement,
+        openBtn = document.querySelector(".nav__search-open"),
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
@@ -431,7 +432,7 @@
         function handlerCloseClick() {
             document.removeEventListener("keydown", handlerCloseKeydown);
             document.removeEventListener("keydown", handlerResultKeydown);
-            document.body.classList.remove("overflow-hidden");
+            rootElement.classList.remove("layer-opened");
             closeBtn.setAttribute("aria-expanded", "false");
             layer.classList.remove("search-content--animate");
 
@@ -487,7 +488,7 @@
 
             t.setAttribute("aria-expanded", "true");
             closeBtn.setAttribute("aria-expanded", "true");
-            document.body.classList.add("overflow-hidden");
+            rootElement.classList.add("layer-opened");
 
             for (var i = 0; i < outerList.length; i++) {
                 outerList[i].setAttribute("aria-hidden", "true");

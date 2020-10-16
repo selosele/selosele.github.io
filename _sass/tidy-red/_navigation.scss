@@ -104,8 +104,8 @@
 
          li {
             width: 50%;
-            margin-top: 0.8em;
-            margin-bottom: 0.8em;
+            margin-top: 0.791667em;
+            margin-bottom: 0.791667em;
             padding-right: 2em;
             box-sizing: border-box;
          }
@@ -232,47 +232,47 @@
    }
 
    li {
-      margin-left: 0.225em;
-      margin-right: 0.225em;
+      margin-left: 0.222222em;
+      margin-right: 0.222222em;
       line-height: 1;
 
       @media (min-width: $min-minimal-width) {
-         margin-left: 0.417em;
-         margin-right: 0.417em;
+         margin-left: 0.416667em;
+         margin-right: 0.416667em;
       }
 
       @media (min-width: $min-small-width) {
-         margin-left: 0.556em;
-         margin-right: 0.556em;
+         margin-left: 0.583333em;
+         margin-right: 0.583333em;
       }
 
       > a {
          display: block;
          position: relative;
-         padding: 0.417em 0.2em;
+         padding: 0.416667em 0.2em;
          color: $black03;
 
          @media (min-width: $min-minimal-width) {
-            padding-left: 0.556em;
-            padding-right: 0.556em;
+            padding-left: 0.583333em;
+            padding-right: 0.583333em;
          }
 
          @media (min-width: $min-small-width) {
-            padding-left: 0.833em;
-            padding-right: 0.833em;
+            padding-left: 0.833333em;
+            padding-right: 0.833333em;
          }
       }
    }
 
    .page--current {
-      margin-left: 0.245em;
-      margin-right: 0.245em;
-      font-size: 1.833em;
+      margin-left: 0.242424em;
+      margin-right: 0.242424em;
+      font-size: 1.833333em;
       color: $sub-color03;
 
       @media (min-width: $min-small-width) {
-         margin-left: 0.455em;
-         margin-right: 0.455em;
+         margin-left: 0.454545em;
+         margin-right: 0.454545em;
       }
    }
 
@@ -286,7 +286,7 @@
             -webkit-font-smoothing: antialiased;
 
             @media (min-width: $min-small-width) {
-               font-size: 1.083em;
+               font-size: 1.083333em;
             }
          }
       }

@@ -19,8 +19,8 @@
 
 .page {
    &__title {
-      margin-bottom: 0.459em;
-      padding-bottom: 0.459em;
+      margin-bottom: 0.459641em;
+      padding-bottom: 0.459641em;
       border-bottom: 1px solid $grey05;
       font-weight: 700;
       font-size: calc(1.75rem + 0.5vw);
@@ -34,7 +34,7 @@
 
    &__lead {
       display: block;
-      margin-top: 0.676em;
+      margin-top: 0.675676em;
       font-family: $default-font03;
       font-weight: 400;
       font-size: calc(1rem + 0.5vw);
@@ -87,8 +87,12 @@
       > a {
          display: block;
          overflow: hidden;
-         margin: 0 0.3rem 0.3rem 0;
-         padding: 0.5rem 0.8rem;
+         margin-right: 0.3rem;
+         margin-bottom: 0.3rem;
+         padding-top: 0.5rem;
+         padding-bottom: 0.5rem;
+         padding-left: 0.8rem;
+         padding-right: 0.8rem;
          border-radius: 5px;
          font-family: $default-font03;
          font-weight: 500;
@@ -183,8 +187,8 @@
 
       h2:not(.toc__title) {
          @include heading;
-         margin-top: 0.789em;
-         margin-bottom: 0.526em;
+         margin-top: 0.789474em;
+         margin-bottom: 0.526316em;
          font-size: calc(1.7rem + 0.5vw);
    
          @media (min-width: $min-small-width) {
@@ -194,8 +198,8 @@
    
       h3 {
          @include heading;
-         margin-top: 0.55em;
-         margin-bottom: 0.55em;
+         margin-top: 0.558824em;
+         margin-bottom: 0.558824em;
          font-size: calc(1.51rem + 0.5vw);
    
          @media (min-width: $min-small-width) {
@@ -216,8 +220,8 @@
    
       h5 {
          @include heading;
-         margin-top: 0.45em;
-         margin-bottom: 0.45em;
+         margin-top: 0.444444em;
+         margin-bottom: 0.444444em;
          font-size: calc(1.16rem + 0.5vw);
    
          @media (min-width: $min-small-width) {
@@ -237,8 +241,8 @@
       }
 
       p {
-         margin-top: 1.429em;
-         margin-bottom: 1.429em;
+         margin-top: 1.428571em;
+         margin-bottom: 1.428571em;
 
          &.float {
             &-left {

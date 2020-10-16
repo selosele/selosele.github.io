@@ -19,7 +19,7 @@
          @include clearfix;
    
          &-content {
-            margin-top: 0.526em;
+            margin-top: 0.526316em;
          }
       }
    
@@ -29,7 +29,7 @@
          > a {
             display: block;
             @include ellipsis;
-            margin-bottom: 0.3em;
+            margin-bottom: 0.3541666666666667em;
             font-weight: 700;
             font-size: calc(1rem + 0.5vw);
             line-height: 1.5;
@@ -61,8 +61,8 @@
       &-summary {
          display: block;
          @include ellipsis;
-         margin-top: 0.6em;
-         margin-bottom: 0.6em;
+         margin-top: 0.604167em;
+         margin-bottom: 0.604167em;
          color: $sub-color03;
          font-weight: 400;
          font-size: calc(0.95rem + 0.5vw);
@@ -81,8 +81,8 @@
       }
    
       &-content {
-         margin-bottom: 0.737em;
-         line-height: 1.85em;
+         margin-bottom: 0.736842em;
+         line-height: 1.842105em;
          font-size: 0.95rem;
          color: $black03;
 
@@ -90,10 +90,10 @@
             &.has-first-letter {
                &:first-letter {
                   float: left;
-                  margin-top: 0.14em;
-                  margin-right: 0.12em;
-                  margin-left: 0.12em;
-                  font-size: 2.95em;
+                  margin-top: 0.1428571em;
+                  margin-right: 0.125em;
+                  margin-left: 0.125em;
+                  font-size: 2.94737em;
                   line-height: 1;
                   color: #c44;
                }

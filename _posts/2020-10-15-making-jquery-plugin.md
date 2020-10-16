@@ -74,11 +74,12 @@ var option = $.extend({
   action: "toggle",
   duration: 300,
   animateStop: true,
-  toggleClass: false,
-  addClass: false,
-  removeClass: false,
-  classTo: false,
-  classToSelf: false
+  toggleClass: null,
+  addClass: null,
+  removeClass: null,
+  classTo: null,
+  classToSelf: false,
+  afterEvent: null
 }, options);
 ```
 
@@ -89,12 +90,15 @@ var option = $.extend({
 <mark>duration</mark> 옵션은 말 그대로 지연시간을 설정한다. 예) ```slideDown(300)```{:.language-javascript}  
 <mark>animateStop</mark> 옵션은 jQuery 메소드인 ```stop()```{:.language-javascript}을 걸어줄 수 있다.
 
-<mark>toggleClass</mark>, <mark>addClass</mark>, <mark>removeClass</mark> 옵션은 jQuery의 그것과 같으므로 설명하지 않아도 알 것이다. 클래스가 붙는 요소는 a 요소의 href 속성값과 매칭되는 id값을 가진 요소(이하 타겟요소)이다.
+<mark>toggleClass</mark>, <mark>addClass</mark>, <mark>removeClass</mark> 옵션은 jQuery의 그것과 같다. 예) ```toggleClass: "active"```{:language-javascript}  
+클래스가 붙는 요소는 a 요소의 href 속성값과 매칭되는 id값을 가진 요소(이하 타겟요소)이다.
 
 <mark>classTo</mark> 옵션은 클래스를 붙일 요소를 설정한다. 중요한 점은 해당 옵션을 설정했다고 해서 타겟요소에 클래스가 붙지 않는 게 아니라 다 같이 붙게 구현했다는 점이다.  
 예를 들어 ```<body>```{:.language-html} 요소에도 클래스를 붙이고 싶어서 옵션에 넣으면, 타겟요소와 ```<body>```{:.language-html} 요소 모두 같은 클래스가 붙는 것이다.
 
 <mark>classToSelf</mark> 옵션은 이벤트가 바인딩된 요소, 즉 ```$(this)```{:.language-javascript}에도 클래스를 붙게 설정할 수 있다.
+
+<mark>afterEvent</mark> 옵션은 바인딩한 이벤트에 대한 핸들러를 작성할 수 있으며 ```event```{:.language-javascript} 매개변수를 갖는다. 아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
 
 이제 플러그인 호출을 해볼 것이다.
 
@@ -119,12 +123,9 @@ $(".foo").hashToggle({
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## etc.
+## afterEvent 옵션 구현이 매우 어렵다.
 
-머릿속에 담아둔 요구사항 중, &ldquo;이벤트 발생 시마다 원하는 로직을 넣을 수 있어야 한다&rdquo; 부분은 아직 구현하지 못했다.  
-어려워서 만들지 못하는 것일 뿐, 좀 더 학습하다보면 가능해질 것이다...
-
-그나저나 원하는 로직을 넣을 수 있다는 게 무슨 뜻이냐, 예를 들어
+그나저나 머릿속에 담아둔 요구사항 중 마지막 &ldquo;원하는 로직을 넣을 수 있어야 한다&rdquo;는 게 무슨 뜻이냐, 위에 언급한 afterEvent 옵션 사용법은 다음과 같다.
 
 {:.has-label}
 ```javascript
@@ -135,17 +136,20 @@ $(".foo").hashToggle({
 });
 ```
 
-위 코드는 실제 구현한 게 아니라 희망사항을 예시로 적어본 것임...
-
 &ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 옵션에 작성한 함수 호출&rdquo; 순서로 작동한다.  
 웹 접근성 대응이 필요할 경우 위와 같은 코드를 넣어야 하는데, 플러그인에서 해당 옵션을 제공하지 않는다면 플러그인이 가지는 중요한 의미인 확장성이 아무 의미없게 된다.
 
-최종적으로 구현해야 하는 순서는  
+또 중요한 것은, afterEvent 옵션에 작성한 핸들러도 toggle 되듯이 흘러가야 한다는 것임.  
+로직 순서를 풀어보자면
 
 1. 이벤트 발생 (예: mouseover)
 2. 특정 옵션(예: <mark>afterFirstEvent</mark>)에 작성한 함수 호출
 3. 다시 이벤트 발생 (예: mouseout)
 4. 특정 옵션(예: <mark>afterLastEvent</mark>)에 작성한 함수 호출
 
-이렇게 되어야 할 것이다.  
-클래스를 toggle 하듯이 특정 로직도 toggle 할 수 있도록 구현하는 게 제일 중요한 목표로 남아 있다.
+이렇게 구현해야 하는데 어려워서 잘 풀리지 않고 있다..  
+하루 아침에 되는 것도 아니고 계속 하다보면 될 것이라고 생각함..
+
+---
+
+일단 플러그인 파일명은 jQuery.hashToggle-1.0.js 라고 계획하였다.. 얼른 만들자..

@@ -11,7 +11,7 @@ figure.highlight {
   border-radius: 4px;
   background-color: $code-black;
   font-family: $default-font02;
-  font-size: 0.9em;
+  font-size: 0.904762em;
   line-height: 1.8;
   color: $grey08;
 
@@ -29,9 +29,9 @@ figure.highlight {
 
 code {
   &.highlighter-rouge {
-    margin-left: 0.316em;
-    margin-right: 0.316em;
-    padding: 0.368em 0.579em;
+    margin-left: 0.3157895em;
+    margin-right: 0.3157895em;
+    padding: 0.368421em 0.578947em;
     line-height: 2.2;
     vertical-align: middle;
   }

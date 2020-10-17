@@ -7,7 +7,7 @@
 {% assign postUrl = post.url | relative_url %}
 {% assign postUrl_r = postUrl | replace: '/', '' | replace: '-', '' %}
 
-<div class="{{ include.type | default: 'list' }}__item">
+<li>
   <article aria-labelledby="title-{{ postUrl_r }}" aria-describedby="desc-{{ postUrl_r }}" itemscope itemtype="https://schema.org/CreativeWork" class="archive__item">
     <h2 class="archive__item-title">
       <a href="{{ postUrl }}" rel="permalink" id="title-{{ postUrl_r }}">{{ title }}</a>
@@ -33,4 +33,4 @@
       {% endif %}
     </div>
   </article>
-</div>
+</li>

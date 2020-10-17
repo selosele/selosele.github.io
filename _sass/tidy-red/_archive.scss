@@ -159,14 +159,23 @@
          height: auto;
       }
    }
-}
 
-.list__item {
-   padding-bottom: 2.1rem;
+   &__post-list {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
 
-   & ~ & {
-      padding-top: 2.1rem;
-      border-top: 1px dashed #b9b9b9;
+      > li {
+         margin-top: 0;
+         margin-bottom: 0;
+         padding-bottom: 2.1rem;
+
+         ~ li {
+            padding-top: 2.1rem;
+            border-top: 1px dashed #b9b9b9;
+         }
+      }
    }
 }
 

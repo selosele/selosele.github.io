@@ -12,8 +12,10 @@ pagination:
   {% assign posts = site.posts %}
 {% endif %}
 
-{% for post in paginator.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+<ul class="archive__post-list">
+  {% for post in paginator.posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+</ul>
 
 {% include paginator.html %}

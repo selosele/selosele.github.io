@@ -53,8 +53,8 @@ toggle만 할 거면 문제가 없으나, ```slideToggle```{:.language-javascrip
 
 나름 구상해본 요구사항(?)은 다음과 같다.
 
-1. 모든 이벤트를 바인딩할 수 있어야 한다. ```click```{:.language-javascript}, ```mouseover```{:.language-javascript} 등
-2. ```toggle```{:.language-javascript}, ```fadeToggle```{:.language-javascript} 등 모든 메소드를 사용할 수 있어야 한다.
+1. 모든 이벤트를 바인딩할 수 있어야 한다. <mark>click</mark>, <mark>mouseover</mark> 등
+2. <mark>toggle</mark>, <mark>fadeToggle</mark> 등 모든 메소드를 사용할 수 있어야 한다.
 3. 원하는 클래스를 toggle할 수 있어야 한다.
 4. 원하는 element에 클래스를 toggle할 수 있어야 한다.
 5. 이벤트 발생 시마다 원하는 로직을 넣을 수 있어야 한다.

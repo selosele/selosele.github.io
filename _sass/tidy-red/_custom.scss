@@ -13,51 +13,49 @@
 
 // about 페이지
 .about {
-   &__heading {
-      .heading-link {
+   .heading-link {
+      &:before {
+         vertical-align: -0.125em;
+      }
+
+      &[href="#개인정보"] {
          &:before {
-            vertical-align: -0.125em;
+            content: url('https://api.iconify.design/noto-v1:notebook.svg?height=2.2em');
          }
       }
 
-      .heading-link {
-         &[href="#개인정보"] {
-            &:before {
-               content: url('https://api.iconify.design/noto-v1:notebook.svg?height=2.2em');
-            }
+      &[href="#주요-관심사에-대한-포스트"] {
+         &:before {
+            content: url('https://api.iconify.design/emojione-v1:lower-left-pencil.svg?height=2.2em');
          }
+      }
 
-         &[href="#주요-관심사에-대한-포스트"] {
-            &:before {
-               content: url('https://api.iconify.design/emojione-v1:lower-left-pencil.svg?height=2.2em');
-            }
+      &[href="#직접-만든-블로그"] {
+         margin-right: 0.3em;
+
+         &:before {
+            content: url('https://api.iconify.design/emojione-v1:laptop-computer.svg?height=2.2em');
          }
+      }
 
-         &[href="#직접-만든-블로그"] {
-            margin-right: 0.3em;
+      &[href="#구독"] {
+         margin-right: 0.2em;
 
-            &:before {
-               content: url('https://api.iconify.design/emojione-v1:laptop-computer.svg?height=2.2em');
-            }
-         }
-
-         &[href="#구독"] {
-            margin-right: 0.2em;
-
-            &:before {
-               content: url('https://api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');
-            }
+         &:before {
+            content: url('https://api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');
          }
       }
    }
 
-   &__info-table {
-      .fake-table__header {
-         width: 40%;
+   .fake-table__header {
+      width: 40%;
 
-         @media (min-width: $min-small-width) {
-            width: 25%;
-         }
+      @media (min-width: $min-small-width) {
+         width: 25%;
       }
+   }
+
+   .archive__list__date {
+      color: $black02;
    }
 }

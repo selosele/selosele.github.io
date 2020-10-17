@@ -98,7 +98,7 @@ var option = $.extend({
 
 <mark>classToSelf</mark> 옵션은 이벤트가 바인딩된 요소, 즉 ```$(this)```{:.language-javascript}에도 클래스를 붙게 설정할 수 있다.
 
-<mark>afterEvent</mark> 옵션은 바인딩한 이벤트에 대한 핸들러를 작성할 수 있으며 ```event```{:.language-javascript} 매개변수를 갖는다. 아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
+<mark>afterEvent</mark>는 바인딩한 이벤트에 대한 핸들러를 작성할 수 있는 콜백함수로, ```event```{:.language-javascript} 매개변수를 갖는다. 아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
 
 이제 플러그인 호출을 해볼 것이다.
 
@@ -136,16 +136,16 @@ $(".foo").hashToggle({
 });
 ```
 
-&ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 옵션에 작성한 함수 호출&rdquo; 순서로 작동한다.  
+&ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 콜백함수에 작성한 함수 호출&rdquo; 순서로 작동한다.  
 웹 접근성 대응이 필요할 경우 위와 같은 코드를 넣어야 하는데, 플러그인에서 해당 옵션을 제공하지 않는다면 플러그인이 가지는 중요한 의미인 확장성이 아무 의미없게 된다.
 
 또 중요한 것은, afterEvent 옵션에 작성한 핸들러도 toggle 되듯이 흘러가야 한다는 것임.  
 로직 순서를 풀어보자면
 
 1. 이벤트 발생 (예: mouseover)
-2. 특정 옵션(예: <mark>afterFirstEvent</mark>)에 작성한 함수 호출
+2. 특정 콜백함수(예: <mark>afterFirstEvent</mark>)에 작성한 핸들러 실행
 3. 다시 이벤트 발생 (예: mouseout)
-4. 특정 옵션(예: <mark>afterLastEvent</mark>)에 작성한 함수 호출
+4. 특정 콜백함수(예: <mark>afterLastEvent</mark>)에 작성한 핸들러 실행
 
 이렇게 구현해야 하는데 어려워서 잘 풀리지 않고 있다..  
 하루 아침에 되는 것도 아니고 계속 하다보면 될 것이라고 생각함..

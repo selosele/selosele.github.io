@@ -1,4 +1,4 @@
-{% if site.atom_feed.path %}
+{% if site.atom_feed.path and site.atom_feed.mastfoot %}
 <p class="mastfoot__rss">
   <a href="/{{ site.atom_feed.path }}">RSS</a>
 </p>

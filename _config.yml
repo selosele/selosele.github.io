@@ -45,6 +45,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : feed.xml
+  mastfoot               : false
 search                   : true
 search_full_content      : true
 # search_provider          : # lunr (default)

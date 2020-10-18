@@ -86,6 +86,8 @@
 
       > a {
          display: block;
+         width: 2.556rem;
+         height: 1.944rem;
          overflow: hidden;
          margin-right: 0.3rem;
          margin-bottom: 0.3rem;
@@ -97,27 +99,24 @@
          font-family: $default-font03;
          font-weight: 500;
          font-size: 0.9rem;
-         color: $grey12;
+         color: transparent;
+         box-sizing: border-box;
+
+         @media (min-width: $min-medium-width) {
+            width: auto;
+            height: auto;
+            color: $grey12;
+
+            &:before {
+               margin-right: 0.25rem;
+            }
+         }
 
          &:before {
             font-family: $icon-font;
             font-size: 1.1em;
+            color: #fff;
             -webkit-font-smoothing: antialiased;
-            
-            @media (min-width: $min-medium-width) {
-               vertical-align: middle;
-            }
-         }
-
-         > span {
-            @media (min-width: $min-medium-width) {
-               margin-left: 0.1em;
-               vertical-align: middle;
-            }
-   
-            @media (max-width: $medium-width) {
-               @include hide-text;
-            }
          }
       }
 
@@ -394,7 +393,7 @@
 
 // post header
 .post-header {
-   @include common-layout($width: $layout-width-per, $min-general-width-value: null);
+   @include common-layout($max-width: null, $width: 90%);
    padding-top: 2rem;
    padding-bottom: 3rem;
    color: $grey12;

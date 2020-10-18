@@ -11,7 +11,7 @@
    line-height: 1.4;
 
    &__inner-wrap {
-      @include common-layout($width: auto, $margin-l: 2.995vw, $margin-r: 2.995vw);
+      @include common-layout($margin-l: 2.995vw, $margin-r: 2.995vw);
    }
 }
 
@@ -97,7 +97,7 @@
       &__info-wrapper  {
          font-family: $default-font03;
          color: $grey12;
-         text-shadow: rgba(0,0,0,0.5) 2px 2px 3px;
+         text-shadow: rgba(0,0,0,0.5) 0.1rem 0.1rem 0.15rem;
 
          @media (min-width: $min-small-width) {
             padding-top: 1.7rem;
@@ -212,7 +212,7 @@
          display: block;
          font-family: $icon-font;
          color: #fff;
-         text-shadow: $black04 1px 2px 2px;
+         text-shadow: $black04 1px 0.1rem 0.1rem;
          -webkit-font-smoothing: antialiased;
       }
    

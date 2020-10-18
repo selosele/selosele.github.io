@@ -4,31 +4,31 @@
 
 /* common layout */
 $layout-width-px: 1200px !default;
-$layout-width-per: 90vw !default;
+$layout-width-per: 90% !default;
 $li-default-margin: 0.666667em !default;
 $p-default-margin: 1.428571em !default;
 
 // breakpoints (max-width)
-$general-width: 1920px !default;
-$normal-width: 1600px !default;
-$standard-width: 1420px !default;
-$large-width: 1200px !default;
-$big-width: 1024px !default;
-$medium-width: 767px !default;
-$small-width: 560px !default;
-$minimal-width: 480px !default;
-$tiny-width: 320px !default;
+$general-width: 1920 !default;
+$normal-width: 1600 !default;
+$standard-width: 1420 !default;
+$large-width: 1200 !default;
+$big-width: 1024 !default;
+$medium-width: 768 !default;
+$small-width: 560 !default;
+$minimal-width: 480 !default;
+$tiny-width: 320 !default;
 
 // breakpoints (min-width)
-$min-general-width: $general-width + 1 !default;
-$min-normal-width: $normal-width + 1 !default;
-$min-standard-width: $standard-width + 1 !default;
-$min-large-width: $large-width + 1 !default;
-$min-big-width: $big-width + 1 !default;
-$min-medium-width: $medium-width + 1 !default;
-$min-small-width: $small-width + 1 !default;
-$min-minimal-width: $minimal-width + 1 !default;
-$min-tiny-width: $tiny-width + 1 !default;
+$min-general-width: ($general-width / 16) + 0em !default;
+$min-normal-width: ($normal-width / 16) + 0em !default;
+$min-standard-width: ($standard-width / 16) + 0em !default;
+$min-large-width: ($large-width / 16) + 0em !default;
+$min-big-width: ($big-width / 16) + 0em !default;
+$min-medium-width: ($medium-width / 16) + 0em !default;
+$min-small-width: ($small-width / 16) + 0em !default;
+$min-minimal-width: ($minimal-width / 16) + 0em !default;
+$min-tiny-width: ($tiny-width / 16) + 0em !default;
 
 // calc
 $half-percentage: 50% !default;

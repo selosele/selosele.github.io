@@ -161,8 +161,7 @@
    }
 
    &__post-list {
-      margin-top: 0;
-      margin-bottom: 0;
+      margin: 0;
       padding-left: 0;
       list-style: none;
 
@@ -211,13 +210,15 @@
       padding: 1.6rem 1rem;
       border-bottom: 1px dashed $grey;
       background-color: transparent;
+      font-style: italic;
+      font-size: 1.05rem;
       color: $black;
       text-align: left;
 
       &__point {
          margin-right: 0.4rem;
          color: $sub-color03;
-         font-size: 1.5em;
+         font-size: 1.5rem;
       }
    }
 
@@ -238,7 +239,7 @@
 
          a {
             color: $black02;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
 
             @media (min-width: $min-large-width) {
                &:hover {
@@ -260,23 +261,16 @@
          }
       }
 
-      &__count {
+      &-count {
          color: $sub-color03;
       }
    }
 }
 
 .page {
-   &--posts-by-year {
-      .archive__point {
-         font-style: italic;
-      }
-   }
-
    &--tag-list {
       .archive__btn {
          font-size: 1.3rem;
-         font-style: italic;
       }
    }
 }

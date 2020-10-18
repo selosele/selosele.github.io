@@ -113,8 +113,8 @@ small {
 }
 
 li {
-   margin-top: 0.666667em;
-   margin-bottom: 0.666667em;
+   margin-top: $li-default-margin;
+   margin-bottom: $li-default-margin;
    line-height: 1.6;
 }
 

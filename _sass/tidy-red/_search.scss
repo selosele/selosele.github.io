@@ -101,7 +101,7 @@
   }
 
   &__results {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
     padding-left: 0;
     font-size: 0.85rem;
     list-style: none;
@@ -115,16 +115,14 @@
     }
   
     &__item {
-      margin-top: 0;
-      margin-bottom: 0;
+      $b-value: 0.85em !default;
+
+      padding-top: $b-value / 2;
+      padding-bottom: $b-value;
       border-bottom: 1px dotted $grey09;
   
       > a {
         display: block;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
         color: $black;
   
         @media (min-width: $min-large-width) {

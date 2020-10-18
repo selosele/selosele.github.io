@@ -277,7 +277,7 @@
         }
     },
     activateToc = function(main) {
-        if (!main || window.innerWidth <= 1200) return;
+        if (!main || window.innerWidth <= 1199) return;
         if (document.getElementById("toc")) main.classList.add("content--has-toc");
     },
     deactivateToc = function(main) {
@@ -286,7 +286,7 @@
     },
     initToc = function() {
         var mainEL = document.getElementById("content");
-        window.innerWidth > 1200 ? activateToc(mainEL) : deactivateToc(mainEL);
+        window.innerWidth > 1199 ? activateToc(mainEL) : deactivateToc(mainEL);
     };
 
     initToc();

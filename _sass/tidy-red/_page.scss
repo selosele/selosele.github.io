@@ -241,8 +241,8 @@
       }
 
       p {
-         margin-top: 1.428571em;
-         margin-bottom: 1.428571em;
+         margin-top: $p-default-margin;
+         margin-bottom: $p-default-margin;
 
          &.float {
             &-left {

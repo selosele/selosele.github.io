@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div role="main" id="content" class="content-wrapper">
+<div role="main" id="content" class="content-wrapper{% if page.toc %} content--has-toc{% endif %}">
   <article itemscope itemtype="https://schema.org/CreativeWork" class="page">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.summary %}<meta itemprop="description" content="{{ page.summary | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -25,9 +25,9 @@ layout: default
     <section itemprop="text" id="page-content" class="page__content">
       {% if page.toc %}
         <aside id="toc" class="toc-wrapper toc--fixed">
-          <nav aria-labelledby="toc-title" tabindex="0">
+          <nav tabindex="0">
             <header>
-              <h2 id="toc-title" class="toc__title">{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h2>
+              <h2 class="toc__title">{{ site.data.ui-text[site.locale].toc_label }}</h2>
             </header>
             {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
           </nav>

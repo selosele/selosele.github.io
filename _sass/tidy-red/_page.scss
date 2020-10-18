@@ -2,18 +2,22 @@
    page css
    ========================================================================== */
 
-.layout--post .content-wrapper {
-   margin: 2rem auto 3rem;
+.layout--post {
+   .content-wrapper {
+      margin: 2rem auto 3rem;
+   }
 }
 
 .content-wrapper {
    @include common-layout($margin: 3rem auto 4rem);
 
-   &.content--has-toc {
-      width: auto;
-      max-width: max-content;
-      margin-left: 29.948vw;
-      margin-right: 4.948vw;
+   @media (min-width: $min-large-width) {
+      &.content--has-toc {
+         width: auto;
+         max-width: max-content;
+         margin-left: 29.948vw;
+         margin-right: 4.948vw;
+      }
    }
 }
 

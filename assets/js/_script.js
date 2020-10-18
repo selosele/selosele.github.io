@@ -23,9 +23,9 @@
         menuOuterList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
-        menuTabbleList = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        menuTabbleListFirst = menuTabbleList[0],
-        menuTabbleListLast = menuTabbleList[menuTabbleList.length - 1], menuELFocusedLast,
+        menuTabbableList = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        menuTabbableListFirst = menuTabbableList[0],
+        menuTabbableListLast = menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href*='/category-list/#']");
 
     function handlerCloseClick() {
@@ -70,8 +70,8 @@
             menuOuterList[i].setAttribute("aria-hidden", "true");
         }
 
-        for (var i = 0; i < menuTabbleList.length; i++) {
-            menuTabbleList[i].addEventListener("focusin", function(evt) {
+        for (var i = 0; i < menuTabbableList.length; i++) {
+            menuTabbableList[i].addEventListener("focusin", function(evt) {
                 menuELFocusedLast = evt.currentTarget;
             });
         }
@@ -79,19 +79,19 @@
         if (menuELFocusedLast) {
             menuELFocusedLast.focus();
         } else {
-            menuTabbleListFirst.focus();
-            menuTabbleListFirst.addEventListener("keydown", function(evt) {
+            menuTabbableListFirst.focus();
+            menuTabbableListFirst.addEventListener("keydown", function(evt) {
                 if (evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    menuTabbleListLast.focus();
+                    menuTabbableListLast.focus();
                 }
             });
         }
 
-        menuTabbleListLast.addEventListener("keydown", function(evt) {
+        menuTabbableListLast.addEventListener("keydown", function(evt) {
             if (!evt.shiftKey && evt.key === "Tab") {
                 evt.preventDefault();
-                menuTabbleListFirst.focus();
+                menuTabbableListFirst.focus();
             }
         });
 
@@ -255,7 +255,7 @@
 
 // 포스트 목차
 (function() {
-    var handlerScroll = function() {
+    function handlerScroll() {
         var pageRoot = document.getElementById("page-content"),
             toc = document.getElementById("toc");
 
@@ -275,22 +275,7 @@
                 }
             });
         }
-    },
-    activateToc = function(main) {
-        if (!main || window.innerWidth <= 1199) return;
-        if (document.getElementById("toc")) main.classList.add("content--has-toc");
-    },
-    deactivateToc = function(main) {
-        if (!main) return;
-        main.classList.remove("content--has-toc");
-    },
-    initToc = function() {
-        var mainEL = document.getElementById("content");
-        window.innerWidth > 1199 ? activateToc(mainEL) : deactivateToc(mainEL);
-    };
-
-    initToc();
-    window.addEventListener("resize", initToc);
+    }
     window.addEventListener("scroll", handlerScroll);
 })();
 
@@ -300,16 +285,16 @@
         toc = document.getElementById("toc");
 
     if (postRoot && toc) {
-        var tocTabbleList = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-            tocTabbleFocusedLast;
+        var tocTabbableList = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+            tocTabbableFocusedLast;
 
-        Array.prototype.slice.call(tocTabbleList).forEach(function(t) {
+        Array.prototype.slice.call(tocTabbableList).forEach(function(t) {
             t.addEventListener("keydown", function(evt) {
-                if (evt.currentTarget === document.querySelector("nav[aria-labelledby='toc-title']")) return;
+                if (evt.currentTarget === document.querySelector("#toc > nav")) return;
 
                 evt.stopPropagation();
-                tocTabbleFocusedLast = evt.currentTarget;
-                tocTabbleFocusedLast.addEventListener("keydown", handlerKeydown);
+                tocTabbableFocusedLast = evt.currentTarget;
+                tocTabbableFocusedLast.addEventListener("keydown", handlerKeydown);
             });
         });
 
@@ -319,9 +304,9 @@
 
                 fixedToc.focus();
                 fixedToc.addEventListener("keydown", function(evt) {
-                    if ((evt.altKey && evt.key === "1") && tocTabbleFocusedLast) {
+                    if ((evt.altKey && evt.key === "1") && tocTabbableFocusedLast) {
                         evt.stopPropagation();
-                        tocTabbleFocusedLast.focus();
+                        tocTabbableFocusedLast.focus();
                     }
                 });
             }
@@ -344,9 +329,9 @@
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
-        tabbaleList = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
-        tabbaleListFirst = tabbaleList[0],
-        tabbaleListLast = tabbaleList[tabbaleList.length - 1],
+        tabbableList = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbableListFirst = tabbableList[0],
+        tabbableListLast = tabbableList[tabbableList.length - 1],
         sResult = document.getElementById("search-results"),
         sLabel = document.getElementById("search-title"),
         sInput = document.getElementById("search-input"), sInputVal, sInputValNotChanged;
@@ -512,17 +497,17 @@
                 sInput.addEventListener("keydown", handlerInputKeydown2);
             });
 
-            tabbaleListFirst.addEventListener("keydown", function(evt) {
+            tabbableListFirst.addEventListener("keydown", function(evt) {
                 if (evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    tabbaleListLast.focus();
+                    tabbableListLast.focus();
                 }
             });
     
-            tabbaleListLast.addEventListener("keydown", function(evt) {
+            tabbableListLast.addEventListener("keydown", function(evt) {
                 if (!evt.shiftKey && evt.key === "Tab") {
                     evt.preventDefault();
-                    tabbaleListFirst.focus();
+                    tabbableListFirst.focus();
                 }
             });
 

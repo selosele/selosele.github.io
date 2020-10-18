@@ -19,7 +19,7 @@
          @include clearfix;
    
          &-content {
-            margin-top: 0.526316em;
+            margin-top: 0.5rem;
          }
       }
    
@@ -81,8 +81,8 @@
       }
    
       &-content {
-         margin-bottom: 0.736842em;
-         line-height: 1.842105em;
+         margin-bottom: 0.7rem;
+         line-height: 1.875;
          font-size: 0.95rem;
          color: $black03;
 
@@ -90,10 +90,10 @@
             &.has-first-letter {
                &:first-letter {
                   float: left;
-                  margin-top: 0.1428571em;
-                  margin-right: 0.125em;
-                  margin-left: 0.125em;
-                  font-size: 2.94737em;
+                  margin-top: 0.4rem;
+                  margin-right: 0.1rem;
+                  margin-left: 0.1rem;
+                  font-size: 2.8rem;
                   line-height: 1;
                   color: #c44;
                }

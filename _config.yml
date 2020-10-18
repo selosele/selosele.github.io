@@ -249,7 +249,7 @@ theme_type: type2 # type1(default), type2
 
 # skip links
 skip_links:
-  to_nav: false
+  to_nav: true
   to_content: true
   to_mastfoot: false
 

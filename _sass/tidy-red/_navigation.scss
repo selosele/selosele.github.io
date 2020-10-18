@@ -188,13 +188,14 @@
                margin: 0.3rem 3%;
                
                > a {
-                  display: block;
+                  display: flex;
                   overflow: hidden;
                   width: 2.5rem;
                   height: 2.5rem;
                   font-size: 1.2rem;
-                  line-height: 2.5rem;
                   color: $sub-color03;
+                  justify-content: center;
+                  align-items: center;
                }
             }
          }

@@ -21,7 +21,7 @@
       {%- endfor -%}
     </ul>
   
-    <h2>{{ site.data.ui-text[site.locale].menu_categories | default: 'Categories' }}</h2>
+    <h2>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h2>
     {% if site.categories.size > 0 %}
     <ul>
       {% for i in (1..categories_max) reversed %}
@@ -29,7 +29,7 @@
       {% if category[1].size == i %}
       <li>
         <a href="/category-list/#btn-{{ category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}">{{ category[0] }}</a>
-        <small class="menu__list-count">({{ category[1].size }})</small>
+        <small class="menu__list-count"><span class="visually-hidden">포스트 개수</span> ({{ category[1].size }})</small>
       </li>
       {% endif %}
       {% endfor %}
@@ -37,7 +37,7 @@
     </ul>
 
     <a href="/category-list/" class="menu__more">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_nav_category_more }}</span>
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
     {% else %}
     <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
@@ -54,7 +54,7 @@
     {% endif %}
     
     <button type="button" aria-controls="primary-nav" class="menu__close">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_close_label }}</span>
+      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
     </button>
   </nav>
 </div>

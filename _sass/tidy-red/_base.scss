@@ -115,7 +115,7 @@ small {
 li {
    margin-top: $li-default-margin;
    margin-bottom: $li-default-margin;
-   line-height: 1.6;
+   // line-height: 1.6;
 }
 
 ::selection {
@@ -301,7 +301,6 @@ sup {
             margin: 0;
             font-size: 0.8rem;
             color: $grey;
-            line-height: 1.8;
          }
       }
    }

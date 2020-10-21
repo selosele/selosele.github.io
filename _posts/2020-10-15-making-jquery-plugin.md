@@ -136,7 +136,7 @@ $(".foo").hashToggle({
 });
 ```
 
-&ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 콜백함수에 작성한 함수 호출&rdquo; 순서로 작동한다.  
+&ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 콜백함수에 작성한 핸들러 실행&rdquo; 순서로 작동한다.  
 웹 접근성 대응이 필요할 경우 위와 같은 코드를 넣어야 하는데, 플러그인에서 해당 옵션을 제공하지 않는다면 플러그인이 가지는 중요한 의미인 확장성이 아무 의미없게 된다.
 
 또 중요한 것은, afterEvent 옵션에 작성한 핸들러도 toggle 되듯이 흘러가야 한다는 것임.  

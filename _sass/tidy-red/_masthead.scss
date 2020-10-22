@@ -254,7 +254,7 @@
 
    &-nav {
       position: relative;
-      margin: 1.7rem 2.96875vw;
+      @include common-layout($max-width: 1800px, $margin: 1.7rem auto);
    }
 }
 

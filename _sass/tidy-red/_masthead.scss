@@ -27,7 +27,7 @@
    &.theme-type1 {
       &.layout--home {
          .masthead {
-            @media (min-width: $small-width) {
+            @media (min-width: $min-small-width) {
                border-bottom-right-radius: 6vw;
             }
          }
@@ -195,6 +195,7 @@
       display: flex;
       position: absolute;
       top: 0;
+      bottom: 0;
       right: 0;
       justify-content: space-between;
       align-items: center;

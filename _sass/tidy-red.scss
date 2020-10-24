@@ -1,5 +1,12 @@
+/*!
+    * Tidy red Jekyll Theme 1.0 by Sel
+    * Copyright 2020 Sel
+    * Licensed under MIT
+*/
+
 /* core CSS */
-@import "tidy-red/reset",
+@import "XEicon/xeicon.min.css", // XEicon css
+        "tidy-red/reset",
         "tidy-red/font",
         "tidy-red/variables",
         "tidy-red/mixins",

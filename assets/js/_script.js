@@ -153,7 +153,7 @@
 // abbr tooltip 생성 및 handler
 (function() {
     var abbrList = document.querySelectorAll("abbr[title]");
-    if (abbrList) {
+    if (abbrList.length) {
         for (var i = 0; i < abbrList.length; i++) {
             abbrList[i].addEventListener("click", handlerClick);
             abbrList[i].addEventListener("keydown", handlerKeydown);

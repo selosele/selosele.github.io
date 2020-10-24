@@ -125,11 +125,16 @@ li {
 
 pre {
    box-sizing: border-box;
+   font: inherit;
    color: inherit;
    line-height: 1.8;
    white-space: pre-line;
    word-break: break-all;
    word-wrap: normal;
+}
+
+code {
+   font: inherit;
 }
 
 .table--scroll {

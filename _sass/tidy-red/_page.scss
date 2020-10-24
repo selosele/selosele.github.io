@@ -397,7 +397,7 @@
 
 // post header
 .post-header {
-   @include common-layout($max-width: null, $width: 90%);
+   @include common-layout($max-width: 1800px);
    padding-top: 2rem;
    padding-bottom: 3rem;
    color: $grey12;

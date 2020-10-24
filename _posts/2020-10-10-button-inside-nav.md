@@ -6,6 +6,7 @@ summary:
 header:
   overlay_image: /assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4
+  image_position-y: 57%
   image_link: https://pixabay.com/ko/illustrations/html5-html-%ED%8C%8C%EC%9D%BC-%ED%98%95%EC%8B%9D-386614/
   image_author: geralt
 date: 2020-10-10 12:42

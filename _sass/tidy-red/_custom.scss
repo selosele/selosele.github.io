@@ -2,15 +2,6 @@
    custom css
    ========================================================================== */
 
-// masthead layout
-.masthead {
-   @include teaser-blur-value(3px);
-
-   &__teaser {
-      @include teaser-blur-value(3px);
-   }
-}
-
 // about 페이지
 .about {
    .heading-link {

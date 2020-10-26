@@ -1,10 +1,8 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {% include seo.html %}
 
 <link href="{% if site.atom_feed.path %}/{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="preload" href="/assets/font/ridibatang-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">

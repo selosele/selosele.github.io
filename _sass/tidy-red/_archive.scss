@@ -24,8 +24,6 @@
       }
    
       &-title {
-         line-height: 1.1;
-   
          > a {
             display: block;
             @include ellipsis;

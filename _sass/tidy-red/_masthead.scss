@@ -38,7 +38,6 @@
 /* masthead layout */
 .masthead {
    overflow: hidden;
-   position: relative;
    @include teaser;
    background-repeat: no-repeat;
    background-position: 50% 50%;
@@ -48,6 +47,10 @@
       overflow: hidden;
       position: relative;
       @include teaser;
+   }
+
+   &--image {
+      background-color: transparent;
    }
 
    > .author-wrapper {

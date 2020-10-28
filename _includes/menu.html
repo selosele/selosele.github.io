@@ -29,7 +29,7 @@
       {% if category[1].size == i %}
       <li>
         <a href="/category-list/#btn-{{ category[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}">{{ category[0] }}</a>
-        <small class="menu__list-count"><span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
+        <small class="menu__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
       </li>
       {% endif %}
       {% endfor %}
@@ -37,7 +37,7 @@
     </ul>
 
     <a href="/category-list/" class="menu__more">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
     {% else %}
     <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
@@ -54,7 +54,7 @@
     {% endif %}
     
     <button type="button" aria-controls="primary-nav" class="menu__close">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
     </button>
   </nav>
 </div>

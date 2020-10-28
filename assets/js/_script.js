@@ -342,7 +342,7 @@
             if (sInputText) {
                 sInputVal = false;
                 sInputValNotChanged = false;
-                if (!sLabel.classList.contains("visually-hidden")) sLabel.classList.add("visually-hidden");
+                if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
 
                 var sResultAnc = sResult.querySelectorAll("a");
 
@@ -354,7 +354,7 @@
             } else {
                 sInputVal = true;
                 sInputValNotChanged = true;
-                sLabel.classList.remove("visually-hidden");
+                sLabel.classList.remove("sr-only");
             }
 
             if (sResult.querySelectorAll("li").length) {

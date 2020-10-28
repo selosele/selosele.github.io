@@ -1,12 +1,12 @@
 <nav aria-labelledby="skip-link-title" id="skip-links" class="skip-links">
-  <strong id="skip-link-title" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_links }}</strong>
+  <strong id="skip-link-title" class="sr-only">{{ site.data.ui-text[site.locale].skip_links }}</strong>
   {% if site.skip_links.to_nav %}
-  <a href="#site-nav" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_primary_nav }}</a>
+  <a href="#site-nav" class="sr-only">{{ site.data.ui-text[site.locale].skip_primary_nav }}</a>
   {% endif %}
   {% if site.skip_links.to_content %}
-  <a href="#content" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_content }}</a>
+  <a href="#content" class="sr-only">{{ site.data.ui-text[site.locale].skip_content }}</a>
   {% endif %}
   {% if site.skip_links.to_mastfoot %}
-  <a href="#mastfoot" class="visually-hidden">{{ site.data.ui-text[site.locale].skip_mastfoot }}</a>
+  <a href="#mastfoot" class="sr-only">{{ site.data.ui-text[site.locale].skip_mastfoot }}</a>
   {% endif %}
 </nav>

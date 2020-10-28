@@ -16,7 +16,7 @@ title: 태그
   {% assign tagPost = site.posts | where: "tags", tag[0] %}
   {% assign tagName = tag[0] | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase %}
   <h2>
-    <button type="button" aria-controls="list-{{ tagName }}" aria-expanded="false" id="btn-{{ tagName }}" class="archive__btn"><span aria-hidden="true" class="archive__btn__point">#</span>{{ tag[0] }} <small class="archive__list-count"><span class="visually-hidden">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ tag[1].size }})</small></button>
+    <button type="button" aria-controls="list-{{ tagName }}" aria-expanded="false" id="btn-{{ tagName }}" class="archive__btn"><span aria-hidden="true" class="archive__btn__point">#</span>{{ tag[0] }} <small class="archive__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ tag[1].size }})</small></button>
   </h2>
 
   <div aria-labelledby="btn-{{ tagName }}" id="list-{{ tagName }}" class="archive__list">
@@ -29,7 +29,7 @@ title: 태그
     </ul>
 
     <a href="#btn-{{ tagName }}" class="page__btn-top">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
     </a>
   </div>
   {% endif %}

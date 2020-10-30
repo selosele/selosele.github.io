@@ -196,7 +196,7 @@
     }
 })();
 
-// code highlight title 기입
+// code highlight title 기입 및 line 강조
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
@@ -205,9 +205,35 @@
         for (var i = 0; i < preCodeList.length; i++) {
             var preCodeParentEL = preCodeList[i].parentElement.parentElement;
 
+            // title
             if (preCodeParentEL.classList.contains("has-label")) {
                 preCodeList[i].setAttribute("title", preCodeParentEL.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
+
+            // line
+            // if (preCodeParentEL.hasAttribute("data-line")) {
+            //     var preCodeLineBox = preCodeParentEL.querySelector(".lineno"),
+            //         preCodeLine = preCodeParentEL.getAttribute("data-line");
+
+            //     if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
+            //         preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
+            //     }
+
+            //     var preCodeBackground = document.createElement("span");
+
+            //     preCodeBackground.classList.add("hightlight__bg");
+            //     preCodeBackground.setAttribute("aria-hidden", "true");
+            //     foo(document.querySelector("[id='"+"code-line"+preCodeLine+"']"));
+            //     preCodeParentEL.append(preCodeBackground);
+
+            //     function foo(a) {
+            //         preCodeBackground.style.top = a.offsetTop + 4 + "px";
+            //     }
+
+            //     window.addEventListener("resize", function() {
+            //         foo(document.querySelector("[id='"+"code-line"+preCodeLine+"']"));
+            //     });
+            // }
         }
     }
 })();

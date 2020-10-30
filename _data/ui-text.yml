@@ -69,12 +69,6 @@ en: &DEFAULT_EN
   target_blank               : "new page"
 en-US:
   <<: *DEFAULT_EN
-en-CA:
-  <<: *DEFAULT_EN
-en-GB:
-  <<: *DEFAULT_EN
-en-AU:
-  <<: *DEFAULT_EN
 
 # Korean
 # ------
@@ -97,6 +91,7 @@ ko: &DEFAULT_KO
   # main_menu_primary_links  : "주요 메뉴"
   # main_menu_categories     : "카테고리"
   # main_menu_tags           : "태그"
+  main_menu_open_label       : "메뉴"
   main_menu_close_label      : "메뉴 닫기"
   main_menu_category_more    : "카테고리 더보기"
   main_menu_tag_more         : "태그 더보기"
@@ -144,8 +139,5 @@ ko: &DEFAULT_KO
   move_to_top                : "맨 위로 이동"
   move_to_archive_button     : "버튼으로 이동"
   target_blank               : "새창열림"
-  post_by_year_skip_title    : "각 연도별에 작성된 글 보기 버튼으로 이동 링크" # 한국어 전용
-  post_by_year_skip_link     : "년으로 이동" # 한국어 전용
-  post_by_year_button        : "년에 작성된 글" # 한국어 전용
 ko-KR:
   <<: *DEFAULT_KO

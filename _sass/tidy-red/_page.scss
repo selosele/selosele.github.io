@@ -4,16 +4,17 @@
 
 .layout--post {
    .content-wrapper {
-      margin: 2rem auto 3rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
    }
 }
 
 .content-wrapper {
-   @include common-layout($margin: 3rem auto 4rem);
+   @include common-layout($margin-t: 3rem, $margin-b: 4rem);
 
    @media (min-width: $min-large-width) {
       &.content--has-toc {
-         width: auto;
+         max-width: none;
          max-width: max-content;
          margin-left: 29.948vw;
          margin-right: 4.948vw;
@@ -276,9 +277,18 @@
    
       img {
          display: block;
-         margin-left: auto;
-         margin-right: auto;
+         width: calc(100% + (#{$layout-margin} * 2));
+         max-width: calc(100% + (#{$layout-margin} * 2));
+         margin-left: -$layout-margin;
+         margin-right: -$layout-margin;
          box-shadow: rgba(0,0,0,0.4) 0.15rem 0.15rem 1rem 0;
+
+         @media (min-width: $min-minimal-width) {
+            width: auto;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+         }
    
          ~ em {
             display: block;
@@ -397,7 +407,7 @@
 
 // post header
 .post-header {
-   @include common-layout($max-width: 1800px);
+   @include common-layout($max-width: $layout-wide-width);
    padding-top: 4rem;
    padding-bottom: 5rem;
    color: $grey12;

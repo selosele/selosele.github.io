@@ -3,23 +3,27 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common-layout($max-width: $layout-width-px, $width: null, $min-general-width-value: false, $margin: null, $margin-l: auto, $margin-r: auto) {
-   width: $layout-width-per;
-
-   @if $margin != null {
-      margin: $margin;
-   } @else {
-      margin-left: $margin-l;
-      margin-right: $margin-r;
+@mixin common-layout($max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
+   @if $margin-t != null {
+      margin-top: $margin-t;
+      margin-bottom: $margin-b;
    }
 
+   margin-left: $layout-margin;
+   margin-right: $layout-margin;
+
    @media (min-width: $min-standard-width) {
+      width: 90%;
+      
       @if $max-width {
          max-width: $max-width;
+      }
+
+      @if $margin != null {
+         margin: $margin;
       } @else {
-         @if $width != $layout-width-per {
-            width: $width;
-         }
+         margin-left: $margin-l;
+         margin-right: $margin-r;
       }
    }
 }

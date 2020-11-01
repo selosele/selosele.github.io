@@ -9,17 +9,13 @@
 
   &__inner-wrap {
     position: relative;
-    width: $layout-width-per;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: $layout-margin;
+    margin-right: $layout-margin;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
     @media (min-width: $min-small-width) {
       display: inline-block;
-      width: auto;
-      margin-left: 1rem;
-      margin-right: 1rem;
     }
   }
 

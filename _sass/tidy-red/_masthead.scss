@@ -222,7 +222,7 @@
       &:before {
          display: block;
          font-family: $icon-font;
-         color: #fff;
+         color: $grey12;
          text-shadow: $black04 1px 0.1rem 0.1rem;
          -webkit-font-smoothing: antialiased;
       }

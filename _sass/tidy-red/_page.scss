@@ -12,13 +12,24 @@
 .content-wrapper {
    @include common-layout($margin-t: 3rem, $margin-b: 4rem);
 
+   &.content--has-toc {
+      @include common-layout($max-width: $layout-wide-width, $margin-l: null, $margin-r: null);
+   }
+
    @media (min-width: $min-large-width) {
       &.content--has-toc {
-         width: auto;
-         max-width: none;
-         max-width: max-content;
-         margin-left: 29.948vw;
-         margin-right: 4.948vw;
+         @include clearfix;
+
+         .page {
+            float: right;
+            width: calc(100% - #{$toc-margin});
+
+            ~ div {
+               float: right;
+               width: calc(100% - #{$toc-margin});
+               clear: both;
+            }
+         }
       }
    }
 }

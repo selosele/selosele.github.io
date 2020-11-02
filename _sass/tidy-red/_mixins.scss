@@ -6,11 +6,19 @@
 @mixin common-layout($max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
    @if $margin-t != null {
       margin-top: $margin-t;
+   }
+
+   @if $margin-b != null {
       margin-bottom: $margin-b;
    }
 
-   margin-left: $layout-margin;
-   margin-right: $layout-margin;
+   @if $margin-l != null {
+      margin-left: $layout-margin;
+   }
+
+   @if $margin-r != null {
+      margin-right: $layout-margin;
+   }
 
    @media (min-width: $min-standard-width) {
       width: 90%;

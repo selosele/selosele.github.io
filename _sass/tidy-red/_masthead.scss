@@ -11,7 +11,13 @@
    line-height: 1.4;
 
    &__inner-wrap {
-      @include common-layout($margin-l: 2.995vw, $margin-r: 2.995vw);
+      @include common-layout($max-width: $layout-wide-width);
+
+      @media (min-width: $min-large-width) {
+         a:hover {
+            text-decoration: underline;
+         }
+      }
    }
 }
 

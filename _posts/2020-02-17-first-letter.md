@@ -5,7 +5,7 @@ title: "first-letter 가상 요소에 대한 놀라운 사실 한 가지"
 summary: "함정에 빠지기 쉽다."
 header:
   overlay_image: /assets/images/thumb/letter_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
 date: 2020-02-17 22:07
 categories:
     - 퍼블노트
@@ -27,7 +27,8 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-위와 같이 예쁘게(?) 첫 글자 스타일링을 해주었고 Chrome, IE, Opera 브라우저에서 문제 없으니 끝..이 아니고 Firefox 브라우저에서 이슈가 있다. 나님 블로그 CSS에 이런 방식을 즐겨 사용하다가 최근 이런 문제에 봉착하여 골머리를 앓는 중이었음.
+위와 같이 예쁘게(?) 첫 글자 스타일링을 해주었고 Chrome, IE, Opera 브라우저에서 문제 없으니 끝..  
+이 아니고 Firefox 브라우저에서 이슈가 있다. 나님 블로그 CSS에 이런 방식을 즐겨 사용하다가 최근 이런 문제에 봉착하여 골머리를 앓는 중이었음.
 
 위의 Codepen을 Firefox에서 확인해보면 알겠지만, 다음과 같이 ```::first-letter```{:.language-css}가 제대로 적용되지 않은 것을 볼 수 있다.
 
@@ -35,7 +36,8 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 
 개발자도구로 대다수는 ```::first-letter```{:.language-css} 부분만 살펴보겠지만 원인은 ```::before```{:.language-css} 가상 요소에 있다.
 
-결론부터 말하면 의도한대로 적용되지 않은 것일뿐이지 정상적으로 적용 안 된게 아니다. 구글링 중 해답을 발견했는데, 역시 공식 명세에 해답이 있었다. 다음은 공식 명세 원문과 번역 일부를 발췌한 것으로, 이해를 돕고자 약간의 수정을 하였다.
+결론부터 말하면 의도한대로 적용되지 않은 것일뿐이지 정상적으로 적용 안 된게 아니다. 구글링 중 해답을 발견했는데,  
+역시 공식 명세에 해답이 있었다. 다음은 공식 명세 원문과 번역 일부를 발췌한 것으로, 이해를 돕고자 약간의 수정을 하였다.
 
 > The ::before and ::after pseudo-elements can be used to describe generated content before or after an element&rsquo;s content. They are explained in CSS 2.1. When the ::first-letter and ::first-line pseudo-elements are applied to an element having content generated using ::before or ::after, they apply to the first letter or line of the element including the generated content.
 > 

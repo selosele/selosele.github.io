@@ -25,4 +25,7 @@ tags:
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-특정한 값이 있어야 부드럽게 toggle이 되는 것이다. auto는 값이 없으므로 인식을 할 근거를 못 찾는 것임. 따라서 요소의 바깥으로 넘쳐서 보이지 않는 콘텐츠 포함 전체 높이를 반환하는 속성인 scrollHeight를 사용해서 해결하였다. 위의 codepen은 그냥 예시를 들려고 대충 짜본 것으로, 실제로 저렇게 구현하지 않았음..
+특정한 값이 있어야 부드럽게 toggle이 되는 것이다.  
+auto는 값이 없으므로 인식을 할 근거를 못 찾는 것임. 따라서 요소의 바깥으로 넘쳐서 보이지 않는 콘텐츠 포함 전체 높이를 반환하는 속성인 ```scrollHeight```{:.language-javascript}를 사용해서 해결하였다.
+
+위의 codepen은 그냥 예시를 들려고 대충 짜본 것으로, 실제로 저렇게 구현하지 않았음.. 실무에선 jQuery로 작성했고 저기에다가는 공부용으로 vanilla JS로 쓴 것임~

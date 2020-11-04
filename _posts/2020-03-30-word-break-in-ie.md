@@ -24,7 +24,7 @@ tags:
 
 <script async src="//jsfiddle.net/dmitry762/psgk8hcf/12/embed/html,css,result/"></script>
 
-해당 문제를 그대로 구현해보았다. codepen만 쓰다가 IE 테스트를 위해 오랜만에 JSfiddle을 이용하여 작성하였음.
+해당 문제를 그대로 구현해보았다. codepen만 쓰다가 IE 테스트를 위해 오랜만에 JSfiddle로 작성하였음.
 
 ### 조건
 
@@ -36,7 +36,8 @@ tags:
 ## 결론
 우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
 
-white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
+white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다.  
+다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
 
 ## 해결책 알아내다 [2020.10.06]
 
@@ -54,7 +55,8 @@ span {
 
 ---
 
-1. ```word-break```{:.language-css} 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄바꿈을 할지 결정하는 속성이고, ```word-wrap```{:.language-css} 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄바꿈을 해주는 속성이라는 점에서 차이가 있다.
+1. ```word-break```{:.language-css} 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄바꿈을 할지 결정하는 속성이고,  
+```word-wrap```{:.language-css} 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄바꿈을 해주는 속성이라는 점에서 차이가 있다.
 2. 이 속성만 사용하는 게 아니라 ```word-break: keep-all```{:.language-css} 속성과 같이 써주는 것임. ```word-break: keep-all```{:.language-css}을 먼저 써주자.
 
 {:.has-label}

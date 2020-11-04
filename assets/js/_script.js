@@ -370,11 +370,11 @@
                 sInputValNotChanged = false;
                 if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
 
-                var sResultAnc = sResult.querySelectorAll("a");
+                var sResultAncList = sResult.querySelectorAll("a");
 
-                for (var i = 0; i < sResultAnc.length; i++) {
-                    if ((sResultAnc[i] !== sInputText) && !sResultAnc[i].querySelector(".search__results__match")) {
-                        sResultAnc[i].innerHTML = sResultAnc[i].innerHTML.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
+                for (var i = 0; i < sResultAncList.length; i++) {
+                    if ((sResultAncList[i] !== sInputText) && !sResultAncList[i].querySelector(".search__results__match")) {
+                        sResultAncList[i].innerHTML = sResultAncList[i].innerHTML.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
                     }
                 }
             } else {
@@ -391,14 +391,14 @@
         }
 
         function handlerInputKeydown2(evt) {
-            var liEL = sResult.querySelectorAll("li");
+            var sResultLiList = sResult.querySelectorAll("li");
 
             switch (evt.key) {
                 case "ArrowDown":
                 case "Down":
-                    if (liEL.length) {
+                    if (sResultLiList.length) {
                         evt.preventDefault();
-                        liEL[0].querySelector("a").focus();
+                        sResultLiList[0].querySelector("a").focus();
                     }
                     break;
             }
@@ -465,13 +465,13 @@
             var keyType = evt.key;
 
             if (keyType === "Escape" || keyType === "Esc") {
-                var sResultAnc = sResult.querySelectorAll("a");
+                var sResultAncList = sResult.querySelectorAll("a");
 
-                for (var i = 0; i < sResultAnc.length; i++) {
-                    sResultAnc[i] === document.activeElement && sInput.focus();
+                for (var i = 0; i < sResultAncList.length; i++) {
+                    sResultAncList[i] === document.activeElement && sInput.focus();
                 }
                 
-                if (!sInputValNotChanged || sInput === document.activeElement) {
+                if (!sInputValNotChanged && sInput === document.activeElement) {
                     if (sInputVal) {
                         handlerCloseClick();
                     } else {

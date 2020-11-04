@@ -45,7 +45,7 @@
 
     {% if site.theme_type == "type2" %}
       <div aria-labelledby="menu-author-title" itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
-        <strong id="menu-author-title" class="menu__author-name">{{ site.author.name }}</strong>
+        <strong itemprop="name" id="menu-author-title" class="menu__author-name">{{ site.author.name }}</strong>
         {% if site.author.desc %}
         <p itemprop="description" class="menu__author-desc">{{ site.author.desc }}</p>
         {% endif %}

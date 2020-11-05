@@ -16,7 +16,9 @@ tags:
     - javascript
 ---
 
-예를 들어 input 요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 해결책은 Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
+예를 들어 input 요소에 값을 입력하고 enter키를 누르면 submit이 되는데,  
+값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다.  
+해결책은 Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
 
 {:.has-label}
 ```html
@@ -32,7 +34,7 @@ document.getElementById("my-form").addEventListener("keydown", (evt) => {
 });
 ```
 
-keyCode, which는 점차 없어질 속성이라고 하니 다음과 같은 방식으로 작성해주자.
+keyCode, which는 deprecated될 속성이라고 하니 다음과 같은 방식으로 작성해주자.
 
 {:.has-label}
 ```javascript

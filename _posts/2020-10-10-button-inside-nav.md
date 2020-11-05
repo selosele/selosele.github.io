@@ -46,8 +46,7 @@ primary_post: true
 > 
 > <cite>커뮤니티에서 얻은 답변 요약</cite>
 
-즉, 사용자는 nav 요소의 button 요소를 눌러서 사이트의 탐색 링크를 제공하는 네비게이션 랜드마크에 접근할 수 있게 되므로,  
-본연의 목적대로 작동하는 것이다. 평소 semantic markup에 대해 나만의 생각대로 결론을 내린 적이 많은 것 같은데 이번 기회에 바로잡을 수 있게 되었다.
+즉, 사용자는 nav 요소의 button 요소를 눌러서 사이트의 탐색 링크를 제공하는 네비게이션 랜드마크에 접근할 수 있게 되므로, 본연의 목적대로 작동하는 것이다.
 
 [^1]: [1] [공식 명세](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element){:target="_blank"}
 

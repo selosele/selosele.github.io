@@ -106,7 +106,6 @@
          width: 2.556rem;
          height: 1.944rem;
          overflow: hidden;
-         margin-right: 0.3rem;
          margin-bottom: 0.3rem;
          padding-top: 0.5rem;
          padding-bottom: 0.5rem;
@@ -118,6 +117,10 @@
          font-size: 0.9rem;
          color: transparent;
          box-sizing: border-box;
+
+         &:not(:last-of-type) {
+            margin-right: 0.3rem;
+         }
 
          @media (min-width: $min-medium-width) {
             width: auto;
@@ -137,7 +140,7 @@
          }
       }
 
-      > .btn {
+      &__btn {
          &--twitter {
             background-color: $twitter-color;
 
@@ -145,7 +148,7 @@
                content: "\ec1f";
             }
          }
-      
+
          &--facebook {
             background-color: $facebook-color;
 
@@ -153,7 +156,7 @@
                content: "\ebd5";
             }
          }
-      
+
          &--linkedin {
             background-color: $linkedin-color;
 
@@ -162,6 +165,10 @@
             }
          }
       }
+   }
+
+   [class*=page__share__btn] {
+      
    }
 
    &__info-item-wrapper {

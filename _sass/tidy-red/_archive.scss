@@ -27,9 +27,9 @@
          > a {
             display: block;
             @include ellipsis;
-            margin-bottom: 0.357143em;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            font-size: calc(1rem + 0.5vw);
+            font-size: 1.157894rem;
             line-height: 1.5;
             color: $black02;
    
@@ -52,6 +52,16 @@
                &:hover {
                   text-decoration: underline;
                }
+            }
+         }
+
+         + .archive__item-content {
+            padding-top: 0.4444444rem;
+            border-top: 1px dotted $grey09;
+
+            @media (min-width: $min-medium-width) {
+               padding-top: 0;
+               border-top: 0;
             }
          }
       }

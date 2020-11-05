@@ -17,7 +17,7 @@ primary_post: true
 ---
 
 또 그놈의 소수점 때문에 골이 아픔..  
-[이전 글](/2020/09/17/sub-pixel-rendering2/)에서는 CSS로 img 요소/background-image의 크기를 줄였을 때 이슈에 대응하는 방법에 대해서 떠들어보았고,  
+[이전 글](/2020/09/17/sub-pixel-rendering2/)에서는 img 요소/background-image의 크기를 CSS로 줄였을 때 이슈에 대응하는 방법에 대해서 떠들어보았고,  
 이번에는 ```display: table```{:.language-css} 속성을 선언했을 때 생기는 문제를 이야기해볼 것이다.
 
 ## 배경

@@ -261,12 +261,12 @@
 
         if (t_matchEL.classList.contains("archive__list--active")) {
             t_matchEL.classList.remove("archive__list--active");
-            t_matchEL.setAttribute("hidden", false);
+            t_matchEL.setAttribute("hidden", true);
             t_matchEL.setAttribute("tabindex", "-1");
             t.setAttribute("aria-expanded", "false");
         } else {
             t_matchEL.classList.add("archive__list--active");
-            t_matchEL.setAttribute("hidden", true);
+            t_matchEL.setAttribute("hidden", false);
             t_matchEL.setAttribute("tabindex", "0");
             t.setAttribute("aria-expanded", "true");
         }

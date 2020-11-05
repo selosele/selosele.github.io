@@ -1,10 +1,10 @@
 # Site Settings
 locale                   : "ko"
-title                    : "Sel의 퍼블일기"
+title                    : "Sel의 퍼블노트"
 title_separator          : "-"
 subtitle                 :
 name                     : "sel"
-description              : "웹 퍼블리셔 Sel의 블로그"
+description              : "웹 퍼블리셔 Sel의 개인 블로그"
 url                      : "https://selosele.github.io"
 baseurl                  : 
 repository               : "selosele/selosele.github.io"

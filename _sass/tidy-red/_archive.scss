@@ -29,7 +29,7 @@
             @include ellipsis;
             margin-bottom: 0.5rem;
             font-weight: 700;
-            font-size: 1.157894rem;
+            font-size: 1.2rem;
             line-height: 1.5;
             color: $black02;
    
@@ -73,7 +73,7 @@
          margin-bottom: 0.604167em;
          color: $sub-color03;
          font-weight: 400;
-         font-size: calc(0.95rem + 0.5vw);
+         font-size: 1.111111rem;
          line-height: 1.3;
    
          &:before {
@@ -176,9 +176,10 @@
       > li {
          margin-top: 0;
          margin-bottom: 0;
+         padding-bottom: 2.1rem;
          
-         &:not(:last-child) {
-            padding-bottom: 2.1rem;
+         &:last-child {
+            padding-bottom: 1.5rem;
          }
 
          ~ li {

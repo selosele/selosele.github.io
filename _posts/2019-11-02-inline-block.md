@@ -1,8 +1,9 @@
 ---
+published: false
 layout: post
 comments: true
-title: "CSS 수직 중앙 정렬, position은 안녕"
-summary: "position을 이용한 중앙 정렬은 이득보다 손실이 크다."
+title: "CSS 수직 중앙 정렬, position은 이제 그만 쓰자"
+summary: "position 기법은 이득보다 손실이 크다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4
@@ -10,11 +11,9 @@ date: 2019-11-02 22:12
 categories:
     - 퍼블노트
 tags:
-    - align-vertically
-    - inline-block
     - css
 ---
-position을 이용한 중앙 정렬은 이득보다 손실이 크다. position 그 자체가 가진 특성과 더불어,  
+position을 이용한 중앙 정렬은 이득보다 손실이 크다. position 그 자체가 가진 특성과 함께,  
 margin 음수값을 사용 후 반응형에서 요소 사이즈가 변경되면 margin값도 조절해줘야 하고, ```transform:translate(-50%,-50%)```{:.language-css} 선언 시 너비/높이 중 하나라도 홀수이면 요소가 흐려지는 &ldquo;서브 픽셀 렌더링&rdquo; 이슈가 발생.
 
 맹목적 position 신도가 아닌 이들이 사용하는 방법으로 vertical-align, line-height, table-cell 등의 방법이 있다.  

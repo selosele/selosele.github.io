@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "display: inline-table을 이용한 가로정렬"
-summary: "이런 속성도 있었다니!"
+summary: "이런 속성도 있었다니.."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4
@@ -12,7 +12,6 @@ categories:
 tags:
     - css
     - table
-    - inline-table
 ---
 CSS로 가로정렬하는 방법하면 떠오르는 것들 : float, inline-block 등등..
 그와중에 inline-table이라는 신기한 녀석을 발견하여 기록함. block 요소인 table을 말 그대로 inline 요소의 성질을 갖게 만듦. 예제 코드를 봅시다.

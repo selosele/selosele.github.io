@@ -28,6 +28,7 @@ table의 성질을 갖게 되었으니 table 요소가 갖는 스타일을 입�
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-무조건적으로 <mark>display: table === 가로/세로정렬</mark>로 생각하지 말자. 코딩을 주입식으로 외우면 위험함.. 조금 더 연구하고 검색하여 효율적인 스타일링을 해보자~
+무조건적으로 <mark>display: table === 가로/세로정렬</mark>로 생각하지 말자. 코딩을 주입식으로 외우면 위험함..  
+조금 더 연구하고 검색해서 효율적인 스타일링을 해보자~
 
 [^1]: [1] border-collapse: collapse 선언이 없는, 즉 border 간격 조정이 가능한 상태에서만 유효.

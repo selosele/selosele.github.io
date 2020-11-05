@@ -48,16 +48,15 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 
 {:.has-label}
 ```javascript
-function whiteSpaceMargin(listObj) {
-    listObj = $(listObj).nextAll();
+(function($, listObj) {
+  listObj = $(listObj).nextAll();
+
     for (var i = -1; r = listObj[++i], l = listObj[++i];) {
         var n = l.getBoundingClientRect().left - r.getBoundingClientRect().right;
         r = l;
-        console.log(n);
         listObj.css("margin-left", -n);
     }
-}
-whiteSpaceMargin(".remvWS > *");
+})(jQuery, ".remvWS > *");
 ```
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="PoqzJzN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoqzJzN">
@@ -81,11 +80,11 @@ whiteSpaceMargin(".remvWS > *");
 
 {:.has-label}
 ```javascript
-function removeWhiteSpace(elem) {
+(function($, elem) {
   $(elem).contents().filter(function() {
     return (this.nodeType === 3 && !/\S/.test(this.nodeValue));
   }).remove();
-}
+})(jQuery, "*");
 ```
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="JjdRpEe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JjdRpEe">

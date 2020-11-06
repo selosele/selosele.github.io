@@ -36,11 +36,11 @@
 
 .page {
    &__title {
-      margin-bottom: 0.459641em;
-      padding-bottom: 0.459641em;
+      margin-bottom: .459641em;
+      padding-bottom: .459641em;
       border-bottom: 1px solid $grey05;
       font-weight: 700;
-      font-size: calc(1.75rem + 0.5vw);
+      font-size: calc(1.75rem + .5vw);
       color: $black;
       line-height: 1.4;
 
@@ -51,17 +51,17 @@
 
    &__lead {
       display: block;
-      margin-top: 0.675676em;
+      margin-top: .675676em;
       font-family: $default-font03;
       font-weight: 400;
-      font-size: calc(1rem + 0.5vw);
+      font-size: calc(1rem + .5vw);
       line-height: 1.5;
       color: $grey07;
-      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
+      text-shadow: 1px 1px .2em rgba(0,0,0,.5);
 
       &:before {
          content: "\2014";
-         margin-right: 0.3rem;
+         margin-right: .3rem;
       }
 
       @media (min-width: $min-general-width) {
@@ -95,7 +95,7 @@
 
       &-title {
          width: 100%;
-         margin-bottom: 0.65rem;
+         margin-bottom: .65rem;
          font-weight: 700;
          font-size: 1rem;
          color: $black02;
@@ -106,20 +106,20 @@
          width: 2.556rem;
          height: 1.944rem;
          overflow: hidden;
-         margin-bottom: 0.3rem;
-         padding-top: 0.5rem;
-         padding-bottom: 0.5rem;
-         padding-left: 0.8rem;
-         padding-right: 0.8rem;
+         margin-bottom: .3rem;
+         padding-top: .5rem;
+         padding-bottom: .5rem;
+         padding-left: .8rem;
+         padding-right: .8rem;
          border-radius: 5px;
          font-family: $default-font03;
          font-weight: 500;
-         font-size: 0.9rem;
+         font-size: .9rem;
          color: transparent;
          box-sizing: border-box;
 
          &:not(:last-of-type) {
-            margin-right: 0.3rem;
+            margin-right: .3rem;
          }
 
          @media (min-width: $min-medium-width) {
@@ -128,7 +128,7 @@
             color: $grey12;
 
             &:before {
-               margin-right: 0.25rem;
+               margin-right: .25rem;
             }
          }
 
@@ -180,7 +180,7 @@
 
    &__info-item {
       @include post-info-item;
-      margin-left: 0.3rem;
+      margin-left: .3rem;
 
       &:not(.page__info-item--date) {
          @include activate-element($offset: 2px);
@@ -210,9 +210,9 @@
 
       h2:not(.toc__title) {
          @include heading;
-         margin-top: 0.789474em;
-         margin-bottom: 0.526316em;
-         font-size: calc(1.7rem + 0.5vw);
+         margin-top: .789474em;
+         margin-bottom: .526316em;
+         font-size: calc(1.7rem + .5vw);
    
          @media (min-width: $min-small-width) {
             font-size: 1.9rem;
@@ -221,9 +221,9 @@
    
       h3 {
          @include heading;
-         margin-top: 0.558824em;
-         margin-bottom: 0.558824em;
-         font-size: calc(1.51rem + 0.5vw);
+         margin-top: .558824em;
+         margin-bottom: .558824em;
+         font-size: calc(1.51rem + .5vw);
    
          @media (min-width: $min-small-width) {
             font-size: 1.7rem;
@@ -232,9 +232,9 @@
    
       h4 {
          @include heading;
-         margin-top: 0.5em;
-         margin-bottom: 0.5em;
-         font-size: calc(1.32rem + 0.5vw);
+         margin-top: .5em;
+         margin-bottom: .5em;
+         font-size: calc(1.32rem + .5vw);
    
          @media (min-width: $min-small-width) {
             font-size: 1.5rem;
@@ -243,9 +243,9 @@
    
       h5 {
          @include heading;
-         margin-top: 0.444444em;
-         margin-bottom: 0.444444em;
-         font-size: calc(1.16rem + 0.5vw);
+         margin-top: .444444em;
+         margin-bottom: .444444em;
+         font-size: calc(1.16rem + .5vw);
    
          @media (min-width: $min-small-width) {
             font-size: 1.35rem;
@@ -254,9 +254,9 @@
    
       h6 {
          @include heading;
-         margin-top: 0.4em;
-         margin-bottom: 0.4em;
-         font-size: calc(1.01rem + 0.5vw);
+         margin-top: .4em;
+         margin-bottom: .4em;
+         font-size: calc(1.01rem + .5vw);
    
          @media (min-width: $min-small-width) {
             font-size: 1.2rem;
@@ -292,6 +292,20 @@
          }
       }
 
+      &__first-para {
+         display: flow-root;
+
+         &:first-letter {
+            float: left;
+            margin-top: .25rem;
+            margin-left: .1rem;
+            margin-right: .1rem;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: $sub-color03;
+         }
+      }
+
       a {
          &:not(.page__btn) {
             @media (min-width: $min-large-width) {
@@ -308,7 +322,7 @@
          max-width: calc(100% + (#{$layout-margin} * 2));
          margin-left: -$layout-margin;
          margin-right: -$layout-margin;
-         box-shadow: rgba(0,0,0,0.4) 0.15rem 0.15rem 1rem 0;
+         box-shadow: rgba(0,0,0,.4) .15rem .15rem 1rem 0;
 
          @media (min-width: $min-minimal-width) {
             width: auto;
@@ -382,12 +396,12 @@
 
          @media (min-width: $min-minimal-width) {
             width: calc((100% / 2) - 1rem);
-            margin: 0.5rem;
+            margin: .5rem;
          }
 
          @media (min-width: $min-medium-width) {
             width: calc((100% / 3) - 1.5rem);
-            margin: 0.75rem;
+            margin: .75rem;
          }
 
          ~ .page__figure,
@@ -395,11 +409,11 @@
             margin-top: 5.625vw;
 
             @media (min-width: $min-minimal-width) {
-               margin-top: 0.5rem;
+               margin-top: .5rem;
             }
 
             @media (min-width: $min-medium-width) {
-               margin-top: 0.75rem;
+               margin-top: .75rem;
             }
          }
       }
@@ -407,15 +421,15 @@
 
    &__btn {
       display: inline-block;
-      padding: 0.4rem 1rem;
-      border-top-right-radius: 0.4rem;
-      border-bottom-left-radius: 0.4rem;
+      padding: .4rem 1rem;
+      border-top-right-radius: .4rem;
+      border-bottom-left-radius: .4rem;
       background-color: $grey04;
       color: $black03;
       text-align: center;
    
       & ~ & {
-         margin-left: 0.3rem;
+         margin-left: .3rem;
       }
    }
 
@@ -442,7 +456,7 @@
                width: 6rem;
                height: 6rem;
                margin-right: 1.5rem;
-               margin-bottom: 0.5rem;
+               margin-bottom: .5rem;
                shape-outside: circle(50%);
 
                ~ .author__info-wrapper {
@@ -477,7 +491,7 @@
          }
    
          &__desc {
-            margin-top: 0.3rem;
+            margin-top: .3rem;
             font-size: 1rem;
             line-height: 1.4;
          }
@@ -524,10 +538,10 @@
       border-bottom: 0;
       font-family: $default-font03;
       color: inherit;
-      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.5);
+      text-shadow: 1px 1px .2em rgba(0,0,0,.5);
 
       @media (min-width: $min-small-width) {
-         font-size: calc(2.15rem + 0.5vw);
+         font-size: calc(2.15rem + .5vw);
       }
 
       @media (min-width: $min-general-width) {
@@ -544,14 +558,14 @@
    left: 0;
    z-index: 9999;
    width: 0;
-   height: 0.2rem;
+   height: .2rem;
    background-color: $green03;
    pointer-events: none;
-   transition: width 0.2s;
+   transition: width .2s;
 }
 
 .heading-link {
-   margin-right: 0.1302632em;
+   margin-right: .1302632em;
    vertical-align: middle;
 
    &:before {
@@ -584,7 +598,7 @@
 
    &__header {
       display: table-cell;
-      padding: 0.5rem 1rem;
+      padding: .5rem 1rem;
       border: 1px solid $grey05;
       background-color: $grey02;
       font-weight: 700;
@@ -594,7 +608,7 @@
 
    &__content {
       display: table-cell;
-      padding: 0.5rem 1rem;
+      padding: .5rem 1rem;
       border: 1px solid $grey05;
       vertical-align: middle;
 
@@ -629,10 +643,10 @@
    width: min-content;
    max-width: 50vw;
    height: auto;
-   padding: 0.5rem;
+   padding: .5rem;
    background-color: $grey12;
-   box-shadow: rgba(0,0,0,0.2) 1px 0.1rem 0.2rem 0;
-   font-size: 0.857143em;
+   box-shadow: rgba(0,0,0,.2) 1px .1rem .2rem 0;
+   font-size: .857143em;
    line-height: 1.3;
    cursor: text;
 
@@ -644,23 +658,23 @@
 .txt--attention {
    &:before {
       content: "\e9ab";
-      margin-right: 0.18em;
+      margin-right: .18em;
       font-family: $icon-font;
       font-size: 1.1em;
       line-height: 1;
       color: $sub-color03;
-      vertical-align: -0.1em;
+      vertical-align: -.1em;
       -webkit-font-smoothing: antialiased;
    }
 
    &2 {
       &:before {
          content: "\e9ab";
-         margin-right: 0.18em;
+         margin-right: .18em;
          font-family: $icon-font;
          font-size: 1.1em;
          line-height: 1;
-         vertical-align: -0.1em;
+         vertical-align: -.1em;
          -webkit-font-smoothing: antialiased;
       }
    }

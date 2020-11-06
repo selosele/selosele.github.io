@@ -33,12 +33,20 @@ layout: default
           </nav>
         </aside>
       {% endif %}
+
+      {% if page.post_first_letter != false %}
+        {% assign content_start = content | slice: 0, 3 %}
+        {% if content_start == '<p>' %}
+          {% assign content = content | replace_first: '<p>', '<p class="page__content__first-para">' %}
+        {% endif %}
+      {% endif %}
+
       {{ content }}
     </section>
 
     <footer class="page__footer">
       {% if page.header.image_link %}
-      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" rel="nofollow">{{ page.header.image_author }}</a></p>
+      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" rel="external nofollow">{{ page.header.image_author }}</a></p>
       {% endif %}
 
       {% if page.share %}
@@ -46,7 +54,7 @@ layout: default
       {% endif %}
 
       {% if site.post.author %}
-        <section aria-labelledby="author-name" class="page__author">
+        <section class="page__author">
           {% include author.html %}
         </section>
       {% endif %}

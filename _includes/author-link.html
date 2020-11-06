@@ -2,7 +2,7 @@
   {% for link in site.author.links %}
     {% if link.label and link.url %}
     <li {% if site.author.links.size == 1 %}role="presentation"{% endif %}>
-      <a href="{{ link.url }}"{% if link.target_blank != false %} target="_blank" rel="nofollow"{% endif %}><i aria-hidden="true" class="{{ link.icon | default: 'xi-link' }}"></i> <span class="sr-only">{{ link.label }}</span></a>
+      <a href="{{ link.url }}"{% if link.target_blank != false %} target="_blank" rel="external nofollow"{% endif %}><i aria-hidden="true" class="{{ link.icon | default: 'xi-link' }}"></i> <span class="sr-only">{{ link.label }}</span></a>
     </li>
     {% endif %}
   {% endfor %}

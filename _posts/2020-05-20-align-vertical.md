@@ -11,6 +11,7 @@ categories:
     - 퍼블노트
 tags:
     - css
+post_first_letter: false
 ---
 요소를 중앙정렬하는 기법 중 신기한 것을 발견하여 기록한다.
 

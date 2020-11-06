@@ -6,7 +6,7 @@
 .about {
    .heading-link {
       &:before {
-         vertical-align: -0.125em;
+         vertical-align: -.125em;
       }
 
       &[href="#개인정보"] {
@@ -22,7 +22,7 @@
       }
 
       &[href="#직접-만든-블로그"] {
-         margin-right: 0.3em;
+         margin-right: .3em;
 
          &:before {
             content: url('https://api.iconify.design/emojione-v1:laptop-computer.svg?height=2.2em');
@@ -30,7 +30,7 @@
       }
 
       &[href="#구독"] {
-         margin-right: 0.2em;
+         margin-right: .2em;
 
          &:before {
             content: url('https://api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');

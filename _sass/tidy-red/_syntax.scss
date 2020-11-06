@@ -11,7 +11,7 @@ figure.highlight {
   border-radius: 4px;
   background-color: $code-black;
   font-family: $default-font02;
-  font-size: 0.904762em;
+  font-size: .904762em;
   line-height: 1.8;
   color: $grey08;
 
@@ -23,15 +23,15 @@ figure.highlight {
   > pre,
   pre.highlight {
     margin: 0;
-	  padding: 0.5rem 1rem;
+	  padding: .5rem 1rem;
   }
 }
 
 code {
   &.highlighter-rouge {
-    margin-left: 0.3157895em;
-    margin-right: 0.3157895em;
-    padding: 0.368421em 0.578947em;
+    margin-left: .3157895em;
+    margin-right: .3157895em;
+    padding: .368421em .578947em;
     // line-height: 2.2;
     line-height: 1;
     vertical-align: middle;
@@ -47,8 +47,8 @@ code {
   height: 1.7rem;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 0.5rem;
-  background-color: rgba(255,255,255,0.2);
+  border-radius: .5rem;
+  background-color: rgba(255,255,255,.2);
   pointer-events: none;
 }
 
@@ -56,7 +56,7 @@ code {
   table-layout: auto;
 
   td {
-    padding: 0.25rem;
+    padding: .25rem;
     border: 0;
     text-align: left;
 
@@ -71,7 +71,7 @@ code {
 	}
 	
 	&.rouge-gutter {
-	  text-shadow: rgba(0,0,0,0.6) 1px 1px 0.25rem;
+	  text-shadow: rgba(0,0,0,.6) 1px 1px .25rem;
 	}
 
     /* code */

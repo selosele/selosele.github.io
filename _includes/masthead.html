@@ -43,7 +43,7 @@
 {% if page.layout == 'post' %} style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% if page.header.image_position %} background-position: {{ page.header.image_position }};{% endif %}{% if page.header.image_position-x %}background-position-x: {{ page.header.image_position-x }};{% endif %}{% if page.header.image_position-y %}background-position-y: {{ page.header.image_position-y }};{% endif %}{% if page.header.image_contain %}background-size: contain{% endif %}"{% endif %}>
 
   <nav aria-labelledby="site-title" id="site-nav" class="site-nav">
-    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} id="site-title" class="site-title{% if site.theme_type == 'type2' and site.author.avatar %} has-image{% endif %}{% unless site.subtitle %} has-only-title{% endunless %}">
+    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} id="site-title" class="site-title{% if site.theme_type == 'type2' and site.author.avatar %} has-image{% endif %}{% if site.theme_type == 'type2' %}{% unless site.subtitle %} has-only-title{% endunless %}{% endif %}">
       {% if site.theme_type == "type2" and site.author.avatar %}
       <span aria-hidden="true" class="site-title__author-image">
         <span{% if site.author.avatar %} style="background-image: url({{ site.author.avatar }});"{% endif %}></span>

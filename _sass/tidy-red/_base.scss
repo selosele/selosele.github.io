@@ -23,7 +23,7 @@ body {
    font-family: $default-font04;
    font-style: normal;
    font-weight: 400;
-   letter-spacing: -0.01em;
+   letter-spacing: -.01em;
    line-height: 1;
    word-break: keep-all;
    word-wrap: break-word;
@@ -109,7 +109,7 @@ em {
 }
 
 small {
-   font-size: 0.85em;
+   font-size: .85em;
 }
 
 li {
@@ -146,13 +146,13 @@ table {
 }
 
 caption {
-   padding: 0.4761905em;
+   padding: .4761905em;
    line-height: 1.5;
    color: $sub-color03;
 }
 
 td, th {
-   padding: 0.4761905em 1em;
+   padding: .4761905em 1em;
    border: 1px solid $grey05;
    color: inherit;
    line-height: 1.5;
@@ -170,8 +170,8 @@ br {
 }
 
 hr {
-   margin-top: 0.5rem;
-   margin-bottom: 0.5rem;
+   margin-top: .5rem;
+   margin-bottom: .5rem;
    border: 0;
    border-top: 1px solid $grey06;
 }
@@ -200,7 +200,7 @@ abbr {
 /* skip links */
 .skip-links a {
    color: #727272;
-   transition: all 0.2s;
+   transition: all .2s;
 
    &:focus,
    &:active {
@@ -212,7 +212,7 @@ abbr {
       margin: 0 !important;
       padding: 1.5rem;
       background-color: $grey12;
-      box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 .1rem .1rem rgba(0, 0, 0, .6);
       font-size: 1.5rem;
       font-weight: 700;
       text-decoration: none;
@@ -242,7 +242,7 @@ blockquote {
       font-size: 11.42857em;
       font-style: normal;
       line-height: 1;
-      color: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, .1);
    }
    
    p {
@@ -260,7 +260,7 @@ blockquote {
    cite {
       &:before {
          content: "\2014";
-         margin-right: 0.286em;
+         margin-right: .286em;
          font-weight: 200;
          -webkit-font-smoothing: antialiased;
       }
@@ -269,14 +269,14 @@ blockquote {
 
 /* 각주 */
 sup {
-   margin: 0 0.1rem;
+   margin: 0 .1rem;
    line-height: 1;
    vertical-align: super;
 }
 
 .footnote {
    color: $grey;
-   font-size: 0.9rem;
+   font-size: .9rem;
 
    &:before {
       content: "[";
@@ -305,7 +305,7 @@ sup {
          p {
             margin-top: 0;
             margin-bottom: 0;
-            font-size: 0.8rem;
+            font-size: .8rem;
             color: $grey;
          }
       }
@@ -337,6 +337,6 @@ iframe {
    }
  
    &-track {
-     background-image: linear-gradient(to bottom, rgba(216, 216, 216, 0.3), rgba(185, 185, 185, 0.3));
+     background-image: linear-gradient(to bottom, rgba(216, 216, 216, .3), rgba(185, 185, 185, .3));
    }
 }

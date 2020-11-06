@@ -5,7 +5,7 @@ title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인
 summary: "display: table 속성을 선언했을 때"
 header:
   overlay_image: /assets/images/thumb/chrome_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773216/
   image_author: geralt
 date: 2020-11-01 21:25

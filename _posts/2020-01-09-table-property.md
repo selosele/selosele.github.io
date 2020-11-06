@@ -12,6 +12,7 @@ categories:
 tags:
     - css
     - table
+post_first_letter: false
 ---
 CSS ```display: table```{:.language-css} 속성은 말 그대로 요소를 table의 성질을 갖게 한다는 뜻이다.
 

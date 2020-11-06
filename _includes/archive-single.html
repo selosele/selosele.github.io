@@ -18,7 +18,7 @@
     <div aria-hidden="true" class="archive__item-thumb" style="background-image: url({{ post.header.overlay_image }});"></div>
     {% endif %}
     {% endif %}
-    <p itemprop="description" id="desc-{{ postUrl_r }}" class="archive__item-content{% if post.first_letter != false %} has-first-letter{% endif %}">{{ post.content | markdownify | strip_html | truncate: 200 }}</p>
+    <p itemprop="description" id="desc-{{ postUrl_r }}" class="archive__item-content{% if post.home_first_letter != false %} has-first-letter{% endif %}">{{ post.content | markdownify | strip_html | truncate: 200 }}</p>
     <div class="archive__item__info-item-wrapper">
       {% if post.date %}
       <span class="archive__item__info-item archive__item__info-item--date"><span class="sr-only">{{ site.data.ui-text[site.locale].date_label }}</span> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y년 %m월 %d일" }}</time></span>

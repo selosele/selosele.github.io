@@ -7,7 +7,7 @@ $layout-general-width: 1200px !default;
 $layout-wide-width: 1700px !default;
 $layout-margin: 1rem !default;
 $toc-margin: 24rem !default;
-$li-default-margin: 0.666667em !default;
+$li-default-margin: .666667em !default;
 $p-default-margin: 1.428571em !default;
 
 // breakpoints (max-width)
@@ -100,4 +100,4 @@ $code-blue: #7aa6da !default;
 $code-purple: #c397d8 !default;
 
 /* transition */
-$standard-transition: all 0.3s !default;
+$standard-transition: all .3s !default;

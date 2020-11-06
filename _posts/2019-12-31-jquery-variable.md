@@ -14,6 +14,7 @@ categories:
     - 퍼블노트
 tags:
     - javascript
+post_first_letter: false
 ---
 Javascript/jQuery 요소가 구별되지 않은 변수명이란 다음과 같다.
 

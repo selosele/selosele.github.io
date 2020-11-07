@@ -8,7 +8,7 @@
 <div aria-hidden="true" id="side-menu" class="side-menu">
   <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
-    <ul role="menu" class="menu__list--grid">
+    <ul role="menu"{% if site.data.navigation.main.size > 1 %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
         {%- assign url = link.url -%}

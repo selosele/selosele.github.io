@@ -11,7 +11,7 @@ categories:
     - 퍼블노트
 tags:
     - css
-post_first_letter: false
+post_dropcap: false
 ---
 이번에는 div &gt; a 구조에서 div에 검정 반투명 배경색을 깔아주기 위해 다음과 같이 CSS를 작성하였다.
 

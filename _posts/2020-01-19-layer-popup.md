@@ -15,7 +15,7 @@ tags:
     - javascript
     - web-accessibility
     - ui
-post_first_letter: false
+post_dropcap: false
 ---
 
 자료 추가 예정

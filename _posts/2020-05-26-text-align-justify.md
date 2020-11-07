@@ -11,7 +11,7 @@ categories:
     - 퍼블노트
 tags:
     - css
-post_first_letter: false
+post_dropcap: false
 ---
 text를 정렬하는 방법(text-align)이라면 left, right, center 밖에 몰랐었는데, justify라는 속성을 알게 되어 기록함.
 

@@ -286,6 +286,20 @@
                transform: translateX(-50%);
             }
          }
+
+         &.has-dropcap {
+            display: flow-root;
+      
+            &:first-letter {
+               float: left;
+               margin-top: .25rem;
+               margin-left: .1rem;
+               margin-right: .1rem;
+               font-size: 3.5rem;
+               line-height: 1;
+               color: $sub-color03;
+            }
+         }
       }
 
       a {
@@ -340,17 +354,19 @@
       }
    }
 
-   &__first-para {
-      display: flow-root;
-
-      &:first-letter {
-         float: left;
-         margin-top: .25rem;
-         margin-left: .1rem;
-         margin-right: .1rem;
-         font-size: 3.5rem;
+   &__header-link {
+      margin-right: .1302632em;
+      vertical-align: middle;
+   
+      &:before {
+         content: "\e9c3";
+         display: inline-block;
+         color: $main-color;
+         font-family: $icon-font;
+         font-weight: 400;
+         letter-spacing: normal;
          line-height: 1;
-         color: $sub-color03;
+         -webkit-font-smoothing: antialiased;
       }
    }
 
@@ -558,22 +574,6 @@
    background-color: $green03;
    pointer-events: none;
    transition: width .2s;
-}
-
-.heading-link {
-   margin-right: .1302632em;
-   vertical-align: middle;
-
-   &:before {
-      content: "\e9c3";
-      display: inline-block;
-      color: $main-color;
-      font-family: $icon-font;
-      font-weight: 400;
-      letter-spacing: normal;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-   }
 }
 
 /* Fake table */

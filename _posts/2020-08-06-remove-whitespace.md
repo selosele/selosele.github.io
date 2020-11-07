@@ -14,7 +14,7 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-post_first_letter: false
+post_dropcap: false
 ---
 
 [몇 달전에도 작업한 바 있으나](/2020/02/19/white-space/) jQuery를 쓴 코드였고, 이번에는 Vanilla JS로 작업을 해보았다.

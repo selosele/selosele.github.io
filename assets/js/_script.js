@@ -125,7 +125,7 @@
     window.addEventListener("scroll", activateScrollIndicator);
 })();
 
-// heading link
+// page header link
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
@@ -144,7 +144,7 @@
             }
 
             h_anc.title = h_txt.replace(/-/g, " ");
-            h_anc.classList.add("heading-link");
+            h_anc.classList.add("page__header-link");
             h[i].insertBefore(h_anc, h[i].firstChild);
         }
     }

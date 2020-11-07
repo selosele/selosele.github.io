@@ -12,7 +12,7 @@ categories:
 tags:
     - css
     - design
-post_first_letter: false
+post_dropcap: false
 ---
 가끔 이런 텍스트 디자인을 봤을 것임.
 

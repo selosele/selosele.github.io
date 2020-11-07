@@ -11,7 +11,7 @@ categories:
     - 퍼블노트
 tags:
     - css
-post_first_letter: false
+post_dropcap: false
 ---
 
 CSS에서 여러개의 아이템을 균등 분할 시 소수점을 사용해야 균등하게 나눠지는 경우가 있다.  

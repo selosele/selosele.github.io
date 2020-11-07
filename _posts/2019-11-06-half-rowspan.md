@@ -13,8 +13,8 @@ tags:
     - rowspan
     - table
     - html
-home_first_letter: false
-post_first_letter: false
+home_dropcap: false
+post_dropcap: false
 ---
 rowspan이 애매하게 걸쳐 있는 테이블 디자인.
 

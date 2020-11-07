@@ -30,11 +30,12 @@ post_dropcap: false
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-box-shadow를 inset 선언시 그림자가 요소 내부에 생기는 것을 이용한 방법.  
+box-shadow를 inset 선언시 그림자가 요소 내부에 생기는 것을 이용한 방법.
+
 기본적으로 block 요소는 줄에 맞게 안 떨어지는데, block 요소 &gt; span 구조를 짜고 span에 스타일을 줘야 정상적으로 보이는 것임. 그럼 block 요소를 inline으로 바꿔주면 되지 않느냐? 상하단 간격을 줄 수 없게 됨. 그렇다고 div &gt; block 요소 구조는 뭔가 어색한 것 같기도.. 어쨌든 block 요소 &gt; span 구조는 후술할 모든 방법에 해당된다.
 
 텍스트가 한 줄 이상일 때 잘 된다! 근데 알다시피 box-shadow는 IE 9까지 지원하니..  
-본인 프로젝트 크로스브라우징 범위를 체크해서 IE 9 이상이면 써도 될 듯. 나님 기본으로 9까지 보고 8까지도 어느 정도 안전장치를 두고 작업하므로 실무에 적용하기엔 그림의 떡이다.. 다만 최신 트렌드 기법 연습을 위해 IE와 거리를 두기로 한 내 블로그에는 적용했음.
+본인 프로젝트의 크로스브라우징 범위를 체크해서 IE 9 이상이면 써도 될 듯.
 
 ## linear-gradient를 이용한 방법
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="oNgyWZg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="oNgyWZg">

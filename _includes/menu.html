@@ -7,6 +7,10 @@
 
 <div aria-hidden="true" id="side-menu" class="side-menu">
   <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
+    <button type="button" aria-controls="primary-nav" class="menu__close">
+      <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
+    </button>
+
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
     <ul role="menu"{% if site.data.navigation.main.size > 1 %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
@@ -52,9 +56,5 @@
         {% include author-link.html class='menu__author-links' %}
       </div>
     {% endif %}
-    
-    <button type="button" aria-controls="primary-nav" class="menu__close">
-      <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
-    </button>
   </nav>
 </div>

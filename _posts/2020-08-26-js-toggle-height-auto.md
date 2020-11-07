@@ -16,7 +16,8 @@ tags:
     - javascript
 ---
 
-최근 실무에서 ```height: auto```{:.language-javascript}를 부드럽게 toggle하는 로직을 구현해야 하는 상황이 있었다. 퍼블리싱 요구사항을 듣고서 막연히 가능한 줄 알고 일반적인 방식으로 구현을 해보았으나 당연히 작동하지 않았다.
+최근 실무에서 ```height: auto```{:.language-javascript}를 부드럽게 toggle하는 로직을 구현해야 하는 상황이 있었는데..  
+퍼블리싱 요구사항을 듣고서 막연히 가능한 줄 알고 일반적인 방식으로 구현을 해보았으나 당연히 작동하지 않았다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="eYZvXZM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="eYZvXZM">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/eYZvXZM">

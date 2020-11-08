@@ -1,6 +1,6 @@
 # Site Settings
 locale                   : "ko"
-title                    : "Sel의 퍼블노트"
+title                    : "Sel의 생각저장소"
 title_separator          : "-"
 subtitle                 :
 name                     : "sel"
@@ -19,7 +19,6 @@ comments:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
     num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
   utterances:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
@@ -103,6 +102,7 @@ exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
+  - .git
   - .asset-cache
   - .bundle
   - .jekyll-assets-cache
@@ -112,6 +112,7 @@ exclude:
   - CHANGELOG
   - config
   - Gemfile
+  - Gemfile.lock
   - Gruntfile.js
   - gulpfile.js
   - LICENSE
@@ -121,11 +122,8 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
-keep_files:
-  - .git
-  - .svn
+  - /docs
+  - /test
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 

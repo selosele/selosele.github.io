@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - css
-    - table
 ---
 제목 그대로 table 요소와 overflow 속성의 공존은 불가능하다.  
 예시로 ```display: table/table-cell```{:.language-css} 등 너비값을 가진 table 요소에 overflow 속성을 선언하면 먹히지 않는 현상. 실무에서 이것 때문에 고생을 했는지라.. 검색해서 찾아낸 해답은 의외로 간단했음.

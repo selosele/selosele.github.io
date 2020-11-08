@@ -27,7 +27,7 @@
       right: -100%;
       width: 85%;
       height: 100%;
-      padding: 4rem 1.5rem;
+      padding: 1.5rem;
       background-color: $grey07;
       box-shadow: rgba(0,0,0,.3) .4rem .4rem 1rem .5rem;
       box-sizing: border-box;
@@ -139,11 +139,9 @@
 
    &__close {
       display: block;
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
       width: 2rem;
       height: 2rem;
+      margin-left: auto;
       background-color: $main-color;
 
       &:before {
@@ -210,11 +208,10 @@
 
 /* pagination */
 .pagination {
-   margin-top: 4rem;
+   margin-top: 1rem;
    text-align: center;
 
    @media (min-width: $min-medium-width) {
-      margin-top: 2.5rem;
       margin-bottom: 1rem;
    }
 

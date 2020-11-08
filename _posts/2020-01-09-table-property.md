@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - css
-    - table
 post_dropcap: false
 ---
 CSS ```display: table```{:.language-css} 속성은 말 그대로 요소를 table의 성질을 갖게 한다는 뜻이다.

@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - css
-    - cascading-rules
 ---
 reset CSS를 작성할 때 요소의 border를 없애려 사용하는 ```border: none```{:.language-css}/```border: 0```{:.language-css} 선언.  
 언뜻 보면 똑같아 보이지만 확연한 차이가 있음을 알았음..

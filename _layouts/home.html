@@ -18,4 +18,8 @@ pagination:
   {% endfor %}
 </ul>
 
+{% if site.post.size and site.posts.size > 0 %}
+  <p class="archive__post-count">총 {{ site.posts.size }}개의 포스트</p>
+{% endif %}
+
 {% include paginator.html %}

@@ -10,7 +10,6 @@ date: 2019-10-30 22:12
 categories:
     - 퍼블노트
 tags:
-    - cascading-rules
     - css
 ---
 모듈화는 CSS 중복을 제거하고 클래스의 재사용성을 높이는 데 중점을 둔다.  

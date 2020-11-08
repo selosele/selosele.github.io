@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - css
-    - table
 ---
 CSS로 가로정렬하는 방법하면 떠오르는 것들 : float, inline-block 등등..
 그와중에 inline-table이라는 신기한 녀석을 발견하여 기록함. block 요소인 table을 말 그대로 inline 요소의 성질을 갖게 만듦. 예제 코드를 봅시다.

@@ -10,8 +10,6 @@ date: 2019-11-06 22:12
 categories:
     - 퍼블노트
 tags:
-    - rowspan
-    - table
     - html
 home_dropcap: false
 post_dropcap: false

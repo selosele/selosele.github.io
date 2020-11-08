@@ -636,8 +636,7 @@
    top: 100%;
    left: 0;
    z-index: 1;
-   width: min-content;
-   max-width: 50vw;
+   width: auto;
    height: auto;
    padding: .5rem;
    background-color: $grey12;

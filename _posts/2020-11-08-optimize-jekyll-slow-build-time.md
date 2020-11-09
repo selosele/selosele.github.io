@@ -41,7 +41,7 @@ Jekyll Feed: Generating feed for posts
 
 ## 애초에 하나의 포스트만 빌드되도록 해준다.
 
-빌드 명령어 뒤에 ```--help```{:.language-ruby}를 붙이면 사용 가능한 옵션 목록을 볼 수 있다.
+빌드 명령어 뒤에 <mark>--help</mark>를 붙이면 사용 가능한 옵션 목록을 볼 수 있다.
 
 1. ```bundle exec jekyll serve --help```{:.language-ruby} 명령어 실행
 2. 여러 개의 옵션 중 <mark>--limit_posts</mark> 옵션을 찾을 수 있다.

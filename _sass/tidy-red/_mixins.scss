@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* common layout */
-@mixin common-layout($max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
+@mixin common-layout($width: $layout-responsive-width, $max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
    @if $margin-t != null {
       margin-top: $margin-t;
    }
@@ -21,7 +21,9 @@
    }
 
    @media (min-width: $min-standard-width) {
-      width: 90%;
+      @if ($width != null) {
+         width: $layout-responsive-width;
+      }
       
       @if $max-width {
          max-width: $max-width;

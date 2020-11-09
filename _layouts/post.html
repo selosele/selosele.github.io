@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div role="main" id="content" class="content-wrapper{% if page.toc %} content--has-toc{% endif %}">
+<div role="main" id="content" class="content-wrapper{% if page.toc %} content--has-toc{% endif %}{% if page.column %} content--column{% endif %}">
   <article itemscope itemtype="https://schema.org/CreativeWork" class="page">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.summary %}<meta itemprop="description" content="{{ page.summary | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}

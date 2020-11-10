@@ -48,7 +48,8 @@ $(".hashToggle").on("click", function(event) {
 각 a 요소마다 일일이 JS를 작성하지 않고 ```hashToggle```{:.language-css}이라는 공통 클래스에 의해 제어된다.  
 toggle만 할 거면 문제가 없으나, ```slideToggle```{:.language-javascript}, ```fadeToggle```{:.language-javascript} 등 여러 메소드를 사용해야 한다거나 이벤트가 발생할 때마다 특정한 로직이 들어가야 한다면?
 
-그래서 플러그인을 만들어보기로 결심하고 학습을 시작하였다. 타인이 만들어놓은 플러그인을 가져다 쓰기만 하다가 직접 만들어보려니 막막한 느낌도 든다.
+그래서 플러그인을 만들어보기로 결심하고 작업을 시작하였다.  
+타인의 것을 가져다 쓰기만 하다가 직접 만들어보려니 막막한 느낌도 든다.
 
 ## 머릿속에 담아둔 요구사항
 
@@ -82,7 +83,9 @@ var option = $.extend({
 }, options);
 ```
 
-<mark>event</mark> 옵션은 바인딩할 이벤트를 설정한다. 기본값은 click으로 설정했는데, 위에 예시로 든 코드를 봐도 알겠지만 대부분 click으로 뭔가를 toggle하는 경우가 많기 때문. 어쨌든 해당 옵션은 모든 이벤트를 사용할 수 있다.
+<mark>event</mark> 옵션은 바인딩할 이벤트를 설정한다. 기본값은 click으로 설정했는데,  
+위에 예시로 든 코드를 봐도 알겠지만 대부분 click으로 뭔가를 toggle하는 경우가 많기 때문.  
+어쨌든 해당 옵션은 모든 이벤트를 사용할 수 있다.
 
 <mark>action</mark> 옵션은 나타나고 사라지는 메소드를 설정한다. toggle, show, hide, slideDown, fadeOut 등 모든 메소드를 사용할 수 있다.
 
@@ -92,7 +95,8 @@ var option = $.extend({
 <mark>toggleClass</mark>, <mark>addClass</mark>, <mark>removeClass</mark> 옵션은 jQuery의 그것과 같다. 예) ```toggleClass: "active"```{:language-javascript}  
 클래스가 붙는 요소는 a 요소의 href 속성값과 매칭되는 id값을 가진 요소(이하 타겟요소)이다.
 
-<mark>afterEvent</mark>는 바인딩한 이벤트에 대한 핸들러를 작성할 수 있는 콜백함수로, ```event```{:.language-javascript} 매개변수를 갖는다. 아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
+<mark>afterEvent</mark>는 바인딩한 이벤트에 대한 핸들러를 작성할 수 있는 콜백함수로, ```event```{:.language-javascript} 매개변수를 갖는다.  
+아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
 
 이제 플러그인 호출을 해볼 것이다.
 
@@ -117,7 +121,8 @@ $(".foo").hashToggle({
 
 ## afterEvent 옵션 구현이 매우 어렵다.
 
-그나저나 머릿속에 담아둔 요구사항 중 마지막 &ldquo;원하는 로직을 넣을 수 있어야 한다&rdquo;는 게 무슨 뜻이냐, 위에 언급한 afterEvent 옵션 사용법은 다음과 같다.
+그나저나 머릿속에 담아둔 요구사항 중 마지막 &ldquo;원하는 로직을 넣을 수 있어야 한다&rdquo;는 게 무슨 뜻이냐,  
+위에 언급한 afterEvent 옵션 사용법은 다음과 같다.
 
 {:.has-label}
 ```javascript
@@ -129,7 +134,8 @@ $(".foo").hashToggle({
 ```
 
 &ldquo;이벤트 발생(예: click)&rdquo; &rarr; &ldquo;<mark>afterEvent</mark> 콜백함수에 작성한 핸들러 실행&rdquo; 순서로 작동한다.  
-웹 접근성 대응이 필요할 경우 위와 같은 코드를 넣어야 하는데, 플러그인에서 해당 옵션을 제공하지 않는다면 플러그인이 가지는 중요한 의미인 확장성이 아무 의미없게 된다.
+웹 접근성 대응이 필요할 경우 위와 같은 코드를 넣어야 하는데, 플러그인에서 해당 옵션을 제공하지 않는다면  
+플러그인이 가지는 중요한 의미인 확장성이 아무 의미없게 된다.
 
 또 중요한 것은, afterEvent 옵션에 작성한 핸들러도 toggle 되듯이 흘러가야 한다는 것임.  
 로직 순서를 풀어보자면

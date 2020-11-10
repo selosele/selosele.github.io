@@ -78,8 +78,6 @@ var option = $.extend({
   toggleClass: null,
   addClass: null,
   removeClass: null,
-  classTo: null,
-  classToSelf: false,
   afterEvent: null
 }, options);
 ```
@@ -94,24 +92,17 @@ var option = $.extend({
 <mark>toggleClass</mark>, <mark>addClass</mark>, <mark>removeClass</mark> 옵션은 jQuery의 그것과 같다. 예) ```toggleClass: "active"```{:language-javascript}  
 클래스가 붙는 요소는 a 요소의 href 속성값과 매칭되는 id값을 가진 요소(이하 타겟요소)이다.
 
-<mark>classTo</mark> 옵션은 클래스를 붙일 요소를 설정한다. 중요한 점은 해당 옵션을 설정했다고 해서 타겟요소에 클래스가 붙지 않는 게 아니라 다 같이 붙게 구현했다는 점이다.  
-예를 들어 ```<body>```{:.language-html} 요소에도 클래스를 붙이고 싶어서 옵션에 넣으면, 타겟요소와 ```<body>```{:.language-html} 요소 모두 같은 클래스가 붙는 것이다.
-
-<mark>classToSelf</mark> 옵션은 이벤트가 바인딩된 요소, 즉 ```$(this)```{:.language-javascript}에도 클래스를 붙게 설정할 수 있다.
-
 <mark>afterEvent</mark>는 바인딩한 이벤트에 대한 핸들러를 작성할 수 있는 콜백함수로, ```event```{:.language-javascript} 매개변수를 갖는다. 아래 **afterEvent 옵션 구현이 매우 어렵다.** 부분에서 자세히 설명하겠음.
 
 이제 플러그인 호출을 해볼 것이다.
 
 {:.has-label}
 ```javascript
-// 플러그인 호출
 $(".foo").hashToggle({
   event: "mouseover mouseout",
   action: "fadeToggle",
   duration: 600,
-  toggleClass: "active",
-  classTo: "body"
+  toggleClass: "active"
 });
 ```
 
@@ -131,8 +122,8 @@ $(".foo").hashToggle({
 {:.has-label}
 ```javascript
 $(".foo").hashToggle({
-  afterEvent: function(event) {
-    $(event.currentTarget).attr("title", "확장됨"); // 예) 아코디언 ui의 웹 접근성 대응 코드
+  afterEvent: function() {
+    $(this).attr("title", "확장됨"); // 예) 아코디언 ui의 웹 접근성 대응 코드
   }
 });
 ```

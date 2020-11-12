@@ -166,7 +166,6 @@
          justify-content: center;
 
          > li {
-            display: inherit;
             width: 2rem;
             height: 2rem;
             margin-top: 1rem;
@@ -178,8 +177,6 @@
             text-align: center;
             font-size: 1.2rem;
             list-style: none;
-            justify-content: center;
-            align-items: center;
 
             @media (min-width: $min-small-width) {
                margin-left: 0;
@@ -187,13 +184,12 @@
             }
 
             > a {
-               display: block;
+               display: flex;
+               height: 100%;
                color: $black;
                text-shadow: none;
-
-               > i {
-                  vertical-align: middle;
-               }
+               justify-content: center;
+               align-items: center;
             }
          }
 

@@ -5,7 +5,7 @@ title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인
 summary: "이미지 크기를 CSS로 줄였을 때"
 header:
   overlay_image: /assets/images/thumb/chrome_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773216/
   image_author: geralt
 date: 2020-09-17 21:48
@@ -17,7 +17,8 @@ primary_post: true
 ---
 
 [이전 글](/2020/02/16/sub-pixel-rendering/)에서는 ```transform```{:.language-css} 속성을 사용했을 때 이슈에 대응하는 방법을 떠들어보았고,  
-이번에는 img 요소/background-image의 크기를 CSS로 줄였을 때 대응하는 최선의 방법은 무엇인가..에 대해 이야기해보려고 한다.
+이번에는 img 요소/background-image의 크기를 CSS로 줄였을 때 대응하는 최선의 방법은 무엇인가..  
+에 대해 이야기해보려고 한다.
 
 실무에서 반응형 분기점마다 이미지 크기를 CSS로 줄여야 하는 상황이 있었는데, 크기가 홀수 단위로 떨어지다보니 이미지가 심하게 흐려보여서, 결국 이미지를 분기점마다 대응할 수 있게 포토샵에서 다른 크기로 여러 장을 편집하기 직전까지 갔으나..
 

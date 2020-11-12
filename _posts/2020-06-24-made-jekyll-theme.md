@@ -5,7 +5,7 @@ title: "Jekyll 테마 퍼블리싱 및 적용 완료"
 summary:
 header:
   overlay_image: /assets/images/thumb/blog_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
   image_link: https://pixabay.com/ko/photos/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%9B%B9-%EA%B8%B0%EC%88%A0-2355684/
   image_author: Wokandapix
 date: 2020-06-24 22:58

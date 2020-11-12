@@ -5,7 +5,8 @@ title: "초점이동 테스트를 위한 Javascript 연구"
 summary:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
+  image_position-y: 57%
   image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
   image_author: Alltechbuzz
 date: 2020-05-09 18:28

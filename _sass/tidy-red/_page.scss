@@ -563,8 +563,8 @@
 // post header
 .post-header {
    @include common-layout($max-width: $layout-wide-width);
-   padding-top: 4rem;
-   padding-bottom: 5rem;
+   padding-top: 6rem;
+   padding-bottom: 8rem;
    color: $grey12;
 
    > .page__title {

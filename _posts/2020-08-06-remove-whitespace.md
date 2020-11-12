@@ -45,16 +45,15 @@ li {
 
 {:.has-label}
 ```javascript
-var removeWhitespace = function(parentElem) {
+(function(parentElem) {
   if (!parentElem) return;
   
-  for (var i = 0; i < parentElem.length; i++) {
-    Array.prototype.slice.call(parentElem[i].childNodes).forEach(function(childElem) {
+  for (let i = 0; i < parentElem.length; i++) {
+    Array.from(parentElem[i].childNodes).forEach((childElem) => {
       if (childElem.nodeType === 3) parentElem[i].removeChild(childElem);
     });
   }
-};
-removeWhitespace(document.querySelectorAll(".has-whitespace"));
+})(document.querySelectorAll(".has-whitespace"));
 ```
 
 childNodes는 NodeList를 반환하고, NodeList는 유사배열이므로 배열로 바꾸어주려고 ```Array.from()```{:.language-javascript} 메서드를 사용했으나 ES6를 지원하지 않는 IE에서 작동하지 않아 ```Array.prototype.slice.call```{:.language-javascript} 메서드로 해결했음(내 블로그에 적용할 스크립트인데, 아직 ES6 &rarr; ES5 문법으로 변환하지 않는 환경이라서 ES5로 작업 중이고 아래 codepen에는 ES6 문법으로 작성함).

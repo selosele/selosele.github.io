@@ -89,6 +89,7 @@
       }
    
       &-content {
+         margin-top: 0;
          margin-bottom: .7rem;
          line-height: 1.875;
          font-size: .95rem;
@@ -96,6 +97,8 @@
 
          @media (min-width: $min-medium-width) {
             &.has-dropcap {
+               display: flow-root;
+
                &:first-letter {
                   float: left;
                   margin-top: .4rem;
@@ -186,6 +189,7 @@
    }
 
    &__post-count {
+      margin: 0;
       text-align: center;
    }
 }

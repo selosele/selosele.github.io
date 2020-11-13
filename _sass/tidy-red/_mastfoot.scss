@@ -36,6 +36,7 @@
     right: 0;
     width: 2.35rem;
     height: 2.35rem;
+    margin: 0;
     background-color: $grey12;
     border: 1px solid $main-color;
     border-radius: 50%;
@@ -82,6 +83,7 @@
   }
 
   &__copyright {
+    margin: 0;
     line-height: 1.5;
     color: $black;
   }

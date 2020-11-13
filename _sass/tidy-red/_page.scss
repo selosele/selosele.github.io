@@ -282,9 +282,6 @@
       }
 
       p {
-         margin-top: $p-default-margin;
-         margin-bottom: $p-default-margin;
-
          &.float {
             &-left {
                @media (min-width: $min-medium-width) {
@@ -527,6 +524,7 @@
    
          &__desc {
             margin-top: .3rem;
+            margin-bottom: 0;
             font-size: 1rem;
             line-height: 1.4;
          }

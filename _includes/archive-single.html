@@ -7,7 +7,7 @@
 {% assign postUrl = post.url | relative_url %}
 {% assign postUrl_r = postUrl | replace: '/', '' | replace: '-', '' %}
 
-<li>
+<li{% if site.posts.size == 1 %} role="presentation"{% endif %}>
   <article aria-labelledby="title-{{ postUrl_r }}" aria-describedby="desc-{{ postUrl_r }}" itemscope itemtype="https://schema.org/CreativeWork" class="archive__item">
     <h2 class="archive__item-title">
       <a href="{{ postUrl }}" rel="permalink" id="title-{{ postUrl_r }}">{{ title }}</a>

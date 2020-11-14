@@ -72,14 +72,7 @@
    }
 
    &__lead {
-      display: block;
-      margin-top: .675676em;
-      font-family: $default-font03;
-      font-weight: 400;
-      font-size: calc(1rem + .5vw);
-      line-height: 1.5;
-      color: $grey07;
-      text-shadow: 1px 1px .2em rgba(0,0,0,.5);
+      @include subtitle($margin-top: .675676em);
 
       &:before {
          content: "\2014";
@@ -563,24 +556,7 @@
    @include common-layout($max-width: $layout-wide-width);
    padding-top: 6rem;
    padding-bottom: 8rem;
-   color: $grey12;
-
-   > .page__title {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
-      font-family: $default-font03;
-      color: inherit;
-      text-shadow: 1px 1px .2em rgba(0,0,0,.5);
-
-      @media (min-width: $min-small-width) {
-         font-size: calc(2.15rem + .5vw);
-      }
-
-      @media (min-width: $min-general-width) {
-         font-size: 2.5rem;
-      }
-   }
+   @include page_title($size1: calc(2.15rem + .5vw), $size2: 2.5rem);
 }
 
 // scroll-indicator

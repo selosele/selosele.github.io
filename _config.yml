@@ -2,7 +2,7 @@
 locale                   : "ko"
 title                    : "sel의 생각저장소"
 title_separator          : "-"
-subtitle                 :
+subtitle                 : "이런저런 이야기"
 name                     : "sel"
 description              : "웹 퍼블리셔 sel의 개인 블로그"
 url                      : "https://selosele.github.io"
@@ -237,9 +237,6 @@ defaults:
       layout: post
       comments: false
       share: true
-
-# theme type
-theme_type: type1 # type1(default), type2
 
 # skip links
 skip_links:

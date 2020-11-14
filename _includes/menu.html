@@ -47,14 +47,12 @@
     <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
     {% endif %}
 
-    {% if site.theme_type == "type2" %}
-      <div aria-labelledby="menu-author-title" aria-describedby="menu-author-desc" itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
-        <strong itemprop="name" id="menu-author-title" class="menu__author-name">{{ site.author.name }}</strong>
-        {% if site.author.desc %}
-        <p itemprop="description" id="menu-author-desc" class="menu__author-desc">{{ site.author.desc }}</p>
-        {% endif %}
-        {% include author-link.html class='menu__author-links' %}
-      </div>
-    {% endif %}
+    <section itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
+      <h2 itemprop="name" class="menu__author-name">{{ site.author.name }}</h2>
+      {% if site.author.desc %}
+      <p itemprop="description" class="menu__author-desc">{{ site.author.desc }}</p>
+      {% endif %}
+      {% include author-link.html class='menu__author-links' %}
+    </section>
   </nav>
 </div>

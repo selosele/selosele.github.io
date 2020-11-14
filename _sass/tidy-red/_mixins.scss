@@ -42,6 +42,54 @@
    background-color: $green05;
 }
 
+@mixin avatar {
+   display: inline-block;
+   padding: .2rem;
+   border-radius: 50%;
+   border: 2px solid $main-color;
+   box-shadow: rgba(0,0,0,.3) 1px 1px .5rem 0;
+   box-sizing: border-box;
+
+   > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+   }
+}
+
+@mixin page_title($size1, $size2) {
+   font-family: $default-font03;
+
+   > .page__title {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+      color: $grey12;
+      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.6);
+
+      @media (min-width: $min-small-width) {
+         font-size: $size1;
+      }
+   
+      @media (min-width: $min-general-width) {
+         font-size: $size2;
+      }
+   }
+}
+
+@mixin subtitle($margin-top) {
+   display: block;
+   margin-top: $margin-top;
+   font-weight: 400;
+   font-size: calc(1rem + .5vw);
+   line-height: 1.5;
+   color: $grey07;
+   text-shadow: 1px 1px .2em rgba(0,0,0,.6);
+}
+
 // clearfix
 @mixin clearfix {
    &:after {

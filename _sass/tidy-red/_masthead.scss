@@ -27,19 +27,10 @@
    }
 }
 
-.layout {
-   &--home {
-      .masthead {
-         @media (min-width: $min-small-width) {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
-         }
-      }
-
-      .site {
-         &-nav {
-            height: 1.75rem;
-         }
+.page-root:not(.layout--post) {
+   .site {
+      &-nav {
+         height: 1.75rem;
       }
    }
 }
@@ -51,6 +42,11 @@
    background-repeat: no-repeat;
    background-position: 50% 50%;
    background-size: cover;
+
+   @media (min-width: $min-small-width) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
+   }
 
    &__home {
       &-header {

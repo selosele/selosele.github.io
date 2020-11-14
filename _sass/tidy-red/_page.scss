@@ -65,6 +65,7 @@
       font-size: calc(1.75rem + .5vw);
       color: $black;
       line-height: 1.4;
+      letter-spacing: .01em;
 
       @media (min-width: $min-general-width) {
          font-size: 2rem;
@@ -549,14 +550,6 @@
          -webkit-font-smoothing: antialiased;
       }
    }
-}
-
-// post header
-.post-header {
-   @include common-layout($max-width: $layout-wide-width);
-   padding-top: 6rem;
-   padding-bottom: 8rem;
-   @include page_title($size1: calc(2.15rem + .5vw), $size2: 2.5rem);
 }
 
 // scroll-indicator

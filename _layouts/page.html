@@ -4,10 +4,6 @@ layout: default
 
 <div role="main" itemscope itemtype="https://schema.org/CreativeWork" id="content" class="content-wrapper">
 	<article>
-		<header>
-			<h1 class="page__title">{{ page.title }}</h1>
-		</header>
-	
 		<section{% if page.id %} id="{{ page.id }}"{% endif %} itemprop="text" class="archive{% if page.class %} {{ page.class }}{% endif %}">
 			{{ content }}
 		</section>

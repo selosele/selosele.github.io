@@ -42,16 +42,16 @@
 {% if page.layout == 'post' %} style="{% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% if page.header.image_position %} background-position: {{ page.header.image_position }};{% endif %}{% if page.header.image_position-x %}background-position-x: {{ page.header.image_position-x }};{% endif %}{% if page.header.image_position-y %}background-position-y: {{ page.header.image_position-y }};{% endif %}{% if page.header.image_contain %}background-size: contain{% endif %}"{% endif %}>
 
   <nav aria-labelledby="site-title" id="site-nav" class="site-nav">
-    {% if page.layout == "post" %}
+    {% unless page.layout == "home" %}
       <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.author.avatar %} has-image{% endif %}">
       {% if site.author.avatar %}
-       {% include avatar.html class="site-title__author-image" %}
+        {% include avatar.html class="site-title__author-image" %}
       {% endif %}
 
       {{ site.title }}
       {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
       </a>
-    {% endif %}
+    {% endunless %}
     
     <div class="nav__btn-wrapper">
       {% if site.search == true %}
@@ -65,14 +65,21 @@
     </div>
   </nav>
 
-  {% unless page.layout == "home" or page.layout == "post" %}
-    <header itemscope itemtype="https://schema.org/CreativeWork" class="masthead__home-header">
-      {% if site.author.avatar %}
-       {% include avatar.html class="masthead__home-avatar" %}
+  {% unless page.layout == "post" %}
+    <header itemscope itemtype="https://schema.org/CreativeWork" class="masthead__page-header">
+      {% if page.layout == "home" and site.author.avatar %}
+       {% include avatar.html class="masthead__page-avatar" %}
       {% endif %}
-      <h1 class="page__title">{{ site.title }}</h1>
-      {% if site.subtitle %}
-      <strong itemprop="alternativeHeadline" class="masthead__home-subtitle">{{ site.subtitle }}</strong>
+      <h1 class="page__title">
+        {% if page.layout == "home" %}
+          {{ site.title }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </h1>
+
+      {% if page.layout == "home" and site.subtitle %}
+        <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
       {% endif %}
     </header>
   {% endunless %}

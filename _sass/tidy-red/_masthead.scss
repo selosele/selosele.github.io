@@ -48,7 +48,7 @@
       clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%, 0% 50%);
    }
 
-   &__home {
+   &__page {
       &-header {
          @include common-layout;
          margin-top: 9rem;
@@ -83,6 +83,13 @@
 
    &--image {
       background-color: transparent;
+   }
+
+   &__post-header {
+      @include common-layout($max-width: $layout-wide-width);
+      padding-top: 6rem;
+      padding-bottom: 8rem;
+      @include page_title($size1: calc(2.15rem + .5vw), $size2: 2.5rem);
    }
 }
 

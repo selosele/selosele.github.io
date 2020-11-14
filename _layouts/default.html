@@ -2,7 +2,7 @@
 ---
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="page-root layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
   <head>
     {% include head.html %}
   </head>

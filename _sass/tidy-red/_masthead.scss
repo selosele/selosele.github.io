@@ -27,14 +27,6 @@
    }
 }
 
-.page-root:not(.layout--post) {
-   .site {
-      &-nav {
-         height: 1.75rem;
-      }
-   }
-}
-
 /* masthead layout */
 .masthead {
    overflow: hidden;
@@ -98,10 +90,9 @@
       display: flex;
       position: absolute;
       top: 0;
-      bottom: 0;
       right: 0;
       width: auto;
-      height: auto;
+      height: 2rem;
       justify-content: space-between;
       align-items: center;
    

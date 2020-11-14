@@ -65,26 +65,32 @@
     </div>
   </nav>
 
-  {% unless page.layout == "post" %}
-    <header itemscope itemtype="https://schema.org/CreativeWork" class="masthead__page-header">
-      {% if page.layout == "home" and site.author.avatar %}
-       {% include avatar.html class="masthead__page-avatar" %}
+  <header itemscope itemtype="https://schema.org/CreativeWork" class="{% if page.layout == 'post' %}masthead__post-header{% else %} masthead__page-header{% endif %}">
+    {% if page.layout == "home" and site.author.avatar %}
+      {% include avatar.html class="masthead__page-avatar" %}
+    {% endif %}
+    <h1 class="page__title">
+      {% if page.layout == "home" %}
+        {{ site.title }}
       {% endif %}
-      <h1 class="page__title">
-        {% if page.layout == "home" %}
-          {{ site.title }}
+
+      {% if page.layout == "post" %}
+        {% if paginator and site.paginate_show_page_num %}
+          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
+        {% else %}
+          {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+        {% endif %}
         {% else %}
           {{ page.title }}
-        {% endif %}
-      </h1>
-
-      {% if page.layout == "home" and site.subtitle %}
-        <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
       {% endif %}
-    </header>
-  {% endunless %}
+    </h1>
 
-  {% if page.layout == "post" %}
-    {% include post-header.html %}
-  {% endif %}
+    {% if page.layout == "home" and site.subtitle %}
+      <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
+    {% endif %}
+
+    {% if page.layout == "post" and page.summary %}
+      <strong itemprop="alternativeHeadline" class="page__lead">{{ page.summary | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
+    {% endif %}
+  </header>
 </div>

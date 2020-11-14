@@ -42,7 +42,7 @@
 
    &__page {
       &-header {
-         @include common-layout;
+         @include common-layout($max-width: $layout-wide-width);
          margin-top: 9rem;
          margin-bottom: 9rem;
          @include page_title($size1: calc(2.15rem + .5vw), $size2: 2.5rem);

@@ -17,22 +17,26 @@ tags:
 primary_post: true
 ---
 
-블로그 JS 작업 중 레이어팝업 초점이동 관련 코드를 구현했었는데, jQuery를 이용해서 구현을 완료했었다. 하지만 똑같은 문제를 Vanilla JS로 구성해본다면?
+블로그 JS 작업 중 레이어팝업 초점이동 관련 코드를 구현했었는데, jQuery를 이용해서 구현을 완료했었다.  
+하지만 똑같은 문제를 Vanilla JS로 구성해본다면?
 
 ## 초점이동이 레이어팝업 내부에서만 돌게 하기
 
-레이어팝업 내부 요소들 중 초점이동이 가능한 처음/마지막 요소에서 초점이동 시, 초점이 레이어팝업 밖으로 나가선 안되는 건 당연한 상식이다. 이를 jQuery로 구현한다면 비교적 수월(?)할 것임. 하지만 평소 Vanilla JS에 대한 학습이 부족했기 때문에 jQuery를 벗어나서 사고하는 게 상당히 어려웠고, 이대로는 안되겠다싶어서 코드를 한번 만들어보았다.
+레이어팝업 내부 요소들 중 초점이동이 가능한 처음/마지막 요소에서 초점이동 시,  
+초점이 레이어팝업 밖으로 나가선 안되는 건 당연한 상식이다. 이를 jQuery로 구현한다면 비교적 수월(?)할 것임.  
+하지만 평소 Vanilla JS에 대한 학습이 부족했기 때문에 jQuery를 벗어나서 사고하는 게 상당히 어려웠고,  
+이대로는 안되겠다싶어서 코드를 한번 만들어보았다.
 
 결과적으로 개인적인 만족감뿐만 아니라 약간의 Vanilla JS 사고력(?) 증가까지 이루었다고 생각한다. 그렇다고 자만하지는 말자...
 
 {:.has-label}
 ```html
 <div class="layer" id="layer">
-  <div class="layer__inner-wrap">
-    <a href="#">1</a>
-    <span tabindex="0">2</span>
-    <button type="button">3</button>
-  </div>
+    <div class="layer__inner-wrap">
+        <a href="#">1</a>
+        <span tabindex="0">2</span>
+        <button type="button">3</button>
+    </div>
 </div>
 
 <a href="#">outer element</a>
@@ -40,23 +44,23 @@ primary_post: true
 
 {:.has-label}
 ```javascript
-const layer = document.getElementById("layer");
-const layerTabbable = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])");
-const layerTabbableFirst = layerTabbable[0];
-const layerTabbableLast = layerTabbable[layerTabbable.length - 1];
+const layer = document.getElementById("layer"),
+      layerTabbable = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+      layerTabbableFirst = layerTabbable[0],
+      layerTabbableLast = layerTabbable[layerTabbable.length - 1];
 
 const handlerFirstKeydown = (evt) => {
-  if (evt.shiftKey && evt.key === "Tab") {
-    evt.preventDefault();
-    layerTabbableLast.focus();
-  }
+    if (evt.shiftKey && evt.key === "Tab") {
+        evt.preventDefault();
+        layerTabbableLast.focus();
+    }
 };
 
 const handlerLastKeydown = (evt) => {
-  if (!evt.shiftKey && evt.key === "Tab") {
-    evt.preventDefault();
-    layerTabbableFirst.focus();
-  }
+    if (!evt.shiftKey && evt.key === "Tab") {
+        evt.preventDefault();
+        layerTabbableFirst.focus();
+    }
 };
 
 layerTabbableFirst.addEventListener("keydown", handlerFirstKeydown);

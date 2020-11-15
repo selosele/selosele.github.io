@@ -13,13 +13,15 @@ tags:
     - css
 post_dropcap: false
 ---
+
 text를 정렬하는 방법(text-align)이라면 left, right, center 밖에 몰랐었는데, justify라는 속성을 알게 되어 기록함.
 
 {:.has-label}
 ```html
 <p>t e x t</p>
 ```
-우선 ```text-align: justify```{:.language-css}는 text를 양쪽으로 정렬해주는 속성이다.
+
+우선 <mark>text-align: justify</mark>는 text를 양쪽으로 정렬해주는 속성이다.
 
 내가 하려는 건 한 글자씩 모두 양쪽으로 정렬하려는 것이고, 글자 사이에 공백이 있어야 적용됨.
 

@@ -14,7 +14,9 @@ tags:
     - javascript
     - typescript
 ---
-커뮤니티 눈팅 중 Typescript라는 Javascript의 슈퍼셋 프로그래밍 언어를 알게 되어 설치 후 테스트까지 해보고 기록하고자 포스팅을 하게 되었다.
+
+커뮤니티 눈팅 중 Typescript라는 Javascript의 슈퍼셋 프로그래밍 언어를 알게 되어  
+설치 후 테스트까지 해보고 기록하고자 포스팅을 하게 되었다.
 
 ## 예제
 
@@ -29,13 +31,14 @@ function getNum(a: number, b: number) {
 var num: number = getNum(3, "5");
 console.log(num);
 ```
+
 Typescript는 숫자(number)와 문자열(string) 타입을 선언하는 것이 가능하다. 따라서 저렇게 작성하면 에러를 뱉어줌.
 
 Javascript 파일에서 저렇게 작성한다면 에러를 뱉지 않고 어떻게든 작동은 할 것이다. 테스트 결과 15가 출력되는 기적을 볼 수 있음...
 
 따라서 Typescript 선에서 에러를 잡아내고 실수를 최소화하는 게 작업 효율을 높일 수 있다고 할 수 있다.  
-에러 수정 후 ```tsc script.ts```{:.language-typescript} 명령어로 컴파일하면 다음과 같은 결과를 볼 수 있음  
-(```tsc -watch```{:.language-typescript} 명령어로 저장 시마다 자동 컴파일 가능).
+에러 수정 후 <mark>tsc script.ts</mark> 명령어로 컴파일하면 다음과 같은 결과를 볼 수 있음  
+(<mark>tsc -watch</mark> 명령어로 저장 시마다 자동 컴파일 가능).
 
 ## script.ts &rarr; script.js 컴파일
 

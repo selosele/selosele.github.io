@@ -13,6 +13,7 @@ tags:
     - css
 post_dropcap: false
 ---
+
 요소를 중앙정렬하는 기법 중 신기한 것을 발견하여 기록한다.
 
 ## 익숙했던 방법
@@ -20,19 +21,20 @@ post_dropcap: false
 {:.has-label}
 ```html
 <div>
-  <p>Paragraph</p>
+    <p>Paragraph</p>
 </div>
 ```
 
 {:.has-label}
 ```scss
 p {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 ```
+
 흔히 사용되는 중앙정렬 기법이다.
 
 ## 새로 알게된 방법
@@ -52,6 +54,8 @@ div {
   }
 }
 ```
-absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으로 계산되도록 해준다. 위의 transform 기법과 별 차이는 없어보이지만 언젠가 유용할 듯 싶어 기록함.
+
+absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으로 계산되도록 해준다.  
+위의 transform 기법과 별 차이는 없어보이지만 언젠가 유용할 듯 싶어 기록함.
 
 그나저나 IE만 아니면 flex를...

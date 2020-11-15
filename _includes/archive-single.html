@@ -10,8 +10,8 @@
 <li{% if site.posts.size == 1 %} role="presentation"{% endif %}>
   <article aria-labelledby="title-{{ postUrl_r }}" aria-describedby="desc-{{ postUrl_r }}" itemscope itemtype="https://schema.org/CreativeWork" class="archive__item">
     <header class="archive__item-header">
-      <h2 class="archive__item-title">
-        <a href="{{ postUrl }}" rel="permalink" id="title-{{ postUrl_r }}">{{ title }}</a>
+      <h2 id="title-{{ postUrl_r }}" class="archive__item-title">
+        <a href="{{ postUrl }}" rel="permalink">{{ title }}</a>
       </h2>
     </header>
     {% if post.summary %}<strong itemprop="alternativeHeadline" class="archive__item-summary">{{ post.summary }}</strong>{% endif %}

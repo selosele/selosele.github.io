@@ -11,7 +11,7 @@
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
     </button>
 
-    <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_links | default: 'Primary links' }}</h2>
+    <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_menu | default: 'Primary menu' }}</h2>
     <ul role="menu"{% if site.data.navigation.main.size > 1 %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
@@ -25,7 +25,7 @@
       {%- endfor -%}
     </ul>
   
-    <h2>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h2>
+    <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
     {% if site.categories.size > 0 %}
     <ul>
       {% for i in (1..categories_max) reversed %}

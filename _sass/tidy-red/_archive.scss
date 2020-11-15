@@ -22,6 +22,18 @@
             margin-top: .5rem;
          }
       }
+
+      &-header {
+         + .archive__item-content {
+            padding-top: .4444444rem;
+            border-top: 1px dotted $grey09;
+
+            @media (min-width: $min-medium-width) {
+               padding-top: 0;
+               border-top: 0;
+            }
+         }
+      }
    
       &-title {
          > a {
@@ -52,16 +64,6 @@
                &:hover {
                   text-decoration: underline;
                }
-            }
-         }
-
-         + .archive__item-content {
-            padding-top: .4444444rem;
-            border-top: 1px dotted $grey09;
-
-            @media (min-width: $min-medium-width) {
-               padding-top: 0;
-               border-top: 0;
             }
          }
       }

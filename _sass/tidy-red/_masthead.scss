@@ -135,6 +135,7 @@
       line-height: 1.45;
       color: $grey12;
       text-shadow: rgba(0,0,0,.7) 1px 1px .107em;
+      vertical-align: top;
 
       @media (min-width: $min-small-width) {
          font-size: 1.4rem;

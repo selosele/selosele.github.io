@@ -41,7 +41,7 @@
 {% if site.masthead.teaser.bg and page.layout != 'post' %} style="background-image: {% if site.masthead.teaser.filter %}linear-gradient(rgba(0,0,0,{{ site.masthead.teaser.filter }}), rgba(0,0,0,{{ site.masthead.teaser.filter }})), {% endif %}url({{ site.masthead.teaser.bg }});{% if site.masthead.teaser.position %} background-position: {{ site.masthead.teaser.position }};{% endif %}"{% endif %}
 {% if page.layout == 'post' %} style="{% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% if page.header.image_position %} background-position: {{ page.header.image_position }};{% endif %}{% if page.header.image_position-x %}background-position-x: {{ page.header.image_position-x }};{% endif %}{% if page.header.image_position-y %}background-position-y: {{ page.header.image_position-y }};{% endif %}{% if page.header.image_contain %}background-size: contain{% endif %}"{% endif %}>
 
-  <nav aria-labelledby="site-title" id="site-nav" class="site-nav">
+  <nav{% unless page.layout == 'home' %} aria-labelledby="site-title"{% endunless %} id="site-nav" class="site-nav">
     {% unless page.layout == "home" %}
       <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.author.avatar %} has-image{% endif %}">
       {% if site.author.avatar %}

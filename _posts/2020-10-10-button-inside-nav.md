@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "nav 요소 내에 button 요소를 포함할 수 있는가?"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4

@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Javascript 외부 함수 밖에서 내부 함수 실행하기"
-summary: "간단하지만 아직 충분히 이해되지 않았음"
+subtitle: "간단하지만 아직 충분히 이해되지 않았음"
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4

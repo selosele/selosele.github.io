@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Vanilla JS로 레이어팝업 초점이동을 구성해보자"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4

@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "text-align: justify 속성을 사용한 신기한 정렬 기법"
-summary: "매우 신기~"
+subtitle: "매우 신기~"
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4

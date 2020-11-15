@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "실무 적용을 위한 jQuery 플러그인 제작에 도전하다"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/jquery_thumb01.jpg
   overlay_filter: 0.4

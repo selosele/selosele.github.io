@@ -89,8 +89,8 @@
       <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
     {% endif %}
 
-    {% if page.layout == "post" and page.summary %}
-      <strong itemprop="alternativeHeadline" class="page__lead">{{ page.summary | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
+    {% if page.layout == "post" and page.subtitle %}
+      <strong itemprop="alternativeHeadline" class="page__subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
     {% endif %}
   </header>
 </div>

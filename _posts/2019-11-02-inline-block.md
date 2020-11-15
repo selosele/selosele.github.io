@@ -3,7 +3,7 @@ published: false
 layout: post
 comments: true
 title: "CSS 수직 중앙 정렬, position은 이제 그만 쓰자"
-summary: "position 기법은 이득보다 손실이 크다."
+subtitle: "position 기법은 이득보다 손실이 크다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4

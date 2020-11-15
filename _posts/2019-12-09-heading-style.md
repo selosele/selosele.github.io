@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "난감한 텍스트 디자인.. 구현법을 알아내다"
-summary: "의외로 쉬운 방법"
+subtitle: "의외로 쉬운 방법"
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4

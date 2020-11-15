@@ -14,7 +14,7 @@
         <a href="{{ postUrl }}" rel="permalink">{{ title }}</a>
       </h2>
     </header>
-    {% if post.summary %}<strong itemprop="alternativeHeadline" class="archive__item-summary">{{ post.summary }}</strong>{% endif %}
+    {% if post.subtitle %}<strong itemprop="alternativeHeadline" class="archive__item-subtitle">{{ post.subtitle }}</strong>{% endif %}
     {% if page.layout == "home" or page.layout == "archive" or page.layout == "categories" or page.layout == "tags" %}
     {% if post.header.overlay_image %}
     <div aria-hidden="true" class="archive__item-thumb" style="background-image: url({{ post.header.overlay_image }});"></div>

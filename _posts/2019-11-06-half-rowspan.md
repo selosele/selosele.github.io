@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "반쪽짜리 rowspan......"
-summary: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
+subtitle: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
 header:
   overlay_image: /assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4

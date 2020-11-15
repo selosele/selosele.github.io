@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 2"
-summary: "이미지 크기를 CSS로 줄였을 때"
+subtitle: "이미지 크기를 CSS로 줄였을 때"
 header:
   overlay_image: /assets/images/thumb/chrome_thumb01.jpg
   overlay_filter: 0.4

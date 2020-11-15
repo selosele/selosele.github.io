@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "스크린리더에 입문하다"
-summary: "그동안 스크린리더에 대해 막연하게만 알고 있었다."
+subtitle: "그동안 스크린리더에 대해 막연하게만 알고 있었다."
 header:
   overlay_image: /assets/images/thumb/screen-reader_thumb01.jpg
   overlay_filter: 0.4

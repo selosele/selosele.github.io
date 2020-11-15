@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "input 요소에 enter키 눌렀을 때 원치않는 submit 막기"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4

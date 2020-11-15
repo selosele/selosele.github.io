@@ -72,7 +72,7 @@
       }
    }
 
-   &__lead {
+   &__subtitle {
       @include subtitle($margin-top: .675676em);
 
       &:before {

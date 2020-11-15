@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "최근 학습과 일상에 대한 끄적끄적"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/autumn_thumb01.jpg
   overlay_filter: 0.4

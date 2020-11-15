@@ -68,7 +68,7 @@
          }
       }
    
-      &-summary {
+      &-subtitle {
          display: block;
          @include ellipsis;
          margin-top: .604167em;
@@ -208,7 +208,7 @@
          }
       }
 
-      &__item-summary {
+      &__item-subtitle {
          margin-top: .4em;
          margin-bottom: 0;
          font-size: calc(.85rem + .5vw);

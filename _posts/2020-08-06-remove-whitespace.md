@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Vanilla JS로 inline 요소의 text node 제거하기"
-summary:
+subtitle:
 header:
   overlay_image: /assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5

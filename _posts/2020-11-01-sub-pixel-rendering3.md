@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 3"
-summary: "display: table 속성을 선언했을 때"
+subtitle: "display: table 속성을 선언했을 때"
 header:
   overlay_image: /assets/images/thumb/chrome_thumb01.jpg
   overlay_filter: 0.4

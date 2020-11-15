@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "display: table을 파헤쳐보자"
-summary: "table 요소만의 스타일을 사용할 수 있다."
+subtitle: "table 요소만의 스타일을 사용할 수 있다."
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4

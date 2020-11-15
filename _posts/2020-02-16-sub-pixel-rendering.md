@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 1"
-summary: "transform 속성을 선언했을 때"
+subtitle: "transform 속성을 선언했을 때"
 header:
   overlay_image: /assets/images/thumb/ie_thumb01.jpg
   overlay_filter: 0.5

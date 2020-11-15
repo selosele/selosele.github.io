@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "querySelectorAll에 대해 제대로 알고 쓰자"
-summary: "jQuery적 사고방식을 지양해야"
+subtitle: "jQuery적 사고방식을 지양해야"
 header:
   overlay_image: /assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4

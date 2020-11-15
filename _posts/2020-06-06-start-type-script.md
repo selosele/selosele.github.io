@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Typescript를 알게 되다"
-summary: "최신 기술을 익히려는 노력을 더 해야겠음"
+subtitle: "최신 기술을 익히려는 노력을 더 해야겠음"
 header:
   overlay_image: /assets/images/thumb/ts_thumb01.jpg
   overlay_filter: 0.4

@@ -23,7 +23,7 @@ tags:
 
 {:.has-label}
 ```html
-<p id="foo">ㅇㅇ</p>
+<p id="foo">foo</p>
 ```
 
 {:.has-label}
@@ -50,7 +50,8 @@ const pixelToRemUnit = (pixelUnit) => {
 elem.style.height = pixelToRemUnit(elem.offsetHeight);
 ```
 
-매개변수로 받는 요소의 사이즈 나누기, html 요소의 font-size(+ 문자열을 실수로 변환 필수)으로 계산한 값에 rem 문자열을 더하여 최종적으로 rem 단위를 반환해준다. 참고로 위의 코드처럼 모든 페이지에서 호출할 수 있게 공통 함수로 만들어주는 게 좋음.
+매개변수로 받는 요소의 사이즈 나누기, html 요소의 font-size(+ 문자열을 실수로 변환 필수)으로 계산한 값에  
+rem 문자열을 더하여 최종적으로 rem 단위를 반환해준다. 참고로 위의 코드처럼 모든 페이지에서 호출할 수 있게 공통 함수로 만들어주는 게 좋음.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="RwrYrXb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RwrYrXb">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/RwrYrXb">

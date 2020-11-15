@@ -56,9 +56,12 @@ li {
 })(document.querySelectorAll(".has-whitespace"));
 ```
 
-childNodes는 NodeList를 반환하고, NodeList는 유사배열이므로 배열로 바꾸어주려고 ```Array.from()```{:.language-javascript} 메서드를 사용했으나 ES6를 지원하지 않는 IE에서 작동하지 않아 ```Array.prototype.slice.call```{:.language-javascript} 메서드로 해결했음(내 블로그에 적용할 스크립트인데, 아직 ES6 &rarr; ES5 문법으로 변환하지 않는 환경이라서 ES5로 작업 중이고 아래 codepen에는 ES6 문법으로 작성함).
+childNodes는 NodeList를 반환하고, NodeList는 유사배열이므로 배열로 바꾸어주려고  
+```Array.from()```{:.language-javascript} 메서드를 사용했으나 ES6를 지원하지 않는 IE에서 작동하지 않아  
+```Array.prototype.slice.call```{:.language-javascript} 메서드로 해결했음(내 블로그에 적용할 스크립트인데,  
+아직 ES6 &rarr; ES5 문법으로 변환하지 않는 환경이라서 ES5로 작업 중이고 아래 codepen에는 ES6 문법으로 작성함).
 
-자식 요소의 nodeType이 text일 경우 해당 요소를 제거해준다. 간단해보이지만 아직도 좀 헷갈림.. 다 이해될 때까지 살펴보자..
+자식 요소의 nodeType이 text일 경우 해당 요소를 제거하는 로직으로 구성했다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="wvGBaev" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="wvGBaev">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/wvGBaev">

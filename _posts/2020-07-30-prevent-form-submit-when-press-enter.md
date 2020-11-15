@@ -22,15 +22,15 @@ tags:
 
 {:.has-label}
 ```html
-<form id="my-form">
-  <input type="text" placeholder="검색어를 입력하세요">
+<form name="myForm">
+    <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```
 
 {:.has-label}
 ```javascript
-document.getElementById("my-form").addEventListener("keydown", (evt) => {
-  if ((evt.keyCode || evt.which) === 13) evt.preventDefault();
+document.myForm.addEventListener("keydown", (evt) => {
+    if (evt.code === "Enter") evt.preventDefault();
 });
 ```
 

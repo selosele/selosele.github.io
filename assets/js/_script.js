@@ -200,32 +200,30 @@
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeList = postRoot.querySelectorAll("pre.highlight");
-        
-        for (var i = 0; i < preCodeList.length; i++) {
-            var preCodeParentEL = preCodeList[i].parentElement.parentElement;
+        var preCodeBox = postRoot.querySelectorAll(".highlighter-rouge");
 
+        Array.prototype.slice.call(preCodeBox).forEach(function(t) {
             // title
-            if (preCodeParentEL.classList.contains("has-label")) {
-                preCodeList[i].setAttribute("title", preCodeParentEL.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
+            if (t.classList.contains("has-label")) {
+                t.setAttribute("title", t.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
             }
 
             // line
-            if (preCodeParentEL.hasAttribute("data-line")) {
-                var preCodeLineBox = preCodeParentEL.querySelector(".lineno"),
-                    preCodeLine = preCodeParentEL.getAttribute("data-line");
+            if (t.hasAttribute("data-line")) {
+                var preCodeLineBox = t.querySelector(".lineno"),
+                    preCodeLine = t.getAttribute("data-line");
 
                 if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
                     preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
                 }
 
                 var preCodeBG = document.createElement("span"),
-                    preCodeSpan = document.querySelector("[id='"+"code-line"+preCodeLine+"']");
+                    preCodeSpan = t.querySelector("[id='"+"code-line"+preCodeLine+"']");
 
                 preCodeBG.setAttribute("aria-hidden", "true");
                 preCodeBG.classList.add("hightlight__bg");
+                t.insertBefore(preCodeBG, t.firstChild);
                 getBGpos(preCodeSpan);
-                preCodeParentEL.append(preCodeBG);
 
                 function getBGpos(el) {
                     var topPosition = el.offsetTop;
@@ -236,7 +234,7 @@
                     getBGpos(preCodeSpan);
                 });
             }
-        }
+        });
     }
 })();
 

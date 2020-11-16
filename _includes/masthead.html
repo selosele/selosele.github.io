@@ -65,7 +65,7 @@
     </div>
   </nav>
 
-  <header itemscope itemtype="https://schema.org/CreativeWork" class="{% if page.layout == 'post' %}masthead__post-header{% else %} masthead__page-header{% endif %}">
+  <header itemscope itemtype="https://schema.org/CreativeWork" class="{% if page.layout == 'post' %}masthead__post-header{% else %}masthead__page-header{% endif %}">
     {% if page.layout == "home" and site.author.avatar %}
       {% include avatar.html class="masthead__page-avatar" %}
     {% endif %}

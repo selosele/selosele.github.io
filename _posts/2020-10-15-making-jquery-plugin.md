@@ -34,7 +34,7 @@ primary_post: true
 <div id="layer-popup"></div>
 ```
 
-각 a 요소를 클릭하면 href 속성값과 매칭되는 id값을 가진 요소를 toggle하는 JS를 작성해야 한다면?
+각 a 요소를 클릭 시, href 속성값과 매칭되는 id값을 가진 요소를 toggle하는 JS를 작성해야 한다면?
 
 {:.has-label}
 {:data-line="4"}

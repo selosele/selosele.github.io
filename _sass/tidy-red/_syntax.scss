@@ -5,7 +5,6 @@
 div.highlighter-rouge,
 code.highlighter-rouge,
 figure.highlight {
-  position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
@@ -14,6 +13,7 @@ figure.highlight {
   font-size: .904762em;
   line-height: 1.8;
   color: $grey08;
+  text-shadow: rgba(0,0,0,0.6) 1px 1px 0.25rem;
 
   ::selection {
     background-color: $grey12;
@@ -25,6 +25,11 @@ figure.highlight {
     margin: 0;
 	  padding: .5rem 1rem;
   }
+}
+
+.highlighter-rouge[data-line] {
+  position: relative;
+  z-index: 1;
 }
 
 code {
@@ -42,12 +47,9 @@ code {
   display: block;
   position: absolute;
   left: 0;
-  right: 0;
-  width: calc(100% - 1rem);
+  z-index: -1;
+  width: 100%;
   height: 1.7rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: .5rem;
   background-color: rgba(255,255,255,.2);
   pointer-events: none;
 }

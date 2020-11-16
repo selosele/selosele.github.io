@@ -25,6 +25,7 @@ primary_post: true
 다음과 같이 마크업되어 있다고 가정해보자.
 
 {:.has-label}
+<!-- {:data-line="2-5"} -->
 ```html
 <a href="#gnb" class="hashToggle">주메뉴 열기</a>
 <div id="gnb"></div>

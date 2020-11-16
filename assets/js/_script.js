@@ -211,29 +211,31 @@
             }
 
             // line
-            // if (preCodeParentEL.hasAttribute("data-line")) {
-            //     var preCodeLineBox = preCodeParentEL.querySelector(".lineno"),
-            //         preCodeLine = preCodeParentEL.getAttribute("data-line");
+            if (preCodeParentEL.hasAttribute("data-line")) {
+                var preCodeLineBox = preCodeParentEL.querySelector(".lineno"),
+                    preCodeLine = preCodeParentEL.getAttribute("data-line");
 
-            //     if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
-            //         preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
-            //     }
+                if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
+                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
+                }
 
-            //     var preCodeBackground = document.createElement("span");
+                var preCodeBG = document.createElement("span"),
+                    preCodeSpan = document.querySelector("[id='"+"code-line"+preCodeLine+"']");
 
-            //     preCodeBackground.classList.add("hightlight__bg");
-            //     preCodeBackground.setAttribute("aria-hidden", "true");
-            //     foo(document.querySelector("[id='"+"code-line"+preCodeLine+"']"));
-            //     preCodeParentEL.append(preCodeBackground);
+                preCodeBG.setAttribute("aria-hidden", "true");
+                preCodeBG.classList.add("hightlight__bg");
+                getBGpos(preCodeSpan);
+                preCodeParentEL.append(preCodeBG);
 
-            //     function foo(a) {
-            //         preCodeBackground.style.top = a.offsetTop + 4 + "px";
-            //     }
+                function getBGpos(el) {
+                    var topPosition = el.offsetTop;
+                    preCodeBG.style.top = topPosition + 4 + "px";
+                }
 
-            //     window.addEventListener("resize", function() {
-            //         foo(document.querySelector("[id='"+"code-line"+preCodeLine+"']"));
-            //     });
-            // }
+                window.addEventListener("resize", function() {
+                    getBGpos(preCodeSpan);
+                });
+            }
         }
     }
 })();

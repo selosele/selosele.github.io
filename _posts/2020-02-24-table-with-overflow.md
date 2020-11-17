@@ -58,7 +58,7 @@ ul {
 > 
 > overflow CSS 단축 속성은 요소의 콘텐츠가 너무 커서 요소의 블록 서식 맥락에 맞출 수 없을 때의 처리법을 지정합니다.
 > 
-> <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target="_blank" title="새창열림" class="bu-link2">원문</a> 및 <a href="https://developer.mozilla.org/ko/docs/Web/CSS/overflow" target="_blank" title="새창열림" class="bu-link2">번역</a></cite>
+> <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target="_blank" class="bu-link2">원문</a> 및 <a href="https://developer.mozilla.org/ko/docs/Web/CSS/overflow" target="_blank" class="bu-link2">번역</a></cite>
 
 그렇다면 ```table-layout: fixed```{:.language-css}에 의해 절대(?) 고정 너비값을 가진 table 요소는 block formatting context인가?  
 아직은 모르겠으니 나중에 알아보기로 하였다가 순간 떠오른 것이, block formatting context는 너비/&ldquo;높이값&rdquo;을 가질 수 있다는 점이다. table 요소는 유동적이므로 고정 높이값이 의미가 없고 &ldquo;절대 고정&rdquo;시켜줄 수 있는 방법 또한 없음. 본문은 너비값만 다루고 있었던 것...... 함정에 빠지지 말자.

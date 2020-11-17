@@ -41,12 +41,15 @@ layout: default
         {% endif %}
       {% endif %}
 
+      {% capture anchor %}target="_blank"{% endcapture %}
+      {% assign content = content | replace: anchor, 'target="_blank" rel="noopener noreferrer"' %}
+
       {{ content }}
     </section>
 
     <footer class="page__footer">
       {% if page.header.image_link %}
-      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" rel="external nofollow">{{ page.header.image_author }}</a></p>
+      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" rel="noopener noreferrer">{{ page.header.image_author }}</a></p>
       {% endif %}
 
       {% if page.share %}

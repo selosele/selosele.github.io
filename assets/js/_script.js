@@ -164,8 +164,8 @@
         var t_span = document.createElement("span"),
             t_title = "tooltip-" + encodeURI(t.title).replace(/ |%/g, "1");
 
-        t.setAttribute("tabindex", "0");
         t.setAttribute("aria-describedby", t_title);
+        t.setAttribute("tabindex", "0");
 
         t_span.hidden = true;
         t_span.setAttribute("role", "tooltip");

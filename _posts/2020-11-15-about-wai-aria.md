@@ -102,6 +102,6 @@ section 요소에 <mark>role="region"</mark>, article 요소에는 <mark>role="a
 
 ### 참고 링크
 
-* [WAI-ARIA 작성 방법 1.2 - aria-label](https://mulder21c.github.io/aria-practices/#naming_with_aria-label){:target="_blank" rel="external nofollow"}
-* [WAI-ARIA 작성 방법 1.2 - aria-labelledby](https://mulder21c.github.io/aria-practices/#naming_with_aria-labelledby){:target="_blank" rel="external nofollow"}
-* [Google Developers - ARIA 레이블과 관계](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships?hl=ko){:target="_blank" rel="external nofollow"}
+* [WAI-ARIA 작성 방법 1.2 - aria-label](https://mulder21c.github.io/aria-practices/#naming_with_aria-label){:target="_blank"}
+* [WAI-ARIA 작성 방법 1.2 - aria-labelledby](https://mulder21c.github.io/aria-practices/#naming_with_aria-labelledby){:target="_blank"}
+* [Google Developers - ARIA 레이블과 관계](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships?hl=ko){:target="_blank"}

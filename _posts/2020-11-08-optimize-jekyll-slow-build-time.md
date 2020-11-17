@@ -61,7 +61,7 @@ Jekyll Feed: Generating feed for posts
 제일 최신의 포스트 하나만 빌드되므로 나머지 포스트들은 접근할 수 없다. 어차피 포스팅을 하고 있는데 나머지 포스트도 수정을 해야 할 일이 거의 없긴 하다.
 
 ## 참고 링크
-* [Jekyll Build Performance - Part I](https://www.sauru.so/blog/jekyll-build-performance-part1/){:target="_blank" rel="external nofollow"}
-* [jekyll 속도 올리기](https://jeongukjae.github.io/posts/1jekyll-%EC%86%8D%EB%8F%84-%EC%98%AC%EB%A6%AC%EA%B8%B0/){:target="_blank" rel="external nofollow"}
+* [Jekyll Build Performance - Part I](https://www.sauru.so/blog/jekyll-build-performance-part1/){:target="_blank"}
+* [jekyll 속도 올리기](https://jeongukjae.github.io/posts/1jekyll-%EC%86%8D%EB%8F%84-%EC%98%AC%EB%A6%AC%EA%B8%B0/){:target="_blank"}
 
-[^1]: [1] [The world's fastest framework for building websites](https://gohugo.io/){:target="_blank" rel="external nofollow"}
+[^1]: [1] [The world's fastest framework for building websites](https://gohugo.io/){:target="_blank"}

@@ -17,7 +17,7 @@ tags:
 특수기호를 입력하면 HTML entity로 변환해주는 사이트 없을까..하는 생각에 검색을 해보니 진짜로 있었다.  
 실무에서 요긴하게 써먹을 수 있을 듯..!
 
-[바로가기](https://mothereff.in/html-entities){:.page__btn target="_blank" rel="nofollow"}
+[바로가기](https://mothereff.in/html-entities){:.page__btn target="_blank"}
 
 ## 사용법
 

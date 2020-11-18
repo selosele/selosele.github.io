@@ -27,7 +27,7 @@
       {% endif %}
       {% if site.post.category_list and post.categories.size > 0 %}
       <h3 class="sr-only">{{ site.data.ui-text[site.locale].category_title }}</h3>
-        {% for category in post.categories %}<span class="archive__item__info-item archive__item__info-item--category">{{ category }}</span>{% endfor %}
+        {% for category in post.categories %}<span itemprop="keywords" class="archive__item__info-item archive__item__info-item--category">{{ category }}</span>{% endfor %}
       {% endif %}
       {% if site.post.tag_list and post.tags.size > 0 %}
       <h3 class="sr-only">{{ site.data.ui-text[site.locale].tag_title }}</h3>

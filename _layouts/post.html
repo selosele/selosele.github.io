@@ -14,11 +14,15 @@ layout: default
       {% endif %}
       {% if site.post.category_list and page.categories.size > 0 %}
       <h2 class="sr-only">{{ site.data.ui-text[site.locale].category_title }}</h2>
-        {% for category in page.categories %}<a href="/category-list/#btn-{{ category | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" class="page__info-item page__info-item--category">{{ category }}</a>{% endfor %}
+        {% for category in page.categories %}
+        <a href="/category-list/#btn-{{ category | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" itemprop="keywords" rel="tag" class="page__info-item page__info-item--category">{{ category }}</a>
+        {% endfor %}
       {% endif %}
       {% if site.post.tag_list and page.tags.size > 0 %}
       <h2 class="sr-only">{{ site.data.ui-text[site.locale].tag_title }}</h2>
-        {% for tag in page.tags %}<a href="/tag-list/#btn-{{ tag | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" itemprop="keywords" class="page__info-item page__info-item--tag">{{ tag }}</a>{% endfor %}
+        {% for tag in page.tags %}
+        <a href="/tag-list/#btn-{{ tag | replace: ' ', '1' | url_encode | replace: '%', '1' | downcase }}" itemprop="keywords" rel="tag" class="page__info-item page__info-item--tag">{{ tag }}</a>
+        {% endfor %}
       {% endif %}
     </section>
 

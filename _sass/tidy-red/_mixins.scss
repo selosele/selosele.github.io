@@ -63,7 +63,7 @@
 @mixin page_title($size1, $size2) {
    font-family: $default-font03;
 
-   > .page__title {
+   > .page-title {
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0;

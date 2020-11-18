@@ -69,7 +69,7 @@
     {% if page.layout == "home" and site.author.avatar %}
       {% include avatar.html class="masthead__page-avatar" %}
     {% endif %}
-    <h1 class="page__title">
+    <h1 class="page-title">
       {% if page.layout == "home" %}
         {{ site.title }}
       {% endif %}
@@ -90,7 +90,7 @@
     {% endif %}
 
     {% if page.layout == "post" and page.subtitle %}
-      <strong itemprop="alternativeHeadline" class="page__subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
+      <strong itemprop="alternativeHeadline" class="page-subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
     {% endif %}
   </header>
 </div>

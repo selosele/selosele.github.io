@@ -57,7 +57,7 @@
 }
 
 .page {
-   &__title {
+   &-title {
       margin-bottom: .459641em;
       padding-bottom: .459641em;
       border-bottom: 1px solid $grey05;
@@ -72,7 +72,7 @@
       }
    }
 
-   &__subtitle {
+   &-subtitle {
       @include subtitle($margin-top: .675676em);
 
       &:before {

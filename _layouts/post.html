@@ -48,12 +48,15 @@ layout: default
       {% capture anchor %}target="_blank"{% endcapture %}
       {% capture new_anchor %}target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endcapture %}
 
-      {{ content | replace: anchor, new_anchor }}
+      {% capture p_img %}<p><img{% endcapture %}
+      {% capture new_p_img %}<p class="page__figure"><img{% endcapture %}
+
+      {{ content | replace: anchor, new_anchor | replace: p_img, new_p_img }}
     </section>
 
     <footer class="page__footer">
       {% if page.header.image_link %}
-      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
+        <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
       {% endif %}
 
       {% if page.share %}
@@ -73,9 +76,9 @@ layout: default
   {% if site.comments.provider and page.comments == true %}
     {% case site.comments.provider %}
         {% when "disqus" %}
-        {% include comments-providers/disqus.html %}
+          {% include comments-providers/disqus.html %}
         {% when "livere" %}
-        {% include comments-providers/livere.html %}
+          {% include comments-providers/livere.html %}
     {% endcase %}
   {% endif %}
 </div>

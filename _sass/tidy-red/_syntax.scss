@@ -27,6 +27,18 @@ figure.highlight {
   }
 }
 
+div.highlighter-rouge {
+  margin-left: -$layout-margin;
+  margin-right: -$layout-margin;
+  border-radius: 0;
+
+  @media (min-width: $min-minimal-width) {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 4px;
+  }
+}
+
 .highlighter-rouge[data-line] {
   position: relative;
   z-index: 1;

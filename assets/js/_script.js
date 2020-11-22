@@ -218,11 +218,12 @@
                 }
 
                 var preCodeBG = document.createElement("span"),
-                    preCodeSpan = t.querySelector("[id='"+"code-line"+preCodeLine+"']");
+                    preCodeSpan = t.querySelector("[id='"+"code-line"+preCodeLine+"']"),
+                    preCodeInner = t.querySelector("pre.highlight");
 
                 preCodeBG.setAttribute("aria-hidden", "true");
-                preCodeBG.classList.add("hightlight__bg");
-                t.insertBefore(preCodeBG, t.firstChild);
+                preCodeBG.classList.add("highlight__bg");
+                preCodeInner.insertBefore(preCodeBG, preCodeInner.firstChild);
                 getBGpos(preCodeSpan);
 
                 function getBGpos(el) {

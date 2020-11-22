@@ -40,9 +40,9 @@ primary_post: true
 {:data-line="4"}
 ```javascript
 $(".hashToggle").on("click", function(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  $(this.hash).toggle();
+    $(this.hash).toggle();
 });
 ```
 
@@ -73,14 +73,14 @@ toggle만 할 거면 문제가 없으나, ```slideToggle```{:.language-javascrip
 ```javascript
 // 플러그인 옵션 기본값 세팅
 var option = $.extend({
-  event: "click",
-  action: "toggle",
-  duration: 300,
-  animateStop: true,
-  toggleClass: null,
-  addClass: null,
-  removeClass: null,
-  afterEvent: null
+    event: "click",
+    action: "toggle",
+    duration: 300,
+    animateStop: true,
+    toggleClass: null,
+    addClass: null,
+    removeClass: null,
+    afterEvent: null
 }, options);
 ```
 
@@ -104,10 +104,10 @@ var option = $.extend({
 {:.has-label}
 ```javascript
 $(".foo").hashToggle({
-  event: "mouseover mouseout",
-  action: "fadeToggle",
-  duration: 600,
-  toggleClass: "active"
+    event: "mouseover mouseout",
+    action: "fadeToggle",
+    duration: 600,
+    toggleClass: "active"
 });
 ```
 
@@ -128,9 +128,9 @@ $(".foo").hashToggle({
 {:.has-label}
 ```javascript
 $(".foo").hashToggle({
-  afterEvent: function() {
-    $(this).attr("title", "확장됨"); // 예) 아코디언 ui의 웹 접근성 대응 코드
-  }
+    afterEvent: function() {
+        $(this).attr("title", "확장됨"); // 예) 아코디언 ui의 웹 접근성 대응 코드
+    }
 });
 ```
 

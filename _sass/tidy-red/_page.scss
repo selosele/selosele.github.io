@@ -336,7 +336,6 @@
    
       img {
          display: block;
-         width: calc(100% + (#{$layout-margin} * 2));
          max-width: calc(100% + (#{$layout-margin} * 2));
          margin-left: -$layout-margin;
          margin-right: -$layout-margin;

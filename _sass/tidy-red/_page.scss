@@ -398,11 +398,7 @@
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
       justify-content: center;
-      flex-wrap: wrap;
-
-      @media (min-width: $min-medium-width) {
-         flex-direction: column;
-      }
+      flex-flow: column wrap;
       
       &.float {
          &-left {

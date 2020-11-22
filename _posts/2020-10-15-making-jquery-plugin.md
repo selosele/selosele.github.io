@@ -126,6 +126,7 @@ $(".foo").hashToggle({
 위에 언급한 afterEvent 옵션 사용법은 다음과 같다.
 
 {:.has-label}
+{:data-line="3"}
 ```javascript
 $(".foo").hashToggle({
     afterEvent: function() {

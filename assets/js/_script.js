@@ -211,15 +211,21 @@
             // line
             if (t.hasAttribute("data-line")) {
                 var preCodeLineBox = t.querySelector(".lineno"),
-                    preCodeLine = t.getAttribute("data-line");
+                    preCodeLine = t.getAttribute("data-line").split("-")[0],
+                    preCodeLineLast = t.getAttribute("data-line").split("-")[1];
 
                 if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
                     preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
                 }
 
+                if (preCodeLineBox !== preCodeLineLast) {
+                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLineLast, '<span id="'+"code-line"+preCodeLineLast+'">'+preCodeLineLast+'</span>');
+                }
+
                 var preCodeBG = document.createElement("span"),
                     preCodeSpan = t.querySelector("[id='"+"code-line"+preCodeLine+"']"),
-                    preCodeInner = t.querySelector("pre.highlight");
+                    preCodeInner = t.querySelector("pre.highlight"),
+                    preCodeBGel = t.querySelector(".highlight__bg");
 
                 preCodeBG.setAttribute("aria-hidden", "true");
                 preCodeBG.classList.add("highlight__bg");
@@ -229,6 +235,24 @@
                 function getBGpos(el) {
                     var topPosition = el.offsetTop;
                     preCodeBG.style.top = topPosition + 4 + "px";
+                }
+
+                if (preCodeLineLast) {
+                    function getBGheight(el) {
+                        var el = t.querySelector(".highlight__bg"),
+                            resultNum = (preCodeLineLast - preCodeLine) + 1,
+                            // resultHeight = parseInt(getComputedStyle(el).height) * resultNum;
+                            resultHeight = (parseInt(getComputedStyle(el).height) / parseFloat(getComputedStyle(document.documentElement).fontSize)) * resultNum;
+
+                        // el.style.height = resultHeight + "px";
+                        el.style.height = resultHeight + "rem";
+                    }
+
+                    getBGheight(preCodeBGel);
+
+                    // window.addEventListener("resize", function() {
+                    //     getBGheight(preCodeBGel);
+                    // });
                 }
 
                 window.addEventListener("resize", function() {

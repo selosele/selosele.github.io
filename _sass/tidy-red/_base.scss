@@ -216,8 +216,16 @@ abbr {
 blockquote {
    position: relative;
    z-index: 1;
+   margin-left: -1rem;
+   margin-right: -1rem;
    padding: 1rem 1.5rem;
+   background-color: $grey02;
    font-style: italic;
+
+   @media (min-width: $min-minimal-width) {
+      margin-left: 0;
+      margin-right: 0;
+   }
 
    &:before {
       content: "\275D";

@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Node.js로 간단한 웹서버 띄워보기"
-subtitle: "심심해서 한 번 시도해봤음"
+subtitle: "심심해서 시도해봤음"
 header:
     overlay_image: /assets/images/thumb/nodejs_thumb01.jpg
     overlay_filter: 0.4
@@ -24,7 +24,7 @@ tags:
 
 ## 설치법 작성에 앞서
 
-우선 Node.js를 학습한 게 아니라 간단한 개념 정도만 훑고서 시도한 것을 풀어 쓰는 거라 잘 아는 사람이 보면  
+우선 Node.js를 학습한 게 아니라 간단한 개념 정도만 훑고서 시도한 것을 풀어 쓴 거라 잘 아는 사람이 보면  
 좀 이상해보일 수도 있음..
 
 ## How to

@@ -14,11 +14,11 @@ categories:
 tags:
     - html
     - web-accessibility
+post_dropcap: false
 primary_post: true
 ---
 
-누구나 제목과 같은 의문을 가져본 적이 있을지도 모른다.  
-말 그대로 어느 곳이 바람직한 위치인가? 먼저 예시를 보자.
+누구나 제목과 같은 의문을 가져본 적이 있을지도 모른다. 말 그대로 어느 곳이 바람직한 위치인가? 먼저 예시를 보자.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="vYGOgZB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tabbable element keyboard event pure JS">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/vYGOgZB">

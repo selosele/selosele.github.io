@@ -216,9 +216,9 @@ abbr {
 blockquote {
    position: relative;
    z-index: 1;
-   margin-left: -1rem;
-   margin-right: -1rem;
-   padding: 1rem 1.5rem;
+   margin-left: -$layout-margin;
+   margin-right: -$layout-margin;
+   padding: 1rem;
    background-color: $grey02;
    font-style: italic;
 

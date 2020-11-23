@@ -29,18 +29,15 @@
     position: relative;
     overflow-y: auto;
     height: 100%;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    padding: 1rem;
     border: 2px solid $black05;
     background-color: $grey12;
     box-shadow: rgba(0,0,0,.1) .5rem .5rem .5rem;
     box-sizing: border-box;
 
-    @media (min-width: $min-small-width) {
-      padding-top: 3rem;
-    }
-
     @media (min-width: $min-large-width) {
-      padding: 4rem 2.604vw;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -143,11 +140,9 @@
 
   &__close {
     display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     width: 2rem;
     height: 2rem;
+    margin-left: auto;
     background-color: transparent;
   
     &:before {

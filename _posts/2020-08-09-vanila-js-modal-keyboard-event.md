@@ -33,13 +33,11 @@ primary_post: true
 ```html
 <div class="layer" id="layer">
     <div class="layer__inner-wrap">
-        <a href="#">1</a>
-        <span tabindex="0">2</span>
-        <button type="button">3</button>
+        <button type="button" class="layer__close">X</button>
+        <a href="#">콘텐츠 1</a>
+        <span tabindex="0">콘텐츠 2</span>
     </div>
 </div>
-
-<a href="#">outer element</a>
 ```
 
 {:.has-label}

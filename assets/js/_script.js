@@ -23,7 +23,7 @@
         menuOuterList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
-        menuTabbableList = menuLayer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        menuTabbableList = menuLayer.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
         menuTabbableListFirst = menuTabbableList[0],
         menuTabbableListLast = menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href*='/category-list/#']");
@@ -336,7 +336,7 @@
         toc = document.getElementById("toc");
 
     if (postRoot && toc) {
-        var tocTabbableList = postRoot.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        var tocTabbableList = postRoot.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
             tocTabbableFocusedLast;
 
         Array.prototype.slice.call(tocTabbableList).forEach(function(t) {
@@ -380,7 +380,7 @@
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
-        tabbableList = layer.querySelectorAll("button, input:not([type='hidden']), select, textarea, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbableList = layer.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
         tabbableListFirst = tabbableList[0],
         tabbableListLast = tabbableList[tabbableList.length - 1],
         sResult = document.getElementById("search-results"),
@@ -417,6 +417,7 @@
 
         function handlerInputKeydown2(evt) {
             var sResultLiList = sResult.querySelectorAll("li");
+            if (!sResultLiList.length) return;
 
             switch (evt.key) {
                 case "ArrowDown":

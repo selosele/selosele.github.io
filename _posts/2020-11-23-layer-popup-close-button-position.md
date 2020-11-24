@@ -20,7 +20,7 @@ primary_post: true
 
 누구나 제목과 같은 의문을 가져본 적이 있을지도 모른다. 말 그대로 어느 곳이 바람직한 위치인가? 먼저 예시를 보자.
 
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="selucky" data-slug-hash="vYGOgZB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tabbable element keyboard event pure JS">
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="vYGOgZB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tabbable element keyboard event pure JS">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/vYGOgZB">
   Tabbable element keyboard event pure JS</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -73,15 +73,14 @@ JS는 [일전에 초점 이동을 레이어팝업 내에서만 돌게 하려고 
 정답은 없으며, 눈의 흐름과 키보드의 흐름이 동일하게 진행되는 것을 염두에 둬야 한다는 게 핵심이다.
 
 내가 동의하는 글이기도 한데, 눈의 흐름과 키보드의 흐름이 동일하게 진행되어야 한다는 게, 즉 논리적인 흐름에 맞게 구성해야 함을 나타낸다고 볼 수 있다.  
-그렇다고 무조건 최상단에 둬야 된다고 생각하는 건 아니다. 정답은 없다고 생각하고, 모두에게 충족될 수 있는 대안이 제공되면 어디에 위치해 있든 상관없다고 생각한다.
+그렇다고 무조건 최상단에 둬야 된다고 생각하는 건 아니며 모두에게 충족될 수 있는 대안이 제공되면 어디에 위치해 있든 상관없다고 생각한다.
 
 ---
 
 어느 글을 봐도 어디에 위치해야 한다고 딱 잘라 말하는 이들은 볼 수 없었다.  
 사실 최상단에 있는 버튼을 찾으러 콘텐츠를 거슬러 올라가야 하는 불편함이나, 최하단에 있는 버튼을 찾으러 거슬러 내려가야 하는 불편함이나 서로 같다.
 
-내 생각도 마찬가지지만 정답은 없다고 생각한다. 그렇다면 어디에 위치해 있든 모두에게 불편하지 않은 환경을 제공하려면 어떻게 해야 하는가?  
-아까 말했던 대안에 대해 풀어보자면,
+그렇다면 어디에 위치해 있든 모두에게 불편하지 않은 환경을 제공하려면 어떻게 해야 하는가? 아까 말했던 대안에 대해 풀어보자면,
 
 ## 대안
 

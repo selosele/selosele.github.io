@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "레이어팝업 닫기버튼의 논리적 구조상 위치, 어느 곳이 바람직한가?"
+title: "레이어팝업 닫기버튼의 논리적 순서상 위치, 어느 곳이 바람직한가?"
 subtitle:
 header:
     overlay_image: /assets/images/thumb/html_thumb01.jpg

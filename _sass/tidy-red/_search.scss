@@ -117,6 +117,7 @@
     &__item {
       $b-value: .85em !default;
 
+      position: relative;
       padding-top: $b-value / 2;
       padding-bottom: $b-value;
       border-bottom: 1px dotted $grey09;
@@ -124,7 +125,14 @@
   
       > a {
         display: block;
+        position: relative;
+        z-index: 1;
         color: $black;
+
+        @media (min-width: $min-medium-width) {
+          @include ellipsis;
+          padding-right: 9rem;
+        }
   
         @media (min-width: $min-large-width) {
           &:hover {
@@ -138,6 +146,23 @@
     &__match {
       font-weight: 700;
       color: $sub-color03;
+    }
+
+    &__date {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      height: 1.6rem;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: .95rem;
+
+      @media (min-width: $min-medium-width) {
+        display: block;
+      }
     }
   }
 

@@ -18,7 +18,7 @@
       json: '/search.json',
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
-      searchResultTemplate: '<li class="search__results__item"><a href="{url}">{title}</a></li>',
+      searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',
       noResultsText: '검색 결과를 찾을 수 없습니다.',
       limit: 20
   });

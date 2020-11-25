@@ -240,8 +240,6 @@ defaults:
 
 # skip links
 skip_links:
-  to_nav: true
-  to_content: true
   to_mastfoot: false
 
 # post

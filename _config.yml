@@ -83,7 +83,7 @@ author:
   avatar           : "/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   email            :
-  links: # 기본 새창열림 비활성화하려면 target_blank: false 옵션 추가
+  links:
     - label: "Daejeon"
       icon: "xi-map-marker"
       url: https://www.google.com/maps/place/daejeon

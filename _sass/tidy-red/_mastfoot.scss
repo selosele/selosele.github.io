@@ -42,7 +42,7 @@
     border-radius: 50%;
     box-sizing: border-box;
 
-    a {
+    > a {
       display: block;
       width: 100%;
       height: 100%;
@@ -68,11 +68,12 @@
   }
 
   &__rss {
+    margin-top: 0;
     margin-bottom: .4rem;
     padding-bottom: .4rem;
     border-bottom: 1px dotted $grey05;
 
-    a {
+    > a {
       &:before {
         content: "\e9e5";
         margin-right: .132em;

@@ -16,9 +16,7 @@ tags:
 primary_post: true
 ---
 
-[이전 글](/2020/02/16/sub-pixel-rendering/)에서는 ```transform```{:.language-css} 속성을 사용했을 때 이슈에 대응하는 방법을 떠들어보았고,  
-이번에는 img 요소/background-image의 크기를 CSS로 줄였을 때 대응하는 최선의 방법은 무엇인가..  
-에 대해 이야기해보려고 한다.
+[이전 글](/2020/02/16/sub-pixel-rendering/)에서는 ```transform```{:.language-css} 속성을 사용했을 때 이슈에 대응하는 방법을 떠들어보았고, 이번에는 img 요소/background-image의 크기를 CSS로 줄였을 때 대응하는 최선의 방법은 무엇인가..에 대해 이야기해보려고 한다.
 
 실무에서 반응형 분기점마다 이미지 크기를 CSS로 줄여야 하는 상황이 있었는데, 크기가 홀수 단위로 떨어지다보니 이미지가 심하게 흐려보여서, 결국 이미지를 분기점마다 대응할 수 있게 포토샵에서 다른 크기로 여러 장을 편집하기 직전까지 갔으나..
 
@@ -62,9 +60,7 @@ auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값�
 {% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
 </div>
 
-webkit 계열 브라우저에서 작동하려면 -webkit-optimize-contrast 라고 선언해주어야 한단다. 어차피 이미지가 흐려보이는 현상은 크롬 브라우저에서만 발생하니까 상관없다.
-
-아무튼 해당 속성값은 이미지를 흐릿하지 않게 렌더링해준다. 명세나 기술 문서 등에 길고 어렵게(?) 설명되어 있어서 요약하자면 그렇다는 얘기다. 줄인 이미지도 선명한 것을 볼 수 있음.
+webkit 계열 브라우저에서 작동하려면 -webkit-optimize-contrast 라고 선언해주어야 한단다. 어차피 이미지가 흐려보이는 현상은 크롬 브라우저에서만 발생하니까 상관없다. 아무튼 해당 속성값은 이미지를 흐릿하지 않게 렌더링해준다. 명세나 기술 문서 등에 길고 어렵게(?) 설명되어 있어서 요약하자면 그렇다는 얘기다. 줄인 이미지도 선명한 것을 볼 수 있음.
 
 auto를 제외한 두 가지 속성값을 테스트해본 결과 이 속성값이 제일 적절한 것으로 판단, 실무에 적용하였음.
 
@@ -87,8 +83,7 @@ body :after {
 
 그리고 가상요소로 넣은 background-image도 영향을 받을 수 있도록 하기 위해 위와 같이 작성해주는 것도 필수~
 
-참고로 ```body:before```{:.language-css} 가 아니라 ```body :before```{:.language-css} 임......  
-body 요소의 자손요소들에게 가상요소를 적용하겠다는 의미이니 잘못 읽지 말자...
+참고로 ```body:before```{:.language-css} 가 아니라 ```body :before```{:.language-css} 임.. body 요소의 자손요소들에게 가상요소를 적용하겠다는 의미이니 잘못 읽지 말자...
 
 ## 참고 링크
 

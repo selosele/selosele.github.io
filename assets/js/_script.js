@@ -105,7 +105,7 @@
     });
 
     for (var i = 0; i < menuELcategoryAnc.length; i++) {
-        if (rootElement.classList.contains("layout--categories") || rootElement.classList.contains("layout--tags")) {
+        if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) {
             menuELcategoryAnc[i].addEventListener("click", handlerCloseClick);
         }
     }
@@ -114,7 +114,7 @@
 // scroll indicator
 (function() {
     function activateScrollIndicator() {
-        if (!document.documentElement.classList.contains("layout--post")) return;
+        if (!document.querySelector(".layout--post")) return;
 
         var window_height = document.body.scrollHeight - window.innerHeight,
             scroll_val = ((window.pageYOffset) / window_height) * 100;

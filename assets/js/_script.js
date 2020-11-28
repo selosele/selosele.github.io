@@ -26,7 +26,7 @@
         menuTabbableList = menuLayer.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
         menuTabbableListFirst = menuTabbableList[0],
         menuTabbableListLast = menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
-        menuELcategoryAnc = menuLayer.querySelectorAll("a[href*='/category-list/#']");
+        menuELcategoryAnc = menuLayer.querySelectorAll("a[href^='/category-list/#']");
 
     function handlerCloseClick() {
         document.removeEventListener("keydown", handlerCloseKeydown);

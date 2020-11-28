@@ -53,7 +53,6 @@ code {
     margin-left: .3157895em;
     margin-right: .3157895em;
     padding: .368421em .578947em;
-    // line-height: 2.2;
     line-height: 1;
     vertical-align: middle;
   }
@@ -66,7 +65,7 @@ code {
   z-index: -1;
   width: 100%;
   height: 1.7rem;
-  background-color: rgba(255,255,255,.13);
+  background-image: linear-gradient(to right, rgba(255,255,255,.13) 70%, rgba(255,255,255,.0));
   pointer-events: none;
 
   &:before {

@@ -239,7 +239,7 @@
 
                     if (preCodeLineLast) {
                         var lastPos = lastNum.offsetTop,
-                            resultHeight = parseInt((lastPos * 1.335) - (firstPos * 1.335));
+                            resultHeight = (lastPos - firstPos) + parseInt(getComputedStyle(lastNum, null).lineHeight);
                             
                         t.querySelector(".highlight__bg").style.height = resultHeight + "px";
                     }

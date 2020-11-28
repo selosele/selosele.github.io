@@ -223,40 +223,31 @@
                 }
 
                 var preCodeBG = document.createElement("span"),
-                    preCodeSpan = t.querySelector("[id='"+"code-line"+preCodeLine+"']"),
-                    preCodeInner = t.querySelector("pre.highlight"),
-                    preCodeBGel = t.querySelector(".highlight__bg");
+                    preCodeSpanList = t.querySelectorAll("[id='"+"code-line"+preCodeLine+"']"),
+                    preCodeSpanFirst = preCodeSpanList[0],
+                    preCodeSpanLast = preCodeSpanFirst.nextElementSibling,
+                    preCodeInner = t.querySelector("pre.highlight");
 
                 preCodeBG.setAttribute("aria-hidden", "true");
                 preCodeBG.classList.add("highlight__bg");
                 preCodeInner.insertBefore(preCodeBG, preCodeInner.firstChild);
-                getBGpos(preCodeSpan);
+                
+                var getBGval = function(firstNum, lastNum) {
+                    var firstPos = firstNum.offsetTop;
 
-                function getBGpos(el) {
-                    var topPosition = el.offsetTop;
-                    preCodeBG.style.top = topPosition + 4 + "px";
-                }
+                    preCodeBG.style.top = firstPos + 4 + "px";
 
-                if (preCodeLineLast) {
-                    function getBGheight(el) {
-                        var el = t.querySelector(".highlight__bg"),
-                            resultNum = (preCodeLineLast - preCodeLine) + 1,
-                            // resultHeight = parseInt(getComputedStyle(el).height) * resultNum;
-                            resultHeight = (parseInt(getComputedStyle(el).height) / parseFloat(getComputedStyle(document.documentElement).fontSize)) * resultNum;
-
-                        // el.style.height = resultHeight + "px";
-                        el.style.height = resultHeight + "rem";
+                    if (preCodeLineLast) {
+                        var lastPos = lastNum.offsetTop,
+                            resultHeight = parseInt((lastPos * 1.335) - (firstPos * 1.335));
+                            
+                        t.querySelector(".highlight__bg").style.height = resultHeight + "px";
                     }
-
-                    getBGheight(preCodeBGel);
-
-                    // window.addEventListener("resize", function() {
-                    //     getBGheight(preCodeBGel);
-                    // });
-                }
+                };
+                getBGval(preCodeSpanFirst, preCodeSpanLast);
 
                 window.addEventListener("resize", function() {
-                    getBGpos(preCodeSpan);
+                    getBGval(preCodeSpanFirst, preCodeSpanLast);
                 });
             }
         });

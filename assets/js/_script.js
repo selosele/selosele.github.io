@@ -1,3 +1,5 @@
+"use strict";
+
 // IE 체크
 (function() {
     var rootElement = document.documentElement;
@@ -23,7 +25,7 @@
         menuOuterList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
-        menuTabbableList = menuLayer.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
+        menuTabbableList = menuLayer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         menuTabbableListFirst = menuTabbableList[0],
         menuTabbableListLast = menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href^='/category-list/#']");
@@ -232,7 +234,7 @@
                 preCodeBG.classList.add("highlight__bg");
                 preCodeInner.insertBefore(preCodeBG, preCodeInner.firstChild);
                 
-                var getBGval = function(firstNum, lastNum) {
+                var setBGval = function(firstNum, lastNum) {
                     var firstPos = firstNum.offsetTop;
 
                     preCodeBG.style.top = firstPos + 4 + "px";
@@ -244,10 +246,10 @@
                         t.querySelector(".highlight__bg").style.height = resultHeight + "px";
                     }
                 };
-                getBGval(preCodeSpanFirst, preCodeSpanLast);
+                setBGval(preCodeSpanFirst, preCodeSpanLast);
 
                 window.addEventListener("resize", function() {
-                    getBGval(preCodeSpanFirst, preCodeSpanLast);
+                    setBGval(preCodeSpanFirst, preCodeSpanLast);
                 });
             }
         });
@@ -307,61 +309,19 @@
             Array.prototype.slice.call(tocHeadingList).forEach(function(h) {
                 if (window.pageYOffset >= (h.offsetTop - 1)) {
                     var t_id = h.id,
-                        t_anchor = toc.querySelector("li a[href='#"+t_id+"']"),
-                        tocAncList = toc.querySelectorAll("li a");
+                        tocAncList = toc.querySelectorAll("li a"),
+                        t_anchor = toc.querySelector("li a[href='#"+t_id+"']");
     
                     for (var i = 0; i < tocAncList.length; i++) {
                         if (tocAncList[i].classList.contains("toc--active")) tocAncList[i].classList.remove("toc--active");
-                        if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
                     }
+
+                    if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
                 }
             });
         }
     }
     window.addEventListener("scroll", handlerScroll);
-})();
-
-// 포스트 목차 키보드 이벤트
-(function() {
-    var postRoot = document.getElementById("page-content"),
-        toc = document.getElementById("toc");
-
-    if (postRoot && toc) {
-        var tocTabbableList = postRoot.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
-            tocTabbableFocusedLast;
-
-        Array.prototype.slice.call(tocTabbableList).forEach(function(t) {
-            t.addEventListener("keydown", function(evt) {
-                if (evt.currentTarget === document.querySelector("#toc > nav")) return;
-
-                evt.stopPropagation();
-                tocTabbableFocusedLast = evt.currentTarget;
-                tocTabbableFocusedLast.addEventListener("keydown", handlerKeydown);
-            });
-        });
-
-        function handlerKeydown(evt) {
-            if (evt.altKey && evt.key === "1") {
-                var fixedToc = document.querySelector(".toc--fixed > nav");
-
-                fixedToc.focus();
-                fixedToc.addEventListener("keydown", function(evt) {
-                    if ((evt.altKey && evt.key === "1") && tocTabbableFocusedLast) {
-                        evt.stopPropagation();
-                        tocTabbableFocusedLast.focus();
-                    }
-                });
-            }
-
-            if (evt.altKey && evt.key === "2" && (toc.classList.contains("toc--fixed"))) {
-                document.querySelector(".toc--active").focus();
-            }
-        }
-
-        if (toc.classList.contains("toc--fixed")) {
-            document.addEventListener("keydown", handlerKeydown);
-        }
-    }
 })();
 
 // 검색 레이어
@@ -371,7 +331,7 @@
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
-        tabbableList = layer.querySelectorAll("button, input:not([type='hidden']), [href], [tabindex]:not([tabindex='-1'])"),
+        tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         tabbableListFirst = tabbableList[0],
         tabbableListLast = tabbableList[tabbableList.length - 1],
         sResult = document.getElementById("search-results"),

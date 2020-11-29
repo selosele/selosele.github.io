@@ -63,4 +63,4 @@ Korea
 **참고 링크**
 
 * [&lt;br&gt;: 줄바꿈 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br){:target="_blank"} - MDN
-* [그룹화 관련 요소](https://seulbinim.github.io/WSA/grouping.html#div-%EC%9A%94%EC%86%8C){:target="_blank"} - 웹접근성과 웹표준
+* [그룹화 관련 요소](https://seulbinim.github.io/WSA/grouping.html#p-%EC%9A%94%EC%86%8C){:target="_blank"} - 웹접근성과 웹표준

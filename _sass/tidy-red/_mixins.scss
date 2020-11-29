@@ -60,7 +60,7 @@
    }
 }
 
-@mixin page_title($size1, $size2) {
+@mixin page_title {
    font-family: $default-font03;
 
    > .page-title {
@@ -68,15 +68,7 @@
       padding-bottom: 0;
       border-bottom: 0;
       color: $grey12;
-      text-shadow: 1px 1px 0.2em rgba(0,0,0,0.6);
-
-      @media (min-width: $min-small-width) {
-         font-size: $size1;
-      }
-   
-      @media (min-width: $min-general-width) {
-         font-size: $size2;
-      }
+      text-shadow: 1px 1px .2em rgba(0,0,0,.6);
    }
 }
 

@@ -16,7 +16,9 @@
       position: relative;
       
       @media (min-width: $min-medium-width) {
-         @include clearfix;
+         &--image {
+            padding-right: 13rem;
+         }
    
          &-content {
             margin-top: .5rem;
@@ -159,12 +161,14 @@
       }
    
       @media (min-width: $min-medium-width) {
-         float: right;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         right: 0;
          width: 12rem;
          height: 6rem;
-         margin-top: .8rem;
-         margin-bottom: .5rem;
-         margin-left: 1.3rem;
+         margin-top: auto;
+         margin-bottom: auto;
       }
    
       img {

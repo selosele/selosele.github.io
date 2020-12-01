@@ -1,7 +1,7 @@
 {% if site.author.avatar %}
-<div aria-hidden="true" class="author__avatar">
-  <div class="author__image-wrapper"{% if site.author.avatar %} style="background-image: url({{ site.author.avatar }});"{% endif %}></div>
-</div>
+<span aria-hidden="true" class="author__avatar">
+  <span class="author__image-wrapper" style="background-image: url({{ site.author.avatar }});"></span>
+</span>
 {% endif %}
 <div class="author__info-wrapper">
   <{% if page.layout != "post" %}strong{% else %}h2{% endif %} itemprop="name" class="author__name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>

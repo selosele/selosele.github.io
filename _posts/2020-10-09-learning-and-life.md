@@ -45,9 +45,10 @@ if (el.length) console.log(true) // true
 
 물론 두 조건 모두 반환 결과는 동일하고, 코드의 가독성에 차이가 있을 뿐이라서 어느 방식이 무조건 옳다고 할 수 없다.
 
-* 참고 링크
-  * [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
-  * [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
+**참고 링크**
+
+* [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
+* [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
 
 ## 자기호출 익명함수(Self-invoking anonymous function)
 

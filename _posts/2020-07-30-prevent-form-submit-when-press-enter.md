@@ -28,7 +28,9 @@ tags:
 {:.has-label}
 ```javascript
 document.myForm.addEventListener("keydown", (evt) => {
-    if (evt.code === "Enter") evt.preventDefault();
+    if ((evt.keyCode || evt.which) === 13) {
+        evt.preventDefault();
+    }
 });
 ```
 
@@ -36,7 +38,9 @@ keyCode, which는 deprecated될 속성이라고 하니 다음과 같은 방식�
 
 {:.has-label}
 ```javascript
-if (evt.code === "Enter") evt.preventDefault();
+if (evt.code === "Enter") {
+    evt.preventDefault();
+}
 ```
 
 code 속성은 IE에서 지원되지 않으므로 key 속성으로 대체할 수 있음.
@@ -46,7 +50,7 @@ inline Javascript로 작성할 수도 있다. 구조와 표현의 분리라는 �
 {:.has-label}
 ```html
 <form onkeydown="return event.key != 'Enter';">
-  <input type="text" placeholder="검색어를 입력하세요">
+    <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```
 

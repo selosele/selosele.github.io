@@ -73,7 +73,7 @@
         }
 
         for (var i = 0; i < menuTabbableList.length; i++) {
-            menuTabbableList[i].addEventListener("focusin", function(evt) {
+            menuTabbableList[i].addEventListener("focus", function(evt) {
                 menuELFocusedLast = evt.currentTarget;
             });
         }

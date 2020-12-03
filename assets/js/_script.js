@@ -296,14 +296,14 @@
 
             t_copyBtn.addEventListener("click", copyCode);
             t.addEventListener("mouseover", showCopyButton);
-            t.addEventListener("touchstart", showCopyButton, true);
+            t.addEventListener("click", showCopyButton);
             t.addEventListener("mouseout", hideCopyButton);
 
-            document.body.addEventListener("click", function(evt) {
-                if (!evt.target.className === "highlight__copy-button") {
-                    hideCopyButton();
-                }
-            });
+            // document.body.addEventListener("click", function(evt) {
+            //     if (!evt.target.className === "highlight__copy-button") {
+            //         hideCopyButton();
+            //     }
+            // });
         });
     }
 })();

@@ -284,7 +284,7 @@
                 }
             },
             showCopyButton = function(evt) {
-                if (evt.target.matches("div.highlight") || !t_btn.classList.contains("highlight__copy-button--visible")) {
+                if (!t_btn.classList.contains("highlight__copy-button--visible")) {
                     t_btn.classList.add("highlight__copy-button--visible");
                 }
             },
@@ -299,11 +299,11 @@
             t.addEventListener("click", showCopyButton);
             t.addEventListener("mouseout", hideCopyButton);
 
-            // document.body.addEventListener("click", function(evt) {
-            //     if (!evt.target.className === "highlight__copy-button") {
-            //         hideCopyButton();
-            //     }
-            // });
+            document.body.addEventListener("click", function(evt) {
+                if (!evt.target.className === "highlight__copy-button") {
+                    hideCopyButton();
+                }
+            });
         });
     }
 })();

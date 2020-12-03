@@ -283,8 +283,8 @@
                     alert("복사에 실패했습니다.");
                 }
             },
-            showCopyButton = function() {
-                if (!t_btn.classList.contains("highlight__copy-button--visible")) {
+            showCopyButton = function(evt) {
+                if (evt.target.matches("div.highlight") || !t_btn.classList.contains("highlight__copy-button--visible")) {
                     t_btn.classList.add("highlight__copy-button--visible");
                 }
             },

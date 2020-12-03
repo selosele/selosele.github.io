@@ -283,7 +283,7 @@
                     alert("복사에 실패했습니다.");
                 }
             },
-            showCopyButton = function(evt) {
+            showCopyButton = function() {
                 if (!t_btn.classList.contains("highlight__copy-button--visible")) {
                     t_btn.classList.add("highlight__copy-button--visible");
                 }
@@ -296,11 +296,11 @@
 
             t_copyBtn.addEventListener("click", copyCode);
             t.addEventListener("mouseover", showCopyButton);
-            t.addEventListener("click", showCopyButton);
             t.addEventListener("mouseout", hideCopyButton);
+            t.addEventListener("touchstart", showCopyButton);
 
-            document.body.addEventListener("click", function(evt) {
-                if (!evt.target.className === "highlight__copy-button") {
+            document.body.addEventListener("touchstart", function(evt) {
+                if (!evt.target.matches(".highlight__copy-button") && !t_btn.classList.contains("highlight__copy-button--visible")) {
                     hideCopyButton();
                 }
             });

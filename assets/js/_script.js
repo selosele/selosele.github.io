@@ -198,11 +198,11 @@
     }
 })();
 
-// code highlight title 기입 및 line 강조
+// code highlight title 기입 및 line 강조, 코드 복사
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeBox = postRoot.querySelectorAll(".highlighter-rouge");
+        var preCodeBox = postRoot.querySelectorAll("div.highlighter-rouge");
 
         Array.prototype.slice.call(preCodeBox).forEach(function(t) {
             // title
@@ -252,6 +252,58 @@
                     setBGval(preCodeSpanFirst, preCodeSpanLast);
                 });
             }
+
+            // 코드 복사
+            var t_codeBox = t.querySelector("div.highlight"),
+                t_btn = document.createElement("button");
+
+            t_btn.textContent = "복사";
+            t_btn.classList.add("highlight__copy-button");
+            t_codeBox.insertBefore(t_btn, t_codeBox.firstChild);
+
+            var t_copyBtn = t.querySelector(".highlight__copy-button");
+            var copyCode = function(evt) {
+                try {
+                    var t_codeInner = evt.currentTarget.parentElement,
+                        t_code = t_codeInner.querySelector(".rouge-code");
+
+                    if (!t_codeInner.querySelector("textarea")) {
+                        var t_valEL = document.createElement("textarea");
+
+                        t_valEL.classList.add("sr-only");
+                        document.body.appendChild(t_valEL);
+                    }
+
+                    t_valEL.value = t_code.textContent;
+                    t_valEL.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(t_valEL);
+                    evt.currentTarget.textContent = "복사됨";
+                } catch(err) {
+                    alert("복사에 실패했습니다.");
+                }
+            },
+            showCopyButton = function() {
+                if (!t_btn.classList.contains("highlight__copy-button--visible")) {
+                    t_btn.classList.add("highlight__copy-button--visible");
+                }
+            },
+            hideCopyButton = function() {
+                if (t_btn.classList.contains("highlight__copy-button--visible")) {
+                    t_btn.classList.remove("highlight__copy-button--visible");
+                }
+            };
+
+            t_copyBtn.addEventListener("click", copyCode);
+            t.addEventListener("mouseover", showCopyButton);
+            t.addEventListener("click", showCopyButton);
+            t.addEventListener("mouseout", hideCopyButton);
+
+            document.body.addEventListener("click", function(evt) {
+                if (!evt.target.className === "highlight__copy-button") {
+                    hideCopyButton();
+                }
+            });
         });
     }
 })();

@@ -1,27 +1,14 @@
 "use strict";
 
-// 공통 함수
-var returnClickEvent = (function() {
-    if ("ontouchstart" in document.documentElement === true) {
-        return "touchstart";
+/* ############## 공통 함수 ############## */
+// 이벤트 체크
+var returnEvent = function(hasEvent, altEvent) {
+    if ("on" + hasEvent in document.documentElement === true) {
+        return hasEvent;
     } else {
-        return "click";
+        return altEvent;
     }
-})(),
-returnMouseOverEvent = function() {
-    if ("onmouseover" in document.documentElement === true) {
-        return "mouseover";
-    } else {
-        return false;
-    }
-}(),
-returnMouseOutEvent = function() {
-    if ("onmouseout" in document.documentElement === true) {
-        return "mouseout";
-    } else {
-        return false;
-    }
-}();
+};
 
 // IE 체크
 (function() {
@@ -320,9 +307,9 @@ returnMouseOutEvent = function() {
             };
 
             t_copyBtn.addEventListener("click", copyCode);
-            t.addEventListener(returnMouseOverEvent, showCopyButton);
-            t.addEventListener(returnMouseOutEvent, hideCopyButton);
-            t.addEventListener(returnClickEvent, toggleCopyButton);
+            t.addEventListener(returnEvent("mouseover", false), showCopyButton);
+            t.addEventListener(returnEvent("mouseout", false), hideCopyButton);
+            t.addEventListener(returnEvent("click", "touchstart"), toggleCopyButton);
         });
     }
 })();

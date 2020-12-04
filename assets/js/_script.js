@@ -1,5 +1,28 @@
 "use strict";
 
+// 공통 함수
+var returnClickEvent = (function() {
+    if ("ontouchstart" in document.documentElement === true) {
+        return "touchstart";
+    } else {
+        return "click";
+    }
+})(),
+returnMouseOverEvent = function() {
+    if ("onmouseover" in document.documentElement === true) {
+        return "mouseover";
+    } else {
+        return false;
+    }
+}(),
+returnMouseOutEvent = function() {
+    if ("onmouseout" in document.documentElement === true) {
+        return "mouseout";
+    } else {
+        return false;
+    }
+}();
+
 // IE 체크
 (function() {
     var rootElement = document.documentElement;
@@ -202,31 +225,9 @@
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeBox = postRoot.querySelectorAll("div.highlighter-rouge");
-        
-        var returnClickEvent = (function() {
-            if ("ontouchstart" in document.documentElement === true) {
-                return "touchstart";
-            } else {
-                return "click";
-            }
-        })(),
-        returnMouseOverEvent = function() {
-            if ("onmouseover" in document.documentElement === true) {
-                return "mouseover";
-            } else {
-                return false;
-            }
-        }(),
-        returnMouseOutEvent = function() {
-            if ("onmouseout" in document.documentElement === true) {
-                return "mouseout";
-            } else {
-                return false;
-            }
-        }();
+        var preCodeBoxList = postRoot.querySelectorAll("div.highlighter-rouge");
 
-        Array.prototype.slice.call(preCodeBox).forEach(function(t) {
+        Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
             // title
             if (t.classList.contains("has-label")) {
                 t.setAttribute("title", t.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
@@ -313,18 +314,16 @@
                 if (t_btn.classList.contains("highlight__copy-button--visible")) {
                     t_btn.classList.remove("highlight__copy-button--visible");
                 }
+            },
+            toggleCopyButton = function(evt) {
+                if (evt.target !== evt.currentTarget) return;
+                t_btn.classList.toggle("highlight__copy-button--visible");
             };
 
             t_copyBtn.addEventListener("click", copyCode);
             t.addEventListener(returnMouseOverEvent, showCopyButton);
             t.addEventListener(returnMouseOutEvent, hideCopyButton);
-            t.addEventListener(returnClickEvent, showCopyButton);
-        });
-
-        document.body.addEventListener(returnClickEvent, function(evt) {
-            if (evt.target !== document.querySelector(".highlight__copy-button") && !evt.target.classList.contains("highlight__copy-button--visible")) {
-                evt.target.classList.remove("highlight__copy-button--visible");
-            }
+            t.addEventListener(returnClickEvent, toggleCopyButton);
         });
     }
 })();

@@ -315,8 +315,7 @@ returnMouseOutEvent = function() {
                     t_btn.classList.remove("highlight__copy-button--visible");
                 }
             },
-            toggleCopyButton = function(evt) {
-                if (evt.target !== evt.currentTarget) return;
+            toggleCopyButton = function() {
                 t_btn.classList.toggle("highlight__copy-button--visible");
             };
 

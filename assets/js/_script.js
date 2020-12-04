@@ -203,6 +203,13 @@
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
         var preCodeBox = postRoot.querySelectorAll("div.highlighter-rouge");
+        var returnClickState = (function() {
+            if ("ontouchstart" in document.documentElement === true) {
+                return "touchstart";
+            } else {
+                return "click";
+            }
+        })();
 
         Array.prototype.slice.call(preCodeBox).forEach(function(t) {
             // title
@@ -254,12 +261,11 @@
             }
 
             // 코드 복사
-            var t_codeBox = t.querySelector("div.highlight"),
-                t_btn = document.createElement("button");
+            var t_btn = document.createElement("button");
 
             t_btn.textContent = "복사";
             t_btn.classList.add("highlight__copy-button");
-            t_codeBox.insertBefore(t_btn, t_codeBox.firstChild);
+            t.insertBefore(t_btn, t.firstChild);
 
             var t_copyBtn = t.querySelector(".highlight__copy-button");
             var copyCode = function(evt) {
@@ -297,13 +303,13 @@
             t_copyBtn.addEventListener("click", copyCode);
             t.addEventListener("mouseover", showCopyButton);
             t.addEventListener("mouseout", hideCopyButton);
-            t.addEventListener("touchstart", showCopyButton);
+            t.addEventListener(returnClickState, showCopyButton);
+        });
 
-            document.body.addEventListener("touchstart", function(evt) {
-                if (!evt.target.matches(".highlight__copy-button") && !t_btn.classList.contains("highlight__copy-button--visible")) {
-                    hideCopyButton();
-                }
-            });
+        document.body.addEventListener(returnClickState, function(evt) {
+            if (!evt.target.matches(".highlight__copy-button") && !evt.target.classList.contains("highlight__copy-button--visible")) {
+                evt.target.classList.remove("highlight__copy-button--visible");
+            }
         });
     }
 })();

@@ -28,6 +28,7 @@ figure.highlight {
 }
 
 div.highlighter-rouge {
+  position: relative;
   margin-left: -$layout-margin;
   margin-right: -$layout-margin;
   border-radius: 0;
@@ -51,10 +52,6 @@ div.highlighter-rouge {
   [id^="code-line"]:first-of-type {
     color: $grey05;
   }
-}
-
-div.highlight {
-  position: relative;
 }
 
 code {

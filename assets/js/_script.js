@@ -307,8 +307,8 @@ var returnEvent = function(hasEvent, altEvent) {
             };
 
             t_copyBtn.addEventListener("click", copyCode);
-            t.addEventListener(returnEvent("mouseover", false), showCopyButton);
-            t.addEventListener(returnEvent("mouseout", false), hideCopyButton);
+            // t.addEventListener(returnEvent("mouseover", false), showCopyButton);
+            // t.addEventListener(returnEvent("mouseout", false), hideCopyButton);
             t.addEventListener(returnEvent("touchstart", "click"), toggleCopyButton);
         });
     }

@@ -49,16 +49,16 @@
         }, 400);
     }
 
-    function handlerCloseKeydown(evt) {
-        var keyType = evt.key;
+    function handlerCloseKeydown(event) {
+        var keyType = event.key;
 
         if (menuWrapper.classList.contains("side-menu--active") && (keyType === "Escape" || keyType === "Esc")) {
             handlerCloseClick();
         }
     }
 
-    function handlerOpenClick(evt) {
-        evt.currentTarget.setAttribute("aria-expanded", "true");
+    function handlerOpenClick(event) {
+        event.currentTarget.setAttribute("aria-expanded", "true");
         menuELclose.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
@@ -73,8 +73,8 @@
         }
 
         for (var i = 0; i < menuTabbableList.length; i++) {
-            menuTabbableList[i].addEventListener("focus", function(evt) {
-                menuELFocusedLast = evt.currentTarget;
+            menuTabbableList[i].addEventListener("focus", function(event) {
+                menuELFocusedLast = event.currentTarget;
             });
         }
 
@@ -82,17 +82,17 @@
             menuELFocusedLast.focus();
         } else {
             menuTabbableListFirst.focus();
-            menuTabbableListFirst.addEventListener("keydown", function(evt) {
-                if (evt.shiftKey && evt.key === "Tab") {
-                    evt.preventDefault();
+            menuTabbableListFirst.addEventListener("keydown", function(event) {
+                if (event.shiftKey && event.key === "Tab") {
+                    event.preventDefault();
                     menuTabbableListLast.focus();
                 }
             });
         }
 
-        menuTabbableListLast.addEventListener("keydown", function(evt) {
-            if (!evt.shiftKey && evt.key === "Tab") {
-                evt.preventDefault();
+        menuTabbableListLast.addEventListener("keydown", function(event) {
+            if (!event.shiftKey && event.key === "Tab") {
+                event.preventDefault();
                 menuTabbableListFirst.focus();
             }
         });
@@ -102,8 +102,8 @@
 
     menuELopen.addEventListener("click", handlerOpenClick);
     menuELclose.addEventListener("click", handlerCloseClick);
-    menuWrapper.addEventListener("click", function(evt) {
-        if (evt.target === evt.currentTarget) handlerCloseClick();
+    menuWrapper.addEventListener("click", function(event) {
+        if (event.target === event.currentTarget) handlerCloseClick();
     });
 
     for (var i = 0; i < menuELcategoryAnc.length; i++) {
@@ -177,9 +177,9 @@
         t.appendChild(t_span);
     });
     
-    function handlerClick(evt) {
-        if ((evt.target === evt.currentTarget) || evt.key === "Enter") {
-            var tooltipEL = evt.currentTarget.querySelector(".abbr__tooltip");
+    function handlerClick(event) {
+        if ((event.target === event.currentTarget) || event.key === "Enter") {
+            var tooltipEL = event.currentTarget.querySelector(".abbr__tooltip");
 
             if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
                 tooltipEL.hidden = false;
@@ -193,8 +193,8 @@
         }
     }
 
-    function handlerKeydown(evt) {
-        if (evt.key === "Enter") handlerClick(evt);
+    function handlerKeydown(event) {
+        if (event.key === "Enter") handlerClick(event);
     }
 })();
 
@@ -206,15 +206,15 @@
 
         Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
             // title
-            if (t.classList.contains("has-label")) {
-                t.setAttribute("title", t.className.replace(/language-|has-label |highlighter-rouge/g, "") + "코드");
-            }
+            t.setAttribute("title", t.className.replace(/language-|highlighter-rouge/g, "") + "코드");
 
             // line
             if (t.hasAttribute("data-line")) {
                 var preCodeLineBox = t.querySelector(".lineno"),
                     preCodeLine = t.getAttribute("data-line").split("-")[0],
                     preCodeLineLast = t.getAttribute("data-line").split("-")[1];
+
+                if (!preCodeLineBox) return;
 
                 if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
                     preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
@@ -261,9 +261,9 @@
             t.insertBefore(t_btn, t.firstChild);
 
             var t_copyBtn = t.querySelector(".highlight__copy-button");
-            var copyCode = function(evt) {
+            var copyCode = function(event) {
                 try {
-                    var t_codeInner = evt.currentTarget.parentElement,
+                    var t_codeInner = event.currentTarget.parentElement,
                         t_code = t_codeInner.querySelector(".rouge-code");
 
                     if (!t_codeInner.querySelector("textarea")) {
@@ -277,9 +277,9 @@
                     t_valEL.select();
                     document.execCommand("copy");
                     document.body.removeChild(t_valEL);
-                    evt.currentTarget.textContent = "복사됨";
-                } catch(err) {
-                    alert("복사에 실패했습니다.");
+                    event.currentTarget.textContent = "복사됨";
+                } catch(error) {
+                    alert("복사에 실패했습니다.\n" + error);
                 }
             },
             showCopyButton = function() {
@@ -292,8 +292,8 @@
                     t_btn.classList.remove("highlight__copy-button--visible");
                 }
             },
-            toggleCopyButton = function(evt) {
-                if (evt.target === t.querySelector(".highlight__copy-button")) return;
+            toggleCopyButton = function(event) {
+                if (event.target === t.querySelector(".highlight__copy-button")) return;
                 t_btn.classList.toggle("highlight__copy-button--visible");
             };
 
@@ -317,9 +317,9 @@
         var shareAncList = shareElement.querySelectorAll("a");
 
         for (var i = 0; i < shareAncList.length; i++) {
-            shareAncList[i].addEventListener("click", function(evt) {
-                evt.preventDefault();
-                window.open(evt.currentTarget.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
+            shareAncList[i].addEventListener("click", function(event) {
+                event.preventDefault();
+                window.open(event.currentTarget.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
             });
         }
     }
@@ -327,8 +327,8 @@
 
 // post archive 아코디언
 (function() {
-    var handlerClick = function(evt) {
-        var t = evt.currentTarget,
+    var handlerClick = function(event) {
+        var t = event.currentTarget,
             t_matchEL = document.querySelector("[aria-labelledby='"+t.id+"']");
 
         if (t_matchEL.classList.contains("archive__list--active")) {
@@ -440,8 +440,8 @@
             openBtn.focus();
         }
 
-        function handlerCloseKeydown(evt) {
-            var keyType = evt.key;
+        function handlerCloseKeydown(event) {
+            var keyType = event.key;
 
             if (keyType === "Escape" || keyType === "Esc") {
                 var sResultAncList = sResult.querySelectorAll("a");
@@ -471,8 +471,8 @@
             }
         }
 
-        function handlerClick(evt) {
-            var t = evt.currentTarget;
+        function handlerClick(event) {
+            var t = event.currentTarget;
 
             sInputValNotChanged = true;
 
@@ -486,8 +486,8 @@
 
             layer.classList.add("search-content--active");
             layer.setAttribute("aria-hidden", "false");
-            layer.addEventListener("click", function(evt) {
-                evt.target === evt.currentTarget && handlerCloseClick();
+            layer.addEventListener("click", function(event) {
+                event.target === event.currentTarget && handlerCloseClick();
             });
 
             setTimeout(function() {
@@ -501,16 +501,16 @@
                 sInput.addEventListener("focus", handlerInputKeydown);
             });
 
-            tabbableListFirst.addEventListener("keydown", function(evt) {
-                if (evt.shiftKey && evt.key === "Tab") {
-                    evt.preventDefault();
+            tabbableListFirst.addEventListener("keydown", function(event) {
+                if (event.shiftKey && event.key === "Tab") {
+                    event.preventDefault();
                     tabbableListLast.focus();
                 }
             });
     
-            tabbableListLast.addEventListener("keydown", function(evt) {
-                if (!evt.shiftKey && evt.key === "Tab") {
-                    evt.preventDefault();
+            tabbableListLast.addEventListener("keydown", function(event) {
+                if (!event.shiftKey && event.key === "Tab") {
+                    event.preventDefault();
                     tabbableListFirst.focus();
                 }
             });

@@ -16,14 +16,12 @@ post_dropcap: false
 
 이번에는 div &gt; a 구조에서 div에 검정 반투명 배경색을 깔아주기 위해 다음과 같이 CSS를 작성하였다.
 
-{:.has-label}
 ```html
 <div>
     <a href="#">anchor</a>
 </div>
 ```
 
-{:.has-label}
 ```scss
 div {
   display: table;
@@ -45,7 +43,6 @@ div {
 
 ## 익숙한 방식
 
-{:.has-label}
 ```css
 a:before {
   content: "";
@@ -65,7 +62,6 @@ a:before {
 
 ## 더 효율적인 방법
 
-{:.has-label}
 ```css
 a:before {
   content: "";

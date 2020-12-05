@@ -23,14 +23,12 @@ primary_post: true
 
 마크업과 CSS를 살펴보자.
 
-{:.has-label}
 ```html
 <div>
   <p>Lorem Ipsum</p>
 </div>
 ```
 
-{:.has-label}
 {:data-line="7"}
 ```css
 div {

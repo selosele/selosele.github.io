@@ -24,8 +24,6 @@ primary_post: true
 
 다음과 같이 마크업되어 있다고 가정해보자.
 
-{:.has-label}
-<!-- {:data-line="2-5"} -->
 ```html
 <a href="#gnb" class="hashToggle">주메뉴 열기</a>
 <div id="gnb"></div>
@@ -36,7 +34,6 @@ primary_post: true
 
 각 a 요소를 클릭 시, href 속성값과 매칭되는 id값을 가진 요소를 toggle하는 JS를 작성해야 한다면?
 
-{:.has-label}
 {:data-line="4"}
 ```javascript
 $(".hashToggle").on("click", function(event) {
@@ -66,7 +63,6 @@ $(".hashToggle").on("click", function(event) {
 
 어느정도 뼈대를 설계했고, 다음과 같은 방식으로 작동하게 만들었다.
 
-{:.has-label}
 ```javascript
 // 플러그인 옵션 기본값 세팅
 var option = $.extend({
@@ -96,7 +92,6 @@ var option = $.extend({
 
 이제 플러그인 호출을 해볼 것이다.
 
-{:.has-label}
 ```javascript
 $(".foo").hashToggle({
     event: "mouseover mouseout",
@@ -119,7 +114,6 @@ $(".foo").hashToggle({
 
 그나저나 머릿속에 담아둔 요구사항 중 마지막 &ldquo;원하는 로직을 넣을 수 있어야 한다&rdquo;는 게 무슨 뜻이냐, 위에 언급한 afterEvent 옵션 사용법은 다음과 같다.
 
-{:.has-label}
 {:data-line="3"}
 ```javascript
 $(".foo").hashToggle({

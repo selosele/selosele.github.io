@@ -41,7 +41,6 @@ white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 
 
 최근 실무에서도 같은 문제로 골이 아프던 중 방법을 알아냈다.
 
-{:.has-label}
 ```css
 span {
     word-break: keep-all;
@@ -56,7 +55,6 @@ span {
 1. <mark>word-break</mark> 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄바꿈을 할지 결정하는 속성이고, <mark>word-wrap</mark> 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄바꿈을 해주는 속성이라는 점에서 차이가 있다.
 2. 이 속성만 사용하는 게 아니라 <mark>word-break: keep-all</mark> 속성과 같이 써주는 것임. <mark>word-break: keep-all</mark>을 먼저 써주자.
 
-{:.has-label}
 ```css
 body {
     word-wrap: break-word;

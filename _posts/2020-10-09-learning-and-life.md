@@ -24,7 +24,6 @@ tags:
 
 우선 예제를 만들어보았다.
 
-{:.has-label}
 ```html
 <ul>
   <li></li>
@@ -33,7 +32,6 @@ tags:
 </ul>
 ```
 
-{:.has-label}
 ```javascript
 const el = document.querySelectorAll("li");
 
@@ -54,7 +52,6 @@ if (el.length) console.log(true) // true
 
 블로그 테마 JS 작업 중 알게된 코드이다. 애초에 나는 ```(function(){})();```{:.language-javascript}라고 익명함수를 작성했는데 다음과 같이 컴파일된 것임(minify 및 uglify 처리를 해서 그럼).
 
-{:.has-label}
 ```javascript
 !function(a, b) {
   return a + b;
@@ -63,7 +60,6 @@ if (el.length) console.log(true) // true
 
 function 앞에 ```!```{:.language-javascript}가 붙은 게 신기했다. 보통 익명함수라고 하면 아래와 같은 방식으로 알고 있었는데,
 
-{:.has-label}
 ```javascript
 (function(a, b) {
   return a + b;

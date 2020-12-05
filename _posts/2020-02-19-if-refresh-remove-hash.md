@@ -17,7 +17,6 @@ URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새�
 
 ## 새로고침 키를 눌렀을 때
 
-{:.has-label}
 ```javascript
 $(document).on("keydown", function(event) {
     var k = event.keyCode || event.which;
@@ -34,7 +33,6 @@ hash text에 한글이 포함되어 있으면 에러를 뱉으므로 반드시 �
 
 ## 페이지가 로드되었을 때
 
-{:.has-label}
 ```javascript
 function refreshRemoveHash() {
     if (window.location.hash) {
@@ -49,7 +47,6 @@ refreshRemoveHash();
 ### <span>코드 완성하다</span>
 20200422, &ldquo;페이지가 로드되었을 때&rdquo;의 코드를 완성하였음. 두 달이나 지나서 완성이라니... -_-
 
-{:.has-label}
 ```javascript
 (function() {
     var korean = window.location.hash.indexOf(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/);

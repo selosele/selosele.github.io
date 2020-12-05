@@ -18,14 +18,12 @@ tags:
 
 예를 들어 input 요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 해결책은 Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함
 
-{:.has-label}
 ```html
 <form name="myForm">
     <input type="text" placeholder="검색어를 입력하세요">
 </form>
 ```
 
-{:.has-label}
 ```javascript
 document.myForm.addEventListener("keydown", (evt) => {
     if ((evt.keyCode || evt.which) === 13) {
@@ -36,7 +34,6 @@ document.myForm.addEventListener("keydown", (evt) => {
 
 keyCode, which는 deprecated될 속성이라고 하니 다음과 같은 방식으로 작성해주자.
 
-{:.has-label}
 ```javascript
 if (evt.code === "Enter") {
     evt.preventDefault();
@@ -47,7 +44,6 @@ code 속성은 IE에서 지원되지 않으므로 key 속성으로 대체할 수
 
 inline Javascript로 작성할 수도 있다. 구조와 표현의 분리라는 측면에서 봤을 때 좋은 방법은 아니지만 그냥 이런 방법도 있다는 것임.
 
-{:.has-label}
 ```html
 <form onkeydown="return event.key != 'Enter';">
     <input type="text" placeholder="검색어를 입력하세요">

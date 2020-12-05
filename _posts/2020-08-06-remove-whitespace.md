@@ -19,7 +19,6 @@ post_dropcap: false
 
 [몇 달전에도 작업한 바 있으나](/2020/02/19/white-space/) jQuery를 쓴 코드였고, 이번에는 Vanilla JS로 작업을 해보았다.
 
-{:.has-label}
 ```html
 <ul class="has-whitespace">
   <li>111</li>
@@ -35,7 +34,6 @@ post_dropcap: false
 </div>
 ```
 
-{:.has-label}
 ```css
 li {
   display: inline-block;
@@ -43,7 +41,6 @@ li {
 }
 ```
 
-{:.has-label}
 ```javascript
 (function(parentElem) {
   if (!parentElem) return;

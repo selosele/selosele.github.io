@@ -15,7 +15,6 @@ tags:
 모듈화는 CSS 중복을 제거하고 클래스의 재사용성을 높이는 데 중점을 둔다.  
 레이아웃을 짤 때 다음과 같은 코드를 쓴다고 가정해봅시다.
 
-{:.has-label}
 ```css
 #header .layout { max-width: 1400px; margin: 0 auto; }
 #section1 .layout { max-width: 1400px; margin: 0 auto; }
@@ -24,13 +23,11 @@ tags:
 ```
 보기만해도 반응형 작업과 추후 유지보수의 지옥길이 열린 것만 같은 느낌.
 
-{:.has-label}
 ```css
 .layout { max-width: 1400px; margin: 0 auto; }
 ```
 위와 같은 방식으로 자주 사용되는 스타일을 클래스화, 공통 CSS 파일에서 관리한다.
 
-{:.has-label}
 ```css
 .mt20 { margin-top: 20px !important; }
 .w20 { width: 20% !important; }
@@ -47,7 +44,6 @@ tags:
 
 등등..
 
-{:.has-label}
 ```css
 .clearfix:after { display: block; clear: both; content: "";}
 ```

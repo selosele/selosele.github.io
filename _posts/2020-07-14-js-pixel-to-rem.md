@@ -20,12 +20,10 @@ tags:
 
 예제를 만들어보았다.
 
-{:.has-label}
 ```html
 <p id="foo">foo</p>
 ```
 
-{:.has-label}
 ```css
 html {
   font-size: 20px;
@@ -40,7 +38,6 @@ html {
 
 p 요소의 높이값을 rem 단위로 변환해볼 것이다.
 
-{:.has-label}
 ```javascript
 const pixelToRemUnit = (pixelUnit) => {
   return pixelUnit / parseFloat(getComputedStyle(document.documentElement).fontSize) + "rem";

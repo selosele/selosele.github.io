@@ -27,7 +27,6 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 
 ### 공백값을 구한 후, 값만큼 margin-left 음수값을 대입하는 방법
 
-{:.has-label}
 ```html
 <ul class="remvWS">
   <li>111</li>
@@ -36,7 +35,6 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 </ul>
 ```
 
-{:.has-label}
 ```scss
 .remvWS {
   > li {
@@ -47,7 +45,6 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 }
 ```
 
-{:.has-label}
 ```javascript
 (function($, listObj) {
   listObj = $(listObj).nextAll();
@@ -79,7 +76,6 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 * [참고 링크 1](https://stackoverflow.com/questions/27749507/removing-inline-block-whitespace-using-javascript-and-or-jquery){:target="_blank"}
 * [참고 링크 2](http://jsfiddle.net/davidThomas/wygnD/3/){:target="_blank"}
 
-{:.has-label}
 ```javascript
 (function($, elem) {
   $(elem).contents().filter(function() {

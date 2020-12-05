@@ -18,14 +18,12 @@ post_dropcap: false
 
 ## 익숙했던 방법
 
-{:.has-label}
 ```html
 <div>
     <p>Paragraph</p>
 </div>
 ```
 
-{:.has-label}
 ```scss
 p {
   position: relative;
@@ -39,7 +37,6 @@ p {
 
 ## 새로 알게된 방법
 
-{:.has-label}
 ```scss
 div {
   position: relative;

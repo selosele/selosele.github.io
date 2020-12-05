@@ -264,7 +264,7 @@
                     var t_codeInner = event.currentTarget.parentElement;
 
                     if (t.querySelector(".lineno")) {
-                        var t_code = t_codeInner.querySelector(".rouge-code");
+                        var t_code = t_codeInner.querySelector(".rouge-code > pre");
                     } else {
                         var t_code = t_codeInner.querySelector("pre.highlight");
                     }

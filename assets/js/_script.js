@@ -420,60 +420,8 @@
             }
         }
 
-        function handlerInputKeydown2(evt) {
-            var sResultLiList = sResult.querySelectorAll("li");
-            if (!sResultLiList.length) return;
-
-            switch (evt.key) {
-                case "ArrowDown":
-                case "Down":
-                    if (sResultLiList.length) {
-                        evt.preventDefault();
-                        sResultLiList[0].querySelector("a").focus();
-                    }
-                    break;
-            }
-        }
-
-        function handlerResultKeydown(evt) {
-            if (evt.target.tagName === "A") {
-                var t = evt.target,
-                    t_list = t.parentElement,
-                    list = sResult.querySelectorAll("li"),
-                    listFirst = list[0],
-                    listLast = list[list.length - 1],
-                    listPrev = t_list.previousElementSibling,
-                    listNext = t_list.nextElementSibling;
-
-                switch (evt.key) {
-                    case "ArrowUp":
-                    case "Up":
-                        if (!listPrev) {
-                            listLast.querySelector("a").focus();
-                        } else {
-                            listPrev.querySelector("a").focus();
-                        }
-
-                        evt.stopPropagation();
-                        break;
-                    
-                    case "ArrowDown":
-                    case "Down":
-                        if (!listNext) {
-                            listFirst.querySelector("a").focus();
-                        } else {
-                            listNext.querySelector("a").focus();
-                        }
-
-                        evt.stopPropagation();
-                        break;
-                }
-            }
-        }
-
         function handlerCloseClick() {
             document.removeEventListener("keydown", handlerCloseKeydown);
-            document.removeEventListener("keydown", handlerResultKeydown);
             rootElement.classList.remove("layer-opened");
             closeBtn.setAttribute("aria-expanded", "false");
             layer.classList.remove("search-content--animate");
@@ -551,7 +499,6 @@
                 sInput.addEventListener("paste", handlerInputKeydown);
                 sInput.addEventListener("input", handlerInputKeydown);
                 sInput.addEventListener("focus", handlerInputKeydown);
-                sInput.addEventListener("keydown", handlerInputKeydown2);
             });
 
             tabbableListFirst.addEventListener("keydown", function(evt) {
@@ -569,7 +516,6 @@
             });
 
             document.addEventListener("keydown", handlerCloseKeydown);
-            document.addEventListener("keydown", handlerResultKeydown);
         }
 
         openBtn.addEventListener("click", handlerClick);

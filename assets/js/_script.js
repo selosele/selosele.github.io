@@ -1,15 +1,5 @@
 "use strict";
 
-/* ############## 공통 함수 ############## */
-// 이벤트 체크
-var returnEvent = function(hasEvent, altEvent) {
-    if ("on" + hasEvent in document.documentElement === true) {
-        return hasEvent;
-    } else {
-        return altEvent;
-    }
-};
-
 // IE 체크
 (function() {
     var rootElement = document.documentElement;
@@ -307,9 +297,14 @@ var returnEvent = function(hasEvent, altEvent) {
             };
 
             t_copyBtn.addEventListener("click", copyCode);
-            t.addEventListener(returnEvent("mouseover", false), showCopyButton);
-            t.addEventListener(returnEvent("mouseout", false), hideCopyButton);
-            t.addEventListener(returnEvent("touchstart", "click"), toggleCopyButton);
+
+            if ("onmouseover" in document.documentElement === true) t.addEventListener("mouseover", showCopyButton);
+            if ("onmouseout" in document.documentElement === true) t.addEventListener("mouseout", hideCopyButton);
+            if ("ontouchstart" in document.documentElement === true) {
+                t.addEventListener("touchstart", toggleCopyButton);
+            } else {
+                t.addEventListener("click", toggleCopyButton);
+            }
         });
     }
 })();

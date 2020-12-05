@@ -25,26 +25,24 @@
       {%- endfor -%}
     </ul>
   
-    <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
     {% if site.categories.size > 0 %}
+    <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
     <ul{% if site.main_menu.category_list_grid %} class="menu__list--grid"{% endif %}>
       {% for i in (1..categories_max) reversed %}
-      {% for category in site.categories limit: 8 %}
-      {% if category[1].size == i %}
-      <li>
-        <a href="/category-list/#btn-{{ category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}">{{ category[0] }}</a>
-        <small class="menu__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
-      </li>
-      {% endif %}
-      {% endfor %}
+        {% for category in site.categories limit: 8 %}
+          {% if category[1].size == i %}
+          <li>
+            <a href="/category-list/#btn-{{ category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}">{{ category[0] }}</a>
+            <small class="menu__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
+          </li>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     </ul>
 
     <a href="/category-list/" class="menu__more">
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
-    {% else %}
-    <p class="menu__alert">{{ site.data.ui-text[site.locale].no_category }}</p>
     {% endif %}
 
     <section itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">

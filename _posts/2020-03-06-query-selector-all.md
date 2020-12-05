@@ -56,5 +56,7 @@ myName("sel");
 
 블로그 JS 대부분을 jQuery로 작업해왔고, jQuery적인 사고방식에 물들어 있던 나에게 이 쉬운 논리가 원활히 이해될리는 만무했을 것임. 의존적인 코딩 습관은 매우 위험한 것이다.
 
-* [참고 링크 1](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"}
-* [참고 링크 2](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"}
+**참고 링크**
+
+* [Document.querySelectorAll()](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"} - MDN
+* [NodeList](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"} - MDN

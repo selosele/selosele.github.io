@@ -255,3 +255,8 @@ masthead:
     bg: "/assets/images/mhead_bg.jpg"
     filter: 0.3
     position: # ex) 50% or 50% 21%
+
+# main menu
+main_menu:
+  primary_links_grid: true
+  category_list_grid: true

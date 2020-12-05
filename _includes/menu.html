@@ -12,7 +12,7 @@
     </button>
 
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_menu | default: 'Primary menu' }}</h2>
-    <ul role="menu"{% if site.data.navigation.main.size > 1 %} class="menu__list--grid"{% endif %}>
+    <ul role="menu"{% if site.main_menu.primary_links_grid %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
         {%- assign url = link.url -%}
@@ -27,7 +27,7 @@
   
     <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
     {% if site.categories.size > 0 %}
-    <ul>
+    <ul{% if site.main_menu.category_list_grid %} class="menu__list--grid"{% endif %}>
       {% for i in (1..categories_max) reversed %}
       {% for category in site.categories limit: 8 %}
       {% if category[1].size == i %}

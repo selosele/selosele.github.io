@@ -82,6 +82,9 @@
       &:before {
          content: "\2014";
          margin-right: .3rem;
+         font-weight: 200;
+         -webkit-font-smoothing: antialiased;
+         vertical-align: middle;
       }
 
       @media (min-width: $min-general-width) {

@@ -209,12 +209,10 @@
             t.setAttribute("title", t.className.replace(/language-|highlighter-rouge/g, "") + "코드");
 
             // line
-            if (t.hasAttribute("data-line")) {
+            if (t.hasAttribute("data-line") && t.querySelector(".lineno")) {
                 var preCodeLineBox = t.querySelector(".lineno"),
                     preCodeLine = t.getAttribute("data-line").split("-")[0],
                     preCodeLineLast = t.getAttribute("data-line").split("-")[1];
-
-                if (!preCodeLineBox) return;
 
                 if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
                     preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
@@ -263,8 +261,13 @@
             var t_copyBtn = t.querySelector(".highlight__copy-button");
             var copyCode = function(event) {
                 try {
-                    var t_codeInner = event.currentTarget.parentElement,
-                        t_code = t_codeInner.querySelector(".rouge-code");
+                    var t_codeInner = event.currentTarget.parentElement;
+
+                    if (t.querySelector(".lineno")) {
+                        var t_code = t_codeInner.querySelector(".rouge-code");
+                    } else {
+                        var t_code = t_codeInner.querySelector("pre.highlight");
+                    }
 
                     if (!t_codeInner.querySelector("textarea")) {
                         var t_valEL = document.createElement("textarea");

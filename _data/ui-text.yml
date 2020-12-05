@@ -64,10 +64,9 @@ ko: &DEFAULT_KO
   search_label_text          : "포스트 검색"
   search_placeholder_text    : "검색어를 입력하세요."
   results_found              : "개 결과 발견"
-  move_to_top                : "맨 위로 이동"
+  move_to_top                : "최상단으로 이동"
   move_to_archive_button     : "버튼으로 이동"
   target_blank               : "새창이동"
-  post_by_year_button        : "년에 작성된 글" # 한국어 전용
 ko-KR:
   <<: *DEFAULT_KO
 

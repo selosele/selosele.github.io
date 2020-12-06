@@ -207,10 +207,10 @@
         Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
             // title
             var t_lang = t.className.replace(/language-|highlighter-rouge/g, "");
-            
-            if (t_lang === "plaintext ") return;
 
-            t.setAttribute("title", t_lang + "코드");
+            if (t_lang !== "plaintext ") {
+                t.setAttribute("title", t_lang + "코드");
+            }
 
             // line
             if (t.hasAttribute("data-line") && t.querySelector(".lineno")) {
@@ -306,13 +306,13 @@
 
             t_copyBtn.addEventListener("click", copyCode);
 
-            if ("onmouseover" in document.documentElement === true) t.addEventListener("mouseover", showCopyButton);
-            if ("onmouseout" in document.documentElement === true) t.addEventListener("mouseout", hideCopyButton);
-            if ("ontouchstart" in document.documentElement === true) {
-                t.addEventListener("touchstart", toggleCopyButton);
-            } else {
-                t.addEventListener("click", toggleCopyButton);
-            }
+            // if ("onmouseover" in document.documentElement === true) t.addEventListener("mouseover", showCopyButton);
+            // if ("onmouseout" in document.documentElement === true) t.addEventListener("mouseout", hideCopyButton);
+            // if ("ontouchstart" in document.documentElement === true) {
+            //     t.addEventListener("touchstart", toggleCopyButton);
+            // } else {
+            //     t.addEventListener("click", toggleCopyButton);
+            // }
         });
     }
 })();

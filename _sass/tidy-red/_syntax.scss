@@ -32,16 +32,17 @@ div.highlighter-rouge {
   margin-left: -$layout-margin;
   margin-right: -$layout-margin;
   border-radius: 0;
-  cursor: pointer;
+
+  &:hover {
+    .highlight__copy-button {
+      display: block;
+    }
+  }
 
   @media (min-width: $min-minimal-width) {
     margin-left: 0;
     margin-right: 0;
     border-radius: 4px;
-  }
-
-  @media (min-width: $min-large-width) {
-    cursor: auto;
   }
 }
 

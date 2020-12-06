@@ -176,23 +176,22 @@ abbr {
 }
 
 /* hide element */
-.sr-only {
+%PH_sr-only {
    overflow: hidden !important;
-   position: absolute !important;
    clip: rect(1px, 1px, 1px, 1px) !important;
    width: 1px !important;
    height: 1px !important;
    margin: -1px !important;
    border: 0 !important;
+}
+
+.sr-only {
+   position: absolute !important;
+   @extend %PH_sr-only;
 
    &--fixed {
-      overflow: hidden !important;
       position: fixed !important;
-      clip: rect(1px, 1px, 1px, 1px) !important;
-      width: 1px !important;
-      height: 1px !important;
-      margin: -1px !important;
-      border: 0 !important;
+      @extend %PH_sr-only;
    }
 }
 

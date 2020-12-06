@@ -223,19 +223,21 @@
             t_btn.classList.add("highlight__copy-button");
             t_utilWrapper.appendChild(t_btn);
 
-            var t_copyBtn = t.querySelector(".highlight__copy-button");
+            var t_copyBtn = t.querySelector(".highlight__copy-button"), copyState;
             var copyCode = function(event) {
                 try {
                     var t_codeInner = event.currentTarget.parentElement.parentElement,
                         t_code = t.querySelector(".lineno") ? t_codeInner.querySelector(".rouge-code > pre") : t_codeInner.querySelector("pre.highlight"),
-                        t_valEL;
-
-                    if (!t_codeInner.querySelector("textarea")) {
                         t_valEL = document.createElement("textarea");
 
-                        t_valEL.classList.add("sr-only");
-                        event.currentTarget.parentElement.appendChild(t_valEL);
-                    }
+                    t_valEL.setAttribute("readonly", true);
+                    t_valEL.setAttribute('contenteditable', true);
+                    t_valEL.classList.add("sr-only--fixed");
+                    t_valEL.value = t_code.textContent;
+
+                    event.currentTarget.parentElement.appendChild(t_valEL);
+
+                    t_valEL.select();
 
                     var t_range = document.createRange();
                     t_range.selectNodeContents(t_valEL);
@@ -244,14 +246,14 @@
                     t_selection.removeAllRanges();
                     t_selection.addRange(t_range);
 
-                    t_valEL.value = t_code.textContent;
-                    t_valEL.select();
-                    t_valEL.setSelectionRange(0, 999999);
-                    document.execCommand("copy");
-                    event.currentTarget.parentElement.removeChild(t_valEL);
+                    t_valEL.setSelectionRange(0, t_valEL.value.length);
+                    copyState = document.execCommand("copy");
                     event.currentTarget.textContent = "복사됨";
                 } catch(error) {
+                    copyState = null;
                     alert("복사에 실패했습니다.\n" + error);
+                } finally {
+                    event.currentTarget.parentElement.removeChild(t_valEL);
                 }
             };
 

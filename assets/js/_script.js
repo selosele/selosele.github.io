@@ -206,7 +206,11 @@
 
         Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
             // title
-            t.setAttribute("title", t.className.replace(/language-|highlighter-rouge/g, "") + "코드");
+            var t_lang = t.className.replace(/language-|highlighter-rouge/g, "");
+            
+            if (t_lang === "plaintext ") return;
+
+            t.setAttribute("title", t_lang + "코드");
 
             // line
             if (t.hasAttribute("data-line") && t.querySelector(".lineno")) {

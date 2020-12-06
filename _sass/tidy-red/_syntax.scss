@@ -18,12 +18,13 @@ figure.highlight {
   ::selection {
     background-color: $grey12;
     color: $black04;
-  }
+    text-shadow: none;
+ }
 
   > pre,
   pre.highlight {
     margin: 0;
-	  padding: .5rem 1rem;
+	  padding: .95rem 1rem;
   }
 }
 
@@ -32,12 +33,6 @@ div.highlighter-rouge {
   margin-left: -$layout-margin;
   margin-right: -$layout-margin;
   border-radius: 0;
-
-  &:hover {
-    .highlight__copy-button {
-      display: block;
-    }
-  }
 
   @media (min-width: $min-minimal-width) {
     margin-left: 0;
@@ -62,26 +57,53 @@ code {
     padding: .210526em .421052em;
     line-height: 1;
     vertical-align: middle;
+
+    &::selection {
+      background-color: $grey12;
+      color: $black04;
+      text-shadow: none;
+   }
   }
 }
 
 .highlight {
-  &__copy-button {
-    display: none;
+  &__util-wrapper {
+    display: flex;
     position: absolute;
-    top: .3rem;
-    right: .3rem;
+    top: .2rem;
+    right: .2rem;
     z-index: 1;
+    width: auto;
     height: 1rem;
+    font-family: $default-font04;
+    font-size: .7rem;
+    flex-wrap: wrap;
+  }
+
+  &__language,
+  &__copy-button {
+    display: block;
+    height: 100%;
     padding-left: .35rem;
     padding-right: .35rem;
     border-radius: 4px;
-    font-family: $default-font04;
-    font-size: .7rem;
+    background-color: $grey07;
+    line-height: 1rem;
+  }
 
-    &--visible {
-      display: block;
+  &__language {
+    margin-right: .2rem;
+    text-shadow: none;
+    color: $sub-color03;
+
+    ::selection {
+      background-color: $black04;
+      color: $grey12;
     }
+  }
+
+  &__copy-button {
+    color: $black03;
   }
 
   &__bg {
@@ -112,7 +134,7 @@ code {
     table-layout: auto;
   
     td {
-      padding: .25rem;
+      padding: 0 .25rem;
       border: 0;
       text-align: left;
   

@@ -1,21 +1,19 @@
 "use strict";
 
 // IE 체크
-(function() {
-    var rootElement = document.documentElement;
-
+(function(el) {
     // 11 ~ 9
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
-        rootElement.className += " only-ie";
+        el.className += " only-ie";
         document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 
     // 10 이하
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
-        rootElement.className += " lte-ie10";
+        el.className += " lte-ie10";
         document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
     }
-})();
+})(document.documentElement);
 
 // 메인 메뉴
 (function() {
@@ -198,7 +196,7 @@
     }
 })();
 
-// code highlight title 기입 및 line 강조, 코드 복사
+// code highlight title 기입 및 코드 복사, line 강조
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
@@ -206,11 +204,51 @@
 
         Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
             // title
-            var t_lang = t.className.replace(/language-|highlighter-rouge/g, "");
+            var t_div = document.createElement("div");
 
-            if (t_lang !== "plaintext ") {
-                t.setAttribute("title", t_lang + "코드");
-            }
+            t_div.classList.add("highlight__util-wrapper");
+            t.insertBefore(t_div, t.firstChild);
+
+            var t_utilWrapper = t.querySelector(".highlight__util-wrapper"),
+                t_span = document.createElement("span");
+
+            t_span.textContent = t.className.replace(/language-|highlighter-rouge/g, "");
+            t_span.classList.add("highlight__language");
+            t_utilWrapper.insertBefore(t_span, t_utilWrapper.firstChild);
+
+            // 코드 복사
+            var t_btn = document.createElement("button");
+
+            t_btn.textContent = "복사";
+            t_btn.classList.add("highlight__copy-button");
+            t_utilWrapper.appendChild(t_btn);
+
+            var t_copyBtn = t.querySelector(".highlight__copy-button");
+            var copyCode = function(event) {
+                try {
+                    var t_codeInner = event.currentTarget.parentElement.parentElement,
+                        t_code = t.querySelector(".lineno") ? t_codeInner.querySelector(".rouge-code > pre") : t_codeInner.querySelector("pre.highlight"),
+                        t_valEL;
+
+                    if (!t_codeInner.querySelector("textarea")) {
+                        t_valEL = document.createElement("textarea");
+
+                        t_valEL.classList.add("sr-only");
+                        document.body.appendChild(t_valEL);
+                    }
+
+                    t_valEL.value = t_code.textContent;
+                    t_valEL.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(t_valEL);
+                    event.currentTarget.textContent = "복사됨";
+                } catch(error) {
+                    alert("복사에 실패했습니다.\n" + error);
+                    throw new Error(error);
+                }
+            };
+
+            t_copyBtn.addEventListener("click", copyCode);
 
             // line
             if (t.hasAttribute("data-line") && t.querySelector(".lineno")) {
@@ -239,7 +277,7 @@
                 var setBGval = function(firstNum, lastNum) {
                     var firstPos = firstNum.offsetTop;
 
-                    preCodeBG.style.top = firstPos + 4 + "px";
+                    preCodeBG.style.top = firstPos + 13 + "px";
 
                     if (preCodeLineLast) {
                         var lastPos = lastNum.offsetTop,
@@ -253,63 +291,6 @@
                 window.addEventListener("resize", function() {
                     setBGval(preCodeSpanFirst, preCodeSpanLast);
                 });
-            }
-
-            // 코드 복사
-            var t_btn = document.createElement("button");
-
-            t_btn.textContent = "복사";
-            t_btn.classList.add("highlight__copy-button");
-            t.insertBefore(t_btn, t.firstChild);
-
-            var t_copyBtn = t.querySelector(".highlight__copy-button");
-            var copyCode = function(event) {
-                try {
-                    var t_codeInner = event.currentTarget.parentElement;
-
-                    if (t.querySelector(".lineno")) {
-                        var t_code = t_codeInner.querySelector(".rouge-code > pre");
-                    } else {
-                        var t_code = t_codeInner.querySelector("pre.highlight");
-                    }
-
-                    if (!t_codeInner.querySelector("textarea")) {
-                        var t_valEL = document.createElement("textarea");
-
-                        t_valEL.classList.add("sr-only");
-                        document.body.appendChild(t_valEL);
-                    }
-
-                    t_valEL.value = t_code.textContent;
-                    t_valEL.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(t_valEL);
-                    event.currentTarget.textContent = "복사됨";
-                } catch(error) {
-                    alert("복사에 실패했습니다.\n" + error);
-                }
-            },
-            showCopyButton = function() {
-                if (!t_btn.classList.contains("highlight__copy-button--visible")) {
-                    t_btn.classList.add("highlight__copy-button--visible");
-                }
-            },
-            hideCopyButton = function() {
-                if (t_btn.classList.contains("highlight__copy-button--visible")) {
-                    t_btn.classList.remove("highlight__copy-button--visible");
-                }
-            },
-            toggleCopyButton = function(event) {
-                if (event.target === t.querySelector(".highlight__copy-button")) return;
-                t_btn.classList.toggle("highlight__copy-button--visible");
-            };
-
-            t_copyBtn.addEventListener("click", copyCode);
-
-            // if ("onmouseover" in document.documentElement === true) t.addEventListener("mouseover", showCopyButton);
-            // if ("onmouseout" in document.documentElement === true) t.addEventListener("mouseout", hideCopyButton);
-            if ("ontouchstart" in document.documentElement === true) {
-                t.style.cursor = "pointer";
             }
         });
     }

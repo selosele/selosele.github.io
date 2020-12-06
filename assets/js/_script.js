@@ -308,11 +308,9 @@
 
             // if ("onmouseover" in document.documentElement === true) t.addEventListener("mouseover", showCopyButton);
             // if ("onmouseout" in document.documentElement === true) t.addEventListener("mouseout", hideCopyButton);
-            // if ("ontouchstart" in document.documentElement === true) {
-            //     t.addEventListener("touchstart", toggleCopyButton);
-            // } else {
-            //     t.addEventListener("click", toggleCopyButton);
-            // }
+            if ("ontouchstart" in document.documentElement === true) {
+                t.style.cursor = "pointer";
+            }
         });
     }
 })();

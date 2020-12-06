@@ -112,18 +112,18 @@
 })();
 
 // scroll indicator
-// (function() {
-//     function activateScrollIndicator() {
-//         if (!document.querySelector(".layout--post")) return;
+(function() {
+    function activateScrollIndicator() {
+        if (!document.querySelector(".layout--post")) return;
 
-//         var window_height = document.body.scrollHeight - window.innerHeight,
-//             scroll_val = ((window.pageYOffset) / window_height) * 100;
+        var window_height = document.body.scrollHeight - window.innerHeight,
+            scroll_val = ((window.pageYOffset) / window_height) * 100;
 
-//         document.getElementById("scroll-indicator").style.width = scroll_val + "%";
-//     }
+        document.getElementById("scroll-indicator").style.width = scroll_val + "%";
+    }
 
-//     window.addEventListener("scroll", activateScrollIndicator);
-// })();
+    window.addEventListener("scroll", activateScrollIndicator);
+})();
 
 // page header link
 (function() {
@@ -233,7 +233,7 @@
                     if (!t_codeInner.querySelector("textarea")) {
                         t_valEL = document.createElement("textarea");
 
-                        t_valEL.classList.add("sr-only");
+                        t_valEL.classList.add("sr-only", "position--fixed");
                         document.body.appendChild(t_valEL);
                     }
 
@@ -345,31 +345,31 @@
 })();
 
 // 포스트 목차
-// (function() {
-//     function handlerScroll() {
-//         var pageRoot = document.getElementById("page-content"),
-//             toc = document.getElementById("toc");
+(function() {
+    function handlerScroll() {
+        var pageRoot = document.getElementById("page-content"),
+            toc = document.getElementById("toc");
 
-//         if (pageRoot && toc) {
-//             var tocHeadingList = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+        if (pageRoot && toc) {
+            var tocHeadingList = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
-//             Array.prototype.slice.call(tocHeadingList).forEach(function(h) {
-//                 if (window.pageYOffset >= (h.offsetTop - 1)) {
-//                     var t_id = h.id,
-//                         tocAncList = toc.querySelectorAll("li a"),
-//                         t_anchor = toc.querySelector("li a[href='#"+t_id+"']");
+            Array.prototype.slice.call(tocHeadingList).forEach(function(h) {
+                if (window.pageYOffset >= (h.offsetTop - 1)) {
+                    var t_id = h.id,
+                        tocAncList = toc.querySelectorAll("li a"),
+                        t_anchor = toc.querySelector("li a[href='#"+t_id+"']");
     
-//                     for (var i = 0; i < tocAncList.length; i++) {
-//                         if (tocAncList[i].classList.contains("toc--active")) tocAncList[i].classList.remove("toc--active");
-//                     }
+                    for (var i = 0; i < tocAncList.length; i++) {
+                        if (tocAncList[i].classList.contains("toc--active")) tocAncList[i].classList.remove("toc--active");
+                    }
 
-//                     if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
-//                 }
-//             });
-//         }
-//     }
-//     window.addEventListener("scroll", handlerScroll);
-// })();
+                    if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
+                }
+            });
+        }
+    }
+    window.addEventListener("scroll", handlerScroll);
+})();
 
 // 검색 레이어
 (function() {

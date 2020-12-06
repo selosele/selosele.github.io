@@ -225,6 +225,8 @@
 
             var t_copyBtn = t.querySelector(".highlight__copy-button");
             var copyCode = function(event) {
+                event.preventDefault();
+
                 try {
                     var t_codeInner = event.currentTarget.parentElement.parentElement,
                         t_code = t.querySelector(".lineno") ? t_codeInner.querySelector(".rouge-code > pre") : t_codeInner.querySelector("pre.highlight"),
@@ -237,14 +239,21 @@
                         document.body.appendChild(t_valEL);
                     }
 
+                    var t_range = document.createRange();
+                    t_range.selectNodeContents(t_valEL);
+
+                    var t_selection = window.getSelection();
+                    t_selection.removeAllRanges();
+                    t_selection.addRange(t_range);
+
                     t_valEL.value = t_code.textContent;
                     t_valEL.select();
+                    t_valEL.setSelectionRange(0, 999999);
                     document.execCommand("copy");
                     document.body.removeChild(t_valEL);
                     event.currentTarget.textContent = "복사됨";
                 } catch(error) {
                     alert("복사에 실패했습니다.\n" + error);
-                    throw new Error(error);
                 }
             };
 

@@ -233,7 +233,7 @@
                     if (!t_codeInner.querySelector("textarea")) {
                         t_valEL = document.createElement("textarea");
 
-                        t_valEL.classList.add("sr-only", "position--fixed");
+                        t_valEL.classList.add("sr-only--fixed");
                         document.body.appendChild(t_valEL);
                     }
 

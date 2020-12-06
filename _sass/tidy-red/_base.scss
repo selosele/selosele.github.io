@@ -186,8 +186,14 @@ abbr {
    border: 0 !important;
 }
 
-.position--fixed {
+.sr-only--fixed {
+   overflow: hidden !important;
    position: fixed !important;
+   clip: rect(1px, 1px, 1px, 1px) !important;
+   width: 1px !important;
+   height: 1px !important;
+   margin: -1px !important;
+   border: 0 !important;
 }
 
 /* skip links */

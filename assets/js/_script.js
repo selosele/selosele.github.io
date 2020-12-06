@@ -209,12 +209,16 @@
             t_div.classList.add("highlight__util-wrapper");
             t.insertBefore(t_div, t.firstChild);
 
-            var t_utilWrapper = t.querySelector(".highlight__util-wrapper"),
-                t_span = document.createElement("span");
+            var t_lang = t.className.replace(/language-|highlighter-rouge/g, ""),
+                t_utilWrapper = t.querySelector(".highlight__util-wrapper");
 
-            t_span.textContent = t.className.replace(/language-|highlighter-rouge/g, "");
-            t_span.classList.add("highlight__language");
-            t_utilWrapper.insertBefore(t_span, t_utilWrapper.firstChild);
+            if (t_lang !== "plaintext ") {
+                var t_span = document.createElement("span");
+
+                t_span.textContent = t_lang;
+                t_span.classList.add("highlight__language");
+                t_utilWrapper.insertBefore(t_span, t_utilWrapper.firstChild);
+            }
 
             // 코드 복사
             var t_btn = document.createElement("button");

@@ -25,7 +25,7 @@ tags:
 ```
 
 ```javascript
-document.myForm.addEventListener("keydown", (evt) => {
+document.myForm.addEventListener("keydown", evt => {
     if ((evt.keyCode || evt.which) === 13) {
         evt.preventDefault();
     }

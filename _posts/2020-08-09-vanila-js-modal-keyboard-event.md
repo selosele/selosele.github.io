@@ -42,14 +42,14 @@ const layer = document.getElementById("layer"),
       layerTabbableFirst = layerTabbable[0],
       layerTabbableLast = layerTabbable[layerTabbable.length - 1];
 
-const handlerFirstKeydown = (evt) => {
+const handlerFirstKeydown = evt => {
     if (evt.shiftKey && evt.key === "Tab") {
         evt.preventDefault();
         layerTabbableLast.focus();
     }
 };
 
-const handlerLastKeydown = (evt) => {
+const handlerLastKeydown = evt => {
     if (!evt.shiftKey && evt.key === "Tab") {
         evt.preventDefault();
         layerTabbableFirst.focus();

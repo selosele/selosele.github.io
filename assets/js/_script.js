@@ -233,8 +233,8 @@
                     if (!t_codeInner.querySelector("textarea")) {
                         t_valEL = document.createElement("textarea");
 
-                        t_valEL.classList.add("sr-only--fixed");
-                        document.body.appendChild(t_valEL);
+                        t_valEL.classList.add("sr-only");
+                        event.currentTarget.parentElement.appendChild(t_valEL);
                     }
 
                     var t_range = document.createRange();
@@ -248,7 +248,7 @@
                     t_valEL.select();
                     t_valEL.setSelectionRange(0, 999999);
                     document.execCommand("copy");
-                    document.body.removeChild(t_valEL);
+                    event.currentTarget.parentElement.removeChild(t_valEL);
                     event.currentTarget.textContent = "복사됨";
                 } catch(error) {
                     alert("복사에 실패했습니다.\n" + error);

@@ -17,24 +17,22 @@ post_dropcap: false
 rowspan이 애매하게 걸쳐 있는 테이블 디자인.
 
 <table>
-    <tbody>
-        <tr>
-            <td rowspan="2">2</td>
-            <td rowspan="3">3</td>
-        </tr>
-        <tr>
-            <td rowspan="6">6</td>
-        </tr>
-        <tr>
-            <td rowspan="2">2</td>
-        </tr>
-        <tr>
-            <td rowspan="3">3</td>
-        </tr>
-        <tr>
-            <td rowspan="2">2</td>
-        </tr>
-    </tbody>
+    <tr>
+        <td rowspan="2">2</td>
+        <td rowspan="3">3</td>
+    </tr>
+    <tr>
+        <td rowspan="6">6</td>
+    </tr>
+    <tr>
+        <td rowspan="2">2</td>
+    </tr>
+    <tr>
+        <td rowspan="3">3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">2</td>
+    </tr>
 </table>
 
 얼마전 회사에서 이런 테이블을 코딩해야 하는 상황이었는데, 구글링[^1]으로 예제 코드를 찾는 데 성공!했으나..  

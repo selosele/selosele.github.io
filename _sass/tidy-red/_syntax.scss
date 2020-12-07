@@ -84,25 +84,20 @@ code {
   &__copy-button {
     display: block;
     height: 100%;
-    padding-left: .35rem;
-    padding-right: .35rem;
-    border-radius: 4px;
-    background-color: $grey07;
     line-height: 1rem;
   }
 
   &__language {
-    margin-right: .2rem;
+    margin-right: .55rem;
     text-shadow: none;
-    color: $sub-color03;
-
-    ::selection {
-      background-color: $black04;
-      color: $grey12;
-    }
+    color: $grey09;
   }
 
   &__copy-button {
+    padding-left: .35rem;
+    padding-right: .35rem;
+    border-radius: 4px;
+    background-color: $grey07;
     color: $black03;
   }
 

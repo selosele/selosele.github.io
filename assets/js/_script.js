@@ -1,16 +1,16 @@
 "use strict";
 
 // IE 체크
-(function(el) {
+(function(r) {
     // 11 ~ 9
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
-        el.className += " only-ie";
+        r.className += " only-ie";
         document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 
     // 10 이하
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
-        el.className += " lte-ie10";
+        r.className += " lte-ie10";
         document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
     }
 })(document.documentElement);
@@ -24,8 +24,8 @@
         menuELopen = document.querySelector(".nav__menu-open"),
         menuELclose = menuLayer.querySelector(".menu__close"),
         menuTabbableList = menuLayer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
-        menuTabbableListFirst = menuTabbableList[0],
-        menuTabbableListLast = menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
+        menuTabbableListFirst = menuTabbableList.length && menuTabbableList[0],
+        menuTabbableListLast = menuTabbableList.length && menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href^='/category-list/#']");
 
     function handlerCloseClick() {
@@ -385,8 +385,8 @@
         layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
         tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
-        tabbableListFirst = tabbableList[0],
-        tabbableListLast = tabbableList[tabbableList.length - 1],
+        tabbableListFirst = tabbableList.length && tabbableList[0],
+        tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
         sResult = document.getElementById("search-results"),
         sLabel = document.getElementById("search-title"),
         sInput = document.getElementById("search-input"), sInputVal, sInputValNotChanged;

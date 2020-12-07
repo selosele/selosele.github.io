@@ -3,9 +3,9 @@
     <h2 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
   {% endif %}
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--twitter">Twitter</a>
+  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--twitter">Twitter</a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--facebook">Facebook</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--facebook">Facebook</a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--linkedin">LinkedIn</a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--linkedin">LinkedIn</a>
 </section>

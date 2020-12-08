@@ -1,7 +1,7 @@
 <aside>
-<nav class="toc" markdown="1">
+<nav aria-labelledby="toc-title" tabindex="0" class="toc" markdown="1">
 <header>
-    <h2 class="toc__title">{{ include.title | default: site.data.ui-text[site.locale].toc_label }}</h2>
+    <h2 id="toc-title" class="toc__title">{{ include.title | default: site.data.ui-text[site.locale].toc_label }}</h2>
 </header>
 *  Auto generated table of contents
 {:toc .toc__menu}

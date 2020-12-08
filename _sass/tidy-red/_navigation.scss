@@ -392,24 +392,49 @@
             max-height: 57.6vh;
             padding-left: 1rem;
             padding-right: 1rem;
+
+            .toc--active {
+               a {
+                  &:before {
+                     top: 0;
+                     height: 100%;
+                  }
+               }
+            }
+
+            > .toc--active {
+               > a {
+                  &:before {
+                     top: -1px;
+                     height: calc(100% + 1px);
+                  }
+               }
+            }
          }
 
          &--active {
-            position: relative;
-            z-index: 1;
-            background-image: linear-gradient(45deg, $main-color, $sub-color04);
-            color: $grey12;
-   
-            &:before {
-               content: "";
-               display: block;
-               position: absolute;
-               top: 0;
-               bottom: 0;
-               left: -100%;
-               z-index: -1;
-               width: 100%;
-               background-color: $main-color;
+            > a {
+               position: relative;
+               z-index: 1;
+               border-color: transparent;
+               background-image: linear-gradient(45deg, $main-color 20%, $sub-color04);
+               color: $grey12;
+
+               &:before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  left: -100%;
+                  z-index: -1;
+                  width: 100%;
+                  background-color: $main-color;
+               }
+            }
+
+            + li {
+               a {
+                  border-color: transparent;
+               }
             }
          }
       }
@@ -444,12 +469,6 @@
             font-weight: 400;
          }
    
-         &:first-child {
-            > a {
-               border-top: 0;
-            }
-         }
-   
          > ul {
             > li {
                > ul {
@@ -468,13 +487,18 @@
          margin-top: 0;
          margin-bottom: 0;
          line-height: 1.6;
+
+         + li {
+            > a {
+               border-top: 1px solid $grey06;
+            }
+         }
       }
    
       a {
          display: block;
          padding-top: .5rem;
          padding-bottom: .5rem;
-         border-top: 1px solid $grey06;
       }
    }
 }

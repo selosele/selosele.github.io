@@ -357,24 +357,29 @@
             toc = document.getElementById("toc");
 
         if (pageRoot && toc) {
-            var tocHeadingList = pageRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+            var tocAncList = toc.querySelectorAll("a"),
+                posY = window.pageYOffset;
 
-            Array.prototype.slice.call(tocHeadingList).forEach(function(h) {
-                if (window.pageYOffset >= (h.offsetTop - 1)) {
-                    var t_id = h.id,
-                        tocAncList = toc.querySelectorAll("li a"),
-                        t_anchor = toc.querySelector("li a[href='#"+t_id+"']");
-    
-                    for (var i = 0; i < tocAncList.length; i++) {
-                        if (tocAncList[i].classList.contains("toc--active")) tocAncList[i].classList.remove("toc--active");
-                    }
+            // console.log(document.getElementById("overflow-hidden").offsetTop, (posY + 1));
 
-                    if (!t_anchor.classList.contains("toc--active")) t_anchor.classList.add("toc--active");
+            Array.prototype.slice.call(tocAncList).forEach(function(t) {
+                var h = document.querySelector(decodeURI(t.hash));
+                // var curLink = document.querySelector(`[href="${decodeURI(t.hash)}"]`);
+
+                // console.log(curLink);
+
+                if (h.offsetTop <= (posY + 1) && h.offsetTop + h.offsetHeight > posY) {
+                    t.parentElement.classList.add("toc--active");
+                } else {
+                    t.parentElement.classList.remove("toc--active");
                 }
             });
         }
     }
-    window.addEventListener("scroll", handlerScroll);
+
+    if (!document.documentElement.classList.contains("only-ie", "lte-10")) {
+        window.addEventListener("scroll", handlerScroll);
+    }
 })();
 
 // 검색 레이어

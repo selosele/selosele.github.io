@@ -364,10 +364,6 @@
       padding-left: 0;
    }
 
-   ul, li {
-      list-style: none;
-   }
-
    .toc__menu {
       overflow-y: auto;
       max-height: 21.5rem;
@@ -389,9 +385,7 @@
 
       .toc {
          &__menu {
-            max-height: 57.6vh;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            max-height: 57.630736vh;
 
             .toc--active {
                a {
@@ -470,8 +464,13 @@
          }
    
          > ul {
+            $ul-indent: 1rem;
+            padding-left: $ul-indent;
+
             > li {
                > ul {
+                  padding-left: $ul-indent;
+
                   > li {
                      a {
                         color: $grey;

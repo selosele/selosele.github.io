@@ -350,33 +350,6 @@
     }
 })();
 
-// 포스트 목차
-(function() {
-    function handlerScroll() {
-        var pageRoot = document.getElementById("page-content"),
-            toc = document.getElementById("toc");
-
-        if (pageRoot && toc) {
-            var tocAncList = toc.querySelectorAll("a"),
-                posY = window.pageYOffset;
-
-            Array.prototype.forEach.call(tocAncList, function(t) {
-                var h = document.querySelector(decodeURI(t.hash));
-
-                if (h.offsetTop <= (posY + 1) && h.offsetTop + h.offsetHeight > posY) {
-                    t.parentElement.classList.add("toc--active");
-                } else {
-                    t.parentElement.classList.remove("toc--active");
-                }
-            });
-        }
-    }
-
-    if (!document.documentElement.classList.contains("only-ie", "lte-10")) {
-        window.addEventListener("scroll", handlerScroll);
-    }
-})();
-
 // 검색 레이어
 (function() {
     var rootElement = document.documentElement,

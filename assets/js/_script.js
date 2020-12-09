@@ -160,7 +160,7 @@
         }
     }
 
-    Array.prototype.slice.call(abbrList).forEach(function(t) {
+    Array.prototype.forEach.call(abbrList, function(t) {
         var t_span = document.createElement("span"),
             t_title = "tooltip-" + encodeURI(t.title).replace(/ |%/g, "1");
 
@@ -202,7 +202,7 @@
     if (postRoot) {
         var preCodeBoxList = postRoot.querySelectorAll("div.highlighter-rouge");
 
-        Array.prototype.slice.call(preCodeBoxList).forEach(function(t) {
+        Array.prototype.forEach.call(preCodeBoxList, function(t) {
             // title
             var t_div = document.createElement("div");
 
@@ -360,13 +360,8 @@
             var tocAncList = toc.querySelectorAll("a"),
                 posY = window.pageYOffset;
 
-            // console.log(document.getElementById("overflow-hidden").offsetTop, (posY + 1));
-
-            Array.prototype.slice.call(tocAncList).forEach(function(t) {
+            Array.prototype.forEach.call(tocAncList, function(t) {
                 var h = document.querySelector(decodeURI(t.hash));
-                // var curLink = document.querySelector(`[href="${decodeURI(t.hash)}"]`);
-
-                // console.log(curLink);
 
                 if (h.offsetTop <= (posY + 1) && h.offsetTop + h.offsetHeight > posY) {
                     t.parentElement.classList.add("toc--active");

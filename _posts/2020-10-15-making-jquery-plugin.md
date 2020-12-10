@@ -142,6 +142,7 @@ $("[href='#foo']").hashToggle({
 
 2020/12/10, ```event.type```{:.language-javascript}을 검사해서 분기 처리하는 로직을 구성하였다.
 
+{:data-line="7-13"}
 ```javascript
 $("[href='#foo']").hashToggle({
     event: "focusin focusout",

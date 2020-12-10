@@ -64,7 +64,7 @@ $(".hashToggle").on("click", function(event) {
 어느정도 뼈대를 설계했고, 다음과 같은 방식으로 작동하게 만들었다.
 
 ```javascript
-// 플러그인 옵션 기본값 세팅
+// 옵션 기본값 세팅
 var option = $.extend({
     event: "click",
     action: "toggle",

@@ -117,8 +117,8 @@ $(".foo").hashToggle({
 {:data-line="3"}
 ```javascript
 $(".foo").hashToggle({
-    afterEvent: function() {
-        $(this).attr("title", "확장됨"); // 예) 아코디언 ui의 웹 접근성 대응 코드
+    afterEvent: function(event) {
+        $(this).attr("title", "선택됨"); // 탭 ui의 웹 접근성 대응 코드
     }
 });
 ```
@@ -136,8 +136,30 @@ $(".foo").hashToggle({
 3. 다시 이벤트 발생 (예: mouseout)
 4. 특정 콜백함수(예: <mark>afterLastEvent</mark>)에 작성한 핸들러 실행
 
-이렇게 구현해야 하는데 어려워서 잘 풀리지 않고 있다.. 하루 아침에 되는 것도 아니고 계속 하다보면 될 것이라고 생각함..
+이렇게 구현해야 하는데 어려워서 잘 풀리지 않고 있다.. 하루 아침에 되는 것도 아니고 계속 하다보면 될 것이라고 생각함.. 일단 플러그인 파일명은 jQuery.hashToggle-1.0.js 라고 계획했고.. 얼른 만들자..
 
 ---
 
-일단 플러그인 파일명은 jQuery.hashToggle-1.0.js 라고 계획하였다.. 얼른 만들자..
+2020/12/10, ```event.type```{:.language-javascript}을 검사해서 분기 처리하는 로직을 구성하였다.
+
+```javascript
+$("[href='#baz']").hashToggle({
+    event: "focusin focusout",
+    action: "slideToggle",
+    duration: 400,
+    animateStop: false,
+    afterEvent: function(event) {
+        if (event.type === "focusin") {
+            $(this).attr("title", "선택됨");
+        }
+
+        if (event.type === "focusout") {
+            $(this).attr("title", "");
+        }
+    }
+});
+```
+
+복잡하게 afterFirstEvent/afterLastEvent 같은 방식보단 훨씬 깔끔하고 직관적인듯?
+
+이제 완성이 머지 않았.. 미루지 말고 화이팅~

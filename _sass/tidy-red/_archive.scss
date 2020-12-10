@@ -240,6 +240,12 @@
       color: $black;
       text-align: left;
 
+      &:hover,
+      &:focus,
+      &--active {
+         background-color: $grey02;
+      }
+
       &__point {
          margin-right: .4rem;
          color: $sub-color03;

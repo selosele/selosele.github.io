@@ -332,17 +332,20 @@
 
         if (t_matchEL.classList.contains("archive__list--active")) {
             t_matchEL.classList.remove("archive__list--active");
-            t_matchEL.setAttribute("hidden", true);
+            t_matchEL.hidden = true;
             t_matchEL.setAttribute("tabindex", "-1");
+            t.classList.remove("archive__btn--active");
             t.setAttribute("aria-expanded", "false");
         } else {
             t_matchEL.classList.add("archive__list--active");
-            t_matchEL.setAttribute("hidden", false);
+            t_matchEL.hidden = false;
             t_matchEL.setAttribute("tabindex", "0");
+            t.classList.add("archive__btn--active");
             t.setAttribute("aria-expanded", "true");
         }
     },
     btnList = document.querySelectorAll(".archive__btn");
+
     if (btnList.length) {
         for (var i = 0; i < btnList.length; i++) {
             btnList[i].addEventListener("click", handlerClick);

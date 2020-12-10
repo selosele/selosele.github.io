@@ -93,7 +93,7 @@ var option = $.extend({
 이제 플러그인 호출을 해볼 것이다.
 
 ```javascript
-$(".foo").hashToggle({
+$("[href='#foo']").hashToggle({
     event: "mouseover mouseout",
     action: "fadeToggle",
     duration: 600,
@@ -116,7 +116,7 @@ $(".foo").hashToggle({
 
 {:data-line="3"}
 ```javascript
-$(".foo").hashToggle({
+$("[href='#foo']").hashToggle({
     afterEvent: function(event) {
         $(this).attr("title", "선택됨"); // 탭 ui의 웹 접근성 대응 코드
     }
@@ -143,7 +143,7 @@ $(".foo").hashToggle({
 2020/12/10, ```event.type```{:.language-javascript}을 검사해서 분기 처리하는 로직을 구성하였다.
 
 ```javascript
-$("[href='#baz']").hashToggle({
+$("[href='#foo']").hashToggle({
     event: "focusin focusout",
     action: "slideToggle",
     duration: 400,

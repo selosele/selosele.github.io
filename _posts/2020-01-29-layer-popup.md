@@ -20,6 +20,13 @@ post_dropcap: false
 ---
 블로그에 사용할 레이어팝업을 만들면서, 웹 접근성이 충분히 보장되도록 작업을 했고, 코드는 다음과 같다.
 
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="YzGpLNZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="YzGpLNZ">
+  <span>See the Pen <a href="https://codepen.io/selucky/pen/YzGpLNZ">
+  YzGpLNZ</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ## HTML
 ```html
 <!-- 레이어 열기 버튼 -->
@@ -27,14 +34,16 @@ post_dropcap: false
 
 <!-- 레이어 팝업 -->
 <div class="layer-pop" id="lp1" role="dialog" aria-modal="true" aria-labelledby="lp-title">
-  <div class="layer-pop__inner">
-    <h2 id="lp-title">레이어 타이틀</h2>
-    <p>내용</p>
-  </div>
+    <div class="layer-pop__inner">
+        <button type="button" aria-label="닫기" class="layer-close">X</button>
+
+        <h2 id="lp-title">레이어 타이틀</h2>
+        <a href="#">내용</a>
+        <span tabindex="0">내용</span>
+    </div>
 </div>
 ```
-role이나 aria- 로 시작하는 속성들에 대해선 WAI-ARIA를 찾아보길 권하며, 마크업에 대한 설명은 딱히 적지 않을 것임.  
-이 글을 보고 있는 이들 대부분은 많이 알고 있을 것이라 생각하므로(나만 이렇게 생각하나)..
+role이나 aria- 로 시작하는 속성들에 대해선 WAI-ARIA를 찾아보길 권하며, 마크업에 대한 설명은 딱히 적지 않을 것임. 이 글을 보고 있는 이들 대부분은 많이 알고 있을 것이라 생각하므로(나만 이렇게 생각하나)..
 
 ## Javascript
 ```javascript
@@ -42,9 +51,10 @@ $(".open-lp").on("click", function() {
     var op = $(this);
     var lp = $("#" + $(this).attr("aria-controls"));
     var lpObj = lp.children(".layer-pop__inner");
+    var lpObjClose = lp.find(".layer-close");
     var lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
-    var lpObjTabbableFirst = lpObjTabbable.first();
-    var lpObjTabbableLast = lpObjTabbable.last();
+    var lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
+    var lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();
     var lpOuterObjHidden = $(".skip-links, .masthead, .initial-content, .search-content, .page__footer"); // 레이어 바깥 영역의 요소
     var all = $(".masthead, .page__footer").add(lp);
     var tabDisable;
@@ -87,6 +97,8 @@ $(".open-lp").on("click", function() {
             lpObjTabbableFirst.focus();
         }
     });
+  
+    lpObjClose.on("click", lpClose); // 닫기 버튼 클릭 시 레이어 닫기
 
     lp.on("click", function(event){
         if (event.target === event.currentTarget) {
@@ -97,8 +109,10 @@ $(".open-lp").on("click", function() {
     
     $(document).on("keydown.lp_keydown", function(event) {
         // Esc키 : 레이어 닫기
-        if ((event.keyCode || event.which) === 27) && lp.hasClass("on") {
-            lpClose();
+        var keyType = event.keyCode || event.which;
+      
+        if (keyType === 27 && lp.hasClass("on")) {
+          lpClose();
         }
     });
 });

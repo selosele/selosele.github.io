@@ -35,7 +35,7 @@ post_dropcap: false
 <!-- 레이어 팝업 -->
 <div class="layer-pop" id="lp1" role="dialog" aria-modal="true" aria-labelledby="lp-title">
     <div class="layer-pop__inner">
-        <button type="button" aria-label="닫기" class="layer-close">X</button>
+        <button type="button" aria-label="닫기" class="layer-pop__close">X</button>
 
         <h2 id="lp-title">레이어 타이틀</h2>
         <a href="#">내용</a>
@@ -51,7 +51,7 @@ $(".open-lp").on("click", function() {
     var op = $(this);
     var lp = $("#" + $(this).attr("aria-controls"));
     var lpObj = lp.children(".layer-pop__inner");
-    var lpObjClose = lp.find(".layer-close");
+    var lpObjClose = lp.find(".layer-pop__close");
     var lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
     var lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
     var lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();

@@ -208,6 +208,10 @@
                   color: $sub-color03;
                   justify-content: center;
                   align-items: center;
+
+                  > i {
+                     overflow: hidden;
+                  }
                }
             }
          }

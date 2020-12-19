@@ -14,7 +14,6 @@ categories:
 tags:
     - javascript
     - web-accessibility
-    - ui
 primary_post: true
 post_dropcap: false
 ---
@@ -46,7 +45,13 @@ post_dropcap: false
 role이나 aria- 로 시작하는 속성들에 대해선 WAI-ARIA를 찾아보길 권하며, 마크업에 대한 설명은 딱히 적지 않을 것임. 이 글을 보고 있는 이들 대부분은 많이 알고 있을 것이라 생각하므로(나만 이렇게 생각하나)..
 
 ## Javascript
+
+Vanilla JS가 아닌 jQuery로 작성하였다.
+
 ```javascript
+// jQuery 환경에서만 작동할 수 있게
+if (typeof jQuery === "undefined") throw new Error("Modal requires jQuery.");
+
 $(".open-lp").on("click", function() {
     var op = $(this);
     var lp = $("#" + $(this).attr("aria-controls"));

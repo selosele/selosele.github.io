@@ -192,9 +192,20 @@
 
    &__info-item-wrapper {
       display: flex;
+      margin-left: -$layout-margin;
+      margin-right: -$layout-margin;
       margin-bottom: 2rem;
+      padding: .6rem .3rem .3rem .3rem;
+      background-color: $grey08;
       justify-content: flex-end;
       flex-wrap: wrap;
+
+      @media (min-width: $min-minimal-width) {
+         margin-left: 0;
+         margin-right: 0;
+         padding-left: .6rem;
+         padding-right: .6rem;
+      }
    }
 
    &__info-item {

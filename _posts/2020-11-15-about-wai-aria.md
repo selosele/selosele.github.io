@@ -14,6 +14,7 @@ categories:
     - 퍼블노트
 tags:
     - html
+    - web-accessibility
     - WAI-ARIA
 ---
 

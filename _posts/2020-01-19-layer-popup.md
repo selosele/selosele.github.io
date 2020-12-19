@@ -14,7 +14,6 @@ categories:
 tags:
     - javascript
     - web-accessibility
-    - ui
 post_dropcap: false
 ---
 

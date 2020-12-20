@@ -15,6 +15,7 @@ categories:
     - 개인 프로젝트
 tags:
     - javascript
+post_dropcap: false
 primary_post: true
 ---
 

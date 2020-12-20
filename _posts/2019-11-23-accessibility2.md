@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 comments: true
 title: "스크린리더에 입문하다"
@@ -12,8 +13,7 @@ date: 2019-11-23 22:12
 categories:
     - 퍼블노트
 tags:
-    - web-accessibility
-    - screen-reader
+    - 웹 접근성
 toc: true
 ---
 그동안 스크린리더에 대해 막연하게만 알고 있었다. 특정 태그, 속성을 어떻게 읽어주는지에 대해 다수가 말하는 것을 믿고 있었을 뿐이었고, 실제로 테스트해본적은 없었음(아이폰 보이스오버를 테스트해본적은 있음). 그러면서 접근성에 대해 이러쿵 저러쿵 떠들었단말인가..

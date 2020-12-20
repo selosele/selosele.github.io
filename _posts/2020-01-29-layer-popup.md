@@ -13,7 +13,7 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - web-accessibility
+    - 웹 접근성
 primary_post: true
 post_dropcap: false
 ---

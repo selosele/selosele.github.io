@@ -14,7 +14,7 @@ categories:
     - 퍼블노트
 tags:
     - javascript
-    - web-accessibility
+    - 웹 접근성
 ---
 
 실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때,  

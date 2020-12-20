@@ -11,7 +11,6 @@ categories:
     - 퍼블노트
 tags:
     - css
-    - design
 post_dropcap: false
 ---
 가끔 이런 텍스트 디자인을 봤을 것임.

@@ -13,7 +13,7 @@ categories:
     - 자료
 tags:
     - javascript
-    - web-accessibility
+    - 웹 접근성
 post_dropcap: false
 ---
 

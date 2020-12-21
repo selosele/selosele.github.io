@@ -46,8 +46,6 @@ atom_feed:
   path                   : feed.xml
   mastfoot               : false
 search                   : true
-search_full_content      : true
-# search_provider          : # lunr (default)
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -172,7 +170,6 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
-  # - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -182,7 +179,6 @@ plugins:
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
-  # - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

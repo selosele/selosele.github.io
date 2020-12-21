@@ -75,7 +75,7 @@ analytics:
     anonymize_ip         : # true, false (default)
 
 
-# Site Author
+# Site Author test
 author:
   name             : "sel"
   avatar           : "/assets/images/avatar.jpg"

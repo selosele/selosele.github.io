@@ -50,7 +50,7 @@ if (el.length) console.log(true) // true
 
 ## 자기호출 익명함수(Self-invoking anonymous function)
 
-블로그 테마 JS 작업 중 알게된 코드이다. 애초에 나는 ```(function(){})();```{:.language-javascript}라고 익명함수를 작성했는데 다음과 같이 컴파일된 것임(minify 및 uglify 처리를 해서 그럼).
+블로그 테마 JS 작업 중 알게된 코드이다. 애초에 나는 ```(function(){})();```{:.language-javascript}라고 익명함수를 작성했는데 다음과 같이 컴파일된 것임(minify 처리를 해서 그럼).
 
 ```javascript
 !function(a, b) {

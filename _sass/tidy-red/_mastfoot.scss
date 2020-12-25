@@ -21,9 +21,7 @@
 
   a {
     @media (min-width: $min-large-width) {
-      &:hover,
-      &:focus,
-      &:active {
+      &:hover {
         text-decoration: underline;
       }
     }

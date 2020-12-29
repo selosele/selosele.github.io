@@ -270,11 +270,11 @@
                     preCodeLineLast = t.getAttribute("data-line").split("-")[1];
 
                 if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
-                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id="'+"code-line"+preCodeLine+'">'+preCodeLine+'</span>');
+                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id='+"code-line"+preCodeLine+'>'+preCodeLine+'</span>');
                 }
 
                 if (preCodeLineBox !== preCodeLineLast) {
-                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLineLast, '<span id="'+"code-line"+preCodeLineLast+'">'+preCodeLineLast+'</span>');
+                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLineLast, '<span id='+"code-line"+preCodeLineLast+'>'+preCodeLineLast+'</span>');
                 }
 
                 var preCodeBG = document.createElement("span"),
@@ -328,7 +328,7 @@
 (function() {
     var handlerClick = function(event) {
         var t = event.currentTarget,
-            t_matchEL = document.querySelector("[aria-labelledby='"+t.id+"']");
+            t_matchEL = document.querySelector("[aria-labelledby="+t.id+"]");
 
         if (t_matchEL.classList.contains("archive__list--active")) {
             t_matchEL.classList.remove("archive__list--active");

@@ -141,7 +141,7 @@
          font-size: 1.4rem;
       }
 
-      &__author-image {
+      &__author-avatar {
          display: none;
       }
 
@@ -150,7 +150,7 @@
             padding-left: 4rem;
          }
 
-         &__author-image {
+         &__author-avatar {
             @include avatar;
             position: absolute;
             top: 0;

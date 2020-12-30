@@ -45,7 +45,7 @@
     {% unless page.layout == "home" %}
       <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.author.avatar %} has-image{% endif %}">
       {% if site.author.avatar %}
-        {% include avatar.html class="site-title__author-image" %}
+        {% include avatar.html class="site-title__author-avatar" %}
       {% endif %}
 
       {{ site.title }}

@@ -530,11 +530,13 @@
    
          &__image-wrapper {
             display: block;
+            overflow: hidden;
             height: 100%;
             border-radius: 50%;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background-size: cover;
+            color: transparent;
          }
    
          &__name {

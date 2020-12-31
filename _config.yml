@@ -249,6 +249,8 @@ post:
 masthead:
   teaser: 
     bg: "/assets/images/mhead_bg.jpg"
+    bg_link: "https://www.freepik.com/free-photo/person-showing-heart-by-hands_3241094.htm#page=6&query=heart&position=31"
+    bg_author: "freepik"
     filter: 0.3
     position: # ex) 50% or 50% 21%
 

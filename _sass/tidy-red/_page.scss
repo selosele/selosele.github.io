@@ -357,8 +357,6 @@
          // max-width: calc(100% + (#{$layout-margin} * 2));
          // margin-left: -$layout-margin;
          // margin-right: -$layout-margin;
-         margin-left: auto;
-         margin-right: auto;
          box-shadow: rgba(0,0,0,.4) .15rem .15rem 1rem 0;
 
          // @media (min-width: $min-minimal-width) {
@@ -413,16 +411,12 @@
    }
 
    &__figure {
-      display: flex;
+      // display: flex;
       position: relative;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      @media (min-width: $min-minimal-width) {
-         flex-direction: column;
-      }
+      // justify-content: center;
+      // flex-wrap: wrap;
       
       &.float {
          &-left {

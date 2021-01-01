@@ -354,17 +354,19 @@
    
       img {
          display: block;
-         max-width: calc(100% + (#{$layout-margin} * 2));
-         margin-left: -$layout-margin;
-         margin-right: -$layout-margin;
+         // max-width: calc(100% + (#{$layout-margin} * 2));
+         // margin-left: -$layout-margin;
+         // margin-right: -$layout-margin;
+         margin-left: auto;
+         margin-right: auto;
          box-shadow: rgba(0,0,0,.4) .15rem .15rem 1rem 0;
 
-         @media (min-width: $min-minimal-width) {
-            width: auto;
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-         }
+         // @media (min-width: $min-minimal-width) {
+         //    width: auto;
+         //    max-width: 100%;
+         //    margin-left: auto;
+         //    margin-right: auto;
+         // }
    
          ~ em {
             display: block;

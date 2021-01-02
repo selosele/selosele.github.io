@@ -182,8 +182,8 @@
 
       &-wrapper {
          margin-top: 1rem;
-         padding-top: 1rem;
-         border-top: 1px dotted $black;
+         padding: 1rem 0.5rem 0.5rem 0.5rem;
+         background-color: $grey02;
          line-height: 1.5;
          color: $black;
          text-align: center;

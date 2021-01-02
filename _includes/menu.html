@@ -45,6 +45,17 @@
     </a>
     {% endif %}
 
+    {% if site.data.navigation.etc %}
+    <h3>etc.</h3>
+    <ul>
+      {%- for link in site.data.navigation.etc -%}
+      <li>
+        <a href="{{ link.url }}"{% if link.new_window %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ link.title }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {% endif %}
+
     <section itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
       <h2 itemprop="name" class="menu__author-name">{{ site.author.name }}</h2>
       {% if site.author.desc %}

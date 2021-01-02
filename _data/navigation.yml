@@ -8,3 +8,8 @@ main:
     url: /posts-by-year/
   - title: "Tag"
     url: /tag-list/
+
+etc:
+  - title: "Liquid 공식 문서 개인 번역 (진행중)"
+    url: https://selosele.github.io/liquid/
+    new_window: true

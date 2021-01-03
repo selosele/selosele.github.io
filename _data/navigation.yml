@@ -13,3 +13,6 @@ etc:
   - title: "Liquid 공식 문서 개인 번역 (진행중)"
     url: https://selosele.github.io/liquid/
     new_window: true
+  - title: "jQuery 플러그인 제작 개인 프로젝트 (진행중)"
+    url: https://github.com/selosele/hashToggle
+    new_window: true

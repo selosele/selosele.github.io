@@ -99,7 +99,7 @@
             @media (min-width: $min-large-width) {
                &:hover {
                   text-decoration: underline;
-                  text-decoration: underline $main-color;
+                  text-decoration-color: $main-color;
                }
             }
          }

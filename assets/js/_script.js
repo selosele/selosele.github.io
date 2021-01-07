@@ -129,6 +129,7 @@
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
+        // header link 생성
         var h = postRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
         for (var i = 0; i < h.length; i++) {
@@ -146,6 +147,24 @@
             h_anc.title = h_txt.replace(/-/g, " ");
             h_anc.classList.add("page__header-link");
             h[i].insertBefore(h_anc, h[i].firstChild);
+        }
+
+        // header link 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
+        var toc = postRoot.querySelector(".toc-wrapper");
+        if (toc) {
+            var h_linkList = document.querySelectorAll(".page__header-link");
+
+            var scrollEl = function(par, el) {
+                par.querySelector("[href='"+decodeURI(el.hash)+"']").scrollIntoView(true);
+            };
+
+            for (var i = 0; i < h_linkList.length; i++) {
+                h_linkList[i].addEventListener("click", function() {
+                    scrollEl(toc, this);
+                });
+            }
+
+            location.hash && scrollEl(toc, location);
         }
     }
 })();
@@ -318,7 +337,7 @@
         for (var i = 0; i < shareAncList.length; i++) {
             shareAncList[i].addEventListener("click", function(event) {
                 event.preventDefault();
-                window.open(event.currentTarget.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
+                window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
             });
         }
     }

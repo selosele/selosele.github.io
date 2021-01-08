@@ -13,7 +13,7 @@ class: page--posts-by-year
 <div aria-labelledby="btn-{{ year.name }}" id="list-{{ year.name }}" class="archive__list">
 	<ul>
 		{% for post in year.items %}
-		<li{% if year.items.size == 1 %} role='presentation'{% endif %}>
+		<li>
 			<a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
 		</li>
 		{% endfor %}

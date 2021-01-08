@@ -22,7 +22,7 @@ title: 카테고리
   <div aria-labelledby="btn-{{ categoryName }}" id="list-{{ categoryName }}" class="archive__list">
     <ul>
       {% for post in categoryPost %}
-      <li{% if categoryPost.size == 1 %} role='presentation'{% endif %}>
+      <li>
         <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
       </li>
       {% endfor %}

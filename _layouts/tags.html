@@ -22,7 +22,7 @@ title: 태그
   <div aria-labelledby="btn-{{ tagName }}" id="list-{{ tagName }}" class="archive__list">
     <ul>
       {% for post in tagPost %}
-      <li{% if tagPost.size == 1 %} role='presentation'{% endif %}>
+      <li>
         <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
       </li>
       {% endfor %}

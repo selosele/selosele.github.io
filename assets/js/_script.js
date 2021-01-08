@@ -152,7 +152,7 @@
         // header link 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
         var toc = postRoot.querySelector(".toc-wrapper");
         if (toc) {
-            var h_linkList = document.querySelectorAll(".page__header-link");
+            var h_linkList = postRoot.querySelectorAll(".page__header-link");
 
             var scrollEl = function(par, el) {
                 par.querySelector("[href='"+decodeURI(el.hash)+"']").scrollIntoView(true);

@@ -1,5 +1,5 @@
 # Site Settings
-locale                   : "ko"
+locale                   : "ko" # default
 title                    : "sel의 생각저장소"
 title_separator          : "-"
 subtitle                 :
@@ -233,10 +233,6 @@ defaults:
       layout: post
       comments: false
       share: true
-
-# skip links
-skip_links:
-  to_mastfoot: false
 
 # post
 post:

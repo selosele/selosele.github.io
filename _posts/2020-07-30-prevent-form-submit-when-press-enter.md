@@ -32,7 +32,7 @@ document.myForm.addEventListener("keydown", evt => {
 });
 ```
 
-keyCode, which는 deprecated될 속성이라고 하니 다음과 같은 방식으로 작성해주자.
+keyCode, which는 deprecate될 속성이라고 하니 다음과 같은 방식으로 작성해주자.
 
 ```javascript
 if (evt.code === "Enter") {

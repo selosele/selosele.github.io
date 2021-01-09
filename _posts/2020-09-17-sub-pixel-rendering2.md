@@ -26,7 +26,7 @@ primary_post: true
 
 [명세](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"}에 의하면 해당 속성은 브라우저의 이미지 크기 변경 방식에 대한 힌트를 제공하는 속성이라고 설명되어 있으며 img 요소와 background-image에 적용된다.
 
-명세와 [MDN](https://developer.mozilla.org/ko/docs/Web/CSS/image-rendering){:target="_blank"}을 보면 여러가지 속성값이 언급되어 있으나, 대부분 Deprecated 되었거나 크롬 브라우저에서 사용할 수 없는 것으로 보인다. 실질적으로 사용할 수 있는 것을 다음과 같이 추려보았음.
+명세와 [MDN](https://developer.mozilla.org/ko/docs/Web/CSS/image-rendering){:target="_blank"}을 보면 여러가지 속성값이 언급되어 있으나, 대부분 deprecate 되었거나 크롬 브라우저에서 사용할 수 없는 것으로 보인다. 실질적으로 사용할 수 있는 것을 다음과 같이 추려보았음.
 
 * auto
 * pixelated

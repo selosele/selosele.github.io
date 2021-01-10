@@ -29,11 +29,11 @@ post_dropcap: false
 ```yml
 sns:
   - link: https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}
-    label: Twitter
+    label: "Twitter"
   - link: https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}
-    label: Facebook
+    label: "Facebook"
   - link: https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}
-    label: LinkedIn
+    label: "LinkedIn"
 ```
 {% endraw %}
 

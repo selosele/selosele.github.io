@@ -91,13 +91,6 @@ author:
     - label: "GitHub"
       icon: "xi-github"
       url: https://github.com/selosele
-  share:
-    - label: "Twitter"
-      url: https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}
-    - label: "Facebook"
-      url: https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}
-    - label: "LinkedIn"
-      url: https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}
 
 # Reading Files
 include:
@@ -182,7 +175,6 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-archives
-  - jekyll-liquify
 
 # mimic GitHub Pages with --safe
 whitelist:

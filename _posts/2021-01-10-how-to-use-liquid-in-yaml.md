@@ -93,11 +93,11 @@ Ruby로 쓰여 있어서 무슨 말인지 모르겠으나 yml 파일 내에서�
     onclick="window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0'); return false;"
 {% endcapture %}
 
-<a href="" class="{{ commonClass }}{{ link.label }}" {{ commonAttribute }}>{{ link.label }}</a>
+<a href="" class="{{ commonClass }}twitter" {{ commonAttribute }}>Twitter</a>
 
-<a href="" class="{{ commonClass }}{{ link.label }}" {{ commonAttribute }}>{{ link.label }}</a>
+<a href="" class="{{ commonClass }}facebook" {{ commonAttribute }}>Facebook</a>
 
-<a href="" class="{{ commonClass }}{{ link.label }}" {{ commonAttribute }}>{{ link.label }}</a>
+<a href="" class="{{ commonClass }}linkedin" {{ commonAttribute }}>LinkedIn</a>
 ```
 {% endraw %}
 

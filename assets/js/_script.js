@@ -255,7 +255,7 @@
 
                     t_valEL.setAttribute("readonly", true);
                     t_valEL.setAttribute('contenteditable', true);
-                    t_valEL.classList.add("sr-only--fixed");
+                    t_valEL.classList.add("sr-only");
                     t_valEL.value = t_code.textContent;
 
                     event.currentTarget.parentElement.appendChild(t_valEL);

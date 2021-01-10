@@ -328,21 +328,6 @@
     }
 })();
 
-// page share link
-(function() {
-    var shareElement = document.getElementById("page-share");
-    if (shareElement) {
-        var shareAncList = shareElement.querySelectorAll("a");
-
-        for (var i = 0; i < shareAncList.length; i++) {
-            shareAncList[i].addEventListener("click", function(event) {
-                event.preventDefault();
-                window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0');
-            });
-        }
-    }
-})();
-
 // post archive 아코디언
 (function() {
     var handlerClick = function(event) {

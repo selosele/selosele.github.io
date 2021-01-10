@@ -3,9 +3,9 @@
     <h2 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
   {% endif %}
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--twitter">Twitter</a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--facebook">Facebook</a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--linkedin">LinkedIn</a>
+  {% if site.author.share %}
+    {% for link in site.author.share %}
+    <a href="{{ link.url | liquify }}" rel="noopener noreferrer nofollow" aria-label="{{ link.label | capitalize }} {{ site.data.ui-text[site.locale].share_on_label }}" class="page__share__btn--{{ link.label | downcase }}" onclick="window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0'); return false;">{{ link.label | capitalize }}</a>
+    {% endfor %}
+  {% endif %}
 </section>

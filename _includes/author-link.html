@@ -1,7 +1,7 @@
 <ul class="{{ include.class | default: 'author__links' }}">
 	{% for link in site.author.links %}
 		{% if link.label and link.url %}
-		<li{% if site.author.links.size == 1 %} role="presentation"{% endif %}>
+		<li>
 			<a href="{{ link.url }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">
 				<i aria-hidden="true" class="{{ link.icon | default: 'xi-link' }}"></i>
 				<span class="sr-only">{{ link.label }}</span>

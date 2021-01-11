@@ -196,6 +196,7 @@ abbr {
    &:active {
       display: block;
       clip: auto !important;
+      clip-path: none !important;
       z-index: 100000;
       width: auto !important;
       height: auto !important;

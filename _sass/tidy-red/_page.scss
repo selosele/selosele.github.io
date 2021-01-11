@@ -244,10 +244,10 @@
          @include heading;
          margin-top: .789474em;
          margin-bottom: .526316em;
-         font-size: calc(1.7rem + .5vw);
+         font-size: calc(1.9rem + .5vw);
    
          @media (min-width: $min-small-width) {
-            font-size: 2.1rem;
+            font-size: 2.3rem;
          }
       }
    
@@ -400,16 +400,17 @@
 
    &__header-link {
       margin-right: .1302632em;
-      vertical-align: middle;
    
       &:before {
-         content: "\e9c3";
+         // content: "\e9c3";
+         content: "\2756";
          display: inline-block;
          color: $main-color;
-         font-family: $icon-font;
+         // font-family: $icon-font;
          font-weight: 400;
          letter-spacing: normal;
          line-height: 1;
+         vertical-align: -0.03em;
          -webkit-font-smoothing: antialiased;
       }
    }

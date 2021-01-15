@@ -64,7 +64,7 @@ ko: &DEFAULT_KO
   search_placeholder_text    : "검색어를 입력하세요."
   move_to_top                : "최상단으로 이동"
   move_to_archive_button     : "버튼으로 이동"
-  target_blank               : "새창이동"
+  target_blank               : "새창"
 ko-KR:
   <<: *DEFAULT_KO
 
@@ -130,6 +130,6 @@ en: &DEFAULT_EN
   search_placeholder_text    : "Enter your search term..."
   move_to_top                : "Back to top"
   move_to_archive_button     : "Back to the button"
-  target_blank               : "new page"
+  target_blank               : "New page"
 en-US:
   <<: *DEFAULT_EN

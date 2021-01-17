@@ -241,9 +241,14 @@
 
       h2:not(.toc__title) {
          @include heading;
-         margin-top: .789474em;
-         margin-bottom: .526316em;
+         margin-top: .782609em;
+         margin-bottom: .521739em;
          font-size: calc(1.9rem + .5vw);
+
+         + h3 {
+            padding-top: .558824em;
+            border-top: 1px solid $grey04;
+         }
    
          @media (min-width: $min-small-width) {
             font-size: 2.3rem;

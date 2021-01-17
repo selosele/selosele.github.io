@@ -2,7 +2,7 @@
    mixins css
    ========================================================================== */
 
-/* common layout */
+/* 레이아웃 공통 */
 @mixin common-layout($width: $layout-responsive-width, $max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
    @if $margin-t != null {
       margin-top: $margin-t;
@@ -63,7 +63,7 @@
    }
 }
 
-@mixin page_title {
+@mixin page-title {
    font-family: $default-font03;
 
    > .page-title {
@@ -160,16 +160,6 @@
    text-overflow: ellipsis;
    -webkit-line-clamp: $line-clamp;
    -webkit-box-orient: vertical;
-}
-
-@mixin hide-text {
-   overflow: hidden !important;
-   position: absolute !important;
-   clip: rect(1px, 1px, 1px, 1px) !important;
-   width: 1px !important;
-   height: 1px !important;
-   margin: -1px !important;
-   border: 0 !important;
 }
 
 @mixin figcaption {

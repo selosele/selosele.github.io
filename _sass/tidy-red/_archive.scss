@@ -24,25 +24,12 @@
             margin-top: .5rem;
          }
       }
-
-      &-header {
-         + .archive__item-content {
-            padding-top: .4444444rem;
-            border-top: 1px dotted $grey09;
-
-            @media (min-width: $min-medium-width) {
-               padding-top: 0;
-               border-top: 0;
-            }
-         }
-      }
    
       &-title {
          margin-bottom: .5rem;
 
          > a {
             display: block;
-            @include ellipsis;
             font-weight: 700;
             font-size: 1.2rem;
             line-height: 1.5;
@@ -73,7 +60,6 @@
    
       &-subtitle {
          display: block;
-         @include ellipsis;
          margin-top: .604167em;
          margin-bottom: .604167em;
          color: $sub-color03;
@@ -145,7 +131,7 @@
    }
 
    &__item-thumb {
-      display: block;
+      display: none;
       position: relative;
       height: 33.929vw;
       margin-top: .9rem;
@@ -157,12 +143,9 @@
       background-size: cover;
       box-shadow: rgba(0,0,0,.2) .25rem .25rem .5rem;
       box-sizing: border-box;
-
-      @media (min-width: $min-small-width) {
-         height: 10rem;
-      }
    
       @media (min-width: $min-medium-width) {
+         display: block;
          position: absolute;
          top: 0;
          bottom: 0;

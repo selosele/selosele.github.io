@@ -105,7 +105,7 @@
     });
 
     for (var i = 0; i < menuELcategoryAnc.length; i++) {
-        if (document.querySelector(".layout--categories") || document.querySelector(".layout--tags")) {
+        if (document.querySelector(".layout--categories")) {
             menuELcategoryAnc[i].addEventListener("click", handlerCloseClick);
         }
     }

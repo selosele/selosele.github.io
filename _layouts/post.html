@@ -45,25 +45,19 @@ layout: default
         {% endif %}
       {%- endif -%}
 
-      {%- capture anchor -%}
-        target="_blank"
-      {%- endcapture -%}
+      {%- comment -%} 2021.01.18. HTML 태그 내에 텍스트로 들어가는 경우도 변환되는 문제로 보류
+        {%- capture anchor -%}
+          target="_blank"
+        {%- endcapture -%}
 
-      {%- capture new_anchor -%}
-        target="_blank" 
-        title="{{ site.data.ui-text[site.locale].target_blank }}" 
-        rel="noopener noreferrer nofollow"
-      {%- endcapture -%}
+        {%- capture new_anchor -%}
+          target="_blank" 
+          title="{{ site.data.ui-text[site.locale].target_blank }}" 
+          rel="noopener noreferrer nofollow"
+        {%- endcapture -%}
+      {%- endcomment -%}
 
-      {%- capture p_img -%}
-        <p><img
-      {%- endcapture -%}
-
-      {%- capture new_p_img -%}
-        <p class="page__figure"><img
-      {%- endcapture -%}
-
-      {{ content | replace: anchor, new_anchor | replace: p_img, new_p_img }}
+      {{ content }}
     </section>
 
     {%- if page.header.image_link -%}

@@ -1,4 +1,4 @@
-{% if site.footer_scripts %}
+{%- if site.footer_scripts -%}
   {% for script in site.footer_scripts %}
     {% if script contains "://" %}
       {% capture script_path %}{{ script }}{% endcapture %}
@@ -7,11 +7,11 @@
     {% endif %}
     <script src="{{ script_path }}"></script>
   {% endfor %}
-{% else %}
+{%- else -%}
   <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-{% endif %}
+{%- endif -%}
 
-{% if site.search == true %}
+{%- if site.search == true -%}
 <script src="/assets/js/plugins/simple-jekyll-search.min.js"></script>
 <script>
     var searchPlugin = SimpleJekyllSearch({
@@ -23,11 +23,11 @@
       limit: 20
   });
 </script>
-{% endif %}
+{%- endif -%}
 
 {% include analytics.html %}
 
-{% if site.after_footer_scripts %}
+{%- if site.after_footer_scripts -%}
   {% for script in site.after_footer_scripts %}
     {% if script contains "://" %}
       {% capture script_path %}{{ script }}{% endcapture %}
@@ -36,9 +36,9 @@
     {% endif %}
     <script src="{{ script_path }}"></script>
   {% endfor %}
-{% endif %}
+{%- endif -%}
 
-{% if site.head_scripts %}
+{%- if site.head_scripts -%}
   {% for script in site.head_scripts %}
     {% if script contains "://" %}
       {% capture script_path %}{{ script }}{% endcapture %}
@@ -47,4 +47,4 @@
     {% endif %}
     <script src="{{ script_path }}"></script>
   {% endfor %}
-{% endif %}
+{%- endif -%}

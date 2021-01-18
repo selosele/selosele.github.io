@@ -1,9 +1,9 @@
-{% if site.author.avatar %}
+{%- if site.author.avatar -%}
 <div class="author__avatar">
 	<em class="author__image-wrapper" style="background-image: url({{ site.author.avatar }});">{{ site.author.name }}</em>
 </div>
-{% endif %}
+{%- endif -%}
 <div class="author__info-wrapper">
 	<{% if page.layout != "post" %}strong{% else %}h2{% endif %} itemprop="name" class="author__name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
-	{% if site.author.desc %}<p itemprop="description" class="author__desc">{{ site.author.desc }}</p>{% endif %}
+	{%- if site.author.desc -%}<p itemprop="description" class="author__desc">{{ site.author.desc }}</p>{%- endif -%}
 </div>

@@ -1,9 +1,9 @@
-{% if site.search == true %}
+{%- if site.search == true -%}
   {% include search.html %}
-{% endif %}
+{%- endif -%}
 
 {% include menu.html %}
 
-{% if page.layout == "post" %}
+{%- if page.layout == "post" -%}
   {% include scroll-indicator.html %}
-{% endif %}
+{%- endif -%}

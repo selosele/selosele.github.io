@@ -4,30 +4,30 @@ layout: default
 
 <div role="main" id="content" class="content-wrapper{% if page.toc %} content--has-toc{% endif %}{% if page.column %} content--column{% endif %}">
   <article itemscope itemtype="https://schema.org/CreativeWork" class="page">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.subtitle %}<meta itemprop="description" content="{{ page.subtitle | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: '%B %d, %Y' }}">{% endif %}
+    {%- if page.title -%}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
+    {%- if page.subtitle -%}<meta itemprop="description" content="{{ page.subtitle | markdownify | strip_html | strip_newlines | escape_once }}">{%- endif -%}
+    {%- if page.date -%}<meta itemprop="datePublished" content="{{ page.date | date: '%B %d, %Y' }}">{%- endif -%}
 
     <section class="page__info-item-wrapper">
-      {% if page.date %}
+      {%- if page.date -%}
       <span class="page__info-item page__info-item--date"><span class="sr-only">{{ site.data.ui-text[site.locale].date_label }}</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></span>
-      {% endif %}
-      {% if site.post.category_list and page.categories.size > 0 %}
+      {%- endif -%}
+      {%- if site.post.category_list and page.categories.size > 0 -%}
       <h2 class="sr-only">{{ site.data.ui-text[site.locale].category_title }}</h2>
-        {% for category in page.categories %}
+        {%- for category in page.categories -%}
         <a href="/category-list/#btn-{{ category | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}" itemprop="keywords" rel="tag" class="page__info-item page__info-item--category">{{ category }}</a>
-        {% endfor %}
-      {% endif %}
-      {% if site.post.tag_list and page.tags.size > 0 %}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if site.post.tag_list and page.tags.size > 0 -%}
       <h2 class="sr-only">{{ site.data.ui-text[site.locale].tag_title }}</h2>
-        {% for tag in page.tags %}
+        {%- for tag in page.tags -%}
         <a href="/tag-list/#btn-{{ tag | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}" itemprop="keywords" rel="tag" class="page__info-item page__info-item--tag">{{ tag }}</a>
-        {% endfor %}
-      {% endif %}
+        {%- endfor -%}
+      {%- endif -%}
     </section>
 
     <section itemprop="text" id="page-content" class="page__content">
-      {% if page.toc %}
+      {%- if page.toc -%}
         <aside id="toc" class="toc-wrapper toc--fixed">
           <nav aria-labelledby="toc-title" tabindex="0">
             <header>
@@ -36,49 +36,61 @@ layout: default
             {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
           </nav>
         </aside>
-      {% endif %}
+      {%- endif -%}
 
-      {% if page.post_dropcap != false %}
+      {%- if page.post_dropcap != false -%}
         {% assign content_start = content | slice: 0, 3 %}
         {% if content_start == '<p>' %}
           {% assign content = content | replace_first: '<p>', '<p class="has-dropcap">' %}
         {% endif %}
-      {% endif %}
+      {%- endif -%}
 
-      {% capture anchor %}target="_blank"{% endcapture %}
-      {% capture new_anchor %}target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endcapture %}
+      {%- capture anchor -%}
+        target="_blank"
+      {%- endcapture -%}
 
-      {% capture p_img %}<p><img{% endcapture %}
-      {% capture new_p_img %}<p class="page__figure"><img{% endcapture %}
+      {%- capture new_anchor -%}
+        target="_blank" 
+        title="{{ site.data.ui-text[site.locale].target_blank }}" 
+        rel="noopener noreferrer nofollow"
+      {%- endcapture -%}
+
+      {%- capture p_img -%}
+        <p><img
+      {%- endcapture -%}
+
+      {%- capture new_p_img -%}
+        <p class="page__figure"><img
+      {%- endcapture -%}
 
       {{ content | replace: anchor, new_anchor | replace: p_img, new_p_img }}
     </section>
 
-    {% if page.header.image_link %}
-      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
-    {% endif %}
+    {%- if page.header.image_link -%}
+    <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
+    {%- endif -%}
 
     <footer class="page__footer">
-      {% if page.share %}
+      {%- if page.share -%}
         {% include social-share.html %}
-      {% endif %}
+      {%- endif -%}
 
-      {% if site.post.author %}
+      {%- if site.post.author -%}
         <section itemscope itemtype="https://schema.org/Thing" class="page__author">
           {% include author.html %}
         </section>
-      {% endif %}
+      {%- endif -%}
     </footer>
 
     {% include post-pagination.html %}
   </article>
   
-  {% if site.comments.provider and page.comments == true %}
+  {%- if site.comments.provider and page.comments == true -%}
     {% case site.comments.provider %}
         {% when "disqus" %}
           {% include comments-providers/disqus.html %}
         {% when "livere" %}
           {% include comments-providers/livere.html %}
     {% endcase %}
-  {% endif %}
+  {%- endif -%}
 </div>

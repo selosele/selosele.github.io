@@ -1,8 +1,8 @@
-{% if site.atom_feed.path and site.atom_feed.mastfoot %}
+{%- if site.atom_feed.path and site.atom_feed.mastfoot -%}
 <p class="mastfoot__rss">
   <a href="/{{ site.atom_feed.path }}">RSS</a>
 </p>
-{% endif %}
+{%- endif -%}
 
 <p class="mastfoot__copyright">&copy; 2020 {{ site.author.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">Jekyll</a> &amp; <a href="https://tidyred.github.io/" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">Tidy red</a>. Theme by sel.</p>
 

@@ -1,40 +1,40 @@
-{% if page.header.image contains "://" %}
-  {% capture img_path %}{{ page.header.image }}{% endcapture %}
-{% else %}
-  {% capture img_path %}{{ page.header.image | relative_url }}{% endcapture %}
-{% endif %}
+{%- if page.header.image contains "://" -%}
+  {%- capture img_path -%}{{ page.header.image }}{%- endcapture -%}
+{%- else -%}
+  {%- capture img_path -%}{{ page.header.image | relative_url }}{%- endcapture -%}
+{%- endif -%}
 
-{% if page.header.cta_url contains "://" %}
-  {% capture cta_path %}{{ page.header.cta_url }}{% endcapture %}
-{% else %}
-  {% capture cta_path %}{{ page.header.cta_url | relative_url }}{% endcapture %}
-{% endif %}
+{%- if page.header.cta_url contains "://" -%}
+  {%- capture cta_path -%}{{ page.header.cta_url }}{%- endcapture -%}
+{%- else -%}
+  {%- capture cta_path -%}{{ page.header.cta_url | relative_url }}{%- endcapture -%}
+{%- endif -%}
 
-{% if page.header.overlay_image contains "://" %}
-  {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
-{% elsif page.header.overlay_image %}
-  {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
-{% else %}
-  {% if site.masthead.teaser.bg %}
-    {% capture overlay_img_path %}{{ site.masthead.teaser.bg }}{% endcapture %}
-  {% endif %}
-{% endif %}
+{%- if page.header.overlay_image contains "://" -%}
+  {%- capture overlay_img_path -%}{{ page.header.overlay_image }}{%- endcapture -%}
+{%- elsif page.header.overlay_image -%}
+  {%- capture overlay_img_path -%}{{ page.header.overlay_image | relative_url }}{%- endcapture -%}
+{%- else -%}
+  {%- if site.masthead.teaser.bg -%}
+    {%- capture overlay_img_path -%}{{ site.masthead.teaser.bg }}{%- endcapture -%}
+  {%- endif -%}
+{%- endif -%}
 
-{% if page.header.overlay_filter %}
-  {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
-{% else %}
-  {% capture overlay_filter %}rgba(0, 0, 0, {{ site.masthead.teaser.filter }}){% endcapture %}
-{% endif %}
+{%- if page.header.overlay_filter -%}
+  {%- capture overlay_filter -%}rgba(0, 0, 0, {{ page.header.overlay_filter }}){%- endcapture -%}
+{%- else -%}
+  {%- capture overlay_filter -%}rgba(0, 0, 0, {{ site.masthead.teaser.filter }}){%- endcapture -%}
+{%- endif -%}
 
-{% if page.header.image_description %}
-  {% assign image_description = page.header.image_description %}
-{% else %}
-  {% assign image_description = page.title %}
-{% endif %}
+{%- if page.header.image_description -%}
+  {%- assign image_description = page.header.image_description -%}
+{%- else -%}
+  {%- assign image_description = page.title -%}
+{%- endif -%}
 
-{% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
+{%- assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{% include iecheck.html %}
+{%- include iecheck.html -%}
 
 <div id="masthead" class="masthead
 {% if site.masthead.teaser.bg %} masthead--image{% endif %}"
@@ -42,23 +42,23 @@
 {% if page.layout == 'post' %} style="{% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% if page.header.image_position %} background-position: {{ page.header.image_position }};{% endif %}{% if page.header.image_position-x %}background-position-x: {{ page.header.image_position-x }};{% endif %}{% if page.header.image_position-y %}background-position-y: {{ page.header.image_position-y }};{% endif %}{% if page.header.image_contain %}background-size: contain{% endif %}"{% endif %}>
 
   <nav{% unless page.layout == 'home' %} aria-labelledby="site-title"{% endunless %} id="site-nav" class="site-nav">
-    {% unless page.layout == "home" %}
+    {%- unless page.layout == "home" -%}
       <a href="{{ '/' | relative_url }}" id="site-title" class="site-title{% if site.author.avatar %} has-image{% endif %}">
-      {% if site.author.avatar %}
+      {%- if site.author.avatar -%}
         {% include avatar.html class="site-title__author-avatar" %}
-      {% endif %}
+      {%- endif -%}
 
       {{ site.title }}
-      {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
+      {%- if site.subtitle -%}<span class="site-subtitle">{{ site.subtitle }}</span>{%- endif -%}
       </a>
-    {% endunless %}
+    {%- endunless -%}
     
     <div class="nav__btn-wrapper">
-      {% if site.search == true %}
+      {%- if site.search == true -%}
       <button type="button" aria-controls="search-layer" class="nav__item nav__search-open">
         <span class="sr-only">{{ site.data.ui-text[site.locale].search_label }}</span>
       </button>
-      {% endif %}
+      {%- endif -%}
       <button type="button" aria-haspopup="menu" aria-controls="primary-nav" class="nav__item nav__menu-open">
         <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_open_label }}</span>
       </button>
@@ -66,31 +66,31 @@
   </nav>
 
   <header itemscope itemtype="https://schema.org/CreativeWork" class="{% if page.layout == 'post' %}masthead__post-header{% else %}masthead__page-header{% endif %}">
-    {% if page.layout == "home" and site.author.avatar %}
-      {% include avatar.html class="masthead__page-avatar" %}
-    {% endif %}
+    {%- if page.layout == "home" and site.author.avatar -%}
+      {%- include avatar.html class="masthead__page-avatar" -%}
+    {%- endif -%}
     <h1 class="page-title">
-      {% if page.layout == "home" %}
+      {%- if page.layout == "home" -%}
         {{ site.title }}
-      {% endif %}
+      {%- endif -%}
 
-      {% if page.layout == "post" %}
-        {% if paginator and site.paginate_show_page_num %}
-          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
-        {% else %}
+      {%- if page.layout == "post" -%}
+        {%- if paginator and site.paginate_show_page_num -%}
+          {{ site.title }}{%- unless paginator.page == 1 -%} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{%- endunless -%}
+        {%- else -%}
           {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
-        {% endif %}
-        {% else %}
+        {%- endif -%}
+        {%- else -%}
           {{ page.title }}
-      {% endif %}
+      {%- endif -%}
     </h1>
 
-    {% if page.layout == "home" and site.subtitle %}
-      <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
-    {% endif %}
+    {%- if page.layout == "home" and site.subtitle -%}
+    <strong itemprop="alternativeHeadline" class="masthead__page-subtitle">{{ site.subtitle }}</strong>
+    {%- endif -%}
 
-    {% if page.layout == "post" and page.subtitle %}
-      <strong itemprop="alternativeHeadline" class="page-subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
-    {% endif %}
+    {%- if page.layout == "post" and page.subtitle -%}
+    <strong itemprop="alternativeHeadline" class="page-subtitle">{{ page.subtitle | markdownify | remove: "<p>" | remove: "</p>" }}</strong>
+    {%- endif -%}
   </header>
 </div>

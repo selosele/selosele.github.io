@@ -1,19 +1,19 @@
 <section class="page__share">
-  {% if site.data.ui-text[site.locale].share_on_label %}
-    <h2 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
-  {% endif %}
+  {%- if site.data.ui-text[site.locale].share_on_label -%}
+  <h2 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label }}</h2>
+  {%- endif -%}
 
-  {% capture commonClass %}page__share__btn--{% endcapture %}
+  {%- capture commonClass -%}
+    page__share__btn--
+  {%- endcapture -%}
 
-  {% capture commonAttribute %}
+  {%- capture commonAttribute -%}
     title="{{ site.data.ui-text[site.locale].target_blank }}" 
     rel="noopener noreferrer nofollow" 
     onclick="window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0'); return false;"
-  {% endcapture %}
+  {%- endcapture -%}
 
   <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}twitter" {{ commonAttribute }}>Twitter</a>
-
   <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}facebook" {{ commonAttribute }}>Facebook</a>
-
   <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}linkedin" {{ commonAttribute }}>LinkedIn</a>
 </section>

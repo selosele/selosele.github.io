@@ -1,9 +1,9 @@
-{% assign categories_max = 0 %}
-{% for category in site.categories %}
-  {% if category[1].size > categories_max %}
+{%- assign categories_max = 0 -%}
+{%- for category in site.categories -%}
+  {%- if category[1].size > categories_max -%}
     {% assign categories_max = category[1].size %}
-  {% endif %}
-{% endfor %}
+  {%- endif -%}
+{%- endfor -%}
 
 <div aria-hidden="true" id="side-menu" class="side-menu">
   <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
@@ -15,9 +15,9 @@
     <ul role="menu"{% if site.main_menu.primary_links_grid %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
-        {%- assign url = link.url -%}
+        {% assign url = link.url %}
       {%- else -%}
-        {%- assign url = link.url | relative_url -%}
+        {% assign url = link.url | relative_url %}
       {%- endif -%}
       <li role="menuitem"{% if page.url == url %} class="menuitem--current-page"{% endif %}>
         <a href="{{ url }}"{% if page.url == url %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} itemprop="url">{{ link.title }}</a>
@@ -25,27 +25,27 @@
       {%- endfor -%}
     </ul>
   
-    {% if site.categories.size > 0 %}
+    {%- if site.categories.size > 0 -%}
     <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
     <ul{% if site.main_menu.category_list_grid %} class="menu__list--grid"{% endif %}>
-      {% for i in (1..categories_max) reversed %}
-        {% for category in site.categories limit: 8 %}
-          {% if category[1].size == i %}
+      {%- for i in (1..categories_max) reversed -%}
+        {%- for category in site.categories limit: 8 -%}
+          {%- if category[1].size == i -%}
           <li>
             <a href="/category-list/#btn-{{ category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}">{{ category[0] }}</a>
             <small class="menu__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
           </li>
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
     </ul>
 
     <a href="/category-list/" class="menu__more">
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
-    {% endif %}
+    {%- endif -%}
 
-    {% if site.data.navigation.etc %}
+    {%- if site.data.navigation.etc -%}
     <h3>etc.</h3>
     <ul>
       {%- for link in site.data.navigation.etc -%}
@@ -54,13 +54,13 @@
       </li>
       {%- endfor -%}
     </ul>
-    {% endif %}
+    {%- endif -%}
 
     <section itemscope itemtype="https://schema.org/Thing" class="menu__author-wrapper">
       <h2 itemprop="name" class="menu__author-name">{{ site.author.name }}</h2>
-      {% if site.author.desc %}
+      {%- if site.author.desc -%}
       <p itemprop="description" class="menu__author-desc">{{ site.author.desc }}</p>
-      {% endif %}
+      {%- endif -%}
       {% include author-link.html class='menu__author-links' %}
     </section>
   </nav>

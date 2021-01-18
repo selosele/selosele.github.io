@@ -131,7 +131,6 @@
         color: $black;
 
         @media (min-width: $min-medium-width) {
-          @include ellipsis;
           padding-right: 9rem;
         }
   

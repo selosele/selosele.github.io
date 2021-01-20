@@ -69,18 +69,22 @@ npm install express
 
 그 후 위 명령으로 express를 설치해주고, index.js의 내용을 아래의 것으로 교체해준다.
 
-{:data-line="8"}
+{:data-line="11"}
 ```javascript
+// 기본 설정
 const express = require("express");
 const app = express();
 const PORT = 3000;
 
+// 정적 파일 불러오기
 app.use(express.static(__dirname + "/public"));
 
+// index.html 파일 실행
 app.get("/", (req, res) => {
-    res.status(200).sendFile(__dirname + "/public/index.html"); // index.html 파일 실행
+    res.status(200).sendFile(__dirname + "/public/index.html");
 });
 
+// 서버 실행
 app.listen(PORT, () => {
     console.log(`Listen : ${PORT}`);
 });

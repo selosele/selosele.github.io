@@ -81,7 +81,7 @@ app.use(express.static(__dirname + "/public"));
 
 // index.html 파일 실행
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 // 서버 실행

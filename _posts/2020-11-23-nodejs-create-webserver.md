@@ -44,10 +44,10 @@ index.js 파일을 만들고 아래와 같이 작성해준다.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/plain');
-    response.end('Hello World');
+http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World');
 }).listen(3000);
 ```
 
@@ -106,3 +106,5 @@ Listen : 3000
 * [[NodeJS] Node.js로 웹 서버 만들기 2 - 서버에서 파일 받기](https://ebbnflow.tistory.com/209?category=745851){:target="_blank"}
 * [NodeJS 정적파일 읽는 방법, 웹페이지, 이미지, CSS 파일 읽는 방법](https://mainia.tistory.com/5707){:target="_blank"}
 * [Express-정적파일을 서비스 하는 법](https://wayhome25.github.io/nodejs/2017/02/18/nodejs-08-express-static/){:target="_blank"}
+* [express에서 하위 경로로 라우팅하기](https://blog.outsider.ne.kr/938){:target="_blank"}
+* [Sending whole folder content to client with express](https://stackoverflow.com/questions/40509666/sending-whole-folder-content-to-client-with-express){:target="_blank"}

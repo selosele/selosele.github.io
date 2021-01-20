@@ -249,7 +249,8 @@
             var t_copyBtn = t.querySelector(".highlight__copy-button"), copyState;
             var copyCode = function(event) {
                 try {
-                    var t_codeInner = event.currentTarget.parentElement.parentElement,
+                    var _t = event.currentTarget,
+                        t_codeInner = _t.parentElement.parentElement,
                         t_code = t.querySelector(".lineno") ? t_codeInner.querySelector(".rouge-code > pre") : t_codeInner.querySelector("pre.highlight"),
                         t_valEL = document.createElement("textarea");
 
@@ -258,7 +259,7 @@
                     t_valEL.classList.add("sr-only");
                     t_valEL.value = t_code.textContent;
 
-                    event.currentTarget.parentElement.appendChild(t_valEL);
+                    _t.parentElement.appendChild(t_valEL);
 
                     t_valEL.select();
 
@@ -271,12 +272,13 @@
 
                     t_valEL.setSelectionRange(0, t_valEL.value.length);
                     copyState = document.execCommand("copy");
-                    event.currentTarget.textContent = "복사됨";
+                    _t.textContent = "복사됨";
                 } catch(error) {
                     copyState = null;
                     alert("복사에 실패했습니다.\n" + error);
                 } finally {
-                    event.currentTarget.parentElement.removeChild(t_valEL);
+                    _t.parentElement.removeChild(t_valEL);
+                    _t.focus();
                 }
             };
 

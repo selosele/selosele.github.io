@@ -46,7 +46,6 @@
          margin-top: 9rem;
          margin-bottom: 9rem;
          @include page-title;
-         text-align: center;
       }
 
       &-avatar {
@@ -82,6 +81,12 @@
       padding-top: 6rem;
       padding-bottom: 8rem;
       @include page-title;
+   }
+}
+
+.layout--home {
+   .masthead__page-header {
+      text-align: center;
    }
 }
 

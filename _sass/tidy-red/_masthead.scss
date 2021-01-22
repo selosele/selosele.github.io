@@ -126,6 +126,22 @@
          }
       }
    }
+
+   // 검색 토글
+   &__search-open {
+      &:before {
+         content: "\e97a";
+         font-size: 1.5rem;
+      }
+   }
+
+   // 메뉴 토글
+   &__menu-open {
+      &:before {
+         content: "\e91c";
+         font-size: 1.7rem;
+      }
+   }
 }
 
 .site {
@@ -179,21 +195,5 @@
    &-nav {
       position: relative;
       @include common-layout($max-width: $layout-wide-width, $margin-t: 1.7rem, $margin-b: 1.7rem);
-   }
-}
-
-// search toggle
-.nav__search-open {
-   &:before {
-      content: "\e97a";
-      font-size: 1.5rem;
-   }
-}
-
-// menu toggle
-.nav__menu-open {
-   &:before {
-      content: "\e91c";
-      font-size: 1.7rem;
    }
 }

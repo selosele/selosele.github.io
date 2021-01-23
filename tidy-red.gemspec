@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors                 = ["sel"]
 
   spec.summary                 = %q{A tidy red color Jekyll theme.}
-  spec.homepage                = "https://tidyred.github.io/"
+  spec.homepage                = "https://selosele.github.io/jekyll-theme-tidyred"
   spec.license                 = "MIT"
 
   spec.metadata["plugin_type"] = "theme"

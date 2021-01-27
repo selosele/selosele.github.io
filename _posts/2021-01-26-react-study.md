@@ -2,7 +2,7 @@
 published: false
 layout: post
 comments: true
-title: "React 학습과 삽질"
+title: "React 학습과 삽질기"
 subtitle:
 header:
     overlay_image: /assets/images/thumb/react_thumb01.png
@@ -31,7 +31,7 @@ const Link = ({ to, children }) => (<a href={to}>{children}</a>)
 props 값이 많아지면 코드가 길어져서 파악하기 힘들 수 있으므로
 
 ```javascript
-const Link = (props) => (<a href={to}>{children}</a>)}
+const Link = props => (<a href={props.to}>{props.children}</a>)}
 ```
 
 매개변수 props 하나만 받아와서 사용하는 게 훨씬 깔끔해 보인다.

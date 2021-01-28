@@ -4,34 +4,35 @@
 
 @media print {
 
-  // IE 체크
-  .ie-alert {
+  .skip-links,
+  .ie-alert,
+  .masthead,
+  .mastfoot,
+  .page__footer,
+  .page__header-link,
+  .highlight table td.rouge-gutter {
     display: none;
   }
 
-  // anchor
   a {
     color: inherit;
   }
 
-  // masthead
-  .masthead {
-    display: none;
+  table, blockquote, pre, code, figure, li, hr, ul, ol, a, tr {
+    page-break-inside: avoid
   }
 
-  // heading link
-  .heading-link {
-    display: none;
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word
   }
 
-  // blockquote
   blockquote {
     &:before {
       display: none;
     }
   }
 
-  // toc
   .toc-wrapper {
     display: none;
 
@@ -40,7 +41,22 @@
     }
   }
 
-  // syntax
+  .archive__item__info-item,
+  .page__info-item {
+    text-shadow: none !important;
+  }
+
+  div.highlighter-rouge,
+  code.highlighter-rouge,
+  figure.highlight {
+    border: 1px solid $grey;
+    text-shadow: none;
+  }
+
+  .highlight pre {
+    overflow: visible;
+  }
+
   .highlight table {
     td {
       &.rouge-gutter {
@@ -49,35 +65,12 @@
     }
   }
   
-  // iframe
   iframe {
     width: 100%;
   }
 
-  // code highlight
-  div.highlighter-rouge,
-  code.highlighter-rouge,
-  figure.highlight {
-    border: 1px solid $grey;
-  }
-
-  // page footer
-  .page__footer {
-    display: none;
-  }
-
-  // mastfoot
-  .mastfoot {
-    display: none;
-  }
-
-  // layout
   .layout {
-
-    // post layout
     &--post {
-
-      // toc
       .content-wrapper {
         &.content--has-toc {
           max-width: none;
@@ -86,9 +79,14 @@
         }
       }
 
-      // 페이지네이션
-      .pagination {
+      .highlight__copy-button {
         display: none;
+      }
+
+      .page__footer {
+        ~ .pagination {
+          display: none;
+        }
       }
     }
   }

@@ -15,7 +15,7 @@
 <script src="/assets/js/plugins/simple-jekyll-search.min.js"></script>
 <script>
     var searchPlugin = SimpleJekyllSearch({
-      json: '/search.json',
+      json: '{{ "/" | relative_url }}search.json',
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
       searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',

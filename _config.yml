@@ -6,7 +6,7 @@ subtitle                 :
 name                     : "sel" # 사용자명
 description              : "웹 퍼블리셔 sel의 개인 블로그"
 url                      : "https://selosele.github.io"
-baseurl                  : /
+baseurl                  :
 repository               : "selosele/selosele.github.io"
 words_per_minute         : 200
 comments:
@@ -39,9 +39,6 @@ staticman:
       options:
         format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
   endpoint               : # URL of your own deployment with trailing slash, will fallback to the public instance
-reCaptcha:
-  siteKey                :
-  secret                 :
 atom_feed:
   path                   : feed.xml
   mastfoot               : false

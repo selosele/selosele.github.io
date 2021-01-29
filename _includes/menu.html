@@ -14,13 +14,9 @@
     <h2 id="nav-title">{{ site.data.ui-text[site.locale].menu_primary_menu | default: 'Primary menu' }}</h2>
     <ul role="menu"{% if site.main_menu.primary_links_grid %} class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
-      {%- if link.url contains '://' -%}
-        {% assign url = link.url %}
-      {%- else -%}
-        {% assign url = link.url | relative_url %}
-      {%- endif -%}
+      {%- assign url = link.url -%}
       <li role="menuitem"{% if page.url == url %} class="menuitem--current-page"{% endif %}>
-        <a href="{{ url }}"{% if page.url == url %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} itemprop="url">{{ link.title }}</a>
+        <a href="{{ site.url }}{{ url }}"{% if page.url == url %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} itemprop="url">{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>
@@ -49,8 +45,9 @@
     <h3>etc.</h3>
     <ul>
       {%- for link in site.data.navigation.etc -%}
+      {%- assign url = link.url -%}
       <li>
-        <a href="{{ link.url }}"{% if link.new_window %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ link.title }}</a>
+        <a href="{{ site.url }}{{ url }}"{% if link.new_window %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>

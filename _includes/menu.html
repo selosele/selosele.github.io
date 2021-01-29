@@ -45,9 +45,13 @@
     <h3>etc.</h3>
     <ul>
       {%- for link in site.data.navigation.etc -%}
-      {%- assign url = link.url -%}
+      {%- if link.url contains '://' -%}
+        {% assign url = link.url %}
+      {%- else -%}
+        {% assign url = link.url | prepend : site.url %}
+      {%- endif -%}
       <li>
-        <a href="{{ site.url }}{{ url }}"{% if link.new_window %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ link.title }}</a>
+        <a href="{{ url }}"{% if link.new_window %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>

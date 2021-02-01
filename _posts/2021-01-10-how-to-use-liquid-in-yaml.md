@@ -51,18 +51,6 @@ sns:
 
 검색을 해보니 [비슷한 상황에 직면한 이가 올린 질문](https://stackoverflow.com/questions/14487110/include-jekyll-liquid-template-data-in-a-yaml-variable){:target="_blank"}이 있었다. 어느 답변자가 [자신이 만든 Ruby 플러그인](https://github.com/gemfarmer/jekyll-liquify){:target="_blank"} 사용을 권했는데, 다운로드 후 적용을 해봤다.
 
-```ruby
-module LiquidFilter
-  def liquify(input)
-    Liquid::Template.parse(input).render(@context)
-  end
-end
-
-Liquid::Template.register_filter(LiquidFilter)
-```
-
-Ruby로 쓰여 있어서 무슨 말인지 모르겠으나 yml 파일 내에서도 Liquid 코드가 인식될 수 있게 해주는 Jekyll Liquify라는 플러그인이라고 한다.
-
 {% raw %}
 ```html
 {% for link in site.sns %}
@@ -101,4 +89,4 @@ Ruby로 쓰여 있어서 무슨 말인지 모르겠으나 yml 파일 내에서�
 ```
 {% endraw %}
 
-url은 너무 길어서 예시에서 생략했고, 처음에 들었던 예시에서 다 쓰면 너무 길어져서 생략했던 title, rel, onclick 속성도 예시에 넣었음. title 속성값에는 yml 파일에서 불러오는 "새창"이라는 텍스트가 들어가고, rel 속성값은 보안 관련 유명한 사항이니 설명 패스, onclick 이벤트에는 해당 a 요소의 url을 윈도우 팝업으로 여는 핸들러가 들어간다. 이렇게 해서 정상 적용되었고, 오늘의 삽질은 여기까지.. -_-
+url은 너무 길어서 예시에서 생략했고, 처음에 들었던 예시에서 다 쓰면 너무 길어져서 생략했던 title, rel, onclick 속성도 예시에 넣었음. title 속성값에는 yml 파일에서 불러오는 "새창"이라는 텍스트가 들어가고, rel 속성값은 보안 관련 유명한 사항이니 설명 패스, onclick 이벤트에는 해당 a 요소의 url을 윈도우 팝업으로 여는 핸들러가 들어간다. 이렇게 해서 정상 적용되었고 오늘의 삽질은 여기까지.. -_-

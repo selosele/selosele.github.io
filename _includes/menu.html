@@ -33,7 +33,7 @@
         {%- for category in site.categories limit: 8 -%}
           {%- if category[1].size == i -%}
           <li>
-            <a href="{{ site.url }}/category-list/#btn-{{ category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}">{{ category[0] }}</a>
+            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase }}">{{ category[0] }}</a>
             <small class="menu__list-count"><span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})</small>
           </li>
           {%- endif -%}
@@ -41,7 +41,7 @@
       {%- endfor -%}
     </ul>
 
-    <a href="{{ site.url }}/category-list/" class="menu__more">
+    <a href="{{ '/' | relative_url }}category-list/" class="menu__more">
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
     {%- endif -%}

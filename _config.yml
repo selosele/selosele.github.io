@@ -43,6 +43,7 @@ atom_feed:
   path                   : feed.xml
   mastfoot               : false
 search                   : true
+search_max_count         : 20 # Maximum number of search results
 # SEO Related
 google_site_verification :
 bing_site_verification   :

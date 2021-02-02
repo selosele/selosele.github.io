@@ -19,7 +19,7 @@ class: page--posts-by-year
 	<ul>
 		{%- for post in year.items -%}
 		<li>
-			<a href="{{ post.url }}" rel="permalink">{{ post.title }}</a>
+			<a href="{{ site.url }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
 			<span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
 		</li>
 		{%- endfor -%}

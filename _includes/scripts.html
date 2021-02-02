@@ -1,18 +1,7 @@
-{%- if site.footer_scripts -%}
-  {% for script in site.footer_scripts %}
-    {% if script contains "://" %}
-      {% capture script_path %}{{ script }}{% endcapture %}
-    {% else %}
-      {% capture script_path %}{{ script | relative_url }}{% endcapture %}
-    {% endif %}
-    <script src="{{ script_path }}"></script>
-  {% endfor %}
-{%- else -%}
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-{%- endif -%}
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
 {%- if site.search == true -%}
-<script src="/assets/js/plugins/simple-jekyll-search.min.js"></script>
+<script src="{{ '/assets/js/plugins/simple-jekyll-search.min.js' | relative_url }}"></script>
 <script>
     var searchPlugin = SimpleJekyllSearch({
       json: '{{ "/" | relative_url }}search.json',
@@ -20,31 +9,11 @@
       resultsContainer: document.getElementById('search-results'),
       searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',
       noResultsText: '검색 결과를 찾을 수 없습니다.',
-      limit: 20
+      {% if site.search_max_count -%}
+      limit: {{ site.search_max_count }}
+      {% endif -%}
   });
 </script>
 {%- endif -%}
 
 {% include analytics.html %}
-
-{%- if site.after_footer_scripts -%}
-  {% for script in site.after_footer_scripts %}
-    {% if script contains "://" %}
-      {% capture script_path %}{{ script }}{% endcapture %}
-    {% else %}
-      {% capture script_path %}{{ script | relative_url }}{% endcapture %}
-    {% endif %}
-    <script src="{{ script_path }}"></script>
-  {% endfor %}
-{%- endif -%}
-
-{%- if site.head_scripts -%}
-  {% for script in site.head_scripts %}
-    {% if script contains "://" %}
-      {% capture script_path %}{{ script }}{% endcapture %}
-    {% else %}
-      {% capture script_path %}{{ script | relative_url }}{% endcapture %}
-    {% endif %}
-    <script src="{{ script_path }}"></script>
-  {% endfor %}
-{%- endif -%}

@@ -28,7 +28,7 @@ title: 태그
     <ul>
       {%- for post in tagPost -%}
       <li>
-        <a href="{{ site.url }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+        <a href="{{ '/' | relative_url }}{{ post.url | replace_first: '/', '' }}" rel="permalink">{{ post.title }}</a>
         <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
       </li>
       {%- endfor -%}

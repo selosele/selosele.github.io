@@ -5,39 +5,41 @@ title: 카테고리
 
 {%- assign categories_max = 0 -%}
 {%- for category in site.categories -%}
-  {%- if category[1].size > categories_max -%}
-    {%- assign categories_max = category[1].size -%}
-  {%- endif -%}
+	{%- if category[1].size > categories_max -%}
+		{%- assign categories_max = category[1].size -%}
+	{%- endif -%}
 {%- endfor -%}
 
 {%- for i in (1..categories_max) reversed -%}
 {%- for category in site.categories -%}
-  {%- if category[1].size == i -%}
-  {%- assign categoryPost = site.posts | where: "categories", category[0] -%}
-  {%- assign categoryName = category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase -%}
-  <h2>
-    <button type="button" aria-controls="list-{{ categoryName }}" aria-expanded="false" id="btn-{{ categoryName }}" class="archive__btn">
-      <span aria-hidden="true" class="archive__btn__point">#</span>{{ category[0] }}
-      <small class="archive__list-count">
-        <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})
-      </small>
-    </button>
-  </h2>
-  
-  <div aria-labelledby="btn-{{ categoryName }}" id="list-{{ categoryName }}" class="archive__list">
-    <ul>
-      {%- for post in categoryPost -%}
-      <li>
-        <a href="{{ '/' | relative_url }}{{ post.url | replace_first: '/', '' }}" rel="permalink">{{ post.title }}</a>
-        <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
-      </li>
-      {%- endfor -%}
-    </ul>
+{%- if category[1].size == i -%}
+{%- assign categoryPost = site.posts | where: "categories", category[0] -%}
+{%- assign categoryName = category[0] | replace: ' ', '0' | url_encode | replace: '%', '1' | replace: '.', '2' | downcase -%}
+<h2>
+	<button type="button" aria-controls="list-{{ categoryName }}" aria-expanded="false" id="btn-{{ categoryName }}"
+		class="archive__btn">
+		<span aria-hidden="true" class="archive__btn__point">#</span>{{ category[0] }}
+		<small class="archive__list-count">
+			<span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{
+			category[1].size }})
+		</small>
+	</button>
+</h2>
 
-    <a href="#btn-{{ categoryName }}" class="page__btn-top">
-      <span class="sr-only">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
-    </a>
-  </div>
-  {%- endif -%}
+<div aria-labelledby="btn-{{ categoryName }}" id="list-{{ categoryName }}" class="archive__list">
+	<ul>
+		{%- for post in categoryPost -%}
+		<li>
+			<a href="{{ '/' | relative_url }}{{ post.url | replace_first: '/', '' }}" rel="permalink">{{ post.title }}</a>
+			<span class="archive__list__date">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
+		</li>
+		{%- endfor -%}
+	</ul>
+
+	<a href="#btn-{{ categoryName }}" class="page__btn-top">
+		<span class="sr-only">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
+	</a>
+</div>
+{%- endif -%}
 {%- endfor -%}
 {%- endfor -%}

@@ -171,13 +171,16 @@
 
 // abbr tooltip 생성 및 handler
 (function() {
-    var abbrList = document.querySelectorAll("abbr[title]");
+    var abbrList = document.querySelectorAll("abbr[title]"), abbrList_current;
+
     if (abbrList.length) {
         for (var i = 0; i < abbrList.length; i++) {
             abbrList[i].addEventListener("click", handlerClick);
             abbrList[i].addEventListener("keydown", handlerKeydown);
         }
     }
+
+    window.addEventListener("click", handlerWindowClickClose);
 
     Array.prototype.forEach.call(abbrList, function(t) {
         var t_span = document.createElement("span"),
@@ -196,6 +199,8 @@
     
     function handlerClick(event) {
         if ((event.target === event.currentTarget) || event.key === "Enter") {
+            abbrList_current = event.currentTarget;
+            
             var tooltipEL = event.currentTarget.querySelector(".abbr__tooltip");
 
             if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
@@ -203,16 +208,28 @@
                 tooltipEL.setAttribute("tabindex", "0");
                 tooltipEL.classList.add("abbr__tooltip--active");
             } else {
-                tooltipEL.hidden = true;
-                tooltipEL.setAttribute("tabindex", "-1");
-                tooltipEL.classList.remove("abbr__tooltip--active");
-                event.currentTarget.focus();
+                handlerClickClose(tooltipEL);
             }
         }
     }
 
     function handlerKeydown(event) {
         if (event.key === "Enter") handlerClick(event);
+    }
+
+    function handlerClickClose(EL) {
+        EL.hidden = true;
+        EL.setAttribute("tabindex", "-1");
+        EL.classList.remove("abbr__tooltip--active");
+        abbrList_current.focus();
+    }
+
+    function handlerWindowClickClose(event) {
+        var tooltipEL = document.querySelector(".abbr__tooltip");
+
+        if (event.target.tagName !== "ABBR" && tooltipEL.classList.contains("abbr__tooltip--active")) {
+            handlerClickClose(tooltipEL);
+        }
     }
 })();
 

@@ -10,7 +10,7 @@ main:
     url: /tag-list/
 
 etc:
-  - title: "Liquid 공식 문서 개인 번역"
+  - title: "Liquid 공식 문서 사이트 개인 번역"
     url: https://selosele.github.io/liquid/
     new_window: true
   - title: "jQuery 플러그인 제작 개인 프로젝트 (진행중)"

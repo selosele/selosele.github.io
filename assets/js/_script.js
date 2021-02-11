@@ -183,7 +183,7 @@
 
     for (var i = 0; i < abbrList.length; i++) {
         var t_span = document.createElement("span"),
-            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ |%/g, "1");
+            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "1").replace(/%/g, "2");
 
         abbrList[i].setAttribute("aria-describedby", t_title);
         abbrList[i].setAttribute("tabindex", "0");

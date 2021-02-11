@@ -10,7 +10,7 @@ tags:
     - liquid
 ---
 
-최근 진행 중이었던 개인 프로젝트 하나를 마무리하고 후기를 올린다. 현재 내가 사용하는 <abbr title="SSG, Static Site Generator">정적 사이트 생성기</abbr>인 Jekyll의 템플릿 언어 **Liquid**의 [공식 문서 사이트](https://shopify.github.io/liquid/){:target="_blank"} 한국어 개인 번역 작업인데, 한 달 정도 작업해서 완료했다. 근데 번역을 했다고 해서 공식 한국어 사이트가 되는 게 아니라 비공식, 즉 개인 번역이라 그냥 개인 사이트 개념임. 그나저나 요즘 파견 근무는 끝이 보이기 시작했다.. 2월 안에는 철수 가능할 듯? 바쁜 거 끝나고 좀 널널해져서 개인 프로젝트도 할 수 있게 됐음ㅋ
+최근 진행 중이었던 개인 프로젝트 하나를 마무리하고 후기를 올린다. 현재 내가 사용하는 <abbr title="Static Site Generator">SSG</abbr>인 Jekyll의 템플릿 언어 **Liquid**의 [공식 문서 사이트](https://shopify.github.io/liquid/){:target="_blank"} 한국어 개인 번역 작업인데, 한 달 정도 작업해서 완료했다. 근데 번역을 했다고 해서 공식 한국어 사이트가 되는 게 아니라 비공식, 즉 개인 번역이라 그냥 개인 사이트 개념임. 그나저나 요즘 파견 근무는 끝이 보이기 시작했다.. 2월 안에는 철수 가능할 듯? 바쁜 거 끝나고 좀 널널해져서 개인 프로젝트도 할 수 있게 됐음ㅋ
 
 [한국어 개인 번역 사이트](https://selosele.github.io/liquid/){:.page__btn target="_blank"}
 

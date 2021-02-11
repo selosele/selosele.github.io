@@ -179,7 +179,8 @@
         }
     }
 
-    window.addEventListener("click", handlerWindowClickClose);
+    document.addEventListener("click", handlerWindowClickClose);
+    document.addEventListener("touchstart", handlerWindowClickClose);
 
     for (var i = 0; i < abbrList.length; i++) {
         var t_span = document.createElement("span"),

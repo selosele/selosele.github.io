@@ -13,7 +13,7 @@ id: page-content
 <ul>
     {%- for post in primary_post -%}
     <li>
-        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%B, %d, %Y" }}</span>
+        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a> <span class="archive__list__date">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
     </li>
     {%- endfor -%}
 </ul>

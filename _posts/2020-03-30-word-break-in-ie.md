@@ -14,6 +14,7 @@ categories:
 tags:
     - css
 ---
+
 오늘 실무에서 엄청난 멘붕을 겪었는데, <mark>word-break: keep-all</mark> 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제..  
 검색을 해보니 <mark>word-break: break-all</mark> IE 미적용 관련 글을 쉽게 찾아볼 수 있었으나 keep-all 문제는 찾아볼 수 없었다(는 핑계고 그냥 검색능력 부족 탓인듯). 결국 선임에게 물어본 결과 그냥 break-all 쓰는 걸로..
 
@@ -28,14 +29,14 @@ tags:
 ### 조건
 
 * 3단 중첩 구조의 마크업. 위 코드는 div &gt; p &gt; span
-* div는 <mark>display: table</mark> 속성 적용, p는 <mark>display: table-cell</mark>, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 <mark>word-break: keep-all</mark> 선언으로 단어 단위 줄바꿈이 일어나게 하였음.
+* div는 <mark>display: table</mark> 속성 적용, p는 <mark>display: table-cell</mark>, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 <mark>word-break: keep-all</mark> 선언으로 단어 단위 줄 바꿈이 일어나게 하였음.
 
 그리고 span에 inline-block 선언을 해주었으나 선임께서 너비를 정의해주거나 block 선언을 해야 한다고 알려주심..
 
 ## 결론
-우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
+우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄 바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄 바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
 
-white-space 속성을 이용한 줄바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
+white-space 속성을 이용한 줄 바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.
 
 ## 해결책 알아내다 [2020.10.06]
 
@@ -48,11 +49,11 @@ span {
 }
 ```
 
-<mark>word-wrap: break-word</mark> 속성으로 단어 단위 강제 줄바꿈을 해주는 것이다. 주의할 점은 아래와 같음.
+<mark>word-wrap: break-word</mark> 속성으로 단어 단위 강제 줄 바꿈을 해주는 것이다. 주의할 점은 아래와 같음.
 
 ---
 
-1. <mark>word-break</mark> 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄바꿈을 할지 결정하는 속성이고, <mark>word-wrap</mark> 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄바꿈을 해주는 속성이라는 점에서 차이가 있다.
+1. <mark>word-break</mark> 속성은 텍스트가 컨테이너를 넘칠 때 &ldquo;어떻게&rdquo; 줄 바꿈을 할지 결정하는 속성이고, <mark>word-wrap</mark> 속성은 마찬가지로 넘칠 때 &ldquo;단어 단위로&rdquo; 줄 바꿈을 해주는 속성이라는 점에서 차이가 있다.
 2. 이 속성만 사용하는 게 아니라 <mark>word-break: keep-all</mark> 속성과 같이 써주는 것임. <mark>word-break: keep-all</mark>을 먼저 써주자.
 
 ```css

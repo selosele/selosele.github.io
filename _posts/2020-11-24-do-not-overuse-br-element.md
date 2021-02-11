@@ -15,7 +15,7 @@ tags:
 post_dropcap: false
 ---
 
-줄바꿈에 사용하는 ```<br>```{:language-html} 요소. 디자인을 맞추려고 br 요소를 알맞게 배치했다해서 다 된 게 아니다.. 웹 접근성 퍼포먼스 면에서 좋지 못하기 때문임. 이제야 알게 되서 자괴감(?)이..
+줄 바꿈에 사용하는 ```<br>```{:language-html} 요소. 디자인을 맞추려고 br 요소를 알맞게 배치했다해서 다 된 게 아니다.. 웹 접근성 퍼포먼스 면에서 좋지 못하기 때문임. 이제야 알게 되서 자괴감(?)이..
 
 ```html
 OO그룹<br>
@@ -58,10 +58,10 @@ Korea
 }
 ```
 
-줄바꿈이 필요한 부분을 inline 요소로 감싸고 display: block으로 떨어뜨리는 게 나은 것 같다.  
-디자인상 줄바꿈이 되어 있다고, 또는 너무 읽기 힘든 문장을 줄바꿈해주려고 br 요소를 사용하는 것은 조금 생각을 해봐야 될 일이다. 웹 접근성 마크 획득에 문제 없으니까 써도 된다는 건 좀 위험한 생각인듯싶다.
+줄 바꿈이 필요한 부분을 inline 요소로 감싸고 display: block으로 떨어뜨리는 게 나은 것 같다.  
+디자인상 줄 바꿈이 되어 있다고, 또는 너무 읽기 힘든 문장을 줄 바꿈해주려고 br 요소를 사용하는 것은 조금 생각을 해봐야 될 일이다. 웹 접근성 마크 획득에 문제 없으니까 써도 된다는 건 좀 위험한 생각인듯싶다.
 
 **참고 링크**
 
-* [&lt;br&gt;: 줄바꿈 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br){:target="_blank"} - MDN
+* [&lt;br&gt;: 줄 바꿈 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br){:target="_blank"} - MDN
 * [그룹화 관련 요소](https://seulbinim.github.io/WSA/grouping.html#p-%EC%9A%94%EC%86%8C){:target="_blank"} - 웹접근성과 웹표준

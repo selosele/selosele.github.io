@@ -172,7 +172,6 @@
 // abbr tooltip 생성 및 handler
 (function() {
     var abbrList = document.querySelectorAll("abbr[title]"), abbrList_current;
-
     if (abbrList.length) {
         for (var i = 0; i < abbrList.length; i++) {
             abbrList[i].addEventListener("click", handlerClick);
@@ -182,26 +181,26 @@
 
     window.addEventListener("click", handlerWindowClickClose);
 
-    Array.prototype.forEach.call(abbrList, function(t) {
+    for (var i = 0; i < abbrList.length; i++) {
         var t_span = document.createElement("span"),
-            t_title = "tooltip-" + encodeURI(t.title).replace(/ |%/g, "1");
+            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ |%/g, "1");
 
-        t.setAttribute("aria-describedby", t_title);
-        t.setAttribute("tabindex", "0");
+        abbrList[i].setAttribute("aria-describedby", t_title);
+        abbrList[i].setAttribute("tabindex", "0");
 
         t_span.hidden = true;
         t_span.setAttribute("role", "tooltip");
         t_span.id = t_title;
-        t_span.textContent = t.title;
+        t_span.textContent = abbrList[i].title;
         t_span.classList.add("abbr__tooltip");
-        t.appendChild(t_span);
-    });
+        abbrList[i].appendChild(t_span);
+    }
     
     function handlerClick(event) {
         if ((event.target === event.currentTarget) || event.key === "Enter") {
             abbrList_current = event.currentTarget;
             
-            var tooltipEL = event.currentTarget.querySelector(".abbr__tooltip");
+            var tooltipEL = abbrList_current.querySelector(".abbr__tooltip");
 
             if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
                 tooltipEL.hidden = false;
@@ -225,10 +224,21 @@
     }
 
     function handlerWindowClickClose(event) {
-        var tooltipEL = document.querySelector(".abbr__tooltip");
+        var tooltipEL = document.querySelectorAll(".abbr__tooltip");
 
-        if (event.target.tagName !== "ABBR" && tooltipEL.classList.contains("abbr__tooltip--active")) {
-            handlerClickClose(tooltipEL);
+        for (var i = 0; i < tooltipEL.length; i++) {
+            if (event.target.tagName !== "ABBR" && !event.target.classList.contains("abbr__tooltip") && tooltipEL[i].classList.contains("abbr__tooltip--active")) {
+                handlerClickClose(tooltipEL[i]);
+            }
+        }
+    }
+
+    var abbrTooltipList = document.querySelectorAll(".abbr__tooltip");
+    if (abbrTooltipList.length) {
+        for (var i = 0; i < abbrTooltipList.length; i++) {
+            abbrTooltipList[i].addEventListener("click", function(event) {
+                handlerClickClose(event.currentTarget);
+            });
         }
     }
 })();

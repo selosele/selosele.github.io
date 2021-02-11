@@ -20,9 +20,9 @@
   {%- capture canonical_url -%}{{ site.url }}{{ page.url }}{%- endcapture -%}
 {% endif %}
 
-{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
+{%- assign seo_description = page.subtitle | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
-  {%- assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once -%}
+  {%- assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once | strip -%}
 {%- endif -%}
 
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}

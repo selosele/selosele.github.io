@@ -206,6 +206,7 @@
                 tooltipEL.hidden = true;
                 tooltipEL.setAttribute("tabindex", "-1");
                 tooltipEL.classList.remove("abbr__tooltip--active");
+                event.currentTarget.focus();
             }
         }
     }

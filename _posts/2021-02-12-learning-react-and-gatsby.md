@@ -47,7 +47,7 @@ const Page = () => {
     return <MyLink path="/">link</MyLink>
 }
 
-export default page
+export default Page
 ```
 
 a 요소로 구성할 경우 이동하는 페이지가 바뀔 때마다 전부 로딩한다. React의 SPA 방식과 거리가 있어 보임. 다음과 같이 Gatsby의 Link 컴포넌트를 사용해보자.
@@ -62,7 +62,7 @@ const Page = () => {
     return <MyLink path="/">link</MyLink>
 }
 
-export default page
+export default Page
 ```
 
 Link 컴포넌트는 페이지 내부에서 이동할 때 미리 로딩하므로 훨씬 편리하다. 사용하려면 gatsby 모듈로부터 컴포넌트를 import하고 a 요소 대신 Link로 써주면 된다. a 요소의 href 속성은 to로 바꿔줘야 한다.

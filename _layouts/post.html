@@ -68,11 +68,11 @@ layout: default
       {%- endcomment -%}
 
       {{ content }}
-    </section>
 
-    {%- if page.header.image_link -%}
-    <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
-    {%- endif -%}
+      {%- if page.header.image_link -%}
+      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
+      {%- endif -%}
+    </section>
 
     <footer class="page__footer">
       {%- if page.share -%}

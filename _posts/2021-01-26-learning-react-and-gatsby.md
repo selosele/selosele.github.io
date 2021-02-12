@@ -37,7 +37,7 @@ const MyLink = props => (<a href={props.path}>{props.children}</a>)
 
 ## a 요소 대신 Gatsby에서 제공하는 Link 컴포넌트를 사용하자
 
-페이지 외부로 이동하는 링크가 아닌 페이지 내부에서 이동되는 링크의 경우 ```a```{:.language-html} 요소로 마크업하는 것보단, Gatsby에서 제공하는 ```Link``` 컴포넌트를 사용하는 게 훨씬 낫다. 작업하면서 많은 스타터 테마를 참고했는데, 거의 대부분 Link 컴포넌트가 사용된 건 다 이유가 있는 법이었다. 예제를 살펴보자.
+페이지 외부로 이동하는 링크가 아닌 페이지 내부에서 이동되는 링크의 경우 ```a```{:.language-html} 요소로 마크업하는 것보단, Gatsby에서 제공하는 ```Link``` 컴포넌트를 사용하는 게 훨씬 낫다. 작업하면서 참고한 많은 스타터 테마에 Link 컴포넌트가 사용된 건 다 이유가 있는 법이었다. 예제를 살펴보자.
 
 ```javascript
 import React from 'react'

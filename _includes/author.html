@@ -4,6 +4,8 @@
 </div>
 {%- endif -%}
 <div class="author__info-wrapper">
-	<{% if page.layout != "post" %}strong{% else %}h2{% endif %} itemprop="name" class="author__name">{{ site.author.name }}</{% if page.layout != "post" %}strong{% else %}h2{% endif %}>
-	{%- if site.author.desc -%}<p itemprop="description" class="author__desc">{{ site.author.desc }}</p>{%- endif -%}
+	<h2 itemprop="name" class="author__name">{{ site.author.name }}</h2>
+	{%- if site.author.desc -%}
+	<p itemprop="description" class="author__desc">{{ site.author.desc }}</p>
+	{%- endif -%}
 </div>

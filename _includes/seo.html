@@ -136,7 +136,7 @@
       "logo": {{ site_og_image | jsonify }}{% endif %}
     {% else %}
       "@type": "Person",
-      "name": {{ site.social.name | default: site.name | jsonify }},
+      "name": {{ site.social.name | default: site.author.name | jsonify }},
       "url": {{ site.url | append: '/' | jsonify }}{% if site.social.links %},
       "sameAs": {{ site.social.links | jsonify }}{% endif %}
     {% endif %}

@@ -111,6 +111,30 @@
     }
 })();
 
+// 다크모드 토글
+(function() {
+    var rootElement = document.documentElement,
+        darkmodeToggle = document.querySelector(".nav__darkmode-toggle");
+
+    darkmodeToggle.addEventListener("click", function(event) {
+        rootElement.classList.toggle("is-darkmode");
+        event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
+
+        if (rootElement.classList.contains("is-darkmode")) {
+            sessionStorage.setItem("is-darkmode", "Y");
+        } else {
+            sessionStorage.setItem("is-darkmode", "N");
+        }
+    });
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        if (sessionStorage.getItem("is-darkmode") === "Y") {
+            rootElement.classList.add("is-darkmode");
+            darkmodeToggle.classList.add("nav__darkmode-toggle--active");
+        }
+    });
+})();
+
 // scroll indicator
 (function() {
     function activateScrollIndicator() {

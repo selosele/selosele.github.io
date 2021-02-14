@@ -1,0 +1,408 @@
+/* ==========================================================================
+   themes css
+   ========================================================================== */
+
+/* 다크모드 */
+$themes: (
+   is-darkmode: (
+      "text-weight": 400,
+      "text-color": $grey12,
+      "link-color": $darkmode-link-color,
+      "bg-color": $black05,
+      "bg-color-02": $black03,
+      "bg-color-03": $grey03,
+      "bg-color-04": $black04,
+      "bg-color-05": $black02,
+   ),
+);
+
+html {
+   @include theme() {
+      body {
+         background-color: theme-style("bg-color-02");
+         color: theme-style("text-color");
+      }
+
+      a {
+         color: theme-style("text-color");
+         text-decoration: underline;
+      }
+
+      // 스킵 링크
+      .skip-links {
+         a {
+            color: $grey10;
+
+            &:hover {
+               color: $black;
+            }
+         }
+      }
+
+      // 사이트 타이틀
+      .site {
+         &-title {
+            text-decoration: none;
+         }
+      }
+
+      // 아카이브
+      .archive {
+         &__item {
+            &-title > a,
+            &-subtitle,
+            &-content {
+               color: theme-style("text-color");
+            }
+   
+            &-title > a {
+               text-decoration: none;
+   
+               @media (min-width: $min-large-width) {
+                  &:hover {
+                     text-decoration: underline;
+                  }
+               }
+            }
+   
+            &-content {
+               &:first-letter {
+                  color: inherit;
+               }
+            }
+   
+            &-thumb {
+               border-color: theme-style("text-color");
+            }
+   
+            &__info-item {
+               &--category,
+               &--tag {
+                  background-color: $black02;
+               }
+            }
+         }
+
+         &__btn {
+            color: theme-style("text-color");
+
+            &:hover,
+            &:focus,
+            &--active {
+               background-color: theme-style("bg-color");
+            }
+
+            &__point {
+               color: theme-style("link-color");
+            }
+         }
+
+         &__list {
+            li {
+               a {
+                  color: theme-style("text-color");
+                  text-decoration: none;
+
+                  @media (min-width: $min-large-width) {
+                     &:hover {
+                        text-decoration: underline;
+                     }
+                  }
+               }
+            }
+         }
+
+         &__list-count,
+         &__list__date {
+            color: theme-style("link-color");
+         }
+      }
+
+      // 검색
+      .search {
+         &-content {
+            &__inner-wrap {
+               border-color: theme-style("bg-color-03");
+               background-color: theme-style("bg-color");
+            }
+
+            &__input-wrapper {
+               border-color: theme-style("bg-color-03");
+            }
+         }
+
+         &__title {
+            color: theme-style("bg-color-03");
+         }
+         
+         &-content__input-wrapper:before,
+         &__close:before,
+         &__results__item {
+            color: theme-style("text-color");
+         }
+
+         &__results {
+            &__item {
+               > a {
+                  color: inherit;
+                  text-decoration: none;
+
+                  @media (min-width: $min-large-width) {
+                     &:hover {
+                        color: theme-style("link-color");
+                        text-decoration: underline;
+                     }
+                  }
+               }
+            }
+
+            &__match {
+               color: theme-style("link-color");
+            }
+         }
+
+         &__limit {
+            background-color: theme-style("bg-color-02");
+         }
+      }
+
+      // 포스트 페이지뷰
+      .page {
+         // 날짜, 태그, 카테고리 정보
+         &__info-item {
+            text-decoration: none;
+
+            &--category,
+            &--tag {
+               background-color: $black02;
+            }
+         }
+         
+         // 콘텐츠
+         &__content {
+            h2:not(.toc__title) {
+               + h3 {
+                  border-color: theme-style("bg-color-05");
+               }
+            }
+
+            p {
+               &.has-dropcap {
+                  &:first-letter {
+                     color: inherit;
+                  }
+               }
+            }
+
+            img {
+               ~ em {
+                  color: theme-style("bg-color-03");
+               }
+            }
+         }
+
+         // 버튼
+         &__btn {
+            border-color: theme-style("bg-color-05");
+            background-color: theme-style("bg-color");
+            text-decoration: none;
+         }
+
+         // 이미지 틀
+         &__figcaption {
+            color: theme-style("bg-color-03");
+         }
+
+         // 푸터
+         &__footer {
+            background-color: theme-style("bg-color");
+         }
+         
+         // 공유하기
+         &__share {
+            &-title {
+               font-weight: theme-style("text-weight");
+            }
+
+            > a {
+               text-decoration: none;
+            }
+         }
+
+         // 저자 정보
+         &__author {
+            border-color: theme-style("bg-color-05");
+         }
+      }
+
+      // 목차
+      .toc {
+         &__title {
+            background-color: theme-style("bg-color-02");
+            color: theme-style("text-color");
+         }
+
+         &-wrapper {
+            background-color: theme-style("bg-color");
+         }
+
+         &__menu {
+            > li {
+               > a {
+                  color: theme-style("text-color");
+                  text-decoration: none;
+               }
+            }
+         }
+      }
+
+      // 페이지네이션
+      .pagination {
+         li > a {
+            color: theme-style("text-color");
+            text-decoration: none;
+         }
+
+         .page {
+            &--arrow {
+               a {
+                  &:before {
+                     color: inherit;
+                  }
+               }
+            }
+
+            &--current {
+               color: theme-style("text-color");
+            }
+         }
+
+         &--pager {
+            border-color: theme-style("bg-color-05");
+            background-color: theme-style("bg-color");
+            text-decoration: none;
+
+            @media (min-width: $min-large-width) {
+               &:hover {
+                  color: theme-style("link-color");
+               }
+            }
+         }
+      }
+
+      // 푸터
+      .mastfoot {
+         border-top: 1px dashed theme-style("bg-color-03");
+         background-color: transparent;
+      }
+
+      // 주메뉴
+      .menu {
+         &__layer {
+            background-color: theme-style("bg-color-02");
+
+            > h2,
+            > h3 {
+               border-color: theme-style("bg-color-05");
+            }
+
+            li {
+               a {
+                  text-decoration: none;
+
+                  @media (min-width: $min-large-width) {
+                     &:hover {
+                        text-decoration: underline;
+                        text-decoration-color: theme-style("link-color");
+                     }
+                  }
+               }
+            }
+         }
+
+         &__list {
+            &-count {
+               color: theme-style("text-color");
+            }
+         }
+
+         &__more {
+            text-decoration: none;
+
+            &:before {
+               color: theme-style("text-color");
+            }
+         }
+
+         &__author {
+            &-wrapper {
+               background-color: theme-style("bg-color");
+
+               .menu__author-links {
+                  li {
+                     > a {
+                        color: theme-style("text-color");
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      // mark 태그, 코드 하이라이트
+      mark,
+      div.highlighter-rouge,
+      code.highlighter-rouge,
+      figure.highlight {
+         background-color: theme-style("bg-color-04");
+      }
+
+      // 코드박스
+      .codebox {
+         background-color: theme-style("bg-color");
+      }
+
+      // abbr
+      abbr[title] {
+         border-color: theme-style("text-color");
+      }
+
+      // 각주
+      .footnote {
+         text-decoration: none;
+      }
+
+      .footnotes {
+         .reversefootnote {
+            text-decoration: none;
+         }
+      }
+
+      // blockquote
+      blockquote {
+         background-color: theme-style("bg-color");
+
+         &:before {
+            color: rgba(0, 0, 0, .4);
+         }
+      }
+
+      // 느낌표
+      .txt--attention {
+         &:before {
+            color: theme-style("link-color");
+         }
+      }
+
+      // color
+      .color {
+         &-red {
+            color: theme-style("link-color") !important;
+         }
+      
+         &-green {
+            color: $green03 !important;
+         }
+      }
+   };
+}

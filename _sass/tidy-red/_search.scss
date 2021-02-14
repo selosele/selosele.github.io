@@ -34,7 +34,7 @@
     padding-bottom: 1rem;
     padding-left: 1rem;
     border-radius: .4rem;
-    border: 2px solid $black05;
+    border: 1px solid $black05;
     background-color: $grey12;
     box-shadow: rgba(0,0,0,.1) .5rem .5rem .5rem;
     box-sizing: border-box;
@@ -48,7 +48,7 @@
   &__input-wrapper {
     position: relative;
     margin-top: 1rem;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $black03;
 
     @media (min-width: $min-large-width) {
       padding-left: 3.8rem;
@@ -79,7 +79,7 @@
     padding-top: 0;
     padding-bottom: 0;
     border: 0;
-    color: $black02;
+    color: inherit;
     @include search-item;
   }
 
@@ -89,8 +89,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    color: $black02;
     font-weight: 400;
+    color: $black02;
     pointer-events: none;
     white-space: nowrap;
     @include search-item;
@@ -113,7 +113,6 @@
     margin-top: 1.5em;
     padding-left: 0;
     font-size: .85rem;
-    color: $main-color;
     list-style: none;
   
     @media (min-width: $min-minimal-width) {
@@ -132,12 +131,13 @@
       padding-bottom: $b-value;
       border-bottom: 1px dotted $grey09;
       line-height: 1.6;
+      color: $black03;
   
       > a {
         display: block;
         position: relative;
         z-index: 1;
-        color: $black;
+        color: inherit;
 
         @media (min-width: $min-medium-width) {
           padding-right: 9rem;
@@ -168,7 +168,7 @@
       margin-top: auto;
       margin-bottom: auto;
       font-size: .95rem;
-      color: $black;
+      color: inherit;
 
       @media (min-width: $min-medium-width) {
         display: block;

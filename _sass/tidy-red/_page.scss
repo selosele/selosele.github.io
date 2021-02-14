@@ -108,7 +108,6 @@
       padding-bottom: .9rem;
       padding-left: .777777rem;
       background-color: $grey02;
-      color: $black02;
 
       @media (min-width: $min-medium-width) {
          padding-left: 1.2rem;
@@ -125,7 +124,6 @@
          margin-bottom: .65rem;
          font-weight: 700;
          font-size: 1rem;
-         color: $black02;
       }
 
       > a {
@@ -198,7 +196,6 @@
       margin-right: -$layout-margin;
       margin-bottom: 2rem;
       padding: .6rem .3rem .3rem .3rem;
-      background-color: $grey08;
       justify-content: flex-end;
       flex-wrap: wrap;
 
@@ -233,7 +230,6 @@
    
    &__content {
       line-height: 1.9;
-      color: $black;
       @include clearfix;
 
       @media (min-width: $min-small-width) {
@@ -490,6 +486,7 @@
    &__btn {
       display: inline-block;
       padding: .4rem 1rem;
+      border: 1px solid transparent;
       border-top-right-radius: .4rem;
       border-bottom-left-radius: .4rem;
       background-color: $grey04;
@@ -531,10 +528,6 @@
                   padding-top: 1.3rem;
                }
             }
-         }
-
-         &__info-wrapper {
-            color: $black02;
          }
    
          &__image-wrapper {

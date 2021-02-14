@@ -25,6 +25,7 @@ body {
    font-weight: 400;
    letter-spacing: -.01em;
    line-height: 1;
+   color: $black03;
    word-break: keep-all;
    word-wrap: break-word;
 }
@@ -71,6 +72,7 @@ input {
    &[type="text"],
    &[type="search"] {
       border-radius: 0;
+      background-color: transparent;
       -webkit-appearance: none;
    }
    
@@ -189,7 +191,7 @@ abbr {
 
 /* skip links */
 .skip-links a {
-   color: #727272;
+   color: $grey10;
    transition: all .2s;
 
    &:focus,
@@ -317,7 +319,7 @@ iframe {
    -webkit-appearance: none;
  
    &-thumb {
-     border: 1px solid $black;
+     border: 1px solid $black03;
      border-radius: .4rem;
      background-color: $grey12;
 

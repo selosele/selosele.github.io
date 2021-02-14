@@ -142,6 +142,20 @@
          font-size: 1.7rem;
       }
    }
+
+   // 다크모드 토글
+   &__darkmode-toggle {
+      &:before {
+         content: "\eba4";
+         font-size: 1.6rem;
+      }
+
+      &--active {
+         &:before {
+            content: "\eba3";
+         }
+      }
+   }
 }
 
 .site {

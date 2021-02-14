@@ -38,10 +38,24 @@
    }
 }
 
+// 다크모드
+@mixin theme() {
+   @each $theme, $map in $themes {
+      $theme-map: $map !global;
+
+      &.#{$theme} {
+         @content;
+      }
+   }
+   $theme-map: null !global;
+}
+
+// hero
 @mixin teaser {
    background-color: $green05;
 }
 
+// 프로필 사진
 @mixin avatar {
    display: inline-block;
    padding: .2rem;
@@ -63,6 +77,7 @@
    }
 }
 
+// 페이지 타이틀
 @mixin page-title {
    font-family: $default-font03;
 
@@ -75,6 +90,7 @@
    }
 }
 
+// 페이지 서브타이틀
 @mixin subtitle($margin-top) {
    display: block;
    margin-top: $margin-top;
@@ -113,7 +129,7 @@
    transition-delay: $del;
 }
 
-// search
+// 검색
 @mixin search-item {
    height: 2rem;
    padding-left: .5rem;
@@ -142,18 +158,20 @@
 }
 
 /* text */
-@mixin heading($color: $black) {
+@mixin heading($color: null) {
    color: $color;
    font-weight: 700;
    line-height: 1.4;
 }
 
+// 말줄임표
 @mixin ellipsis {
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
 }
 
+// 말줄임표 여러줄
 @mixin multiple-ellipsis($line-clamp) {
    display: -webkit-box;
    overflow: hidden;
@@ -162,6 +180,7 @@
    -webkit-box-orient: vertical;
 }
 
+// figcaption 태그
 @mixin figcaption {
    margin-top: .8rem;
    font-style: normal;
@@ -206,6 +225,7 @@
    }
 }
 
+// 날짜
 @mixin post-info-item-date {
    background-color: $black02;
 
@@ -214,6 +234,7 @@
    }
 }
 
+// 카테고리
 @mixin post-info-item-category {
    background-color: $green03;
 
@@ -223,6 +244,7 @@
    }
 }
 
+// 태그
 @mixin post-info-item-tag {
    background-color: $sub-color03;
 

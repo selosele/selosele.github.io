@@ -54,11 +54,16 @@
     {%- endunless -%}
     
     <div class="nav__btn-wrapper">
+      <button type="button" class="nav__item nav__darkmode-toggle">
+        <span class="sr-only">{{ site.data.ui-text[site.locale].darkmode_toggle_label }}</span>
+      </button>
+
       {%- if site.search == true -%}
       <button type="button" aria-controls="search-layer" class="nav__item nav__search-open">
         <span class="sr-only">{{ site.data.ui-text[site.locale].search_label }}</span>
       </button>
       {%- endif -%}
+
       <button type="button" aria-haspopup="menu" aria-controls="primary-nav" class="nav__item nav__menu-open">
         <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_open_label }}</span>
       </button>

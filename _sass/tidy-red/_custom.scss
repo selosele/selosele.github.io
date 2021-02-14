@@ -32,3 +32,14 @@
       color: $black02;
    }
 }
+
+// 다크모드
+html {
+   @include theme() {
+      .about {
+         .archive__list__date {
+            color: theme-style("link-color");
+         }
+      }
+   }
+}

@@ -2,7 +2,10 @@
    variables css
    ========================================================================== */
 
-/* common layout */
+/* global 플래그 사용을 위한 전역변수 */
+$theme-map: null;
+
+/* 레이아웃 공통 */
 $layout-general-width: 1200px !default;
 $layout-wide-width: 1700px !default;
 $layout-responsive-width: 90% !default;
@@ -10,7 +13,7 @@ $layout-margin: 1rem !default;
 $toc-margin: 24rem !default;
 $li-default-margin: .666667em !default;
 
-// breakpoints (max-width)
+// 분기점 (max-width)
 $general-width: 1920 !default;
 $normal-width: 1600 !default;
 $standard-width: 1420 !default;
@@ -21,7 +24,7 @@ $small-width: 560 !default;
 $minimal-width: 480 !default;
 $tiny-width: 320 !default;
 
-// breakpoints (min-width)
+// 분기점 (min-width)
 $min-general-width: ($general-width / 16) + 0em !default;
 $min-normal-width: ($normal-width / 16) + 0em !default;
 $min-standard-width: ($standard-width / 16) + 0em !default;
@@ -40,13 +43,14 @@ $default-font04: "RIDI batang" !default;
 $icon-font: "xeicon" !default;
 
 /* color */
-$main-color: #ce5050 !default; // main background color
+$main-color: #ce5050 !default; // 주 배경색상
 $sub-color01: #facfcf !default;
 $sub-color02: #f74545 !default;
-$sub-color03: #cc4444 !default; // main text color
+$sub-color03: #cc4444 !default; // 주 텍스트색상
 $sub-color04: #f07178 !default;
 $sub-color05: #ec9597 !default;
 $sub-color06: #c76060 !default;
+$darkmode-link-color: #ea6060 !default; // 다크모드 주 링크색상
 $black: #333 !default;
 $black02: #525252 !default;
 $black03: #1e1e1e !default;

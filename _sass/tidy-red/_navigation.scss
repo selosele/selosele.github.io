@@ -71,7 +71,6 @@
          margin-bottom: .5em;
          padding-bottom: .5em;
          border-bottom: 1px dotted $black;
-         color: $black;
          font-weight: 700;
          line-height: 1.4;
       }
@@ -86,7 +85,6 @@
          margin-top: 1em;
          margin-bottom: 1em;
          font-size: 1.1rem;
-         color: $black02;
          line-height: 1.3;
 
          @media (min-width: $min-small-width) {
@@ -145,7 +143,7 @@
          font-size: 1.8rem;
          letter-spacing: normal;
          line-height: 1;
-         color: $black;
+         color: $black03;
          -webkit-font-smoothing: antialiased;
       }
    }
@@ -185,7 +183,6 @@
          padding: 1rem 0.5rem;
          background-color: $grey02;
          line-height: 1.5;
-         color: $black;
          text-align: center;
 
          .menu__author-links {
@@ -298,7 +295,7 @@
             display: block;
             font-family: $icon-font;
             font-size: 1em;
-            color: $black;
+            color: inherit;
             -webkit-font-smoothing: antialiased;
 
             @media (min-width: $min-small-width) {

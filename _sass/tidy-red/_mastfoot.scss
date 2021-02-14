@@ -59,7 +59,7 @@
         margin-bottom: auto;
         font-family: $icon-font;
         font-size: 1.5rem;
-        color: $black;
+        color: $black03;
         -webkit-font-smoothing: antialiased;
       }
     }
@@ -84,6 +84,5 @@
   &__copyright {
     margin: 0;
     line-height: 1.5;
-    color: $black;
   }
 }

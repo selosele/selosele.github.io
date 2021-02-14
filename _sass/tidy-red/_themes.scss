@@ -247,10 +247,13 @@ html {
          }
 
          &__menu {
+            a {
+               text-decoration: none;
+            }
+
             > li {
                > a {
                   color: theme-style("text-color");
-                  text-decoration: none;
                }
             }
          }
@@ -403,6 +406,12 @@ html {
          &-green {
             color: $green03 !important;
          }
+      }
+
+      // selection
+      ::selection {
+         background-color: theme-style("text-color");
+         color: theme-style("bg-color-04");
       }
    };
 }

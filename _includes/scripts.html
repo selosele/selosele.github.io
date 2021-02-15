@@ -2,8 +2,9 @@
 
 <script>
   // 다크모드 토글
-  {%- assign data = site.url | url_encode | upcase -%}
   (function() {
+    {% assign data = site.url | url_encode | upcase -%}
+
     var rootElement = document.documentElement,
         darkmodeToggle = document.querySelector(".nav__darkmode-toggle");
 

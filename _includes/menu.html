@@ -8,6 +8,7 @@
 <div aria-hidden="true" id="side-menu" class="side-menu">
   <nav aria-labelledby="nav-title" itemscope itemtype="https://schema.org/SiteNavigationElement" id="primary-nav" class="menu__layer">
     <button type="button" aria-controls="primary-nav" class="menu__close">
+      <i aria-hidden="true" class="xi-close-thin"></i>
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
     </button>
 
@@ -42,6 +43,7 @@
     </ul>
 
     <a href="{{ '/' | relative_url }}category-list/" class="menu__more">
+      <i aria-hidden="true" class="xi-ellipsis-h"></i>
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
     </a>
     {%- endif -%}

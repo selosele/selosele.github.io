@@ -9,13 +9,21 @@
    padding-bottom: 1.3rem;
    background-color: $sub-color01;
    line-height: 1.4;
+   color: $black03;
 
    &__inner-wrap {
       @include common-layout($max-width: $layout-wide-width);
+      
 
       @media (min-width: $min-large-width) {
          a:hover {
             text-decoration: underline;
+         }
+      }
+
+      a {
+         &:not(:hover) {
+            text-decoration: none;
          }
       }
    }
@@ -84,22 +92,34 @@
    }
 }
 
-.layout--home {
-   .masthead__page-header {
-      text-align: center;
+.layout {
+   &--home {
+      .masthead__page-header {
+         text-align: center;
+      }
+
+      .nav__btn-wrapper {
+         margin-top: 0;
+      }
    }
 }
 
 .nav {
    &__btn-wrapper {
       display: flex;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: auto;
-      height: 2rem;
+      margin-top: 0.555555rem;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+
+      @media (min-width: $min-mini-width) {
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: auto;
+         height: 2rem;
+         margin-top: 0;
+      }
    
       > button {
          background-color: transparent;
@@ -110,12 +130,10 @@
       width: 2rem;
       height: 2rem;
 
-      &:before {
+      > i {
          display: block;
-         font-family: $icon-font;
          color: $grey12;
          text-shadow: $black04 1px .1rem .1rem;
-         -webkit-font-smoothing: antialiased;
       }
    
       & ~ & {
@@ -129,30 +147,29 @@
 
    // 검색 토글
    &__search-open {
-      &:before {
-         content: "\e97a";
+      > i {
          font-size: 1.5rem;
       }
    }
 
    // 메뉴 토글
    &__menu-open {
-      &:before {
-         content: "\e91c";
+      > i {
          font-size: 1.7rem;
       }
    }
 
    // 다크모드 토글
    &__darkmode-toggle {
-      &:before {
-         content: "\eba4";
+      > i {
          font-size: 1.6rem;
       }
 
       &--active {
-         &:before {
-            content: "\eba3";
+         > i {
+            &:before {
+               content: "\eba3";
+            }
          }
       }
    }
@@ -160,17 +177,21 @@
 
 .site {
    &-title {
-      display: inline-block;
+      display: block;
       position: relative;
       z-index: 1;
-      margin-right: 4em;
       font-family: $default-font03;
       font-weight: 400;
       font-size: calc(1.23rem + .5vw);
       line-height: 1.45;
       color: $grey12;
       text-shadow: rgba(0,0,0,.7) 1px 1px .107em;
-      vertical-align: top;
+
+      @media (min-width: $min-mini-width) {
+         display: inline-block;
+         margin-right: 6.5em;
+         vertical-align: top;
+      }
 
       @media (min-width: $min-small-width) {
          font-size: 1.4rem;

@@ -128,7 +128,7 @@
 
       > a {
          display: block;
-         width: 2.556rem;
+         width: 100%;
          height: 1.944rem;
          overflow: hidden;
          margin-bottom: .3rem;
@@ -137,55 +137,36 @@
          font-family: $default-font03;
          font-weight: 700;
          font-size: .9rem;
-         color: transparent;
+         color: $grey12;
          box-sizing: border-box;
 
-         &:not(:last-of-type) {
-            margin-right: .3rem;
-         }
-
-         @media (min-width: $min-medium-width) {
+         @media (min-width: $min-minimal-width) {
             width: auto;
             height: auto;
-            color: $grey12;
 
-            &:before {
-               margin-right: .25rem;
+            &:not(:last-of-type) {
+               margin-right: .3rem;
             }
          }
 
-         &:before {
-            font-family: $icon-font;
-            font-weight: 400;
+         > i {
+            margin-right: .25rem;
             font-size: 1.1em;
             color: $grey12;
-            -webkit-font-smoothing: antialiased;
          }
       }
 
       &__btn {
          &--twitter {
             background-color: $twitter-color;
-
-            &:before {
-               content: "\ec1f";
-            }
          }
 
          &--facebook {
             background-color: $facebook-color;
-
-            &:before {
-               content: "\ebd5";
-            }
          }
 
          &--linkedin {
             background-color: $linkedin-color;
-
-            &:before {
-               content: "\ebf4";
-            }
          }
       }
    }
@@ -195,15 +176,13 @@
       margin-left: -$layout-margin;
       margin-right: -$layout-margin;
       margin-bottom: 2rem;
-      padding: .6rem .3rem .3rem .3rem;
+      padding: .6rem 0 .3rem 0;
       justify-content: flex-end;
       flex-wrap: wrap;
 
       @media (min-width: $min-minimal-width) {
          margin-left: 0;
          margin-right: 0;
-         padding-left: .6rem;
-         padding-right: .6rem;
       }
    }
 
@@ -571,8 +550,7 @@
       height: 2.5rem;
       margin: 1rem auto;
 
-      &:before {
-         content: "\e915";
+      > i {
          display: block;
          position: absolute;
          top: 0;
@@ -582,10 +560,8 @@
          width: 1.75rem;
          height: 1.8rem;
          margin: auto;
-         font-family: $icon-font;
          font-size: 1.8rem;
          color: $sub-color03;
-         -webkit-font-smoothing: antialiased;
       }
    }
 }

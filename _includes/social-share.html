@@ -13,7 +13,18 @@
     onclick="window.open(this.href, 'window', 'left=20, top=20, width=500, height=500, toolbar=1, resizable=0'); return false;"
   {%- endcapture -%}
 
-  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}twitter" {{ commonAttribute }}>Twitter</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}facebook" {{ commonAttribute }}>Facebook</a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}linkedin" {{ commonAttribute }}>LinkedIn</a>
+  <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" aria-label="Twitter {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}twitter" {{ commonAttribute }}>
+    <i aria-hidden="true" class="xi-twitter"></i>
+    Twitter
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" aria-label="Facebook {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}facebook" {{ commonAttribute }}>
+    <i aria-hidden="true" class="xi-facebook-official"></i>
+    Facebook
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}" aria-label="LinkedIn {{ site.data.ui-text[site.locale].share_on_label }}" class="{{ commonClass }}linkedin" {{ commonAttribute }}>
+    <i aria-hidden="true" class="xi-linkedin-square"></i>
+    LinkedIn
+  </a>
 </section>

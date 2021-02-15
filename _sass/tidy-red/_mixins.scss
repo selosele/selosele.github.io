@@ -217,29 +217,21 @@
    white-space: nowrap;
    box-sizing: border-box;
 
-   &:before {
-      font-family: $icon-font;
+   > i {
       font-size: 1em;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
    }
 }
 
 // 날짜
 @mixin post-info-item-date {
    background-color: $black02;
-
-   &:before {
-      content: "\ea2c";
-   }
 }
 
 // 카테고리
 @mixin post-info-item-category {
    background-color: $green03;
 
-   &:before {
-      content: "\eb1e";
+   > i {
       margin-right: .15em;
    }
 }
@@ -248,8 +240,8 @@
 @mixin post-info-item-tag {
    background-color: $sub-color03;
 
-   &:before {
-      content: "\ea36";
+   > i {
       margin-right: .2em;
+      vertical-align: middle;
    }
 }

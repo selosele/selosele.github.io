@@ -22,6 +22,7 @@ $big-width: 1024 !default;
 $medium-width: 768 !default;
 $small-width: 560 !default;
 $minimal-width: 480 !default;
+$mini-width: 380 !default;
 $tiny-width: 320 !default;
 
 // 분기점 (min-width)
@@ -33,6 +34,7 @@ $min-big-width: ($big-width / 16) + 0em !default;
 $min-medium-width: ($medium-width / 16) + 0em !default;
 $min-small-width: ($small-width / 16) + 0em !default;
 $min-minimal-width: ($minimal-width / 16) + 0em !default;
+$min-mini-width: ($mini-width / 16) + 0em !default;
 $min-tiny-width: ($tiny-width / 16) + 0em !default;
 
 /* font */

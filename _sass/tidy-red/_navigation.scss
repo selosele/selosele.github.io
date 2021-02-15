@@ -136,15 +136,10 @@
       margin-right: auto;
       text-align: center;
    
-      &:before {
-         content: "\e94a";
+      > i {
          display: block;
-         font-family: $icon-font;
          font-size: 1.8rem;
-         letter-spacing: normal;
-         line-height: 1;
          color: $black03;
-         -webkit-font-smoothing: antialiased;
       }
    }
 
@@ -155,13 +150,10 @@
       margin-left: auto;
       background-color: $main-color;
 
-      &:before {
-         content: "\e9af";
+      > i {
          display: block;
-         font-family: $icon-font;
          font-size: 1.2rem;
          color: $grey12;
-         -webkit-font-smoothing: antialiased;
       }
    }
 

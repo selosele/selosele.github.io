@@ -39,6 +39,13 @@ html {
          }
       }
 
+      // IE 경고문
+      .ie-alert {
+         a {
+            color: $sub-color03;
+         }
+      }
+
       // 사이트 타이틀
       .site {
          &-title {
@@ -56,12 +63,8 @@ html {
             }
    
             &-title > a {
-               text-decoration: none;
-   
-               @media (min-width: $min-large-width) {
-                  &:hover {
-                     text-decoration: underline;
-                  }
+               &:not(:hover) {
+                  text-decoration: none;
                }
             }
    
@@ -93,7 +96,7 @@ html {
             }
 
             &__point {
-               color: theme-style("link-color");
+               color: theme-style("text-color");
             }
          }
 
@@ -101,12 +104,9 @@ html {
             li {
                a {
                   color: theme-style("text-color");
-                  text-decoration: none;
-
-                  @media (min-width: $min-large-width) {
-                     &:hover {
-                        text-decoration: underline;
-                     }
+                  
+                  &:not(:hover) {
+                     text-decoration: none;
                   }
                }
             }
@@ -145,12 +145,14 @@ html {
             &__item {
                > a {
                   color: inherit;
-                  text-decoration: none;
+                  
+                  &:not(:hover) {
+                     text-decoration: none;
+                  }
 
                   @media (min-width: $min-large-width) {
                      &:hover {
                         color: theme-style("link-color");
-                        text-decoration: underline;
                      }
                   }
                }
@@ -199,6 +201,11 @@ html {
                   color: theme-style("bg-color-03");
                }
             }
+         }
+
+         // 헤더 타이틀 블릿
+         &__header-link {
+            text-decoration: none;
          }
 
          // 버튼
@@ -311,13 +318,8 @@ html {
 
             li {
                a {
-                  text-decoration: none;
-
-                  @media (min-width: $min-large-width) {
-                     &:hover {
-                        text-decoration: underline;
-                        text-decoration-color: theme-style("link-color");
-                     }
+                  &:not(:hover) {
+                     text-decoration: none;
                   }
                }
             }

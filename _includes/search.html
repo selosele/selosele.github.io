@@ -1,6 +1,7 @@
 <div aria-hidden="true" id="search-content" class="search-content">
 	<div role="dialog" aria-modal="true" aria-labelledby="search-title" id="search-layer" class="search-content__inner-wrap">
 		<div class="search-content__input-wrapper">
+			<i aria-hidden="true" class="xi-search search__icon"></i>
 			<label for="search-input" id="search-title" class="search__title">{{ site.data.ui-text[site.locale].search_label_text }}</label>
 			<input type="text" role="combobox" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="search-results" id="search-input" class="search__input">
 		</div>
@@ -12,6 +13,7 @@
 		<ul id="search-results" class="search__results"></ul>
 
 		<button type="button" aria-controls="search-layer" class="search__close">
+			<i aria-hidden="true" class="xi-close-thin"></i>
 			<span class="sr-only">{{ site.data.ui-text[site.locale].search_close_label }}</span>
 		</button>
 	</div>

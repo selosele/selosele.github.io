@@ -1,5 +1,32 @@
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
+<script>
+  // 다크모드 토글
+  {%- assign data = site.url | url_encode | upcase -%}
+  (function() {
+    var rootElement = document.documentElement,
+        darkmodeToggle = document.querySelector(".nav__darkmode-toggle");
+
+    darkmodeToggle.addEventListener("click", function(event) {
+        rootElement.classList.toggle("is-darkmode");
+        event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
+
+        if (rootElement.classList.contains("is-darkmode")) {
+            sessionStorage.setItem("{{ data }}-is-darkmode", "Y");
+        } else {
+            sessionStorage.setItem("{{ data }}-is-darkmode", "N");
+        }
+    });
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        if (sessionStorage.getItem("{{ data }}-is-darkmode") === "Y") {
+            rootElement.classList.add("is-darkmode");
+            darkmodeToggle.classList.add("nav__darkmode-toggle--active");
+        }
+    });
+  })();
+</script>
+
 {%- if site.search == true -%}
 <script src="{{ '/assets/js/plugins/simple-jekyll-search.min.js' | relative_url }}"></script>
 <script>

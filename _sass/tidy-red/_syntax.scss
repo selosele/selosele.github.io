@@ -29,6 +29,7 @@ figure.highlight {
 }
 
 div.highlighter-rouge {
+  overflow: hidden;
   position: relative;
   margin-left: -$layout-margin;
   margin-right: -$layout-margin;

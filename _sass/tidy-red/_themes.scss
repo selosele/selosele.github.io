@@ -433,6 +433,15 @@ html {
          }
       }
 
+      // 스크롤바 스타일
+      ::-webkit-scrollbar {
+         &-thumb {
+            &:not(:hover) {
+               background-color: theme-style("text-color");
+            }
+         }
+      }
+
       // selection
       ::selection {
          background-color: theme-style("text-color");

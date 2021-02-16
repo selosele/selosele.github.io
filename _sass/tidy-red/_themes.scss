@@ -6,7 +6,7 @@
 $themes: (
    is-darkmode: (
       "text-weight": 400,
-      "text-color": $grey12,
+      "text-color": $grey08,
       "link-color": $darkmode-link-color,
       "bg-color": $black05,
       "bg-color-02": $black03,
@@ -134,6 +134,10 @@ html {
          &__title {
             color: theme-style("bg-color-03");
          }
+
+         &__icon {
+            color: theme-style("link-color");
+         }
          
          &-content__input-wrapper:before,
          &__close:before,
@@ -165,6 +169,12 @@ html {
 
          &__limit {
             background-color: theme-style("bg-color-02");
+         }
+
+         &__close {
+            > i {
+               color: theme-style("link-color");
+            }
          }
       }
 
@@ -206,6 +216,10 @@ html {
          // 헤더 타이틀 블릿
          &__header-link {
             text-decoration: none;
+
+            &:before {
+               color: theme-style("link-color");
+            }
          }
 
          // 버튼
@@ -304,6 +318,10 @@ html {
       .mastfoot {
          border-top: 1px dashed theme-style("bg-color-03");
          background-color: transparent;
+
+         &__btn-top {
+            background-color: theme-style("text-color");
+         }
       }
 
       // 주메뉴
@@ -355,11 +373,16 @@ html {
       }
 
       // mark 태그, 코드 하이라이트
-      mark,
       div.highlighter-rouge,
-      code.highlighter-rouge,
       figure.highlight {
          background-color: theme-style("bg-color-04");
+      }
+
+      mark,
+      code.highlighter-rouge {
+         background-color: theme-style("text-color");
+         color: theme-style("bg-color-02");
+         text-shadow: none;
       }
 
       // 코드박스

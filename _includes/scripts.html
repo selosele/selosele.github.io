@@ -3,7 +3,7 @@
 <script>
   // 다크모드 토글
   (function() {
-    {% assign data = site.url | url_encode | upcase -%}
+    {% assign site_id = site.url | url_encode | upcase -%}
 
     var rootElement = document.documentElement,
         darkmodeToggle = document.querySelector(".nav__darkmode-toggle");
@@ -13,14 +13,14 @@
         event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
 
         if (rootElement.classList.contains("is-darkmode")) {
-            sessionStorage.setItem("{{ data }}-is-darkmode", "Y");
+            sessionStorage.setItem("{{ site_id }}-is-darkmode", "Y");
         } else {
-            sessionStorage.setItem("{{ data }}-is-darkmode", "N");
+            sessionStorage.setItem("{{ site_id }}-is-darkmode", "N");
         }
     });
     
     document.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem("{{ data }}-is-darkmode") === "Y") {
+        if (sessionStorage.getItem("{{ site_id }}-is-darkmode") === "Y") {
             rootElement.classList.add("is-darkmode");
             darkmodeToggle.classList.add("nav__darkmode-toggle--active");
         }

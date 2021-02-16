@@ -347,7 +347,7 @@
    border-radius: .4rem;
    background-color: $grey12;
    box-sizing: border-box;
-   transition: $standard-transition;
+   transition: margin-left .3s;
 
    nav {
       @include clearfix;

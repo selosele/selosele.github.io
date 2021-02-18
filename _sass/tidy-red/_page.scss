@@ -2,19 +2,36 @@
    page css
    ========================================================================== */
 
-.layout--post {
-   .content-wrapper {
-      margin-top: 2rem;
-      margin-bottom: 3rem;
+.layout {
+   &--home {
+      .content-wrapper {
+         @media (min-width: $min-large-width) {
+            @include clearfix;
+         }
+
+         > .archive {
+            @media (min-width: $min-large-width) {
+               float: right;
+               width: calc(100% - #{$category-list-width + 2});
+            }
+         }
+      }
    }
 
-   .pagination {
-      display: table;
-      width: 100%;
-      margin-top: 1.5rem;
-      margin-bottom: 2.5rem;
-      border-collapse: collapse;
-      table-layout: fixed;
+   &--post {
+      .content-wrapper {
+         margin-top: 2rem;
+         margin-bottom: 3rem;
+      }
+   
+      .pagination {
+         display: table;
+         width: 100%;
+         margin-top: 1.5rem;
+         margin-bottom: 2.5rem;
+         border-collapse: collapse;
+         table-layout: fixed;
+      }
    }
 }
 
@@ -62,6 +79,90 @@
             }
          }
       }
+   }
+}
+
+.post-group-list {
+   margin-bottom: 2rem;
+   padding: 1.3rem 1rem;
+   background-color: $grey02;
+   box-sizing: border-box;
+   
+   @media (min-width: $min-large-width) {
+      float: left;
+      position: sticky;
+      top: 1.2rem;
+      width: $category-list-width;
+      min-height: 100vh;
+      margin-right: 2rem;
+   }
+
+   &__item {
+      &:not(:last-child) {
+         margin-bottom: 1.5rem;
+         padding-bottom: 1.5rem;
+         border-bottom: 1px dashed $grey05;
+      }
+
+      &--category {
+         > ul {
+            margin-bottom: 0;
+            padding-left: 0;
+
+            @media (min-width: $min-large-width) {
+               padding-left: 1.3rem;
+            }
+         }
+
+         li {
+            display: inline-block;
+            margin: .3rem .25rem 0;
+            vertical-align: top;
+
+            @media (min-width: $min-large-width) {
+               display: list-item;
+               margin-top: 0.7rem;
+            }
+   
+            > a {
+               line-height: 1.5;
+
+               @media (min-width: $min-large-width) {
+                  &:hover {
+                     text-decoration: underline;
+                  }
+               }
+            }
+         }
+      }
+   
+      &--tag {
+         > ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style: none;
+         }
+
+         li {
+            display: inline-block;
+            margin: .5rem .25rem 0;
+
+            > a {
+               display: block;
+
+               @media (min-width: $min-large-width) {
+                  &:hover {
+                     text-decoration: underline;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   h2 {
+      font-size: 1.3rem;
    }
 }
 

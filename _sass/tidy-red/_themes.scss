@@ -46,6 +46,11 @@ html {
          }
       }
 
+      // masthead
+      .masthead {
+         background-color: theme-style("bg-color");
+      }
+
       // 사이트 타이틀
       .site {
          &-title {

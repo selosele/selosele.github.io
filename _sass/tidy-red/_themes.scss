@@ -389,6 +389,12 @@ html {
          background-color: theme-style("text-color");
          color: theme-style("bg-color-02");
          text-shadow: none;
+
+         ::selection,
+         &::selection {
+            background-color: $black04;
+            color: $grey12;
+         }
       }
 
       // 코드박스
@@ -443,6 +449,7 @@ html {
       ::selection {
          background-color: theme-style("text-color");
          color: theme-style("bg-color-04");
+         text-shadow: none;
       }
    };
 }

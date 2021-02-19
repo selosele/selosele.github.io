@@ -12,9 +12,9 @@ layout: default
 <div role="main" id="content" class="content-wrapper">
   {%- if page.layout == "home" -%}
   <aside class="post-group-list">
-    <div aria-labelledby="category-list-title" class="post-group-list__item post-group-list__item--category">
+    <section class="post-group-list__item post-group-list__item--category">
       <header>
-        <h2 id="category-list-title">{{ site.data.ui-text[site.locale].categories_label }}</h2>
+        <h2>{{ site.data.ui-text[site.locale].categories_label }}</h2>
       </header>
 
       {%- if site.categories.size > 0 -%}
@@ -36,12 +36,12 @@ layout: default
       {%- else -%}
       <p>카테고리가 존재하지 않습니다.</p>
       {%- endif -%}
-    </div>
+    </section>
 
     {%- if site.tags.size > 0 -%}
-    <div aria-labelledby="tag-list-title" class="post-group-list__item post-group-list__item--tag">
+    <section class="post-group-list__item post-group-list__item--tag">
       <header>
-        <h2 id="tag-list-title">{{ site.data.ui-text[site.locale].tags_label }}</h2>
+        <h2>{{ site.data.ui-text[site.locale].tags_label }}</h2>
       </header>
 
       <ul>
@@ -53,7 +53,7 @@ layout: default
         </li>
         {%- endfor -%}
       </ul>
-    </div>
+    </section>
     {%- endif -%}
   </aside>
   {%- endif -%}

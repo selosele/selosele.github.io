@@ -284,10 +284,6 @@
       @include post-info-item;
       margin-left: .3rem;
 
-      &:not(.page__info-item--date) {
-         @include activate-element($offset: 2px);
-      }
-
       &--date {
          @include post-info-item-date;
       }

@@ -209,7 +209,7 @@
       background-color: transparent;
       font-style: italic;
       font-size: 1.05rem;
-      color: $black;
+      color: inherit;
       text-align: left;
 
       &:hover,
@@ -242,7 +242,7 @@
          line-height: 1.6;
 
          a {
-            color: $black02;
+            color: $black03;
             font-size: .95rem;
 
             @media (min-width: $min-large-width) {

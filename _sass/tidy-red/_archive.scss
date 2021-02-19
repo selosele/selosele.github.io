@@ -44,6 +44,10 @@
                z-index: 1;
             }
 
+            &:hover {
+               color: $black03;
+            }
+
             @media (min-width: $min-small-width) {
                font-size: 1.4rem;
             }
@@ -145,6 +149,7 @@
       > img {
          width: auto;
          height: auto;
+         flex-shrink: 0;
       }
    }
 

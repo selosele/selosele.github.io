@@ -246,11 +246,19 @@
          margin-right: .416667em;
       }
 
+      &:not(.page--arrow):hover > a {
+         text-decoration: underline;
+      }
+
       > a {
          display: block;
          position: relative;
          padding: .416667em .2em;
          color: $black03;
+
+         &:hover {
+            color: $sub-color03;
+         }
 
          @media (min-width: $min-minimal-width) {
             padding-left: .583333em;
@@ -259,52 +267,54 @@
       }
    }
 
-   .page--current {
-      margin-left: .242424em;
-      margin-right: .242424em;
-      font-size: 1.833333em;
-      color: $sub-color03;
-
-      @media (min-width: $min-small-width) {
-         margin-left: .454545em;
-         margin-right: .454545em;
+   .page {
+      &--current {
+         margin-left: .242424em;
+         margin-right: .242424em;
+         font-size: 1.833333em;
+         color: $sub-color03;
+   
+         @media (min-width: $min-small-width) {
+            margin-left: .454545em;
+            margin-right: .454545em;
+         }
       }
-   }
 
-   .page--arrow {
-      a {
-         &:before {
-            display: block;
-            font-family: $icon-font;
-            font-size: 1em;
-            color: inherit;
-            -webkit-font-smoothing: antialiased;
-
-            @media (min-width: $min-small-width) {
-               font-size: 1.083333em;
+      &--arrow {
+         a {
+            &:before {
+               display: block;
+               font-family: $icon-font;
+               font-size: 1em;
+               color: inherit;
+               -webkit-font-smoothing: antialiased;
+   
+               @media (min-width: $min-small-width) {
+                  font-size: 1.083333em;
+               }
             }
          }
       }
-   }
 
-   .page--prev {
-      a {
-         &:before {
-            content: "\e93b";
+      &--prev {
+         a {
+            &:before {
+               content: "\e93b";
+            }
          }
       }
-   }
 
-   .page--next {
-      a {
-         &:before {
-            content: "\e93e";
+      &--next {
+         a {
+            &:before {
+               content: "\e93e";
+            }
          }
       }
-   }
 
-   .page--disabled {
-      pointer-events: none;
+      &--disabled {
+         pointer-events: none;
+      }
    }
 
    &--pager {

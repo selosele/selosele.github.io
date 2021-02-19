@@ -150,6 +150,7 @@
 
             > a {
                display: block;
+               word-break: break-all;
 
                @media (min-width: $min-large-width) {
                   &:hover {

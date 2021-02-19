@@ -5,60 +5,60 @@ layout: default
 {%- assign categories_max = 0 -%}
 {%- for category in site.categories -%}
   {%- if category[1].size > categories_max -%}
-    {% assign categories_max = category[1].size %}
-  {%- endif -%}
+  {% assign categories_max = category[1].size %}
+{%- endif -%}
 {%- endfor -%}
 
 <div role="main" id="content" class="content-wrapper">
-	{%- if page.layout == "home" -%}
-	<aside class="post-group-list">
-		<div aria-labelledby="category-list-title" class="post-group-list__item post-group-list__item--category">
-			<header>
-				<h2 id="category-list-title">{{ site.data.ui-text[site.locale].categories_label }}</h2>
-			</header>
+  {%- if page.layout == "home" -%}
+  <aside class="post-group-list">
+    <div aria-labelledby="category-list-title" class="post-group-list__item post-group-list__item--category">
+      <header>
+        <h2 id="category-list-title">{{ site.data.ui-text[site.locale].categories_label }}</h2>
+      </header>
 
-			{%- if site.categories.size > 0 -%}
-			<ul>
-				{%- for i in (1..categories_max) reversed -%}
-					{%- for category in site.categories -%}
-						{%- if category[1].size == i -%}
-						<li>
-							<a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}">{{ category[0] }}</a>
-							<small class="category-list__count">
-								<span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span>
-								({{ category[1].size }})
-							</small>
-						</li>
-						{%- endif -%}
-					{%- endfor -%}
-      	{%- endfor -%}
-			</ul>
-			{%- else -%}
-				<p>카테고리가 존재하지 않습니다.</p>
-			{%- endif -%}
-		</div>
+      {%- if site.categories.size > 0 -%}
+      <ul>
+        {%- for i in (1..categories_max) reversed -%}
+          {%- for category in site.categories -%}
+          {%- if category[1].size == i -%}
+          <li>
+            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}">{{ category[0] }}</a>
+            <small class="category-list__count">
+              <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span>
+              ({{ category[1].size }})
+            </small>
+          </li>
+          {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
+      {%- else -%}
+      <p>카테고리가 존재하지 않습니다.</p>
+      {%- endif -%}
+    </div>
 
-		{%- if site.tags.size > 0 -%}
-		<div aria-labelledby="tag-list-title" class="post-group-list__item post-group-list__item--tag">
-			<header>
-				<h2 id="tag-list-title">{{ site.data.ui-text[site.locale].tags_label }}</h2>
-			</header>
+    {%- if site.tags.size > 0 -%}
+    <div aria-labelledby="tag-list-title" class="post-group-list__item post-group-list__item--tag">
+      <header>
+        <h2 id="tag-list-title">{{ site.data.ui-text[site.locale].tags_label }}</h2>
+      </header>
 
-			<ul>
-				{%- assign tagItems = site.tags | sort -%}
-				{%- for tag in tagItems -%}
-					<li>
-						{%- assign num = tag[1].size | times: 0.2 | at_least: 0.9 | at_most: 2.2 -%}
-						<a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" style="font-size: {{ num }}rem">#{{ tag[0] }}</a>
-					</li>
-				{%- endfor -%}
-			</ul>
-		</div>
-		{%- endif -%}
-	</aside>
-	{%- endif -%}
+      <ul>
+        {%- assign tagItems = site.tags | sort -%}
+        {%- for tag in tagItems -%}
+        <li>
+          {%- assign num = tag[1].size | times: 0.2 | at_least: 0.9 | at_most: 2.2 -%}
+          <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" style="font-size: {{ num }}rem">#{{ tag[0] }}</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
+  </aside>
+  {%- endif -%}
 
-	<section class="archive">
-		{{ content }}
-	</section>
+  <section class="archive">
+    {{ content }}
+  </section>
 </div>

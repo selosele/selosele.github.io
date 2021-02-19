@@ -216,11 +216,11 @@
 
 /* pagination */
 .pagination {
-   margin-top: 1rem;
+   margin-top: 1.8rem;
    text-align: center;
 
    @media (min-width: $min-medium-width) {
-      margin-bottom: 1rem;
+      margin-bottom: 1.8rem;
    }
 
    ul {
@@ -238,18 +238,12 @@
    }
 
    li {
-      margin-left: .222222em;
-      margin-right: .222222em;
+      margin: 0 .222222em 0 .222222em;
       line-height: 1;
 
       @media (min-width: $min-minimal-width) {
          margin-left: .416667em;
          margin-right: .416667em;
-      }
-
-      @media (min-width: $min-small-width) {
-         margin-left: .583333em;
-         margin-right: .583333em;
       }
 
       > a {
@@ -261,11 +255,6 @@
          @media (min-width: $min-minimal-width) {
             padding-left: .583333em;
             padding-right: .583333em;
-         }
-
-         @media (min-width: $min-small-width) {
-            padding-left: .833333em;
-            padding-right: .833333em;
          }
       }
    }

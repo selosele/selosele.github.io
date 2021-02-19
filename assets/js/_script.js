@@ -125,11 +125,11 @@
     window.addEventListener("scroll", activateScrollIndicator);
 })();
 
-// page header link
+// 페이지 헤더 타이틀 링크
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        // header link 생성
+        // 헤더 타이틀 링크 생성
         var h = postRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
 
         for (var i = 0; i < h.length; i++) {
@@ -149,7 +149,7 @@
             h[i].insertBefore(h_anc, h[i].firstChild);
         }
 
-        // header link 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
+        // 헤더 타이틀 링크 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
         var toc = postRoot.querySelector(".toc-wrapper");
         if (toc) {
             var h_linkList = postRoot.querySelectorAll(".page__header-link");
@@ -169,7 +169,7 @@
     }
 })();
 
-// abbr tooltip 생성 및 handler
+// abbr 툴팁 생성 및 handler
 (function() {
     var abbrList = document.querySelectorAll("abbr[title]"), abbrList_current;
     if (abbrList.length) {
@@ -184,7 +184,7 @@
 
     for (var i = 0; i < abbrList.length; i++) {
         var t_span = document.createElement("span"),
-            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "1").replace(/%/g, "2");
+            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "0").replace(/%/g, "1");
 
         abbrList[i].setAttribute("aria-describedby", t_title);
         abbrList[i].setAttribute("tabindex", "0");
@@ -310,7 +310,6 @@
                     _t.focus();
                 }
             };
-
             t_copyBtn.addEventListener("click", copyCode);
 
             // line
@@ -359,7 +358,7 @@
     }
 })();
 
-// post archive 아코디언
+// 포스트 archive 아코디언
 (function() {
     var handlerClick = function(event) {
         var t = event.currentTarget,
@@ -472,7 +471,6 @@
                             while (sResult.firstChild) {
                                 sResult.removeChild(sResult.firstChild);
                             }
-                            // !sInput.value && handlerCloseClick();
                         }
                     }
                 } else {

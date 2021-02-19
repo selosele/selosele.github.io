@@ -16,9 +16,7 @@
       position: relative;
       
       @media (min-width: $min-medium-width) {
-         &--image {
-            padding-right: 13rem;
-         }
+         @include clearfix;
    
          &-content {
             margin-top: .5rem;
@@ -127,10 +125,6 @@
 
    &__item-thumb {
       display: none;
-      position: relative;
-      height: 33.929vw;
-      margin-top: .9rem;
-      margin-bottom: .9rem;
       border: 1px solid $black;
       border-radius: .25rem;
       background-color: $grey12;
@@ -142,14 +136,10 @@
    
       @media (min-width: $min-medium-width) {
          display: block;
-         position: absolute;
-         top: 0;
-         bottom: 0;
-         right: 0;
+         float: right;
          width: 12rem;
          height: 6rem;
-         margin-top: auto;
-         margin-bottom: auto;
+         margin-left: 1rem;
       }
    
       img {

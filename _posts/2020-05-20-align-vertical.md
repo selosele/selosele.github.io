@@ -5,12 +5,13 @@ title: "position: absolute 모든 방향을 이용한 중앙정렬 기법"
 subtitle: "신기한 방법인듯"
 header:
   overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
 date: 2020-05-20 22:51
 categories:
     - 퍼블노트
 tags:
     - css
+home_dropcap: false
 post_dropcap: false
 ---
 

@@ -125,25 +125,25 @@
 
    &__item-thumb {
       display: none;
-      border: 1px solid $black;
-      border-radius: .25rem;
-      background-color: $grey12;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-      box-shadow: rgba(0,0,0,.2) .25rem .25rem .5rem;
-      box-sizing: border-box;
    
       @media (min-width: $min-medium-width) {
-         display: block;
+         display: flex;
+         overflow: hidden;
          float: right;
          width: 12rem;
          height: 6rem;
-         margin-left: 1rem;
+         margin: 0 0 0 1rem;
+         border: 1px solid $black;
+         border-radius: .25rem;
+         background-color: $grey12;
+         box-shadow: rgba(0,0,0,.2) .25rem .25rem .5rem;
+         box-sizing: border-box;
+         justify-content: center;
+         align-items: center;
       }
-   
-      img {
-         width: 100%;
+
+      > img {
+         width: auto;
          height: auto;
       }
    }

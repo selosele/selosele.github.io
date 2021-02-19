@@ -11,7 +11,7 @@ layout: default
 
 <div role="main" id="content" class="content-wrapper">
   {%- if page.layout == "home" -%}
-  <aside class="post-group-list">
+  <aside itemscope itemtype="https://schema.org/CreativeWork" class="post-group-list">
     <section class="post-group-list__item post-group-list__item--category">
       <header>
         <h2>{{ site.data.ui-text[site.locale].categories_label }}</h2>
@@ -23,7 +23,7 @@ layout: default
           {%- for category in site.categories -%}
           {%- if category[1].size == i -%}
           <li>
-            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}">{{ category[0] }}</a>
+            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag">{{ category[0] }}</a>
             <small class="category-list__count">
               <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span>
               ({{ category[1].size }})
@@ -49,7 +49,7 @@ layout: default
         {%- for tag in tagItems -%}
         <li>
           {%- assign num = tag[1].size | times: 0.2 | at_least: 0.9 | at_most: 2.2 -%}
-          <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" style="font-size: {{ num }}rem">#{{ tag[0] }}</a>
+          <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag" style="font-size: {{ num }}rem">#{{ tag[0] }}</a>
         </li>
         {%- endfor -%}
       </ul>

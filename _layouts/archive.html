@@ -59,6 +59,10 @@ layout: default
   {%- endif -%}
 
   <section class="archive">
+    {%- if page.layout == "home" -%}
+    <h2 class="sr-only">{{ site.data.ui-text[site.locale].recent_posts }}</h2>
+    {%- endif -%}
+
     {{ content }}
   </section>
 </div>

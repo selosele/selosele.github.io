@@ -10,9 +10,9 @@
 <li>
   <article aria-labelledby="title-{{ postUrl_r }}" aria-describedby="desc-{{ postUrl_r }}" itemscope itemtype="https://schema.org/CreativeWork" class="archive__item{% if post.header.overlay_image %} archive__item--image{% endif %}">
     <header class="archive__item-header">
-      <h2 id="title-{{ postUrl_r }}" class="archive__item-title">
+      <h3 id="title-{{ postUrl_r }}" class="archive__item-title">
         <a href="{{ postUrl }}" rel="permalink">{{ title }}</a>
-      </h2>
+      </h3>
     </header>
     {%- if post.subtitle -%}<strong itemprop="alternativeHeadline" class="archive__item-subtitle">{{ post.subtitle }}</strong>{%- endif -%}
 

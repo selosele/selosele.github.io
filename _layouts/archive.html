@@ -24,7 +24,7 @@ layout: default
           {%- if category[1].size == i -%}
           <li>
             <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag">{{ category[0] }}</a>
-            <small class="category-list__count">
+            <small class="post-group-list__item--category-count">
               <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})
             </small>
           </li>

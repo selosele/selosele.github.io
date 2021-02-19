@@ -60,7 +60,35 @@ html {
 
       // 메인 카테고리/태그 목록
       .post-group-list {
-         background-color: theme-style("bg-color");;
+         background-color: theme-style("bg-color");
+
+         &__item {
+            &--category {
+               li {
+                  > a {
+                     color: theme-style("text-color");
+
+                     &:not(:hover) {
+                        text-decoration: none;
+                     }
+                  }
+               }
+
+               &-count {
+                  color: theme-style("text-color");
+               }
+            }
+
+            &--tag {
+               li {
+                  > a {
+                     &:not(:hover) {
+                        text-decoration: none;
+                     }
+                  }
+               }
+            }
+         }
       }
 
       // 아카이브

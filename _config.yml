@@ -1,10 +1,10 @@
 # Site Settings
-locale                   : "ko" # 기본값
+locale                   : "ko"
 title                    : "Sel의 생각저장소"
 title_separator          : "-"
-subtitle                 :
+subtitle                 : "이런저런 이야기"
 name                     : "Sel" # 사용자명
-description              : "웹 퍼블리셔 sel의 개인 블로그"
+description              : "웹 퍼블리셔 Sel의 개인 블로그"
 url                      : "https://selosele.github.io"
 baseurl                  :
 repository               : "selosele/selosele.github.io"
@@ -73,7 +73,6 @@ analytics:
     tracking_id          : UA-175208253-1
     anonymize_ip         : # true, false (default)
 
-
 # 사용자 정보
 author:
   name             : "Sel"
@@ -123,14 +122,12 @@ exclude:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -151,19 +148,16 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: /:year/:month/:day/:title/
 paginate: 6 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 
 # Plugins (previously gems:)
 plugins:
@@ -182,7 +176,6 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 babel_js_extensions: 'es6, babel, jsx'
-
 
 # Archives
 #  Type
@@ -212,14 +205,12 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 
-
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
-
 
 # Defaults
 defaults:
@@ -240,8 +231,8 @@ post:
 masthead:
   teaser: 
     bg: "/assets/images/mhead_bg.jpg"
-    bg_link: "https://www.freepik.com/free-photo/person-showing-heart-by-hands_3241094.htm#page=6&query=heart&position=31"
-    bg_author: "freepik"
+    bg_link: "https://www.freepik.com/free-photo/sun-horizon-road_874694.htm"
+    bg_author: "whatwolf"
     filter: 0.3
     position: # ex) 50% or 50% 21%
 

@@ -14,7 +14,6 @@ categories:
     - 퍼블노트
 tags:
     - html
-primary_post: true
 ---
 
 제곧내..  

@@ -16,7 +16,6 @@ categories:
 tags:
     - javascript
 post_dropcap: false
-primary_post: true
 ---
 
 실무에서 중복 사용되는 jQuery 코드를 통합해서 관리할 수 없을까 하는 생각을 하던 중 결국 플러그인을 만들어보기로 했고, 매일은 아니지만 시간날 때마다 작업을 하고 있다.

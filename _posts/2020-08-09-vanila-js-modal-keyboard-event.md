@@ -15,7 +15,6 @@ categories:
 tags:
     - javascript
 post_dropcap: false
-primary_post: true
 ---
 
 블로그 JS 작업 중 레이어팝업 초점이동 관련 코드를 구현했었는데, jQuery를 이용해서 구현을 완료했었다. 하지만 똑같은 문제를 Vanilla JS로 구성해본다면?

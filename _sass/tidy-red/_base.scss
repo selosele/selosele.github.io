@@ -61,7 +61,7 @@ button {
    cursor: pointer;
 }
 
-a, button {
+a, button, input {
    @include activate-element;
 }
 
@@ -203,6 +203,7 @@ abbr {
       height: auto !important;
       margin: 0 !important;
       padding: 1.5rem;
+      outline-offset: -2px;
       background-color: $grey12;
       box-shadow: 0 0 .1rem .1rem rgba(0, 0, 0, .6);
       font-size: 1.5rem;

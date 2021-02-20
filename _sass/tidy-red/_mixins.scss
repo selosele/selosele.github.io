@@ -112,7 +112,7 @@
 }
 
 // focus
-@mixin activate-element($offset: -2px) {
+@mixin activate-element($offset: null) {
    &:focus,
    &:active {
       outline: thin dotted #666d72;

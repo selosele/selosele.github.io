@@ -18,11 +18,11 @@
       {%- if link.url contains '://' -%}
         {% assign url = link.url %}
       {%- else -%}
-        {% assign url = link.url | prepend : site.url %}
+        {% assign url = link.url | relative_url %}
       {%- endif -%}
-      {%- assign page_url = page.url | prepend : site.url -%}
+      {%- assign page_url = page.url | relative_url -%}
       <li role="menuitem"{% if page_url == url %} class="menuitem--current-page"{% endif %}>
-        <a href="{{ url }}"{% if page_url == url %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} itemprop="url">{{ link.title }}</a>
+        <a href="{{ url }}"{% if link.url contains '://' %} target="_blank"{% endif %} {% if page_url == url %} title="{{ site.data.ui-text[site.locale].current_page }}"{% endif %} itemprop="url">{{ link.title }}</a>
       </li>
       {%- endfor -%}
     </ul>

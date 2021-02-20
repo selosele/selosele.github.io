@@ -8,6 +8,8 @@ main:
     url: /posts-by-year/
   - title: "Tags"
     url: /tag-list/
+  - title: "test"
+    url: "https://selosele.github.io/jekyll-theme-tidyred/"
 
 etc:
   - title: "Liquid 공식 문서 사이트 개인 번역"

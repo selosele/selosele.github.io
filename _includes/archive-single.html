@@ -39,7 +39,6 @@
     {%- endif -%}
 
     {%- if post.categories.size > 0 -%}
-    <h3 class="sr-only">{{ site.data.ui-text[site.locale].category_title }}</h3>
     {%- for category in post.categories -%}
     <a href="{{ '/' | relative_url }}category-list/#btn-{{ category | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag" class="archive__item__info-item archive__item__info-item--category">
       <i aria-hidden="true" class="xi-paper"></i> {{ category }}
@@ -48,7 +47,6 @@
     {%- endif -%}
 
     {%- if post.tags.size > 0 -%}
-    <h3 class="sr-only">{{ site.data.ui-text[site.locale].tag_title }}</h3>
     {%- for tag in post.tags -%}
     <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag" class="archive__item__info-item archive__item__info-item--tag">
       <i aria-hidden="true" class="xi-tag"></i> {{ tag }}

@@ -28,6 +28,25 @@ body {
    color: $black03;
    word-break: keep-all;
    word-wrap: break-word;
+
+   // 스크롤바 스타일
+   &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    
+      &-thumb {
+        border: 1px solid $black03;
+        border-radius: .4rem;
+        background-color: $grey12;
+   
+        &:hover {
+           background-color: $grey09;
+        }
+      }
+    
+      &-track {
+        background-image: linear-gradient(to bottom, rgba(216, 216, 216, .3), rgba(185, 185, 185, .3));
+      }
+   }
 }
 
 .layer-opened {
@@ -312,23 +331,4 @@ sup {
 iframe {
    width: 100%;
    margin-bottom: 1.5rem;
-}
-
-/* 스크롤바 스타일 */
-::-webkit-scrollbar {
-   -webkit-appearance: none;
- 
-   &-thumb {
-     border: 1px solid $black03;
-     border-radius: .4rem;
-     background-color: $grey12;
-
-     &:hover {
-        background-color: $grey09;
-     }
-   }
- 
-   &-track {
-     background-image: linear-gradient(to bottom, rgba(216, 216, 216, .3), rgba(185, 185, 185, .3));
-   }
 }

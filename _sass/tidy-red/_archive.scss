@@ -44,10 +44,6 @@
                z-index: 1;
             }
 
-            &:hover {
-               color: $black03;
-            }
-
             @media (min-width: $min-small-width) {
                font-size: 1.4rem;
             }
@@ -55,6 +51,7 @@
             @media (min-width: $min-large-width) {
                &:hover {
                   text-decoration: underline;
+                  color: $black03;
                }
             }
          }

@@ -246,8 +246,14 @@
          margin-right: .416667em;
       }
 
-      &:not(.page--arrow):hover > a {
-         text-decoration: underline;
+      @media (min-width: $min-large-width) {
+         &:not(.page--arrow) {
+            &:hover {
+               > a {
+                  text-decoration: underline;
+               }
+            }
+         }
       }
 
       > a {
@@ -256,13 +262,15 @@
          padding: .416667em .2em;
          color: $black03;
 
-         &:hover {
-            color: $sub-color03;
-         }
-
          @media (min-width: $min-minimal-width) {
             padding-left: .583333em;
             padding-right: .583333em;
+         }
+
+         @media (min-width: $min-large-width) {
+            &:hover {
+               color: $sub-color03;
+            }
          }
       }
    }

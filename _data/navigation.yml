@@ -8,8 +8,6 @@ main:
     url: /posts-by-year/
   - title: "Tags"
     url: /tag-list/
-  - title: "임시"
-    url: /klic-markup-guide/
 
 etc:
   - title: "Liquid 공식 문서 사이트 개인 번역"

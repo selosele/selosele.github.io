@@ -26,7 +26,7 @@ Javascript 알고리즘 문제를 풀어보고 싶어서 Programmers 코딩테�
 
 ## 나의 풀이
 
-처음에는 ```array```의 길이만큼 for문을 돌리고 또 ```commands```의 길이만큼 반복하는 이중 for문을 돌려서 slice, sort 함수를 사용하는 쪽으로 해결하려 했었고, 당연히 삽질만 반복할 뿐이었다. 결국 for문 없이 ```forEach``` 함수로 해결.. 다른 것보다 ```sort``` 함수에 대해 더 알아보고 이해되었던 문제 풀이였다고 느낀다.
+처음에는 ```array```의 길이만큼 for문을 돌리고 또 ```commands```의 길이만큼 반복하는 중첩 for문을 돌려서 slice, sort 함수를 사용하는 쪽으로 해결하려 했었고, 당연히 삽질만 반복할 뿐이었다. 결국 for문 없이 ```forEach``` 함수로 해결.. 다른 것보다 ```sort``` 함수에 대해 더 알아보고 이해되었던 문제 풀이였다고 느낀다.
 
 ```javascript
 function solution(array, commands) {

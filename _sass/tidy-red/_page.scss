@@ -145,8 +145,11 @@
          > ul {
             margin-top: 0.7rem;
             padding: 0;
-            text-align: center;
             list-style: none;
+
+            @media (min-width: $min-large-width) {
+               text-align: center;
+            }
          }
 
          li {

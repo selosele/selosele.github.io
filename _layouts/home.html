@@ -12,7 +12,7 @@ pagination:
   {% assign posts = site.posts %}
 {%- endif -%}
 
-<ul class="archive__post-list">
+<ul itemscope itemtype="https://schema.org/Article" class="archive__post-list">
   {%- for post in paginator.posts -%}
     {% include archive-single.html %}
   {%- endfor -%}

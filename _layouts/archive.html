@@ -23,7 +23,7 @@ layout: default
           {%- for category in site.categories -%}
           {%- if category[1].size == i -%}
           <li>
-            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag">{{ category[0] }}</a>
+            <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}" itemprop="keywords" rel="tag">{{ category[0] }}</a>
             <small class="post-group-list__item--category-count">
               <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})
             </small>
@@ -48,7 +48,7 @@ layout: default
         {%- for tag in tagItems -%}
         <li>
           {%- assign num = tag | last | size | times: 100 | divided_by: site.tags.size | plus: 90 | at_most: 225 -%}
-          <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase }}" itemprop="keywords" rel="tag" style="font-size: {{ num }}%">#{{ tag[0] }}</a>
+          <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}" itemprop="keywords" rel="tag" style="font-size: {{ num }}%">#{{ tag[0] }}</a>
         </li>
         {%- endfor -%}
       </ul>

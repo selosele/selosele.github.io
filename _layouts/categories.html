@@ -14,7 +14,7 @@ title: 카테고리
 {%- for category in site.categories -%}
 {%- if category[1].size == i -%}
 {%- assign categoryPost = site.posts | where: "categories", category[0] -%}
-{%- assign categoryName = category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' | downcase -%}
+{%- assign categoryName = category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' -%}
 <h2>
 	<button type="button" aria-controls="list-{{ categoryName }}" aria-expanded="false" id="btn-{{ categoryName }}"
 		class="archive__btn">

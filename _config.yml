@@ -43,7 +43,7 @@ atom_feed:
   path                   : feed.xml
   mastfoot               : false
 search                   : true
-search_limit             : 20 # Maximum number of search results
+search_limit             : 30 # Maximum number of search results
 search_noResultsText     : "검색 결과를 찾을 수 없습니다."
 # SEO Related
 google_site_verification :

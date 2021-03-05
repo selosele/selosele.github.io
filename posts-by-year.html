@@ -4,8 +4,8 @@ title: Posts by year
 class: page--posts-by-year
 ---
 
-{%- assign yearOfPost = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
-{%- for year in yearOfPost -%}
+{%- assign year_post = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+{%- for year in year_post -%}
 <h2>
 	<button type="button" aria-controls="list-{{ year.name }}" aria-expanded="false" id="btn-{{ year.name }}" class="archive__btn">
 		<span class="archive__btn__point">{{ year.name }}</span>년에 작성된 글

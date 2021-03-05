@@ -287,6 +287,14 @@
       margin-bottom: 2rem;
       justify-content: flex-end;
       flex-wrap: wrap;
+
+      > a {
+         @media (min-width: $min-large-width) {
+            &:hover {
+               text-decoration: underline;
+            }
+         }
+      }
    }
 
    &__info-item {

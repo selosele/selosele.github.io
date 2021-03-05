@@ -122,6 +122,14 @@
          &-wrapper {
             display: flex;
             flex-wrap: wrap;
+
+            > a {
+               @media (min-width: $min-large-width) {
+                  &:hover {
+                     text-decoration: underline;
+                  }
+               }
+            }
          }
       }
    }

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div role="main" itemscope itemtype="https://schema.org/Article" id="content" class="content-wrapper">
-	<section itemprop="text"{% if page.id %} id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}">
+	<div itemprop="text"{% if page.id %} id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}">
 	{{ content }}
-	</section>
+	</div>
 </div>

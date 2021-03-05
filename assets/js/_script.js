@@ -25,7 +25,7 @@
         menuELclose = menuLayer.querySelector(".menu__close"),
         menuTabbableList = menuLayer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         menuTabbableListFirst = menuTabbableList.length && menuTabbableList[0],
-        menuTabbableListLast = menuTabbableList.length && menuTabbableList[menuTabbableList.length - 1], menuELFocusedLast,
+        menuTabbableListLast = menuTabbableList.length && menuTabbableList[menuTabbableList.length - 1],
         menuELcategoryAnc = menuLayer.querySelectorAll("a[href^='/category-list/#']");
 
     function handlerCloseClick() {
@@ -70,23 +70,13 @@
             menuOuterList[i].setAttribute("aria-hidden", "true");
         }
 
-        for (var i = 0; i < menuTabbableList.length; i++) {
-            menuTabbableList[i].addEventListener("focus", function(event) {
-                menuELFocusedLast = event.currentTarget;
-            });
-        }
-
-        if (menuELFocusedLast) {
-            menuELFocusedLast.focus();
-        } else {
-            menuTabbableListFirst.focus();
-            menuTabbableListFirst.addEventListener("keydown", function(event) {
-                if (event.shiftKey && event.key === "Tab") {
-                    event.preventDefault();
-                    menuTabbableListLast.focus();
-                }
-            });
-        }
+        menuTabbableListFirst.focus();
+        menuTabbableListFirst.addEventListener("keydown", function(event) {
+            if (event.shiftKey && event.key === "Tab") {
+                event.preventDefault();
+                menuTabbableListLast.focus();
+            }
+        });
 
         menuTabbableListLast.addEventListener("keydown", function(event) {
             if (!event.shiftKey && event.key === "Tab") {

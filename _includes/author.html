@@ -1,6 +1,10 @@
 {%- if site.author.avatar -%}
 <div class="author__avatar">
-	<em class="author__image-wrapper" style="background-image: url({{ site.author.avatar | relative_url }});">{{ site.author.name }}</em>
+	<em{% if page.layout == "post" %} aria-hidden="true"{% endif %} class="author__image-wrapper" style="background-image: url({{ site.author.avatar | relative_url }});">
+	{%- if page.layout == 'home' -%}
+	{{ site.author.name }}
+	{%- endif -%}
+	</em>
 </div>
 {%- endif -%}
 <div class="author__info-wrapper">

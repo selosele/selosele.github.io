@@ -15,7 +15,6 @@ tags:
     - react
     - gatsby
 post_dropcap: false
-primary_post: true
 ---
 
 요즘 Gatsby 블로그 테마 제작에 빠져서 React를 학습하며 삽질 중이다.. 본 포스팅은 React, Gatsby를 다루면서 습득한 지식을 선별해서 기록하기 위한 목적이며 내용은 상시 업데이트할 것임.

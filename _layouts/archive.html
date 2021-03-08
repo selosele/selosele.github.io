@@ -10,7 +10,6 @@ layout: default
 {%- endfor -%}
 
 <div role="main" id="content" class="content-wrapper">
-  {%- if page.layout == "home" -%}
   <aside itemscope itemtype="https://schema.org/Article" class="post-group-list">
     <section class="post-group-list__item post-group-list__item--category">
       <header>
@@ -55,13 +54,10 @@ layout: default
     </section>
     {%- endif -%}
   </aside>
-  {%- endif -%}
 
   <section class="archive">
-    {%- if page.layout == "home" -%}
     <h2 class="sr-only">{{ site.data.ui-text[site.locale].recent_posts }}</h2>
-    {%- endif -%}
-
+    
     {{ content }}
   </section>
 </div>

@@ -60,18 +60,11 @@ layout: default
         </aside>
       {%- endif -%}
 
-      {% if page.post_dropcap != false -%}
-        {% assign content_start = content | slice: 0, 3 %}
-        {% if content_start == '<p>' %}
-          {% assign content = content | replace_first: '<p>', '<p class="has-dropcap">' %}
-        {% endif %}
-      {%- endif %}
-
       {{ content }}
 
-      {%- if page.header.image_link -%}
+      {% if page.header.image_link -%}
       <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
-      {%- endif -%}
+      {%- endif %}
     </div>
 
     <footer class="page__footer">

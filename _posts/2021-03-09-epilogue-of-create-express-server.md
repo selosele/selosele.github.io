@@ -73,7 +73,7 @@ server.listen(MY_PORT, () => {
 
 상기한 OpenWax는 당연히 구동되고, HTML/CSS Validation도 작동된다!
 
-근데 Validation은 크롬 확장 프로그램 Web Developer 사용 시에만 작동하는 듯하다. Validation에서 ```localhost:port```는 유효한 URL로 인정되지 않으니 Web Developer의 Validate local HTML/CSS(파일의 소스 복붙을 자동으로 해주는 기능)을 사용하면 된다. 사실 HTML/CSS 파일을 일일이 복붙해서 진단을 수행할 수도 있지만(서버 구축 전에는 그렇게 작업했었고) 로컬 웹서버에 붙으면 그렇게 할 필요가 없다.
+근데 Validation은 크롬 확장 프로그램 Web Developer 사용 시에만 작동하는 듯하다. Validation에서 ```localhost:port```는 유효한 URL로 인정되지 않으니 Web Developer의 Validate local HTML/CSS(파일의 소스 복붙을 자동으로 해주는 기능)을 사용하면 된다. 사실 HTML/CSS 파일의 소스를 일일이 복붙해서 진단을 수행할 수도 있지만(서버 구축 전에는 그렇게 작업했었고) 로컬 웹서버에 붙으면 그렇게 할 필요가 없다.
 
 업무 효율적인 측면에서는, OpenWax랑 Validation을 매우 편하게 쓸 수 있고, 공용 네트워크 접속으로 인한 속도 저하 문제 또한 발생하지 않아서 업무 효율이 많이 상승한 것 같다고 느낀다. 한 며칠을 express 서버에서 작업해보니 공용 네트워크로 돌아간다는 건 생각도 못 할 일이 되었음.. 앞으로 모든 작업을 express 서버에서 진행할 계획이다.
 

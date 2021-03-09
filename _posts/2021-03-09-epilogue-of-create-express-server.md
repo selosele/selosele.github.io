@@ -37,7 +37,7 @@ const querystring = require("querystring");
 const path = require("path");
 
 // 기본 설정
-const DOCUMENT_ROOT = "\\\\192.168.**.**\\folder\\";
+const DOCUMENT_ROOT = "\\\\192.168.**.**\\folder\\"; // 공용 네트워크의 특정 폴더를 루트로 설정
 const PROJECT_DIR = querystring.unescape(path.resolve(DOCUMENT_ROOT, "html\\")); // 한글 포함된 폴더명을 querystring 모듈로 처리
 
 // 포트 설정

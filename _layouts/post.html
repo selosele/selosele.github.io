@@ -60,24 +60,12 @@ layout: default
         </aside>
       {%- endif -%}
 
-      {%- if page.post_dropcap != false -%}
+      {% if page.post_dropcap != false -%}
         {% assign content_start = content | slice: 0, 3 %}
         {% if content_start == '<p>' %}
           {% assign content = content | replace_first: '<p>', '<p class="has-dropcap">' %}
         {% endif %}
-      {%- endif -%}
-
-      {%- comment -%} 2021.01.18. HTML 태그 내에 텍스트로 들어가는 경우도 변환되는 문제로 보류
-        {%- capture anchor -%}
-          target="_blank"
-        {%- endcapture -%}
-
-        {%- capture new_anchor -%}
-          target="_blank" 
-          title="{{ site.data.ui-text[site.locale].target_blank }}" 
-          rel="noopener noreferrer nofollow"
-        {%- endcapture -%}
-      {%- endcomment -%}
+      {%- endif %}
 
       {{ content }}
 

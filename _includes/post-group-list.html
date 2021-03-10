@@ -1,0 +1,51 @@
+{%- assign categories_max = 0 -%}
+{%- for category in site.categories -%}
+  {%- if category[1].size > categories_max -%}
+    {% assign categories_max = category[1].size %}
+  {%- endif -%}
+{%- endfor -%}
+
+<aside itemscope itemtype="https://schema.org/Article" class="post-group-list">
+  <section class="post-group-list__item post-group-list__item--category">
+    <header>
+      <h2>{{ site.data.ui-text[site.locale].categories_label }}</h2>
+    </header>
+
+    {%- if site.categories.size > 0 -%}
+    <ul>
+      {%- for i in (1..categories_max) reversed -%}
+        {%- for category in site.categories -%}
+        {%- if category[1].size == i -%}
+        <li>
+          <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}" itemprop="keywords" rel="tag">{{ category[0] }}</a>
+          <small class="post-group-list__item--category-count">
+            <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ category[1].size }})
+          </small>
+        </li>
+        {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+    {%- else -%}
+    <p>카테고리가 존재하지 않습니다.</p>
+    {%- endif -%}
+  </section>
+
+  {%- if site.tags.size > 0 -%}
+  <section class="post-group-list__item post-group-list__item--tag">
+    <header>
+      <h2>{{ site.data.ui-text[site.locale].tags_label }}</h2>
+    </header>
+
+    <ul>
+      {%- assign tagItems = site.tags | sort -%}
+      {%- for tag in tagItems -%}
+      <li>
+        {%- assign num = tag | last | size | times: 100 | divided_by: site.tags.size | plus: 90 | at_most: 225 -%}
+        <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}" itemprop="keywords" rel="tag" style="font-size: {{ num }}%">#{{ tag[0] }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endif -%}
+</aside>

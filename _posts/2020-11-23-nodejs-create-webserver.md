@@ -13,7 +13,6 @@ categories:
     - 퍼블노트
 tags:
     - node.js
-primary_post: true
 ---
 
 실무에서 간단한 로컬 웹서버를 하나 띄울 수 있으면 좋겠다는 생각을 했었다. 로컬 html 파일에서 작업하는 것과 웹서버에 붙어서 작업하는 것의 차이가 좀 있기 때문이고, 무엇보다 Openwax 같은 웹 접근성 진단 도구를 이용한 테스트를 로컬 html 파일에선 불가능하므로..  
@@ -80,14 +79,14 @@ const PORT = 3000;
 // 정적 파일 불러오기
 app.use(express.static(__dirname + "/public"));
 
-// index.html 파일 실행
+// 라우팅 정의
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 // 서버 실행
 app.listen(PORT, () => {
-    console.log(`Listen : ${PORT}`);
+  console.log(`Listen : ${PORT}`);
 });
 ```
 
@@ -102,10 +101,10 @@ Listen : 3000
 
 **참고 링크**
 
-* [네트워크 애플리케이션을 위한 자바스크립트 런타임 환경](https://poiemaweb.com/nodejs-basics){:target="_blank"}
-* [express & static파일 폴더 설정](https://velog.io/@hwang-eunji/nodejs-6-express-static%ED%8C%8C%EC%9D%BC-%ED%8F%B4%EB%8D%94-%EC%84%A4%EC%A0%95){:target="_blank"}
-* [[NodeJS] Node.js로 웹 서버 만들기 2 - 서버에서 파일 받기](https://ebbnflow.tistory.com/209?category=745851){:target="_blank"}
-* [NodeJS 정적파일 읽는 방법, 웹페이지, 이미지, CSS 파일 읽는 방법](https://mainia.tistory.com/5707){:target="_blank"}
-* [Express-정적파일을 서비스 하는 법](https://wayhome25.github.io/nodejs/2017/02/18/nodejs-08-express-static/){:target="_blank"}
-* [express에서 하위 경로로 라우팅하기](https://blog.outsider.ne.kr/938){:target="_blank"}
-* [Sending whole folder content to client with express](https://stackoverflow.com/questions/40509666/sending-whole-folder-content-to-client-with-express){:target="_blank"}
+- [네트워크 애플리케이션을 위한 자바스크립트 런타임 환경](https://poiemaweb.com/nodejs-basics){:target="_blank"}
+- [express & static파일 폴더 설정](https://velog.io/@hwang-eunji/nodejs-6-express-static%ED%8C%8C%EC%9D%BC-%ED%8F%B4%EB%8D%94-%EC%84%A4%EC%A0%95){:target="_blank"}
+- [[NodeJS] Node.js로 웹 서버 만들기 2 - 서버에서 파일 받기](https://ebbnflow.tistory.com/209?category=745851){:target="_blank"}
+- [NodeJS 정적파일 읽는 방법, 웹페이지, 이미지, CSS 파일 읽는 방법](https://mainia.tistory.com/5707){:target="_blank"}
+- [Express-정적파일을 서비스 하는 법](https://wayhome25.github.io/nodejs/2017/02/18/nodejs-08-express-static/){:target="_blank"}
+- [express에서 하위 경로로 라우팅하기](https://blog.outsider.ne.kr/938){:target="_blank"}
+- [Sending whole folder content to client with express](https://stackoverflow.com/questions/40509666/sending-whole-folder-content-to-client-with-express){:target="_blank"}

@@ -379,7 +379,7 @@
       top: 2rem;
       left: 1rem;
       z-index: 1;
-      width: 21rem;
+      width: $toc-width;
       height: auto;
       margin-left: -$toc-margin;
       box-shadow: rgba(0,0,0,.15) .25rem .25rem .5rem;
@@ -438,7 +438,7 @@
 
 .toc {
    &__title {
-      padding: .5rem 1rem;
+      padding: .8rem 1rem;
       border-radius: .4rem .4rem 0 0;
       border-bottom: 1px dashed $grey;
       background-color: $grey02;

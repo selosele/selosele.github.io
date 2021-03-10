@@ -120,7 +120,7 @@
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
         // 헤더 타이틀 링크 생성
-        var h = postRoot.querySelectorAll("h2:not(.toc__title), h3, h4, h5, h6");
+        var h = postRoot.querySelectorAll("h2, h3, h4, h5, h6");
 
         for (var i = 0; i < h.length; i++) {
             var h_id = h[i].id,
@@ -140,7 +140,7 @@
         }
 
         // 헤더 타이틀 링크 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
-        var toc = postRoot.querySelector(".toc-wrapper");
+        var toc = document.querySelector(".toc-wrapper");
         if (toc) {
             var h_linkList = postRoot.querySelectorAll(".page__header-link");
 

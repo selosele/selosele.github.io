@@ -231,7 +231,7 @@ html {
          
          // 콘텐츠
          &__content {
-            h2:not(.toc__title) {
+            h2 {
                + h3 {
                   border-color: theme-style("bg-color-05");
                }

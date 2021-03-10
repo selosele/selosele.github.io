@@ -177,6 +177,10 @@
 }
 
 .page {
+   @media (min-width: $min-large-width) {
+      @include clearfix;
+   }
+
    &-title {
       margin-bottom: .459641em;
       padding-bottom: .459641em;
@@ -322,7 +326,7 @@
          font-size: 1.05rem;
       }
 
-      h2:not(.toc__title) {
+      h2 {
          @include heading;
          margin-top: .782609em;
          margin-bottom: .521739em;

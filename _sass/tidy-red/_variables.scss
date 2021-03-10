@@ -5,14 +5,15 @@
 /* global 플래그 사용을 위한 전역변수 */
 $theme-map: null;
 
-/* 레이아웃 공통 */
+/* 레이아웃 */
 $layout-general-width: 1200px !default;
 $layout-wide-width: 1700px !default;
 $layout-responsive-width: 90% !default;
 $layout-margin: 1rem !default;
 $li-default-margin: .666667em !default;
 $category-list-width: 14rem !default;
-$toc-margin: 24rem !default;
+$toc-width: 20rem !default;
+$toc-margin: $toc-width + 5rem !default;
 
 // 분기점 (max-width)
 $general-width: 1920 !default;

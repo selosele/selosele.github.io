@@ -2,7 +2,7 @@
    mixins css
    ========================================================================== */
 
-/* 레이아웃 공통 */
+/* 레이아웃 */
 @mixin common-layout($width: $layout-responsive-width, $max-width: $layout-general-width, $margin: null, $margin-t: null, $margin-b: null, $margin-l: auto, $margin-r: auto) {
    @if $margin-t != null {
       margin-top: $margin-t;

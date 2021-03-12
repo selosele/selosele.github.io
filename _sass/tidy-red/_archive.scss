@@ -79,14 +79,15 @@
       }
    
       &-content {
+         // @include multiple-ellipsis(3);
+         overflow: hidden;
+         max-height: 5.25rem;
          margin-top: 0;
          margin-bottom: .7rem;
          line-height: 1.875;
          font-size: .95rem;
 
          @media (min-width: $min-medium-width) {
-            // @include multiple-ellipsis(3);
-
             &.has-dropcap {
                display: flow-root;
 

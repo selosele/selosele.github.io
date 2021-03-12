@@ -27,16 +27,16 @@
       {%- endfor -%}
     </ul>
     {%- else -%}
-    <p>카테고리가 존재하지 않습니다.</p>
+    <p>카테고리가 없습니다.</p>
     {%- endif -%}
   </section>
 
-  {%- if site.tags.size > 0 -%}
   <section class="post-group-list__item post-group-list__item--tag">
     <header>
       <h2>{{ site.data.ui-text[site.locale].tags_label }}</h2>
     </header>
 
+    {%- if site.tags.size > 0 -%}
     <ul>
       {%- assign tagItems = site.tags | sort -%}
       {%- for tag in tagItems -%}
@@ -46,6 +46,8 @@
       </li>
       {%- endfor -%}
     </ul>
+    {%- else -%}
+    <p>태그가 없습니다.</p>
+    {%- endif -%}
   </section>
-  {%- endif -%}
 </aside>

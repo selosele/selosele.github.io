@@ -20,14 +20,6 @@
       }
    }
 
-   .fake-table__header {
-      width: 40%;
-
-      @media (min-width: $min-small-width) {
-         width: 25%;
-      }
-   }
-
    .archive__list__date {
       color: $black02;
    }

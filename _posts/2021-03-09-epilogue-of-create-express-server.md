@@ -55,7 +55,7 @@ server.get(PROJECT_DIR, (req, res, next) => {
 
 // 서버 실행
 server.listen(MY_PORT, () => {
-  console.log(`${MY_PORT}번 포트에서 서버 실행 중..`); // 결과 : 9999번 포트에서 서버 실행 중..
+  console.log(`http://localhost:${MY_PORT}에서 서버 실행 중..`); // 결과 : http://localhost:9999에서 서버 실행 중..
 });
 ```
 

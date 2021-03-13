@@ -46,14 +46,11 @@ const MY_PORT = server.get("port");
 
 // 정적 파일 불러오기
 const MY_HTML = process.env.HTML || "index.html";
-const options = {
-  index: MY_HTML,
-}
-server.use(express.static(DOCUMENT_ROOT, options));
+server.use(express.static(DOCUMENT_ROOT));
 
 // 라우팅 정의
-server.get(PROJECT_DIR, (err, req, res, next) => {
-  if (err) throw err;
+server.get(PROJECT_DIR, (req, res, next) => {
+  res.sendFile(path.resolve(PROJECT_DIR, './', MY_HTML));
 });
 
 // 서버 실행

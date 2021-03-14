@@ -35,7 +35,7 @@
       json: '{{ "/" | relative_url }}search.json',
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
-      searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',
+      searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink" title="카테고리 - {category}\n태그 - {tags}">{title}</a> <span class="search__results__date">{date}</span></li>',
       noResultsText: "{% if site.search_noResultsText %}{{ site.search_noResultsText }}{% else %}검색 결과를 찾을 수 없습니다.{% endif %}",
       limit: {% if site.search_limit %}{{ site.search_limit }}{% else %}20{% endif %}
   });

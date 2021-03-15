@@ -6,7 +6,7 @@
 			<input type="text" role="combobox" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="search-results" id="search-input" class="search__input">
 		</div>
 
-		<p class="search__limit">최대 {% if site.search_limit %}{{ site.search_limit }}{% else %}20{% endif %}개 결과 표시</p>
+		<p class="search__limit">최대 {{ site.search_limit | default: 20 }}개 결과 표시</p>
 
 		<ul id="search-results" class="search__results"></ul>
 

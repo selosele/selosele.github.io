@@ -4,12 +4,6 @@
   {%- capture img_path -%}{{ page.header.image | relative_url }}{%- endcapture -%}
 {%- endif -%}
 
-{%- if page.header.cta_url contains "://" -%}
-  {%- capture cta_path -%}{{ page.header.cta_url }}{%- endcapture -%}
-{%- else -%}
-  {%- capture cta_path -%}{{ page.header.cta_url | relative_url }}{%- endcapture -%}
-{%- endif -%}
-
 {%- if page.header.overlay_image contains "://" -%}
   {%- capture overlay_img_path -%}{{ page.header.overlay_image }}{%- endcapture -%}
 {%- elsif page.header.overlay_image -%}
@@ -25,14 +19,6 @@
 {%- else -%}
   {%- capture overlay_filter -%}rgba(0, 0, 0, {{ site.masthead.teaser.filter }}){%- endcapture -%}
 {%- endif -%}
-
-{%- if page.header.image_description -%}
-  {%- assign image_description = page.header.image_description -%}
-{%- else -%}
-  {%- assign image_description = page.title -%}
-{%- endif -%}
-
-{%- assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once -%}
 
 {%- include iecheck.html -%}
 

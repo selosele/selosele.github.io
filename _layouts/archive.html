@@ -2,11 +2,13 @@
 layout: default
 ---
 
-<div role="main" id="content" class="content-wrapper">
+<div role="main" itemscope itemtype="https://schema.org/Article" id="content" class="content-wrapper">
   {% include post-group-list.html %}
 
-  <section class="archive">
+  <section itemprop="text"{% if page.id %} id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}">
+    {% if page.layout == "home" -%}
     <h2 class="sr-only">{{ site.data.ui-text[site.locale].recent_posts }}</h2>
+    {%- endif %}
     
     {{ content }}
   </section>

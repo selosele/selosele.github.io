@@ -70,7 +70,7 @@ layout: default
       {{ content }}
 
       {% if page.header.image_link -%}
-      <p>Hero image from <a href="{{ page.header.image_link }}" target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow">{{ page.header.image_author }}</a></p>
+      <p>Hero image from <a href="{{ page.header.image_link }}"{% if page.header.image_link contains '://' %} target="_blank" title="{{ site.data.ui-text[site.locale].target_blank }}" rel="noopener noreferrer nofollow"{% endif %}>{{ page.header.image_author }}</a></p>
       {%- endif %}
     </div>
 

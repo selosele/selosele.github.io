@@ -1,9 +1,5 @@
 ---
-layout: default
+layout: archive
 ---
 
-<div role="main" itemscope itemtype="https://schema.org/Article" id="content" class="content-wrapper">
-	<div itemprop="text"{% if page.id %} id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}">
-	{{ content }}
-	</div>
-</div>
+{{ content }}

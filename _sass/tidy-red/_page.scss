@@ -3,22 +3,6 @@
    ========================================================================== */
 
 .layout {
-   &--home {
-      .content-wrapper {
-         @media (min-width: $min-large-width) {
-            @include clearfix;
-         }
-
-         > .archive {
-            @media (min-width: $min-large-width) {
-               float: right;
-               width: calc(100% - #{$category-list-width + 2});
-               margin-top: .85rem;
-            }
-         }
-      }
-   }
-
    &--post {
       .content-wrapper {
          margin-top: 2rem;
@@ -38,6 +22,10 @@
 
 .content-wrapper {
    @include common-layout($margin-t: 3rem, $margin-b: 4rem);
+
+   @media (min-width: $min-large-width) {
+      @include clearfix;
+   }
 
    &.content--has-toc {
       @include common-layout($width: null, $max-width: $layout-wide-width, $margin-l: null, $margin-r: null);
@@ -685,45 +673,6 @@
    background-color: $green03;
    pointer-events: none;
    transition: width .2s;
-}
-
-/* Fake table */
-.fake-table {
-   display: table;
-   width: 100%;
-   margin: 1.2rem 0;
-   padding-left: 0;
-   border-collapse: collapse;
-   list-style: none;
-   table-layout: fixed;
-   box-sizing: border-box;
-
-   &__row {
-      display: table-row;
-      line-height: 1.6;
-   }
-
-   &__header {
-      display: table-cell;
-      padding: .5rem 1rem;
-      border: 1px solid $grey05;
-      background-color: $grey02;
-      font-weight: 700;
-      text-align: center;
-      vertical-align: middle;
-   }
-
-   &__content {
-      display: table-cell;
-      padding: .5rem 1rem;
-      border: 1px solid $grey05;
-      vertical-align: middle;
-
-      p {
-         margin-top: 0;
-         margin-bottom: 0;
-      }
-   }
 }
 
 /* etc. */

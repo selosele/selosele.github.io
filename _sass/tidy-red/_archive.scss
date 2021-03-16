@@ -3,6 +3,12 @@
    ========================================================================== */
 
 .archive {
+   @media (min-width: $min-large-width) {
+      float: right;
+      width: calc(100% - #{$category-list-width + 2});
+      margin-top: .85rem;
+   }
+
    &__subtitle {
       margin: 2rem 0 .5rem;
       font-family: $default-font03;

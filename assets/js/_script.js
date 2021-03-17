@@ -177,7 +177,7 @@
             t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "0").replace(/%/g, "1");
 
         abbrList[i].setAttribute("aria-describedby", t_title);
-        abbrList[i].setAttribute("tabindex", "0");
+        abbrList[i].setAttribute("tabindex", 0);
 
         t_span.hidden = true;
         t_span.setAttribute("role", "tooltip");
@@ -195,7 +195,7 @@
 
             if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
                 tooltipEL.hidden = false;
-                tooltipEL.setAttribute("tabindex", "0");
+                tooltipEL.setAttribute("tabindex", 0);
                 tooltipEL.classList.add("abbr__tooltip--active");
             } else {
                 handlerClickClose(tooltipEL);
@@ -209,7 +209,7 @@
 
     function handlerClickClose(EL) {
         EL.hidden = true;
-        EL.setAttribute("tabindex", "-1");
+        EL.setAttribute("tabindex", -1);
         EL.classList.remove("abbr__tooltip--active");
         abbrList_current.focus();
     }
@@ -355,13 +355,13 @@
         if (t_matchEL.classList.contains("archive__list--active")) {
             t_matchEL.classList.remove("archive__list--active");
             t_matchEL.hidden = true;
-            t_matchEL.setAttribute("tabindex", "-1");
+            t_matchEL.setAttribute("tabindex", -1);
             t.classList.remove("archive__btn--active");
             t.setAttribute("aria-expanded", "false");
         } else {
             t_matchEL.classList.add("archive__list--active");
             t_matchEL.hidden = false;
-            t_matchEL.setAttribute("tabindex", "0");
+            t_matchEL.setAttribute("tabindex", 0);
             t.classList.add("archive__btn--active");
             t.setAttribute("aria-expanded", "true");
         }

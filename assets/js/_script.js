@@ -452,23 +452,15 @@
                     sResultAncList[i] === document.activeElement && sInput.focus();
                 }
                 
-                if (!sInputValNotChanged && sInput === document.activeElement) {
-                    if (sInputVal) {
-                        handlerCloseClick();
-                    } else {
-                        if (sInput !== document.activeElement) {
-                            handlerCloseClick();
-                        } else {
-                            sInput.value = "";
-                            sCount.classList.remove("search__count-wrapper--active");
-
-                            while (sResult.firstChild) {
-                                sResult.removeChild(sResult.firstChild);
-                            }
-                        }
-                    }
-                } else {
+                if ((sInputValNotChanged || sInput !== document.activeElement) || (sInputVal || sInput !== document.activeElement)) {
                     handlerCloseClick();
+                } else {
+                    sInput.value = "";
+                    sCount.classList.remove("search__count-wrapper--active");
+
+                    while (sResult.firstChild) {
+                        sResult.removeChild(sResult.firstChild);
+                    }
                 }
             }
         }

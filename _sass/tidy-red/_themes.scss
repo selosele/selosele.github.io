@@ -308,7 +308,9 @@ html {
 
          &__menu {
             a {
-               text-decoration: none;
+               &:not(:hover) {
+                  text-decoration: none;
+               }
             }
 
             > li {

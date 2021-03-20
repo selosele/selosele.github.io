@@ -497,6 +497,12 @@
          display: block;
          padding-top: .5rem;
          padding-bottom: .5rem;
+
+         @media (min-width: $min-large-width) {
+            &:hover {
+               text-decoration: underline;
+            }
+         }
       }
    }
 }

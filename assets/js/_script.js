@@ -387,7 +387,11 @@
         tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
         sResult = document.getElementById("search-results"),
         sLabel = document.getElementById("search-title"),
-        sInput = document.getElementById("search-input"), sInputVal, sInputValNotChanged;
+        sInput = document.getElementById("search-input"),
+        sCount = layer.querySelector(".search__count-wrapper"),
+        sCountWord = sCount.querySelector(".search__word"),
+        sCountNum = sCount.querySelector(".search__count"),
+        sInputVal, sInputValNotChanged;
 
         function handlerInputKeydown() {
             var sInputText = sInput.value;
@@ -396,6 +400,7 @@
                 sInputVal = false;
                 sInputValNotChanged = false;
                 if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
+                if (!sCount.classList.contains("search__count-wrapper--active")) sCount.classList.add("search__count-wrapper--active");
 
                 for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
                     if ((sResultAncList[i] !== sInputText) && !sResultAncList[i].querySelector(".search__results__match")) {
@@ -408,10 +413,14 @@
                 sLabel.classList.remove("sr-only");
             }
 
-            if (sResult.querySelectorAll("li").length) {
+            var sResult_list = sResult.querySelectorAll("li");
+            if (sResult_list.length) {
                 sInput.setAttribute("aria-expanded", "true");
+                sCountWord.textContent = JSON.stringify(sInputText);
+                sCountNum.textContent = sResult_list.length;
             } else {
                 sInput.setAttribute("aria-expanded", "false");
+                sCount.classList.remove("search__count-wrapper--active");
             }
         }
 
@@ -451,6 +460,7 @@
                             handlerCloseClick();
                         } else {
                             sInput.value = "";
+                            sCount.classList.remove("search__count-wrapper--active");
 
                             while (sResult.firstChild) {
                                 sResult.removeChild(sResult.firstChild);

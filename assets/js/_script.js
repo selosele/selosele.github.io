@@ -397,9 +397,7 @@
                 sInputValNotChanged = false;
                 if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
 
-                var sResultAncList = sResult.querySelectorAll("a");
-
-                for (var i = 0; i < sResultAncList.length; i++) {
+                for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
                     if ((sResultAncList[i] !== sInputText) && !sResultAncList[i].querySelector(".search__results__match")) {
                         sResultAncList[i].innerHTML = sResultAncList[i].innerHTML.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
                     }
@@ -441,9 +439,7 @@
             var keyType = event.key;
 
             if (keyType === "Escape" || keyType === "Esc") {
-                var sResultAncList = sResult.querySelectorAll("a");
-
-                for (var i = 0; i < sResultAncList.length; i++) {
+                for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
                     sResultAncList[i] === document.activeElement && sInput.focus();
                 }
                 

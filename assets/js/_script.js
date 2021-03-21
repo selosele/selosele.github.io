@@ -452,7 +452,7 @@
                     sResultAncList[i] === document.activeElement && sInput.focus();
                 }
                 
-                if ((sInputValNotChanged || sInput !== document.activeElement) || (sInputVal || sInput !== document.activeElement)) {
+                if (sInputValNotChanged || sInputVal || sInput !== document.activeElement) {
                     handlerCloseClick();
                 } else {
                     sInput.value = "";

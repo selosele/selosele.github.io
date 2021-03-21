@@ -22,6 +22,7 @@ codekit-config.json
 .DS_Store
 
 # Jekyll generated files
+.git
 .jekyll-cache
 .jekyll-metadata
 .sass-cache

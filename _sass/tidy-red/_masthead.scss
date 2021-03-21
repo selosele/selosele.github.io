@@ -52,8 +52,12 @@
       &-header {
          @include common-layout($max-width: $layout-wide-width);
          margin-top: 9rem;
-         margin-bottom: 9rem;
+         margin-bottom: 11rem;
          @include page-title;
+
+         @media (min-width: $min-mini-width) {
+            margin-bottom: 9rem;
+         }
       }
 
       &-avatar {
@@ -87,8 +91,12 @@
    &__post-header {
       @include common-layout($max-width: $layout-wide-width);
       padding-top: 6rem;
-      padding-bottom: 8rem;
+      padding-bottom: 10rem;
       @include page-title;
+
+      @media (min-width: $min-mini-width) {
+         padding-bottom: 8rem;
+      }
    }
 }
 

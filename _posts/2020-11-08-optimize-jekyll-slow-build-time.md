@@ -32,9 +32,13 @@ Jekyll Feed: Generating feed for posts
 
 이제 최적화 방법을 알아봅시다.
 
+## incremental: true 옵션을 사용한다.
+
+```config.yml``` 파일의 ```incremental``` 옵션에 true를 지정해주면 수정된 파일만 빌드가 된다고 한다. 측정해보니 약 4초 정도 줄어들어 평균 1~1.5초 정도로 매우 빨라졌음.
+
 ## 애초에 하나의 포스트만 빌드되도록 해준다.
 
-빌드 명령어 뒤에 <mark>--help</mark>를 붙이면 사용 가능한 옵션 목록을 볼 수 있다.
+다른 방법으로, 빌드 명령어 뒤에 <mark>--help</mark>를 붙이면 사용 가능한 옵션 목록을 볼 수 있다.
 
 1. ```bundle exec jekyll serve --help```{:.language-ruby} 명령어 실행
 2. 여러 개의 옵션 중 <mark>--limit_posts</mark> 옵션을 찾을 수 있다.
@@ -53,7 +57,8 @@ Jekyll Feed: Generating feed for posts
 근데 나머지 포스트는 어떻게 접근하느냐? 제일 최신의 포스트 하나만 빌드되므로 나머지 포스트들은 접근할 수 없다. 어차피 포스팅을 하고 있는데 나머지 포스트도 수정을 해야 할 일이 거의 없긴 하다.
 
 ## 참고 링크
-* [Jekyll Build Performance - Part I](https://www.sauru.so/blog/jekyll-build-performance-part1/){:target="_blank"}
-* [jekyll 속도 올리기](https://jeongukjae.github.io/posts/1jekyll-%EC%86%8D%EB%8F%84-%EC%98%AC%EB%A6%AC%EA%B8%B0/){:target="_blank"}
+- [Jekyll Build Performance - Part I](https://www.sauru.so/blog/jekyll-build-performance-part1/){:target="_blank"}
+- [jekyll 속도 올리기](https://jeongukjae.github.io/posts/1jekyll-%EC%86%8D%EB%8F%84-%EC%98%AC%EB%A6%AC%EA%B8%B0/){:target="_blank"}
+- [Jekyll 블로그 빌드속도 개선하기](https://yangeok.github.io/blog/2019/05/21/jekyll-caching.html){:target="_blank"}
 
 [^1]: [1] [The world's fastest framework for building websites](https://gohugo.io/){:target="_blank"}

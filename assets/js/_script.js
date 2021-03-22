@@ -394,17 +394,20 @@
         sInputVal, sInputValNotChanged;
 
         function handlerInputKeydown() {
-            var sInputText = sInput.value;
+            var ctx = sInput.value;
 
-            if (sInputText) {
+            if (ctx) {
                 sInputVal = false;
                 sInputValNotChanged = false;
+                
                 if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
                 if (!sCount.classList.contains("search__count-wrapper--active")) sCount.classList.add("search__count-wrapper--active");
 
                 for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
-                    if ((sResultAncList[i] !== sInputText) && !sResultAncList[i].querySelector(".search__results__match")) {
-                        sResultAncList[i].innerHTML = sResultAncList[i].innerHTML.replace(sInputText, '<span class="search__results__match">'+sInputText+'</span>');
+                    var ctx_match = sResultAncList[i].innerHTML.match(new RegExp(ctx, "i"));
+
+                    if ((sResultAncList[i] !== ctx_match) && !sResultAncList[i].querySelector(".search__results__match")) {
+                        sResultAncList[i].innerHTML = sResultAncList[i].innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
                     }
                 }
             } else {
@@ -416,7 +419,7 @@
             var sResult_list = sResult.querySelectorAll("li");
             if (sResult_list.length) {
                 sInput.setAttribute("aria-expanded", "true");
-                sCountWord.textContent = JSON.stringify(sInputText);
+                sCountWord.textContent = JSON.stringify(ctx);
                 sCountNum.textContent = sResult_list.length;
             } else {
                 sInput.setAttribute("aria-expanded", "false");

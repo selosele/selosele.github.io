@@ -1,45 +1,45 @@
 "use strict";
 
 // IE 체크
-(function(r) {
+(function(el) {
     // 11 ~ 9
     if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
-        r.className += " only-ie";
+        el.className += " only-ie";
         document.getElementById("ie-alert").removeAttribute("aria-hidden");
     }
 
     // 10 이하
     if (navigator.userAgent.indexOf("MSIE") >= 0) {
-        r.className += " lte-ie10";
+        el.className += " lte-ie10";
         document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
     }
 })(document.documentElement);
 
 // 메인 메뉴
 (function() {
-    var rootElement = document.documentElement,
+    var masterRoot = document.documentElement,
         menuWrapper = document.getElementById("side-menu"),
-        menuLayer = document.getElementById("primary-nav"),
-        menuOuterList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
-        menuELopen = document.querySelector(".nav__menu-open"),
-        menuELclose = menuLayer.querySelector(".menu__close"),
-        menuTabbableList = menuLayer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
-        menuTabbableListFirst = menuTabbableList.length && menuTabbableList[0],
-        menuTabbableListLast = menuTabbableList.length && menuTabbableList[menuTabbableList.length - 1],
-        menuELcategoryAnc = menuLayer.querySelectorAll("a[href^='/category-list/#']");
+        layer = document.getElementById("primary-nav"),
+        outerList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
+        openBtn = document.querySelector(".nav__menu-open"),
+        closeBtn = layer.querySelector(".menu__close"),
+        tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbableListFirst = tabbableList.length && tabbableList[0],
+        tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
+        categoryAncList = layer.querySelectorAll("a[href^='/category-list/#']");
 
     function handlerCloseClick() {
         document.removeEventListener("keydown", handlerCloseKeydown);
-        menuELclose.blur();
-        menuELclose.setAttribute("aria-expanded", "false");
-        menuELopen.setAttribute("aria-expanded", "false");
-        menuELopen.focus();
+        closeBtn.blur();
+        closeBtn.setAttribute("aria-expanded", "false");
+        openBtn.setAttribute("aria-expanded", "false");
+        openBtn.focus();
         menuWrapper.setAttribute("aria-hidden", "true");
-        menuLayer.classList.remove("menu__layer--animate");
-        rootElement.classList.remove("layer-opened");
+        layer.classList.remove("menu__layer--animate");
+        masterRoot.classList.remove("layer-opened");
 
-        for (var i = 0; i < menuOuterList.length; i++) {
-            menuOuterList[i].removeAttribute("aria-hidden");
+        for (var i = 0; i < outerList.length; i++) {
+            outerList[i].removeAttribute("aria-hidden");
         }
 
         setTimeout(function() {
@@ -57,59 +57,59 @@
 
     function handlerOpenClick(event) {
         event.currentTarget.setAttribute("aria-expanded", "true");
-        menuELclose.setAttribute("aria-expanded", "true");
+        closeBtn.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
-        rootElement.classList.add("layer-opened");
+        masterRoot.classList.add("layer-opened");
 
         setTimeout(function() {
-            menuLayer.classList.add("menu__layer--animate");
+            layer.classList.add("menu__layer--animate");
         });
         
-        for (var i = 0; i < menuOuterList.length; i++) {
-            menuOuterList[i].setAttribute("aria-hidden", "true");
+        for (var i = 0; i < outerList.length; i++) {
+            outerList[i].setAttribute("aria-hidden", "true");
         }
 
-        menuTabbableListFirst.focus();
-        menuTabbableListFirst.addEventListener("keydown", function(event) {
+        tabbableListFirst.focus();
+        tabbableListFirst.addEventListener("keydown", function(event) {
             if (event.shiftKey && event.key === "Tab") {
                 event.preventDefault();
-                menuTabbableListLast.focus();
+                tabbableListLast.focus();
             }
         });
 
-        menuTabbableListLast.addEventListener("keydown", function(event) {
+        tabbableListLast.addEventListener("keydown", function(event) {
             if (!event.shiftKey && event.key === "Tab") {
                 event.preventDefault();
-                menuTabbableListFirst.focus();
+                tabbableListFirst.focus();
             }
         });
 
         document.addEventListener("keydown", handlerCloseKeydown);
     }
 
-    menuELopen.addEventListener("click", handlerOpenClick);
-    menuELclose.addEventListener("click", handlerCloseClick);
+    openBtn.addEventListener("click", handlerOpenClick);
+    closeBtn.addEventListener("click", handlerCloseClick);
     menuWrapper.addEventListener("click", function(event) {
         if (event.target === event.currentTarget) handlerCloseClick();
     });
 
-    for (var i = 0; i < menuELcategoryAnc.length; i++) {
+    for (var i = 0; i < categoryAncList.length; i++) {
         if (document.querySelector(".layout--categories")) {
-            menuELcategoryAnc[i].addEventListener("click", handlerCloseClick);
+            categoryAncList[i].addEventListener("click", handlerCloseClick);
         }
     }
 })();
 
-// scroll indicator
+// scroll indicator UI
 (function() {
     function activateScrollIndicator() {
         if (!document.querySelector(".layout--post")) return;
 
         var window_height = document.body.scrollHeight - window.innerHeight,
-            scroll_val = ((window.pageYOffset) / window_height) * 100;
+            scroll_value = ((window.pageYOffset) / window_height) * 100;
 
-        document.getElementById("scroll-indicator").style.width = scroll_val + "%";
+        document.getElementById("scroll-indicator").style.width = scroll_value + "%";
     }
 
     window.addEventListener("scroll", activateScrollIndicator);
@@ -144,22 +144,22 @@
         if (toc) {
             var h_linkList = postRoot.querySelectorAll(".page__header-link");
 
-            var scrollEl = function(par, el) {
-                par.querySelector("[href='"+decodeURI(el.hash)+"']").scrollIntoView(true);
+            var scrolltoTocAnchor = function(parentEl, selfEl) {
+                parentEl.querySelector("[href='"+decodeURI(selfEl.hash)+"']").scrollIntoView(true);
             };
 
             for (var i = 0; i < h_linkList.length; i++) {
                 h_linkList[i].addEventListener("click", function() {
-                    scrollEl(toc, this);
+                    scrolltoTocAnchor(toc, this);
                 });
             }
 
-            location.hash && scrollEl(toc, location);
+            if (location.hash) scrolltoTocAnchor(toc, location);
         }
     }
 })();
 
-// abbr 툴팁 생성 및 handler
+// abbr 태그 - 툴팁 생성
 (function() {
     var abbrList = document.querySelectorAll("abbr[title]"), abbrList_current;
     if (abbrList.length) {
@@ -173,32 +173,34 @@
     document.addEventListener("touchstart", handlerWindowClickClose);
 
     for (var i = 0; i < abbrList.length; i++) {
-        var t_span = document.createElement("span"),
-            t_title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "0").replace(/%/g, "1");
+        var _span = document.createElement("span"),
+            _title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "0").replace(/%/g, "1");
 
-        abbrList[i].setAttribute("aria-describedby", t_title);
+        abbrList[i].setAttribute("aria-describedby", _title);
         abbrList[i].setAttribute("tabindex", 0);
 
-        t_span.hidden = true;
-        t_span.setAttribute("role", "tooltip");
-        t_span.id = t_title;
-        t_span.textContent = abbrList[i].title;
-        t_span.classList.add("abbr__tooltip");
-        abbrList[i].appendChild(t_span);
+        _span.hidden = true;
+        _span.setAttribute("role", "tooltip");
+        _span.id = _title;
+        _span.textContent = abbrList[i].title;
+        _span.classList.add("abbr__tooltip");
+        abbrList[i].appendChild(_span);
     }
+
+    var tooltipList = document.querySelectorAll(".abbr__tooltip");
     
     function handlerClick(event) {
         if ((event.target === event.currentTarget) || event.key === "Enter") {
             abbrList_current = event.currentTarget;
             
-            var tooltipEL = abbrList_current.querySelector(".abbr__tooltip");
+            var tooltip = abbrList_current.querySelector(".abbr__tooltip");
 
-            if (!tooltipEL.classList.contains("abbr__tooltip--active")) {
-                tooltipEL.hidden = false;
-                tooltipEL.setAttribute("tabindex", 0);
-                tooltipEL.classList.add("abbr__tooltip--active");
+            if (!tooltip.classList.contains("abbr__tooltip--active")) {
+                tooltip.hidden = false;
+                tooltip.setAttribute("tabindex", 0);
+                tooltip.classList.add("abbr__tooltip--active");
             } else {
-                handlerClickClose(tooltipEL);
+                handlerClickClose(tooltip);
             }
         }
     }
@@ -207,139 +209,136 @@
         if (event.key === "Enter") handlerClick(event);
     }
 
-    function handlerClickClose(EL) {
-        EL.hidden = true;
-        EL.setAttribute("tabindex", -1);
-        EL.classList.remove("abbr__tooltip--active");
+    function handlerClickClose(el) {
+        el.hidden = true;
+        el.setAttribute("tabindex", -1);
+        el.classList.remove("abbr__tooltip--active");
         abbrList_current.focus();
     }
 
     function handlerWindowClickClose(event) {
-        var tooltipEL = document.querySelectorAll(".abbr__tooltip");
-
-        for (var i = 0; i < tooltipEL.length; i++) {
-            if (event.target.tagName !== "ABBR" && !event.target.classList.contains("abbr__tooltip") && tooltipEL[i].classList.contains("abbr__tooltip--active")) {
-                handlerClickClose(tooltipEL[i]);
+        for (var i = 0; i < tooltipList.length; i++) {
+            if (event.target.tagName !== "ABBR" && !event.target.classList.contains("abbr__tooltip") && tooltipList[i].classList.contains("abbr__tooltip--active")) {
+                handlerClickClose(tooltipList[i]);
             }
         }
     }
 
-    var abbrTooltipList = document.querySelectorAll(".abbr__tooltip");
-    if (abbrTooltipList.length) {
-        for (var i = 0; i < abbrTooltipList.length; i++) {
-            abbrTooltipList[i].addEventListener("click", function(event) {
+    if (tooltipList.length) {
+        for (var i = 0; i < tooltipList.length; i++) {
+            tooltipList[i].addEventListener("click", function(event) {
                 handlerClickClose(event.currentTarget);
             });
         }
     }
 })();
 
-// code highlight title 기입 및 코드 복사, line 강조
+// code highlight - 타이틀 정보 생성, 코드 복사 버튼 생성, 특정 line 강조
 (function() {
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
-        var preCodeBoxList = postRoot.querySelectorAll("div.highlighter-rouge");
+        var btnCodeWrapperList = postRoot.querySelectorAll("div.highlighter-rouge");
 
-        Array.prototype.forEach.call(preCodeBoxList, function(t) {
-            // title
-            var t_div = document.createElement("div");
+        Array.prototype.forEach.call(btnCodeWrapperList, function(codeWrapper) {
+            // 타이틀 정보 생성
+            var _div = document.createElement("div");
 
-            t_div.classList.add("highlight__util-wrapper");
-            t.insertBefore(t_div, t.firstChild);
+            _div.classList.add("highlight__util-wrapper");
+            codeWrapper.insertBefore(_div, codeWrapper.firstChild);
 
-            var t_lang = t.className.replace(/language-|highlighter-rouge/g, ""),
-                t_utilWrapper = t.querySelector(".highlight__util-wrapper");
+            var _lang = codeWrapper.className.replace(/language-|highlighter-rouge/g, ""),
+                utilWrapper = codeWrapper.querySelector(".highlight__util-wrapper");
 
-            if (t_lang !== "plaintext ") {
-                var t_span = document.createElement("span");
+            if (_lang !== "plaintext ") {
+                var _span = document.createElement("span");
 
-                t_span.textContent = t_lang;
-                t_span.classList.add("highlight__language");
-                t_utilWrapper.insertBefore(t_span, t_utilWrapper.firstChild);
+                _span.textContent = _lang;
+                _span.classList.add("highlight__language");
+                utilWrapper.insertBefore(_span, utilWrapper.firstChild);
             }
 
-            // 코드 복사
-            var t_btn = document.createElement("button");
+            // 코드 복사 버튼 생성
+            var _btn = document.createElement("button");
 
-            t_btn.textContent = "복사";
-            t_btn.classList.add("highlight__copy-button");
-            t_utilWrapper.appendChild(t_btn);
+            _btn.textContent = "복사";
+            _btn.classList.add("highlight__copy-button");
+            utilWrapper.appendChild(_btn);
 
-            var t_copyBtn = t.querySelector(".highlight__copy-button");
-            t_copyBtn.addEventListener("click", function(event) {
+            var copyBtn = codeWrapper.querySelector(".highlight__copy-button");
+            copyBtn.addEventListener("click", function(event) {
                 try {
-                    var _t = event.currentTarget,
-                        t_codeInner = _t.parentElement.parentElement,
-                        t_code = t.querySelector(".lineno") ? t_codeInner.querySelector(".rouge-code > pre") : t_codeInner.querySelector("pre.highlight"),
-                        t_valEL = document.createElement("textarea");
+                    var btn = event.currentTarget,
+                        btnCodeWrapper = btn.parentElement.parentElement,
+                        codeInner = codeWrapper.querySelector(".lineno") ? btnCodeWrapper.querySelector(".rouge-code > pre") : btnCodeWrapper.querySelector("pre.highlight"),
+                        _textarea = document.createElement("textarea");
 
-                    t_valEL.setAttribute("readonly", true);
-                    t_valEL.setAttribute('contenteditable', true);
-                    t_valEL.classList.add("sr-only");
-                    t_valEL.value = t_code.textContent;
+                    _textarea.setAttribute("readonly", true);
+                    _textarea.setAttribute('contenteditable', true);
+                    _textarea.classList.add("sr-only");
+                    _textarea.value = codeInner.textContent;
 
-                    _t.parentElement.appendChild(t_valEL);
+                    btn.parentElement.appendChild(_textarea);
 
-                    t_valEL.select();
+                    _textarea.select();
 
-                    var t_range = document.createRange();
-                    t_range.selectNodeContents(t_valEL);
+                    var _range = document.createRange();
+                    _range.selectNodeContents(_textarea);
 
-                    var t_selection = window.getSelection();
-                    t_selection.removeAllRanges();
-                    t_selection.addRange(t_range);
+                    var _selection = window.getSelection();
+                    _selection.removeAllRanges();
+                    _selection.addRange(_range);
 
-                    t_valEL.setSelectionRange(0, t_valEL.value.length);
+                    _textarea.setSelectionRange(0, _textarea.value.length);
                     document.execCommand("copy");
-                    _t.textContent = "복사됨";
+                    btn.textContent = "복사됨";
                 } catch(error) {
                     alert("복사에 실패했습니다.\n" + error);
                 } finally {
-                    _t.parentElement.removeChild(t_valEL);
-                    _t.focus();
+                    btn.parentElement.removeChild(_textarea);
+                    btn.focus();
                 }
             });
 
-            // line
-            if (t.hasAttribute("data-line") && t.querySelector(".lineno")) {
-                var preCodeLineBox = t.querySelector(".lineno"),
-                    preCodeLine = t.getAttribute("data-line").split("-")[0],
-                    preCodeLineLast = t.getAttribute("data-line").split("-")[1];
+            // 특정 line 강조
+            if (codeWrapper.hasAttribute("data-line") && codeWrapper.querySelector(".lineno")) {
+                var numbers = codeWrapper.querySelector(".lineno"),
+                    _line = codeWrapper.getAttribute("data-line").split("-")[0],
+                    _lineLast = codeWrapper.getAttribute("data-line").split("-")[1];
 
-                if ((preCodeLineBox !== preCodeLine) && !preCodeLineBox.querySelector("span")) {
-                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLine, '<span id='+"code-line"+preCodeLine+'>'+preCodeLine+'</span>');
+                if ((numbers !== _line) && !numbers.querySelector("span")) {
+                    numbers.innerHTML = numbers.innerHTML.replace(_line, '<span id='+"code-line"+_line+'>'+_line+'</span>');
                 }
 
-                if (preCodeLineBox !== preCodeLineLast) {
-                    preCodeLineBox.innerHTML = preCodeLineBox.innerHTML.replace(preCodeLineLast, '<span id='+"code-line"+preCodeLineLast+'>'+preCodeLineLast+'</span>');
+                if (numbers !== _lineLast) {
+                    numbers.innerHTML = numbers.innerHTML.replace(_lineLast, '<span id='+"code-line"+_lineLast+'>'+_lineLast+'</span>');
                 }
 
-                var preCodeBG = document.createElement("span"),
-                    preCodeSpanList = t.querySelectorAll("[id='"+"code-line"+preCodeLine+"']"),
-                    preCodeSpanFirst = preCodeSpanList[0],
-                    preCodeSpanLast = preCodeSpanFirst.nextElementSibling,
-                    preCodeInner = t.querySelector("pre.highlight");
+                var _bg = document.createElement("span"),
+                    numList = codeWrapper.querySelectorAll("[id='"+"code-line"+_line+"']"),
+                    numFirst = numList[0],
+                    numLast = numFirst.nextElementSibling,
+                    codeInner = codeWrapper.querySelector("pre.highlight");
 
-                preCodeBG.setAttribute("aria-hidden", "true");
-                preCodeBG.classList.add("highlight__bg");
-                preCodeInner.insertBefore(preCodeBG, preCodeInner.firstChild);
+                _bg.setAttribute("aria-hidden", "true");
+                _bg.classList.add("highlight__bg");
+                codeInner.insertBefore(_bg, codeInner.firstChild);
                 
-                var setBGval = function(firstNum, lastNum) {
+                var setBgPos = function(firstNum, lastNum) {
                     var firstPos = firstNum.offsetTop;
 
-                    preCodeBG.style.top = firstPos + 13 + "px";
+                    _bg.style.top = firstPos + 13 + "px";
 
-                    if (preCodeLineLast) {
+                    if (_lineLast) {
                         var lastPos = lastNum.offsetTop,
                             resultHeight = (lastPos - firstPos) + parseInt(getComputedStyle(lastNum, null).lineHeight);
                             
-                        t.querySelector(".highlight__bg").style.height = resultHeight + "px";
+                        codeWrapper.querySelector(".highlight__bg").style.height = resultHeight + "px";
                     }
                 };
-                setBGval(preCodeSpanFirst, preCodeSpanLast);
+                setBgPos(numFirst, numLast);
 
                 window.addEventListener("resize", function() {
-                    setBGval(preCodeSpanFirst, preCodeSpanLast);
+                    setBgPos(numFirst, numLast);
                 });
             }
         });
@@ -349,21 +348,21 @@
 // 포스트 archive 아코디언
 (function() {
     var handlerClick = function(event) {
-        var t = event.currentTarget,
-            t_matchEL = document.querySelector("[aria-labelledby="+t.id+"]");
+        var btn = event.currentTarget,
+            accordion = document.querySelector("[aria-labelledby="+btn.id+"]");
 
-        if (t_matchEL.classList.contains("archive__list--active")) {
-            t_matchEL.classList.remove("archive__list--active");
-            t_matchEL.hidden = true;
-            t_matchEL.setAttribute("tabindex", -1);
-            t.classList.remove("archive__btn--active");
-            t.setAttribute("aria-expanded", "false");
+        if (accordion.classList.contains("archive__list--active")) {
+            accordion.classList.remove("archive__list--active");
+            accordion.hidden = true;
+            accordion.setAttribute("tabindex", -1);
+            btn.classList.remove("archive__btn--active");
+            btn.setAttribute("aria-expanded", "false");
         } else {
-            t_matchEL.classList.add("archive__list--active");
-            t_matchEL.hidden = false;
-            t_matchEL.setAttribute("tabindex", 0);
-            t.classList.add("archive__btn--active");
-            t.setAttribute("aria-expanded", "true");
+            accordion.classList.add("archive__list--active");
+            accordion.hidden = false;
+            accordion.setAttribute("tabindex", 0);
+            btn.classList.add("archive__btn--active");
+            btn.setAttribute("aria-expanded", "true");
         }
     },
     btnList = document.querySelectorAll(".archive__btn");
@@ -377,7 +376,7 @@
 
 // 검색 레이어
 (function() {
-    var rootElement = document.documentElement,
+    var masterRoot = document.documentElement,
         openBtn = document.querySelector(".nav__search-open"),
         closeBtn = document.querySelector(".search__close"),
         layer = document.getElementById("search-content"),
@@ -385,51 +384,51 @@
         tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         tabbableListFirst = tabbableList.length && tabbableList[0],
         tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
-        sResult = document.getElementById("search-results"),
-        sLabel = document.getElementById("search-title"),
-        sInput = document.getElementById("search-input"),
-        sCount = layer.querySelector(".search__count-wrapper"),
-        sCountWord = sCount.querySelector(".search__word"),
-        sCountNum = sCount.querySelector(".search__count"),
-        sInputVal, sInputValNotChanged;
+        resultWrapper = document.getElementById("search-results"),
+        searchLabel = document.getElementById("search-title"),
+        searchInput = document.getElementById("search-input"),
+        searchCount = layer.querySelector(".search__count-wrapper"),
+        searchCountWord = searchCount.querySelector(".search__word"),
+        searchCountNum = searchCount.querySelector(".search__count"),
+        searchInputVal, searchInputValNotChanged;
 
         function handlerInputKeydown() {
-            var ctx = sInput.value;
+            var ctx = searchInput.value;
 
             if (ctx) {
-                sInputVal = false;
-                sInputValNotChanged = false;
+                searchInputVal = false;
+                searchInputValNotChanged = false;
                 
-                if (!sLabel.classList.contains("sr-only")) sLabel.classList.add("sr-only");
-                if (!sCount.classList.contains("search__count-wrapper--active")) sCount.classList.add("search__count-wrapper--active");
+                if (!searchLabel.classList.contains("sr-only")) searchLabel.classList.add("sr-only");
+                if (!searchCount.classList.contains("search__count-wrapper--active")) searchCount.classList.add("search__count-wrapper--active");
 
-                for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
-                    var ctx_match = sResultAncList[i].innerHTML.match(new RegExp(ctx, "i"));
+                for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
+                    var ctx_match = resultAncList[i].innerHTML.match(new RegExp(ctx, "i"));
 
-                    if ((sResultAncList[i] !== ctx_match) && !sResultAncList[i].querySelector(".search__results__match")) {
-                        sResultAncList[i].innerHTML = sResultAncList[i].innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
+                    if ((resultAncList[i] !== ctx_match) && !resultAncList[i].querySelector(".search__results__match")) {
+                        resultAncList[i].innerHTML = resultAncList[i].innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
                     }
                 }
             } else {
-                sInputVal = true;
-                sInputValNotChanged = true;
-                sLabel.classList.remove("sr-only");
+                searchInputVal = true;
+                searchInputValNotChanged = true;
+                searchLabel.classList.remove("sr-only");
             }
 
-            var sResult_list = sResult.querySelectorAll("li");
-            if (sResult_list.length) {
-                sInput.setAttribute("aria-expanded", "true");
-                sCountWord.textContent = JSON.stringify(ctx);
-                sCountNum.textContent = sResult_list.length;
+            var resultList = resultWrapper.querySelectorAll("li");
+            if (resultList.length) {
+                searchInput.setAttribute("aria-expanded", "true");
+                searchCountWord.textContent = JSON.stringify(ctx);
+                searchCountNum.textContent = resultList.length;
             } else {
-                sInput.setAttribute("aria-expanded", "false");
-                sCount.classList.remove("search__count-wrapper--active");
+                searchInput.setAttribute("aria-expanded", "false");
+                searchCount.classList.remove("search__count-wrapper--active");
             }
         }
 
         function handlerCloseClick() {
             document.removeEventListener("keydown", handlerCloseKeydown);
-            rootElement.classList.remove("layer-opened");
+            masterRoot.classList.remove("layer-opened");
             closeBtn.setAttribute("aria-expanded", "false");
             layer.classList.remove("search-content--animate");
 
@@ -437,7 +436,9 @@
                 layer.classList.remove("search-content--active");
 
                 for (var i = 0; i < outerList.length; i++) {
-                    outerList[i].getAttribute("aria-hidden") !== true && outerList[i].removeAttribute("aria-hidden");
+                    if (outerList[i].getAttribute("aria-hidden") !== true) {
+                        outerList[i].removeAttribute("aria-hidden");
+                    }
                 }
 
                 layer.setAttribute("aria-hidden", "true");
@@ -451,31 +452,29 @@
             var keyType = event.key;
 
             if (keyType === "Escape" || keyType === "Esc") {
-                for (var i = 0, sResultAncList = sResult.querySelectorAll("a"); i < sResultAncList.length; i++) {
-                    sResultAncList[i] === document.activeElement && sInput.focus();
+                for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
+                    if (resultAncList[i] === document.activeElement) searchInput.focus();
                 }
                 
-                if (sInputValNotChanged || sInputVal || sInput !== document.activeElement) {
+                if (searchInputValNotChanged || searchInputVal || searchInput !== document.activeElement) {
                     handlerCloseClick();
                 } else {
-                    sInput.value = "";
-                    sCount.classList.remove("search__count-wrapper--active");
+                    searchInput.value = "";
+                    searchCount.classList.remove("search__count-wrapper--active");
 
-                    while (sResult.firstChild) {
-                        sResult.removeChild(sResult.firstChild);
+                    while (resultWrapper.firstChild) {
+                        resultWrapper.removeChild(resultWrapper.firstChild);
                     }
                 }
             }
         }
 
-        function handlerClick(event) {
-            var t = event.currentTarget;
+        function handlerClick() {
+            searchInputValNotChanged = true;
 
-            sInputValNotChanged = true;
-
-            t.setAttribute("aria-expanded", "true");
+            openBtn.setAttribute("aria-expanded", "true");
             closeBtn.setAttribute("aria-expanded", "true");
-            rootElement.classList.add("layer-opened");
+            masterRoot.classList.add("layer-opened");
 
             for (var i = 0; i < outerList.length; i++) {
                 outerList[i].setAttribute("aria-hidden", "true");
@@ -484,18 +483,18 @@
             layer.classList.add("search-content--active");
             layer.setAttribute("aria-hidden", "false");
             layer.addEventListener("click", function(event) {
-                event.target === event.currentTarget && handlerCloseClick();
+                if (event.target === event.currentTarget) handlerCloseClick();
             });
 
             setTimeout(function() {
                 layer.classList.add("search-content--animate");
-                sInput.focus();
-                sInput.addEventListener("propertychange", handlerInputKeydown);
-                sInput.addEventListener("change", handlerInputKeydown);
-                sInput.addEventListener("keyup", handlerInputKeydown);
-                sInput.addEventListener("paste", handlerInputKeydown);
-                sInput.addEventListener("input", handlerInputKeydown);
-                sInput.addEventListener("focus", handlerInputKeydown);
+                searchInput.focus();
+                searchInput.addEventListener("propertychange", handlerInputKeydown);
+                searchInput.addEventListener("change", handlerInputKeydown);
+                searchInput.addEventListener("keyup", handlerInputKeydown);
+                searchInput.addEventListener("paste", handlerInputKeydown);
+                searchInput.addEventListener("input", handlerInputKeydown);
+                searchInput.addEventListener("focus", handlerInputKeydown);
             });
 
             tabbableListFirst.addEventListener("keydown", function(event) {

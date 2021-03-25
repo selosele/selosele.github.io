@@ -226,8 +226,8 @@
 
     if (tooltipList.length) {
         for (var i = 0; i < tooltipList.length; i++) {
-            tooltipList[i].addEventListener("click", function(event) {
-                handlerClickClose(event.currentTarget);
+            tooltipList[i].addEventListener("click", function() {
+                handlerClickClose(this);
             });
         }
     }
@@ -292,7 +292,7 @@
                     document.execCommand("copy");
                     btn.textContent = "복사됨";
                 } catch(error) {
-                    alert("복사에 실패했습니다.\n" + error);
+                    alert("복사에 실패했습니다.");
                 } finally {
                     btn.parentElement.removeChild(_textarea);
                     btn.focus();
@@ -418,7 +418,7 @@
             var resultList = resultWrapper.querySelectorAll("li");
             if (resultList.length) {
                 searchInput.setAttribute("aria-expanded", "true");
-                searchCountWord.textContent = JSON.stringify(ctx);
+                searchCountWord.textContent = "\""+ctx+"\"";
                 searchCountNum.textContent = resultList.length;
             } else {
                 searchInput.setAttribute("aria-expanded", "false");

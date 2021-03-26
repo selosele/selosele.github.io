@@ -306,10 +306,6 @@
       @include post-info-item;
       margin-left: .3rem;
    
-      &--category {
-         @include post-info-item-category;
-      }
-   
       &--tag {
          @include post-info-item-tag;
       }

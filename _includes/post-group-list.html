@@ -29,7 +29,7 @@
 
     {%- unless page.layout == 'categories' -%}
     <a href="{{ '/' | relative_url }}category-list/" class="post-group-list__item__more">
-      <i aria-hidden="true" class="xi-plus"></i>
+      <i aria-hidden="true" class="xi-ellipsis-h"></i>
       <span class="sr-only">{{ site.data.ui-text[site.locale].categories_label }} 더보기</span>
     </a>
     {%- endunless -%}
@@ -59,7 +59,7 @@
 
     {%- unless page.layout == 'tags' -%}
     <a href="{{ '/' | relative_url }}tag-list/" class="post-group-list__item__more">
-      <i aria-hidden="true" class="xi-plus"></i>
+      <i aria-hidden="true" class="xi-ellipsis-h"></i>
       <span class="sr-only">{{ site.data.ui-text[site.locale].tags_label }} 더보기</span>
     </a>
     {%- endunless -%}

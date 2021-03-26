@@ -12,7 +12,7 @@
       <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_close_label }}</span>
     </button>
 
-    <h2 id="nav-title">{{ site.data.ui-text[site.locale].main_menu_primary_menu | default: 'Primary menu' }}</h2>
+    <h2 id="nav-title">{{ site.data.ui-text[site.locale].primary_menu }}</h2>
     <ul role="menu" {% if site.main_menu.primary_links_grid -%}class="menu__list--grid"{% endif %}>
       {%- for link in site.data.navigation.main -%}
       {%- if link.url contains '://' -%}
@@ -28,7 +28,7 @@
     </ul>
   
     {%- if site.categories.size > 0 -%}
-    <h3>{{ site.data.ui-text[site.locale].main_menu_categories | default: 'Categories' }}</h3>
+    <h3>{{ site.data.ui-text[site.locale].categories_label | default: 'Categories' }}</h3>
     <ul {% if site.main_menu.category_list_grid -%}class="menu__list--grid"{% endif %}>
       {%- for i in (1..categories_max) reversed -%}
         {%- for category in site.categories limit: 8 -%}
@@ -36,7 +36,7 @@
           <li>
             <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}">{{ category[0] }}</a>
             <small class="menu__list-count">
-              <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span>
+              <span class="sr-only">{{ site.data.ui-text[site.locale].number_of_posts }}</span>
               ({{ category[1].size }})
             </small>
           </li>
@@ -47,7 +47,7 @@
 
     <a href="{{ '/' | relative_url }}category-list/" class="menu__more">
       <i aria-hidden="true" class="xi-ellipsis-h"></i>
-      <span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_category_more }}</span>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].categories_label }} 더보기</span>
     </a>
     {%- endif -%}
 

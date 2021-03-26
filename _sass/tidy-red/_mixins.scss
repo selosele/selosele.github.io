@@ -207,12 +207,11 @@
    margin-bottom: .3rem;
    padding: .35rem .65rem;
    border-radius: .15rem;
-   box-shadow: rgba(0,0,0,.2) .15rem .15rem .5rem;
+   background-color: $grey08;
    font-family: $default-font03;
    font-size: .85rem;
    line-height: 1;
-   color: $grey12;
-   text-shadow: rgba(0,0,0,.6) 1px 1px .15rem;
+   color: inherit;
    text-overflow: ellipsis;
    white-space: nowrap;
    box-sizing: border-box;
@@ -222,15 +221,8 @@
    }
 }
 
-// 날짜
-@mixin post-info-item-date {
-   background-color: $black02;
-}
-
 // 카테고리
 @mixin post-info-item-category {
-   background-color: $green03;
-
    > i {
       margin-right: .15em;
    }
@@ -238,8 +230,6 @@
 
 // 태그
 @mixin post-info-item-tag {
-   background-color: $sub-color03;
-
    > i {
       margin-right: .2em;
       vertical-align: middle;

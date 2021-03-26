@@ -305,10 +305,6 @@
    &__info-item {
       @include post-info-item;
       margin-left: .3rem;
-
-      &--date {
-         @include post-info-item-date;
-      }
    
       &--category {
          @include post-info-item-category;

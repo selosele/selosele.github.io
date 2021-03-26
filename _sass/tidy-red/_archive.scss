@@ -116,10 +116,6 @@
          @include post-info-item;
          margin-right: .3rem;
       
-         &--date {
-            @include post-info-item-date;
-         }
-      
          &--category {
             @include post-info-item-category;
          }

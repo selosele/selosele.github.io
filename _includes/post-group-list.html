@@ -26,6 +26,14 @@
         {%- endfor -%}
       {%- endfor -%}
     </ul>
+
+    {%- unless page.layout == 'categories' -%}
+    <a href="{{ '/' | relative_url }}category-list/" class="post-group-list__item__more">
+      <i aria-hidden="true" class="xi-plus"></i>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].categories_label }} 더보기</span>
+    </a>
+    {%- endunless -%}
+
     {%- else -%}
     <p>카테고리가 없습니다.</p>
     {%- endif -%}
@@ -38,8 +46,8 @@
 
     {%- if site.tags.size > 0 -%}
     <ul>
-      {%- assign tagItems = site.tags | sort -%}
-      {%- for tag in tagItems -%}
+      {%- assign tag_items = site.tags | sort -%}
+      {%- for tag in tag_items -%}
       <li>
         {%- assign num = tag | last | size | times: 100 | divided_by: site.tags.size | plus: 90 | at_most: 225 -%}
         <a href="{{ '/' | relative_url }}tag-list/#btn-{{ tag[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}" itemprop="keywords" rel="tag" style="font-size: {{ num }}%">
@@ -48,6 +56,14 @@
       </li>
       {%- endfor -%}
     </ul>
+
+    {%- unless page.layout == 'tags' -%}
+    <a href="{{ '/' | relative_url }}tag-list/" class="post-group-list__item__more">
+      <i aria-hidden="true" class="xi-plus"></i>
+      <span class="sr-only">{{ site.data.ui-text[site.locale].tags_label }} 더보기</span>
+    </a>
+    {%- endunless -%}
+
     {%- else -%}
     <p>태그가 없습니다.</p>
     {%- endif -%}

@@ -87,6 +87,8 @@
    }
 
    &__item {
+      position: relative;
+
       &:not(:last-child) {
          margin-bottom: 1.5rem;
          padding-bottom: 1.5rem;
@@ -151,6 +153,21 @@
                   }
                }
             }
+         }
+      }
+
+      &__more {
+         display: block;
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: auto;
+         height: auto;
+         font-size: 1.2rem;
+         color: $black03;
+
+         > i {
+            vertical-align: middle;
          }
       }
    }

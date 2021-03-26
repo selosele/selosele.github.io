@@ -123,6 +123,7 @@ html {
             }
    
             &__info-item {
+               &--date,
                &--category,
                &--tag {
                   background-color: $black02;
@@ -243,6 +244,7 @@ html {
          &__info-item {
             text-decoration: none;
 
+            &--date,
             &--category,
             &--tag {
                background-color: $black02;

@@ -120,23 +120,24 @@
     var postRoot = document.getElementById("page-content");
     if (postRoot) {
         // 헤더 타이틀 링크 생성
-        var h = postRoot.querySelectorAll("h2, h3, h4, h5, h6");
+        var h_list = postRoot.querySelectorAll("h2, h3, h4, h5, h6");
 
-        for (var i = 0; i < h.length; i++) {
-            var h_id = h[i].id,
-                h_txt = h[i].textContent,
+        for (var i = 0; i < h_list.length; i++) {
+            var h = h_list[i],
+                h_id = h.id,
+                h_txt = h.textContent,
                 h_anc = document.createElement("a");
 
             if (h_id) {
                 h_anc.href = "#" + h_id;
             } else {
-                h[i].id = h_txt.replace(/ /g, "-");
+                h.id = h_txt.replace(/ /g, "-");
                 h_anc.href = "#" + h_txt.replace(/ /g, "-");
             }
 
             h_anc.title = h_txt.replace(/-/g, " ");
             h_anc.classList.add("page__header-link");
-            h[i].insertBefore(h_anc, h[i].firstChild);
+            h.insertBefore(h_anc, h.firstChild);
         }
 
         // 헤더 타이틀 링크 클릭(또는 새로고침) 시 hash값과 매칭되는 목차 anchor로 스크롤
@@ -164,8 +165,9 @@
     var abbrList = document.querySelectorAll("abbr[title]"), abbrList_current;
     if (abbrList.length) {
         for (var i = 0; i < abbrList.length; i++) {
-            abbrList[i].addEventListener("click", handlerClick);
-            abbrList[i].addEventListener("keydown", handlerKeydown);
+            var abbr = abbrList[i];
+            abbr.addEventListener("click", handlerClick);
+            abbr.addEventListener("keydown", handlerKeydown);
         }
     }
 
@@ -173,18 +175,19 @@
     document.addEventListener("touchstart", handlerWindowClickClose);
 
     for (var i = 0; i < abbrList.length; i++) {
-        var _span = document.createElement("span"),
-            _title = "tooltip"+i+"-" + encodeURI(abbrList[i].title).replace(/ /g, "0").replace(/%/g, "1");
+        var abbr = abbrList[i],
+            _span = document.createElement("span"),
+            _title = "tooltip"+i+"-" + encodeURI(abbr.title).replace(/ /g, "0").replace(/%/g, "1");
 
-        abbrList[i].setAttribute("aria-describedby", _title);
-        abbrList[i].setAttribute("tabindex", 0);
+        abbr.setAttribute("aria-describedby", _title);
+        abbr.setAttribute("tabindex", 0);
 
         _span.hidden = true;
         _span.setAttribute("role", "tooltip");
         _span.id = _title;
-        _span.textContent = abbrList[i].title;
+        _span.textContent = abbr.title;
         _span.classList.add("abbr__tooltip");
-        abbrList[i].appendChild(_span);
+        abbr.appendChild(_span);
     }
 
     var tooltipList = document.querySelectorAll(".abbr__tooltip");
@@ -218,8 +221,9 @@
 
     function handlerWindowClickClose(event) {
         for (var i = 0; i < tooltipList.length; i++) {
-            if (event.target.tagName !== "ABBR" && !event.target.classList.contains("abbr__tooltip") && tooltipList[i].classList.contains("abbr__tooltip--active")) {
-                handlerClickClose(tooltipList[i]);
+            var tooltip = tooltipList[i];
+            if (event.target.tagName !== "ABBR" && !event.target.classList.contains("abbr__tooltip") && tooltip.classList.contains("abbr__tooltip--active")) {
+                handlerClickClose(tooltip);
             }
         }
     }
@@ -403,10 +407,11 @@
                 if (!searchCount.classList.contains("search__count-wrapper--active")) searchCount.classList.add("search__count-wrapper--active");
 
                 for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
-                    var ctx_match = resultAncList[i].innerHTML.match(new RegExp(ctx, "i"));
+                    var resultAnc = resultAncList[i],
+                        ctx_match = resultAnc.innerHTML.match(new RegExp(ctx, "i"));
 
-                    if ((resultAncList[i] !== ctx_match) && !resultAncList[i].querySelector(".search__results__match")) {
-                        resultAncList[i].innerHTML = resultAncList[i].innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
+                    if ((resultAnc !== ctx_match) && !resultAnc.querySelector(".search__results__match")) {
+                        resultAnc.innerHTML = resultAnc.innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
                     }
                 }
             } else {
@@ -415,7 +420,7 @@
                 searchLabel.classList.remove("sr-only");
             }
 
-            var resultList = resultWrapper.querySelectorAll("li");
+            var resultList = resultWrapper.querySelectorAll(".search__results__item");
             if (resultList.length) {
                 searchInput.setAttribute("aria-expanded", "true");
                 searchCountWord.textContent = "\""+ctx+"\"";
@@ -436,8 +441,9 @@
                 layer.classList.remove("search-content--active");
 
                 for (var i = 0; i < outerList.length; i++) {
-                    if (outerList[i].getAttribute("aria-hidden") !== true) {
-                        outerList[i].removeAttribute("aria-hidden");
+                    var outer = outerList[i];
+                    if (outer.getAttribute("aria-hidden") !== true) {
+                        outer.removeAttribute("aria-hidden");
                     }
                 }
 

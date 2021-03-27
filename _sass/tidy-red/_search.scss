@@ -140,6 +140,10 @@
     > a {
       display: block;
       padding: .4rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

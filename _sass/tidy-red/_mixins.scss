@@ -79,8 +79,6 @@
 
 // 페이지 타이틀
 @mixin page-title {
-   font-family: $default-font03;
-
    > .page-title {
       margin-bottom: 0;
       padding-bottom: 0;

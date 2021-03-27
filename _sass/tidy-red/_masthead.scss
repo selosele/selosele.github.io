@@ -188,12 +188,11 @@
       display: block;
       position: relative;
       z-index: 1;
-      font-family: $default-font03;
       font-weight: 400;
       font-size: calc(1.23rem + .5vw);
       line-height: 1.45;
       color: $grey12;
-      text-shadow: rgba(0,0,0,.7) 1px 1px .107em;
+      text-shadow: $black04 1px .1rem .1rem;
 
       @media (min-width: $min-mini-width) {
          display: inline-block;

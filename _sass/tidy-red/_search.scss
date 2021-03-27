@@ -121,7 +121,12 @@
   }
 
   &__link-wrapper {
+    display: none;
     padding: 0;
+
+    &--active {
+      display: inline-block;
+    }
 
     > a {
       display: block;

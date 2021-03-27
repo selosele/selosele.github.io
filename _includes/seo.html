@@ -71,6 +71,8 @@
 
 {%- if page.excerpt -%}
   <meta property="og:description" content="{{ seo_description }}">
+{%- else -%}
+  <meta property="og:description" content="{{ site.description }}">
 {%- endif -%}
 
 {%- if page_large_image -%}

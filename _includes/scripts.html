@@ -89,8 +89,8 @@
             }
 
             if (googleSearchLink) {
-                googleSearchLink.title = ''+ctx+' 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})';
-                googleSearchLink.href = encodeURI('https://www.google.com/search?q=site:{{ site.url }} '+ctx+'');
+                googleSearchLink.title = "\""+ctx+"\" 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})";
+                googleSearchLink.href = encodeURI("https://www.google.com/search?q=site:{{ site.url }} "+ctx+"");
             }
 
             var resultList = resultWrapper.querySelectorAll(".search__results__item");

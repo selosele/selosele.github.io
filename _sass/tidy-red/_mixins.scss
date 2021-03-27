@@ -160,7 +160,6 @@
 /* text */
 @mixin heading($color: null) {
    color: $color;
-   font-weight: 700;
    line-height: 1.4;
 }
 

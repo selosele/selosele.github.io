@@ -186,7 +186,6 @@
       margin-bottom: .459641em;
       padding-bottom: .459641em;
       border-bottom: 1px solid $grey05;
-      font-weight: 700;
       font-size: calc(1.75rem + .5vw);
       color: $black;
       line-height: 1.4;
@@ -238,7 +237,6 @@
       &-title {
          width: 100%;
          margin-bottom: .65rem;
-         font-weight: 700;
          font-size: 1rem;
       }
 
@@ -251,7 +249,6 @@
          padding: .5rem .8rem .5rem .8rem;
          border-radius: 5px;
          font-family: $default-font03;
-         font-weight: 700;
          font-size: .9rem;
          color: $grey12;
          box-sizing: border-box;
@@ -626,7 +623,6 @@
    
          &__name {
             display: block;
-            font-weight: 700;
             font-size: 1.4rem;
             line-height: 1.2;
 

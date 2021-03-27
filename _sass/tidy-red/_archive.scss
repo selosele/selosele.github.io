@@ -105,10 +105,6 @@
       &__info-item {
          @include post-info-item;
          margin-right: .3rem;
-      
-         &--tag {
-            @include post-info-item-tag;
-         }
 
          &-wrapper {
             display: flex;

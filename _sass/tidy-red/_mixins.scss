@@ -207,8 +207,7 @@
    padding: .35rem .65rem;
    border-radius: .15rem;
    background-color: $grey08;
-   font-family: $default-font03;
-   font-size: .85rem;
+   font-size: .9rem;
    line-height: 1;
    color: inherit;
    text-overflow: ellipsis;
@@ -217,19 +216,6 @@
 
    > i {
       font-size: 1em;
-   }
-}
-
-// 카테고리
-@mixin post-info-item-category {
-   > i {
-      margin-right: .15em;
-   }
-}
-
-// 태그
-@mixin post-info-item-tag {
-   > i {
-      vertical-align: middle;
+      vertical-align: -.1em;
    }
 }

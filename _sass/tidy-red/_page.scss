@@ -248,7 +248,6 @@
          margin-bottom: .3rem;
          padding: .5rem .8rem .5rem .8rem;
          border-radius: 5px;
-         font-family: $default-font03;
          font-size: .9rem;
          color: $grey12;
          box-sizing: border-box;
@@ -263,9 +262,10 @@
          }
 
          > i {
-            margin-right: .25rem;
+            margin-right: .1rem;
             font-size: 1.1em;
             color: $grey12;
+            vertical-align: -.1em;
          }
       }
 
@@ -302,10 +302,6 @@
    &__info-item {
       @include post-info-item;
       margin-left: .3rem;
-   
-      &--tag {
-         @include post-info-item-tag;
-      }
    }
    
    &__content {

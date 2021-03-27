@@ -13,11 +13,13 @@
 				<strong class="search__word"></strong> 로 검색한 결과 : <strong class="search__count"></strong>개 검색됨.
 			</p>
 
+			{% if site.analytics.provider == 'google' -%}
 			<p class="search__util__item search__link-wrapper">
 				<a href="javascript:;" target="_blank" rel="noopener noreferrer nofollow" id="search-link-google" class="search__link">
 					<span aria-hidden="true">Google에서 검색</span>
 				</a>
 			</p>
+			{% endif -%}
 		</div>
 
 		<ul id="search-results" class="search__results"></ul>

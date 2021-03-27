@@ -56,7 +56,7 @@
             searchCount = layer.querySelector(".search__count-wrapper"),
             searchCountWord = searchCount.querySelector(".search__word"),
             searchCountNum = searchCount.querySelector(".search__count"),
-            googleSearchWrapper = document.querySelector(".search__link-wrapper"),
+            searchLinkWrapper = document.querySelector(".search__link-wrapper"),
             googleSearchBtn = document.getElementById('search-link-google'),
             searchInputVal, searchInputValNotChanged;
 
@@ -69,7 +69,7 @@
                 
                 if (!searchLabel.classList.contains("sr-only")) searchLabel.classList.add("sr-only");
                 if (!searchCount.classList.contains("search__count-wrapper--active")) searchCount.classList.add("search__count-wrapper--active");
-                if (!googleSearchWrapper.classList.contains("search__link-wrapper--active")) googleSearchWrapper.classList.add("search__link-wrapper--active");
+                if (!searchLinkWrapper.classList.contains("search__link-wrapper--active")) searchLinkWrapper.classList.add("search__link-wrapper--active");
 
                 for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
                     var resultAnc = resultAncList[i],
@@ -83,7 +83,7 @@
                 searchInputVal = true;
                 searchInputValNotChanged = true;
                 searchLabel.classList.remove("sr-only");
-                googleSearchWrapper.classList.remove("search__link-wrapper--active");
+                searchLinkWrapper.classList.remove("search__link-wrapper--active");
             }
 
             googleSearchBtn.title = ''+ctx+' 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})';
@@ -136,7 +136,7 @@
                 } else {
                     searchInput.value = "";
                     searchCount.classList.remove("search__count-wrapper--active");
-                    googleSearchWrapper.classList.remove("search__link-wrapper--active");
+                    searchLinkWrapper.classList.remove("search__link-wrapper--active");
 
                     while (resultWrapper.firstChild) {
                         resultWrapper.removeChild(resultWrapper.firstChild);

@@ -57,7 +57,7 @@
             searchCountWord = searchCount.querySelector(".search__word"),
             searchCountNum = searchCount.querySelector(".search__count"),
             searchLinkWrapper = document.querySelector(".search__link-wrapper"),
-            googleSearchBtn = document.getElementById('search-link-google'),
+            googleSearchLink = document.getElementById('search-link-google'),
             searchInputVal, searchInputValNotChanged;
 
         function handlerInputKeydown() {
@@ -86,8 +86,8 @@
                 searchLinkWrapper.classList.remove("search__link-wrapper--active");
             }
 
-            googleSearchBtn.title = ''+ctx+' 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})';
-            googleSearchBtn.href = 'https://www.google.com/search?q=site:{{ site.url }} '+ctx+'';
+            googleSearchLink.title = ''+ctx+' 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})';
+            googleSearchLink.href = 'https://www.google.com/search?q=site:{{ site.url }} '+ctx+'';
 
             var resultList = resultWrapper.querySelectorAll(".search__results__item");
             if (resultList.length) {

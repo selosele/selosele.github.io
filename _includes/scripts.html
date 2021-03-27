@@ -38,7 +38,26 @@
       searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',
       noResultsText: '{{ site.search_noResultsText | default: "검색 결과를 찾을 수 없습니다." }}',
       limit: {{ site.search_limit | default: 20 }}
-  });
+    });
+
+    // 구글 검색 
+    (function() {
+        var searchInput = document.getElementById('search-input'),
+            googleSearchBtn = document.getElementById('search-link-google');
+
+        googleSearchBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            var ctx = searchInput.value;
+
+            if (ctx === '') {
+                alert('검색어를 입력하세요.');
+                searchInput.focus();
+            } else {
+                window.open('https://www.google.com/search?q=site:{{ site.url }} '+ctx+'');
+            }
+        });
+    })();
 </script>
 {%- endif -%}
 

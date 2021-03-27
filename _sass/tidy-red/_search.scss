@@ -211,6 +211,10 @@
       border-bottom: 1px dotted $grey09;
       line-height: 1.6;
       color: $black03;
+
+      @media (min-width: $min-medium-width) {
+        margin-right: 1rem;
+      }
   
       > a {
         display: block;

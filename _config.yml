@@ -4,7 +4,7 @@ title                    : "Sel의 생각저장소"
 title_separator          : "-"
 subtitle                 : "이런저런 이야기"
 name                     : "Sel" # 사용자명
-description              : "웹 퍼블리셔 Sel의 개인 블로그"
+description              : "Sel의 개인 블로그 - 웹 개발에 관심이 많은 웹 퍼블리셔, 삽질 전문가, 의식의 흐름대로 쓴 글을 올리는 Sel의 개인 블로그"
 url                      : "https://selosele.github.io"
 baseurl                  :
 repository               : "selosele/selosele.github.io"

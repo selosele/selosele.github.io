@@ -213,6 +213,12 @@ html {
             }
          }
 
+         &__util {
+            &__item {
+               background-color: theme-style("bg-color-02");
+            }
+         }
+
          &__limit {
             background-color: theme-style("bg-color-02");
          }
@@ -223,10 +229,6 @@ html {
          }
 
          &__count {
-            &-wrapper {
-               background-color: theme-style("bg-color-02");
-            }
-            
             font-weight: theme-style("text-weight");
             color: theme-style("link-color");
          }

@@ -87,7 +87,7 @@
             }
 
             googleSearchLink.title = ''+ctx+' 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})';
-            googleSearchLink.href = 'https://www.google.com/search?q=site:{{ site.url }} '+ctx+'';
+            googleSearchLink.href = encodeURI('https://www.google.com/search?q=site:{{ site.url }} '+ctx+'');
 
             var resultList = resultWrapper.querySelectorAll(".search__results__item");
             if (resultList.length) {

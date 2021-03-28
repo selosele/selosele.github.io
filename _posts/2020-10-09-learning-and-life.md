@@ -4,7 +4,7 @@ comments: true
 title: "최근 학습과 일상에 대한 끄적끄적"
 subtitle:
 header:
-  overlay_image: /assets/images/thumb/autumn_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/autumn_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 56%
   image_link: https://www.freepik.com/free-photo/cozy-autumn-still-life-with-cup-tea_10489106.htm
@@ -45,8 +45,8 @@ if (el.length) console.log(true) // true
 
 **참고 링크**
 
-* [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
-* [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
+- [Array.length](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length){:target="_blank"} - MDN
+- [array.length vs. array.length > 0](https://stackoverflow.com/questions/32911424/array-length-vs-array-length-0){:target="_blank"} - Stack Overflow
 
 ## 자기호출 익명함수(Self-invoking anonymous function)
 

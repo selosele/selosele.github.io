@@ -4,7 +4,7 @@ comments: true
 title: "왜 IE에서 word-break: keep-all 미적용 문제가 발생하는가..."
 subtitle: "해답은 어디에"
 header:
-  overlay_image: /assets/images/thumb/ie_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/ie_thumb01.jpg
   overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773273/
   image_author: geralt
@@ -28,12 +28,13 @@ tags:
 
 ### 조건
 
-* 3단 중첩 구조의 마크업. 위 코드는 div &gt; p &gt; span
-* div는 <mark>display: table</mark> 속성 적용, p는 <mark>display: table-cell</mark>, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 <mark>word-break: keep-all</mark> 선언으로 단어 단위 줄 바꿈이 일어나게 하였음.
+- 3단 중첩 구조의 마크업. 위 코드는 div &gt; p &gt; span
+- div는 <mark>display: table</mark> 속성 적용, p는 <mark>display: table-cell</mark>, span은 매우 긴 텍스트를 담고 있고, 두 줄까지만 보이게 스타일링을 해주었으며 <mark>word-break: keep-all</mark> 선언으로 단어 단위 줄 바꿈이 일어나게 하였음.
 
 그리고 span에 inline-block 선언을 해주었으나 선임께서 너비를 정의해주거나 block 선언을 해야 한다고 알려주심..
 
 ## 결론
+
 우선 IE에서 텍스트에 띄어쓰기를 넣을 경우 줄 바꿈이 발생하는데, 크롬에선 띄어쓰기 없이도 잘만 줄 바꿈된다. 그렇다고 띄어쓰기를 해결책으로 삼을 수는 없으니..
 
 white-space 속성을 이용한 줄 바꿈 발생도 통하지 않는다. 다른 속성을 사용하는 걸로 타협을 했지만, 또 이런 상황에 처할 수 있기 때문에 반드시 짚고 넘어가야 하는 문제임은 틀림없다.

@@ -4,7 +4,7 @@ comments: true
 title: "Typescript를 알게 되다"
 subtitle: "최신 기술을 익히려는 노력을 더 해야겠음"
 header:
-  overlay_image: /assets/images/thumb/ts_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/ts_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 28%
 date: 2020-06-06 21:09
@@ -124,8 +124,8 @@ $(function () {
 
 **참고**
 
-* [How to watch and compile all TypeScript sources?](https://stackoverflow.com/questions/12799237/how-to-watch-and-compile-all-typescript-sources){:target="_blank"} - Stack Overflow
-* [Downlevel Iteration for ES3/ES5 in TypeScript](https://mariusschulz.com/blog/downlevel-iteration-for-es3-es5-in-typescript){:target="_blank"} - Marius Schulz
-* [tsconfig.json 컴파일 옵션 정리](https://geonlee.tistory.com/214){:target="_blank"} - 빠리의 택시 운전사
-* [TypeScript tsc-watch 사용하기](https://bigstar-vlog.tistory.com/20){:target="_blank"} - 잡학다식 집합소
-* [타입스크립트(TypeScript) 타입 선언](https://velog.io/@recordboy/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8TypeScript-%ED%83%80%EC%9E%85-%EC%84%A0%EC%96%B8){:target="_blank"} - 기록맨
+- [How to watch and compile all TypeScript sources?](https://stackoverflow.com/questions/12799237/how-to-watch-and-compile-all-typescript-sources){:target="_blank"} - Stack Overflow
+- [Downlevel Iteration for ES3/ES5 in TypeScript](https://mariusschulz.com/blog/downlevel-iteration-for-es3-es5-in-typescript){:target="_blank"} - Marius Schulz
+- [tsconfig.json 컴파일 옵션 정리](https://geonlee.tistory.com/214){:target="_blank"} - 빠리의 택시 운전사
+- [TypeScript tsc-watch 사용하기](https://bigstar-vlog.tistory.com/20){:target="_blank"} - 잡학다식 집합소
+- [타입스크립트(TypeScript) 타입 선언](https://velog.io/@recordboy/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8TypeScript-%ED%83%80%EC%9E%85-%EC%84%A0%EC%96%B8){:target="_blank"} - 기록맨

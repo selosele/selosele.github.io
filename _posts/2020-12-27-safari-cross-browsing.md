@@ -4,7 +4,7 @@ comments: true
 title: "Safari에서 line-height 값이 어긋나는 문제.."
 subtitle: "vertical-align 속성값을 수치로 잡아야 함"
 header:
-    overlay_image: /assets/images/thumb/safari_thumb01.jpg
+    overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/safari_thumb01.jpg
     overlay_filter: 0.4
     image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773218/
     image_author: geralt
@@ -45,7 +45,7 @@ p {
 
 문제는 아래와 같다.
 
-![아이폰 Safari에서의 모습](/assets/images/post/safari-cross-browsing_img01.jpg)
+![아이폰 Safari에서의 모습](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/safari-cross-browsing_img01.jpg)
 
 Safari에서 행간이 맞지 않아 텍스트가 위에 붙어 있는 것처럼 보인다. 그래서 기존 스타일은 그대로 두고 가상요소로 중앙 정렬을 맞춰보려 했었다.
 

@@ -4,7 +4,7 @@ comments: true
 title: "display: table을 파헤쳐보자"
 subtitle: "table 요소만의 스타일을 사용할 수 있다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4
 date: 2020-01-09 21:21
 categories:
@@ -13,6 +13,7 @@ tags:
     - css
 post_dropcap: false
 ---
+
 CSS ```display: table```{:.language-css} 속성은 말 그대로 요소를 table의 성질을 갖게 한다는 뜻이다.
 
 이 속성으로 무엇을 할 수 있는가에 십중팔구 가로/세로정렬을 이야기할 것이다.  

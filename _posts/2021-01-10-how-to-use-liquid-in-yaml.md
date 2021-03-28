@@ -2,7 +2,6 @@
 layout: post
 comments: true
 title: "yml 파일 내에서 Liquid 코드 사용 삽질기"
-subtitle:
 date: 2021-01-10 13:10
 categories:
     - 퍼블노트

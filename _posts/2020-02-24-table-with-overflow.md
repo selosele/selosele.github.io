@@ -2,9 +2,8 @@
 layout: post
 comments: true
 title: "table 요소와 overflow의 공존은 불가능"
-subtitle:
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.5
 date: 2020-02-24 21:30
 categories:
@@ -12,8 +11,8 @@ categories:
 tags:
     - css
 ---
-제목 그대로 table 요소와 overflow 속성의 공존은 불가능하다.  
-예시로 ```display: table/table-cell```{:.language-css} 등 너비값을 가진 table 요소에 overflow 속성을 선언하면 먹히지 않는 현상. 실무에서 이것 때문에 고생을 했는지라.. 검색해서 찾아낸 해답은 의외로 간단했음.
+
+제목 그대로 table 요소와 overflow 속성의 공존은 불가능하다. 예시로 ```display: table/table-cell```{:.language-css} 등 너비값을 가진 table 요소에 overflow 속성을 선언하면 먹히지 않는 현상. 실무에서 이것 때문에 고생을 했는지라.. 검색해서 찾아낸 해답은 의외로 간단했음.
 
 ## 우선 코드부터 봅시다.
 
@@ -38,6 +37,7 @@ ul {
   }
 }
 ```
+
 위 코드는 ```overflow: hidden```{:.language-css}이 먹히지 않는데, 동작하는 쪽으로 고쳐본 결과는 아래 코드와 같다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="XWbppKP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWbppKP">

@@ -4,7 +4,7 @@ comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가"
 subtitle: "transform 속성을 선언했을 때"
 header:
-  overlay_image: /assets/images/thumb/chrome_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/chrome_thumb01.jpg
   overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773216/
   image_author: geralt
@@ -15,6 +15,7 @@ tags:
     - css
 primary_post: true
 ---
+
 CSS에서 sub-pixel rendering 현상이란, 브라우저가 요소의 소수점 사이즈를 정수로 계산하게 되어 요소가 흐려보이는 현상으로, webkit 계열 브라우저에서 발생한다. 예시로 요소를 중앙 정렬하는 방법 중 많이 사용되는 방법 중 하나로, ```position: absolute; top: 50%; left: 50%```{:.language-css} 및 ```transform: translate(-50%, -50%)```{:.language-css}를 선언했는데 요소의 너비/높이 중 하나라도 홀수이면 요소가 흐려져보이는 것.
 
 대응책으로 디자인 시안과 어긋나더라도 짝수로 맞추거나 중앙 정렬이 가능한 다른 방법을 쓰는 쪽이 선호되는 추세다. 개인적으로 IE 8까지도 어느 정도의 안전장치를 두고 작업해야 하므로 transform을 이용한 중앙 정렬은 하지 않는 편이다.

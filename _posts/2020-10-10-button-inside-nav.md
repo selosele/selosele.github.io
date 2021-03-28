@@ -4,7 +4,7 @@ comments: true
 title: "nav 요소 내에 button 요소를 포함할 수 있는가?"
 subtitle:
 header:
-  overlay_image: /assets/images/thumb/html_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 57%
   image_link: https://pixabay.com/ko/illustrations/html5-html-%ED%8C%8C%EC%9D%BC-%ED%98%95%EC%8B%9D-386614/

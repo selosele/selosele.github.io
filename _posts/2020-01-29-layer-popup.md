@@ -4,7 +4,6 @@ comments: true
 title: "레이어팝업에 웹 접근성을 불어넣다"
 subtitle: "웹 접근성이 충분히 보장된 레이어팝업"
 header:
-  overlay_image:
   overlay_filter: 0.4
   image_link: https://pixabay.com/ko/photos/%EC%84%A0%EC%85%8B-%EC%96%91%EA%B7%80%EB%B9%84-%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8-%EA%BD%83-174276/
   image_author: danigeza
@@ -16,6 +15,7 @@ tags:
     - 웹 접근성
 post_dropcap: false
 ---
+
 블로그에 사용할 레이어팝업을 만들면서, 웹 접근성이 충분히 보장되도록 작업을 했고, 코드는 다음과 같다.
 
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="selucky" data-slug-hash="YzGpLNZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="YzGpLNZ">
@@ -26,6 +26,7 @@ post_dropcap: false
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ## HTML
+
 ```html
 <!-- 레이어 열기 버튼 -->
 <button type="button" class="open-lp" aria-controls="lp1">open</button>

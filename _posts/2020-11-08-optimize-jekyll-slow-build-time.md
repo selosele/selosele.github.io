@@ -4,7 +4,6 @@ comments: true
 title: "Jekyll의 빌드 시간을 최적화하는 방법"
 subtitle:
 header:
-  overlay_image:
   image_link: https://pixabay.com/ko/photos/%EC%84%A0%EC%85%8B-%EC%96%91%EA%B7%80%EB%B9%84-%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8-%EA%BD%83-174276/
   image_author: danigeza
 date: 2020-11-08 21:39

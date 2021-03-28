@@ -103,8 +103,8 @@ button 요소에 tab 역할을 부여하고, 사이에 있는 li 요소의 의�
 
 ### 참고 링크
 
-* [aria-expanded state](https://w3c.github.io/aria/#aria-expanded){:target="_blank"} - Accessible Rich Internet Applications (WAI-ARIA) 1.2
-* [presentation role](https://w3c.github.io/aria/#presentation){:target="_blank"} - Accessible Rich Internet Applications (WAI-ARIA) 1.2
-* [확장 상태](https://github.com/lezhin/accessibility/blob/master/aria/README.md#aria-expanded){:target="_blank"} - 레진 WAI-ARIA 가이드라인
-* [의미 없음](https://github.com/lezhin/accessibility/blob/master/aria/README.md#none){:target="_blank"} - 레진 WAI-ARIA 가이드라인
-* [li](https://developer.mozilla.org/ko/docs/Web/HTML/Element/li){:target="_blank"} - MDN
+- [aria-expanded state](https://w3c.github.io/aria/#aria-expanded){:target="_blank"} - Accessible Rich Internet Applications (WAI-ARIA) 1.2
+- [presentation role](https://w3c.github.io/aria/#presentation){:target="_blank"} - Accessible Rich Internet Applications (WAI-ARIA) 1.2
+- [확장 상태](https://github.com/lezhin/accessibility/blob/master/aria/README.md#aria-expanded){:target="_blank"} - 레진 WAI-ARIA 가이드라인
+- [의미 없음](https://github.com/lezhin/accessibility/blob/master/aria/README.md#none){:target="_blank"} - 레진 WAI-ARIA 가이드라인
+- [li](https://developer.mozilla.org/ko/docs/Web/HTML/Element/li){:target="_blank"} - MDN

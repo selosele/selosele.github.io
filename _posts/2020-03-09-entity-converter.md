@@ -4,7 +4,7 @@ comments: true
 title: "HTML entity 변환해주는 사이트 발견.."
 subtitle: "이 기적의 사이트를 이제서야 알게 되다니.."
 header:
-  overlay_image: /assets/images/thumb/html_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4
 date: 2020-03-09 22:37
 categories:
@@ -28,4 +28,4 @@ post_dropcap: false
 
 ## 사용 예시
 
-![사용 예시](/assets/images/post/entity-converter_img01.jpg)
+![사용 예시](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/entity-converter_img01.jpg)

@@ -4,7 +4,7 @@ comments: true
 title: "JS로 height: auto를 부드럽게 toggle하는 방법"
 subtitle: "값이 있어야 한다는 점에 유의하자"
 header:
-  overlay_image: /assets/images/thumb/js_thumb02.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb02.jpg
   overlay_filter: 0.5
   image_position-y: 37%
   image_link: https://www.freepik.com/free-vector/javascript-frameworks-concept-illustration_6183526.htm#page=1&query=javascript&position=0

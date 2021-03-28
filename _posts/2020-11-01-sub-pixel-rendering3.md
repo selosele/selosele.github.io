@@ -4,7 +4,7 @@ comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 3"
 subtitle: "display: table 속성을 선언했을 때"
 header:
-  overlay_image: /assets/images/thumb/chrome_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/chrome_thumb01.jpg
   overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773216/
   image_author: geralt
@@ -65,9 +65,9 @@ p {
 우선 webkit 계열 브라우저는 display: table 속성을 가지는 요소의 너비값을 계산할 때 소수점을 무시한다고 한다. 당연히 sub-pixel rendering과 관련이 있겠지만 왜 display: table 일때만 발생하는지에 대해서는 찾지 못했다. 그래도 해결책(처럼 보이는 것들)은 찾을 수 있었다.
 
 1. 자식 요소 너비값을 1px 만큼 더하기.
-   * ```width: calc(100% + 1px)```로 잃어버린 공간을 되찾는다..라는 가장 떠올리기 쉬운 방법이다. 하지만 모니터 해상도에 따라 정상적으로 렌더링이 될때는 1px만큼 공간이 튀어나와 보이므로 적절한 해결책이 아니다.
+   - ```width: calc(100% + 1px)```로 잃어버린 공간을 되찾는다..라는 가장 떠올리기 쉬운 방법이다. 하지만 모니터 해상도에 따라 정상적으로 렌더링이 될때는 1px만큼 공간이 튀어나와 보이므로 적절한 해결책이 아니다.
 2. 부모 요소에도 display: table 선언을 해주기.
-   * 왜인지 모르겠으나 이렇게 하면 해결이 된 것처럼 보인다. 하지만 원래의 너비값인 837.5px에서 0.5px이 또 무시되었다.. 겉으로 봤을 땐 문제없어 보이지만 의도된 너비값대로 렌더링되지 않았으므로 문제 해결에 급급한 방식인 것 같음.
+   - 왜인지 모르겠으나 이렇게 하면 해결이 된 것처럼 보인다. 하지만 원래의 너비값인 837.5px에서 0.5px이 또 무시되었다.. 겉으로 봤을 땐 문제없어 보이지만 의도된 너비값대로 렌더링되지 않았으므로 문제 해결에 급급한 방식인 것 같음.
 
 일단 적절한 방법을 계속 찾아볼 것임.
 

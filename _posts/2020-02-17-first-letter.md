@@ -4,7 +4,7 @@ comments: true
 title: "first-letter 가상 요소에 대한 놀라운 사실 한 가지"
 subtitle: "함정에 빠지기 쉽다."
 header:
-  overlay_image: /assets/images/thumb/letter_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/letter_thumb01.jpg
   overlay_filter: 0.4
 date: 2020-02-17 22:07
 categories:
@@ -12,11 +12,13 @@ categories:
 tags:
     - css
 ---
+
 CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타일을 줄 수 있는 가상 요소이다. 의외로 잘 알려지지 않은 속성으로, 첫 글자 스타일링은 대부분 span 등으로 감싸서 처리하는 방식이 사용되고 있어 별도의 추가 마크업이 필요없다는 점에서 추후 유지보수 시 편리하다고 볼 수 있다(폰트 크기, 색상 등 font 속성만 스타일링을 하고자 할 때로 국한된다. 이름에서 볼 수 있듯 font 계열 속성만 사용 가능). 모든 브라우저에서 호환되며 특히 IE 8까지도 지원된다는 점에서 크로스브라우징 이슈가 없다고 볼 수 있다.
 
 는 중요한 점 하나를 간과했을 때의 이야기고..
 
 ## 코드를 봅시다.
+
 <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="selucky" data-slug-hash="xxGVMKM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxGVMKM">
   <span>See the Pen <a href="https://codepen.io/selucky/pen/xxGVMKM">
   xxGVMKM</a> by sel (<a href="https://codepen.io/selucky">@selucky</a>)
@@ -29,7 +31,7 @@ CSS의 ```::first-letter```{:.language-css}는 텍스트의 첫 글자에 스타
 
 위의 Codepen을 Firefox에서 확인해보면 알겠지만, 다음과 같이 ```::first-letter```{:.language-css}가 제대로 적용되지 않은 것을 볼 수 있다.
 
-{% include image.html url='/assets/images/post/first-letter_img01.jpg' description='Firefox에서의 모습.' alt='' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/first-letter_img01.jpg' description='Firefox에서의 모습.' alt='' %}
 
 개발자도구로 대다수는 ```::first-letter```{:.language-css} 부분만 살펴보겠지만 원인은 ```::before```{:.language-css} 가상 요소에 있다.
 

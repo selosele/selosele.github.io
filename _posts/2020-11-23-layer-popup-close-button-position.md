@@ -4,7 +4,7 @@ comments: true
 title: "레이어팝업 닫기버튼의 논리적 순서상 위치, 어느 곳이 바람직한가?"
 subtitle:
 header:
-    overlay_image: /assets/images/thumb/html_thumb01.jpg
+    overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/html_thumb01.jpg
     overlay_filter: 0.4
     image_link: https://pixabay.com/ko/illustrations/html5-html-%ED%8C%8C%EC%9D%BC-%ED%98%95%EC%8B%9D-386614/
     image_author: geralt
@@ -88,7 +88,7 @@ JS는 [일전에 초점 이동을 레이어팝업 내에서만 돌게 하려고 
 
 **참고 링크**
 
-* [레이어팝업 닫기버튼 논리적 위치](https://www.wah.or.kr:444/Participation/consultingView.asp?cType=&seq=7687&page=200?cType=&FindTxt=&cMail=){:target="_blank"} - 웹 접근성 연구소
-* [레이어팝업 닫기 버튼 논리적구조위치](https://www.wah.or.kr:444/Participation/consultingView.asp?cType=TC&seq=5074&page=1?cType=TC&FindTxt=&cMail=){:target="_blank"} - 웹 접근성 연구소
-* [접근성 닫기버튼 위치(마크업 순서) 질문드립니다.](https://cafe.naver.com/hacosa/252854){:target="_blank"} - 하드코딩하는 사람들
-* ["더" 접근 가능한 Modal Window(Dialog)](https://mulder21c.github.io/modal-dialog/#%EB%8D%94-%EC%A0%91%EA%B7%BC-%EA%B0%80%EB%8A%A5%ED%95%9C-modal-window){:target="_blank"}
+- [레이어팝업 닫기버튼 논리적 위치](https://www.wah.or.kr:444/Participation/consultingView.asp?cType=&seq=7687&page=200?cType=&FindTxt=&cMail=){:target="_blank"} - 웹 접근성 연구소
+- [레이어팝업 닫기 버튼 논리적구조위치](https://www.wah.or.kr:444/Participation/consultingView.asp?cType=TC&seq=5074&page=1?cType=TC&FindTxt=&cMail=){:target="_blank"} - 웹 접근성 연구소
+- [접근성 닫기버튼 위치(마크업 순서) 질문드립니다.](https://cafe.naver.com/hacosa/252854){:target="_blank"} - 하드코딩하는 사람들
+- ["더" 접근 가능한 Modal Window(Dialog)](https://mulder21c.github.io/modal-dialog/#%EB%8D%94-%EC%A0%91%EA%B7%BC-%EA%B0%80%EB%8A%A5%ED%95%9C-modal-window){:target="_blank"}

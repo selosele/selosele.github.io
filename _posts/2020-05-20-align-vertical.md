@@ -4,7 +4,7 @@ comments: true
 title: "position: absolute 모든 방향을 이용한 중앙정렬 기법"
 subtitle: "신기한 방법인듯"
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/css_thumb01.jpg
   overlay_filter: 0.4
 date: 2020-05-20 22:51
 categories:
@@ -53,7 +53,6 @@ div {
 }
 ```
 
-absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으로 계산되도록 해준다.  
-위의 transform 기법과 별 차이는 없어보이지만 언젠가 유용할 듯 싶어 기록함.
+absolute의 모든 방향을 이용, 중앙에 맞춰주고 margin이 자동으로 계산되도록 해준다. 위의 transform 기법과 별 차이는 없어보이지만 언젠가 유용할 듯 싶어 기록함.
 
 그나저나 IE만 아니면 flex를...

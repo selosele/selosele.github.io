@@ -2,9 +2,8 @@
 layout: post
 comments: true
 title: "초점이동 테스트를 위한 Javascript 연구"
-subtitle:
 header:
-  overlay_image: /assets/images/thumb/js_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 57%
   image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
@@ -17,8 +16,7 @@ tags:
     - 웹 접근성
 ---
 
-실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때,  
-&ldquo;현재 초점이 잡힌 요소에 숫자가 떠서 몇 번째 요소에 초점이 잡혔는지 알 수 있으면 좋겠다&rdquo;라는 생각을 했는데, 코드를 만들어서 테스트해본 결과 대만족. 실무에서도 사용할 계획임.
+실무에서나 블로그 작업에서나 Tab키에 의한 초점이동 테스트를 할 때, &ldquo;현재 초점이 잡힌 요소에 숫자가 떠서 몇 번째 요소에 초점이 잡혔는지 알 수 있으면 좋겠다&rdquo;라는 생각을 했는데, 코드를 만들어서 테스트해본 결과 대만족. 실무에서도 사용할 계획임.
 
 ## 기존에 만들었던 코드
 
@@ -27,6 +25,7 @@ $("*").on("focus", function() {
   console.log(document.activeElement);
 });
 ```
+
 현재 초점이 잡힌 요소를 console에 띄우는 것밖에 없다.
 
 ## 새로 만든 코드

@@ -4,7 +4,7 @@ comments: true
 title: "querySelectorAll에 대해 제대로 알고 쓰자"
 subtitle: "jQuery적 사고방식을 지양해야"
 header:
-  overlay_image: /assets/images/thumb/js_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 56%
   image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
@@ -15,6 +15,7 @@ categories:
 tags:
     - javascript
 ---
+
 오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용.  
 매개변수를 이용해서 태그에 텍스트를 삽입하는 스크립트를 jQuery와 Vanilla JS로 짜보았는데..
 
@@ -25,6 +26,7 @@ function myName(x) {
 }
 myName("sel");
 ```
+
 문제없이 작동하는 jQuery 코드.
 
 Vanilla JS 코드를 아래와 같이 작성해봄.
@@ -37,6 +39,7 @@ function myName(x) {
 }
 myName("sel");
 ```
+
 안됨...
 
 이게 왜 안되는지 며칠을 고민해봤는데도 답이 안나왔었음. 결국 이해하고서 작동하는 쪽으로 고쳐본 코드는 다음과 같고, jQuery/Vanilla JS 코드 구별을 위해 함수명/태그를 다르게 작성함.
@@ -56,5 +59,5 @@ myName("sel");
 
 **참고 링크**
 
-* [Document.querySelectorAll()](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"} - MDN
-* [NodeList](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"} - MDN
+- [Document.querySelectorAll()](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll){:target="_blank"} - MDN
+- [NodeList](https://developer.mozilla.org/ko/docs/Web/API/NodeList){:target="_blank"} - MDN

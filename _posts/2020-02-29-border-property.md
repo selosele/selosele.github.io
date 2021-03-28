@@ -4,14 +4,15 @@ comments: true
 title: "border: none과 border: 0의 차이"
 subtitle: "분명한 차이가 있다."
 header:
-  overlay_image: /assets/images/thumb/css_thumb01.jpg
-  overlay_filter: 0.5
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/css_thumb01.jpg
+  overlay_filter: 0.4
 date: 2020-02-29 12:50
 categories:
     - 퍼블노트
 tags:
     - css
 ---
+
 reset CSS를 작성할 때 요소의 border를 없애려 사용하는 ```border: none```{:.language-css}/```border: 0```{:.language-css} 선언.  
 언뜻 보면 똑같아 보이지만 확연한 차이가 있음을 알았음..
 
@@ -32,6 +33,6 @@ reset CSS를 작성할 때 요소의 border를 없애려 사용하는 ```border:
 
 ---
 
-* [참고 링크 1](https://stackoverflow.com/questions/2922909/should-i-use-border-none-or-border-0){:target="_blank"}
-* [참고 링크 2](https://codepen.io/denilsonsa/pen/LkdHh?editors=110){:target="_blank"}
-* [참고 링크 3](https://trend21c.tistory.com/287){:target="_blank"}
+- [참고 링크 1](https://stackoverflow.com/questions/2922909/should-i-use-border-none-or-border-0){:target="_blank"}
+- [참고 링크 2](https://codepen.io/denilsonsa/pen/LkdHh?editors=110){:target="_blank"}
+- [참고 링크 3](https://trend21c.tistory.com/287){:target="_blank"}

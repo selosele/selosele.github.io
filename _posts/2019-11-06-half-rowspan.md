@@ -4,7 +4,7 @@ comments: true
 title: "반쪽짜리 rowspan......"
 subtitle: "반쪽짜리 rowspan이라니, 이게 뭔 소린가싶을 거다."
 header:
-  overlay_image: /assets/images/thumb/html_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/html_thumb01.jpg
   overlay_filter: 0.4
 date: 2019-11-06 22:12
 categories:
@@ -35,8 +35,7 @@ rowspan이 애매하게 걸쳐 있는 테이블 디자인.
     </tr>
 </table>
 
-얼마전 회사에서 이런 테이블을 코딩해야 하는 상황이었는데, 구글링[^1]으로 예제 코드를 찾는 데 성공!했으나..  
-다른 이유로 적용하지 않았지만, 앞으로 유용하게 써먹을 수 있을 것 같아서 기록함.
+얼마전 회사에서 이런 테이블을 코딩해야 하는 상황이었는데, 구글링[^1]으로 예제 코드를 찾는 데 성공!했으나.. 다른 이유로 적용하지 않았지만, 앞으로 유용하게 써먹을 수 있을 것 같아서 기록함.
 
 참고로 각 td의 숫자는 해당 td의 rowspan 수치임.
 

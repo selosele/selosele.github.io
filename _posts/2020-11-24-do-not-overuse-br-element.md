@@ -5,7 +5,7 @@ comments: true
 title: "br 요소를 남발하지 말자"
 subtitle:
 header:
-    overlay_image: /assets/images/thumb/br_thumb01.jpg
+    overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/br_thumb01.jpg
     overlay_filter: 0.4
 date: 2020-11-24 22:48
 categories:
@@ -63,5 +63,5 @@ Korea
 
 **참고 링크**
 
-* [&lt;br&gt;: 줄 바꿈 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br){:target="_blank"} - MDN
-* [그룹화 관련 요소](https://seulbinim.github.io/WSA/grouping.html#p-%EC%9A%94%EC%86%8C){:target="_blank"} - 웹접근성과 웹표준
+- [&lt;br&gt;: 줄 바꿈 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br){:target="_blank"} - MDN
+- [그룹화 관련 요소](https://seulbinim.github.io/WSA/grouping.html#p-%EC%9A%94%EC%86%8C){:target="_blank"} - 웹접근성과 웹표준

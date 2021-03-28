@@ -2,9 +2,8 @@
 layout: post
 comments: true
 title: "Javascript를 이용하여 inline 요소의 공백 제거하기"
-subtitle:
 header:
-  overlay_image: /assets/images/thumb/js_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb01.jpg
   overlay_filter: 0.4
   image_position-y: 57%
   image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
@@ -24,6 +23,7 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 태그 줄 바꿈 삭제는 협업 프로세스에서 사용하기에 적절한 방법은 아니라고 본다.
 
 ## 그렇다면 적절한 방법은 무엇인가?
+
 결국 Javascript를 이용하는 방법을 검색해보았다.
 
 ### 공백값을 구한 후, 값만큼 margin-left 음수값을 대입하는 방법
@@ -70,12 +70,13 @@ inline 요소에 margin-left 음수값을 주는 방식은 font-family/font-size
 그러나 &ldquo;공백&rdquo;을 제거해야지 간격 조절은 의미 없다고 갑자기 생각이 들어서.. 내가 만들어놓고도 별로 사용하고싶은 생각이 안 드는 방법이다. JS로 스타일을 건드리므로 지옥의 유지보수가 될 것이라는 점도..
 
 ### 정규표현식 활용하여 공백문자 제거
+
 공백문자를 정규표현식으로 찾을 수 있을 거라는 생각이 갑자기 들었고, 열심히 구글링 중... margin-left 음수값을 이용하는 방법보다 합리적이라는 생각이 들어서 반드시 완성하겠다고 다짐을 했... 미루지 말자~
 
 20/02/25, 어느 정도 만들었음.
 
-* [참고 링크 1](https://stackoverflow.com/questions/27749507/removing-inline-block-whitespace-using-javascript-and-or-jquery){:target="_blank"}
-* [참고 링크 2](http://jsfiddle.net/davidThomas/wygnD/3/){:target="_blank"}
+- [참고 링크 1](https://stackoverflow.com/questions/27749507/removing-inline-block-whitespace-using-javascript-and-or-jquery){:target="_blank"}
+- [참고 링크 2](http://jsfiddle.net/davidThomas/wygnD/3/){:target="_blank"}
 
 ```javascript
 (function($, elem) {

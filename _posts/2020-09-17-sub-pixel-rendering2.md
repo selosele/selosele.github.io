@@ -4,7 +4,7 @@ comments: true
 title: "sub-pixel rendering 이슈에 대응하는 최선의 방법은 무엇인가 2"
 subtitle: "이미지 크기를 CSS로 줄였을 때"
 header:
-  overlay_image: /assets/images/thumb/chrome_thumb01.jpg
+  overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/chrome_thumb01.jpg
   overlay_filter: 0.4
   image_link: https://pixabay.com/ko/illustrations/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9B%B9-www-%EC%BB%B4%ED%93%A8%ED%84%B0-773216/
   image_author: geralt
@@ -35,9 +35,9 @@ primary_post: true
 ### image-rendering : auto
 
 <div class="page__image-container" style="image-rendering: auto;">
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
 </div>
 
 auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값이다. 줄인 이미지가 크롬 브라우저에서 흐릿하게 보이는 현상을 볼 수 있음.
@@ -45,9 +45,9 @@ auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값�
 ### image-rendering : pixelated
 
 <div class="page__image-container" style="image-rendering: auto; image-rendering: pixelated;">
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
 </div>
 
 해당 속성값을 선언하면 이미지를 픽셀화된 상태(pixelated)로 렌더링한다. 말 그대로 픽셀화된 상태이므로 이미지가 점처럼 보인다. 흐리게 보이는 거 방지하겠다고 썼다간 오히려 더 깨져보일 수 있으므로 이 방법은 좀 아닌 것 같음..
@@ -55,9 +55,9 @@ auto는 image-rendering 속성을 선언하지 않은 상태인, 즉 기본값�
 ### image-rendering : crisp-edges
 
 <div class="page__image-container" style="image-rendering: auto; image-rendering: -webkit-optimize-contrast;">
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
-{% include image.html url='/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='늘린 이미지' alt='' width='400' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='원본 이미지' alt='' %}
+{% include image.html url='//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/sub-pixel-rendering2_img01.jpg' description='줄인 이미지' alt='' width='165' %}
 </div>
 
 webkit 계열 브라우저에서 작동하려면 -webkit-optimize-contrast 라고 선언해주어야 한단다. 어차피 이미지가 흐려보이는 현상은 webkit 계열 브라우저에서만 발생하니까 상관없다. 아무튼 해당 속성값은 이미지를 흐릿하지 않게 렌더링해준다. 명세나 기술 문서 등에 길고 어렵게(?) 설명되어 있어서 요약하자면 그렇다는 얘기다. 줄인 이미지도 선명한 것을 볼 수 있음.
@@ -83,6 +83,6 @@ body :after {
 
 ## 참고 링크
 
-* [the-image-rendering](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"} - drafts.csswg.org
-* [image-rendering](https://developer.mozilla.org/ko/docs/Web/CSS/image-rendering){:target="_blank"} - MDN
-* [image-rendering](https://docs.w3cub.com/css/image-rendering/){:target="_blank"} - docs.w3cub.com
+- [the-image-rendering](https://drafts.csswg.org/css-images-3/#the-image-rendering){:target="_blank"} - drafts.csswg.org
+- [image-rendering](https://developer.mozilla.org/ko/docs/Web/CSS/image-rendering){:target="_blank"} - MDN
+- [image-rendering](https://docs.w3cub.com/css/image-rendering/){:target="_blank"} - docs.w3cub.com

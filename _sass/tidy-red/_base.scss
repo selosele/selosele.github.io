@@ -28,7 +28,6 @@ body {
    color: $black03;
    word-break: keep-all;
    word-wrap: break-word;
-   -webkit-overflow-scrolling: touch;
 
    // 스크롤바 스타일
    &::-webkit-scrollbar {

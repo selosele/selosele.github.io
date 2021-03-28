@@ -33,13 +33,15 @@
 {%- endif -%}
 
 {%- assign page_large_image = page.header.overlay_image | default: site.og_image -%}
-{%- unless page_large_image contains '://' -%}
+{%- assign page_large_image_cdn = page_large_image | slice: 0, 2 -%}
+{%- unless page_large_image contains '://' or page_large_image contains page_large_image_cdn -%}
   {%- assign page_large_image = page_large_image | prepend: site.url -%}
 {%- endunless -%}
 {%- assign page_large_image = page_large_image | escape -%}
 
 {%- assign page_teaser_image = page.header.teaser | default: site.og_image -%}
-{%- unless page_teaser_image contains '://' -%}
+{%- assign page_teaser_image_cdn = page_large_image | slice: 0, 2 -%}
+{%- unless page_teaser_image contains '://' or page_teaser_image contains page_teaser_image_cdn -%}
   {%- assign page_teaser_image = page_teaser_image | prepend: site.url -%}
 {%- endunless -%}
 {%- assign page_teaser_image = page_teaser_image | escape -%}

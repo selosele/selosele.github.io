@@ -25,7 +25,7 @@
   }
 
   &__inner-wrap {
-    overflow-y: hidden;
+    overflow-y: auto;
     position: absolute;
     top: 0;
     right: 0;
@@ -167,8 +167,8 @@
   }
 
   &__results {
-    overflow-y: auto;
-    height: 32rem;
+    // overflow-y: auto;
+    // height: 32rem;
     margin-top: .5em;
     padding-left: 0;
     font-size: .85rem;
@@ -193,12 +193,12 @@
     }
   
     @media (min-width: $min-minimal-width) {
-      height: 28rem;
+      // height: 28rem;
       font-size: .9rem;
     }
   
     @media (min-width: $min-small-width) {
-      height: 26rem;
+      // height: 26rem;
       font-size: inherit;
     }
   

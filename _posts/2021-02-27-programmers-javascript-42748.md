@@ -5,7 +5,7 @@ comments: true
 title: "Programmers Javascript 문제풀이 1"
 subtitle: "정렬 Level 1 K번째수"
 header:
-    overlay_image: https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb01.jpg
+    overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/js_thumb01.jpg
     overlay_filter: 0.4
     image_position-y: 57%
     image_link: https://pixabay.com/ko/photos/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%BD%94%EB%93%9C-4523100/
@@ -24,7 +24,7 @@ Javascript 알고리즘 문제를 풀어보고 싶어서 Programmers 코딩테�
 
 ## 문제 설명
 
-![문제 설명](https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-javascript-42748_img01.png)
+![문제 설명](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-javascript-42748_img01.png)
 
 ## 나의 풀이
 

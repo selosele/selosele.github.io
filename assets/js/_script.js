@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 메인 메뉴
 (function() {
     var masterRoot = document.documentElement,
+        masterBody = document.body,
         menuWrapper = document.getElementById("side-menu"),
         layer = document.getElementById("primary-nav"),
         outerList = document.querySelectorAll("#skip-links, #ie-alert, #masthead, #content, #mastfoot"),
@@ -38,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         tabbableListFirst = tabbableList.length && tabbableList[0],
         tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
-        categoryAncList = layer.querySelectorAll("a[href^='/category-list/#']");
+        categoryAncList = layer.querySelectorAll("a[href^='/category-list/#']"),
+        nowScrollPos = 0;
 
     function handlerCloseClick() {
         document.removeEventListener("keydown", handlerCloseKeydown);
@@ -57,6 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             menuWrapper.classList.remove("side-menu--active");
         }, 400);
+
+        masterBody.style.top = "";
+        window.scrollTo(0, nowScrollPos);
     }
 
     function handlerCloseKeydown(event) {
@@ -68,11 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handlerOpenClick(event) {
+        nowScrollPos = window.pageYOffset;
+        
+        masterRoot.classList.add("layer-opened");
+        masterBody.style.top = -nowScrollPos + "px";
+
         event.currentTarget.setAttribute("aria-expanded", "true");
         closeBtn.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
-        masterRoot.classList.add("layer-opened");
 
         setTimeout(function() {
             layer.classList.add("menu__layer--animate");

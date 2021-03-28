@@ -43,6 +43,7 @@
     // 검색 레이어
     (function() {
         var masterRoot = document.documentElement,
+            masterBody = document.body,
             openBtn = document.querySelector(".nav__search-open"),
             closeBtn = document.querySelector(".search__close"),
             layer = document.getElementById("search-content"),
@@ -58,7 +59,8 @@
             searchCountNum = searchCount.querySelector(".search__count"),
             searchLinkWrapper = document.querySelector(".search__link-wrapper"),
             googleSearchLink = document.getElementById('search-link-google'),
-            searchInputVal, searchInputValNotChanged;
+            searchInputVal, searchInputValNotChanged,
+            nowScrollPos = 0;
 
         function handlerInputKeydown() {
             var ctx = searchInput.value;
@@ -125,6 +127,9 @@
 
             openBtn.setAttribute("aria-expanded", "false");
             openBtn.focus();
+
+            masterBody.style.top = "";
+            window.scrollTo(0, nowScrollPos);
         }
 
         function handlerCloseKeydown(event) {
@@ -151,10 +156,13 @@
 
         function handlerClick() {
             searchInputValNotChanged = true;
+            nowScrollPos = window.pageYOffset;
+            
+            masterRoot.classList.add("layer-opened");
+            masterBody.style.top = -nowScrollPos + "px";
 
             openBtn.setAttribute("aria-expanded", "true");
             closeBtn.setAttribute("aria-expanded", "true");
-            masterRoot.classList.add("layer-opened");
 
             for (var i = 0; i < outerList.length; i++) {
                 outerList[i].setAttribute("aria-hidden", "true");

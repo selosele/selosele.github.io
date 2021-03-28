@@ -16,7 +16,7 @@
 })(document.documentElement);
 
 // 이미지 에러 처리
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     var imgList = document.querySelectorAll('img');
     if (imgList.length) {
         for (var i = 0; i < imgList.length; i++) {
@@ -25,7 +25,7 @@
             });
         }
     }
-})();
+});
 
 // 메인 메뉴
 (function() {
@@ -114,18 +114,14 @@
 })();
 
 // scroll indicator UI
-(function() {
-    function activateScrollIndicator() {
-        if (!document.querySelector(".layout--post")) return;
+window.addEventListener("scroll", function() {
+    if (!document.querySelector(".layout--post")) return;
 
-        var window_height = document.body.scrollHeight - window.innerHeight,
-            scroll_value = ((window.pageYOffset) / window_height) * 100;
+    var window_height = document.body.scrollHeight - window.innerHeight,
+        scroll_value = ((window.pageYOffset) / window_height) * 100;
 
-        document.getElementById("scroll-indicator").style.width = scroll_value + "%";
-    }
-
-    window.addEventListener("scroll", activateScrollIndicator);
-})();
+    document.getElementById("scroll-indicator").style.width = scroll_value + "%";
+});
 
 // 페이지 헤더 타이틀 링크
 (function() {

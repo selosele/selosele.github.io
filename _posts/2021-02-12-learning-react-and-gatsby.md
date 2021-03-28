@@ -4,7 +4,7 @@ comments: true
 title: "React 학습과 삽질기(feat. Gatsby)"
 subtitle:
 header:
-    overlay_image: /assets/images/thumb/react_thumb01.png
+    overlay_image: https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/react_thumb01.png
     overlay_filter: 0.4
     image_link: https://en.wikipedia.org/wiki/React_(web_framework)#/media/File:React-icon.svg
     image_author: Facebook

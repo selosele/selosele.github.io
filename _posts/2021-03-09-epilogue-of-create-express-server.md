@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: "업무용 express 서버 구축기"
 header:
-    overlay_image: /assets/images/thumb/nodejs_thumb01.jpg
+    overlay_image: https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/nodejs_thumb01.jpg
     overlay_filter: 0.4
     image_link: https://pixabay.com/ko/vectors/%EB%85%B8%EB%93%9C-js-%EB%A1%9C%EA%B3%A0-nodejs-736399/
     image_author: CopyrightFreePictures

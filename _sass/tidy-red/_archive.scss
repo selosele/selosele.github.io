@@ -127,6 +127,7 @@
       @media (min-width: $min-medium-width) {
          display: flex;
          overflow: hidden;
+         position: relative;
          float: right;
          width: 11rem;
          height: 5rem;
@@ -138,6 +139,27 @@
          box-sizing: border-box;
          justify-content: center;
          align-items: center;
+
+         &.has-error-img {
+            z-index: 1;
+            background-color: $grey02;
+
+            &:before {
+               content: "\ea4e";
+               display: block;
+               position: absolute;
+               top: 0;
+               right: 0;
+               bottom: 0;
+               left: 0;
+               z-index: -1;
+               font-family: $icon-font;
+               font-size: 2.5rem;
+               line-height: 5rem;
+               color: $grey11;
+               text-align: center;
+            }
+         }
       }
 
       > img {

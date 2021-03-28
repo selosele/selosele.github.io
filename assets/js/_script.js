@@ -15,6 +15,18 @@
     }
 })(document.documentElement);
 
+// 이미지 에러 처리
+(function() {
+    var imgList = document.querySelectorAll('img');
+    if (imgList.length) {
+        for (var i = 0; i < imgList.length; i++) {
+            imgList[i].addEventListener('error', function() {
+                this.parentElement.classList.add('has-error-img');
+            });
+        }
+    }
+})();
+
 // 메인 메뉴
 (function() {
     var masterRoot = document.documentElement,

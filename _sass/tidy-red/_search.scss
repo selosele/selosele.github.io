@@ -34,7 +34,7 @@
     left: 0;
     width: auto;
     height: auto;
-    margin: 3rem $layout-margin;
+    margin: 3rem $layout-margin 7rem;
     padding: 2.5rem 1rem 1rem 1rem;
     border: 1px solid $black05;
     background-color: $grey12;
@@ -42,6 +42,7 @@
     box-sizing: border-box;
 
     @media (min-width: $min-large-width) {
+      margin-bottom: 3rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
@@ -168,7 +169,7 @@
 
   &__results {
     overflow-y: auto;
-    height: 33rem;
+    height: 32rem;
     margin-top: .5em;
     padding-left: 0;
     font-size: .85rem;
@@ -193,19 +194,13 @@
     }
   
     @media (min-width: $min-minimal-width) {
+      height: 28rem;
       font-size: .9rem;
     }
   
     @media (min-width: $min-small-width) {
-      font-size: inherit;
-    }
-
-    @media (min-width: $min-medium-width) {
-      height: 29rem;
-    }
-  
-    @media (min-width: $min-large-width) {
       height: 26rem;
+      font-size: inherit;
     }
   
     &__item {

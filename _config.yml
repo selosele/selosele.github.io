@@ -57,7 +57,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/mhead_bg.jpg"
+og_image                 : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/mhead_bg.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -75,7 +75,7 @@ analytics:
 # 사용자 정보
 author:
   name             : "Sel"
-  avatar           : "https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
+  avatar           : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   links:
     - label: "Daejeon"
@@ -231,7 +231,7 @@ post:
 # teaser
 masthead:
   teaser:
-    bg: "https://cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/mhead_bg.jpg"
+    bg: "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/mhead_bg.jpg"
     bg_link: "https://www.freepik.com/free-photo/sun-horizon-road_874694.htm"
     bg_author: "whatwolf"
     filter: 0.3

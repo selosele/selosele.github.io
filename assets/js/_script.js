@@ -394,3 +394,163 @@ window.addEventListener("scroll", function() {
         }
     }
 })();
+
+// 검색 레이어
+(function() {
+    var masterRoot = document.documentElement,
+        masterBody = document.body,
+        openBtn = document.querySelector(".nav__search-open"),
+        closeBtn = document.querySelector(".search__close"),
+        layer = document.getElementById("search-content"),
+        outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
+        tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
+        tabbableListFirst = tabbableList.length && tabbableList[0],
+        tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
+        resultWrapper = document.getElementById("search-results"),
+        searchLabel = document.getElementById("search-title"),
+        searchInput = document.getElementById("search-input"),
+        searchCount = layer.querySelector(".search__count-wrapper"),
+        searchCountWord = searchCount.querySelector(".search__word"),
+        searchCountNum = searchCount.querySelector(".search__count"),
+        searchLinkWrapper = document.querySelector(".search__link-wrapper"),
+        searchInputVal, searchInputValNotChanged,
+        nowScrollPos = 0;
+
+    function handlerInputKeydown() {
+        var ctx = searchInput.value;
+
+        if (ctx) {
+            searchInputVal = false;
+            searchInputValNotChanged = false;
+            
+            if (!searchLabel.classList.contains("sr-only")) searchLabel.classList.add("sr-only");
+            if (!searchCount.classList.contains("search__count-wrapper--active")) searchCount.classList.add("search__count-wrapper--active");
+            if (searchLinkWrapper && !searchLinkWrapper.classList.contains("search__link-wrapper--active")) {
+                searchLinkWrapper.classList.add("search__link-wrapper--active");
+            }
+
+            for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
+                var resultAnc = resultAncList[i],
+                    ctx_match = resultAnc.innerHTML.match(new RegExp(ctx, "i"));
+
+                if ((resultAnc !== ctx_match) && !resultAnc.querySelector(".search__results__match")) {
+                    resultAnc.innerHTML = resultAnc.innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
+                }
+            }
+        } else {
+            searchInputVal = true;
+            searchInputValNotChanged = true;
+            searchLabel.classList.remove("sr-only");
+            searchLinkWrapper && searchLinkWrapper.classList.remove("search__link-wrapper--active");
+        }
+
+        var resultList = resultWrapper.querySelectorAll(".search__results__item");
+        if (resultList.length) {
+            searchInput.setAttribute("aria-expanded", "true");
+            searchCountWord.textContent = "\""+ctx+"\"";
+            searchCountNum.textContent = resultList.length;
+        } else {
+            searchInput.setAttribute("aria-expanded", "false");
+            searchCount.classList.remove("search__count-wrapper--active");
+        }
+    }
+
+    function handlerCloseClick() {
+        document.removeEventListener("keydown", handlerCloseKeydown);
+        masterRoot.classList.remove("layer-opened");
+        closeBtn.setAttribute("aria-expanded", "false");
+        layer.classList.remove("search-content--animate");
+
+        setTimeout(function() {
+            layer.classList.remove("search-content--active");
+
+            for (var i = 0; i < outerList.length; i++) {
+                var outer = outerList[i];
+                if (outer.getAttribute("aria-hidden") !== true) {
+                    outer.removeAttribute("aria-hidden");
+                }
+            }
+
+            layer.setAttribute("aria-hidden", "true");
+        }, 200);
+
+        openBtn.setAttribute("aria-expanded", "false");
+        openBtn.focus();
+
+        masterBody.style.top = "";
+        window.scrollTo(0, nowScrollPos);
+    }
+
+    function handlerCloseKeydown(event) {
+        var keyType = event.key;
+
+        if (keyType === "Escape" || keyType === "Esc") {
+            for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
+                if (resultAncList[i] === document.activeElement) searchInput.focus();
+            }
+            
+            if (searchInputValNotChanged || searchInputVal || searchInput !== document.activeElement) {
+                handlerCloseClick();
+            } else {
+                searchInput.value = "";
+                searchCount.classList.remove("search__count-wrapper--active");
+                searchLinkWrapper && searchLinkWrapper.classList.remove("search__link-wrapper--active");
+
+                while (resultWrapper.firstChild) {
+                    resultWrapper.removeChild(resultWrapper.firstChild);
+                }
+            }
+        }
+    }
+
+    function handlerClick() {
+        searchInputValNotChanged = true;
+        nowScrollPos = window.pageYOffset;
+        
+        masterRoot.classList.add("layer-opened");
+        masterBody.style.top = -nowScrollPos + "px";
+
+        openBtn.setAttribute("aria-expanded", "true");
+        closeBtn.setAttribute("aria-expanded", "true");
+
+        for (var i = 0; i < outerList.length; i++) {
+            outerList[i].setAttribute("aria-hidden", "true");
+        }
+
+        layer.classList.add("search-content--active");
+        layer.setAttribute("aria-hidden", "false");
+        layer.addEventListener("click", function(event) {
+            if (event.target === event.currentTarget) handlerCloseClick();
+        });
+
+        setTimeout(function() {
+            layer.classList.add("search-content--animate");
+            searchInput.focus();
+            searchInput.addEventListener("propertychange", handlerInputKeydown);
+            searchInput.addEventListener("change", handlerInputKeydown);
+            searchInput.addEventListener("keyup", handlerInputKeydown);
+            searchInput.addEventListener("paste", handlerInputKeydown);
+            searchInput.addEventListener("input", handlerInputKeydown);
+            searchInput.addEventListener("focus", handlerInputKeydown);
+        });
+
+        tabbableListFirst.addEventListener("keydown", function(event) {
+            if (event.shiftKey && event.key === "Tab") {
+                event.preventDefault();
+                tabbableListLast.focus();
+            }
+        });
+
+        tabbableListLast.addEventListener("keydown", function(event) {
+            if (!event.shiftKey && event.key === "Tab") {
+                event.preventDefault();
+                tabbableListFirst.focus();
+            }
+        });
+
+        document.addEventListener("keydown", handlerCloseKeydown);
+    }
+
+    openBtn.addEventListener("click", handlerClick);
+    closeBtn.addEventListener("click", handlerCloseClick);
+})();

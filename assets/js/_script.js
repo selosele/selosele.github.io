@@ -407,7 +407,7 @@ window.addEventListener("scroll", function() {
         tabbableListFirst = tabbableList.length && tabbableList[0],
         tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
         resultWrapper = document.getElementById("search-results"),
-        searchLabel = document.getElementById("search-title"),
+        searchTitle = document.getElementById("search-title"),
         searchInput = document.getElementById("search-input"),
         searchCount = layer.querySelector(".search__count-wrapper"),
         searchCountWord = searchCount.querySelector(".search__word"),
@@ -423,7 +423,7 @@ window.addEventListener("scroll", function() {
             searchInputVal = false;
             searchInputValNotChanged = false;
             
-            if (!searchLabel.classList.contains("sr-only")) searchLabel.classList.add("sr-only");
+            if (!searchTitle.classList.contains("sr-only")) searchTitle.classList.add("sr-only");
             if (!searchCount.classList.contains("search__count-wrapper--active")) searchCount.classList.add("search__count-wrapper--active");
             if (searchLinkWrapper && !searchLinkWrapper.classList.contains("search__link-wrapper--active")) {
                 searchLinkWrapper.classList.add("search__link-wrapper--active");
@@ -431,7 +431,7 @@ window.addEventListener("scroll", function() {
 
             for (var i = 0, resultAncList = resultWrapper.querySelectorAll("a"); i < resultAncList.length; i++) {
                 var resultAnc = resultAncList[i],
-                    ctx_match = resultAnc.innerHTML.match(new RegExp(ctx, "i"));
+                    ctx_match = resultAnc.innerHTML.match(new RegExp(ctx.replace(/(?=[()? [])/g, "\\"), "i"));
 
                 if ((resultAnc !== ctx_match) && !resultAnc.querySelector(".search__results__match")) {
                     resultAnc.innerHTML = resultAnc.innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
@@ -440,7 +440,7 @@ window.addEventListener("scroll", function() {
         } else {
             searchInputVal = true;
             searchInputValNotChanged = true;
-            searchLabel.classList.remove("sr-only");
+            searchTitle.classList.remove("sr-only");
             searchLinkWrapper && searchLinkWrapper.classList.remove("search__link-wrapper--active");
         }
 

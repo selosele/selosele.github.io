@@ -36,7 +36,7 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
       searchResultTemplate: '<li class="search__results__item"><a href="{url}" rel="permalink">{title}</a> <span class="search__results__date">{date}</span></li>',
-      noResultsText: '{{ site.search_noResultsText | default: "검색 결과를 찾을 수 없습니다." }}',
+      noResultsText: '{{ site.search_no_result_text | default: "검색 결과를 찾을 수 없습니다." }}',
       limit: {{ site.search_limit | default: 20 }}
     });
 

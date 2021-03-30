@@ -10,7 +10,7 @@ baseurl                  :
 repository               : "selosele/selosele.github.io"
 words_per_minute         : 200
 comments:
-  provider               : "livere" # disqus, livere
+  provider               : "livere" # 댓글 플러그인 선택 : disqus, livere
   disqus:
     shortname            : # selosele
   discourse:
@@ -42,8 +42,8 @@ staticman:
 atom_feed:
   path                   : feed.xml
 search                   : true
-search_limit             : 30 # Maximum number of search results
-search_noResultsText     : "검색 결과를 찾을 수 없습니다."
+search_limit             : 30 # 검색 결과 표출될 포스트 최대 개수
+search_no_result_text    : "검색 결과를 찾을 수 없습니다."
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -74,19 +74,19 @@ analytics:
 
 # 사용자 정보
 author:
-  name             : "Sel"
+  name             : "Sel" # 사용자명
   avatar           : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   links:
     - label: "Daejeon"
       icon: "xi-map-marker"
-      url: https://www.google.com/maps/place/daejeon
+      url: "https://www.google.com/maps/place/daejeon"
     - label: "Email"
       icon: "xi-mail"
-      url: mailto:gwiazda762@gmail.com
+      url: "mailto:gwiazda762@gmail.com"
     - label: "GitHub"
       icon: "xi-github"
-      url: https://github.com/selosele
+      url: "https://github.com/selosele"
 
 # Reading Files
 include:

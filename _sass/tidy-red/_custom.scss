@@ -7,7 +7,7 @@
    .page__header-link {
       &[href="#주요-관심사에-대한-포스트"] {
          &:before {
-            content: url('https://api.iconify.design/noto-v1:notebook.svg?height=2.2em');
+            content: url('//api.iconify.design/noto-v1:notebook.svg?height=2.2em');
          }
       }
 
@@ -15,7 +15,7 @@
          margin-right: .2em;
 
          &:before {
-            content: url('https://api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');
+            content: url('//api.iconify.design/noto-v1:closed-mailbox-with-lowered-flag.svg?height=2.6em');
          }
       }
    }

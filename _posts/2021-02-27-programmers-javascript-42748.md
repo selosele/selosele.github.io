@@ -24,7 +24,7 @@ Javascript 알고리즘 문제를 풀어보고 싶어서 Programmers 코딩테�
 
 ## 문제 설명
 
-![문제 설명](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-javascript-42748_img01.png)
+![문제 설명](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-javascript-42748_img01.jpg)
 
 ## 나의 풀이
 

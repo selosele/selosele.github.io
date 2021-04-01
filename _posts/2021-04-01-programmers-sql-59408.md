@@ -16,7 +16,7 @@ home_dropcap: false
 
 ## 문제 설명
 
-![문제 설명](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-sql-59408_img01.png)
+![문제 설명](//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/post/programmers-sql-59408_img01.jpg)
 
 ## 나의 풀이
 

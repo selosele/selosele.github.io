@@ -1,19 +1,17 @@
 "use strict";
 
 // IE 체크
-(function(el) {
-    // 11 ~ 9
-    if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
-        el.className += " only-ie";
-        document.getElementById("ie-alert").removeAttribute("aria-hidden");
-    }
+// 11 ~ 9
+if (window.navigator.userAgent.toLowerCase().indexOf("trident") > -1) {
+    document.documentElement.className += " only-ie";
+    document.getElementById("ie-alert").removeAttribute("aria-hidden");
+}
 
-    // 10 이하
-    if (navigator.userAgent.indexOf("MSIE") >= 0) {
-        el.className += " lte-ie10";
-        document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
-    }
-})(document.documentElement);
+// 10 이하
+if (navigator.userAgent.indexOf("MSIE") >= 0) {
+    document.documentElement.className += " lte-ie10";
+    document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
+}
 
 // 이미지 에러 처리
 document.addEventListener('DOMContentLoaded', function() {
@@ -25,6 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+});
+
+// scroll indicator UI
+window.addEventListener("scroll", function() {
+    if (!document.querySelector(".layout--post")) return;
+
+    var window_height = document.body.scrollHeight - window.innerHeight,
+        scroll_value = ((window.pageYOffset) / window_height) * 100;
+
+    document.getElementById("scroll-indicator").style.width = scroll_value + "%";
 });
 
 // 메인 메뉴
@@ -121,16 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })();
-
-// scroll indicator UI
-window.addEventListener("scroll", function() {
-    if (!document.querySelector(".layout--post")) return;
-
-    var window_height = document.body.scrollHeight - window.innerHeight,
-        scroll_value = ((window.pageYOffset) / window_height) * 100;
-
-    document.getElementById("scroll-indicator").style.width = scroll_value + "%";
-});
 
 // 페이지 헤더 타이틀 링크
 (function() {

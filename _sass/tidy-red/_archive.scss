@@ -106,6 +106,13 @@
          @include post-info-item;
          margin-right: .3rem;
 
+         &--date {
+            overflow: visible;
+            max-width: none;
+            text-overflow: clip;
+            white-space: normal;
+         }
+
          &-wrapper {
             display: flex;
             flex-wrap: wrap;

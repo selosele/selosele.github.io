@@ -67,7 +67,7 @@ $(".open-lp").on("click", function() {
     var nowScrollPos = $(window).scrollTop();
     
     $("body").css("top", - nowScrollPos).addClass("scroll-off").on("scroll touchmove mousewheel", function(event){
-        event.preventDefault(); // iOS 레이어 열린 상태에서 body 스크롤되는 문제 fix
+        event.preventDefault(); // iOS 레이어 열린 상태에서 body 스크롤되는 문제 방지
     });
 
     function lpClose() { // 레이어 닫기 함수

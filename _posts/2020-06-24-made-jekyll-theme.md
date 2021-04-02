@@ -15,7 +15,6 @@ categories:
 tags:
     - jekyll
 post_dropcap: false
-column: true
 ---
 
 [두 달 전부터 시작한](/2020/04/11/making-jekyll-theme/) Jekyll 테마 퍼블리싱을 마무리하고 현재 저장소에 적용을 완료하였다.

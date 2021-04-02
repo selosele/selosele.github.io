@@ -31,7 +31,7 @@
     <h3>{{ site.data.ui-text[site.locale].categories_label | default: 'Categories' }}</h3>
     <ul {% if site.main_menu.category_list_grid -%}class="menu__list--grid"{% endif %}>
       {%- for i in (1..categories_max) reversed -%}
-        {%- for category in site.categories limit: 8 -%}
+        {%- for category in site.categories -%}
           {%- if category[1].size == i -%}
           <li>
             <a href="{{ '/' | relative_url }}category-list/#btn-{{ category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' }}">{{ category[0] }}</a>

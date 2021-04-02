@@ -350,6 +350,7 @@
 
 /* toc */
 .toc-wrapper {
+   margin-bottom: 1rem;
    border: 1px solid $grey;
    border-radius: .4rem;
    background-color: $grey12;
@@ -380,7 +381,9 @@
       z-index: 1;
       width: $toc-width;
       height: auto;
+      margin-top: 3rem;
       margin-left: -$toc-margin;
+      margin-bottom: 0;
       box-shadow: rgba(0,0,0,.15) .25rem .25rem .5rem;
 
       .toc {

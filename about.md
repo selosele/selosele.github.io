@@ -2,7 +2,6 @@
 layout: page
 title: About me
 class: page__content about
-id: page-content
 ---
 
 의식의 흐름대로 쓴 글을 올리는 그냥 그런 웹 퍼블리셔의 블로그입니다.

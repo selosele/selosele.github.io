@@ -132,7 +132,7 @@ window.addEventListener("scroll", function() {
 
 // 페이지 헤더 타이틀 링크
 (function() {
-    var postRoot = document.getElementById("page-content");
+    var postRoot = document.querySelector(".page__content");
     if (postRoot) {
         // 헤더 타이틀 링크 생성
         var h_list = postRoot.querySelectorAll("h2, h3, h4, h5, h6");
@@ -254,7 +254,7 @@ window.addEventListener("scroll", function() {
 
 // code highlight - 타이틀 정보 생성, 코드 복사 버튼 생성, 특정 line 강조
 (function() {
-    var postRoot = document.getElementById("page-content");
+    var postRoot = document.querySelector(".page__content");
     if (postRoot) {
         var btnCodeWrapperList = postRoot.querySelectorAll("div.highlighter-rouge");
 

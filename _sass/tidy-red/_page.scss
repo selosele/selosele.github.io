@@ -47,28 +47,6 @@
          }
       }
    }
-
-   @media (min-width: $min-large-width) {
-      &.content--column {
-         @include common-layout($width: null, $max-width: $layout-wide-width, $margin-l: null, $margin-r: null);
-   
-         .page__content {
-            column-count: 3;
-            column-gap: 2rem;
-
-            > * {
-               -webkit-column-break-inside: avoid;
-               page-break-inside: avoid;
-               break-inside: avoid-column;
-            }
-
-            > *:not(.page__image-container) {
-               display: inline-block;
-               width: 100%;
-            }
-         }
-      }
-   }
 }
 
 .post-group-list {
@@ -302,6 +280,13 @@
    &__info-item {
       @include post-info-item;
       margin-left: .3rem;
+
+      &--date {
+         overflow: visible;
+         max-width: none;
+         text-overflow: clip;
+         white-space: normal;
+      }
    }
    
    &__content {

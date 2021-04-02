@@ -5,7 +5,7 @@ layout: default
 <div role="main" itemscope itemtype="https://schema.org/Article" id="content" class="content-wrapper">
   {% include post-group-list.html %}
 
-  <section itemprop="text"{% if page.id %} id="{{ page.id }}"{% endif %} class="archive{% if page.class %} {{ page.class }}{% endif %}">
+  <section itemprop="text" id="page-content" class="archive{% if page.class %} {{ page.class }}{% endif %}">
     {% if page.layout == "home" -%}
     <h2 class="sr-only">{{ site.data.ui-text[site.locale].recent_posts }}</h2>
     {%- endif %}

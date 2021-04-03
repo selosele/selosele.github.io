@@ -20,13 +20,15 @@
 
     {%- if page.layout == "home" or page.layout == "archive" or page.layout == "categories" or page.layout == "tags" -%}
     {%- if post.header.overlay_image -%}
-    <p class="archive__item-thumb"></p>
+    <p class="archive__item-thumb">
+      <img src="{{ post.header.overlay_image | relative_url }}" alt="{{ post.header.image_alt }}">
+    </p>
     {%- endif -%}
     {%- endif -%}
 
     <p id="desc-{{ postUrl_r }}" class="archive__item-content{% if post.home_dropcap != false %} has-dropcap{% endif %}">{{ post.content | markdownify | strip_html | truncate: 140 }}</p>
   
-    <div class="archive__item__info-item-wrapper">
+    <p class="archive__item__info-item-wrapper">
       {%- if post.date -%}
       <span class="archive__item__info-item archive__item__info-item--date">
         <i aria-hidden="true" class="xi-time-o"></i>
@@ -50,6 +52,6 @@
       </span>
       {%- endfor -%}
       {%- endif -%}
-    </div>
+    </p>
   </article>
 </li>

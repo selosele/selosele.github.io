@@ -1,31 +1,31 @@
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
 <script>
-  // 다크모드 토글
-  (function() {
-    {% assign site_id = site.url | url_encode -%}
+    // 다크모드 토글
+    (function() {
+        {% assign site_id = site.url | url_encode -%}
 
-    var masterRoot = document.documentElement,
-        darkmodeBtn = document.querySelector(".nav__darkmode-toggle");
+        var masterRoot = document.documentElement,
+            darkmodeBtn = document.querySelector(".nav__darkmode-toggle");
 
-    darkmodeBtn.addEventListener("click", function(event) {
-        masterRoot.classList.toggle("is-darkmode");
-        event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
+        darkmodeBtn.addEventListener("click", function(event){
+            masterRoot.classList.toggle("is-darkmode");
+            event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
 
-        if (masterRoot.classList.contains("is-darkmode")) {
-            sessionStorage.setItem("{{ site_id }}--DARKMODE", "Y");
-        } else {
-            sessionStorage.setItem("{{ site_id }}--DARKMODE", "N");
-        }
-    });
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem("{{ site_id }}--DARKMODE") === "Y") {
-            masterRoot.classList.add("is-darkmode");
-            darkmodeBtn.classList.add("nav__darkmode-toggle--active");
-        }
-    });
-  })();
+            if (masterRoot.classList.contains("is-darkmode")) {
+                sessionStorage.setItem("{{ site_id }}--DARKMODE", "Y");
+            } else {
+                sessionStorage.setItem("{{ site_id }}--DARKMODE", "N");
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function(){
+            if (sessionStorage.getItem("{{ site_id }}--DARKMODE") === "Y") {
+                masterRoot.classList.add("is-darkmode");
+                darkmodeBtn.classList.add("nav__darkmode-toggle--active");
+            }
+        });
+    })();
 </script>
 
 {%- if site.search == true -%}
@@ -45,7 +45,7 @@
         var searchInput = document.getElementById("search-input"),
             googleSearchLink = document.getElementById('google-search-link');
 
-        function goGooleSearch() {
+        function goGooleSearch(){
             if (!googleSearchLink) return;
 
             var ctx = searchInput.value;

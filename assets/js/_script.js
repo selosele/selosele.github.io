@@ -13,18 +13,6 @@ if (navigator.userAgent.indexOf("MSIE") >= 0) {
     document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
 }
 
-// 이미지 에러 처리
-document.addEventListener('DOMContentLoaded', function() {
-    var imgList = document.querySelectorAll('img');
-    if (imgList.length) {
-        for (var i = 0; i < imgList.length; i++) {
-            imgList[i].addEventListener('error', function() {
-                this.parentElement.classList.add('has-error-img');
-            });
-        }
-    }
-});
-
 // scroll indicator UI
 window.addEventListener("scroll", function() {
     if (!document.querySelector(".layout--post")) return;
@@ -387,11 +375,13 @@ window.addEventListener("scroll", function() {
 
 // 검색 레이어
 (function() {
+    var layer = document.getElementById("search-content");
+    if (!layer) return;
+
     var masterRoot = document.documentElement,
         masterBody = document.body,
         openBtn = document.querySelector(".nav__search-open"),
         closeBtn = document.querySelector(".search__close"),
-        layer = document.getElementById("search-content"),
         outerList = document.querySelectorAll("#skip-links, #masthead, #content, #mastfoot, #side-menu"),
         tabbableList = layer.querySelectorAll("button, input, [href], [tabindex]:not([tabindex='-1'])"),
         tabbableListFirst = tabbableList.length && tabbableList[0],

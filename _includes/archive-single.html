@@ -28,7 +28,7 @@
 
     <p id="desc-{{ postUrl_r }}" class="archive__item-content{% if post.home_dropcap != false %} has-dropcap{% endif %}">{{ post.content | markdownify | strip_html | truncate: 140 }}</p>
   
-    <p class="archive__item__info-item-wrapper">
+    <div class="archive__item__info-item-wrapper">
       {%- if post.date -%}
       <span class="archive__item__info-item archive__item__info-item--date">
         <i aria-hidden="true" class="xi-time-o"></i>
@@ -52,6 +52,6 @@
       </span>
       {%- endfor -%}
       {%- endif -%}
-    </p>
+    </div>
   </article>
 </li>

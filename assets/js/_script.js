@@ -56,17 +56,13 @@ window.addEventListener("scroll", function() {
         closeBtn.setAttribute("aria-expanded", "false");
         openBtn.setAttribute("aria-expanded", "false");
         openBtn.focus();
+        menuWrapper.classList.remove("side-menu--active");
         menuWrapper.setAttribute("aria-hidden", "true");
-        layer.classList.remove("menu__layer--animate");
         masterRoot.classList.remove("layer-opened");
 
         for (var i = 0; i < outerList.length; i++) {
             outerList[i].removeAttribute("aria-hidden");
         }
-
-        setTimeout(function() {
-            menuWrapper.classList.remove("side-menu--active");
-        }, 400);
 
         masterBody.style.top = "";
         window.scrollTo(0, nowScrollPos);
@@ -90,10 +86,6 @@ window.addEventListener("scroll", function() {
         closeBtn.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
-
-        setTimeout(function() {
-            layer.classList.add("menu__layer--animate");
-        });
         
         for (var i = 0; i < outerList.length; i++) {
             outerList[i].setAttribute("aria-hidden", "true");
@@ -456,21 +448,16 @@ window.addEventListener("scroll", function() {
     function handlerCloseClick() {
         document.removeEventListener("keydown", handlerCloseKeydown);
         masterRoot.classList.remove("layer-opened");
+        layer.classList.remove("search-content--active");
+        layer.setAttribute("aria-hidden", "true");
         closeBtn.setAttribute("aria-expanded", "false");
-        layer.classList.remove("search-content--animate");
 
-        setTimeout(function() {
-            layer.classList.remove("search-content--active");
-
-            for (var i = 0; i < outerList.length; i++) {
-                var outer = outerList[i];
-                if (outer.getAttribute("aria-hidden") !== true) {
-                    outer.removeAttribute("aria-hidden");
-                }
+        for (var i = 0; i < outerList.length; i++) {
+            var outer = outerList[i];
+            if (outer.getAttribute("aria-hidden") !== true) {
+                outer.removeAttribute("aria-hidden");
             }
-
-            layer.setAttribute("aria-hidden", "true");
-        }, 200);
+        }
 
         openBtn.setAttribute("aria-expanded", "false");
         openBtn.focus();
@@ -522,7 +509,6 @@ window.addEventListener("scroll", function() {
         });
 
         setTimeout(function() {
-            layer.classList.add("search-content--animate");
             searchInput.focus();
             searchInput.addEventListener("propertychange", handlerInputKeydown);
             searchInput.addEventListener("change", handlerInputKeydown);

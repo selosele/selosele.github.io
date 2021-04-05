@@ -211,11 +211,8 @@
 /* pagination */
 .pagination {
    margin-top: 1.8rem;
+   margin-bottom: 1.8rem;
    text-align: center;
-
-   @media (min-width: $min-medium-width) {
-      margin-bottom: 1.8rem;
-   }
 
    ul {
       display: flex;
@@ -232,7 +229,7 @@
    }
 
    li {
-      margin: 0 .222222em 0 .222222em;
+      margin: 0 .222222em;
       line-height: 1;
 
       @media (min-width: $min-minimal-width) {

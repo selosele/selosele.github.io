@@ -50,18 +50,20 @@
 }
 
 .post-group-list {
-   margin-bottom: 2rem;
+   margin-top: 1.8rem;
+   margin-left: -$layout-margin;
+   margin-right: -$layout-margin;
    padding: 1.3rem 1rem;
    background-color: $grey02;
    box-sizing: border-box;
    
    @media (min-width: $min-large-width) {
-      float: left;
+      float: right;
       position: sticky;
       top: 1.2rem;
       width: $category-list-width;
       min-height: 100vh;
-      margin-right: 2rem;
+      margin: 0 0 2rem 2rem;
    }
 
    &__item {

@@ -9,7 +9,9 @@
    }
 
    @if $margin-b != null {
-      margin-bottom: $margin-b;
+      @media (min-width: $min-large-width) {
+         margin-bottom: $margin-b;
+      }
    }
 
    @if $margin-l != null {

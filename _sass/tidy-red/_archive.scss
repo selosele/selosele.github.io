@@ -4,7 +4,7 @@
 
 .archive {
    @media (min-width: $min-large-width) {
-      float: right;
+      float: left;
       width: calc(100% - #{$category-list-width + 2});
    }
 

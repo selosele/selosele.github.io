@@ -13,7 +13,7 @@ date: 2020-03-06 23:45
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 오늘도 간단한 Javascript를 가지고 열심히 삽질을 한 나님에게 쓰는 포스트임. 결론부터 말하면 제목이 곧 내용.  

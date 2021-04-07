@@ -11,7 +11,7 @@ date: 2021-03-09 22:12
 categories:
     - 퍼블노트
 tags:
-    - node.js
+    - Node.js
 primary_post: true
 ---
 

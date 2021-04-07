@@ -11,8 +11,8 @@ date: 2020-06-06 21:09
 categories:
     - 퍼블노트
 tags:
-    - javascript
-    - typescript
+    - JavaScript
+    - TypeScript
 ---
 
 커뮤니티 눈팅 중 Typescript라는 Javascript의 슈퍼셋 프로그래밍 언어를 알게 되어 설치 후 테스트까지 해보고 기록하고자 포스팅을 하게 되었다. 내용을 상시 업데이트하고 있어서 내용의 흐름이 살짝 안 맞을 수 있음.

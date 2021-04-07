@@ -12,7 +12,7 @@ date: 2020-05-09 18:28
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
     - 웹 접근성
 ---
 

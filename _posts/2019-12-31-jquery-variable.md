@@ -13,7 +13,7 @@ date: 2019-12-31 20:13
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 post_dropcap: false
 ---
 

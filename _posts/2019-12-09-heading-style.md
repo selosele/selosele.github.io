@@ -10,7 +10,7 @@ date: 2019-12-09 21:17
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 post_dropcap: false
 ---
 

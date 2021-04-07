@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "liquid) where filter를 사용하여 해당 값을 가진 객체만 포함하는 배열 만들기"
+title: "Liquid) where filter를 사용하여 해당 값을 가진 객체만 포함하는 배열 만들기"
 subtitle:
 header:
   overlay_image:
@@ -11,7 +11,7 @@ date: 2020-06-15 21:40
 categories:
     - 퍼블노트
 tags:
-    - liquid
+    - Liquid
 ---
 
 최근 블로그 테마 작업 중, 특정 변수값을 가진 포스트를 목록 형태로 출력하고 싶어서 기초적인 for 반복문을 사용해보았으나 잘 안되어서 포기... 가 아니고 여기서 포기할 나님이 아니었으니... 결국 해결했는데, 처음 시도했었던 방법과 비교해보겠음.

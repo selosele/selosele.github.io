@@ -12,7 +12,7 @@ date: 2020-11-23 21:14
 categories:
     - 퍼블노트
 tags:
-    - html
+    - HTML
     - 웹 접근성
 post_dropcap: false
 primary_post: true

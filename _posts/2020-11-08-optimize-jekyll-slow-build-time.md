@@ -10,7 +10,7 @@ date: 2020-11-08 21:39
 categories:
     - 퍼블노트
 tags:
-    - jekyll
+    - Jekyll
 post_dropcap: false
 ---
 

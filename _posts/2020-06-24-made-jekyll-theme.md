@@ -13,7 +13,7 @@ categories:
     - 퍼블노트
     - 개인 프로젝트
 tags:
-    - jekyll
+    - Jekyll
 post_dropcap: false
 ---
 

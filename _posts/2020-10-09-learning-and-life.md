@@ -14,7 +14,7 @@ categories:
     - 퍼블노트
     - 일상노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 가을이다.  

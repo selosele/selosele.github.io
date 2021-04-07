@@ -12,7 +12,7 @@ date: 2020-02-19 00:06
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 inline 요소가 가지는 자연스러운 공백을 제거하는 방법이라고 하면 대부분 inline 요소에 margin-left 음수값을 주거나,  

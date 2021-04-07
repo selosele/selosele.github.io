@@ -10,7 +10,7 @@ date: 2020-05-20 22:51
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 home_dropcap: false
 post_dropcap: false
 ---

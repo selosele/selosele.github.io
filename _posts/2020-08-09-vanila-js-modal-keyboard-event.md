@@ -13,7 +13,7 @@ date: 2020-08-09 22:07
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 post_dropcap: false
 ---
 

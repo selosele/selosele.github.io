@@ -14,8 +14,8 @@ date: 2021-02-27 22:51
 categories:
     - 퍼블노트
 tags:
-    - javascript
-    - algorithm
+    - JavaScript
+    - Algorithm
     - programmers
 post_dropcap: false
 ---

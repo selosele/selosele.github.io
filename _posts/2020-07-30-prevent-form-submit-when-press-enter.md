@@ -13,7 +13,7 @@ date: 2020-07-30 20:51
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 예를 들어 input 요소에 값을 입력하고 enter키를 누르면 submit이 되는데, 값을 입력하지 않고도 enter키를 누르면 원치않는 submit이 되는 현상이 발생한다. 해결책은 Javascript로 이벤트를 무효화해주면 된다. form요소가 submit을 처리하므로 form요소에 이벤트를 바인딩해줘야 함

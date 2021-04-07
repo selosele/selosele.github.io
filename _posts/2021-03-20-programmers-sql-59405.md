@@ -7,8 +7,8 @@ date: 2021-03-20 23:26
 categories:
     - 취미
 tags:
-    - sql
-    - algorithm
+    - SQL
+    - Algorithm
     - programmers
 post_dropcap: false
 home_dropcap: false

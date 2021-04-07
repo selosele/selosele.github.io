@@ -7,7 +7,7 @@ date: 2021-02-11 19:30
 categories:
     - 개인 프로젝트
 tags:
-    - liquid
+    - Liquid
     - 번역
 primary_post: true
 ---

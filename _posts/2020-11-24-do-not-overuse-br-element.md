@@ -11,7 +11,7 @@ date: 2020-11-24 22:48
 categories:
     - 퍼블노트
 tags:
-    - html
+    - HTML
 post_dropcap: false
 ---
 

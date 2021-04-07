@@ -12,8 +12,8 @@ date: 2020-12-27 12:28
 categories:
     - 퍼블노트
 tags:
-    - css
-    - safari
+    - CSS
+    - Safari
 post_dropcap: false
 ---
 

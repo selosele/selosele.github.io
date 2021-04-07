@@ -10,7 +10,7 @@ date: 2020-02-19 23:34
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 URL에 anchor 클릭으로 인한 hash가 포함되어 있을 때 페이지 새로고침 시, hash가 남아 있어야/없어져야 하는지 고민에 빠졌음. 개인적으로 결론을 어떻게 내리든, 공부를 위해서 새로고침 시 hash 제거 스크립트를 짜보기로~!

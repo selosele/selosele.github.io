@@ -13,7 +13,7 @@ date: 2020-06-13 00:58
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 블로그 Javascript 작업 중 URL의 hash값을 가져와서 뭔가를 처리해야 하는 상황이었는데,  
 hash값 표출 시 영어는 잘 나오나 한글이 깨져서 나오는 현상이 발생, 기나긴 삽질과 검색이 동원된 끝에 방법을 알아냈다.

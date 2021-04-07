@@ -11,7 +11,7 @@ date: 2019-11-02 22:12
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 ---
 position을 이용한 중앙 정렬은 이득보다 손실이 크다. position 그 자체가 가진 특성과 함께, margin 음수값을 사용 후 반응형에서 요소 사이즈가 변경되면 margin값도 조절해줘야 하고, ```transform:translate(-50%,-50%)```{:.language-css} 선언 시 너비/높이 중 하나라도 홀수이면 요소가 흐려지는 &ldquo;서브 픽셀 렌더링&rdquo; 이슈가 발생.
 

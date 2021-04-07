@@ -13,7 +13,7 @@ date: 2020-08-26 22:07
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
 ---
 
 최근 실무에서 ```height: auto```{:.language-javascript}를 부드럽게 toggle하는 로직을 구현해야 하는 상황이 있었는데.. 퍼블리싱 요구사항을 듣고서 막연히 가능한 줄 알고 일반적인 방식으로 구현을 해보았으나 당연히 작동하지 않았다.

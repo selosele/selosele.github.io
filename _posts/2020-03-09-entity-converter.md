@@ -10,7 +10,7 @@ date: 2020-03-09 22:37
 categories:
     - 자료
 tags:
-    - html
+    - HTML
 post_dropcap: false
 ---
 

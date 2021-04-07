@@ -10,7 +10,7 @@ date: 2020-01-19 16:19
 categories:
     - 자료
 tags:
-    - javascript
+    - JavaScript
     - 웹 접근성
 post_dropcap: false
 ---

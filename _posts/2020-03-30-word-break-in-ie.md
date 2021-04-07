@@ -12,7 +12,7 @@ date: 2020-03-30 22:02
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 ---
 
 오늘 실무에서 엄청난 멘붕을 겪었는데, <mark>word-break: keep-all</mark> 선언이 IE 모든 버전에서 정상적으로 적용되지 않는 문제..  

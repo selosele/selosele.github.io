@@ -13,7 +13,7 @@ date: 2020-10-10 12:42
 categories:
     - 퍼블노트
 tags:
-    - html
+    - HTML
 ---
 
 제곧내..  

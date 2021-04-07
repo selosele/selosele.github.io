@@ -14,7 +14,7 @@ categories:
     - 퍼블노트
     - 개인 프로젝트
 tags:
-    - javascript
+    - JavaScript
 post_dropcap: false
 ---
 

@@ -12,7 +12,7 @@ date: 2020-11-01 21:25
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 primary_post: true
 ---
 

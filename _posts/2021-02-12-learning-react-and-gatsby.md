@@ -12,8 +12,8 @@ date: 2021-02-12 22:23
 categories:
     - 퍼블노트
 tags:
-    - react
-    - gatsby
+    - React
+    - Gatsby
 post_dropcap: false
 ---
 

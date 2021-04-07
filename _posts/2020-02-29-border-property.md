@@ -10,7 +10,7 @@ date: 2020-02-29 12:50
 categories:
     - 퍼블노트
 tags:
-    - css
+    - CSS
 ---
 
 reset CSS를 작성할 때 요소의 border를 없애려 사용하는 ```border: none```{:.language-css}/```border: 0```{:.language-css} 선언.  

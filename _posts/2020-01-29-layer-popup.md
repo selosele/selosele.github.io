@@ -11,7 +11,7 @@ date: 2020-01-29 22:14
 categories:
     - 퍼블노트
 tags:
-    - javascript
+    - JavaScript
     - 웹 접근성
 post_dropcap: false
 ---

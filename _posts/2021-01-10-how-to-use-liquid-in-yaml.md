@@ -6,7 +6,7 @@ date: 2021-01-10 13:10
 categories:
     - 퍼블노트
 tags:
-    - liquid
+    - Liquid
 post_dropcap: false
 ---
 

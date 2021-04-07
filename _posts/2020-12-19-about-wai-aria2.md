@@ -7,7 +7,7 @@ date: 2020-12-19 13:08
 categories:
     - 퍼블노트
 tags:
-    - html
+    - HTML
     - 웹 접근성
     - WAI-ARIA
 post_dropcap: false

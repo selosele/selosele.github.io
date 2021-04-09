@@ -50,6 +50,8 @@
 }
 
 .post-group-list {
+   $top: 1.2rem;
+
    margin-top: 1.8rem;
    margin-left: -$layout-margin;
    margin-right: -$layout-margin;
@@ -60,9 +62,9 @@
    @media (min-width: $min-large-width) {
       float: right;
       position: sticky;
-      top: 1.2rem;
+      top: $top;
       width: $category-list-width;
-      min-height: 100vh;
+      min-height: calc(100vh - #{$top * 2});
       margin: 0 0 2rem 2rem;
    }
 

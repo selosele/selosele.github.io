@@ -10,7 +10,7 @@ class: page--posts-by-year
 	<button type="button" aria-controls="list-{{ year.name }}" aria-expanded="false" id="btn-{{ year.name }}" class="archive__btn">
 		<span class="archive__btn__point">{{ year.name }}</span>년에 작성된 글
 		<small class="archive__list-count">
-			<span class="sr-only">{{ site.data.ui-text[site.locale].main_menu_number_of_posts }}</span> ({{ year.items.size }})
+			<span class="sr-only">{{ site.data.ui-text[site.locale].number_of_posts }}</span> ({{ year.items.size }})
 		</small>
 	</button>
 </h2>

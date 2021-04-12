@@ -33,12 +33,10 @@ HTML="foo.html"
 require("dotenv").config(); // .env 파일의 환경변수값 사용을 위한 모듈
 const express = require("express");
 const server = express();
-const querystring = require("querystring");
 const path = require("path");
 
 // 기본 설정
 const DOCUMENT_ROOT = "\\\\192.168.**.**\\folder\\"; // 공용 네트워크의 특정 폴더를 루트로 설정
-const PROJECT_DIR = querystring.unescape(path.resolve(DOCUMENT_ROOT, "html\\")); // 한글 포함된 폴더명을 querystring 모듈로 처리
 
 // 포트 설정
 server.set("port", process.env.PORT || 3000);
@@ -47,11 +45,6 @@ const MY_PORT = server.get("port");
 // 정적 파일 불러오기
 const MY_HTML = process.env.HTML || "index.html";
 server.use(express.static(DOCUMENT_ROOT));
-
-// 라우팅 정의
-server.get(PROJECT_DIR, (req, res, next) => {
-  res.sendFile(path.resolve(PROJECT_DIR, './', MY_HTML));
-});
 
 // 서버 실행
 server.listen(MY_PORT, () => {

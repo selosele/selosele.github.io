@@ -45,9 +45,9 @@ index.js 파일을 만들고 아래와 같이 작성해준다.
 const http = require('http');
 
 http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
 }).listen(3000);
 ```
 
@@ -57,7 +57,7 @@ Node.js는 http 모듈을 내장하고 있어서 아파치와 같은 별도의 �
 
 ### 정적 파일 불러오기
 
-다 된줄 알았는데, 외부 CSS/JS 파일이 읽히지 않는다. Node.js는 기본적으로 정적 파일을 읽을 수 없다고 하는데, 이를 위해선 Express라는 Node.js의 프레임워크를 사용해야 한다.
+다 된줄 알았는데, 외부 CSS/JS 파일이 읽히지 않는다. Node.js는 기본적으로 정적 파일을 읽을 수 없고 http 모듈만으로 웹서버를 구현하는 건 한계가 있음. 이를 위해선 Express라는 Node.js의 프레임워크를 사용해야 한다.
 
 ---
 

@@ -65,7 +65,7 @@
       top: $top;
       width: $category-list-width;
       // min-height: calc(100vh - #{$top * 2});
-      margin: 0 0 2rem 2rem;
+      margin-left: 2rem;
    }
 
    &__item {

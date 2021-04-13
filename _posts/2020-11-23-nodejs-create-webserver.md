@@ -64,10 +64,10 @@ Node.js는 http 모듈을 내장하고 있어서 아파치와 같은 별도의 �
 우선 프로젝트 폴더에서 ```npm init``` 명령으로 package.json 파일을 생성해준다. npm은 Node.js와 함께 설치되므로 걱정안해도 됨
 
 ```
-npm install express
+npm install express --save
 ```
 
-그 후 위 명령으로 express를 설치해주고, index.js의 내용을 아래의 것으로 교체해준다.
+그 후 위 명령으로 express를 설치해주고(```--save```를 붙여서 package.json, package-lock.json 파일에 의존성 정보가 기재되게 해준다), index.js의 내용을 아래의 것으로 교체해준다.
 
 {:data-line="11"}
 ```javascript

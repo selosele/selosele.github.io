@@ -1,33 +1,5 @@
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
-<script>
-    // 다크모드 토글
-    (function() {
-        {% assign site_id = site.url | url_encode -%}
-
-        var masterRoot = document.documentElement,
-            darkmodeBtn = document.querySelector(".nav__darkmode-toggle");
-
-        darkmodeBtn.addEventListener("click", function(event){
-            masterRoot.classList.toggle("is-darkmode");
-            event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
-
-            if (masterRoot.classList.contains("is-darkmode")) {
-                sessionStorage.setItem("{{ site_id }}--DARKMODE", "Y");
-            } else {
-                sessionStorage.setItem("{{ site_id }}--DARKMODE", "N");
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function(){
-            if (sessionStorage.getItem("{{ site_id }}--DARKMODE") === "Y") {
-                masterRoot.classList.add("is-darkmode");
-                darkmodeBtn.classList.add("nav__darkmode-toggle--active");
-            }
-        });
-    })();
-</script>
-
 {%- if site.search == true -%}
 <script src="{{ '/assets/js/plugins/simple-jekyll-search.min.js' | relative_url }}"></script>
 <script>
@@ -49,14 +21,12 @@
             if (!googleSearchLink) return;
 
             var ctx = searchInput.value;
+
             googleSearchLink.title = "\""+ctx+"\" 키워드로 Google에서 검색({{ site.data.ui-text[site.locale].target_blank }})";
             googleSearchLink.href = encodeURI("https://www.google.com/search?q=site:{{ site.url }} "+ctx+"");
         }
 
-        searchInput.addEventListener("propertychange", goGooleSearch);
-        searchInput.addEventListener("change", goGooleSearch);
         searchInput.addEventListener("keyup", goGooleSearch);
-        searchInput.addEventListener("paste", goGooleSearch);
         searchInput.addEventListener("input", goGooleSearch);
         searchInput.addEventListener("focus", goGooleSearch);
     })();

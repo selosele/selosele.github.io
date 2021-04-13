@@ -13,6 +13,7 @@ if (navigator.userAgent.indexOf("MSIE") >= 0) {
     document.getElementById("ie-version-txt").innerHTML = "IE 브라우저 10 버전 이하를 <strong>지원하지 않습니다.</strong>";
 }
 
+
 // scroll indicator UI
 window.addEventListener("scroll", function() {
     if (!document.querySelector(".layout--post")) return;
@@ -22,6 +23,30 @@ window.addEventListener("scroll", function() {
 
     document.getElementById("scroll-indicator").style.width = scroll_value + "%";
 });
+
+// 다크모드 토글
+(function() {
+    var masterRoot = document.documentElement,
+        darkmodeBtn = document.querySelector(".nav__darkmode-toggle");
+
+    darkmodeBtn.addEventListener("click", function(event){
+        masterRoot.classList.toggle("is-darkmode");
+        event.currentTarget.classList.toggle("nav__darkmode-toggle--active");
+
+        if (masterRoot.classList.contains("is-darkmode")) {
+            localStorage.setItem("darkmode", "Y");
+        } else {
+            localStorage.setItem("darkmode", "N");
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function(){
+        if (localStorage.getItem("darkmode") === "Y") {
+            masterRoot.classList.add("is-darkmode");
+            darkmodeBtn.classList.add("nav__darkmode-toggle--active");
+        }
+    });
+})();
 
 // 메인 메뉴
 (function() {
@@ -500,10 +525,7 @@ window.addEventListener("scroll", function() {
 
         setTimeout(function() {
             searchInput.focus();
-            searchInput.addEventListener("propertychange", handlerInputKeydown);
-            searchInput.addEventListener("change", handlerInputKeydown);
             searchInput.addEventListener("keyup", handlerInputKeydown);
-            searchInput.addEventListener("paste", handlerInputKeydown);
             searchInput.addEventListener("input", handlerInputKeydown);
             searchInput.addEventListener("focus", handlerInputKeydown);
         });

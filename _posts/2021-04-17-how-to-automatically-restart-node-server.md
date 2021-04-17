@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: "Node.js 서버를 자동으로 재시작하는 방법"
-subtitle: "supervisor라는 모듈을 사용하면 됨"
+subtitle: "supervisor라는 모듈을 사용하였다."
 header:
     overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/nodejs_thumb01.jpg
     overlay_filter: 0.4

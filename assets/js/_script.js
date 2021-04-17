@@ -19,7 +19,7 @@ window.addEventListener("scroll", function() {
     if (!document.querySelector(".layout--post")) return;
 
     var window_height = document.body.scrollHeight - window.innerHeight,
-        scroll_value = ((window.pageYOffset) / window_height) * 100;
+        scroll_value = (window.pageYOffset / window_height) * 100;
 
     document.getElementById("scroll-indicator").style.width = scroll_value + "%";
 });

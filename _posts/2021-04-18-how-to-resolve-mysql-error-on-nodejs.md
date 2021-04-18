@@ -1,4 +1,5 @@
 ---
+redirect_from: /2021/04/18/how-to-resolve-error-mysql-on-nodejs/
 layout: post
 comments: true
 title: "Node.js에서 MySQL 연동 오류 해결"

@@ -8,7 +8,7 @@ class: page--posts-by-year
 {%- for year in year_post -%}
 <h2>
 	<button type="button" aria-controls="list-{{ year.name }}" aria-expanded="false" id="btn-{{ year.name }}" class="archive__btn">
-		<span class="archive__btn__point">{{ year.name }}</span>년에 작성된 글
+		<span class="archive__btn__point">{{ year.name }}</span> 년에 작성된 글
 		<small class="archive__list-count">
 			<span class="sr-only">{{ site.data.ui-text[site.locale].number_of_posts }}</span> ({{ year.items.size }})
 		</small>

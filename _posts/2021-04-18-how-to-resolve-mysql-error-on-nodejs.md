@@ -18,7 +18,7 @@ post_dropcap: false
 home_dropcap: false
 ---
 
-최근 Node.js에 MySQL을 연동해서 작업하던 중 오류가 발생했고 기나긴 삽질과 검색 끝에 해결을 하였다. 테이블의 모든 컬럼을 조회하기 위해 작성한 아래 js 파일을 실행한 결과
+최근 SQL 학습을 위해 Node.js에 MySQL을 연동하던 중 오류가 발생하였다. 테이블의 모든 컬럼을 조회하기 위해 작성한 아래 js 파일을 실행한 결과
 
 ```javascript
 const mysql = require('mysql');

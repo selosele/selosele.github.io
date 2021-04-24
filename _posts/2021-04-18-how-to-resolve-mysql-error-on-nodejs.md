@@ -27,13 +27,13 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'username',
   password: 'password',
-  database: 'mydb',
+  database: 'my_db',
   port: '13306',
 });
 
 connection.connect();
 
-connection.query('SELECT * FROM mydb', (error, results, fields) => {
+connection.query('SELECT * FROM my_table', (error, results, fields) => {
   if (error) throw error;
   console.log(results);
 });

@@ -39,7 +39,7 @@
   
       {%- if post.categories.size > 0 -%}
       {%- for category in post.categories -%}
-      <span itemprop="keywords" rel="tag" class="archive__item__info-item archive__item__info-item--category">
+      <span itemprop="keywords" class="archive__item__info-item archive__item__info-item--category">
         <i aria-hidden="true" class="xi-paper"></i> {{ category }}
       </span>
       {%- endfor -%}
@@ -47,7 +47,7 @@
   
       {%- if post.tags.size > 0 -%}
       {%- for tag in post.tags -%}
-      <span itemprop="keywords" rel="tag" class="archive__item__info-item archive__item__info-item--tag">
+      <span itemprop="keywords" class="archive__item__info-item archive__item__info-item--tag">
         <i aria-hidden="true" class="xi-tag"></i> {{ tag }}
       </span>
       {%- endfor -%}

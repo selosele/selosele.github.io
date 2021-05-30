@@ -1,4 +1,5 @@
 ---
+redirect_from: /2021/05/30/epilogue-of-create-publishing-nodejs-template/
 layout: post
 comments: true
 title: "Node.js로 제작한 퍼블리싱 작업 템플릿 실무 적용 후기"

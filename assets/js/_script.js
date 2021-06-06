@@ -439,7 +439,7 @@ window.addEventListener("scroll", function() {
                     ctx_match = resultAnc.innerHTML.match(new RegExp(ctx.replace(/(?=[()? [])/g, "\\"), "i"));
 
                 if ((resultAnc !== ctx_match) && !resultAnc.querySelector(".search__results__match")) {
-                    resultAnc.innerHTML = resultAnc.innerHTML.replace(ctx_match, '<span class="search__results__match">'+ctx_match+'</span>');
+                    resultAnc.innerHTML = resultAnc.innerHTML.replace(new RegExp(ctx_match, "g"), '<span class="search__results__match">'+ctx_match+'</span>');
                 }
             }
         } else {

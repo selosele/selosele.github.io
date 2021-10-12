@@ -14,7 +14,6 @@ categories:
 tags:
     - Node.js
 post_dropcap: false
-home_dropcap: false
 ---
 
 최근 개인적으로 Node.js 서버를 사용하는 일이 많아졌는데, 생각치도 못했던 불편함이 나님을 괴롭히고 있었다. 그거슨 바로, 소스 파일이 수정될 때마다 수동으로 서버를 재시작해줘야 한다는 것..

@@ -14,7 +14,6 @@ categories:
 tags:
     - Node.js
 post_dropcap: false
-home_dropcap: false
 ---
 
 실무에서 서브페이지 내용을 퍼블리싱할 때, 공통으로 들어가는 header/footer 등이 include된 작업 템플릿을 Node.js(Express)로 제작, 실무에 적용한 후기를 포스팅한다.

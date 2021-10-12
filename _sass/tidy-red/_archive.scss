@@ -209,13 +209,17 @@
    &__btn {
       display: block;
       width: 100%;
-      padding: 1.6rem .5rem;
+      padding: 1.63em .5rem;
       border-bottom: 1px dashed $grey;
       background-color: transparent;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: inherit;
       text-align: left;
+
+      @media (min-width: $min-medium-width) {
+         font-size: 1.1rem;
+      }
 
       &:hover,
       &:focus,
@@ -225,6 +229,7 @@
 
       &__point {
          color: $sub-color03;
+         font-weight: 700;
          font-size: 1.5rem;
       }
    }
@@ -258,9 +263,14 @@
       }
 
       &__date {
+         display: block;
          font-size: .85rem;
          font-style: italic;
          color: $sub-color03;
+
+         @media (min-width: $min-medium-width) {
+            display: inline-block;
+         }
 
          &:before {
             content: "\2014";

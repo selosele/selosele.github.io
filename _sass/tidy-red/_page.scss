@@ -235,6 +235,7 @@
          border-radius: 5px;
          font-size: 1rem;
          color: $grey12;
+         text-shadow: rgba(0,0,0,0.8) 1px 1px 0.1em;
          box-sizing: border-box;
 
          @media (min-width: $min-minimal-width) {

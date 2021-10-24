@@ -387,7 +387,13 @@ html {
          background-color: transparent;
 
          &__btn-top {
-            background-color: theme-style("text-color");
+            background-color: theme-style("bg-color-02");
+            
+            > a {
+               > i {
+                  color: theme-style("text-color");
+               }
+            }
          }
       }
 

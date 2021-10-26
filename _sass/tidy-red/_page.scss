@@ -298,7 +298,7 @@
    }
    
    &__content {
-      line-height: 1.9;
+      line-height: 2;
       @include clearfix;
 
       @media (min-width: $min-small-width) {
@@ -405,12 +405,16 @@
       
             &:first-letter {
                float: left;
-               margin-top: .25rem;
+               margin-top: .4rem;
                margin-left: .5rem;
                margin-right: .3rem;
-               font-size: 3.5rem;
+               font-size: 3rem;
                line-height: 1;
                color: $sub-color03;
+
+               @media (min-width: $min-minimal-width) {
+                  font-size: 3.5rem;
+               }
             }
          }
       }

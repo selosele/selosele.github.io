@@ -37,7 +37,15 @@
       }
 
       > h2 {
-         font-size: calc(1.3rem + .5vw);
+         font-size: calc(1.1rem + .5vw);
+
+         @media (min-width: $min-minimal-width) {
+            font-size: calc(1.3rem + .5vw);
+         }
+
+         @media (min-width: $min-small-width) {
+            font-size: 1.5rem;
+         }
 
          &:first-letter {
             font-size: 1.25em;
@@ -46,10 +54,6 @@
          ~ h2,
          ~ h3 {
             margin-top: 1em;
-         }
-
-         @media (min-width: $min-small-width) {
-            font-size: 1.5rem;
          }
       }
 
@@ -78,8 +82,12 @@
       li {
          margin-top: .583333em;
          margin-bottom: .583333em;
-         font-size: 1.1rem;
+         font-size: 1rem;
          line-height: 1.3;
+
+         @media (min-width: $min-minimal-width) {
+            font-size: 1.1rem;
+         }
 
          @media (min-width: $min-small-width) {
             font-size: 1.2rem;
@@ -127,6 +135,7 @@
       overflow: hidden;
       width: 2rem;
       height: 2rem;
+      margin-top: 1rem;
       margin-left: auto;
       margin-right: auto;
       color: $black03;
@@ -157,12 +166,16 @@
    &__author {
       &-name {
          display: block;
-         font-size: 1.3rem;
+         font-size: 1.2rem;
          line-height: 1.3;
+
+         @media (min-width: $min-minimal-width) {
+            font-size: 1.3rem;
+         }
       }
 
       &-desc {
-         margin-top: .2rem;
+         margin-top: .5rem;
          margin-bottom: 0;
          line-height: 1.5;
       }

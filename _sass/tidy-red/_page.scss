@@ -182,6 +182,10 @@
       @media (min-width: $min-general-width) {
          font-size: 2.7rem;
       }
+
+      > a {
+         color: inherit;
+      }
    }
 
    &-subtitle {

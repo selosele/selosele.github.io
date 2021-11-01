@@ -69,9 +69,13 @@ window.addEventListener("scroll", function() {
         closeBtn.setAttribute("aria-expanded", "false");
         openBtn.setAttribute("aria-expanded", "false");
         openBtn.focus();
-        menuWrapper.classList.remove("side-menu--active");
-        menuWrapper.setAttribute("aria-hidden", "true");
+        layer.classList.remove("menu__layer--animate");
         masterRoot.classList.remove("layer-opened");
+
+        setTimeout(function(){
+            menuWrapper.classList.remove("side-menu--active");
+            menuWrapper.setAttribute("aria-hidden", "true");
+        },300);
 
         for (var i = 0; i < outerList.length; i++) {
             outerList[i].removeAttribute("aria-hidden");
@@ -99,6 +103,10 @@ window.addEventListener("scroll", function() {
         closeBtn.setAttribute("aria-expanded", "true");
         menuWrapper.setAttribute("aria-hidden", "false");
         menuWrapper.classList.add("side-menu--active");
+        
+        setTimeout(function(){
+            layer.classList.add("menu__layer--animate");
+        },150);
         
         for (var i = 0; i < outerList.length; i++) {
             outerList[i].setAttribute("aria-hidden", "true");

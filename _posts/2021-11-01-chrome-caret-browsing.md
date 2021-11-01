@@ -26,7 +26,7 @@ Chrome 브라우저에서 텍스트를 클릭하면 깜빡이는 현상이 최�
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-검색을 해보니 두 가지 방법을 찾을 수 있었는데,
+내 블로그에 해당 문제 해결책 CSS을 적용해놓아서 위 코드펜 링크를 타고 들어가서 테스트해야 한다. 검색을 해보니 두 가지 방법을 찾을 수 있었는데,
 
 1. [Chrome의 캐럿 브라우징을 미사용으로 설정하기](https://support.google.com/chrome/thread/78208145/line-shows-up-when-clicking-on-text?hl=en){:target="_blank"}
   * 요약 : F7키를 누르거나 Chrome 설정에 가서 캐럿 브라우징 미사용으로 설정하면 됨  

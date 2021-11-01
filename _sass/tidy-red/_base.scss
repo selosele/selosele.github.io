@@ -73,6 +73,7 @@ a, button, input {
 input {
    font-family: inherit;
    font-size: inherit;
+   caret-color: auto;
 
    &[type="text"],
    &[type="search"] {

@@ -31,17 +31,17 @@ window.addEventListener("scroll", function() {
 
     darkmodeBtn.addEventListener("click", function(event){
         var target = event.currentTarget,
-            text = target.querySelector('.sr-only');
+            text = target.querySelector(".sr-only");
 
         masterRoot.classList.toggle("is-darkmode");
         target.classList.toggle("nav__darkmode-toggle--active");
 
         if (masterRoot.classList.contains("is-darkmode")) {
             localStorage.setItem("darkmode", "Y");
-            text.textContent = '라이트모드';
+            text.textContent = "라이트모드";
         } else {
             localStorage.setItem("darkmode", "N");
-            text.textContent = '다크모드';
+            text.textContent = "다크모드";
         }
     });
 
@@ -49,7 +49,7 @@ window.addEventListener("scroll", function() {
         if (localStorage.getItem("darkmode") === "Y") {
             masterRoot.classList.add("is-darkmode");
             darkmodeBtn.classList.add("nav__darkmode-toggle--active");
-            darkmodeBtn.querySelector('.sr-only').textContent = '라이트모드';
+            darkmodeBtn.querySelector(".sr-only").textContent = "라이트모드";
         }
     });
 })();
@@ -345,7 +345,7 @@ window.addEventListener("scroll", function() {
                         _textarea = document.createElement("textarea");
 
                     _textarea.setAttribute("readonly", true);
-                    _textarea.setAttribute('contenteditable', true);
+                    _textarea.setAttribute("contenteditable", true);
                     _textarea.classList.add("sr-only");
                     _textarea.value = codeInner.textContent;
 

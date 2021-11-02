@@ -145,6 +145,10 @@ caption {
    padding: .4761905em;
    line-height: 1.5;
    color: $sub-color03;
+
+   &[class^="sr-only"] {
+      padding: 0 !important;
+   }
 }
 
 td, th {

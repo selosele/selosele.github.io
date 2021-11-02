@@ -75,7 +75,7 @@ analytics:
 # 사용자 정보
 author:
   name             : "Sel" # 사용자명
-  avatar           : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
+  # avatar           : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   links:
     - label: "Location"

@@ -184,14 +184,11 @@ abbr {
 
 /* hide element */
 .sr-only {
-   position: absolute !important;
-   overflow: hidden !important;
-   clip: rect(1px, 1px, 1px, 1px) !important;
-   clip-path: inset(50%) !important;
-   width: 1px !important;
-   height: 1px !important;
-   margin: -1px !important;
-   border: 0 !important;
+   @include sr-only(absolute !important);
+
+   &2 {
+      @include sr-only();
+   }
 }
 
 /* skip links */
@@ -318,4 +315,23 @@ sup {
 iframe {
    width: 100%;
    margin-bottom: 1.5rem;
+}
+
+/* helper class */
+.align {
+   &--left {
+      text-align: left;
+   }
+   
+   &--center {
+      text-align: center;
+   }
+   
+   &--right {
+      text-align: right;
+   }
+   
+   &--justify {
+      text-align: justify;
+   }
 }

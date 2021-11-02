@@ -102,6 +102,19 @@
    text-shadow: 2px 2px .1em rgba(0,0,0,.8);
 }
 
+// sr-only
+@mixin sr-only($position: null) {
+   position: $position;
+   overflow: hidden !important;
+   clip: rect(1px, 1px, 1px, 1px) !important;
+   clip-path: inset(50%) !important;
+   width: 1px !important;
+   height: 1px !important;
+   margin: -1px !important;
+   padding: 0 !important;
+   border: 0 !important;
+}
+
 // clearfix
 @mixin clearfix {
    &:after {

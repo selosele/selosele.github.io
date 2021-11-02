@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "개인 블로그 개발 및 배포 후기"
+subtitle: "여기말고 새로 만들었음"
 header:
     overlay_image: //cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/thumb/blog_thumb01.jpg
     overlay_filter: 0.4

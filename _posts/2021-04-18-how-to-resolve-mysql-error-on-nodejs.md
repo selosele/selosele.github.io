@@ -32,7 +32,9 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * FROM my_table', (error, results, fields) => {
+const sql = `SELECT * FROM my_table`;
+
+connection.query(sql, (error, results, fields) => {
   if (error) throw error;
   console.log(results);
 });
@@ -53,7 +55,7 @@ ALTER USER '[username]'@'[host]' IDENTIFIED WITH mysql_native_password BY '[pass
 flush privileges;
 ```
 
-위 명령어를 실행해도 안되서 아래 절차를 실행, 해결을 하였다.
+위 쿼리를 실행해도 안되서 아래 절차를 실행, 해결을 하였다.
 
 1. MySQL installer 실행
 2. MySQL Server - Reconfigure 클릭

@@ -69,17 +69,17 @@ window.addEventListener("scroll", function() {
         closeBtn.setAttribute("aria-expanded", "false");
         openBtn.setAttribute("aria-expanded", "false");
         openBtn.focus();
+        menuWrapper.setAttribute("aria-hidden", "true");
         layer.classList.remove("menu__layer--animate");
         masterRoot.classList.remove("layer-opened");
-
-        setTimeout(function(){
-            menuWrapper.classList.remove("side-menu--active");
-            menuWrapper.setAttribute("aria-hidden", "true");
-        },300);
 
         for (var i = 0; i < outerList.length; i++) {
             outerList[i].removeAttribute("aria-hidden");
         }
+
+        setTimeout(function(){
+            menuWrapper.classList.remove("side-menu--active");
+        },300);
 
         masterBody.style.top = "";
         window.scrollTo(0, nowScrollPos);
@@ -140,6 +140,40 @@ window.addEventListener("scroll", function() {
         if (document.querySelector(".layout--categories")) {
             categoryAncList[i].addEventListener("click", handlerCloseClick);
         }
+    }
+
+    // touch 이벤트로 메뉴 닫기
+    layer.addEventListener("touchstart", handlerTouchStart);
+    layer.addEventListener("touchmove", handlerTouchMove);
+
+    var xDown = null;
+    var yDown = null;
+
+    function handlerTouchStart(event){
+        var touchEvent = event.touches || event.originalEvent.touches;
+        var firstTouch = touchEvent[0];
+        
+        xDown = firstTouch.clientX;
+        yDown = firstTouch.clientY;
+    }
+
+    function handlerTouchMove(event){
+        if (!xDown || !yDown) return;
+
+        var xUp = event.touches[0].clientX;
+        var yUp = event.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff < 0) {
+                handlerCloseClick();
+            }
+        }
+
+        xDown = null;
+        yDown = null;
     }
 })();
 

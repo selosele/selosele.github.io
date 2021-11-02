@@ -33,6 +33,7 @@ html {
       .skip-links {
          a {
             color: $grey10;
+            text-shadow: none;
 
             &:hover {
                color: $black;

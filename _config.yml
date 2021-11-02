@@ -78,15 +78,18 @@ author:
   avatar           : "//cdn.jsdelivr.net/gh/selosele/selosele.github.io/assets/images/avatar.jpg"
   desc             : "나답게 사는 웹 퍼블리셔"
   links:
-    - label: "Daejeon"
+    - label: "Location"
       icon: "xi-map-marker"
       url: "https://www.google.com/maps/place/daejeon"
-    - label: "Email"
+      title: "Daejeon"
+    - label: "E-mail"
       icon: "xi-mail"
       url: "mailto:gwiazda762@gmail.com"
+      title: "gwiazda762@gmail.com"
     - label: "GitHub"
       icon: "xi-github"
       url: "https://github.com/selosele"
+      title: "selosele"
 
 # Reading Files
 include:

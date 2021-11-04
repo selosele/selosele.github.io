@@ -132,13 +132,13 @@ module.exports = router;
 
 ```
 HOST=localhost
-PORT=9999
+PORT=8080
 SUB_PAGE_ROOT="projectA"
 SUB_PAGE_HTML_PATH="foo/bar"
 SUB_PAGE_VIEW="#view"
 ```
 
-예를 들어, ```http://localhost:9999/sub0101.html```에 접속 시 서브레이아웃과 서브페이지 내용이 합쳐진 결과물이 브라우저에 출력된다.
+예를 들어, ```http://localhost:8080/sub0101.html```에 접속 시 서브레이아웃과 서브페이지 내용이 합쳐진 결과물이 브라우저에 출력된다.
 
 ## 후기
 

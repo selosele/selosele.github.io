@@ -56,8 +56,6 @@ post_dropcap: false
 
 ```javascript
 // 환경변수 불러오기
-const serverConfig = require('../server_config');
-
 const _ROOT = process.env.SUB_PAGE_ROOT;
 const _HTML_PATH = process.env.SUB_PAGE_HTML_PATH;
 const _VIEW = process.env.SUB_PAGE_VIEW;
@@ -81,9 +79,10 @@ function renderHTMLfile(to, ctx, layout, view){ // 라우터 path, 서브페이�
     let pathname = url.parse(request.url).pathname;
     let HTMLfile = decodeURI(pathname.substring(pathname.lastIndexOf('/')).replace('/', '')); // 현재 열고 있는 HTML 파일명을 가져온다.
   
-    new Promise((resolve, reject) => { // 콜백 Hell 탈출을 위해 Promise를 학습, 적용해봤다. 근데 Promise Hell도 가독성 문제가 있다. 다음에는 async/await를 적용해봐야겠음.
-      fs.readFile(path.resolve(__dirname, `${ctx}/${layout}/${HTMLfile}`), 'utf8', (error1, data) => {
-        if (error1) {
+    // 콜백 Hell 탈출을 위해 Promise를 학습, 적용해봤다. 다음에는 async/await를 써봐야겠음.
+    new Promise((resolve, reject) => {
+      fs.readFile(path.resolve(__dirname, `${ctx}/${layout}/${HTMLfile}`), 'utf8', (error, data) => {
+        if (error) {
           return response.end('파일을 찾을 수 없습니다.', 'utf-8');
         }
         resolve(data);
@@ -91,7 +90,7 @@ function renderHTMLfile(to, ctx, layout, view){ // 라우터 path, 서브페이�
     })
     .then((resolvedData) => {
       req({
-        url: `http://${serverConfig.$_HOST}:${serverConfig.$_PORT}/${layout}/subLayout.html`,
+        url: `http://${process.env.HOST}:${process.env.PORT}/${layout}/subLayout.html`,
         method: 'GET',
       }, (err, res, body) => {
         const a = cheerio.load(body, {
@@ -112,8 +111,8 @@ function renderHTMLfile(to, ctx, layout, view){ // 라우터 path, 서브페이�
           .replace(/↓/g, '&darr;');
   
         // 서브레이아웃 + 콘텐츠 합친 파일을 특정 폴더(output)에 저장 (내 로컬에 저장된 합쳐진 파일을 공유폴더에 수동으로 옮겨 팀원들과 공유)
-        fs.writeFile(path.resolve(__dirname, `${ctx}/${layout}/output/${HTMLfile}`), encodedEntitiesHTML, 'utf8', (error2) => {
-          if (error2) throw error2;
+        fs.writeFile(path.resolve(__dirname, `${ctx}/${layout}/output/${HTMLfile}`), encodedEntitiesHTML, 'utf8', (error) => {
+          if (error) throw error;
         });
           
         // 브라우저에 콘텐츠 출력

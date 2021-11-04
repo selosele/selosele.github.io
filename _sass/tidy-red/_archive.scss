@@ -216,6 +216,7 @@
       font-size: 1rem;
       color: inherit;
       text-align: left;
+      box-sizing: border-box;
 
       @media (min-width: $min-medium-width) {
          font-size: 1.1rem;

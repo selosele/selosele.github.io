@@ -30,4 +30,4 @@ tags:
 - 주색상 : 빨간색
 - 컨셉 : 이름 그대로 빨간색을 깔끔하게 배치하여 아이덴티티를 부각
 - 작업 기간 : 2020.04.11 ~ 2020.06.24
-- 주소 : [바로가기](https://selosele.github.io/jekyll-theme-tidyred){:target="_blank"}
+- 주소 : [바로가기](https://selosele.github.io/jekyll-theme-tidyred/){:target="_blank"}

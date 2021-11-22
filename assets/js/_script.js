@@ -429,12 +429,14 @@ window.addEventListener("scroll", function() {
             accordion.setAttribute("tabindex", -1);
             btn.classList.remove("archive__btn--active");
             btn.setAttribute("aria-expanded", "false");
+            sessionStorage.removeItem("curArchiveId", btn.id);
         } else {
             accordion.classList.add("archive__list--active");
             accordion.hidden = false;
             accordion.setAttribute("tabindex", 0);
             btn.classList.add("archive__btn--active");
             btn.setAttribute("aria-expanded", "true");
+            sessionStorage.setItem("curArchiveId", btn.id);
         }
     },
     btnList = document.querySelectorAll(".archive__btn");
@@ -442,6 +444,13 @@ window.addEventListener("scroll", function() {
     if (btnList.length) {
         for (var i = 0; i < btnList.length; i++) {
             btnList[i].addEventListener("click", handlerClick);
+        }
+
+        if (!document.documentElement.classList.contains("only-ie") && sessionStorage.getItem("curArchiveId")) {
+            var curBtn = document.querySelector("#" + sessionStorage.getItem("curArchiveId"));
+
+            curBtn.dispatchEvent(new Event("click"));
+            sessionStorage.removeItem("curArchiveId");
         }
     }
 })();

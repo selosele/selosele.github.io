@@ -16,7 +16,7 @@ title: 카테고리
 {%- assign categoryPost = site.posts | where: "categories", category[0] -%}
 {%- assign categoryName = category[0] | url_encode | replace: '%', '0' | replace: '+', '1' | replace: '.', '2' | replace: ',', '3' -%}
 <h2>
-	<button type="button" aria-controls="list-{{ categoryName }}" aria-expanded="false" id="btn-{{ categoryName }}" class="archive__btn">
+	<button type="button" aria-controls="categoryList-{{ categoryName }}" aria-expanded="false" id="categoryBtn-{{ categoryName }}" class="archive__btn">
 		<span aria-hidden="true" class="archive__btn__point">#</span> {{ category[0] }}
 		<small class="archive__list-count">
 			<span class="sr-only">{{ site.data.ui-text[site.locale].number_of_posts }}</span> ({{ category[1].size }})
@@ -24,7 +24,7 @@ title: 카테고리
 	</button>
 </h2>
 
-<div aria-labelledby="btn-{{ categoryName }}" id="list-{{ categoryName }}" class="archive__list">
+<div aria-labelledby="categoryBtn-{{ categoryName }}" id="categoryList-{{ categoryName }}" class="archive__list">
 	<ul>
 		{%- for post in categoryPost -%}
 		<li>
@@ -34,7 +34,7 @@ title: 카테고리
 		{%- endfor -%}
 	</ul>
 
-	<a href="#btn-{{ categoryName }}" class="page__btn-top">
+	<a href="#categoryBtn-{{ categoryName }}" class="page__btn-top">
 		<i aria-hidden="true" class="xi-arrow-up"></i>
 		<span class="sr-only">{{ site.data.ui-text[site.locale].move_to_archive_button }}</span>
 	</a>

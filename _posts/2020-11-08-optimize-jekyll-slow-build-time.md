@@ -8,7 +8,7 @@ header:
   image_author: danigeza
 date: 2020-11-08 21:39
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Jekyll
 post_dropcap: false

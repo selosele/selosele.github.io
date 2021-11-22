@@ -6,7 +6,7 @@ title: "Programmers SQL 문제풀이 3"
 subtitle: "SUM, MAX, MIN Level 2 중복 제거하기"
 date: 2021-04-01 23:18
 categories:
-    - 취미
+    - 개발노트
 tags:
     - SQL
     - Algorithm

@@ -9,7 +9,7 @@ header:
     image_author: CopyrightFreePictures
 date: 2021-03-09 22:12
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Node.js
 primary_post: true

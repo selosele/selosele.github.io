@@ -10,7 +10,7 @@ header:
     image_author: CopyrightFreePictures
 date: 2020-11-23 14:31
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Node.js
 ---

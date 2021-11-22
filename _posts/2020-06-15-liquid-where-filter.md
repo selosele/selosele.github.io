@@ -9,7 +9,7 @@ header:
   image_author: danigeza
 date: 2020-06-15 21:40
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Liquid
 ---

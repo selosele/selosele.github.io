@@ -6,7 +6,7 @@ title: "Programmers SQL 문제풀이 4"
 subtitle: "GROUP BY Level 2 입양 시각 구하기(1)"
 date: 2021-04-07 22:13
 categories:
-    - 취미
+    - 개발노트
 tags:
     - SQL
     - Algorithm

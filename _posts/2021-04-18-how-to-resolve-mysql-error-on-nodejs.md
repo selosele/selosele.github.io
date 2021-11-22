@@ -10,7 +10,7 @@ header:
     image_author: CopyrightFreePictures
 date: 2021-04-18 17:59
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Node.js
     - MySQL

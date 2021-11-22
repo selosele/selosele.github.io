@@ -10,7 +10,7 @@ header:
     image_author: CopyrightFreePictures
 date: 2021-05-30 14:11
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - Node.js
 post_dropcap: false

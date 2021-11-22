@@ -10,7 +10,7 @@ header:
     image_author: Facebook
 date: 2021-02-12 22:23
 categories:
-    - 퍼블노트
+    - 개발노트
 tags:
     - React
     - Gatsby

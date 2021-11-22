@@ -6,7 +6,7 @@ title: "Programmers SQL 문제풀이 1"
 subtitle: "SELECT Level 1 여러 기준으로 정렬하기"
 date: 2021-03-20 21:24
 categories:
-    - 취미
+    - 개발노트
 tags:
     - SQL
     - Algorithm

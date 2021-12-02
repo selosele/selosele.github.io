@@ -244,6 +244,13 @@ html {
                color: $grey12;
             }
          }
+
+         &__to-input {
+            background-color: $main-color;
+            color: $grey12;
+            text-shadow: rgba(0,0,0,0.8) 1px 1px 0.1em;
+            text-decoration: none;
+         }
       }
 
       .page {

@@ -614,6 +614,13 @@ window.addEventListener("scroll", function() {
                 searchToInputBtn.classList.remove('search__to-input--active');
             }
         });
+
+        searchToInputBtn.addEventListener('click', function(event){
+            event.preventDefault();
+
+            searchInput.focus();
+            searchLayer.scrollTo({ top: 0 });
+        });
     }
 
     openBtn.addEventListener("click", handlerClick);

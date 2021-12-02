@@ -469,6 +469,7 @@ window.addEventListener("scroll", function() {
         tabbableListFirst = tabbableList.length && tabbableList[0],
         tabbableListLast = tabbableList.length && tabbableList[tabbableList.length - 1],
         resultWrapper = document.getElementById("search-results"),
+        searchLayer = document.getElementById("search-layer"),
         searchTitle = document.getElementById("search-title"),
         searchInput = document.getElementById("search-input"),
         searchCount = layer.querySelector(".search__count-wrapper"),
@@ -602,6 +603,17 @@ window.addEventListener("scroll", function() {
         });
 
         document.addEventListener("keydown", handlerCloseKeydown);
+
+        // 검색 레이어 스크롤 시, 검색 input으로 바로가기 버튼 toggle
+        var searchToInputBtn = document.querySelector('.search__to-input');
+
+        searchLayer.addEventListener('scroll', function(){
+            if (this.scrollTop >= document.getElementById('search-results').offsetTop) {
+                searchToInputBtn.classList.add('search__to-input--active');
+            } else {
+                searchToInputBtn.classList.remove('search__to-input--active');
+            }
+        });
     }
 
     openBtn.addEventListener("click", handlerClick);

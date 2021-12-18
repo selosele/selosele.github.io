@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 comments: true
 title: "개인 블로그 개발 및 배포 후기"

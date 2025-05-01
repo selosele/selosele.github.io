@@ -6,7 +6,7 @@
 
 <link href="{% if site.atom_feed.path %}/{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 <link rel="shortcut icon" href="{{ '/' | relative_url }}favicon.ico">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="{{ '/assets/css/plugins/XEIcon/xeicon.min.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8995060759315809" crossorigin="anonymous"></script>
